@@ -113,6 +113,11 @@ Modify `churn_rules.yaml` to adjust the weighting of churn drivers, or update
 Data flows from the `data/synthetic` directory, is processed in memory by
 Pandas, and output artifacts (when exported) land in `data/exports`.
 
+**Note:** For demonstration purposes, generated data and markdown reports are
+committed to this repository as snapshots. See
+[docs/GENERATED_ARTIFACTS.md](docs/GENERATED_ARTIFACTS.md) for handling noisy
+diffs during local development.
+
 ## Governance Layer
 
 The project employs a strict Governance Layer to prevent analytical drift.

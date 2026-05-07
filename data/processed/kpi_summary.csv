@@ -6,11 +6,11 @@ contraction_revenue,24433.0,overall,Monthly price at risk across 67 Past Due sub
 gross_revenue_retention,0.682341449603624,overall,"Active MRR $241,003.00 / Total billed MRR $353,200.00."
 net_revenue_retention,1.2111862967157419,overall,"(Active $241,003.00 + Expansion $186,788.00) / Total billed $353,200.00."
 revenue_at_risk,24433.0,overall,"MRR from 67 at-risk customers: $24,433.00."
-activation_rate,0.983,overall,983/1000 customers exceeded 5 cumulative key actions.
-usage_frequency,261.2209498099662,overall,Mean monthly logins per active customer: 261.2.
-key_action_rate,3.0039771866290983,overall,"6,839,260 key actions / 2,276,735 logins = 3.00 actions per login."
-engagement_drop_rate,0.0,overall,0/19 active customers showed >80% drop vs 3-period baseline.
-feature_adoption_proxy,5.498896503658962,overall,Mean features used per active customer session: 5.5.
+activation_rate,0.984,overall,984/1000 customers exceeded 5 cumulative key actions.
+usage_frequency,256.42232776352034,overall,Mean monthly logins per active customer: 256.4.
+key_action_rate,2.9990679014774098,overall,"6,708,579 key actions / 2,236,888 logins = 3.00 actions per login."
+engagement_drop_rate,0.0,overall,0/24 active customers showed >80% drop vs 3-period baseline.
+feature_adoption_proxy,5.516252612026933,overall,Mean features used per active customer session: 5.5.
 customer_churn_rate,0.303,overall,303 churned customers / 1000 total = 30.3%.
 retention_rate,0.6970000000000001,overall,1 - churn_rate (30.3%) = 69.7%.
 average_nps,6.135313531353136,overall,Mean NPS across 303 responses: 6.14.

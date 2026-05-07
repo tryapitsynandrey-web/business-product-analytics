@@ -79,3 +79,9 @@ git diff --stat
 ```
 
 *Ensure a clean working tree.*
+
+**Note on Generated Artifacts:**
+Running the pipeline generates large diffs in `data/` and `reports/`.
+These files are intentionally tracked as portfolio demos. Do not commit
+these diffs unless you intend to update the official snapshot.
+See `docs/GENERATED_ARTIFACTS.md` for policy details.

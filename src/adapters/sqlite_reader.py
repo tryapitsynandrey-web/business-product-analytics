@@ -80,7 +80,7 @@ class SQLiteReader:
             # We can let SQLite catch missing columns natively, but we will catch the sqlite3.OperationalError
             try:
                 return pd.read_sql_query(query, conn)
-            except sqlite3.OperationalError as e:
+            except (sqlite3.OperationalError, pd.errors.DatabaseError) as e:
                 raise ValueError(f"Failed to read columns: {e}")
 
     def read_top(self, table_name: str, limit: int = 10) -> pd.DataFrame:

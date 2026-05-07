@@ -1,698 +1,698 @@
 customer_id,risk_score,risk_band,drivers,revenue_at_risk,explanation
-CUST-4eccd2dc,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-4a794178,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-60a69ed7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-67b36926,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-cff0fb9f,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-9e152d50,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-fed1b9aa,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a4c00b65,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1293971b,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-2312a5f5,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-8c9a6e0e,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6579ef42,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1986c02d,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-0d35638f,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-d1e8f192,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-39c5c936,0.0,Low,,0.0,No significant risk signals detected.
-CUST-25504fb1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-15443e30,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-b08ba3df,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-20f561ee,0.0,Low,,0.0,No significant risk signals detected.
-CUST-838d92f2,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-a83a44f1,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-bf7862a2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e3043802,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-14f64b4e,0.0,Low,,0.0,No significant risk signals detected.
-CUST-22b52c4f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-18972023,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2bec3482,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-f33cdeae,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d3049f0d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4b5db9a2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-da6178a8,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-3f3afc58,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-c8cee490,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3ff607db,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-f7565743,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-c36e825d,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-b6091d18,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f968ffd4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-729d52cd,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-241c7a18,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5e25bac8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-21a01016,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-1fae17f0,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-0e46328d,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-73c54221,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-37b0c21c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-257d1f12,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-31ac8ccb,0.0,Low,,0.0,No significant risk signals detected.
-CUST-82ab6acd,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e494e648,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-93c34c18,0.0,Low,,0.0,No significant risk signals detected.
-CUST-06fd7a27,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7347a208,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-c442d9cb,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-b5b7994b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-470da9cf,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-f8cb164d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d5305f3f,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-fb96cfa6,0.0,Low,,0.0,No significant risk signals detected.
-CUST-0ff1a569,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-79cc65e2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-210315c9,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-89eea1da,0.0,Low,,0.0,No significant risk signals detected.
-CUST-41cf9720,0.0,Low,,0.0,No significant risk signals detected.
-CUST-b2782c86,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-28186478,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-18cccd08,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6f9fd9b0,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-a71e33a2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d0597e51,0.0,Low,,0.0,No significant risk signals detected.
-CUST-11fe014c,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-3a2f46a8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d4954121,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-d0540de0,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-98250881,0.0,Low,,0.0,No significant risk signals detected.
-CUST-697fb224,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e3d81fb5,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-f4e40638,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-77d9bbc4,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-b8d5d65d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-12ad2a90,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-cfb9eb6b,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-76e2586a,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-0ce5278a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-70bf715e,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-2ff35a77,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-a2d06777,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-9b950050,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7b59527e,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-a2855369,0.0,Low,,0.0,No significant risk signals detected.
-CUST-b280ea0c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-83b6174e,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-4c370882,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-7585c993,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a5b9e2d2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-269c8bb3,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-18f6746b,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-95921fac,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-4f381d83,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-05913c5b,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-1eaf0934,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-480c2bf3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-e1a70fb3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f9282818,0.0,Low,,0.0,No significant risk signals detected.
-CUST-485037d0,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5582fbd4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-fa064337,0.0,Low,,0.0,No significant risk signals detected.
-CUST-01c1b3af,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2f40beef,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-3426af85,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-23827ded,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-ac1c73a7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9a3b48e9,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-7ecb117c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-30abdbd5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-50106902,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-6f768d39,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-a5d80f22,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-1cf2bfe8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e3d76283,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-71b72754,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f82b9461,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d7976cee,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-4508c30d,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-76129672,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-07db41f2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8fc2cf72,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-32156fa6,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-8840b251,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8c1f7550,0.0,Low,,0.0,No significant risk signals detected.
-CUST-84a7174e,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-ec953494,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-e3e3592f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a6d8914a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ca4038c8,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-b2e8a8b6,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1fed86cc,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-0892ede8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ef12da28,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2cdb970f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8f01812d,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-55c1c32d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-459ef861,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-a58cce88,0.0,Low,,0.0,No significant risk signals detected.
-CUST-88f7f923,0.0,Low,,0.0,No significant risk signals detected.
-CUST-27f71e62,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1db39510,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-2cb96aa1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-45f05476,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-0a06a41b,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-fa0d3e3e,0.0,Low,,0.0,No significant risk signals detected.
-CUST-04d2b634,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-b52b7229,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-48ea0520,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5cf28984,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-75fb96a4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-b25b991a,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-1847564d,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-10f295c4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-2d24aeb0,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d0f6655e,0.0,Low,,0.0,No significant risk signals detected.
-CUST-39bae39b,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-10df7b4d,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-1c36a977,0.0,Low,,0.0,No significant risk signals detected.
-CUST-bb268ae6,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-a62e08c3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-a5a397c9,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-4ce1d78c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-0621a120,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1e68979c,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-739b99b6,0.0,Low,,0.0,No significant risk signals detected.
-CUST-381412c1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1be98686,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-02f5590b,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-3dc1d8a9,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3574d946,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-a828d88f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d9ee5046,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-975b7b01,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-9dedf808,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-fd42933e,0.0,Low,,0.0,No significant risk signals detected.
-CUST-16fd33b4,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-5d983e75,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-35a1af68,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-39c8797c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1eca5402,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-ad20f27e,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-bcd07dbd,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-9916440a,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-07c6a0ab,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-281af038,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5b17f869,0.0,Low,,0.0,No significant risk signals detected.
-CUST-c248e070,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-7ba5eb94,0.0,Low,,0.0,No significant risk signals detected.
-CUST-30a813ac,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4c73002d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-253a8c4e,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8f614fa8,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-bbeb6ca0,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-4c76a787,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-e323b3df,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5267af3a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-cf28f116,0.6000000000000001,High,Low NPS | Failed Payments,0.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-0dd5708f,0.6,High,Usage Decline | Low Product Engagement,49.0,"Risk drivers: Usage Decline, Low Product Engagement."
-CUST-dd981b81,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8600900e,0.0,Low,,0.0,No significant risk signals detected.
-CUST-53f0fd40,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-c4348b86,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-fb11a701,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-469f5824,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-d5fc1c8d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-cc3da635,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-4d4bcad4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f7c27cb5,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-f7a162ca,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-a7107470,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3c8ebac5,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-5c355706,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-1785b660,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a0f2fb65,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-d26a7eff,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-8fae7682,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-52b3bf45,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-653cfeaf,0.4,High,Low NPS | High Support Burden,199.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-820f1ab0,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-8b95d79f,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-921032b2,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-940f6416,0.0,Low,,0.0,No significant risk signals detected.
-CUST-75884b94,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-43a0ce45,0.0,Low,,0.0,No significant risk signals detected.
-CUST-fa7d9654,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-4f5ca6e5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-7cc11a95,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-87e2b64f,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-20e8e835,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2b5ee006,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-b01a91eb,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4893d265,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-e1a510a8,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-34a0e933,0.0,Low,,0.0,No significant risk signals detected.
-CUST-cd61f08a,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-10189bb1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-02dee19e,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-9036a783,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-6f52debb,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-869583e6,0.0,Low,,0.0,No significant risk signals detected.
-CUST-19717f1e,0.0,Low,,0.0,No significant risk signals detected.
-CUST-0421d102,0.0,Low,,0.0,No significant risk signals detected.
-CUST-85140b1c,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-eb632adf,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-c6e6948e,0.0,Low,,0.0,No significant risk signals detected.
-CUST-58bc0e3f,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-2c81fc6c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-86eb9733,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5b818179,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-28575fc5,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-61e2d5bb,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-86bce810,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-68803630,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-e2e7fb0b,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-453bec4d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d0c81333,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8d0bbd00,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-5cf11397,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-86834069,0.0,Low,,0.0,No significant risk signals detected.
-CUST-fb7ccfe1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4bf53012,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-a011c7f1,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-34790521,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-576a6834,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-ffac4fbf,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-b80da206,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a89aa326,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-3973e310,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7d29f900,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-c310eb04,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-e667d33f,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-abe1dd1e,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-a3f05d61,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3e1317e7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-80cd4335,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-0d133dfc,0.0,Low,,0.0,No significant risk signals detected.
-CUST-c9dd9b90,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-81df718a,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-f2d7de45,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-2847936c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-12fc3781,0.0,Low,,0.0,No significant risk signals detected.
-CUST-cc4bd76f,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-6410fec5,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-de7e4fce,0.0,Low,,0.0,No significant risk signals detected.
-CUST-54af7a95,0.0,Low,,0.0,No significant risk signals detected.
-CUST-767089f3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-3d61e833,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-13b8c521,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6272decb,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2f72cd77,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5d8454e6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-fff42b5f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-c01f14b8,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-45fe449c,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-2786c0ee,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1e10058b,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-baae0571,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-c926a6d7,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-81e08ae1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-fc9d957b,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-72ce1717,0.0,Low,,0.0,No significant risk signals detected.
-CUST-01dc4018,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7932a1e3,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-820adf0a,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-be6c0338,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3a76f556,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d2b7c299,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-07cf040b,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-27767125,0.0,Low,,0.0,No significant risk signals detected.
-CUST-54d8602a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-41270615,0.0,Low,,0.0,No significant risk signals detected.
-CUST-cf23fc8d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-ad4da9cc,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-79fb01bf,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-4fe61954,0.6000000000000001,High,Low NPS | Failed Payments,1999.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-5281147c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a48d523f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-b262c7e6,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-c80ec20a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f630b7cb,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-326272c2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6aa56b12,0.0,Low,,0.0,No significant risk signals detected.
-CUST-93f866c4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-de60050e,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-8814ab84,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-db5c39e2,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-affe792d,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-77c27dd5,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8eabee1b,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-f9ab9616,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-3d1aae80,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-223b638a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-fe33c02f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-01bbc282,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-19467c1d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e66dbb81,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-98b8d898,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-7a1637ad,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-18ba9afa,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e418053f,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-edc469d6,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-e761dda1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-01d5ceaa,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-9ed70364,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-120b89e4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2e09394c,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-64bc8e30,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4b727c7b,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-c39f3524,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-6ae6dcdf,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6c618d00,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-1417fc7c,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-2ea04158,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-61e0e121,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3994cebe,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f10e7132,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e7208065,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e501afc8,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-25249848,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-67f76a10,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e61849a6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-e4444551,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-1fb78a82,0.0,Low,,0.0,No significant risk signals detected.
-CUST-c03bf933,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8daeac0d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e70100eb,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-bb2bf573,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-06f13f28,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-5ff1826d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4839e5ea,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-d6f2ff33,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-f0d03016,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-394a0162,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-3a2fe662,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-2a7aaa3c,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-ca80ff3c,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-51b20550,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-b54e1851,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a826fb49,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-021fee20,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-fcd6b1ef,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-e2fbc4f3,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-89733cd2,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-cd170a73,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-36e7f69f,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-d7bc7d5d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f2e5ddd1,0.6000000000000001,High,Low NPS | Failed Payments,1999.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-839a52a7,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-b9765b63,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-bd88005b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-c51b3360,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-b14f6a04,0.0,Low,,0.0,No significant risk signals detected.
-CUST-809bca7e,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7589ece5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8d21bf3c,0.6000000000000001,High,Low NPS | Failed Payments,0.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-d5566758,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-ad334a19,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8b5d58d5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-ecb69a74,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4472d4ec,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-81d035d1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-c3377657,0.0,Low,,0.0,No significant risk signals detected.
-CUST-b9e259ea,0.0,Low,,0.0,No significant risk signals detected.
-CUST-d9095c75,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1aa37a90,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-649f982a,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-348cdf22,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-18fa4144,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-3914335e,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-858ac0b4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-86e1ef9a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ac63e218,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-3998cedf,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7aa2fe08,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-60e8efb0,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-4281d248,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-84129a39,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1398f3cd,0.0,Low,,0.0,No significant risk signals detected.
-CUST-bd82bffe,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-01f3e094,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-a6dde558,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7d51ca71,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5c38042a,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-fde77ffc,0.0,Low,,0.0,No significant risk signals detected.
-CUST-24cd437c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e8e2a726,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-cacda794,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-9be3ce11,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-07b8e47f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-b7f95bb4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-c53c7f77,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-3958ead5,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3ab47599,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-b69f751d,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-04c697df,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-0450b021,0.0,Low,,0.0,No significant risk signals detected.
-CUST-176a2adf,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-364c9b76,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-26bfed01,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-29bb5e1a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-888dc4d3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6bb28005,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-05ed3232,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3d8bc058,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-8ebf7469,0.0,Low,,0.0,No significant risk signals detected.
-CUST-b8b3c3da,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-eb752058,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9c06615b,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-4014206a,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-271deeed,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-87787fad,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-892c453c,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-ac94326c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-54dc1511,0.6000000000000001,High,Low NPS | Failed Payments,1999.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-c58071a6,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-74e29269,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9a5745ac,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7bb27c13,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-3386dd93,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-a986c669,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-9104153c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-27baa4d2,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-e9c667b7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a603701d,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-74216ecd,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-97995af7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-db44eb45,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-a6326895,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-20e1a009,0.0,Low,,0.0,No significant risk signals detected.
-CUST-66696d77,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1cad3a11,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-2b5d13ff,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-2cfca522,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-63d00492,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-a1e2738b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a5133d37,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-fe6f6cae,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7b5782ab,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-07c52bee,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-d96979bd,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-5d59663c,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-53ded5c3,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-3840382c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7cc23e1b,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-062d8e36,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e725748e,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-43708c3b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-52d6f3c7,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-406f53c7,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-92011be6,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-e8645d29,0.0,Low,,0.0,No significant risk signals detected.
-CUST-60c9f39d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3f70a795,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-901e9c23,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2948ba10,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-92d3b556,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-24d7d2ff,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-79c7565b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f073137a,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5962c7a7,0.6,High,Usage Decline | Low Product Engagement,199.0,"Risk drivers: Usage Decline, Low Product Engagement."
-CUST-33a9ad5e,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-db09dd5c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-621c3ee9,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-42e59afc,0.4,High,Low NPS | High Support Burden,199.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-aac04c27,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-220e7a26,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-b2df9d0b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1784946c,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-0f7f7063,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-6c89943a,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-20a05fb1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-85f03bbd,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-24728d1d,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-01797a38,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-83b1c9e9,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-3663e07d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a073f0d8,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-194604c9,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-9e2b00e4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-11b786ca,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-52dceb3a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-addd45b2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-c20764f0,0.0,Low,,0.0,No significant risk signals detected.
-CUST-79094bbb,0.0,Low,,0.0,No significant risk signals detected.
-CUST-876ad1f6,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-7fe67da0,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5a76d9f2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-b44475df,0.0,Low,,0.0,No significant risk signals detected.
-CUST-92791f78,0.0,Low,,0.0,No significant risk signals detected.
-CUST-fbd59239,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-317ee5ef,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-c0aee559,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-0e434c3f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-91e5e278,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8a1f0c26,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-395a9489,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-415672dc,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-403c976e,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-bb5b4c74,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-57ea5bcd,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-bce635ca,0.0,Low,,0.0,No significant risk signals detected.
-CUST-bb374cc4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ed719c24,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-949bad21,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-5bc68721,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ebc6579b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-c04282ff,0.6,High,Usage Decline | Low Product Engagement,199.0,"Risk drivers: Usage Decline, Low Product Engagement."
-CUST-9be6ed6b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-607adab2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-62c0fc0b,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-83303441,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-99da545c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5d4a3064,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-5ae3112f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-65480dc2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8584285b,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-e5ae22a8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7bb8add6,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-78b49d93,0.0,Low,,0.0,No significant risk signals detected.
-CUST-af980b61,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-8996a7b1,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-214f09af,0.0,Low,,0.0,No significant risk signals detected.
-CUST-de9d35e8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4493df28,0.0,Low,,0.0,No significant risk signals detected.
-CUST-086367e3,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-0a941d35,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-8170aabf,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e8d2fb76,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-c0d4c20b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-304ddb28,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-e8e9ca82,0.4,High,Low NPS | High Support Burden,499.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-b4cb1440,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1670f047,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-d27ed070,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-393f21a7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-668be7ab,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f8c8366f,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-907d135d,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-a5a4a466,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5c8129e1,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-fdecbfeb,0.6000000000000001,High,Low NPS | Failed Payments,0.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-cf77f9ee,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-826334be,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-b21e56d9,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-dd83e3c6,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e868444e,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-fd0f23d2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9c144b11,0.0,Low,,0.0,No significant risk signals detected.
-CUST-94124961,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-fd17317f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-391fe0b8,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-beb88148,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-e9f0797f,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-ca6824c8,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-ca6bfe12,0.0,Low,,0.0,No significant risk signals detected.
-CUST-25484b8a,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-f7278444,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6ff49b70,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-552a5331,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-a4a67a8b,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f55c81cb,0.0,Low,,0.0,No significant risk signals detected.
-CUST-86f95a44,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-94c16fb1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4a080cde,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a3aaca07,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-06474d81,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-1872b077,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-921962e1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5cb8ce40,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6d645492,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a6db66d7,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-19902bad,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-ebb6a7dc,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3c8fdd24,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4624c0d3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7abbcaa6,0.0,Low,,0.0,No significant risk signals detected.
-CUST-f9a3545a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2cfacd80,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-cc70e8c7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-a79fd18c,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-21fdb4a7,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-d2ab12e3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-b5824937,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8050cd77,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ebd217ce,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1aaae25a,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-a5c0ab76,0.0,Low,,0.0,No significant risk signals detected.
-CUST-72e13ca0,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-dccac442,0.6000000000000001,High,Low NPS | Failed Payments,499.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-69054e9c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-b3cfb5c8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-c9d81e17,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-c2ae48b4,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-635e12b2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-610e42d3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-073975b8,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-44e61b12,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-efb4b43d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ee72e3cc,0.0,Low,,0.0,No significant risk signals detected.
-CUST-90a27133,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-601d86d4,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-c37a7a5d,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-8b538339,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9433d555,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4390bd47,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-2f73616f,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-c573ccdc,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-652fbe66,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-9cb7af6e,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-0833a4a3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3aa84233,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-1344cd0f,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9747c6eb,0.0,Low,,0.0,No significant risk signals detected.
-CUST-15ef6802,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-1aa9bb8a,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-fefa1684,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-4bf17841,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-a4513cb6,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7c97effe,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-ae665b75,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-c3bbc32c,0.0,Low,,0.0,No significant risk signals detected.
-CUST-62399421,0.0,Low,,0.0,No significant risk signals detected.
-CUST-e3b9afa6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-95fda2ae,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-e4326b68,0.0,Low,,0.0,No significant risk signals detected.
-CUST-dddee22a,0.0,Low,,0.0,No significant risk signals detected.
-CUST-296b1437,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5d759af2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6c2e1521,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-98a19a71,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-f3870c47,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-7eaa8dfc,0.0,Low,,0.0,No significant risk signals detected.
-CUST-83f5d0f2,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-b713d503,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5de962ce,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-87309b6d,0.0,Low,,0.0,No significant risk signals detected.
-CUST-458003a2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-0bcff3c7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-aebcd965,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-ea428796,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-11765a63,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-b3df5ca0,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-3891d61b,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-84f8c579,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-3bfdf691,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-f10abf18,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-1b7f7730,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-52b5a324,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-a855ab31,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-9ebf49a9,0.0,Low,,0.0,No significant risk signals detected.
+CUST-0ba66f2a,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-557b6976,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-751489c5,0.0,Low,,0.0,No significant risk signals detected.
+CUST-dd61d47d,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-17269a71,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
+CUST-7b8cf758,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-88617fc2,0.0,Low,,0.0,No significant risk signals detected.
+CUST-92c57a47,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-93bbdd37,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-200cfc5b,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-21e07cb5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-39a9e549,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-896d2db4,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-998d4c7e,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-e6c9bd46,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-32b36711,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d5000394,0.0,Low,,0.0,No significant risk signals detected.
+CUST-fd9ec295,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-2a2fb5d9,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-79a2f6e9,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e9e565a7,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-0c239dcd,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-f4d964ed,0.0,Low,,0.0,No significant risk signals detected.
+CUST-b52a436c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-8c3b6c9b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-1a440964,0.0,Low,,0.0,No significant risk signals detected.
+CUST-797bf76f,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5ca7840f,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-e2485adb,0.0,Low,,0.0,No significant risk signals detected.
+CUST-18c7c3a1,0.0,Low,,0.0,No significant risk signals detected.
+CUST-340e7725,0.0,Low,,0.0,No significant risk signals detected.
+CUST-53d76630,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-cb914e66,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-bc76ad7a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-7977a0c3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-3e2fae54,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-25b5662e,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-83944719,0.0,Low,,0.0,No significant risk signals detected.
+CUST-9e3e8e51,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-094a36e5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-2dfb800b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-16326858,0.0,Low,,0.0,No significant risk signals detected.
+CUST-2d44be8d,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-1cbf3102,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-10b817a1,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-c283205b,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-0baeaba0,0.0,Low,,0.0,No significant risk signals detected.
+CUST-01606f27,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-dad8c860,0.0,Low,,0.0,No significant risk signals detected.
+CUST-8ff2793e,0.0,Low,,0.0,No significant risk signals detected.
+CUST-49f8906f,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-c40c3670,0.0,Low,,0.0,No significant risk signals detected.
+CUST-ab187227,0.0,Low,,0.0,No significant risk signals detected.
+CUST-1608192e,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-8dbb3806,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-9eac2f65,0.0,Low,,0.0,No significant risk signals detected.
+CUST-4e910dc2,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-667a98b5,0.0,Low,,0.0,No significant risk signals detected.
+CUST-bb5500cf,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-6290cf52,0.0,Low,,0.0,No significant risk signals detected.
+CUST-3ab79b3f,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-1457d3bd,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-658a2db2,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-52005ce7,0.0,Low,,0.0,No significant risk signals detected.
+CUST-65167149,0.0,Low,,0.0,No significant risk signals detected.
+CUST-64992aa2,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-94fa4e97,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-b960f009,0.0,Low,,0.0,No significant risk signals detected.
+CUST-06e4339d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-8f99d538,0.0,Low,,0.0,No significant risk signals detected.
+CUST-3f245dee,0.0,Low,,0.0,No significant risk signals detected.
+CUST-ad81ca19,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-1c275276,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f173365a,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-a6d9fd4c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-33484f42,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6f1722db,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5545121f,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-610f92e4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-46b1c45c,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-547054f5,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5116ee5c,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-372b3f0a,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-834fe4a1,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-4e056336,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5d9ccf03,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-40ad112c,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-0e5b5755,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-dd4251f1,0.0,Low,,0.0,No significant risk signals detected.
+CUST-232711c2,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-227130fc,0.0,Low,,0.0,No significant risk signals detected.
+CUST-0f90ff0d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-ab3b69a7,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-021c6b4e,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-2d3d54d1,0.0,Low,,0.0,No significant risk signals detected.
+CUST-a3d0789c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-7286b1ef,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-157aacdf,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-7e0a430a,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-a1f72ee9,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-2e119609,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-323b2f3d,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-3e707a6b,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-92162f2d,0.0,Low,,0.0,No significant risk signals detected.
+CUST-8a69a480,0.0,Low,,0.0,No significant risk signals detected.
+CUST-55344ee7,0.0,Low,,0.0,No significant risk signals detected.
+CUST-94fd26c5,0.0,Low,,0.0,No significant risk signals detected.
+CUST-43a3669c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-06985569,0.0,Low,,0.0,No significant risk signals detected.
+CUST-c7759aee,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
+CUST-80b10761,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
+CUST-bae02249,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-982c58f8,0.0,Low,,0.0,No significant risk signals detected.
+CUST-0d0c0eaa,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-a20ed4e4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-46ddaab4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-cd0178e3,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-95d66ef8,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-89b542f1,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-356f57f1,0.0,Low,,0.0,No significant risk signals detected.
+CUST-8af1640a,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-87a46ba9,0.0,Low,,0.0,No significant risk signals detected.
+CUST-7ea177e7,0.0,Low,,0.0,No significant risk signals detected.
+CUST-3d5f5dfb,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-a3c5921b,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-7569f702,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-43e0b0e0,0.0,Low,,0.0,No significant risk signals detected.
+CUST-3895484d,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-c377a12c,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-94d2681a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-c4e87f2f,0.0,Low,,0.0,No significant risk signals detected.
+CUST-dc05df28,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-b23bbc1c,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-bb4e8ad2,0.0,Low,,0.0,No significant risk signals detected.
+CUST-36ecded7,0.0,Low,,0.0,No significant risk signals detected.
+CUST-814d7b2f,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-b7433778,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6e22c256,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-d4dab662,0.0,Low,,0.0,No significant risk signals detected.
+CUST-dcb8f4bc,0.0,Low,,0.0,No significant risk signals detected.
+CUST-a9ec6005,0.0,Low,,0.0,No significant risk signals detected.
+CUST-b73b08db,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-072b1423,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-a2a04092,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-5f504bfa,0.0,Low,,0.0,No significant risk signals detected.
+CUST-296b10fa,0.0,Low,,0.0,No significant risk signals detected.
+CUST-368c1257,0.0,Low,,0.0,No significant risk signals detected.
+CUST-0039353d,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-96beef23,0.0,Low,,0.0,No significant risk signals detected.
+CUST-ce82e584,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-cb03f639,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-1e370c64,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6fbccc54,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-a02fe1c3,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-a995a5f3,0.0,Low,,0.0,No significant risk signals detected.
+CUST-df703a20,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-743ab906,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-c391e66e,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-031ae2a1,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-d5221ac4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-666eafdc,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6c0f6824,0.0,Low,,0.0,No significant risk signals detected.
+CUST-05869f56,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-8108d030,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-e6ec507b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-db4f6eda,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-739feacd,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-3027e654,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-5bcaafb6,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f7be4774,0.0,Low,,0.0,No significant risk signals detected.
+CUST-1ac141c4,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-2e7f630c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-3a3c4315,0.0,Low,,0.0,No significant risk signals detected.
+CUST-4ae9d46a,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-80bca1f4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-6e07e054,0.0,Low,,0.0,No significant risk signals detected.
+CUST-3c6e03c7,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-6c2cc678,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f8402d43,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-e32c940e,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-d9ea3633,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-1fbea813,0.0,Low,,0.0,No significant risk signals detected.
+CUST-8980999c,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-8b51999d,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-50746848,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-5d17ecf7,0.0,Low,,0.0,No significant risk signals detected.
+CUST-23530c93,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-107242d5,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-ef5bfb52,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-c7fa1a97,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-622fcdda,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-9ca4d98d,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-7f340b66,0.0,Low,,0.0,No significant risk signals detected.
+CUST-bd7a8297,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-12ff4fea,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d3627128,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6a3ec9e2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-9ee8c9b7,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-86446c0a,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-6e921992,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-8c9930c7,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-b6977e38,0.0,Low,,0.0,No significant risk signals detected.
+CUST-323d8c3b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e6495725,0.6000000000000001,High,Low NPS | Failed Payments,0.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-3c86d76a,0.6,High,Usage Decline | Low Product Engagement,49.0,"Risk drivers: Usage Decline, Low Product Engagement."
+CUST-0896b685,0.0,Low,,0.0,No significant risk signals detected.
+CUST-3770676d,0.0,Low,,0.0,No significant risk signals detected.
+CUST-8b20ecfb,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-4f2289a0,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-59ba713d,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-426b75e1,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-36deabfb,0.0,Low,,0.0,No significant risk signals detected.
+CUST-73f85789,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-cd00e746,0.0,Low,,0.0,No significant risk signals detected.
+CUST-dc47ba13,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-7992eca5,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-3272677f,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d0f6339f,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-d566978e,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-2edf2525,0.0,Low,,0.0,No significant risk signals detected.
+CUST-b15747f3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-8980c909,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-9f218537,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-3bc52bad,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-c889d6b0,0.4,High,Low NPS | High Support Burden,199.0,"Risk drivers: Low NPS, High Support Burden."
+CUST-c7643676,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-c94c5736,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-c2971ccd,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-f4fcb452,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6c893f3e,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-d73ae4f1,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d4b80df6,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-d29ebc01,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-f0671929,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-549aeba3,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-461f3e23,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e2d06070,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-0d90f12a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-8d6e914a,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-09615c72,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-d6b30fde,0.0,Low,,0.0,No significant risk signals detected.
+CUST-87c9ba7e,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-2689c304,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6a8bea0c,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-b8cd91f0,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-da55b209,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-63590e76,0.0,Low,,0.0,No significant risk signals detected.
+CUST-91c74c14,0.0,Low,,0.0,No significant risk signals detected.
+CUST-fb0cd14b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-44eb7a07,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-f5a87457,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-2bd38945,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f32414c7,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-09475927,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-d5e13a88,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5731e3de,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-03036de5,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-97c45d61,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-5bdd2e56,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-846142f0,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
+CUST-edf2960f,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-bb241762,0.0,Low,,0.0,No significant risk signals detected.
+CUST-118b91d9,0.0,Low,,0.0,No significant risk signals detected.
+CUST-bf6d8b31,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-bc86a76f,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-5543aefe,0.0,Low,,0.0,No significant risk signals detected.
+CUST-bf6280ed,0.0,Low,,0.0,No significant risk signals detected.
+CUST-dc0be26b,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-78734f64,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-4d61ad94,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden."
+CUST-8621543a,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-3b2d6ab4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-a0b45796,0.0,Low,,0.0,No significant risk signals detected.
+CUST-ee5e0427,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-039acf0a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-4f9ad847,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-659d1501,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-ec32b4a3,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
+CUST-6b69d122,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-26d979cf,0.0,Low,,0.0,No significant risk signals detected.
+CUST-88710e47,0.0,Low,,0.0,No significant risk signals detected.
+CUST-b4c3ec25,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-2555e9b6,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5a2cdd40,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-86e1d913,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-b2079426,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-9a86549d,0.0,Low,,0.0,No significant risk signals detected.
+CUST-66b806aa,0.0,Low,,0.0,No significant risk signals detected.
+CUST-2b62d18f,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-64db7450,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden."
+CUST-ad632921,0.0,Low,,0.0,No significant risk signals detected.
+CUST-4871b882,0.0,Low,,0.0,No significant risk signals detected.
+CUST-07ce2c5c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-d5214812,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-f9cd69e2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-918bee6e,0.0,Low,,0.0,No significant risk signals detected.
+CUST-a9847713,0.0,Low,,0.0,No significant risk signals detected.
+CUST-10b2c1a1,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-ef83d9cf,0.0,Low,,0.0,No significant risk signals detected.
+CUST-843b49fc,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-b3d22bb8,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-70951a68,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5b90e60a,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-e85ddc8f,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-c90923f3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-ce81d571,0.0,Low,,0.0,No significant risk signals detected.
+CUST-85f84b5e,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-2c2af628,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5c7c9092,0.0,Low,,0.0,No significant risk signals detected.
+CUST-83b80359,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-51bd91fa,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-743bc31c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d7b6de4e,0.0,Low,,0.0,No significant risk signals detected.
+CUST-9b7a0c16,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-278eea94,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-f604e6b8,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f19cb62b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-1175391b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-9ff61aaa,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-89255fc3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-1065c818,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-77c1cf00,0.6000000000000001,High,Low NPS | Failed Payments,1999.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-70215da1,0.0,Low,,0.0,No significant risk signals detected.
+CUST-26380545,0.0,Low,,0.0,No significant risk signals detected.
+CUST-9a654212,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-3174ac82,0.0,Low,,0.0,No significant risk signals detected.
+CUST-58f73370,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-a9074489,0.0,Low,,0.0,No significant risk signals detected.
+CUST-c1c73aa5,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e4fdfe40,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5d71d28c,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-221d09b1,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
+CUST-eabef79d,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-92e22df9,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-cb2cae25,0.0,Low,,0.0,No significant risk signals detected.
+CUST-a529969e,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-2a4b606b,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-1db3d44c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-006f22ff,0.0,Low,,0.0,No significant risk signals detected.
+CUST-80362ad5,0.0,Low,,0.0,No significant risk signals detected.
+CUST-8b7b739e,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-df4ae7ad,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f1456537,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-0dfbb5b1,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-d014145a,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-2f356adc,0.0,Low,,0.0,No significant risk signals detected.
+CUST-c8a35565,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-d0c05d39,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-c56f4460,0.0,Low,,0.0,No significant risk signals detected.
+CUST-9508926d,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-d956737e,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-d0740538,0.0,Low,,0.0,No significant risk signals detected.
+CUST-065ea90c,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
+CUST-c1738d3c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-bbfe28ee,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
+CUST-c722c0f5,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-23d932a7,0.0,Low,,0.0,No significant risk signals detected.
+CUST-1397da96,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-0b95d393,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-f195d056,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-e31297bb,0.0,Low,,0.0,No significant risk signals detected.
+CUST-60da49cd,0.0,Low,,0.0,No significant risk signals detected.
+CUST-faf9160f,0.0,Low,,0.0,No significant risk signals detected.
+CUST-37c5940e,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f4056e06,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-8144fd0d,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-ed00f759,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6a5f26f3,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-b864ed22,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden."
+CUST-c7d5949b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-86882a24,0.0,Low,,0.0,No significant risk signals detected.
+CUST-08c53e14,0.0,Low,,0.0,No significant risk signals detected.
+CUST-414c7cec,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-60b2a797,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-80002605,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-552b9fda,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e15d4838,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-5370bd52,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-fd010587,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-4c94d0e7,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-8ba43c90,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-262d7527,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-849d9a28,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-8551d75d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-bea9d06d,0.0,Low,,0.0,No significant risk signals detected.
+CUST-a3c8567c,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-50e69591,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-938299d8,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-e998d1f7,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-dbae06c1,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-e6104d3f,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-0d78a161,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-fc4de2e3,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f8572bc2,0.6000000000000001,High,Low NPS | Failed Payments,1999.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-dd41dc26,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-8b690836,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-6d4bd898,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d5c013fe,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-08925c36,0.0,Low,,0.0,No significant risk signals detected.
+CUST-cd081517,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5eb3c3b8,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-fdc1c0ec,0.6000000000000001,High,Low NPS | Failed Payments,0.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-84fea448,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-b78ed81a,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-849effe9,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-a7d52e02,0.0,Low,,0.0,No significant risk signals detected.
+CUST-1dba7631,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-b95eeb34,0.0,Low,,0.0,No significant risk signals detected.
+CUST-b01f955d,0.0,Low,,0.0,No significant risk signals detected.
+CUST-ce16b0e1,0.0,Low,,0.0,No significant risk signals detected.
+CUST-82a00925,0.0,Low,,0.0,No significant risk signals detected.
+CUST-67682818,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-2e77d591,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-eb5dfa56,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-357b7960,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-61dcbe72,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-47b838dc,0.0,Low,,0.0,No significant risk signals detected.
+CUST-c3c9c80a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-aff07881,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-4eaf4184,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5fe55e45,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-bb7bce3b,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-e427ee9b,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-04eb2a9d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-19385970,0.0,Low,,0.0,No significant risk signals detected.
+CUST-837ee74e,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-4f4df38d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-18816421,0.0,Low,,0.0,No significant risk signals detected.
+CUST-96b70047,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e867116b,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-cbfd530c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-843d21ee,0.0,Low,,0.0,No significant risk signals detected.
+CUST-1eb8c14a,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-053d4674,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-0d53101c,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-e3ca8fdf,0.0,Low,,0.0,No significant risk signals detected.
+CUST-ac68aa70,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-c05b4b6d,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-d1e81d22,0.0,Low,,0.0,No significant risk signals detected.
+CUST-1dfc7f66,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-0c2d91ad,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-4ad5cbbd,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-220dd792,0.0,Low,,0.0,No significant risk signals detected.
+CUST-528e7eab,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-0735c152,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-5156ec81,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-70bb5d0f,0.0,Low,,0.0,No significant risk signals detected.
+CUST-547276dc,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-7837d6ea,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-aaf94b57,0.0,Low,,0.0,No significant risk signals detected.
+CUST-53072c9e,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-61f00f42,0.0,Low,,0.0,No significant risk signals detected.
+CUST-17cb34c0,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-a6a752a8,0.0,Low,,0.0,No significant risk signals detected.
+CUST-96b7841d,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-1ab018d6,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-1765ce50,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-ccb5e68c,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-2d55f928,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-24ffe97e,0.0,Low,,0.0,No significant risk signals detected.
+CUST-ff80b300,0.6000000000000001,High,Low NPS | Failed Payments,1999.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-76fca5a2,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-623f9419,0.0,Low,,0.0,No significant risk signals detected.
+CUST-193ed1d8,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e56b6a7e,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-4c846cd0,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-7729ce4c,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-2606ee03,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-c6948307,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-8abd891d,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6a554766,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-20b2676e,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-cdfca35a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-07a5c73d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-1a745f11,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-ae017018,0.0,Low,,0.0,No significant risk signals detected.
+CUST-12eb49e7,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-97898471,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-62cc3cb0,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-9be879fa,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-3d7c0349,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-e146e934,0.0,Low,,0.0,No significant risk signals detected.
+CUST-4f0a5c3e,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-7538e404,0.0,Low,,0.0,No significant risk signals detected.
+CUST-cf9cb99a,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-aec25cb8,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-49b7e286,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-58d7121b,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-e90c6e55,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-58a6d180,0.0,Low,,0.0,No significant risk signals detected.
+CUST-939918be,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-17ef62b3,0.0,Low,,0.0,No significant risk signals detected.
+CUST-2e5375d1,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-fef091ff,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5b12676e,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-cfab551c,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-adabdc5a,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-507020f0,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d8e1f3cd,0.0,Low,,0.0,No significant risk signals detected.
+CUST-445ef13a,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-8407e4af,0.0,Low,,0.0,No significant risk signals detected.
+CUST-036f64f2,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-6635a952,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-1da61406,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-a6e33b00,0.0,Low,,0.0,No significant risk signals detected.
+CUST-3caa962d,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-69410593,0.6,High,Usage Decline | Low Product Engagement,199.0,"Risk drivers: Usage Decline, Low Product Engagement."
+CUST-c666c845,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-e2fd37f4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-120eb793,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-75a2d98b,0.4,High,Low NPS | High Support Burden,199.0,"Risk drivers: Low NPS, High Support Burden."
+CUST-2b2bfdba,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-312938fd,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-80149380,0.0,Low,,0.0,No significant risk signals detected.
+CUST-2d544a89,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-ad91b077,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-085a7924,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-de82adb1,0.0,Low,,0.0,No significant risk signals detected.
+CUST-16d4582c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-84c09698,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-714bd6b4,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-97d3d8e4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-d6ef7ffb,0.0,Low,,0.0,No significant risk signals detected.
+CUST-3b20d8b3,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-d11984dc,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-3af5845d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-a6fc897f,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-66502c44,0.0,Low,,0.0,No significant risk signals detected.
+CUST-7d69a4ca,0.0,Low,,0.0,No significant risk signals detected.
+CUST-2399b93c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-a46ba972,0.0,Low,,0.0,No significant risk signals detected.
+CUST-a0a24116,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-0f4300a7,0.0,Low,,0.0,No significant risk signals detected.
+CUST-18c47b49,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-e1bd2e79,0.0,Low,,0.0,No significant risk signals detected.
+CUST-b321b91d,0.0,Low,,0.0,No significant risk signals detected.
+CUST-968702e4,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-38c2a5b2,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-c30713a0,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-282c92db,0.0,Low,,0.0,No significant risk signals detected.
+CUST-0e2610e0,0.0,Low,,0.0,No significant risk signals detected.
+CUST-97cbde60,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-af683561,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-bc3fb2d0,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
+CUST-e569da5e,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-8925dbd6,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-9be7d170,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-b080e00f,0.0,Low,,0.0,No significant risk signals detected.
+CUST-84aeccf2,0.0,Low,,0.0,No significant risk signals detected.
+CUST-8aab79ce,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
+CUST-91de8665,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-11156cfe,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f64fa4c3,0.0,Low,,0.0,No significant risk signals detected.
+CUST-80ce41ce,0.6,High,Usage Decline | Low Product Engagement,199.0,"Risk drivers: Usage Decline, Low Product Engagement."
+CUST-3e052394,0.0,Low,,0.0,No significant risk signals detected.
+CUST-7d4497d2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-edd3b552,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
+CUST-b520298d,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-a4e24551,0.0,Low,,0.0,No significant risk signals detected.
+CUST-78ba4365,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-28f39c37,0.0,Low,,0.0,No significant risk signals detected.
+CUST-61f9c394,0.0,Low,,0.0,No significant risk signals detected.
+CUST-aeb331e5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-ca7eff95,0.0,Low,,0.0,No significant risk signals detected.
+CUST-a7c12151,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-f33f4e02,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6d0d4c61,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-f79505dc,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-e3ad43ab,0.0,Low,,0.0,No significant risk signals detected.
+CUST-2e4e6ff0,0.0,Low,,0.0,No significant risk signals detected.
+CUST-fe255d4f,0.0,Low,,0.0,No significant risk signals detected.
+CUST-965b3e1d,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-23f47afb,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-e6dfd6f8,0.0,Low,,0.0,No significant risk signals detected.
+CUST-5c3501c1,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-5421dac1,0.0,Low,,0.0,No significant risk signals detected.
+CUST-ddaa84de,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-55b35881,0.4,High,Low NPS | High Support Burden,499.0,"Risk drivers: Low NPS, High Support Burden."
+CUST-d5780f73,0.0,Low,,0.0,No significant risk signals detected.
+CUST-2fa31bc6,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-e068850e,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-38586e34,0.0,Low,,0.0,No significant risk signals detected.
+CUST-fbc83c96,0.0,Low,,0.0,No significant risk signals detected.
+CUST-7d7661ce,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-09fc0fb3,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-a1472ce2,0.0,Low,,0.0,No significant risk signals detected.
+CUST-513f13e0,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-9e3c6478,0.6000000000000001,High,Low NPS | Failed Payments,0.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-199c2696,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-e25fe3c0,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-8116f475,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-770ddcce,0.0,Low,,0.0,No significant risk signals detected.
+CUST-fd71a399,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-39164db8,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d32c5846,0.0,Low,,0.0,No significant risk signals detected.
+CUST-127420f7,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-a06a15c2,0.0,Low,,0.0,No significant risk signals detected.
+CUST-9e751c77,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-15a1b230,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-f07a9d8a,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-0f8dafb1,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-b539a44b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d5d86457,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-7451acfe,0.0,Low,,0.0,No significant risk signals detected.
+CUST-85cef7dd,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-30fd8ae7,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-72166496,0.0,Low,,0.0,No significant risk signals detected.
+CUST-04ab9914,0.0,Low,,0.0,No significant risk signals detected.
+CUST-da152191,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-fb326979,0.0,Low,,0.0,No significant risk signals detected.
+CUST-53c7df35,0.0,Low,,0.0,No significant risk signals detected.
+CUST-2ff11590,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-e1557fc8,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-710834fd,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-74d4074a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-4c7b21c2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-d971a88c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-79b6296a,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-e9f5ab3a,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
+CUST-9ebe17bf,0.0,Low,,0.0,No significant risk signals detected.
+CUST-29fae1cc,0.0,Low,,0.0,No significant risk signals detected.
+CUST-84ea2760,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e06bec91,0.0,Low,,0.0,No significant risk signals detected.
+CUST-25843f67,0.0,Low,,0.0,No significant risk signals detected.
+CUST-b816b9ad,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-5971db78,0.0,Low,,0.0,No significant risk signals detected.
+CUST-9d2ca3e2,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-210f9436,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
+CUST-2a67390c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6b8f3170,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-16de82b8,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e2a77980,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-3f3c783a,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-50b81a0f,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d72429e4,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-002c5a55,0.6000000000000001,High,Low NPS | Failed Payments,499.0,"Risk drivers: Low NPS, Failed Payments."
+CUST-0e113f52,0.0,Low,,0.0,No significant risk signals detected.
+CUST-f458a803,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6dde2ce4,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-1d8f9187,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
+CUST-3ee22b5c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-5a84f77e,0.0,Low,,0.0,No significant risk signals detected.
+CUST-e902c373,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-24e4a87d,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-ab8797cd,0.0,Low,,0.0,No significant risk signals detected.
+CUST-12b7f8ea,0.0,Low,,0.0,No significant risk signals detected.
+CUST-665ab41c,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-3cf4e609,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-c094c78f,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-2da09d3b,0.0,Low,,0.0,No significant risk signals detected.
+CUST-67e9cec6,0.0,Low,,0.0,No significant risk signals detected.
+CUST-67483be3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-8cca6b6d,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-f7b14f6c,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-99ffcd3c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-8814fd1f,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
+CUST-483c60f8,0.0,Low,,0.0,No significant risk signals detected.
+CUST-b4d2d6e4,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-6998440a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-71ddaf9d,0.0,Low,,0.0,No significant risk signals detected.
+CUST-8aad30ab,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
+CUST-c4728ad9,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-9b8f1b99,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-d5eb10ea,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-b1b90856,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d00ce93d,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-c4e0d532,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-73c557ed,0.0,Low,,0.0,No significant risk signals detected.
+CUST-9a714ef8,0.0,Low,,0.0,No significant risk signals detected.
+CUST-b87fc3b6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-654f2566,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-0d15833f,0.0,Low,,0.0,No significant risk signals detected.
+CUST-14cf1de7,0.0,Low,,0.0,No significant risk signals detected.
+CUST-9f829f30,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-69acd5fb,0.0,Low,,0.0,No significant risk signals detected.
+CUST-71aa2d1c,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-cdc31391,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-12536090,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-074ab72a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-7320bf8f,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-471d405e,0.0,Low,,0.0,No significant risk signals detected.
+CUST-6bc876c4,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-c036c01c,0.0,Low,,0.0,No significant risk signals detected.
+CUST-983e5a9a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-d25fbd3a,0.0,Low,,0.0,No significant risk signals detected.
+CUST-a2554258,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-c0ff1e61,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+CUST-f1c921e9,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
+CUST-15a94920,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-101127c9,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-35d006d6,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-259df05d,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-fac15203,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-f91b5040,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
+CUST-ec4a6918,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
+CUST-eab4156b,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
+CUST-022e23b5,0.0,Low,,0.0,No significant risk signals detected.

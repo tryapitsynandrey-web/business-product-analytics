@@ -548,7 +548,8 @@ class ProductAnalyticsPipeline:
             {
                 "customer_id": p.customer_id,
                 "risk_score": p.risk_score,
-                "risk_segment": p.risk_segment,
+                "risk_band": p.risk_band,
+                "drivers": ", ".join(p.drivers) if isinstance(p.drivers, list) else p.drivers,
                 "revenue_at_risk": p.revenue_at_risk,
                 "explanation": p.explanation,
             }

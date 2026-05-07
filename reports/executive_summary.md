@@ -61,8 +61,8 @@ Risk distribution:
 
 | Metric | Value |
 | --- | --- |
-| Activation Rate | 98.3% |
-| Usage Frequency (avg logins/customer) | 261.2 |
+| Activation Rate | 98.4% |
+| Usage Frequency (avg logins/customer) | 256.4 |
 | Key Action Rate (actions/login) | 3.00 |
 | Feature Adoption Proxy (features/session) | 5.5 |
 | Engagement Drop Rate | 0.0% |
@@ -94,11 +94,11 @@ Total identified leakage: **$290,542** across **937** event(s).
 
 ## 8. Top Recommendations
 
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-19902bad, Confidence: High, Owner: Billing Automation)
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-01797a38, Confidence: High, Owner: Billing Automation)
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-01d5ceaa, Confidence: High, Owner: Billing Automation)
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-1e68979c, Confidence: High, Owner: Billing Automation)
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-4fe61954, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-e9f5ab3a, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-1ac141c4, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-372b3f0a, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-6a61bd4e, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-714bd6b4, Confidence: High, Owner: Billing Automation)
 
 ---
 

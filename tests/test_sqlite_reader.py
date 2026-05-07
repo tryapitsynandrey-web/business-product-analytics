@@ -34,16 +34,16 @@ def populated_db_path(tmp_path):
         {"rule_id": "R2", "recommendation_title": "Save", "category": "Retention", "customer_id": "C2", "segment": "B", "reason": "Y", "affected_customers": 1, "estimated_revenue_impact": 100, "impact_score": 0.4, "confidence_level": "Low", "confidence_weight": 0.5, "suggested_owner": "Support", "evidence_source": "Data", "priority_score": 20.0, "priority_band": "Low"}
     ])
     
-    writer.write_dataframe(kpi_data, "kpi_summary")
-    writer.write_dataframe(health_data, "health_scores")
-    writer.write_dataframe(churn_risk_data, "churn_risk_profiles")
-    writer.write_dataframe(recommendations_data, "recommendations")
+    writer.write_dataframe("kpi_summary", kpi_data)
+    writer.write_dataframe("health_scores", health_data)
+    writer.write_dataframe("churn_risk_profiles", churn_risk_data)
+    writer.write_dataframe("recommendations", recommendations_data)
     
     # Also write empty tables for UI methods
-    writer.write_dataframe(pd.DataFrame(columns=["customer_id", "segment", "is_active", "signup_date", "country", "acquisition_channel", "plan", "subscription_status", "current_mrr", "total_revenue", "latest_usage_frequency", "usage_trend", "latest_nps", "support_ticket_count", "failed_payment_count", "churn_risk_score", "churn_risk_band", "revenue_at_risk", "main_driver", "recommended_action", "health_status", "revenue_segment", "usage_segment", "risk_segment", "nps_segment"]), "customer_360")
-    writer.write_dataframe(pd.DataFrame(columns=["intervention_id", "recommendation_title", "category", "target_segment", "affected_customers", "estimated_revenue_impact", "expected_action", "suggested_owner", "confidence_level", "effort_level", "priority_score", "priority_band"]), "intervention_plan")
-    writer.write_dataframe(pd.DataFrame(columns=["trace_id", "created_at", "entity_type", "entity_id", "signal", "triggered_rule", "evidence", "business_impact", "generated_action", "confidence_level"]), "decision_traces")
-    writer.write_dataframe(pd.DataFrame(columns=["metric_name", "display_name", "category", "source_datasets", "required_columns", "formula_description", "business_owner", "business_purpose", "risk_if_misread", "lineage_status"]), "metric_lineage")
+    writer.write_dataframe("customer_360", pd.DataFrame(columns=["customer_id", "segment", "is_active", "signup_date", "country", "acquisition_channel", "plan", "subscription_status", "current_mrr", "total_revenue", "latest_usage_frequency", "usage_trend", "latest_nps", "support_ticket_count", "failed_payment_count", "churn_risk_score", "churn_risk_band", "revenue_at_risk", "main_driver", "recommended_action", "health_status", "revenue_segment", "usage_segment", "risk_segment", "nps_segment"]))
+    writer.write_dataframe("intervention_plan", pd.DataFrame(columns=["intervention_id", "recommendation_title", "category", "target_segment", "affected_customers", "estimated_revenue_impact", "expected_action", "suggested_owner", "confidence_level", "effort_level", "priority_score", "priority_band"]))
+    writer.write_dataframe("decision_traces", pd.DataFrame(columns=["trace_id", "created_at", "entity_type", "entity_id", "signal", "triggered_rule", "evidence", "business_impact", "generated_action", "confidence_level"]))
+    writer.write_dataframe("metric_lineage", pd.DataFrame(columns=["metric_name", "display_name", "category", "source_datasets", "required_columns", "formula_description", "business_owner", "business_purpose", "risk_if_misread", "lineage_status"]))
     
     return db_path
 

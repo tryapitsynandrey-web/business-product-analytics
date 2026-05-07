@@ -1,0 +1,767 @@
+metrics:
+
+  # ── Revenue ───────────────────────────────────────────────────────────────
+
+  - metric_name: monthly_recurring_revenue
+    display_name: Monthly Recurring Revenue (MRR)
+    category: revenue
+    formula_description: >
+      Sum of monthly_price for all subscriptions whose status is Active or Past Due.
+    grain: overall
+    source_datasets:
+      - subscriptions
+    required_columns_by_dataset:
+      subscriptions:
+        - monthly_price
+        - status
+    business_owner: Finance
+    business_purpose: >
+      Tracks the predictable monthly revenue base. Primary leading indicator of
+      business health and growth trajectory.
+    interpretation_notes: >
+      Includes Past Due subscriptions because the revenue is owed even if not yet
+      collected. Excludes Canceled and Expired.
+    risk_if_misread: >
+      Including canceled subscriptions inflates MRR and masks revenue loss.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: average_revenue_per_user
+    display_name: Average Revenue Per User (ARPU)
+    category: revenue
+    formula_description: >
+      MRR divided by the count of unique customers with Active or Past Due subscriptions.
+    grain: overall
+    source_datasets:
+      - subscriptions
+    required_columns_by_dataset:
+      subscriptions:
+        - monthly_price
+        - status
+        - customer_id
+    business_owner: Finance
+    business_purpose: >
+      Measures revenue efficiency per customer. Used to evaluate pricing strategy
+      and segment-level monetisation.
+    interpretation_notes: >
+      Use alongside segment breakdowns to avoid averages masking tier differences.
+    risk_if_misread: >
+      Using total customers (including inactive) as denominator deflates ARPU.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: expansion_revenue
+    display_name: Expansion Revenue
+    category: revenue
+    formula_description: >
+      Sum of monthly_price for subscriptions whose plan is Premium or Enterprise
+      and status is Active.
+    grain: overall
+    source_datasets:
+      - subscriptions
+    required_columns_by_dataset:
+      subscriptions:
+        - monthly_price
+        - status
+        - plan
+    business_owner: Finance
+    business_purpose: >
+      Quantifies revenue generated from upsells and plan upgrades. A growing
+      expansion revenue signals successful product-led growth.
+    interpretation_notes: >
+      Proxy measure using high-tier plans. A proper expansion metric requires
+      prior-period plan comparison, which is available in v2 cohort analysis.
+    risk_if_misread: >
+      Treating all premium-plan MRR as expansion overstates growth if these were
+      original plan choices, not upgrades.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: contraction_revenue
+    display_name: Contraction Revenue
+    category: revenue
+    formula_description: >
+      Sum of monthly_price for subscriptions with status Past Due (revenue at risk
+      of being lost due to billing failure).
+    grain: overall
+    source_datasets:
+      - subscriptions
+    required_columns_by_dataset:
+      subscriptions:
+        - monthly_price
+        - status
+    business_owner: Finance
+    business_purpose: >
+      Flags revenue that is contractually owed but not yet collected, signalling
+      billing health risk.
+    interpretation_notes: >
+      Treated as contraction proxy in v1. A downgrade-based contraction metric
+      requires prior-period plan snapshots.
+    risk_if_misread: >
+      Ignoring this metric leads to MRR overstatement and delayed churn response.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: gross_revenue_retention
+    display_name: Gross Revenue Retention (GRR)
+    category: revenue
+    formula_description: >
+      Active MRR divided by total billed MRR (Active + Past Due + Canceled revenue).
+      Bounded [0, 1].
+    grain: overall
+    source_datasets:
+      - subscriptions
+    required_columns_by_dataset:
+      subscriptions:
+        - monthly_price
+        - status
+    business_owner: Finance
+    business_purpose: >
+      Measures what percentage of possible revenue is actually being retained,
+      ignoring expansion. Core SaaS health benchmark.
+    interpretation_notes: >
+      GRR cannot exceed 1.0 (excludes expansion). A GRR below 0.85 is a warning
+      signal for most SaaS businesses.
+    risk_if_misread: >
+      Confusing GRR with NRR leads to overestimating retention when expansion
+      is masking underlying churn.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: net_revenue_retention
+    display_name: Net Revenue Retention (NRR)
+    category: revenue
+    formula_description: >
+      (Active MRR + Expansion MRR) divided by total billed MRR. Can exceed 1.0
+      if expansion outweighs churn.
+    grain: overall
+    source_datasets:
+      - subscriptions
+    required_columns_by_dataset:
+      subscriptions:
+        - monthly_price
+        - status
+        - plan
+    business_owner: Finance
+    business_purpose: >
+      The gold-standard SaaS retention metric. An NRR above 1.0 means the existing
+      customer base is growing revenue without new acquisition.
+    interpretation_notes: >
+      NRR > 1.0 indicates net-negative churn. Benchmark: elite SaaS targets >120%.
+    risk_if_misread: >
+      Using NRR without GRR hides whether growth comes from retention or expansion.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: revenue_at_risk
+    display_name: Revenue at Risk
+    category: revenue
+    formula_description: >
+      Sum of monthly_price for all subscriptions belonging to customers flagged as
+      High or Critical churn risk.
+    grain: overall
+    source_datasets:
+      - subscriptions
+    required_columns_by_dataset:
+      subscriptions:
+        - monthly_price
+        - customer_id
+        - status
+    business_owner: Finance
+    business_purpose: >
+      Quantifies the dollar value exposed to churn so finance and CS can
+      prioritise retention investment.
+    interpretation_notes: >
+      Derived from churn risk scoring — requires churn engine to run first.
+    risk_if_misread: >
+      Underestimating at-risk revenue leads to under-resourcing customer success.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  # ── Product ───────────────────────────────────────────────────────────────
+
+  - metric_name: activation_rate
+    display_name: Activation Rate
+    category: product
+    formula_description: >
+      Count of customers with cumulative key_actions > activation_threshold divided
+      by total customers. Activation threshold is 5 key actions.
+    grain: overall
+    source_datasets:
+      - customers
+      - product_usage
+    required_columns_by_dataset:
+      customers:
+        - customer_id
+      product_usage:
+        - customer_id
+        - key_actions
+    business_owner: Product
+    business_purpose: >
+      Measures what proportion of signed-up customers completed the minimum set of
+      actions indicating they derived initial value from the product.
+    interpretation_notes: >
+      Activation is the first retention lever. Low activation predicts early churn
+      within 30-90 days.
+    risk_if_misread: >
+      Using logins instead of key_actions conflates presence with engagement.
+    allowed_null_policy: fill_zero
+    enabled: true
+
+  - metric_name: usage_frequency
+    display_name: Usage Frequency
+    category: product
+    formula_description: >
+      Mean number of monthly logins per active customer across all usage records.
+    grain: overall
+    source_datasets:
+      - product_usage
+      - customers
+    required_columns_by_dataset:
+      product_usage:
+        - customer_id
+        - logins
+      customers:
+        - customer_id
+        - is_active
+    business_owner: Product
+    business_purpose: >
+      Tracks how frequently customers engage with the product. Declining frequency
+      is an early churn signal.
+    interpretation_notes: >
+      Segment by plan tier — Enterprise customers may have lower individual logins
+      but higher team logins.
+    risk_if_misread: >
+      Averaging across all customers including inactive ones deflates frequency.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: key_action_rate
+    display_name: Key Action Rate
+    category: product
+    formula_description: >
+      Total key_actions divided by total logins across all active customers.
+      Measures depth of engagement per session.
+    grain: overall
+    source_datasets:
+      - product_usage
+      - customers
+    required_columns_by_dataset:
+      product_usage:
+        - customer_id
+        - key_actions
+        - logins
+      customers:
+        - customer_id
+        - is_active
+    business_owner: Product
+    business_purpose: >
+      Measures how productively customers use each session. Low key action rate
+      indicates friction or lack of product discovery.
+    interpretation_notes: >
+      Use alongside feature adoption to diagnose where in the product flow
+      customers disengage.
+    risk_if_misread: >
+      High key_action totals for a single power-user segment can mask poor
+      broader adoption.
+    allowed_null_policy: fill_zero
+    enabled: true
+
+  - metric_name: engagement_drop_rate
+    display_name: Engagement Drop Rate
+    category: product
+    formula_description: >
+      Proportion of active customers whose last-month logins are below 20% of
+      their personal 3-month average, indicating a significant engagement drop.
+    grain: overall
+    source_datasets:
+      - product_usage
+      - customers
+    required_columns_by_dataset:
+      product_usage:
+        - customer_id
+        - logins
+        - date
+      customers:
+        - customer_id
+        - is_active
+    business_owner: Product
+    business_purpose: >
+      Identifies customers in active decline before they reach the churned state.
+      Key early-warning intervention trigger.
+    interpretation_notes: >
+      Drop rate should be trended monthly. A spike in drop rate precedes churn
+      spikes by 4-8 weeks.
+    risk_if_misread: >
+      Point-in-time measurement without trend context misses seasonal patterns.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: feature_adoption_proxy
+    display_name: Feature Adoption Proxy
+    category: product
+    formula_description: >
+      Mean number of features_used per active customer per usage record.
+    grain: overall
+    source_datasets:
+      - product_usage
+      - customers
+    required_columns_by_dataset:
+      product_usage:
+        - customer_id
+        - features_used
+      customers:
+        - customer_id
+        - is_active
+    business_owner: Product
+    business_purpose: >
+      Approximates how broadly customers explore the product feature set. Sticky
+      customers tend to use more features.
+    interpretation_notes: >
+      A proxy because features_used is a count, not specific feature names.
+      v2 should track named feature adoption.
+    risk_if_misread: >
+      High features_used count does not guarantee adoption of high-value features.
+    allowed_null_policy: fill_zero
+    enabled: true
+
+  # ── Customer ──────────────────────────────────────────────────────────────
+
+  - metric_name: customer_churn_rate
+    display_name: Customer Churn Rate
+    category: customer
+    formula_description: >
+      Count of customers with Canceled subscriptions divided by total customers.
+    grain: overall
+    source_datasets:
+      - customers
+      - subscriptions
+    required_columns_by_dataset:
+      customers:
+        - customer_id
+      subscriptions:
+        - customer_id
+        - status
+    business_owner: Product
+    business_purpose: >
+      Primary retention health metric. Sustained churn above 3% monthly
+      signals structural product or market fit issues.
+    interpretation_notes: >
+      Period churn requires a start/end snapshot. This is a stock measure using
+      current subscription states.
+    risk_if_misread: >
+      Using total customers including trials in denominator understates churn rate.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: retention_rate
+    display_name: Retention Rate
+    category: customer
+    formula_description: >
+      1 minus customer_churn_rate. Proportion of customers currently Active.
+    grain: overall
+    source_datasets:
+      - customers
+      - subscriptions
+    required_columns_by_dataset:
+      customers:
+        - customer_id
+      subscriptions:
+        - customer_id
+        - status
+    business_owner: Product
+    business_purpose: >
+      Complement of churn rate. Retention rate above 97% monthly is a strong
+      SaaS health signal.
+    interpretation_notes: >
+      Retention rate = 1 - churn rate. Tracked together they validate each other.
+    risk_if_misread: >
+      High headline retention can mask segment-level retention differences.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: average_nps
+    display_name: Average Net Promoter Score (NPS)
+    category: customer
+    formula_description: >
+      Mean of all NPS score values collected. Scores range 0-10.
+    grain: overall
+    source_datasets:
+      - nps_scores
+    required_columns_by_dataset:
+      nps_scores:
+        - score
+        - customer_id
+    business_owner: Customer Success
+    business_purpose: >
+      Measures customer sentiment and likelihood to recommend. Strong leading
+      indicator of organic growth and churn risk.
+    interpretation_notes: >
+      Scores 0-6 are detractors, 7-8 passives, 9-10 promoters. True NPS = %promoters - %detractors.
+      This metric reports mean score as a simpler signal.
+    risk_if_misread: >
+      Low response rate (under 30%) makes mean NPS unreliable as a population estimate.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  - metric_name: support_burden
+    display_name: Support Burden
+    category: customer
+    formula_description: >
+      Mean number of support tickets per active customer.
+    grain: overall
+    source_datasets:
+      - support_tickets
+      - customers
+    required_columns_by_dataset:
+      support_tickets:
+        - customer_id
+        - ticket_id
+      customers:
+        - customer_id
+        - is_active
+    business_owner: Customer Success
+    business_purpose: >
+      Measures how much operational support load the customer base generates.
+      High support burden correlates with poor product experience and churn risk.
+    interpretation_notes: >
+      Segment by plan — Enterprise customers will have higher ticket volumes
+      by design due to contract scope.
+    risk_if_misread: >
+      Using raw ticket count without normalising by customer count
+      biases toward larger customer bases.
+    allowed_null_policy: fill_zero
+    enabled: true
+
+  - metric_name: time_to_activation
+    display_name: Time to Activation
+    category: customer
+    formula_description: >
+      Mean number of days between signup_date and the date of the first recorded
+      key_action > 0 in product_usage. Only calculated for activated customers.
+    grain: overall
+    source_datasets:
+      - customers
+      - product_usage
+    required_columns_by_dataset:
+      customers:
+        - customer_id
+        - signup_date
+      product_usage:
+        - customer_id
+        - key_actions
+        - date
+    business_owner: Product
+    business_purpose: >
+      Measures onboarding velocity. Shorter time to activation correlates with
+      higher 90-day retention. A key lever for onboarding optimisation.
+    interpretation_notes: >
+      Only consider customers who have activated. Non-activated customers are
+      reported separately as activation rate denominator.
+    risk_if_misread: >
+      Including non-activated customers with no activation date skews the
+      mean toward infinity or NaN.
+    allowed_null_policy: drop_row
+    enabled: true
+
+  # ── Business Health — Profitability ────────────────────────────────────────
+
+  - metric_name: gross_profit
+    display_name: Gross Profit
+    category: business_health_profitability
+    formula_description: Revenue - Cost of Goods Sold
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: >
+      Measures profit after deducting direct production or delivery costs.
+    interpretation_notes: Negative gross profit means COGS exceeds revenue.
+    risk_if_misread: Excluding indirect costs overstates gross profit.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: gross_margin
+    display_name: Gross Margin
+    category: business_health_profitability
+    formula_description: Gross Profit / Revenue
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: Measures production/delivery efficiency as a decimal 0-1.
+    interpretation_notes: SaaS gross margins typically range from 0.65 to 0.85.
+    risk_if_misread: Including non-COGS costs deflates gross margin.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: operating_margin
+    display_name: Operating Margin
+    category: business_health_profitability
+    formula_description: Operating Profit / Revenue
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: Tracks core operational profitability before interest and taxes.
+    interpretation_notes: Negative margin means operating costs exceed revenue.
+    risk_if_misread: Excluding one-time charges inflates margin.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: net_margin
+    display_name: Net Margin
+    category: business_health_profitability
+    formula_description: Net Profit / Revenue
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: Bottom-line profitability after all expenses.
+    interpretation_notes: The final measure of overall business profitability.
+    risk_if_misread: Excluding tax or interest expense overstates net margin.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: ebitda
+    display_name: EBITDA
+    category: business_health_profitability
+    formula_description: Net Income + Interest + Taxes + Depreciation + Amortization
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: >
+      Approximates operational cash generation. Widely used for cross-company
+      comparison and valuation multiples.
+    interpretation_notes: Does not represent actual cash flow.
+    risk_if_misread: Treating EBITDA as free cash flow ignores capex and working capital.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: roi
+    display_name: Return on Investment (ROI)
+    category: business_health_profitability
+    formula_description: (Gain - Cost) / Cost
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: Measures the profitability of an investment relative to its cost.
+    interpretation_notes: Positive ROI means the investment generated profit.
+    risk_if_misread: Ignoring time horizon inflates ROI for long-duration investments.
+    allowed_null_policy: error
+    enabled: true
+
+  # ── Business Health — Revenue ───────────────────────────────────────────────
+
+  - metric_name: annual_recurring_revenue
+    display_name: Annual Recurring Revenue (ARR)
+    category: business_health_revenue
+    formula_description: MRR x 12
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: Annualises the recurring revenue base for investor reporting.
+    interpretation_notes: >
+      ARR assumes no growth or contraction over the year.
+    risk_if_misread: Using total revenue instead of MRR inflates ARR.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: revenue_growth_rate
+    display_name: Revenue Growth Rate
+    category: business_health_revenue
+    formula_description: (Current Revenue - Previous Revenue) / |Previous Revenue|
+    grain: period-over-period
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: Measures the rate of revenue expansion or contraction between periods.
+    interpretation_notes: Compare to industry benchmarks.
+    risk_if_misread: Comparing different period lengths distorts the rate.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: revenue_concentration
+    display_name: Revenue Concentration
+    category: business_health_revenue
+    formula_description: Largest Customer Revenue / Total Revenue
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: >
+      Identifies dependency on individual customers. High concentration increases risk.
+    interpretation_notes: ">20% from a single customer is typically a risk flag."
+    risk_if_misread: Measuring by contract value rather than recognised revenue is misleading.
+    allowed_null_policy: error
+    enabled: true
+
+  # ── Business Health — Unit Economics ────────────────────────────────────────
+
+  - metric_name: customer_lifetime_value
+    display_name: Customer Lifetime Value (LTV)
+    category: business_health_unit_economics
+    formula_description: (ARPU x Gross Margin) / Churn Rate
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: >
+      Estimates the total gross-margin-adjusted revenue expected from a customer.
+    interpretation_notes: Returns 0.0 when churn_rate is zero.
+    risk_if_misread: Using total revenue instead of gross margin overstates LTV.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: customer_acquisition_cost
+    display_name: Customer Acquisition Cost (CAC)
+    category: business_health_unit_economics
+    formula_description: (Marketing Spend + Sales Spend) / New Customers
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: Total sales and marketing investment to acquire one new customer.
+    interpretation_notes: Pair with LTV:CAC ratio. A ratio < 3 signals a broken GTM.
+    risk_if_misread: Excluding any acquisition spend component understates CAC.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: ltv_to_cac_ratio
+    display_name: LTV:CAC Ratio
+    category: business_health_unit_economics
+    formula_description: LTV / CAC
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: >
+      The primary unit economics health metric. A ratio >= 3.0 is the SaaS benchmark.
+    interpretation_notes: Values < 1.0 mean the business is destroying value on acquisition.
+    risk_if_misread: A high ratio driven by very low CAC may indicate under-investment.
+    allowed_null_policy: error
+    enabled: true
+
+  # ── Business Health — Cash Flow ─────────────────────────────────────────────
+
+  - metric_name: free_cash_flow
+    display_name: Free Cash Flow (FCF)
+    category: business_health_cashflow
+    formula_description: Operating Cash Flow - Capital Expenditures
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: Cash available after sustaining and expanding the asset base.
+    interpretation_notes: Negative FCF is acceptable in high-growth phases.
+    risk_if_misread: Confusing FCF with net income ignores non-cash and capex items.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: runway_months
+    display_name: Cash Runway (Months)
+    category: business_health_cashflow
+    formula_description: Cash Balance / Monthly Burn Rate
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: >
+      Months the business can operate before exhausting cash reserves.
+    interpretation_notes: <6 months is critical; >18 months provides strategic flexibility.
+    risk_if_misread: Using gross burn instead of net burn overstates urgency.
+    allowed_null_policy: error
+    enabled: true
+
+  # ── Business Health — Growth ────────────────────────────────────────────────
+
+  - metric_name: customer_growth_rate
+    display_name: Customer Growth Rate
+    category: business_health_growth
+    formula_description: (Current Customers - Previous Customers) / |Previous Customers|
+    grain: period-over-period
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Growth
+    business_purpose: Tracks the rate at which the customer base expands or contracts.
+    interpretation_notes: Evaluate alongside revenue growth to detect downmarket drift.
+    risk_if_misread: Counting trials as customers inflates the rate.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: growth_efficiency
+    display_name: Growth Efficiency
+    category: business_health_growth
+    formula_description: Revenue Growth / Sales and Marketing Spend
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Growth
+    business_purpose: Revenue growth generated per dollar of S&M investment.
+    interpretation_notes: Similar to the Magic Number. Track over rolling 12-month periods.
+    risk_if_misread: Including expansion revenue inflates the efficiency metric.
+    allowed_null_policy: error
+    enabled: true
+
+  # ── Business Health — Efficiency ────────────────────────────────────────────
+
+  - metric_name: revenue_per_employee
+    display_name: Revenue Per Employee
+    category: business_health_efficiency
+    formula_description: Total Revenue / Employee Count
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Operations
+    business_purpose: Primary operational productivity benchmark.
+    interpretation_notes: SaaS benchmark is typically $150k-$300k+ per employee at scale.
+    risk_if_misread: Excluding contractors understates productivity.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: sales_efficiency
+    display_name: Sales Efficiency (Magic Number)
+    category: business_health_efficiency
+    formula_description: New Revenue / Sales and Marketing Spend
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Operations
+    business_purpose: Measures how effectively S&M spend converts to new revenue.
+    interpretation_notes: Values > 1.0 suggest a profitable go-to-market motion.
+    risk_if_misread: Including renewal revenue in new revenue inflates the metric.
+    allowed_null_policy: error
+    enabled: true
+
+  # ── Business Health — Risk ──────────────────────────────────────────────────
+
+  - metric_name: customer_concentration_risk
+    display_name: Customer Concentration Risk
+    category: business_health_risk
+    formula_description: Largest Customer Revenue / Total Revenue
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Finance
+    business_purpose: Quantifies the revenue risk from over-reliance on a single customer.
+    interpretation_notes: ">20% is a common red-flag threshold."
+    risk_if_misread: Using ARR instead of recognised revenue misrepresents timing risk.
+    allowed_null_policy: error
+    enabled: true
+
+  - metric_name: churn_exposure
+    display_name: Churn Exposure
+    category: business_health_risk
+    formula_description: Revenue At Risk / Total Revenue
+    grain: overall
+    source_datasets: []
+    required_columns_by_dataset: {}
+    business_owner: Customer Success
+    business_purpose: Proportion of total revenue threatened by high-risk customers.
+    interpretation_notes: ">10% churn exposure warrants immediate CS intervention."
+    risk_if_misread: Using customer count instead of revenue understates high-value impact.
+    allowed_null_policy: error
+    enabled: true

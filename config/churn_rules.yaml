@@ -1,0 +1,51 @@
+rules:
+
+  - rule_id: CR_001
+    signal_name: logins_last_period
+    description: Customer has very low total login activity — strong usage decline signal.
+    driver_label: Usage Decline
+    threshold: 10
+    operator: less_than
+    weight: 0.35
+    enabled: true
+
+  - rule_id: CR_002
+    signal_name: latest_nps_score
+    description: Customer's most recent NPS score is in the detractor range (0–6).
+    driver_label: Low NPS
+    threshold: 6
+    operator: less_or_equal
+    weight: 0.20
+    enabled: true
+
+  - rule_id: CR_003
+    signal_name: failed_payment_count
+    description: Customer has at least one recent failed payment transaction.
+    driver_label: Failed Payments
+    threshold: 1
+    operator: greater_or_equal
+    weight: 0.40
+    enabled: true
+
+  - rule_id: CR_004
+    signal_name: support_ticket_count
+    description: Customer has raised an above-average number of support tickets.
+    driver_label: High Support Burden
+    threshold: 3
+    operator: greater_or_equal
+    weight: 0.20
+    enabled: true
+
+  - rule_id: CR_005
+    signal_name: key_actions_last_period
+    description: Customer has taken very few meaningful product actions recently.
+    driver_label: Low Product Engagement
+    threshold: 5
+    operator: less_than
+    weight: 0.25
+    enabled: true
+
+risk_bands:
+  critical_threshold: 0.65
+  high_threshold: 0.40
+  medium_threshold: 0.20

@@ -1,0 +1,109 @@
+rules:
+
+  - rule_id: REC_001
+    trigger_type: churn_risk
+    trigger_field: risk_band
+    operator: equals
+    threshold: Critical
+    filter_field: segment
+    filter_operator: equals
+    filter_value: Enterprise
+    recommendation_title: Executive Retention Outreach — Critical Enterprise Account
+    category: retention
+    suggested_owner: Account Executive
+    expected_action: >
+      Schedule executive business review within 5 business days. Offer dedicated
+      success resources and a customised roadmap review.
+    confidence_weight: 0.85
+    severity_weight: 3.0
+    enabled: true
+
+  - rule_id: REC_002
+    trigger_type: leakage
+    trigger_field: leakage_type
+    operator: equals
+    threshold: Failed Payment
+    filter_field: null
+    filter_operator: null
+    filter_value: null
+    recommendation_title: Automated Payment Recovery — Failed Transaction
+    category: billing_recovery
+    suggested_owner: Billing Automation
+    expected_action: >
+      Trigger dunning sequence: retry payment after 3 days, send payment update
+      email after 5 days, escalate to CSM after 10 days.
+    confidence_weight: 0.95
+    severity_weight: 2.0
+    enabled: true
+
+  - rule_id: REC_003
+    trigger_type: churn_risk
+    trigger_field: risk_band
+    operator: equals
+    threshold: High
+    filter_field: segment
+    filter_operator: equals
+    filter_value: SMB
+    recommendation_title: SMB Re-engagement Offer — High Churn Risk
+    category: retention
+    suggested_owner: Marketing Automation
+    expected_action: >
+      Send personalised in-app re-engagement campaign with 15% discount for
+      3-month commitment. Follow up with feature tutorial email sequence.
+    confidence_weight: 0.60
+    severity_weight: 1.5
+    enabled: true
+
+  - rule_id: REC_004
+    trigger_type: churn_risk
+    trigger_field: driver
+    operator: contains
+    threshold: Failed Payments
+    filter_field: null
+    filter_operator: null
+    filter_value: null
+    recommendation_title: Proactive Billing Intervention — Payment Risk Driver Detected
+    category: billing_recovery
+    suggested_owner: Customer Success Manager
+    expected_action: >
+      Contact customer directly to confirm payment details and offer alternative
+      payment methods before the subscription lapses.
+    confidence_weight: 0.80
+    severity_weight: 2.5
+    enabled: true
+
+  - rule_id: REC_005
+    trigger_type: leakage
+    trigger_field: leakage_type
+    operator: equals
+    threshold: Unpaid Active Subscription
+    filter_field: null
+    filter_operator: null
+    filter_value: null
+    recommendation_title: Past-Due Account Escalation
+    category: billing_recovery
+    suggested_owner: Finance Operations
+    expected_action: >
+      Escalate to finance for account hold review. Send formal payment demand
+      notice and suspend non-critical features until resolved.
+    confidence_weight: 0.90
+    severity_weight: 2.0
+    enabled: true
+
+  - rule_id: REC_006
+    trigger_type: churn_risk
+    trigger_field: risk_band
+    operator: equals
+    threshold: Critical
+    filter_field: segment
+    filter_operator: equals
+    filter_value: Mid-Market
+    recommendation_title: Mid-Market Retention Escalation — Critical Risk
+    category: retention
+    suggested_owner: Customer Success Manager
+    expected_action: >
+      Immediate CSM outreach. Conduct health-check call and offer feature
+      enablement session to re-establish value.
+    confidence_weight: 0.75
+    severity_weight: 2.5
+    enabled: true

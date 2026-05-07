@@ -1,0 +1,5 @@
+metric_name,target_value,date
+MRR,100000.0,2026-05-01
+Churn Rate,0.02,2026-05-01
+Activation Rate,0.85,2026-05-01
+NPS,40.0,2026-05-01

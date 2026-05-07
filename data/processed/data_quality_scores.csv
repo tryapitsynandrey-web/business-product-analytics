@@ -1,0 +1,9 @@
+dataset,completeness_score,uniqueness_score,validity_score,referential_integrity_score,overall_score,status,business_risk
+acquisition_channels,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
+customers,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
+nps_scores,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
+product_usage,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
+subscriptions,0.9226,1.0,1.0,1.0,0.9806,Good,Low — dataset meets quality standards.
+support_tickets,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
+targets,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
+transactions,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.

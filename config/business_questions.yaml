@@ -1,0 +1,18 @@
+questions:
+  - question: "Which segments are driving our highest revenue growth?"
+    required_metrics: ["MRR"]
+    output_modules: ["revenue_analysis"]
+    stakeholder_type: "Executive"
+    expected_business_decision: "Resource allocation for marketing and sales."
+
+  - question: "Are we losing Enterprise customers?"
+    required_metrics: ["Churn Rate"]
+    output_modules: ["churn_analysis", "cohort_diagnostics"]
+    stakeholder_type: "Product"
+    expected_business_decision: "Roadmap prioritization for Enterprise features."
+
+  - question: "Which customers are most at risk of churning next month?"
+    required_metrics: ["Usage", "NPS", "Support Tickets"]
+    output_modules: ["churn_risk", "recommendation_engine"]
+    stakeholder_type: "Customer Success"
+    expected_business_decision: "Prioritize outreach and interventions."

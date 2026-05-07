@@ -1,0 +1,133 @@
+.
+├── .gitattributes
+├── .gitignore
+├── .markdownlint.json
+├── README.md
+├── config
+│   ├── .env.example
+│   ├── business_questions.yaml
+│   ├── churn_rules.yaml
+│   ├── config.yaml
+│   ├── metric_catalog.yaml
+│   └── recommendation_rules.yaml
+├── data
+│   ├── exports
+│   │   ├── churn_risk_profiles.csv
+│   │   ├── decision_traces.csv
+│   │   ├── recommendations.csv
+│   │   └── revenue_leakage.csv
+│   ├── processed
+│   │   ├── customer_360.csv
+│   │   ├── data_quality_scores.csv
+│   │   ├── intervention_plan.csv
+│   │   └── kpi_summary.csv
+│   └── synthetic
+│       ├── acquisition_channels.csv
+│       ├── customers.csv
+│       ├── nps_scores.csv
+│       ├── product_usage.csv
+│       ├── subscriptions.csv
+│       ├── support_tickets.csv
+│       ├── targets.csv
+│       └── transactions.csv
+├── notebooks
+│   └── exploratory_analysis.ipynb
+├── project_tree.txt
+├── pyproject.toml
+├── reports
+│   ├── data_quality_report.md
+│   ├── executive_summary.md
+│   ├── intervention_plan.md
+│   ├── metric_definitions.md
+│   └── risk_register.md
+├── requirements.txt
+├── src
+│   ├── adapters
+│   │   ├── __init__.py
+│   │   ├── data_loader.py
+│   │   ├── data_writer.py
+│   │   └── synthetic_data_generator.py
+│   ├── core
+│   │   ├── __init__.py
+│   │   ├── anomaly_detection.py
+│   │   ├── business_health
+│   │   │   ├── __init__.py
+│   │   │   ├── _utils.py
+│   │   │   ├── business_health_score.py
+│   │   │   ├── cashflow.py
+│   │   │   ├── efficiency_metrics.py
+│   │   │   ├── growth_metrics.py
+│   │   │   ├── profitability.py
+│   │   │   ├── revenue_metrics.py
+│   │   │   ├── risk_metrics.py
+│   │   │   └── unit_economics.py
+│   │   ├── churn_analysis.py
+│   │   ├── churn_risk.py
+│   │   ├── cohort_analysis.py
+│   │   ├── cohort_diagnostics.py
+│   │   ├── customer_360.py
+│   │   ├── data_quality_score.py
+│   │   ├── decision_trace.py
+│   │   ├── funnel_analysis.py
+│   │   ├── health_score.py
+│   │   ├── intervention_planner.py
+│   │   ├── kpi_engine.py
+│   │   ├── metric_governance.py
+│   │   ├── metric_lineage.py
+│   │   ├── pipeline.py
+│   │   ├── prioritization.py
+│   │   ├── recommendation_engine.py
+│   │   ├── report_generator.py
+│   │   ├── revenue_analysis.py
+│   │   ├── revenue_leakage.py
+│   │   ├── root_cause_analysis.py
+│   │   ├── scenario_simulator.py
+│   │   └── segmentation.py
+│   ├── main.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── customer.py
+│   │   ├── enums.py
+│   │   ├── metrics.py
+│   │   ├── recommendation.py
+│   │   ├── risk_profile.py
+│   │   ├── scenario.py
+│   │   ├── schemas.py
+│   │   ├── subscription.py
+│   │   └── transaction.py
+│   └── utils
+│       ├── __init__.py
+│       ├── helpers.py
+│       ├── logging.py
+│       ├── paths.py
+│       └── validation.py
+└── tests
+    ├── __init__.py
+    ├── test_anomaly_detection.py
+    ├── test_business_health_score.py
+    ├── test_cashflow_metrics.py
+    ├── test_churn_analysis.py
+    ├── test_churn_risk.py
+    ├── test_cohort_analysis.py
+    ├── test_customer_360.py
+    ├── test_data_quality_score.py
+    ├── test_decision_trace.py
+    ├── test_efficiency_metrics.py
+    ├── test_funnel_analysis.py
+    ├── test_growth_metrics.py
+    ├── test_health_score.py
+    ├── test_intervention_planner.py
+    ├── test_kpi_engine.py
+    ├── test_metric_governance.py
+    ├── test_pipeline.py
+    ├── test_prioritization.py
+    ├── test_profitability_metrics.py
+    ├── test_recommendation_engine.py
+    ├── test_revenue_analysis.py
+    ├── test_revenue_business_metrics.py
+    ├── test_revenue_leakage.py
+    ├── test_scenario_simulator.py
+    ├── test_unit_economics.py
+    └── test_validation.py
+
+15 directories, 116 files

@@ -1,0 +1,159 @@
+project:
+  name: ProductPulse
+  version: "1.0.0"
+
+reproducibility:
+  random_seed: 42
+
+paths:
+  data_dir: data
+  synthetic_data_dir: data/synthetic
+  processed_data_dir: data/processed
+  exports_dir: data/exports
+  reports_dir: reports
+
+synthetic_data:
+  num_customers: 1000
+
+required_datasets:
+  - customers
+  - subscriptions
+  - transactions
+  - product_usage
+  - support_tickets
+  - nps_scores
+  - acquisition_channels
+  - targets
+
+required_columns:
+  customers:
+    - customer_id
+    - company_name
+    - segment
+    - country
+    - signup_date
+    - acquisition_channel
+    - is_active
+  subscriptions:
+    - subscription_id
+    - customer_id
+    - plan
+    - status
+    - start_date
+    - monthly_price
+    - billing_cycle
+  transactions:
+    - transaction_id
+    - customer_id
+    - subscription_id
+    - amount
+    - currency
+    - status
+    - transaction_date
+  product_usage:
+    - usage_id
+    - customer_id
+    - date
+    - logins
+    - key_actions
+  support_tickets:
+    - ticket_id
+    - customer_id
+    - date_opened
+    - status
+  nps_scores:
+    - score_id
+    - customer_id
+    - date
+    - score
+  acquisition_channels:
+    - channel_name
+    - cost_per_acquisition
+  targets:
+    - metric_name
+    - target_value
+    - date
+
+primary_keys:
+  customers: customer_id
+  subscriptions: subscription_id
+  transactions: transaction_id
+  product_usage: usage_id
+  support_tickets: ticket_id
+  nps_scores: score_id
+
+date_columns:
+  customers:
+    - signup_date
+  subscriptions:
+    - start_date
+  transactions:
+    - transaction_date
+  product_usage:
+    - date
+  support_tickets:
+    - date_opened
+  nps_scores:
+    - date
+  targets:
+    - date
+
+referential_integrity:
+  - child_dataset: subscriptions
+    child_key: customer_id
+    parent_dataset: customers
+    parent_key: customer_id
+  - child_dataset: transactions
+    child_key: customer_id
+    parent_dataset: customers
+    parent_key: customer_id
+  - child_dataset: product_usage
+    child_key: customer_id
+    parent_dataset: customers
+    parent_key: customer_id
+  - child_dataset: support_tickets
+    child_key: customer_id
+    parent_dataset: customers
+    parent_key: customer_id
+  - child_dataset: nps_scores
+    child_key: customer_id
+    parent_dataset: customers
+    parent_key: customer_id
+
+domain_constraints:
+  allowed_subscription_statuses:
+    - Active
+    - Past Due
+    - Canceled
+    - Expired
+    - Trial
+  allowed_payment_statuses:
+    - Success
+    - Failed
+    - Refunded
+  nps:
+    min_score: 0
+    max_score: 10
+  non_negative_columns:
+    transactions:
+      - amount
+    subscriptions:
+      - monthly_price
+    product_usage:
+      - logins
+      - key_actions
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+pipeline:
+  generate_synthetic_data: true
+  run_validation: true
+  write_outputs: true
+
+persistence:
+  sqlite:
+    enabled: false
+    path: data/local/productpulse.db
+    if_exists: replace

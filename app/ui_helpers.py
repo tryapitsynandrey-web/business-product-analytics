@@ -1,18 +1,18 @@
 import pandas as pd
 from typing import Any, Optional
 
-def format_currency(value: float) -> str:
+def format_currency(value: object) -> str:
     """Format a float as currency (e.g., $1,234.56)."""
     try:
-        val = float(value)
+        val = float(value)  # type: ignore
         return f"${val:,.2f}"
     except (ValueError, TypeError):
         return "N/A"
 
-def format_percentage(value: float) -> str:
+def format_percentage(value: object) -> str:
     """Format a float as percentage (e.g., 15.5%)."""
     try:
-        val = float(value)
+        val = float(value)  # type: ignore
         return f"{val * 100:.1f}%"
     except (ValueError, TypeError):
         return "N/A"
@@ -34,7 +34,7 @@ def select_metric_value(df: pd.DataFrame, metric_name: str, value_column: str = 
         
     return filtered.iloc[0][value_column]
 
-def status_badge_text(status: str) -> str:
+def status_badge_text(status: object) -> str:
     """Return a stylized or standard string based on status text."""
     if not isinstance(status, str):
         return "Unknown"
@@ -49,12 +49,12 @@ def status_badge_text(status: str) -> str:
         
     return status
 
-def format_file_size(size_bytes: int | float | None) -> str:
+def format_file_size(size_bytes: object) -> str:
     """Format bytes into readable string."""
     if size_bytes is None:
         return "Unknown"
     try:
-        size = float(size_bytes)
+        size = float(size_bytes)  # type: ignore
         for unit in ['B', 'KB', 'MB', 'GB']:
             if size < 1024.0:
                 return f"{size:.1f} {unit}"
@@ -63,12 +63,13 @@ def format_file_size(size_bytes: int | float | None) -> str:
     except (ValueError, TypeError):
         return "Unknown"
 
-def format_timestamp(timestamp: float | None) -> str:
+def format_timestamp(timestamp: object) -> str:
     """Format UNIX timestamp to human readable string."""
     if timestamp is None:
         return "Unknown"
     try:
-        dt = pd.to_datetime(timestamp, unit='s')
+        ts_float = float(timestamp)  # type: ignore
+        dt = pd.to_datetime(ts_float, unit='s')
         return dt.strftime("%Y-%m-%d %H:%M:%S")
     except (ValueError, TypeError):
         return "Unknown"
@@ -148,7 +149,7 @@ def prepare_status_counts(df: pd.DataFrame | None, status_column: str = "status"
     counts = df[status_column].value_counts().to_frame("count")
     return counts
 
-def prepare_category_counts(df: pd.DataFrame | None, category_column: str) -> pd.DataFrame:
+def prepare_category_counts(df: pd.DataFrame | None, category_column: str = "category") -> pd.DataFrame:
     """Prepare a count of categories for a bar chart."""
     if df is None or df.empty or category_column not in df.columns:
         return pd.DataFrame()

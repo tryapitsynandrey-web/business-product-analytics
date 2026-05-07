@@ -1,5 +1,5 @@
 area,score,status,explanation
 Customer Retention,0.0,Critical,retention_rate is 0.70
 User Activation,100.0,Healthy,activation_rate is 0.98
-Support Load,11.477761836441891,Critical,support_burden is 2.77
+Support Load,10.97560975609757,Critical,support_burden is 2.78
 Data Quality,100.0,Healthy,data_quality_score is 1.00

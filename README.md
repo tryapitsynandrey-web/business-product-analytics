@@ -150,7 +150,6 @@ and what the recommended intervention is.
 
 ## Future Improvements
 
-- Integration with DuckDB or SQLite for scalable local querying.
 - Implementation of an LLM summarization layer for executive reports.
 - Advanced statistical cohort retention modeling.
 

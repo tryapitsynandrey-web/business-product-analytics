@@ -1,0 +1,81 @@
+# Release Checklist
+
+Before tagging a new release or merging a major feature, run the following verification steps:
+
+## 1. Environment Verification
+
+```bash
+source .venv/bin/activate
+export PYTHONPATH=src:.
+```
+
+## 2. Empty File & Temporary Artifact Check
+
+```bash
+find src tests app -type f -name "*.py" -size 0 -print
+find . -maxdepth 3 -type f \( -name "*.tmp" -o -name "*.log" -o -name ".DS_Store" \) -print
+```
+
+*Ensure no empty files or unignored temporaries exist.*
+
+## 3. Forbidden Logic Check
+
+```bash
+grep -R "from src\." src tests app
+grep -R "eval(" src tests app
+grep -R "pd.read_csv\|read_csv" app
+grep -R "SELECT\|INSERT\|UPDATE\|DELETE\|DROP\|CREATE" app
+```
+
+*Ensure the UI does not bypass the adapter layer or use raw queries.*
+
+## 4. Privacy & Dependency Check
+
+```bash
+grep -R "requests\|httpx\|urllib\|openai\|api_key\|secret\|telemetry" src config app README.md
+grep -R "plotly\|altair\|dash" app requirements.txt README.md
+```
+
+*Ensure no external network calls or heavy UI dependencies have crept in.*
+
+## 5. Automated Tests
+
+```bash
+python -m compileall src tests app
+python -m pytest -v
+```
+
+*Ensure 100% test pass rate.*
+
+## 6. End-to-End Pipeline
+
+```bash
+python src/main.py
+```
+
+*Verify successful synthetic data generation and artifact creation.*
+
+## 7. Markdown Linting
+
+```bash
+npx markdownlint-cli "reports/*.md" "README.md" "*.md"
+```
+
+*Ensure clean documentation formatting.*
+
+## 8. Dashboard Manual Check
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
+*Click through all sidebar tabs and interact with filters.*
+
+## 9. Git Status
+
+```bash
+git status --short
+git diff --stat
+```
+
+*Ensure a clean working tree.*

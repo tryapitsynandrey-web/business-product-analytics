@@ -8,887 +8,882 @@ Generated: 2026-05-08
 
 | ID | Title | Priority | Segment | Revenue Impact | Effort | Owner |
 | --- | --- | --- | --- | --- | --- | --- |
-| IV-9DB790E6 | Automated Payment Recovery — Failed Transaction | Critical | SMB | $5,997 | Low | Billing Automation |
-| IV-625831FB | Automated Payment Recovery — Failed Transaction | High | SMB | $3,998 | Low | Billing Automation |
-| IV-6D274649 | Automated Payment Recovery — Failed Transaction | High | Mid-Market | $3,998 | Low | Billing Automation |
-| IV-638D197D | Automated Payment Recovery — Failed Transaction | High | SMB | $3,998 | Low | Billing Automation |
-| IV-825FC3AF | Automated Payment Recovery — Failed Transaction | High | Startup | $3,998 | Low | Billing Automation |
-| IV-D556EAB7 | Automated Payment Recovery — Failed Transaction | High | Mid-Market | $3,998 | Low | Billing Automation |
-| IV-68E184D8 | Automated Payment Recovery — Failed Transaction | High | Startup | $3,998 | Low | Billing Automation |
-| IV-4C3C5B3E | Automated Payment Recovery — Failed Transaction | High | Startup | $3,998 | Low | Billing Automation |
-| IV-D8B55F45 | Automated Payment Recovery — Failed Transaction | High | SMB | $3,998 | Low | Billing Automation |
-| IV-E1928BF8 | Automated Payment Recovery — Failed Transaction | High | SMB | $3,998 | Low | Billing Automation |
-| IV-D7A15378 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
-| IV-36BE2AC7 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-3E0010AE | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
-| IV-E22A545A | Automated Payment Recovery — Failed Transaction | High | Mid-Market | $1,999 | Low | Billing Automation |
-| IV-9241D19E | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
-| IV-A3C50A8E | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,999 | Low | Billing Automation |
-| IV-74F68209 | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,999 | Low | Billing Automation |
-| IV-3592F40A | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-DC6A2748 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-A2E2ED8A | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-DFD228FA | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
-| IV-95529E56 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
-| IV-B31AFEA3 | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,999 | Low | Billing Automation |
-| IV-06D25CAE | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-2B5A10C2 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-69B40771 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-DF5899B9 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-310B04B6 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-D796689D | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-DFCF0AA2 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-36DF6098 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
-| IV-52655058 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
-| IV-F00C8575 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-FE2AD07B | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-2B57FD34 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
-| IV-69B7A95D | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,999 | Low | Billing Automation |
-| IV-574F30CC | Past-Due Account Escalation | High | SMB | $1,999 | Low | Finance Operations |
-| IV-5DF6E758 | Past-Due Account Escalation | High | Startup | $1,999 | Low | Finance Operations |
-| IV-0A7EE564 | Past-Due Account Escalation | High | SMB | $1,999 | Low | Finance Operations |
-| IV-94F02495 | Past-Due Account Escalation | High | Startup | $1,999 | Low | Finance Operations |
-| IV-41F524E9 | Past-Due Account Escalation | High | Enterprise | $1,999 | Low | Finance Operations |
-| IV-F1CD813D | Past-Due Account Escalation | High | Startup | $1,999 | Low | Finance Operations |
-| IV-07B6101A | Automated Payment Recovery — Failed Transaction | High | SMB | $1,996 | Low | Billing Automation |
-| IV-B95CB323 | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,996 | Low | Billing Automation |
-| IV-15ED506B | Automated Payment Recovery — Failed Transaction | High | Startup | $1,996 | Low | Billing Automation |
-| IV-77B6B128 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-4226C259 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-4BF40EB6 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-309D6952 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
-| IV-A2B77B68 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-7F6EC9A7 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-08DFCAC1 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-1E0F6807 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-B5F41307 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
-| IV-BF8141DD | Proactive Billing Intervention — Payment Risk Driver Detected | High | Mid-Market | $1,999 | Low | Customer Success Manager |
-| IV-7B3F8AD5 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
-| IV-5B80133B | Proactive Billing Intervention — Payment Risk Driver Detected | High | Mid-Market | $1,999 | Low | Customer Success Manager |
-| IV-884633D1 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-295B16A2 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-797EB4FC | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-D5F5BE05 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Enterprise | $1,999 | Low | Customer Success Manager |
-| IV-A299D30E | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
-| IV-9D0365F8 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-A161BDA5 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
-| IV-0FFD0260 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
-| IV-6BF9E193 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-10C97C96 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
-| IV-BEC0E380 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,497 | Low | Billing Automation |
-| IV-23E902BD | Automated Payment Recovery — Failed Transaction | High | SMB | $1,497 | Low | Billing Automation |
-| IV-C7D2BB57 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,497 | Low | Billing Automation |
-| IV-493C771F | Automated Payment Recovery — Failed Transaction | High | SMB | $1,497 | Low | Billing Automation |
-| IV-437DB822 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,497 | Low | Billing Automation |
-| IV-9D4AE9F2 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $998 | Low | Billing Automation |
-| IV-C894E749 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $998 | Low | Billing Automation |
-| IV-C6C4C35F | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $998 | Low | Billing Automation |
-| IV-88965877 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $998 | Low | Billing Automation |
-| IV-11D3B40D | Automated Payment Recovery — Failed Transaction | Medium | SMB | $998 | Low | Billing Automation |
-| IV-728CCBFC | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $998 | Low | Billing Automation |
-| IV-30D0D896 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $998 | Low | Billing Automation |
-| IV-B784D2CA | Automated Payment Recovery — Failed Transaction | Medium | SMB | $998 | Low | Billing Automation |
-| IV-E08ACF27 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $998 | Low | Billing Automation |
-| IV-FDF0ECBC | Automated Payment Recovery — Failed Transaction | Medium | SMB | $998 | Low | Billing Automation |
-| IV-134681C2 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $998 | Low | Billing Automation |
-| IV-A9BE0244 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $998 | Low | Billing Automation |
-| IV-779901C3 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $998 | Low | Billing Automation |
-| IV-4FC3D417 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $998 | Low | Billing Automation |
-| IV-90400420 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $796 | Low | Billing Automation |
-| IV-0F5EEED8 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $597 | Low | Billing Automation |
-| IV-B5B0313E | Automated Payment Recovery — Failed Transaction | Medium | SMB | $597 | Low | Billing Automation |
-| IV-DD959F76 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $597 | Low | Billing Automation |
-| IV-ED091B2A | Automated Payment Recovery — Failed Transaction | Medium | SMB | $597 | Low | Billing Automation |
-| IV-0FD9FED8 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-0C918764 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-83465FB4 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-98871FB5 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-1975B61A | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-17BECD65 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-EB426A63 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-8776834D | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-1851E1FF | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-D64C1CB4 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-33D31AC7 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-1AF01A7C | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-2007AE41 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
-| IV-3E67CBBB | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
-| IV-22A81A24 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-A0299E78 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-0C063E57 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-FAE2FBB5 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-9F580909 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-AC9E264E | Automated Payment Recovery — Failed Transaction | Medium | Enterprise | $499 | Low | Billing Automation |
-| IV-F617D608 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-F9C3F5CD | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-90D54158 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-350A6E81 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-B5FCA617 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
-| IV-07991151 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-EDCFEB22 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-2BA985E0 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-F1A7C108 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-3EFCDE4F | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-E8BA8EFC | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-D577B0AB | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-FE5D3937 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-F79B3D8C | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-D610FE6F | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-3673D906 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-EA1B50BE | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-E8B9E568 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
-| IV-76062739 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-0D1DD46A | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-5C0FEEE2 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-8A11EBEC | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-59CD7E0C | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-11B00AC2 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-C55036FD | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
-| IV-13E8D823 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-0681E40A | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-558E31AE | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-B761C573 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-15F0686B | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-5024FACD | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-1E8F2CF7 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-4A548ECD | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-F8EB6762 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-E998788D | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-E7EE3CE0 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-010241AE | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-ECB452A7 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-330650AD | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-1A47BCB8 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-61A12665 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-4FD01D54 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-D00C6F15 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-E6A55AEA | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-0D2830D0 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-17C9F37C | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-8A165E50 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-F0B11679 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
-| IV-39E1DC9B | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
-| IV-840DECA4 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-03FFCF42 | Automated Payment Recovery — Failed Transaction | Medium | Enterprise | $499 | Low | Billing Automation |
-| IV-D8D8FD22 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-F0B81D68 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
-| IV-A182B88D | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
-| IV-AD487DA2 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-7F2CFE84 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-785ED418 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
-| IV-1CBDB94C | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
-| IV-783267E7 | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
-| IV-FAF45182 | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
-| IV-843538EF | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
-| IV-EAE8B8AB | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
-| IV-C60BBBC9 | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
-| IV-74252FD3 | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
-| IV-9F9A1E2E | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
-| IV-9978130B | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
-| IV-6977F02E | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
-| IV-38330D45 | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
-| IV-FF18040F | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
-| IV-6AF6115C | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
-| IV-798543AB | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
-| IV-BEEE3940 | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
-| IV-4610C491 | Past-Due Account Escalation | Medium | Mid-Market | $499 | Low | Finance Operations |
-| IV-04998283 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-4C9B4530 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
-| IV-372DD048 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-59E9B190 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-59147928 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
-| IV-384973EF | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-BD172F96 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-489E3046 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
-| IV-652122CE | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-A3AA4B8D | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-1A95484A | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
-| IV-3820927E | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-628B5541 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
-| IV-8FA45523 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-E11AC1E0 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
-| IV-916114F9 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
-| IV-8042E3EE | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
-| IV-6E309004 | Automated Payment Recovery — Failed Transaction | Medium | Enterprise | $398 | Low | Billing Automation |
-| IV-D9B662FB | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
-| IV-9A94EE95 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-E4B52E7F | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
-| IV-48EF4F75 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
-| IV-1BED9D8E | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-B67D2F1B | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
-| IV-D6BAFCA3 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
-| IV-E1586274 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-3DF7407F | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-751622B4 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-14EBBDAD | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-93921C03 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-4A616217 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-09E5344A | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-A1474E8B | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
-| IV-C3D7A27C | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-F0B02C09 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-47844B4E | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-69B399BD | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-F33FCFEB | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
-| IV-74883061 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-5B9DB9B8 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-E9F15737 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-CF5B9AE2 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-22B5E665 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-B4E26AD2 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
-| IV-032EB8EB | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-A3DD22F1 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-553C6566 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
-| IV-B7F3B5EE | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-0E3876CA | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
-| IV-B607E5A5 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
-| IV-1335D9D3 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Enterprise | $499 | Low | Customer Success Manager |
-| IV-B6588D43 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-26B20A40 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-CEADE509 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-0B1A49B1 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-1D486C08 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-8D28DBC4 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-F1DB7AE3 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-CE9EC5C0 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-3B7C71C0 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-07F18000 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-3918820C | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-19F0CA8E | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-D5D7542A | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-ED6FC270 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
-| IV-71F710F1 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Enterprise | $499 | Low | Customer Success Manager |
-| IV-93095D37 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-F7550A1A | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-C3983E76 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-B3125138 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-4FE3DB63 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-587AFB8B | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-8FA868AF | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-CB1CF4CD | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-3618A85C | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-549E7B6C | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-183C046B | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Enterprise | $499 | Low | Customer Success Manager |
-| IV-7D167D7D | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-C4E66862 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-43EC5C39 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-717523C3 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-8CB31B25 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-0E0A1321 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-4CFF2023 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-E5A1D33F | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-D6BECF84 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
-| IV-471A33AE | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-55CFBCA3 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-7E63D351 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
-| IV-685115F3 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $245 | Low | Billing Automation |
-| IV-5C569128 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-9024F78B | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-932B86A0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-0037C1F3 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-BAA519AF | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-8DF5E904 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-CB85F641 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-B6108871 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-027A243A | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-066D0613 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-A19FBE96 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-C12A5A64 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-08D4CE8D | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-56F19157 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-EEF51ED7 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-8ECE551F | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-91C4A29B | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-2DB6F8F2 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-4480D049 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-41DAC937 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-72D1DD22 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-7084C291 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-7EBA2854 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-E23840EC | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-F3DF76C4 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-C9FEBBA6 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $199 | Low | Billing Automation |
-| IV-F811E2F3 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-8A3E68E7 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-F300A0D3 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-5A6DF5BD | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-7082AE4B | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $199 | Low | Billing Automation |
-| IV-2A6F4D4B | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-154E8C86 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-12290BF8 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-303E82F8 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-93EECE1A | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-EFA53ED1 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-E8C1616D | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $199 | Low | Billing Automation |
-| IV-EC5B98CA | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-5418F641 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-0D804738 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-29E0BF52 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-35ED5A57 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-C37C5828 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-8A257E8A | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-2F01E6C9 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-21706D93 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-8D7CB6C3 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-3EC98265 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-D0D11874 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-5C029D0F | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-4E3829A0 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-D24DB75A | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-327E3CCF | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-ABF3092C | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-8793ADEE | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-B366AC15 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-405BA15C | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-156299E7 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-144F5D13 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-41FC0DBC | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-D4A64233 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-4D7D3572 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-EAEAD3D7 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-926EAAF7 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-FFFDEFB0 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
-| IV-9C7C926C | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-80B492BA | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-6D80425C | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-BF6DC59A | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-5F949D3F | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-4660FB44 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-601EE45B | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-5B7310F6 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-830ADBEB | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
-| IV-15E68028 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
-| IV-1EE49168 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-CFB22393 | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
-| IV-A6618638 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-C9AE6B97 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-B7DEA534 | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
-| IV-86CB481A | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-FFB0844A | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-E9AB036C | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-3F932A96 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-8710AC5A | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
-| IV-5B57CA0A | Past-Due Account Escalation | Low | Enterprise | $199 | Low | Finance Operations |
-| IV-4E36E9C4 | Past-Due Account Escalation | Low | Mid-Market | $199 | Low | Finance Operations |
-| IV-B66769A6 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-E29EA848 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-0D489D46 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-2E558E92 | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
-| IV-9DE1A5E0 | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
-| IV-792872A2 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
-| IV-89BDC0EE | Automated Payment Recovery — Failed Transaction | Low | Startup | $196 | Low | Billing Automation |
-| IV-3A1B59F7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-33D05A2D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-07C94637 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-2DD4D5C7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-07C1367C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-F7E1747A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-E23326EF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-D5EE51A3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-07D6AE82 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-881E5AB3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-BB4CA5EB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-0502FD34 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-55190425 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-0BC9E2F4 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-CE6D992A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-91F8E199 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-3ED8A504 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-63F68A50 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-9E074BAF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-D7058EE1 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-E97C2B0E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-6512B598 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-A98D2727 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-5EC9695E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-41F5CB44 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-97817AAB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-6D3F8745 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-ADA3C87E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-491F73C5 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-EF61E7C0 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-07C763AB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-3E9F5927 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-618CB28A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-F9F78851 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-A68078F3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $199 | Low | Customer Success Manager |
-| IV-A9F2B66A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-4C0D2920 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-F0AE8554 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-27FC0893 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-6607AA62 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-EF90CB26 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-487F8F6D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-57C7B4FA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $199 | Low | Customer Success Manager |
-| IV-8FAE88E1 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-7F64303B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-FA99D340 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-F868044B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-4A4231D6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-74A23763 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-167038D4 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-642B4906 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-5C4F6AFA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-0822AD46 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-27A8E97B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-B61914B8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-C3430EF6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-50862B88 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-58B3CAF6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-2FE9129B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-3098614E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-037AC4F1 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-25ABABDB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-AB03F3ED | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-2EC825AA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-3DFFDCDF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-D2AB10ED | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-E70A968D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-81C60205 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-435FB4B6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
-| IV-F08D5897 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
-| IV-A4FEE971 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
-| IV-C94AE5FF | Automated Payment Recovery — Failed Transaction | Low | Startup | $147 | Low | Billing Automation |
-| IV-4246C2EF | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $147 | Low | Billing Automation |
-| IV-D12D9390 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $147 | Low | Billing Automation |
-| IV-E7C9909A | Automated Payment Recovery — Failed Transaction | Low | Startup | $147 | Low | Billing Automation |
-| IV-DF0B5F16 | Automated Payment Recovery — Failed Transaction | Low | Startup | $147 | Low | Billing Automation |
-| IV-454AA39B | Automated Payment Recovery — Failed Transaction | Low | SMB | $147 | Low | Billing Automation |
-| IV-AA1F5ACF | Automated Payment Recovery — Failed Transaction | Low | SMB | $147 | Low | Billing Automation |
-| IV-D64C252F | Mid-Market Retention Escalation — Critical Risk | Low | Mid-Market | $499 | High | Customer Success Manager |
-| IV-DF260E82 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-3BF9C150 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-C7959427 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-C581F22C | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-B2F5BF45 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-78549E60 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-387B4835 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-A3E472CF | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-4808C02B | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-F87E7D91 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-E857E3BD | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-BF295873 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-3B1D9855 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-448DF06D | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-D9963CDC | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-52371934 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-BB155412 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-33005E65 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-07E0411F | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-CD77FD85 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-51A0C4DF | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-A1222B26 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-8467C713 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
-| IV-FC9E70F8 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-40D9257D | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
-| IV-8D797147 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-AAD5CEAB | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
-| IV-7DB9B435 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
-| IV-94BD5434 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-AF6A07D2 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-5EB490FF | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
-| IV-BB3D91C4 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-6013166B | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-ADBE9A7C | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
-| IV-52BBE6CA | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
-| IV-3C915704 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-FDE7CA8A | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-CC4839FE | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-3D2BA3AE | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-7AFE0AC7 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-180E41EB | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-F7E7E19B | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-72FA4AFB | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-FD8977B2 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-BD0ED4BE | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-4123BD51 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
-| IV-04D66A24 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
-| IV-F049DED2 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
-| IV-26AD7EDB | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-DB5928A0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-C1D0AF01 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-AACFBB7C | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-7405CE92 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-6660AE62 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-B90AE5C9 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-B81A8527 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-7F40C42B | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-D33E0EE3 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-CD30CB97 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-ED1F13BF | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
-| IV-ED597DFA | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
-| IV-8F4402ED | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-415FCE30 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
-| IV-4BBF3593 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
-| IV-51D47702 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-7DB5B412 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-5E8B5D66 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-E2EBAE44 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-791CDE64 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-2EEB6C06 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-7E3654C2 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-DB8325DE | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-785062B3 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-A748AF9A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-D4A7CD2F | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-6D749068 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-68361CC0 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-00973FD6 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-04620740 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-842CF0F4 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-33CF4A59 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-4785B26C | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-8B9EB17B | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-CBE29F7E | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-260A499A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-3D0E85F1 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-3D166155 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-47998B64 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-540F5528 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-219474CA | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-6AA4209E | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-98B4B702 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-5B8F9357 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-EFBAE3A5 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
-| IV-426C4B5D | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-EBCFC3C1 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-91F9E5D3 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-81F8C6B9 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
-| IV-20F44C7F | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-31432923 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-32850195 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-A2BBA9F1 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-BAC358D6 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-3686AA24 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-26935BD5 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-2C1E8423 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-E68596CF | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-EE09779E | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-C2059B09 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-1DAED2B5 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-B0E63C42 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-18FBDF67 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-FB245BF2 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-3894BCE0 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-4294C207 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-00A53569 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-200FB525 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-1712BBEB | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-F56AF29B | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-D4315845 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-E5B64DEA | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-39E6DD3D | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-86EE28ED | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-579682A1 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-470E0D31 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-FDA2096C | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-01F2BA2C | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-95AA8C1E | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-8192C8FA | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-17640422 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-6A6D0F66 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-9FB721D2 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-D932F98B | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-1DBB64B4 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-5236FF70 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-9E60E06E | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-29CD876B | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-F4BB3874 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-9560D1F7 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
-| IV-6A2449DA | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-105B7E43 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-869C42F0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-FBC4C958 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-14860380 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-ABCECCEF | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-FA40C795 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-28E33647 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-81D72AF1 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-395362FA | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-564AC517 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-ECD5A217 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-7F970C32 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-92E7BD83 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-B305F5CB | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-A8F0D0D1 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
-| IV-628E625D | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-C1CE362A | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-CD2DCF4D | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-6C32BF42 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-C07AADD0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-90631781 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-B4DB7447 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-4D250B43 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
-| IV-326560B8 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-8FD8C0BE | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-D61D6EE4 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-BA91D85A | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
-| IV-60DFF473 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-2780D555 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-B7C8245F | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-273A2F15 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-AEB99A77 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-811089AE | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-0EF1AF5E | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-13AB505C | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-09820663 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-5CA681BE | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-3DD2FD65 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-64BE7F8F | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-93505EE1 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-2B1482E7 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-043881E9 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-BDBE0C9E | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-E6D9D228 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-35E7D187 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-3109D874 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-52569D83 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-DD8DF9DB | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-9846E0C4 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-2056E736 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-9D8AAFD1 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-8865AAB0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-91C2E59A | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
-| IV-1C2EA01A | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
-| IV-40B6AA9B | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-7B56E6DF | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-A21AAB6E | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-0EADF179 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-91EFD108 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-375DC3F9 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
-| IV-39AC902B | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-B43FB381 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-0D1A4143 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-764C986F | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
-| IV-A592D926 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
-| IV-E1925A3B | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-DAE34CF1 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
-| IV-51B67D3A | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-F34CA9C0 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-424F8587 | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
-| IV-720398CE | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
-| IV-540C68F2 | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
-| IV-322672D2 | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
-| IV-4FF8CC33 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-78A92C3B | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-D18F752E | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
-| IV-4A2FDFA3 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-126A042A | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
-| IV-78969B9C | Past-Due Account Escalation | Low | Mid-Market | $49 | Low | Finance Operations |
-| IV-D88AA7C5 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-9DE5CE3D | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-92D99258 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-6B094C3D | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-85553C0D | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-C4EA19AB | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
-| IV-626543AB | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
-| IV-3475DDB7 | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
-| IV-8E8FB4C1 | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
-| IV-F284D73E | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
-| IV-F794F8B6 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-E619908E | Past-Due Account Escalation | Low | Mid-Market | $49 | Low | Finance Operations |
-| IV-AF5CC9B7 | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
-| IV-83A55882 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-284D3255 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
-| IV-7EC4678C | Past-Due Account Escalation | Low | Mid-Market | $49 | Low | Finance Operations |
-| IV-BB0D04B8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-B711CFB4 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-0B091CD8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-C284DCDA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-3BB0A42C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-14DA0E66 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-B31F4FB7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-B8BDE2B5 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-A5269676 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-9B845046 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-AFEE0E8E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-14AF0220 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-563C2346 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-5CA3CFA2 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-8ACB1A8E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-85D87E76 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-0E47B1A7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
-| IV-FF422725 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-9FCC2381 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-CB41D1B3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-177406E3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-2B1ABD97 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-89ABC882 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-64C0FA14 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-0F28A89E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-03B1A9D9 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-6E888CCA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-0E22BAE7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-462D69B0 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-D4F56962 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-B770E73A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-3D5FD6CC | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-D7FF4251 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-7A36F5AA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-449D2E0F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-24685694 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-4FB5C8FD | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-7A4DBBBB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-827D4D53 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-A499B5C5 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-460C5E91 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-C054D31D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-4BA132ED | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-7278646B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-4DF5588C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-576969C3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-B0DFCE4F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-29E98681 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-BD8B8E5B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-BC29937E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-805A81DB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-D167D19D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-47298BE8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-69EC9533 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-8F94A718 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
-| IV-C7134A58 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-CF204FA7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-363D6C89 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-B6ED34ED | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-9B6330CD | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-E5210F21 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-E9191836 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-E4F6275F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-2C467785 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-740974B2 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-D0361036 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-AABA9A7C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-F2318A91 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-54361C82 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-894E5CA7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-FBD0D7F1 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-5C074ACE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-00B2094A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-BD656DDB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
-| IV-A2C2FE7D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
-| IV-8BD9904D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-E4708B2E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-AE791CBE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-2442F7BF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-9447C7FD | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-68F752D5 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
-| IV-E47E2C16 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-0D9590DA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-A354D6EC | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-0EF44B27 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-C301BD81 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-347DEC5F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-C3F9C494 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-89501A2E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-FA691ED8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-F6788A74 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-0B073795 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-14452BA9 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-2AD27837 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-E78C35D4 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
-| IV-8143D2C1 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-568DA4CF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-316694FE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-9D517345 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-F25320E7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-D1D97730 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-82601B54 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
-| IV-75E4C6CC | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-C32A569B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-291DA4C1 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-2DE9932E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-3DEBA652 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-F07F088E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-E6BDE30D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-B2370DF2 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-606C3CF9 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-DC7F8384 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-5EFA9293 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-D0B41FF6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-DD5E696E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-87B5A09E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-19421467 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-810FF161 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
-| IV-CA14A5AB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-4EFF0D56 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
-| IV-A8C66F92 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-5A5DC4F3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
-| IV-78764F28 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-A8C27B6A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-DBA79567 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-60FE8559 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-8FB4C3CE | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-FD169742 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-7DE0BCF3 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-ACD4E816 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-933B2E6C | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-518F4117 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-038660ED | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-62299BE3 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-504C52AE | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-3FEDE4E0 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-008E1FA3 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-1B6E2AA0 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-F5FD70F2 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-1FA1B988 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-4E098B9D | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-3E78F925 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-A311898E | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-3B5DE865 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-296B06BF | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-48476CB7 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-5AD9CDCE | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-A7DFE041 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-D51285D9 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-761A3351 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-CE83B9A5 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-E0E64F27 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-E81C8CF1 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-5D8378D4 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-FE85AC23 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-BEBA7761 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-E7605655 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-A8DC2933 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-B358DEC1 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-02210172 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-A9478745 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-80A7DBDC | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-38E5FA53 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-5CE38F2C | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-A80AEE5C | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-D625100A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-19CAF2EE | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-C8C5FB8D | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-234B9E4A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-1505F49A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
-| IV-E73021EB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
-| IV-6905F72B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $0 | Low | Customer Success Manager |
-| IV-A92CD177 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
-| IV-5E89597E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
-| IV-52EB24FD | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $0 | Low | Customer Success Manager |
-| IV-1827F473 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $0 | Low | Customer Success Manager |
-| IV-A5ADE3DA | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
-| IV-645F91DE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
-| IV-FC696957 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
-| IV-B177921B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $0 | Low | Customer Success Manager |
-| IV-2E16DF0F | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
-| IV-E8C17479 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
-| IV-D0AD1720 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
-| IV-A16E41E9 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
-| IV-9545D44E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $0 | Low | Customer Success Manager |
-| IV-9506A594 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
-| IV-0AE6019F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
-| IV-39116918 | Executive Retention Outreach — Critical Enterprise Account | Low | Enterprise | $0 | High | Account Executive |
-| IV-0FC046DA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $0 | Low | Customer Success Manager |
-| IV-C66EB452 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $0 | Low | Customer Success Manager |
-| IV-31363561 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $0 | Low | Customer Success Manager |
-| IV-F825C480 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
-| IV-339D0ABD | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
-| IV-77339FB3 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
-| IV-F28D0C13 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
-| IV-E3F032CA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $0 | Low | Customer Success Manager |
-| IV-C42A6F37 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
-| IV-2F0F7B32 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
+| IV-1FDA08FF | Automated Payment Recovery — Failed Transaction | Critical | SMB | $5,997 | Low | Billing Automation |
+| IV-9296293D | Automated Payment Recovery — Failed Transaction | High | Startup | $3,998 | Low | Billing Automation |
+| IV-1FDE6D6C | Automated Payment Recovery — Failed Transaction | High | Mid-Market | $3,998 | Low | Billing Automation |
+| IV-697E1E41 | Automated Payment Recovery — Failed Transaction | High | SMB | $3,998 | Low | Billing Automation |
+| IV-1C4653F9 | Automated Payment Recovery — Failed Transaction | High | Startup | $3,998 | Low | Billing Automation |
+| IV-CBF8D405 | Automated Payment Recovery — Failed Transaction | High | Mid-Market | $3,998 | Low | Billing Automation |
+| IV-0D7317EB | Automated Payment Recovery — Failed Transaction | High | SMB | $3,998 | Low | Billing Automation |
+| IV-55955B6E | Automated Payment Recovery — Failed Transaction | High | Startup | $3,998 | Low | Billing Automation |
+| IV-821CEC5D | Automated Payment Recovery — Failed Transaction | High | SMB | $3,998 | Low | Billing Automation |
+| IV-A6DB86D0 | Automated Payment Recovery — Failed Transaction | High | SMB | $3,998 | Low | Billing Automation |
+| IV-B53B47E9 | Automated Payment Recovery — Failed Transaction | High | Mid-Market | $1,999 | Low | Billing Automation |
+| IV-202E7476 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-015EE015 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-CAB7951C | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
+| IV-F6ABB740 | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,999 | Low | Billing Automation |
+| IV-C66FB353 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-76EFC1E0 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-72C06121 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-B00AA749 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-B4FCDB01 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
+| IV-4ADCE74B | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
+| IV-9D51DE7E | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-85686317 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
+| IV-9E20D0D3 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
+| IV-C33B701A | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-28F7C86D | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-0BFB7B8C | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,999 | Low | Billing Automation |
+| IV-0ED32C70 | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,999 | Low | Billing Automation |
+| IV-ACC82379 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-55B6A579 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
+| IV-5E08798C | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-B88C967A | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-15A21D66 | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,999 | Low | Billing Automation |
+| IV-2191D703 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-FB58F0AF | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-4A405737 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,999 | Low | Billing Automation |
+| IV-D2B1696F | Automated Payment Recovery — Failed Transaction | High | SMB | $1,999 | Low | Billing Automation |
+| IV-38E3C0F3 | Past-Due Account Escalation | High | SMB | $1,999 | Low | Finance Operations |
+| IV-9234F75D | Past-Due Account Escalation | High | Startup | $1,999 | Low | Finance Operations |
+| IV-25DACD4B | Past-Due Account Escalation | High | SMB | $1,999 | Low | Finance Operations |
+| IV-81267E31 | Past-Due Account Escalation | High | Startup | $1,999 | Low | Finance Operations |
+| IV-8BAD64DB | Past-Due Account Escalation | High | Enterprise | $1,999 | Low | Finance Operations |
+| IV-0A2833E7 | Past-Due Account Escalation | High | Startup | $1,999 | Low | Finance Operations |
+| IV-A1197A81 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,996 | Low | Billing Automation |
+| IV-CB807E61 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,996 | Low | Billing Automation |
+| IV-05EE5612 | Automated Payment Recovery — Failed Transaction | High | Enterprise | $1,996 | Low | Billing Automation |
+| IV-05BA4DD7 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-B15AD876 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-09F03427 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-87502C85 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
+| IV-05935772 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-E5A2F125 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-3AB4F7B2 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-BD53F8EF | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-9FE22326 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
+| IV-C2958B7F | Proactive Billing Intervention — Payment Risk Driver Detected | High | Mid-Market | $1,999 | Low | Customer Success Manager |
+| IV-85156F9D | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
+| IV-031C3C10 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Mid-Market | $1,999 | Low | Customer Success Manager |
+| IV-14339259 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-813F3193 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-3A01D5B0 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-54767376 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Enterprise | $1,999 | Low | Customer Success Manager |
+| IV-2DA4AFF0 | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
+| IV-291C2085 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-5DC3B34D | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
+| IV-DC2B0BFB | Proactive Billing Intervention — Payment Risk Driver Detected | High | Startup | $1,999 | Low | Customer Success Manager |
+| IV-EAFAED30 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-7AE18CE6 | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-80BD0D5D | Proactive Billing Intervention — Payment Risk Driver Detected | High | SMB | $1,999 | Low | Customer Success Manager |
+| IV-C3BACC6A | Automated Payment Recovery — Failed Transaction | High | SMB | $1,497 | Low | Billing Automation |
+| IV-A60A60FD | Automated Payment Recovery — Failed Transaction | High | Startup | $1,497 | Low | Billing Automation |
+| IV-907847E2 | Automated Payment Recovery — Failed Transaction | High | Startup | $1,497 | Low | Billing Automation |
+| IV-68F40E31 | Automated Payment Recovery — Failed Transaction | High | SMB | $1,497 | Low | Billing Automation |
+| IV-DFAC038E | Automated Payment Recovery — Failed Transaction | High | SMB | $1,497 | Low | Billing Automation |
+| IV-881DEF6C | Automated Payment Recovery — Failed Transaction | High | SMB | $1,497 | Low | Billing Automation |
+| IV-EA72506B | Automated Payment Recovery — Failed Transaction | High | SMB | $1,497 | Low | Billing Automation |
+| IV-1DD5CAC2 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $998 | Low | Billing Automation |
+| IV-99B1EC3C | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $998 | Low | Billing Automation |
+| IV-2E1360B6 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $998 | Low | Billing Automation |
+| IV-3522B3D7 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $998 | Low | Billing Automation |
+| IV-743A1329 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $998 | Low | Billing Automation |
+| IV-C8366F2B | Automated Payment Recovery — Failed Transaction | Medium | SMB | $998 | Low | Billing Automation |
+| IV-3FCA98A2 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $998 | Low | Billing Automation |
+| IV-6B077FF6 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $998 | Low | Billing Automation |
+| IV-7804CDC6 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $998 | Low | Billing Automation |
+| IV-D7C0128F | Automated Payment Recovery — Failed Transaction | Medium | Startup | $998 | Low | Billing Automation |
+| IV-F3E295BF | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $998 | Low | Billing Automation |
+| IV-9C272CCE | Automated Payment Recovery — Failed Transaction | Medium | Startup | $998 | Low | Billing Automation |
+| IV-145DB1BA | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $995 | Low | Billing Automation |
+| IV-6221964D | Automated Payment Recovery — Failed Transaction | Medium | SMB | $597 | Low | Billing Automation |
+| IV-AFA647C4 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $597 | Low | Billing Automation |
+| IV-EA3D5F35 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $597 | Low | Billing Automation |
+| IV-7A84F8B7 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $597 | Low | Billing Automation |
+| IV-D9F96984 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-99B15AE7 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-71BCA90C | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-03AF95E2 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-3D2D8D42 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-915EB1D1 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-A0B8B170 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-69E3019E | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-0B2AC247 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-8ADA511E | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-A3A5FF79 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-D4DD7B87 | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-12AFC21D | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-C749129B | SMB Re-engagement Offer — High Churn Risk | Medium | SMB | $1,999 | High | Marketing Automation |
+| IV-F2D21C4D | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
+| IV-B3E521D9 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-DFDBA8B0 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
+| IV-31FEDDF7 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-7E56B3F0 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-529DD279 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-2CECD1A5 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-0C7AA67A | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-CBFF9BB2 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-8D2B08ED | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-9DBD5D08 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-8726F24E | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-676DEEAE | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-16670B63 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-38E28291 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-39BBC0E5 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-44CAA4AE | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
+| IV-05593A56 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-78622956 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-95979434 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-08868277 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
+| IV-913AE40D | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-669E01BC | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-CBA45712 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-940435D6 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-63EFBAC9 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
+| IV-F2148A65 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-CAA5D315 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-D74BD3A0 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-269FEBF0 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-DD2460CC | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-08665AC2 | Automated Payment Recovery — Failed Transaction | Medium | Enterprise | $499 | Low | Billing Automation |
+| IV-DA7C36DA | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-DB731D8F | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-EEE7B071 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-734FA800 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
+| IV-78E7D4A2 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-D82DFE40 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
+| IV-5CCCC89C | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-48387BB7 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-D76C7DED | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-5A82F5F0 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-D6372DE6 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-739D1C82 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $499 | Low | Billing Automation |
+| IV-C73066BD | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-2055C0C2 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-769E9292 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-2FD816BE | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-5394BC99 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-15337DD7 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-78D22859 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-924147E8 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-D3EFF2CC | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-55673EC6 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-94558C93 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-A72E357D | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-3B564BB2 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-5EC61B34 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-11351AFE | Automated Payment Recovery — Failed Transaction | Medium | Enterprise | $499 | Low | Billing Automation |
+| IV-807655B5 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-5F3B5A83 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-F58D5EE9 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $499 | Low | Billing Automation |
+| IV-FA1D1969 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $499 | Low | Billing Automation |
+| IV-DA65BB3B | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
+| IV-55973A56 | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
+| IV-C3BCF23F | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
+| IV-BFFCC213 | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
+| IV-19243BE6 | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
+| IV-FCBFCDC6 | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
+| IV-FBA7352F | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
+| IV-CFBC7AA1 | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
+| IV-AFEC3C0B | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
+| IV-6D02D15D | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
+| IV-8816E9D2 | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
+| IV-85C8708E | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
+| IV-D9215A9D | Past-Due Account Escalation | Medium | SMB | $499 | Low | Finance Operations |
+| IV-E806C71E | Past-Due Account Escalation | Medium | Startup | $499 | Low | Finance Operations |
+| IV-6A5562C6 | Past-Due Account Escalation | Medium | Mid-Market | $499 | Low | Finance Operations |
+| IV-3CCEDE83 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-E4166D34 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
+| IV-68C31803 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-9DD86F09 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-8106ADC9 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
+| IV-2D070A48 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-31604D76 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
+| IV-DC2A2D45 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
+| IV-55591A39 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-07EF7803 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
+| IV-F95D8A2C | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
+| IV-E3DD4154 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-33025444 | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
+| IV-825ABB3A | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
+| IV-F2027D60 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-110A9986 | Automated Payment Recovery — Failed Transaction | Medium | Enterprise | $398 | Low | Billing Automation |
+| IV-43393FB7 | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
+| IV-170B5B60 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-199B96BD | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
+| IV-3E7C811E | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-D9EFFF7F | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-FB3496C6 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-E0931C2E | Automated Payment Recovery — Failed Transaction | Medium | Startup | $398 | Low | Billing Automation |
+| IV-EAA656A1 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-BC640662 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $398 | Low | Billing Automation |
+| IV-EC94FADB | Automated Payment Recovery — Failed Transaction | Medium | Mid-Market | $398 | Low | Billing Automation |
+| IV-4D854820 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-6475BFD7 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-091DF6A0 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-F7F12F68 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-C3FD81A7 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-FC64F727 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-1FB85422 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-E8CB57CF | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
+| IV-5B81020C | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-42228C00 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-86E3E3FB | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-09636E04 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-190EC64C | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
+| IV-F16251B2 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-28C2D8B8 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-E500A5DE | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-2EE5B73C | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-0131E716 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-CDAD4D4F | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
+| IV-FD882AEC | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-CADCE3FD | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-9EAB1177 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
+| IV-3BC040BA | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-0F367180 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
+| IV-C4F6DBE3 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
+| IV-DC905394 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Enterprise | $499 | Low | Customer Success Manager |
+| IV-2B7BBD4D | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-E88CE044 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-72729AF5 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-FC11F770 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-E0B34223 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-80C52E6A | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-F4C661F0 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-31124986 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-E98EC052 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-9DD98C2A | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-F515F88F | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-5640886A | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-9E16E552 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-9D10A1EB | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Mid-Market | $499 | Low | Customer Success Manager |
+| IV-BB9FE0D9 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Enterprise | $499 | Low | Customer Success Manager |
+| IV-118F1807 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-FDE7E7A1 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-DAD68CD9 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-C079E5DA | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-BE5880EB | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-4B45556C | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-95CE4BE6 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-3404B09D | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-B61A5E38 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-E3603183 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Enterprise | $499 | Low | Customer Success Manager |
+| IV-5F0C9B3E | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-23B05DC4 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-86BA6781 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-B09C43CB | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-412E6CD2 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-2C25978A | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-0E15E958 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-A67E6478 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-5CDEBB0C | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-F901E2A4 | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-712475EC | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | Startup | $499 | Low | Customer Success Manager |
+| IV-C977B9FE | Proactive Billing Intervention — Payment Risk Driver Detected | Medium | SMB | $499 | Low | Customer Success Manager |
+| IV-1FE141A7 | Automated Payment Recovery — Failed Transaction | Medium | SMB | $245 | Low | Billing Automation |
+| IV-E9610573 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-0860A713 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-1CF3D6E1 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-275CCF07 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-B3854252 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-5A268B79 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-19139DDB | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-A4C723A7 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-FB175ED5 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $199 | Low | Billing Automation |
+| IV-64130FFC | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-A115E6A6 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-8830B2CC | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-EDC6A5B1 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-B2D6AD25 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-62283A44 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-364FCF69 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-26658C25 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-59CE5BA1 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-3B06E9B0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-7B3BD39D | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-8514765B | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-83B93F10 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-F14B48A1 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-80ED1F9F | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-63D13E3C | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-91C27F47 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-59161053 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-6A27AAB9 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-C5EFB8BD | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-979A8F2C | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-1E652B6B | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-5F06B533 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-AA4D993E | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-28E1F69A | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-EA9BB751 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-FB813AEF | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-EB3D9F39 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-DCAFB647 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-48DCFDB5 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-CE6C355E | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-B44A81DB | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-4794D66A | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-1723E08A | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-AF5F5A5A | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-98DAD5DA | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-5F63B7A4 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-AA72B41F | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-2E0EAD74 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-70662827 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-17C05C44 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-D65F5755 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-FF529D7B | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-8FB2307B | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-5F4BD8B0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-8A5E2E8F | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-9B2D3C7F | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-22E65875 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-6E6439E0 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-EC49A907 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-B1727FCF | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-F3634D4E | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-2C39EF53 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $199 | Low | Billing Automation |
+| IV-26B64960 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-A9F8B5C6 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $199 | Low | Billing Automation |
+| IV-56784156 | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-C78544DE | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-DBB9FB90 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-9E7A33C7 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-3CEDA7DD | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-2DC6120B | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-AB2C3E26 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $199 | Low | Billing Automation |
+| IV-D88A7052 | Automated Payment Recovery — Failed Transaction | Low | Startup | $199 | Low | Billing Automation |
+| IV-F790A8AE | Automated Payment Recovery — Failed Transaction | Low | SMB | $199 | Low | Billing Automation |
+| IV-9742EFF1 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-4E4A2915 | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
+| IV-5E253E03 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-135E66DD | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-BF8D6F64 | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
+| IV-9833A01A | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-70E885E7 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-FCA193C0 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-8C722A80 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-82B8E1A7 | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
+| IV-38FED20B | Past-Due Account Escalation | Low | Enterprise | $199 | Low | Finance Operations |
+| IV-71CEB2A4 | Past-Due Account Escalation | Low | Mid-Market | $199 | Low | Finance Operations |
+| IV-64CDD013 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-3382B5B7 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-3AD02E02 | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-D268D177 | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
+| IV-82F1B54E | Past-Due Account Escalation | Low | Startup | $199 | Low | Finance Operations |
+| IV-59265A9C | Past-Due Account Escalation | Low | SMB | $199 | Low | Finance Operations |
+| IV-220BC4B2 | Automated Payment Recovery — Failed Transaction | Low | Startup | $196 | Low | Billing Automation |
+| IV-985C161E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-BA316F12 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-6AB962F6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-645BF33E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-024C952E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-450D9992 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-CD89DE31 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-8D046121 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-7787009D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-3DCFCEC8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-0F475EFD | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-2B8FF44A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-4460D0D4 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-EC90F54E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-7F57D2A3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-D799A1DC | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-2BF0D7BA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-4F6DE2A9 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-0F3F1D42 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-9A491B3A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-FE14240D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-2749F31F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-22150E01 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-58E714C6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-5D96310C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-A2CC699C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-7AD96C25 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-A628DDC3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-1C4BBB14 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-F2751806 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-C3E76FFF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-FF4877CB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-71C13F47 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-677467A7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-5EE8E7FE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $199 | Low | Customer Success Manager |
+| IV-41DB5A7A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-5B720FAA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-E91CF98F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-E17686AF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-FEB1A12C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-B1DE760F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-127FD236 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-5EA887E3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $199 | Low | Customer Success Manager |
+| IV-FE9BF35F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-1D607121 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-8D397444 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-ADFA2DC0 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-33B43B4C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-68D111FE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-CC3CFB66 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-4E2E0C6E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-2ADEC65B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-C884D686 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-6AA1D67B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-19A97F32 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-633326DA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-95AED684 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-A806D3CE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-41C38823 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-48D286BC | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-8ACB9E02 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-D03A4847 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-14ED90BB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-AA39C58D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-D91598E7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-B22675B0 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-AFE60FB9 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-6654BDFE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $199 | Low | Customer Success Manager |
+| IV-FB68B0D3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $199 | Low | Customer Success Manager |
+| IV-D8B53C75 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $199 | Low | Customer Success Manager |
+| IV-CC02F71A | Automated Payment Recovery — Failed Transaction | Low | Startup | $147 | Low | Billing Automation |
+| IV-6B35ED4A | Automated Payment Recovery — Failed Transaction | Low | Startup | $147 | Low | Billing Automation |
+| IV-CD5ADE5F | Automated Payment Recovery — Failed Transaction | Low | Startup | $147 | Low | Billing Automation |
+| IV-B63C9B40 | Automated Payment Recovery — Failed Transaction | Low | SMB | $147 | Low | Billing Automation |
+| IV-ADC68AFC | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $147 | Low | Billing Automation |
+| IV-962A26E0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $147 | Low | Billing Automation |
+| IV-B3328034 | Mid-Market Retention Escalation — Critical Risk | Low | Mid-Market | $499 | High | Customer Success Manager |
+| IV-6EAD78D6 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-0DCA5810 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-02BE3855 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-67AEF960 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-805234B1 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-F250583B | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-C82E20DA | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-F4F5CDB4 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-60056484 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-9F52F466 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-1C9F797C | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-B5CA511B | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-DC729815 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-0CC942C7 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-D1D23FE3 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-38B61148 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-E1AE8DFA | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-DD6EC9AC | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-5767097A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-CEAB3A45 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-E8A5700F | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-AA0E927E | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-A86E48CF | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-D700A722 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $499 | High | Marketing Automation |
+| IV-CCFFDC19 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-9F8E54DD | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-693CDB11 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-37F54211 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-A3FAF91F | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-A91B346E | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-1E931CFB | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-AA0724A2 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
+| IV-6CFF73F8 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
+| IV-72C435AA | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
+| IV-D543DC88 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
+| IV-58476C94 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-2C1A5BCB | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-15819685 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-5A3A1FF9 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-42EBD300 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-DF904EAC | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-4FD034C8 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
+| IV-24CA02D1 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
+| IV-6F489485 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
+| IV-9FCE6273 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-6979B858 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-87464181 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-C16BA5D5 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-47422A50 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-5BF38ACC | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-F4D2ABE5 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-93170A8E | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-D66375D2 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-8C274C4B | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-0763C1E6 | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-CF4D96A4 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
+| IV-363192BA | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-0DA5AFF0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-CAB4E634 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $98 | Low | Billing Automation |
+| IV-81498DB7 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-EA8D15B5 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
+| IV-CEEDC595 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-4D85BFAF | Automated Payment Recovery — Failed Transaction | Low | Startup | $98 | Low | Billing Automation |
+| IV-02819185 | Automated Payment Recovery — Failed Transaction | Low | SMB | $98 | Low | Billing Automation |
+| IV-486E780B | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $98 | Low | Billing Automation |
+| IV-A5E4A296 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-86E04987 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-332859D5 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-00D36134 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-CC32EF31 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-B17FE8D3 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-0C76659D | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-9329D792 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-2B2774AA | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-506E5534 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-64C09056 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-BB5B5AD5 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-97CB7EC8 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-32B708F7 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-81FFE09F | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-E9D5E572 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-73FC4CBD | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-B53E4AF3 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-591AB8DF | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-57111CCE | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-40183744 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-B5297098 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-D32D8542 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-356027A2 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-4656B083 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-7965EA95 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-D1BB5544 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-0111A1DA | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $199 | High | Marketing Automation |
+| IV-78F9171F | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-78566114 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-7C1471B3 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-E26F180F | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-4B775D22 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
+| IV-9F3D7AF4 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
+| IV-676734C7 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-1834B090 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-0585D5B3 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-84E151B1 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-A33E0CF7 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-77DE8E2D | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-0E73A729 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-01D48CE9 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
+| IV-823021DE | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-21CBAC11 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-C75ABC88 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-A49B265A | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-6C271873 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-673A1628 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-3FA12620 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-A4D4D378 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-411C306C | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-7B401483 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-FAF36280 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-637B6350 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-8A9B2A1F | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-8A31BD24 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
+| IV-C81FB84E | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-26BB9C25 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-52CC30FA | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-561D41DB | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-67D4C9E1 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-8F79DA1C | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-0E48C754 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-1F385E5E | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-F991D6E7 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-A40A19BD | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-34CBD1B8 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
+| IV-65097683 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-F5A5762F | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-16A01820 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-5213A29A | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-E3C415A0 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-2393264D | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-62B57255 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-DE1A256E | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-A964A273 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
+| IV-748592AC | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-B8C63DF3 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-5EE62420 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-8AE6B15D | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-7E710317 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-B87C2CDD | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-8E65F1A4 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-A6991854 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-9F7080D2 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
+| IV-590838C6 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-17F9B6EC | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-24C8ABA1 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-69718315 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-F5CC2E4C | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-F029B666 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-AE3996E2 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
+| IV-BE87D46C | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-B8D69D43 | Automated Payment Recovery — Failed Transaction | Low | Enterprise | $49 | Low | Billing Automation |
+| IV-1AFA7BB8 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-04A5872B | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-A87551C2 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-1A03973E | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-3468DDB4 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-DB8A4884 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-63617AF6 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-F7777DF6 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-6C5E5A4F | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-2F2A0DFA | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-40076357 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-AB1AC798 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-DD4656AD | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-548A2ED8 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-E7A4B5AE | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-1E54D5D6 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-7233C989 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-4BDD63A4 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-EBA76B3D | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-9371B6CC | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-EEAA2968 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-65FFB846 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-20F1F5D7 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-185161AC | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-F48B9B5E | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-6845A48B | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-226AA82D | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-3A879A0A | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-0D786632 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-1D16086E | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-4BBF948E | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-1BFA5DE9 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-66F1BF41 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-8593D8DA | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-7AE625C7 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-7AAE6728 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-151E7098 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-8080FA54 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-E9B8F92D | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-E7BC4FE2 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-0A7E46C3 | Automated Payment Recovery — Failed Transaction | Low | Mid-Market | $49 | Low | Billing Automation |
+| IV-D12EACF0 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-BE795EB6 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-688A285C | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-724ADB8E | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-5209C64E | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-3DD1F154 | Automated Payment Recovery — Failed Transaction | Low | Startup | $49 | Low | Billing Automation |
+| IV-1D6DB558 | Automated Payment Recovery — Failed Transaction | Low | SMB | $49 | Low | Billing Automation |
+| IV-7D487A02 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-B0AB4D8F | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-D0A28BB9 | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
+| IV-03CADBC1 | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
+| IV-1FD75CA6 | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
+| IV-30F8ECCE | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
+| IV-5F3FC07A | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-E9DECF10 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-7D98C355 | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
+| IV-AC3F0CF3 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-5C46CD96 | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
+| IV-94451440 | Past-Due Account Escalation | Low | Mid-Market | $49 | Low | Finance Operations |
+| IV-1C05F3C2 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-3CECD508 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-6A5382FE | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-C179BE72 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-73585106 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-7BB7749A | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
+| IV-396354D0 | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
+| IV-B9DF92A5 | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
+| IV-461C7646 | Past-Due Account Escalation | Low | Enterprise | $49 | Low | Finance Operations |
+| IV-A8047F31 | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
+| IV-700E3750 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-70024362 | Past-Due Account Escalation | Low | Mid-Market | $49 | Low | Finance Operations |
+| IV-AE4EFEC7 | Past-Due Account Escalation | Low | Startup | $49 | Low | Finance Operations |
+| IV-71500FAD | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-A0B79EC9 | Past-Due Account Escalation | Low | SMB | $49 | Low | Finance Operations |
+| IV-AE904854 | Past-Due Account Escalation | Low | Mid-Market | $49 | Low | Finance Operations |
+| IV-21D82CFE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-61AEDD19 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-20535764 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-C0C5E139 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-013882AC | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-70387840 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-157DF037 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-B39E79D6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-69713EE9 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-B0B3FB96 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-4BDEE6D9 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-ABFC175A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-A55A07EB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-E6A15462 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-62B1A383 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-E793B0B6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-99F81FFF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
+| IV-36A36882 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-F8717D54 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-808253F0 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-CBE44DCD | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-D172AEFB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-41C00A17 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-822FE703 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-F4E63120 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-F7B9C5AB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-A35F0FF9 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-FF7ADB3A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-863C92BE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-FFC65968 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-DBDA7D11 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-566AB1AA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-425E5416 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-8E75F926 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-19305578 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-76807EF8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-3EB72183 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-A2545DBD | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-42A6E9CB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-3A06C18E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-0D071CCF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-CA03E115 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-62FD9643 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-7468BEAF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-45DED7E0 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-196A6BDA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-E265EC40 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-5E7ED58E | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-7B222042 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-B1F4839D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-B8D24321 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-3ECD51EE | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-4F4909DA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-A32583B4 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-28C3FB0F | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
+| IV-9FF463C6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-CC811673 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-F9607F5D | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-1A52E980 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-4FCF5108 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-F156D567 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-3CCEE9E0 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-4BE32431 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-E4BE287C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-3BFDA2CA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-F26C2873 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-5F56BA89 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-3C1BE1B2 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-45D82ED6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-F7950B14 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-2F2971F8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-C2DBDDA3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-12DF7015 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-F43322DC | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
+| IV-55D793CA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
+| IV-035D6547 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-EDCB1424 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-4C672E36 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-6278C965 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-06B3216A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-12A9F9E8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
+| IV-D7BDB619 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-08B970E0 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-C8988AF6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-B0CD9820 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-7891F279 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-E10453A5 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-E662DDE7 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-4CFA2F7A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-B6ABA906 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-BB5FC6D6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-D09DBB1C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-16267949 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-62591463 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-23C19BC1 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
+| IV-F4DA34C3 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-D0150761 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-DF78A2CB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-938E10B5 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-07CC86A4 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-F29AA368 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-D23B77B8 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
+| IV-D7746F41 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-367D51D0 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-FCC6FDFC | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $49 | Low | Customer Success Manager |
+| IV-F83B1D56 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-E27D9095 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-85F25641 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-66042941 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-09A5038B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-9372DDFF | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-48DFFE12 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-B2AEC84C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-7E90B323 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-2F7B36BC | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-F743E254 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-C50A2C60 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-A01E5F01 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $49 | Low | Customer Success Manager |
+| IV-1FFFA1C4 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-4CC1813C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $49 | Low | Customer Success Manager |
+| IV-9739358A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-B2A3343B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $49 | Low | Customer Success Manager |
+| IV-F88C6287 | Mid-Market Retention Escalation — Critical Risk | Low | Mid-Market | $49 | High | Customer Success Manager |
+| IV-7E62B075 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-C7EE8815 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-8D0D7781 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-0E6E02C2 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-4F605DA0 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-47B7448C | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-1BA86004 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-C0E7BDC3 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-EEC0F35B | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-002722A0 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-E68B9C16 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-F3B5EF31 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-01AD68C5 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-BC1BF7E4 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-B4A98E04 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-EADFD739 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-0ABF4486 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-34181B98 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-D71E2005 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-C06D34BD | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-3A588CFE | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-CB53526A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-780500C6 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-2B665D45 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-B4012A61 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-267527AD | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-3FE95808 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-1035ED0D | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-80BEC184 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-1EC33274 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-9CAD9B8D | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-FC3C844B | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-A46C0A8A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-6F7257E6 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-2065C9BB | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-BD7ABB88 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-3CF89A7A | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-070586B9 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-549AAC07 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-EC4B7DF2 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-9595F622 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-852CC286 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-5F5BB08C | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-EC746187 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-C64F24CB | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-4D130098 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-E3E5CE4C | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $49 | High | Marketing Automation |
+| IV-487EB74F | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
+| IV-A89549B6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
+| IV-57D4507B | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $0 | Low | Customer Success Manager |
+| IV-C7B0CAC7 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
+| IV-8B82C774 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
+| IV-C0E22EB6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $0 | Low | Customer Success Manager |
+| IV-CEB9C3EA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $0 | Low | Customer Success Manager |
+| IV-C3603BCA | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
+| IV-6DCB965C | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
+| IV-B3D1DD71 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $0 | Low | Customer Success Manager |
+| IV-B0FC48AF | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
+| IV-9DD54DAA | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
+| IV-31007472 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
+| IV-63AE39B6 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
+| IV-D426CF40 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $0 | Low | Customer Success Manager |
+| IV-0DB86A56 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
+| IV-39CEFA48 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
+| IV-D4C89FDB | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Enterprise | $0 | Low | Customer Success Manager |
+| IV-11F67073 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $0 | Low | Customer Success Manager |
+| IV-D0595057 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Mid-Market | $0 | Low | Customer Success Manager |
+| IV-BAAD1562 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
+| IV-79C9732A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
+| IV-B5F75FD7 | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
+| IV-10332584 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
+| IV-C72ACB86 | Proactive Billing Intervention — Payment Risk Driver Detected | Low | Startup | $0 | Low | Customer Success Manager |
+| IV-28DAE11D | SMB Re-engagement Offer — High Churn Risk | Low | SMB | $0 | High | Marketing Automation |
+| IV-70FD1D0A | Proactive Billing Intervention — Payment Risk Driver Detected | Low | SMB | $0 | Low | Customer Success Manager |
 
 ---
 

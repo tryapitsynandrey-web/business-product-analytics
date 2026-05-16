@@ -1,1001 +1,1001 @@
 customer_id,company_name,segment,country,signup_date,acquisition_channel,is_active
-CUST-ead84775,Company 0,Mid-Market,Canada,2026-02-23 22:04:49,Outbound Sales,False
-CUST-0ba66f2a,Company 1,Enterprise,Australia,2025-12-03 16:09:23,Paid Social,True
-CUST-557b6976,Company 2,Mid-Market,Germany,2026-02-25 09:25:35,Referral,True
-CUST-751489c5,Company 3,Startup,Canada,2026-04-07 06:10:52,Paid Social,True
-CUST-f1fec33c,Company 4,SMB,UK,2025-01-07 00:50:41,Outbound Sales,False
-CUST-dd61d47d,Company 5,Startup,Germany,2024-10-09 03:25:45,Organic Search,True
-CUST-47a35dc2,Company 6,Startup,UK,2025-06-26 06:09:34,Direct,False
-CUST-17269a71,Company 7,SMB,UK,2025-03-13 11:24:43,Outbound Sales,True
-CUST-2565bfe6,Company 8,Startup,USA,2025-11-16 05:11:11,Organic Search,False
-CUST-76d4c4aa,Company 9,Startup,Australia,2025-03-08 10:52:31,Referral,False
-CUST-705d33ea,Company 10,SMB,Germany,2025-04-11 02:52:44,Paid Social,False
-CUST-7b8cf758,Company 11,SMB,UK,2025-02-09 14:18:01,Paid Social,True
-CUST-88617fc2,Company 12,SMB,USA,2025-05-09 03:35:36,Paid Social,True
-CUST-0368b278,Company 13,SMB,Canada,2024-08-27 11:22:52,Referral,False
-CUST-92c57a47,Company 14,SMB,Germany,2025-01-08 23:29:00,Organic Search,True
-CUST-93bbdd37,Company 15,SMB,UK,2025-09-30 05:35:35,Referral,True
-CUST-200cfc5b,Company 16,Startup,Australia,2025-01-09 13:42:18,Paid Social,True
-CUST-37cb0e9c,Company 17,Startup,USA,2025-08-25 02:22:17,Outbound Sales,False
-CUST-21e07cb5,Company 18,Enterprise,UK,2024-07-04 16:32:38,Direct,True
-CUST-39a9e549,Company 19,SMB,Australia,2024-10-16 12:43:40,Referral,True
-CUST-93d203d1,Company 20,Enterprise,UK,2024-12-08 15:56:00,Referral,False
-CUST-896d2db4,Company 21,SMB,Germany,2024-06-29 08:43:46,Organic Search,True
-CUST-893e1d87,Company 22,SMB,Germany,2025-08-09 01:39:22,Organic Search,False
-CUST-998d4c7e,Company 23,Startup,Germany,2024-06-15 17:53:42,Referral,True
-CUST-e6c9bd46,Company 24,SMB,USA,2025-09-14 15:33:56,Paid Social,True
-CUST-32b36711,Company 25,Startup,Germany,2025-06-01 14:10:40,Direct,True
-CUST-d5000394,Company 26,Startup,Australia,2025-12-02 04:02:01,Organic Search,True
-CUST-fde3832a,Company 27,Mid-Market,UK,2025-06-15 00:13:57,Paid Social,False
-CUST-fd9ec295,Company 28,Startup,Canada,2025-05-09 06:15:12,Outbound Sales,True
-CUST-2a2fb5d9,Company 29,SMB,Australia,2024-08-29 06:44:46,Organic Search,True
-CUST-79a2f6e9,Company 30,SMB,Australia,2025-08-04 23:01:14,Paid Social,True
-CUST-e9e565a7,Company 31,SMB,Germany,2025-04-24 07:13:37,Paid Social,True
-CUST-0c239dcd,Company 32,Startup,USA,2025-09-20 14:47:44,Direct,True
-CUST-f4d964ed,Company 33,Startup,UK,2025-05-12 17:59:25,Direct,True
-CUST-b52a436c,Company 34,Startup,USA,2025-09-16 02:22:13,Outbound Sales,True
-CUST-d6336b29,Company 35,Startup,UK,2025-08-05 20:45:51,Paid Social,False
-CUST-8c3b6c9b,Company 36,Startup,UK,2024-09-08 05:02:23,Paid Social,True
-CUST-1a440964,Company 37,Startup,USA,2025-08-10 03:44:35,Direct,True
-CUST-797bf76f,Company 38,Startup,Australia,2026-04-28 12:38:38,Organic Search,True
-CUST-e3d9b691,Company 39,Startup,UK,2025-10-31 14:36:48,Organic Search,False
-CUST-5ca7840f,Company 40,SMB,USA,2025-01-11 20:36:48,Referral,True
-CUST-e2485adb,Company 41,Mid-Market,UK,2025-04-20 08:25:24,Direct,True
-CUST-18c7c3a1,Company 42,Startup,Canada,2026-04-05 00:54:11,Referral,True
-CUST-1be1bcb9,Company 43,SMB,Australia,2024-10-01 10:18:10,Direct,False
-CUST-340e7725,Company 44,SMB,Germany,2026-01-18 11:43:30,Outbound Sales,True
-CUST-3f6e870b,Company 45,Startup,UK,2024-11-19 04:38:43,Paid Social,False
-CUST-53d76630,Company 46,SMB,Canada,2025-07-29 23:21:06,Outbound Sales,True
-CUST-cb914e66,Company 47,SMB,Germany,2026-01-03 04:40:55,Direct,True
-CUST-8cd43467,Company 48,Startup,Germany,2025-05-13 23:17:36,Paid Social,False
-CUST-bc76ad7a,Company 49,Startup,UK,2026-04-15 15:08:11,Organic Search,True
-CUST-c7b40f76,Company 50,SMB,USA,2026-04-27 21:09:44,Organic Search,False
-CUST-831fe88f,Company 51,Startup,UK,2026-04-18 08:55:00,Referral,False
-CUST-55d583ba,Company 52,Startup,Canada,2026-03-16 23:26:21,Direct,False
-CUST-7977a0c3,Company 53,Mid-Market,Germany,2024-06-05 03:20:41,Direct,True
-CUST-64fe35fd,Company 54,Enterprise,UK,2026-03-24 18:41:27,Organic Search,False
-CUST-3e2fae54,Company 55,Startup,USA,2025-07-01 05:12:11,Outbound Sales,True
-CUST-3b801d0e,Company 56,SMB,UK,2026-04-17 14:29:13,Paid Social,False
-CUST-25b5662e,Company 57,SMB,Australia,2026-02-13 05:30:21,Outbound Sales,True
-CUST-1c8c040e,Company 58,SMB,USA,2024-09-11 20:57:47,Outbound Sales,False
-CUST-83944719,Company 59,SMB,Canada,2026-02-26 10:30:14,Organic Search,True
-CUST-9e3e8e51,Company 60,SMB,Germany,2025-11-25 00:15:36,Organic Search,True
-CUST-094a36e5,Company 61,SMB,UK,2024-12-27 18:12:13,Organic Search,True
-CUST-05f91b81,Company 62,SMB,USA,2026-01-19 18:16:00,Referral,False
-CUST-2dfb800b,Company 63,SMB,Australia,2024-06-16 05:10:10,Outbound Sales,True
-CUST-16326858,Company 64,Startup,USA,2025-12-01 19:29:26,Direct,True
-CUST-147bce1b,Company 65,Mid-Market,Australia,2025-10-07 20:10:06,Paid Social,False
-CUST-2d44be8d,Company 66,Startup,Canada,2025-05-27 17:30:21,Referral,True
-CUST-1cbf3102,Company 67,SMB,Germany,2024-05-24 23:55:42,Direct,True
-CUST-10b817a1,Company 68,Startup,Canada,2024-11-19 00:03:37,Outbound Sales,True
-CUST-c283205b,Company 69,SMB,UK,2026-01-01 16:56:06,Organic Search,True
-CUST-0baeaba0,Company 70,Startup,USA,2026-01-12 08:29:44,Outbound Sales,True
-CUST-01606f27,Company 71,Startup,Australia,2025-04-03 15:06:40,Paid Social,True
-CUST-dad8c860,Company 72,SMB,Australia,2024-09-16 21:20:19,Referral,True
-CUST-8ff2793e,Company 73,Startup,USA,2025-11-25 03:49:52,Referral,True
-CUST-12b326ef,Company 74,SMB,USA,2026-01-27 12:36:59,Paid Social,False
-CUST-49f8906f,Company 75,SMB,UK,2024-06-07 22:27:28,Direct,True
-CUST-c40c3670,Company 76,Enterprise,Canada,2025-10-26 23:58:25,Direct,True
-CUST-5d3253df,Company 77,SMB,Australia,2025-01-15 01:26:04,Referral,False
-CUST-ab187227,Company 78,SMB,UK,2024-10-11 01:11:47,Referral,True
-CUST-1608192e,Company 79,SMB,Canada,2024-07-21 02:00:39,Organic Search,True
-CUST-19dba2e2,Company 80,Startup,UK,2024-10-07 15:55:30,Direct,False
-CUST-e04865e6,Company 81,Mid-Market,Australia,2024-05-29 16:29:41,Paid Social,False
-CUST-04c27452,Company 82,SMB,USA,2025-07-18 11:43:04,Direct,False
-CUST-e1cdc284,Company 83,SMB,USA,2025-10-05 02:03:02,Organic Search,False
-CUST-64ce0362,Company 84,Mid-Market,Canada,2025-03-15 19:54:52,Referral,False
-CUST-8dbb3806,Company 85,SMB,Germany,2025-01-29 13:12:08,Referral,True
-CUST-ad6fca99,Company 86,Startup,Canada,2024-10-18 03:01:54,Organic Search,False
-CUST-9eac2f65,Company 87,SMB,Germany,2024-12-14 21:31:22,Paid Social,True
-CUST-8536506a,Company 88,Mid-Market,UK,2025-01-02 11:17:46,Referral,False
-CUST-4e910dc2,Company 89,SMB,UK,2025-01-21 13:01:28,Outbound Sales,True
-CUST-667a98b5,Company 90,Enterprise,Australia,2026-02-12 05:53:30,Referral,True
-CUST-bb5500cf,Company 91,Startup,Germany,2024-05-11 04:18:09,Outbound Sales,True
-CUST-1893b60b,Company 92,Mid-Market,Australia,2024-06-18 12:32:35,Organic Search,False
-CUST-6290cf52,Company 93,SMB,USA,2026-04-11 22:03:34,Organic Search,True
-CUST-fd5f5c62,Company 94,Startup,Germany,2025-08-23 16:04:14,Referral,False
-CUST-f111ef74,Company 95,SMB,Canada,2026-01-07 04:32:16,Direct,False
-CUST-3ab79b3f,Company 96,Startup,USA,2024-08-15 09:37:10,Outbound Sales,True
-CUST-cb3e7dbd,Company 97,SMB,USA,2024-12-18 23:36:14,Paid Social,False
-CUST-0063bc5d,Company 98,Startup,Canada,2024-12-02 22:23:30,Referral,False
-CUST-1457d3bd,Company 99,SMB,USA,2024-12-31 20:09:44,Paid Social,True
-CUST-658a2db2,Company 100,Startup,Germany,2024-11-30 07:54:26,Referral,True
-CUST-52005ce7,Company 101,Mid-Market,Australia,2025-07-05 15:55:47,Direct,True
-CUST-65167149,Company 102,Mid-Market,USA,2026-04-06 00:05:07,Direct,True
-CUST-64992aa2,Company 103,Mid-Market,Germany,2025-10-05 09:42:04,Direct,True
-CUST-b984ef98,Company 104,Startup,UK,2025-06-06 22:19:30,Direct,False
-CUST-94fa4e97,Company 105,Startup,Germany,2025-07-03 17:14:35,Organic Search,True
-CUST-2411f308,Company 106,Startup,Australia,2025-01-21 23:41:20,Organic Search,False
-CUST-b960f009,Company 107,Enterprise,Germany,2026-04-02 20:20:45,Outbound Sales,True
-CUST-06e4339d,Company 108,Startup,Canada,2025-06-12 01:16:18,Paid Social,True
-CUST-96daf4f7,Company 109,SMB,Australia,2026-02-04 19:58:04,Referral,False
-CUST-552704a2,Company 110,SMB,UK,2024-06-15 23:57:45,Referral,False
-CUST-8f99d538,Company 111,Mid-Market,Canada,2026-03-18 22:25:56,Organic Search,True
-CUST-3f245dee,Company 112,Startup,Germany,2026-02-10 12:54:41,Referral,True
-CUST-ad81ca19,Company 113,Mid-Market,Australia,2025-02-16 13:49:42,Organic Search,True
-CUST-1c275276,Company 114,SMB,UK,2025-07-01 16:38:43,Outbound Sales,True
-CUST-f173365a,Company 115,Startup,Canada,2024-06-07 11:32:41,Paid Social,True
-CUST-a6d9fd4c,Company 116,Mid-Market,UK,2025-07-10 20:12:44,Outbound Sales,True
-CUST-33484f42,Company 117,SMB,Germany,2026-02-13 10:21:50,Direct,True
-CUST-ec89e273,Company 118,SMB,UK,2026-01-01 00:49:01,Direct,False
-CUST-6f1722db,Company 119,SMB,USA,2026-02-27 09:31:12,Direct,True
-CUST-5545121f,Company 120,SMB,Canada,2025-11-28 00:30:24,Outbound Sales,True
-CUST-610f92e4,Company 121,SMB,UK,2025-10-05 17:40:33,Referral,True
-CUST-fe8919af,Company 122,Startup,Germany,2024-05-22 21:46:53,Paid Social,False
-CUST-5514854b,Company 123,SMB,Germany,2025-01-27 14:09:55,Direct,False
-CUST-46b1c45c,Company 124,SMB,UK,2025-07-30 06:25:21,Direct,True
-CUST-2b4efc04,Company 125,Startup,Germany,2025-12-28 01:46:13,Direct,False
-CUST-547054f5,Company 126,SMB,Australia,2024-05-08 14:23:57,Paid Social,True
-CUST-5116ee5c,Company 127,SMB,Australia,2024-09-09 21:38:51,Direct,True
-CUST-372b3f0a,Company 128,SMB,Australia,2024-07-22 21:57:01,Paid Social,True
-CUST-834fe4a1,Company 129,SMB,USA,2025-04-02 02:29:16,Direct,True
-CUST-e6e99c24,Company 130,SMB,UK,2024-12-05 15:00:53,Outbound Sales,False
-CUST-144d5d26,Company 131,Startup,USA,2025-11-16 13:37:20,Outbound Sales,False
-CUST-4e056336,Company 132,Startup,Germany,2026-01-06 09:30:20,Paid Social,True
-CUST-5d9ccf03,Company 133,SMB,USA,2025-02-06 12:56:28,Outbound Sales,True
-CUST-40ad112c,Company 134,SMB,Germany,2026-04-07 22:40:35,Paid Social,True
-CUST-0e5b5755,Company 135,SMB,Germany,2024-10-02 05:54:55,Outbound Sales,True
-CUST-dd4251f1,Company 136,Startup,Canada,2025-11-22 20:48:23,Outbound Sales,True
-CUST-232711c2,Company 137,Enterprise,Australia,2024-11-09 13:39:01,Paid Social,True
-CUST-227130fc,Company 138,SMB,Germany,2025-06-20 11:59:40,Referral,True
-CUST-0f90ff0d,Company 139,SMB,Canada,2025-09-29 22:03:51,Outbound Sales,True
-CUST-ab3b69a7,Company 140,SMB,Australia,2025-07-25 17:22:15,Direct,True
-CUST-021c6b4e,Company 141,Startup,Germany,2025-02-12 15:56:53,Referral,True
-CUST-4d8ee3f9,Company 142,Mid-Market,Germany,2026-01-04 23:51:59,Paid Social,False
-CUST-2d3d54d1,Company 143,Startup,USA,2025-12-02 22:05:29,Referral,True
-CUST-93e562c0,Company 144,Mid-Market,USA,2024-12-14 01:04:14,Organic Search,False
-CUST-a3d0789c,Company 145,Startup,Australia,2025-10-09 14:33:02,Organic Search,True
-CUST-e433dd8c,Company 146,Mid-Market,Germany,2025-03-26 20:30:05,Outbound Sales,False
-CUST-cac25f59,Company 147,Enterprise,UK,2025-07-14 23:50:24,Outbound Sales,False
-CUST-7286b1ef,Company 148,Startup,USA,2024-11-09 08:58:19,Direct,True
-CUST-157aacdf,Company 149,Startup,Australia,2025-03-16 15:21:17,Referral,True
-CUST-1e5ed6f6,Company 150,Startup,Germany,2026-03-31 03:43:40,Organic Search,False
-CUST-7e0a430a,Company 151,SMB,Germany,2025-12-23 02:30:08,Outbound Sales,True
-CUST-a1f72ee9,Company 152,Startup,UK,2024-09-22 21:08:22,Referral,True
-CUST-2e119609,Company 153,Enterprise,Australia,2024-07-29 13:23:17,Outbound Sales,True
-CUST-323b2f3d,Company 154,Startup,Germany,2024-06-29 15:27:16,Outbound Sales,True
-CUST-3e707a6b,Company 155,SMB,USA,2025-11-27 21:07:39,Organic Search,True
-CUST-910dae2c,Company 156,Startup,UK,2026-04-09 07:28:59,Organic Search,False
-CUST-92162f2d,Company 157,Startup,Australia,2026-01-23 22:44:50,Outbound Sales,True
-CUST-8a69a480,Company 158,Startup,UK,2026-01-28 12:35:08,Paid Social,True
-CUST-69b830d2,Company 159,SMB,USA,2025-08-31 20:21:29,Outbound Sales,False
-CUST-55344ee7,Company 160,SMB,Australia,2025-10-29 16:42:47,Outbound Sales,True
-CUST-6dd6aa56,Company 161,Startup,UK,2026-02-21 20:32:16,Direct,False
-CUST-94fd26c5,Company 162,SMB,Canada,2026-01-22 06:26:20,Direct,True
-CUST-43a3669c,Company 163,Startup,USA,2025-08-03 05:41:14,Direct,True
-CUST-e4aececd,Company 164,Startup,USA,2026-01-05 03:09:51,Paid Social,False
-CUST-06985569,Company 165,Mid-Market,USA,2026-04-22 06:59:19,Paid Social,True
-CUST-c6ec3702,Company 166,Startup,Canada,2024-10-27 06:36:21,Outbound Sales,False
-CUST-a0218962,Company 167,SMB,Canada,2025-06-06 01:55:19,Direct,False
-CUST-5be71367,Company 168,Startup,Germany,2025-09-28 00:49:13,Paid Social,False
-CUST-c7759aee,Company 169,Startup,UK,2024-10-02 06:42:27,Organic Search,True
-CUST-691c8730,Company 170,Mid-Market,Germany,2025-09-23 02:09:54,Outbound Sales,False
-CUST-80b10761,Company 171,SMB,UK,2025-01-19 17:28:07,Referral,True
-CUST-bae02249,Company 172,Startup,Canada,2025-10-26 03:51:01,Outbound Sales,True
-CUST-578cba9f,Company 173,SMB,Canada,2024-10-03 03:29:45,Referral,False
-CUST-982c58f8,Company 174,SMB,Germany,2026-04-23 23:17:18,Direct,True
-CUST-77266baf,Company 175,SMB,Australia,2024-07-27 01:30:03,Referral,False
-CUST-046c76ba,Company 176,SMB,Germany,2025-01-28 14:16:03,Direct,False
-CUST-4f63ae8b,Company 177,SMB,UK,2025-03-05 16:34:58,Organic Search,False
-CUST-0d0c0eaa,Company 178,SMB,Germany,2025-08-19 08:00:11,Referral,True
-CUST-36c8860d,Company 179,SMB,USA,2025-08-07 13:14:39,Outbound Sales,False
-CUST-a20ed4e4,Company 180,Startup,UK,2025-04-26 08:45:33,Direct,True
-CUST-8b965eeb,Company 181,Mid-Market,UK,2025-05-17 17:50:43,Outbound Sales,False
-CUST-46ddaab4,Company 182,Mid-Market,Australia,2025-02-13 16:37:07,Paid Social,True
-CUST-cd0178e3,Company 183,Enterprise,Canada,2024-07-22 09:14:38,Direct,True
-CUST-95d66ef8,Company 184,Mid-Market,UK,2025-09-06 21:38:22,Referral,True
-CUST-89b542f1,Company 185,SMB,Canada,2024-08-07 07:49:52,Direct,True
-CUST-356f57f1,Company 186,Startup,Germany,2026-04-11 00:10:25,Outbound Sales,True
-CUST-ca3a43b8,Company 187,Startup,USA,2026-04-14 20:57:59,Organic Search,False
-CUST-8af1640a,Company 188,Mid-Market,Australia,2024-05-16 22:34:11,Direct,True
-CUST-87a46ba9,Company 189,Startup,Canada,2025-01-18 11:22:44,Referral,True
-CUST-7ea177e7,Company 190,Startup,UK,2025-11-26 05:56:27,Paid Social,True
-CUST-3d5f5dfb,Company 191,SMB,Canada,2025-04-02 03:01:41,Organic Search,True
-CUST-a3c5921b,Company 192,Startup,UK,2024-08-08 07:03:52,Paid Social,True
-CUST-7569f702,Company 193,Startup,Canada,2024-06-15 14:05:21,Direct,True
-CUST-43e0b0e0,Company 194,SMB,UK,2025-07-08 02:01:40,Outbound Sales,True
-CUST-3895484d,Company 195,SMB,Germany,2025-06-10 12:20:56,Outbound Sales,True
-CUST-c377a12c,Company 196,Startup,UK,2024-07-12 11:24:50,Referral,True
-CUST-94d2681a,Company 197,Startup,UK,2026-04-20 10:52:57,Outbound Sales,True
-CUST-c4e87f2f,Company 198,Enterprise,USA,2025-10-20 07:28:11,Organic Search,True
-CUST-161ee4c5,Company 199,Startup,UK,2024-11-29 11:33:37,Outbound Sales,False
-CUST-57df11ea,Company 200,Startup,USA,2025-07-09 02:21:39,Referral,False
-CUST-dc05df28,Company 201,Startup,Australia,2025-02-07 23:33:35,Direct,True
-CUST-e94793ea,Company 202,Startup,USA,2025-09-19 12:42:48,Direct,False
-CUST-b23bbc1c,Company 203,Startup,Germany,2025-01-29 03:51:13,Outbound Sales,True
-CUST-bb4e8ad2,Company 204,Mid-Market,USA,2026-04-27 20:00:04,Paid Social,True
-CUST-5ff529a8,Company 205,SMB,Australia,2025-01-17 07:46:51,Direct,False
-CUST-36ecded7,Company 206,Startup,Germany,2025-07-04 15:25:19,Outbound Sales,True
-CUST-f3a8a357,Company 207,Startup,Canada,2025-05-05 04:03:35,Referral,False
-CUST-814d7b2f,Company 208,SMB,Canada,2025-01-10 03:46:02,Outbound Sales,True
-CUST-b7433778,Company 209,SMB,USA,2025-02-03 20:10:40,Direct,True
-CUST-6e22c256,Company 210,Startup,USA,2025-05-31 21:34:30,Referral,True
-CUST-8994c27b,Company 211,SMB,Australia,2025-11-18 01:03:13,Outbound Sales,False
-CUST-d4dab662,Company 212,Startup,Australia,2026-04-23 01:12:02,Organic Search,True
-CUST-6e5f1e75,Company 213,Startup,UK,2025-06-29 18:52:13,Referral,False
-CUST-dcb8f4bc,Company 214,Startup,Australia,2025-12-12 20:14:17,Organic Search,True
-CUST-a9ec6005,Company 215,SMB,UK,2025-12-29 19:27:38,Paid Social,True
-CUST-b73b08db,Company 216,SMB,Germany,2024-10-24 12:34:08,Referral,True
-CUST-072b1423,Company 217,SMB,USA,2025-04-10 22:01:36,Organic Search,True
-CUST-315ad390,Company 218,SMB,Germany,2025-09-30 01:23:04,Direct,False
-CUST-a2a04092,Company 219,SMB,Australia,2024-08-12 04:08:34,Direct,True
-CUST-8c03be60,Company 220,SMB,Germany,2025-06-23 15:31:46,Paid Social,False
-CUST-f67e2964,Company 221,Mid-Market,Germany,2025-06-14 07:12:47,Referral,False
-CUST-5f504bfa,Company 222,SMB,Germany,2025-12-17 20:27:16,Referral,True
-CUST-296b10fa,Company 223,SMB,Australia,2025-10-15 05:31:10,Referral,True
-CUST-368c1257,Company 224,SMB,Germany,2026-01-29 23:56:11,Paid Social,True
-CUST-0039353d,Company 225,SMB,UK,2025-02-03 18:20:48,Referral,True
-CUST-96beef23,Company 226,Startup,Australia,2026-01-21 18:57:01,Direct,True
-CUST-ce82e584,Company 227,Startup,Germany,2025-02-05 14:41:15,Organic Search,True
-CUST-cb03f639,Company 228,Mid-Market,Australia,2024-06-05 18:54:26,Direct,True
-CUST-1e370c64,Company 229,Startup,Canada,2024-06-10 16:23:33,Direct,True
-CUST-6fbccc54,Company 230,SMB,UK,2025-03-27 12:14:29,Organic Search,True
-CUST-a02fe1c3,Company 231,Startup,Germany,2025-08-07 15:07:09,Direct,True
-CUST-a995a5f3,Company 232,SMB,Canada,2025-04-24 05:48:47,Paid Social,True
-CUST-e489c556,Company 233,Startup,Canada,2025-01-23 03:45:38,Organic Search,False
-CUST-df703a20,Company 234,Startup,Australia,2024-06-02 21:37:33,Direct,True
-CUST-743ab906,Company 235,Startup,Canada,2025-02-06 04:10:00,Outbound Sales,True
-CUST-b9956851,Company 236,Startup,UK,2025-07-20 10:05:37,Direct,False
-CUST-c391e66e,Company 237,Mid-Market,UK,2024-07-14 10:03:57,Paid Social,True
-CUST-031ae2a1,Company 238,SMB,USA,2025-06-05 01:19:35,Referral,True
-CUST-d5221ac4,Company 239,Startup,UK,2025-04-18 15:00:27,Direct,True
-CUST-666eafdc,Company 240,SMB,Canada,2025-06-29 21:21:46,Referral,True
-CUST-6c0f6824,Company 241,Startup,UK,2025-10-24 06:49:16,Outbound Sales,True
-CUST-05869f56,Company 242,Mid-Market,Australia,2024-09-26 04:21:19,Direct,True
-CUST-8108d030,Company 243,SMB,USA,2025-11-13 20:23:09,Organic Search,True
-CUST-e6ec507b,Company 244,SMB,Canada,2024-05-30 15:36:02,Referral,True
-CUST-97bf46a4,Company 245,SMB,USA,2024-10-21 22:48:41,Outbound Sales,False
-CUST-5e627f58,Company 246,Startup,Canada,2025-01-08 09:42:29,Organic Search,False
-CUST-db4f6eda,Company 247,SMB,Australia,2025-10-11 12:17:27,Organic Search,True
-CUST-65cbdad0,Company 248,SMB,USA,2024-11-12 07:15:26,Organic Search,False
-CUST-739feacd,Company 249,SMB,Germany,2025-08-22 19:00:32,Organic Search,True
-CUST-3027e654,Company 250,SMB,Canada,2025-09-04 17:37:00,Direct,True
-CUST-132ac675,Company 251,Startup,Germany,2025-01-31 22:49:23,Direct,False
-CUST-5bcaafb6,Company 252,Enterprise,USA,2025-12-27 14:19:11,Direct,True
-CUST-f7be4774,Company 253,SMB,Germany,2025-10-22 01:53:30,Outbound Sales,True
-CUST-1ac141c4,Company 254,SMB,Germany,2024-05-08 17:45:40,Outbound Sales,True
-CUST-2e7f630c,Company 255,Startup,USA,2024-10-12 09:31:48,Outbound Sales,True
-CUST-3f158293,Company 256,SMB,Australia,2025-11-17 03:07:40,Paid Social,False
-CUST-9886d86e,Company 257,Startup,Germany,2026-02-23 18:20:08,Outbound Sales,False
-CUST-80093d6e,Company 258,Startup,Germany,2024-12-05 12:44:05,Direct,False
-CUST-83184d71,Company 259,SMB,Australia,2024-09-03 22:51:14,Direct,False
-CUST-3a3c4315,Company 260,SMB,Germany,2024-10-05 18:12:37,Paid Social,True
-CUST-4ae9d46a,Company 261,SMB,Germany,2024-11-18 16:03:42,Paid Social,True
-CUST-80bca1f4,Company 262,SMB,Germany,2025-08-14 10:43:36,Outbound Sales,True
-CUST-6e07e054,Company 263,Startup,UK,2026-01-19 11:08:32,Referral,True
-CUST-3c6e03c7,Company 264,Startup,Australia,2024-08-04 15:09:22,Paid Social,True
-CUST-6f068a29,Company 265,Mid-Market,Germany,2025-07-19 16:41:47,Organic Search,False
-CUST-6c2cc678,Company 266,Mid-Market,Australia,2026-02-06 23:28:38,Direct,True
-CUST-f8402d43,Company 267,SMB,Canada,2025-08-05 15:54:15,Organic Search,True
-CUST-e32c940e,Company 268,Startup,Canada,2024-11-23 00:55:49,Direct,True
-CUST-d9ea3633,Company 269,SMB,Germany,2025-05-13 23:13:13,Direct,True
-CUST-44d79622,Company 270,Mid-Market,Australia,2024-11-02 12:24:53,Paid Social,False
-CUST-1fbea813,Company 271,Startup,Australia,2026-03-03 10:26:36,Paid Social,True
-CUST-8980999c,Company 272,Startup,Australia,2025-02-12 05:56:05,Organic Search,True
-CUST-20c3584e,Company 273,Enterprise,UK,2024-07-04 11:58:23,Direct,False
-CUST-8b51999d,Company 274,Startup,Canada,2024-05-17 10:40:21,Organic Search,True
-CUST-50746848,Company 275,Startup,Australia,2025-06-03 00:02:46,Referral,True
-CUST-5d17ecf7,Company 276,SMB,Australia,2024-09-18 04:59:18,Organic Search,True
-CUST-da2d4335,Company 277,Mid-Market,UK,2024-12-31 23:55:44,Outbound Sales,False
-CUST-23530c93,Company 278,Mid-Market,UK,2024-12-22 21:17:14,Organic Search,True
-CUST-05d2aa92,Company 279,Mid-Market,Australia,2024-08-05 13:09:15,Outbound Sales,False
-CUST-400a8771,Company 280,Startup,USA,2026-02-14 08:00:09,Outbound Sales,False
-CUST-107242d5,Company 281,Startup,Australia,2024-07-12 17:06:12,Outbound Sales,True
-CUST-7bcf372b,Company 282,Mid-Market,Australia,2024-08-16 05:49:57,Referral,False
-CUST-174cc56b,Company 283,SMB,UK,2025-08-15 21:22:45,Organic Search,False
-CUST-5e40f4e9,Company 284,Mid-Market,UK,2025-01-20 20:59:35,Organic Search,False
-CUST-af3f30f7,Company 285,Mid-Market,Australia,2025-07-20 23:56:18,Referral,False
-CUST-ef5bfb52,Company 286,Startup,Australia,2024-12-06 06:56:38,Direct,True
-CUST-c7fa1a97,Company 287,SMB,Australia,2025-01-15 10:47:44,Paid Social,True
-CUST-622fcdda,Company 288,SMB,UK,2025-10-01 05:05:02,Organic Search,True
-CUST-9ca4d98d,Company 289,SMB,Australia,2024-07-10 10:28:20,Paid Social,True
-CUST-7f340b66,Company 290,Startup,Australia,2025-03-03 04:39:06,Referral,True
-CUST-826b669f,Company 291,SMB,Germany,2025-05-24 19:43:00,Direct,False
-CUST-4ba30402,Company 292,Startup,USA,2026-05-02 09:32:11,Direct,False
-CUST-bd7a8297,Company 293,SMB,Canada,2024-05-20 23:38:16,Direct,True
-CUST-99da3e5a,Company 294,Startup,USA,2024-09-20 15:48:43,Referral,False
-CUST-151a80d5,Company 295,Startup,Germany,2025-12-06 15:31:59,Outbound Sales,False
-CUST-12ff4fea,Company 296,Mid-Market,Canada,2025-10-01 00:39:56,Outbound Sales,True
-CUST-d3627128,Company 297,SMB,Australia,2024-10-17 05:09:51,Paid Social,True
-CUST-6a3ec9e2,Company 298,Startup,Germany,2025-05-30 00:35:01,Outbound Sales,True
-CUST-1d11add5,Company 299,Startup,Australia,2025-08-21 14:35:15,Outbound Sales,False
-CUST-9ee8c9b7,Company 300,SMB,UK,2025-03-15 10:56:10,Direct,True
-CUST-86446c0a,Company 301,SMB,Germany,2025-06-30 00:05:16,Direct,True
-CUST-6e921992,Company 302,Startup,UK,2024-07-24 02:46:01,Paid Social,True
-CUST-dd520177,Company 303,SMB,Germany,2025-05-06 04:59:04,Organic Search,False
-CUST-2ef9a499,Company 304,Enterprise,Germany,2026-05-07 10:31:34,Paid Social,False
-CUST-976fa4cf,Company 305,Startup,UK,2025-07-06 01:07:54,Paid Social,False
-CUST-df8afc93,Company 306,SMB,Canada,2025-06-19 15:06:34,Referral,False
-CUST-47d6d9f6,Company 307,SMB,USA,2024-12-18 22:56:47,Referral,False
-CUST-04380d57,Company 308,Mid-Market,Australia,2024-11-19 11:42:27,Paid Social,False
-CUST-8e6001ba,Company 309,Enterprise,Germany,2026-01-02 17:55:32,Paid Social,False
-CUST-286b0f2c,Company 310,SMB,Australia,2024-07-20 02:43:00,Paid Social,False
-CUST-8c9930c7,Company 311,Startup,UK,2025-04-29 19:52:37,Outbound Sales,True
-CUST-b6977e38,Company 312,SMB,Australia,2025-09-21 17:39:57,Referral,True
-CUST-323d8c3b,Company 313,SMB,UK,2025-06-23 15:17:52,Paid Social,True
-CUST-e6495725,Company 314,SMB,Australia,2025-06-19 14:19:11,Direct,True
-CUST-3c86d76a,Company 315,SMB,USA,2026-05-05 23:10:34,Direct,True
-CUST-0896b685,Company 316,Startup,USA,2025-06-25 06:21:40,Outbound Sales,True
-CUST-91102861,Company 317,SMB,USA,2025-08-24 12:43:45,Outbound Sales,False
-CUST-9ba32248,Company 318,SMB,USA,2026-05-04 05:46:15,Organic Search,False
-CUST-00e08588,Company 319,Startup,USA,2026-02-01 17:32:40,Organic Search,False
-CUST-3770676d,Company 320,SMB,USA,2026-03-08 01:53:36,Organic Search,True
-CUST-8b20ecfb,Company 321,Mid-Market,UK,2025-02-14 20:28:15,Outbound Sales,True
-CUST-4f2289a0,Company 322,SMB,Germany,2024-07-21 03:40:56,Outbound Sales,True
-CUST-59ba713d,Company 323,SMB,Australia,2024-06-24 21:29:27,Outbound Sales,True
-CUST-426b75e1,Company 324,SMB,USA,2025-06-10 22:26:06,Direct,True
-CUST-36deabfb,Company 325,SMB,UK,2025-12-30 04:21:59,Outbound Sales,True
-CUST-3cbe5c79,Company 326,Startup,UK,2026-01-25 16:15:31,Direct,False
-CUST-16dd4f66,Company 327,SMB,UK,2025-05-28 01:51:51,Organic Search,False
-CUST-73f85789,Company 328,SMB,Germany,2025-01-07 09:47:36,Organic Search,True
-CUST-cd00e746,Company 329,Startup,Australia,2024-12-20 02:31:32,Organic Search,True
-CUST-dc47ba13,Company 330,SMB,Germany,2024-09-05 15:46:51,Paid Social,True
-CUST-7992eca5,Company 331,Startup,Canada,2024-09-08 21:10:48,Paid Social,True
-CUST-abdc8129,Company 332,SMB,UK,2024-10-05 07:41:01,Referral,False
-CUST-3272677f,Company 333,SMB,Canada,2024-10-25 22:10:13,Referral,True
-CUST-d0f6339f,Company 334,Startup,USA,2025-04-18 08:54:36,Referral,True
-CUST-d566978e,Company 335,SMB,USA,2025-12-12 09:36:36,Paid Social,True
-CUST-2edf2525,Company 336,SMB,Germany,2024-08-21 17:37:15,Paid Social,True
-CUST-b15747f3,Company 337,SMB,Australia,2025-08-27 12:16:12,Referral,True
-CUST-9d106d5c,Company 338,SMB,Canada,2026-01-20 10:51:17,Referral,False
-CUST-8980c909,Company 339,Startup,Australia,2024-11-13 16:24:15,Outbound Sales,True
-CUST-9f218537,Company 340,Mid-Market,Germany,2026-02-10 08:25:36,Referral,True
-CUST-3bc52bad,Company 341,SMB,USA,2024-06-18 20:17:33,Outbound Sales,True
-CUST-c889d6b0,Company 342,Mid-Market,Australia,2024-11-27 18:31:25,Direct,True
-CUST-256d010d,Company 343,Startup,Australia,2025-02-27 15:23:02,Paid Social,False
-CUST-c7643676,Company 344,SMB,USA,2024-09-25 03:32:11,Referral,True
-CUST-c94c5736,Company 345,Startup,Canada,2025-09-26 23:26:59,Paid Social,True
-CUST-c2971ccd,Company 346,SMB,USA,2024-09-01 07:45:06,Paid Social,True
-CUST-f4fcb452,Company 347,Startup,Australia,2025-06-23 20:27:58,Paid Social,True
-CUST-6c893f3e,Company 348,Startup,Canada,2025-06-06 19:31:19,Direct,True
-CUST-d73ae4f1,Company 349,Startup,Canada,2025-09-07 04:40:11,Organic Search,True
-CUST-d4b80df6,Company 350,Startup,USA,2024-11-09 15:41:20,Referral,True
-CUST-a539d8a4,Company 351,SMB,Australia,2024-10-08 03:17:08,Organic Search,False
-CUST-d29ebc01,Company 352,SMB,Germany,2024-12-28 18:35:42,Organic Search,True
-CUST-a9789b72,Company 353,SMB,Australia,2026-03-06 01:29:56,Organic Search,False
-CUST-f0671929,Company 354,Mid-Market,UK,2025-06-25 21:52:29,Paid Social,True
-CUST-f373ac37,Company 355,SMB,Germany,2024-06-27 06:50:00,Outbound Sales,False
-CUST-593658d7,Company 356,SMB,Canada,2026-04-05 05:57:52,Paid Social,False
-CUST-549aeba3,Company 357,SMB,Germany,2025-10-28 08:30:13,Paid Social,True
-CUST-cb3c240f,Company 358,SMB,Canada,2025-05-14 17:32:22,Organic Search,False
-CUST-461f3e23,Company 359,Startup,Canada,2025-12-19 12:37:57,Paid Social,True
-CUST-a16ff662,Company 360,SMB,Germany,2026-01-09 04:31:30,Organic Search,False
-CUST-e2d06070,Company 361,Startup,Canada,2025-03-31 15:52:16,Outbound Sales,True
-CUST-0d90f12a,Company 362,Startup,Canada,2025-11-26 15:31:53,Referral,True
-CUST-8d6e914a,Company 363,Startup,UK,2025-09-06 20:21:29,Organic Search,True
-CUST-a0330957,Company 364,Startup,Australia,2025-05-22 15:18:28,Outbound Sales,False
-CUST-09615c72,Company 365,Startup,Australia,2025-06-14 18:12:47,Referral,True
-CUST-d6b30fde,Company 366,Startup,UK,2024-07-07 00:55:55,Direct,True
-CUST-dbfc307d,Company 367,Startup,Germany,2025-11-01 02:42:53,Organic Search,False
-CUST-122a2bd6,Company 368,Mid-Market,USA,2026-02-25 12:18:21,Organic Search,False
-CUST-87c9ba7e,Company 369,SMB,USA,2025-02-03 10:18:47,Direct,True
-CUST-2689c304,Company 370,SMB,USA,2026-02-06 04:46:47,Direct,True
-CUST-6a8bea0c,Company 371,Mid-Market,UK,2025-05-01 05:29:56,Organic Search,True
-CUST-b8cd91f0,Company 372,Startup,UK,2024-09-29 17:55:00,Direct,True
-CUST-da55b209,Company 373,Startup,Canada,2025-03-26 10:00:07,Paid Social,True
-CUST-8ae1bfd4,Company 374,Startup,USA,2026-01-23 02:30:16,Referral,False
-CUST-63590e76,Company 375,Mid-Market,Germany,2025-12-29 20:27:40,Referral,True
-CUST-91c74c14,Company 376,Startup,Germany,2026-03-29 04:00:26,Referral,True
-CUST-fb0cd14b,Company 377,Startup,USA,2026-04-16 10:21:16,Paid Social,True
-CUST-44eb7a07,Company 378,Startup,USA,2026-02-01 20:06:29,Direct,True
-CUST-f5a87457,Company 379,Startup,USA,2024-07-16 22:59:08,Outbound Sales,True
-CUST-2bd38945,Company 380,Startup,UK,2025-04-29 21:01:12,Direct,True
-CUST-f32414c7,Company 381,SMB,UK,2025-03-03 00:55:11,Organic Search,True
-CUST-4d4b96cf,Company 382,Startup,UK,2026-03-23 01:06:29,Referral,False
-CUST-09475927,Company 383,SMB,Australia,2025-01-30 09:50:36,Direct,True
-CUST-57b315d0,Company 384,Enterprise,Germany,2024-11-27 09:07:20,Outbound Sales,False
-CUST-434e0a68,Company 385,Startup,Germany,2025-06-06 04:40:42,Organic Search,False
-CUST-d5e13a88,Company 386,SMB,Canada,2026-01-31 06:07:08,Paid Social,True
-CUST-064a2133,Company 387,Startup,UK,2026-01-28 07:30:00,Paid Social,False
-CUST-5731e3de,Company 388,SMB,Australia,2024-09-12 08:56:02,Outbound Sales,True
-CUST-03036de5,Company 389,Startup,Australia,2025-08-08 05:17:59,Organic Search,True
-CUST-6eaac881,Company 390,SMB,Germany,2026-02-08 16:21:40,Referral,False
-CUST-97c45d61,Company 391,Startup,UK,2025-05-26 20:57:06,Direct,True
-CUST-5bdd2e56,Company 392,Startup,Canada,2024-09-15 22:36:45,Organic Search,True
-CUST-abbc1a27,Company 393,Mid-Market,UK,2025-05-03 12:28:55,Paid Social,False
-CUST-846142f0,Company 394,SMB,USA,2025-01-07 07:14:05,Outbound Sales,True
-CUST-edf2960f,Company 395,Startup,UK,2025-01-14 15:30:09,Outbound Sales,True
-CUST-be9f4199,Company 396,SMB,USA,2024-09-17 19:23:34,Direct,False
-CUST-bb241762,Company 397,Mid-Market,USA,2024-12-20 14:45:56,Outbound Sales,True
-CUST-118b91d9,Company 398,SMB,Canada,2025-07-04 00:23:46,Outbound Sales,True
-CUST-bf6d8b31,Company 399,SMB,Germany,2024-08-08 10:24:54,Organic Search,True
-CUST-bc86a76f,Company 400,Startup,UK,2024-07-08 14:40:38,Referral,True
-CUST-5543aefe,Company 401,Startup,USA,2024-12-12 12:28:10,Direct,True
-CUST-593f6c8d,Company 402,SMB,UK,2025-11-02 01:47:51,Organic Search,False
-CUST-bf6280ed,Company 403,SMB,Germany,2025-11-22 13:28:20,Referral,True
-CUST-dc0be26b,Company 404,Startup,Germany,2025-09-21 05:38:41,Organic Search,True
-CUST-f0d9df4e,Company 405,SMB,Australia,2025-02-06 09:35:09,Organic Search,False
-CUST-4f59ecea,Company 406,Mid-Market,Germany,2024-11-25 08:55:36,Outbound Sales,False
-CUST-78734f64,Company 407,Startup,Canada,2025-08-01 02:53:57,Referral,True
-CUST-4d61ad94,Company 408,Startup,USA,2024-09-06 20:11:20,Direct,True
-CUST-8621543a,Company 409,Startup,Australia,2024-09-27 21:42:29,Direct,True
-CUST-3b2d6ab4,Company 410,Startup,Canada,2025-08-24 05:03:46,Referral,True
-CUST-a0b45796,Company 411,SMB,UK,2026-02-08 06:44:09,Outbound Sales,True
-CUST-ee5e0427,Company 412,Startup,USA,2025-04-18 09:43:48,Paid Social,True
-CUST-7bc3be48,Company 413,SMB,Germany,2025-12-31 08:13:44,Organic Search,False
-CUST-7b2fff43,Company 414,Mid-Market,USA,2025-04-25 16:00:28,Outbound Sales,False
-CUST-039acf0a,Company 415,SMB,UK,2025-07-29 19:38:12,Referral,True
-CUST-4f9ad847,Company 416,SMB,Australia,2025-09-06 23:18:04,Organic Search,True
-CUST-659d1501,Company 417,Startup,Australia,2025-02-04 02:49:15,Direct,True
-CUST-ec32b4a3,Company 418,Mid-Market,Australia,2024-08-24 21:28:07,Paid Social,True
-CUST-6b69d122,Company 419,Mid-Market,Germany,2024-07-14 18:47:17,Direct,True
-CUST-036e2285,Company 420,SMB,Canada,2025-11-15 01:57:56,Referral,False
-CUST-26d979cf,Company 421,SMB,Canada,2025-02-20 18:43:17,Organic Search,True
-CUST-88710e47,Company 422,Startup,USA,2025-11-20 06:33:56,Referral,True
-CUST-790a5f2e,Company 423,SMB,Germany,2025-07-20 04:23:59,Organic Search,False
-CUST-b4c3ec25,Company 424,Startup,Australia,2025-06-26 15:45:27,Outbound Sales,True
-CUST-2555e9b6,Company 425,SMB,Australia,2025-11-22 09:08:10,Paid Social,True
-CUST-5a2cdd40,Company 426,SMB,UK,2024-05-30 23:46:02,Outbound Sales,True
-CUST-86e1d913,Company 427,Startup,UK,2025-08-28 23:30:26,Outbound Sales,True
-CUST-827eb435,Company 428,SMB,Australia,2025-12-12 22:08:02,Referral,False
-CUST-b2079426,Company 429,Startup,Australia,2024-12-05 19:49:30,Paid Social,True
-CUST-9a86549d,Company 430,SMB,Germany,2025-09-24 05:41:30,Organic Search,True
-CUST-66b806aa,Company 431,SMB,Canada,2024-09-07 22:52:01,Organic Search,True
-CUST-d4d65cd5,Company 432,Startup,UK,2024-09-02 16:54:47,Direct,False
-CUST-2b62d18f,Company 433,Mid-Market,Canada,2024-07-17 16:46:18,Organic Search,True
-CUST-64db7450,Company 434,Mid-Market,Germany,2025-03-09 04:27:43,Referral,True
-CUST-ad632921,Company 435,Startup,Australia,2026-01-20 08:58:39,Outbound Sales,True
-CUST-4871b882,Company 436,Mid-Market,Canada,2026-03-13 04:03:18,Outbound Sales,True
-CUST-07ce2c5c,Company 437,Startup,Australia,2025-03-18 14:52:41,Outbound Sales,True
-CUST-d5214812,Company 438,SMB,Australia,2024-09-16 02:58:10,Paid Social,True
-CUST-f9cd69e2,Company 439,Startup,USA,2024-12-16 15:40:53,Organic Search,True
-CUST-918bee6e,Company 440,Startup,Canada,2026-04-24 01:17:52,Referral,True
-CUST-95499959,Company 441,Startup,Canada,2026-01-28 01:32:03,Paid Social,False
-CUST-a9847713,Company 442,Startup,Australia,2025-06-16 19:24:20,Direct,True
-CUST-10b2c1a1,Company 443,SMB,Germany,2025-01-01 06:32:37,Referral,True
-CUST-ef83d9cf,Company 444,Startup,USA,2025-05-27 22:32:09,Referral,True
-CUST-97145da0,Company 445,Mid-Market,Australia,2025-11-27 11:36:00,Referral,False
-CUST-843b49fc,Company 446,SMB,UK,2024-11-08 01:35:29,Outbound Sales,True
-CUST-8ff8a8c9,Company 447,SMB,UK,2025-08-23 11:44:40,Referral,False
-CUST-f7383446,Company 448,SMB,USA,2025-07-14 01:30:47,Organic Search,False
-CUST-b3d22bb8,Company 449,Mid-Market,Germany,2024-09-30 15:14:44,Referral,True
-CUST-99abd6f7,Company 450,Startup,Australia,2025-01-03 23:50:45,Outbound Sales,False
-CUST-70951a68,Company 451,Startup,Canada,2026-01-12 03:25:24,Referral,True
-CUST-5b90e60a,Company 452,Startup,USA,2025-01-23 07:11:49,Direct,True
-CUST-2e400e04,Company 453,Mid-Market,Germany,2025-09-25 20:38:40,Direct,False
-CUST-18311f83,Company 454,Startup,Canada,2024-10-02 02:31:28,Outbound Sales,False
-CUST-e85ddc8f,Company 455,SMB,UK,2024-07-06 09:54:10,Organic Search,True
-CUST-c90923f3,Company 456,SMB,UK,2024-06-16 23:30:09,Organic Search,True
-CUST-ce81d571,Company 457,SMB,Canada,2026-03-31 18:17:54,Paid Social,True
-CUST-7dc0724f,Company 458,SMB,USA,2025-07-10 06:09:29,Outbound Sales,False
-CUST-85f84b5e,Company 459,Startup,UK,2025-07-04 06:33:14,Referral,True
-CUST-2c2af628,Company 460,SMB,Australia,2025-10-26 02:14:31,Outbound Sales,True
-CUST-5c7c9092,Company 461,SMB,Canada,2026-03-02 08:32:32,Paid Social,True
-CUST-83b80359,Company 462,Mid-Market,Canada,2025-03-24 08:15:56,Outbound Sales,True
-CUST-03417ac3,Company 463,Mid-Market,UK,2024-09-15 12:54:25,Outbound Sales,False
-CUST-51bd91fa,Company 464,Enterprise,USA,2025-03-17 15:53:57,Paid Social,True
-CUST-d2a83c0c,Company 465,Startup,Australia,2025-02-24 19:47:30,Organic Search,False
-CUST-743bc31c,Company 466,Enterprise,USA,2026-03-11 14:29:45,Referral,True
-CUST-549ec586,Company 467,Mid-Market,Germany,2025-09-06 19:39:47,Paid Social,False
-CUST-d7b6de4e,Company 468,SMB,Germany,2025-10-11 17:46:47,Direct,True
-CUST-9b7a0c16,Company 469,Startup,UK,2025-12-04 18:09:36,Organic Search,True
-CUST-278eea94,Company 470,Startup,UK,2025-08-11 07:45:09,Direct,True
-CUST-f604e6b8,Company 471,Startup,UK,2026-02-05 14:58:32,Organic Search,True
-CUST-f19cb62b,Company 472,Startup,Germany,2026-02-23 03:41:23,Referral,True
-CUST-35201a65,Company 473,SMB,USA,2025-07-20 13:52:33,Referral,False
-CUST-1175391b,Company 474,Mid-Market,USA,2025-09-21 23:51:21,Outbound Sales,True
-CUST-9ff61aaa,Company 475,Startup,UK,2024-10-24 14:18:44,Direct,True
-CUST-89255fc3,Company 476,Startup,Australia,2025-05-10 05:26:19,Organic Search,True
-CUST-1065c818,Company 477,Startup,USA,2024-09-26 16:48:05,Referral,True
-CUST-77c1cf00,Company 478,Startup,Germany,2024-12-13 20:27:16,Paid Social,True
-CUST-2f3eb2eb,Company 479,Startup,Canada,2024-06-22 00:20:55,Referral,False
-CUST-b5233288,Company 480,Startup,Canada,2026-02-25 08:00:36,Paid Social,False
-CUST-70215da1,Company 481,Startup,Canada,2026-02-28 18:28:06,Organic Search,True
-CUST-26380545,Company 482,Startup,Australia,2025-09-13 11:17:17,Referral,True
-CUST-9a654212,Company 483,Startup,UK,2024-11-26 04:16:14,Referral,True
-CUST-3174ac82,Company 484,Startup,Germany,2026-04-17 21:13:39,Organic Search,True
-CUST-58f73370,Company 485,Mid-Market,Australia,2024-05-31 01:20:26,Referral,True
-CUST-a9074489,Company 486,Startup,Germany,2025-07-06 01:14:06,Paid Social,True
-CUST-c1c73aa5,Company 487,Enterprise,Germany,2025-06-16 18:22:31,Referral,True
-CUST-e4fdfe40,Company 488,SMB,UK,2025-05-18 21:37:16,Direct,True
-CUST-657e21b8,Company 489,Startup,Canada,2025-06-05 13:06:26,Outbound Sales,False
-CUST-5d71d28c,Company 490,SMB,UK,2024-10-25 08:45:48,Paid Social,True
-CUST-221d09b1,Company 491,SMB,Australia,2025-02-20 00:57:58,Direct,True
-CUST-eabef79d,Company 492,SMB,Australia,2025-02-12 00:18:12,Organic Search,True
-CUST-92e22df9,Company 493,Mid-Market,Australia,2025-02-14 07:55:38,Paid Social,True
-CUST-a23a93ca,Company 494,Startup,UK,2024-12-01 00:13:23,Outbound Sales,False
-CUST-93c40157,Company 495,Mid-Market,Germany,2024-09-19 11:34:23,Outbound Sales,False
-CUST-0786f9c9,Company 496,Mid-Market,Germany,2026-04-05 23:51:42,Organic Search,False
-CUST-cb2cae25,Company 497,SMB,USA,2024-09-02 23:58:30,Organic Search,True
-CUST-6467358e,Company 498,Startup,Australia,2025-09-19 15:49:18,Paid Social,False
-CUST-a529969e,Company 499,Startup,Germany,2025-03-21 20:40:21,Referral,True
-CUST-ab7cb2b9,Company 500,Mid-Market,USA,2025-01-07 14:19:56,Organic Search,False
-CUST-2a4b606b,Company 501,SMB,Germany,2025-08-24 01:30:45,Referral,True
-CUST-299bbbdc,Company 502,SMB,Australia,2025-12-06 17:34:37,Direct,False
-CUST-c6872524,Company 503,Startup,Canada,2025-02-19 15:45:30,Outbound Sales,False
-CUST-2fb17359,Company 504,Startup,Australia,2024-05-13 19:21:56,Referral,False
-CUST-1db3d44c,Company 505,SMB,UK,2025-02-27 13:25:31,Outbound Sales,True
-CUST-006f22ff,Company 506,SMB,Germany,2026-01-11 13:11:29,Referral,True
-CUST-f1056bcb,Company 507,SMB,Germany,2026-01-18 17:21:31,Direct,False
-CUST-80362ad5,Company 508,Startup,UK,2026-03-11 15:43:58,Organic Search,True
-CUST-93c7cce5,Company 509,SMB,UK,2026-02-25 02:48:39,Direct,False
-CUST-8b7b739e,Company 510,SMB,Canada,2025-03-12 13:57:42,Organic Search,True
-CUST-df4ae7ad,Company 511,SMB,Germany,2025-05-25 16:03:09,Organic Search,True
-CUST-6e5ce4d4,Company 512,SMB,Germany,2024-08-22 08:22:20,Outbound Sales,False
-CUST-f1456537,Company 513,Startup,Canada,2025-04-20 12:50:57,Direct,True
-CUST-0dfbb5b1,Company 514,SMB,USA,2024-10-27 11:41:20,Referral,True
-CUST-d014145a,Company 515,Startup,Canada,2025-11-22 20:48:30,Direct,True
-CUST-2f356adc,Company 516,Startup,Australia,2025-01-20 18:34:19,Outbound Sales,True
-CUST-bb1f88f4,Company 517,SMB,Germany,2024-07-22 09:48:13,Organic Search,False
-CUST-c8a35565,Company 518,SMB,UK,2024-09-28 21:57:28,Outbound Sales,True
-CUST-433ef580,Company 519,Startup,Australia,2024-07-17 15:08:01,Paid Social,False
-CUST-fef128df,Company 520,SMB,Germany,2025-04-09 18:26:00,Paid Social,False
-CUST-d0c05d39,Company 521,SMB,Canada,2025-08-15 06:34:13,Referral,True
-CUST-6f9d9cde,Company 522,Startup,Australia,2025-07-01 15:11:40,Outbound Sales,False
-CUST-c56f4460,Company 523,Enterprise,Germany,2026-04-27 04:27:16,Referral,True
-CUST-9508926d,Company 524,Mid-Market,USA,2025-03-10 04:33:22,Referral,True
-CUST-e09fb676,Company 525,SMB,USA,2026-04-30 22:52:36,Paid Social,False
-CUST-d956737e,Company 526,Startup,UK,2024-11-17 13:57:06,Referral,True
-CUST-d0740538,Company 527,Mid-Market,Germany,2025-12-06 12:35:35,Paid Social,True
-CUST-065ea90c,Company 528,Enterprise,USA,2025-09-10 16:21:15,Organic Search,True
-CUST-c1738d3c,Company 529,Mid-Market,Canada,2025-12-25 03:32:03,Outbound Sales,True
-CUST-bbfe28ee,Company 530,Mid-Market,Germany,2024-06-06 00:17:04,Referral,True
-CUST-1790fd5c,Company 531,Enterprise,Canada,2024-06-13 19:31:18,Paid Social,False
-CUST-c722c0f5,Company 532,SMB,Canada,2024-05-19 13:30:14,Direct,True
-CUST-23d932a7,Company 533,SMB,USA,2024-06-25 10:58:12,Referral,True
-CUST-1397da96,Company 534,SMB,Germany,2024-05-15 17:52:59,Organic Search,True
-CUST-0b95d393,Company 535,SMB,Australia,2024-05-15 13:06:43,Organic Search,True
-CUST-f195d056,Company 536,Mid-Market,USA,2024-12-27 06:53:46,Direct,True
-CUST-e31297bb,Company 537,SMB,USA,2024-05-09 09:48:07,Paid Social,True
-CUST-60da49cd,Company 538,SMB,Germany,2026-01-18 01:41:17,Referral,True
-CUST-faf9160f,Company 539,Startup,Germany,2026-04-24 16:29:18,Paid Social,True
-CUST-37c5940e,Company 540,Enterprise,Canada,2025-11-25 11:07:15,Organic Search,True
-CUST-f4056e06,Company 541,SMB,Germany,2026-02-17 18:50:10,Paid Social,True
-CUST-d10f422b,Company 542,SMB,Canada,2025-01-26 01:30:09,Organic Search,False
-CUST-9a6226bd,Company 543,Startup,USA,2025-10-27 07:50:18,Paid Social,False
-CUST-8144fd0d,Company 544,Startup,UK,2026-01-29 18:20:14,Direct,True
-CUST-679ed425,Company 545,SMB,Australia,2024-06-28 05:10:54,Outbound Sales,False
-CUST-8ae77d73,Company 546,SMB,USA,2024-05-20 12:40:53,Direct,False
-CUST-ed00f759,Company 547,Startup,Germany,2025-03-07 04:13:12,Direct,True
-CUST-6a5f26f3,Company 548,Enterprise,Australia,2025-05-20 01:43:42,Outbound Sales,True
-CUST-741688ce,Company 549,Mid-Market,UK,2025-09-22 03:13:46,Outbound Sales,False
-CUST-da70f1c3,Company 550,SMB,UK,2025-03-21 16:58:27,Referral,False
-CUST-b864ed22,Company 551,Mid-Market,Canada,2024-06-17 13:53:30,Referral,True
-CUST-de8f0cf8,Company 552,Startup,Australia,2025-02-21 23:09:03,Direct,False
-CUST-c7d5949b,Company 553,Startup,Canada,2024-08-18 11:05:04,Direct,True
-CUST-4d4eeb2f,Company 554,SMB,USA,2026-04-11 11:52:41,Organic Search,False
-CUST-5cbaa8ac,Company 555,SMB,Australia,2025-04-02 00:40:37,Organic Search,False
-CUST-86882a24,Company 556,Startup,USA,2024-12-11 04:40:57,Referral,True
-CUST-be68bc71,Company 557,Startup,Canada,2025-02-26 05:08:48,Referral,False
-CUST-08c53e14,Company 558,Startup,Australia,2026-01-29 03:44:16,Organic Search,True
-CUST-414c7cec,Company 559,Startup,Canada,2025-12-31 20:39:44,Organic Search,True
-CUST-94135c46,Company 560,Startup,Australia,2026-03-10 21:22:49,Paid Social,False
-CUST-60b2a797,Company 561,Startup,Canada,2024-11-29 20:11:55,Paid Social,True
-CUST-80002605,Company 562,Mid-Market,UK,2025-05-02 01:31:20,Organic Search,True
-CUST-552b9fda,Company 563,SMB,Canada,2026-03-29 21:50:34,Paid Social,True
-CUST-e15d4838,Company 564,Startup,UK,2025-01-01 23:26:09,Outbound Sales,True
-CUST-5370bd52,Company 565,SMB,Canada,2025-04-15 00:59:48,Referral,True
-CUST-8f72dc14,Company 566,Startup,Australia,2024-05-13 05:37:28,Referral,False
-CUST-fd010587,Company 567,Mid-Market,Australia,2025-01-16 17:59:30,Organic Search,True
-CUST-4c94d0e7,Company 568,Enterprise,Australia,2025-08-17 13:40:35,Direct,True
-CUST-8ba43c90,Company 569,SMB,Germany,2025-12-26 03:54:47,Organic Search,True
-CUST-a686a9a0,Company 570,Enterprise,USA,2026-01-15 22:14:51,Paid Social,False
-CUST-fa9a87d4,Company 571,Startup,Australia,2026-03-02 19:38:52,Direct,False
-CUST-89bcb53d,Company 572,Startup,UK,2025-05-07 23:20:56,Paid Social,False
-CUST-7a2f88e9,Company 573,Startup,Australia,2025-05-28 01:26:12,Outbound Sales,False
-CUST-742e32b7,Company 574,Startup,Germany,2025-04-26 01:53:53,Paid Social,False
-CUST-262d7527,Company 575,SMB,UK,2024-06-16 03:33:42,Outbound Sales,True
-CUST-849d9a28,Company 576,SMB,Germany,2024-06-10 14:30:56,Outbound Sales,True
-CUST-8551d75d,Company 577,SMB,UK,2025-11-29 05:09:34,Paid Social,True
-CUST-ee64003b,Company 578,SMB,Canada,2025-10-09 19:51:30,Paid Social,False
-CUST-2131a0cf,Company 579,SMB,USA,2025-09-08 01:32:39,Outbound Sales,False
-CUST-bea9d06d,Company 580,SMB,USA,2026-03-31 19:19:17,Direct,True
-CUST-d3520c1f,Company 581,SMB,Germany,2025-06-19 10:53:16,Outbound Sales,False
-CUST-a3c8567c,Company 582,Startup,USA,2025-01-21 21:17:23,Referral,True
-CUST-50e69591,Company 583,Startup,Germany,2025-12-07 22:41:59,Outbound Sales,True
-CUST-938299d8,Company 584,SMB,Germany,2024-07-20 04:16:00,Direct,True
-CUST-e998d1f7,Company 585,Startup,Germany,2025-08-31 14:44:46,Referral,True
-CUST-dbae06c1,Company 586,Startup,USA,2024-05-24 12:08:59,Organic Search,True
-CUST-e6104d3f,Company 587,Enterprise,Germany,2024-06-19 19:26:54,Organic Search,True
-CUST-0d78a161,Company 588,Startup,USA,2025-09-03 12:03:21,Direct,True
-CUST-fc4de2e3,Company 589,Startup,Germany,2026-01-17 08:34:06,Outbound Sales,True
-CUST-48f84fb2,Company 590,SMB,Australia,2025-08-24 10:40:25,Paid Social,False
-CUST-c4c4e773,Company 591,SMB,Germany,2024-09-21 15:14:42,Direct,False
-CUST-cbc6c39b,Company 592,SMB,UK,2025-06-02 12:19:07,Referral,False
-CUST-f8572bc2,Company 593,SMB,Germany,2025-03-24 03:23:15,Referral,True
-CUST-dd41dc26,Company 594,Enterprise,Canada,2025-07-03 06:54:37,Organic Search,True
-CUST-4c613a85,Company 595,Startup,Germany,2024-06-26 17:43:12,Referral,False
-CUST-8b690836,Company 596,Enterprise,UK,2024-09-19 09:32:09,Direct,True
-CUST-6d4bd898,Company 597,SMB,UK,2025-11-21 16:24:05,Referral,True
-CUST-d5c013fe,Company 598,Startup,USA,2024-07-17 14:06:22,Direct,True
-CUST-08925c36,Company 599,Startup,Australia,2025-07-27 14:56:30,Paid Social,True
-CUST-cd081517,Company 600,SMB,Germany,2024-05-17 07:56:21,Organic Search,True
-CUST-5eb3c3b8,Company 601,SMB,USA,2025-01-04 05:43:47,Referral,True
-CUST-fdc1c0ec,Company 602,Enterprise,Australia,2024-05-20 02:34:46,Direct,True
-CUST-84fea448,Company 603,Startup,Germany,2025-02-01 01:59:32,Outbound Sales,True
-CUST-b78ed81a,Company 604,Enterprise,Canada,2024-09-01 22:26:42,Organic Search,True
-CUST-849effe9,Company 605,SMB,Germany,2024-05-14 03:52:58,Paid Social,True
-CUST-a7d52e02,Company 606,Startup,UK,2025-11-29 06:08:20,Direct,True
-CUST-1dba7631,Company 607,Mid-Market,UK,2025-11-05 09:33:49,Paid Social,True
-CUST-b95eeb34,Company 608,Startup,Canada,2024-11-20 06:11:24,Paid Social,True
-CUST-b01f955d,Company 609,Startup,USA,2026-01-31 07:00:33,Referral,True
-CUST-ce16b0e1,Company 610,Mid-Market,Australia,2026-04-19 07:58:17,Referral,True
-CUST-82a00925,Company 611,Startup,Germany,2026-02-26 17:13:09,Direct,True
-CUST-67682818,Company 612,SMB,UK,2024-08-02 13:01:40,Outbound Sales,True
-CUST-98e44085,Company 613,Startup,USA,2024-06-30 06:51:13,Direct,False
-CUST-2e77d591,Company 614,SMB,Canada,2024-10-30 02:35:55,Outbound Sales,True
-CUST-eb5dfa56,Company 615,Startup,UK,2024-06-19 20:24:04,Paid Social,True
-CUST-357b7960,Company 616,SMB,Canada,2025-05-14 19:39:15,Organic Search,True
-CUST-61dcbe72,Company 617,Startup,Germany,2026-03-24 22:19:21,Direct,True
-CUST-47b838dc,Company 618,Startup,Australia,2024-09-01 15:22:34,Direct,True
-CUST-c3c9c80a,Company 619,SMB,UK,2025-11-20 05:28:33,Outbound Sales,True
-CUST-ab53b700,Company 620,Startup,UK,2026-03-02 16:02:35,Paid Social,False
-CUST-aff07881,Company 621,SMB,Germany,2024-06-18 20:17:43,Paid Social,True
-CUST-4eaf4184,Company 622,Mid-Market,USA,2026-03-02 23:06:24,Outbound Sales,True
-CUST-5fe55e45,Company 623,Mid-Market,Australia,2024-10-30 20:51:10,Paid Social,True
-CUST-9f4dca65,Company 624,SMB,UK,2026-01-05 15:01:08,Referral,False
-CUST-bb7bce3b,Company 625,SMB,Australia,2024-09-04 03:51:51,Organic Search,True
-CUST-9c3a5dc8,Company 626,Startup,UK,2025-06-02 01:34:01,Direct,False
-CUST-e427ee9b,Company 627,Mid-Market,Australia,2025-10-26 09:20:58,Organic Search,True
-CUST-2bae8873,Company 628,Startup,Canada,2026-04-23 12:53:49,Direct,False
-CUST-ca0c3d0a,Company 629,Mid-Market,UK,2026-03-22 18:45:21,Referral,False
-CUST-04eb2a9d,Company 630,Startup,Australia,2025-04-05 23:23:30,Paid Social,True
-CUST-19385970,Company 631,Startup,USA,2026-03-18 18:35:44,Outbound Sales,True
-CUST-837ee74e,Company 632,SMB,Canada,2024-05-28 06:21:07,Referral,True
-CUST-4f4df38d,Company 633,Startup,Canada,2025-08-22 05:26:45,Organic Search,True
-CUST-1524a146,Company 634,Enterprise,USA,2026-04-30 17:40:18,Outbound Sales,False
-CUST-18816421,Company 635,Startup,Australia,2025-12-11 04:03:30,Paid Social,True
-CUST-96b70047,Company 636,SMB,Germany,2025-10-24 22:36:18,Referral,True
-CUST-e867116b,Company 637,Startup,USA,2024-06-03 12:31:20,Outbound Sales,True
-CUST-a8d6e9c1,Company 638,Enterprise,Australia,2024-10-26 19:05:13,Referral,False
-CUST-cbfd530c,Company 639,SMB,USA,2025-02-01 15:40:32,Referral,True
-CUST-843d21ee,Company 640,Startup,USA,2024-07-23 09:26:12,Paid Social,True
-CUST-1eb8c14a,Company 641,SMB,UK,2024-11-27 01:23:10,Direct,True
-CUST-604e12dd,Company 642,Mid-Market,Australia,2026-03-03 09:10:22,Outbound Sales,False
-CUST-053d4674,Company 643,Mid-Market,Germany,2025-05-02 23:29:24,Paid Social,True
-CUST-0d53101c,Company 644,SMB,UK,2025-09-19 00:34:01,Referral,True
-CUST-e3ca8fdf,Company 645,SMB,USA,2024-12-28 18:04:59,Paid Social,True
-CUST-ac68aa70,Company 646,Mid-Market,USA,2024-09-12 00:12:56,Direct,True
-CUST-c05b4b6d,Company 647,SMB,USA,2024-07-12 23:48:21,Outbound Sales,True
-CUST-fb538081,Company 648,Enterprise,Australia,2025-12-03 03:04:02,Direct,False
-CUST-7d8148a0,Company 649,Startup,Australia,2025-12-24 09:29:38,Organic Search,False
-CUST-d1e81d22,Company 650,Mid-Market,UK,2025-08-05 19:35:37,Outbound Sales,True
-CUST-f10cb580,Company 651,SMB,Germany,2025-06-03 17:41:15,Direct,False
-CUST-1dfc7f66,Company 652,Enterprise,UK,2024-07-05 21:16:14,Referral,True
-CUST-067913d0,Company 653,SMB,Canada,2025-03-25 21:52:46,Outbound Sales,False
-CUST-3f36a156,Company 654,Startup,USA,2025-12-07 22:41:30,Outbound Sales,False
-CUST-0c2d91ad,Company 655,SMB,USA,2025-09-21 18:58:49,Paid Social,True
-CUST-7ffacf3e,Company 656,Mid-Market,USA,2025-12-09 16:02:16,Referral,False
-CUST-4ad5cbbd,Company 657,Startup,UK,2026-04-06 15:52:38,Organic Search,True
-CUST-220dd792,Company 658,Startup,UK,2025-10-31 13:23:36,Direct,True
-CUST-528e7eab,Company 659,Mid-Market,USA,2024-06-19 18:42:38,Paid Social,True
-CUST-0735c152,Company 660,Startup,UK,2025-12-03 17:58:15,Direct,True
-CUST-9cf8f888,Company 661,Startup,Australia,2024-10-10 22:29:50,Organic Search,False
-CUST-75707daa,Company 662,Mid-Market,Australia,2024-06-28 17:25:24,Organic Search,False
-CUST-5156ec81,Company 663,Startup,UK,2026-01-31 08:00:37,Outbound Sales,True
-CUST-6efbb91b,Company 664,Startup,USA,2025-06-16 01:13:00,Organic Search,False
-CUST-ca55489e,Company 665,SMB,UK,2024-09-06 12:09:13,Direct,False
-CUST-70bb5d0f,Company 666,Mid-Market,UK,2025-12-29 23:15:29,Referral,True
-CUST-547276dc,Company 667,Mid-Market,UK,2025-04-05 07:37:12,Referral,True
-CUST-7837d6ea,Company 668,Startup,Canada,2025-03-25 23:09:40,Outbound Sales,True
-CUST-aaf94b57,Company 669,Startup,Australia,2025-06-13 03:10:52,Direct,True
-CUST-4cf37234,Company 670,Startup,Germany,2025-03-21 18:16:20,Direct,False
-CUST-53072c9e,Company 671,SMB,Germany,2024-08-05 05:26:51,Organic Search,True
-CUST-eb79910c,Company 672,Startup,Canada,2025-04-08 15:45:42,Direct,False
-CUST-61f00f42,Company 673,SMB,UK,2025-10-31 04:39:49,Paid Social,True
-CUST-17cb34c0,Company 674,SMB,Canada,2025-05-31 23:06:40,Organic Search,True
-CUST-a6a752a8,Company 675,Mid-Market,Canada,2025-05-23 08:17:40,Paid Social,True
-CUST-96b7841d,Company 676,Startup,USA,2025-11-25 21:48:52,Outbound Sales,True
-CUST-1ab018d6,Company 677,SMB,Australia,2024-09-20 18:05:51,Referral,True
-CUST-1765ce50,Company 678,Startup,Germany,2024-11-26 13:36:56,Outbound Sales,True
-CUST-ccb5e68c,Company 679,SMB,UK,2026-02-11 23:35:24,Referral,True
-CUST-2d55f928,Company 680,Enterprise,Germany,2025-01-26 03:59:44,Outbound Sales,True
-CUST-24ffe97e,Company 681,Mid-Market,Germany,2026-02-21 17:07:34,Direct,True
-CUST-856962a3,Company 682,SMB,Australia,2025-10-30 05:40:23,Paid Social,False
-CUST-ff80b300,Company 683,Startup,Germany,2024-09-17 10:08:32,Referral,True
-CUST-76fca5a2,Company 684,Mid-Market,Germany,2024-10-29 00:52:21,Organic Search,True
-CUST-623f9419,Company 685,Startup,Canada,2025-01-17 22:35:49,Paid Social,True
-CUST-193ed1d8,Company 686,SMB,Australia,2026-04-20 08:10:09,Organic Search,True
-CUST-718109c8,Company 687,Startup,USA,2026-04-22 05:02:15,Paid Social,False
-CUST-e56b6a7e,Company 688,SMB,UK,2025-06-16 15:33:35,Paid Social,True
-CUST-4c846cd0,Company 689,Startup,Germany,2024-11-21 02:59:21,Outbound Sales,True
-CUST-6bf6fa87,Company 690,Startup,UK,2024-06-23 17:51:44,Referral,False
-CUST-7729ce4c,Company 691,SMB,USA,2025-11-10 22:44:55,Referral,True
-CUST-2606ee03,Company 692,Mid-Market,UK,2025-06-06 01:52:37,Paid Social,True
-CUST-c6948307,Company 693,Startup,USA,2025-06-12 23:22:45,Direct,True
-CUST-8abd891d,Company 694,Startup,Canada,2025-10-29 20:59:56,Direct,True
-CUST-6a554766,Company 695,Enterprise,Germany,2024-10-31 23:16:31,Organic Search,True
-CUST-20b2676e,Company 696,Startup,USA,2025-06-24 04:30:08,Organic Search,True
-CUST-c1c851c8,Company 697,Startup,UK,2025-06-26 10:11:13,Outbound Sales,False
-CUST-20246ddc,Company 698,Startup,Germany,2025-04-14 02:38:41,Paid Social,False
-CUST-cdfca35a,Company 699,Startup,Canada,2025-11-28 22:01:20,Organic Search,True
-CUST-07a5c73d,Company 700,Startup,Germany,2025-04-22 09:31:47,Organic Search,True
-CUST-cb351f80,Company 701,SMB,USA,2024-08-28 07:59:14,Paid Social,False
-CUST-1a745f11,Company 702,SMB,Canada,2024-09-14 02:55:34,Outbound Sales,True
-CUST-9041ec25,Company 703,SMB,UK,2025-05-26 10:55:29,Organic Search,False
-CUST-6b1b1fa5,Company 704,Startup,Canada,2024-06-11 11:31:35,Outbound Sales,False
-CUST-d137f591,Company 705,Startup,Canada,2025-07-23 09:42:46,Referral,False
-CUST-ae017018,Company 706,SMB,Australia,2025-11-12 09:30:47,Outbound Sales,True
-CUST-12eb49e7,Company 707,Startup,Canada,2025-07-01 01:14:35,Direct,True
-CUST-97898471,Company 708,Startup,Canada,2025-07-13 22:45:09,Direct,True
-CUST-437adb51,Company 709,SMB,Germany,2025-03-25 22:31:08,Outbound Sales,False
-CUST-62cc3cb0,Company 710,SMB,UK,2025-10-06 20:26:41,Direct,True
-CUST-86c6d587,Company 711,SMB,Germany,2024-07-02 23:20:30,Referral,False
-CUST-9be879fa,Company 712,Mid-Market,Germany,2025-09-04 03:28:46,Paid Social,True
-CUST-3d7c0349,Company 713,SMB,USA,2025-05-23 03:56:46,Direct,True
-CUST-e146e934,Company 714,Mid-Market,Germany,2026-01-19 09:21:38,Direct,True
-CUST-4f0a5c3e,Company 715,Mid-Market,Australia,2024-08-13 21:16:54,Outbound Sales,True
-CUST-7538e404,Company 716,SMB,Australia,2025-10-21 15:51:51,Referral,True
-CUST-cf9cb99a,Company 717,SMB,USA,2024-06-07 02:18:53,Paid Social,True
-CUST-a4bf3b9f,Company 718,Enterprise,UK,2025-12-08 18:38:35,Outbound Sales,False
-CUST-aec25cb8,Company 719,Startup,UK,2025-07-18 23:27:36,Outbound Sales,True
-CUST-49b7e286,Company 720,SMB,Germany,2025-01-30 23:44:30,Referral,True
-CUST-58d7121b,Company 721,Startup,Germany,2025-08-10 05:09:45,Paid Social,True
-CUST-830abdc0,Company 722,Startup,Germany,2024-12-22 00:49:26,Referral,False
-CUST-5e8d064b,Company 723,Mid-Market,UK,2024-11-20 00:47:13,Paid Social,False
-CUST-e90c6e55,Company 724,SMB,Canada,2024-09-07 22:01:37,Referral,True
-CUST-bda53b39,Company 725,Enterprise,Australia,2025-06-06 13:11:56,Outbound Sales,False
-CUST-f40e61e7,Company 726,SMB,Canada,2024-06-11 15:12:08,Outbound Sales,False
-CUST-58a6d180,Company 727,Startup,Canada,2025-12-10 10:42:05,Organic Search,True
-CUST-939918be,Company 728,SMB,UK,2025-04-01 09:58:17,Direct,True
-CUST-17ef62b3,Company 729,SMB,Canada,2026-04-26 14:56:33,Referral,True
-CUST-2e5375d1,Company 730,SMB,USA,2024-06-16 00:49:33,Organic Search,True
-CUST-8d38755b,Company 731,Mid-Market,Germany,2024-07-01 13:25:28,Direct,False
-CUST-fef091ff,Company 732,Startup,USA,2025-02-08 15:33:02,Referral,True
-CUST-edb5e15d,Company 733,SMB,Australia,2024-07-26 08:49:13,Paid Social,False
-CUST-5b12676e,Company 734,SMB,Germany,2024-06-07 14:13:01,Direct,True
-CUST-cfab551c,Company 735,SMB,Canada,2025-03-03 07:16:12,Outbound Sales,True
-CUST-adabdc5a,Company 736,Startup,Australia,2025-09-15 03:13:40,Organic Search,True
-CUST-507020f0,Company 737,Mid-Market,Germany,2026-03-06 08:55:35,Direct,True
-CUST-d387ceae,Company 738,SMB,Canada,2025-03-08 18:20:05,Direct,False
-CUST-f6514292,Company 739,Startup,USA,2026-02-08 04:24:39,Outbound Sales,False
-CUST-d8e1f3cd,Company 740,SMB,Germany,2025-03-20 13:43:48,Referral,True
-CUST-445ef13a,Company 741,Startup,Canada,2024-09-18 17:45:44,Paid Social,True
-CUST-8407e4af,Company 742,Startup,USA,2026-01-26 12:35:02,Outbound Sales,True
-CUST-036f64f2,Company 743,Startup,Australia,2024-05-08 20:24:53,Paid Social,True
-CUST-6635a952,Company 744,Startup,Australia,2025-10-26 07:19:39,Referral,True
-CUST-1da61406,Company 745,Startup,Australia,2024-09-05 06:47:32,Direct,True
-CUST-a6e33b00,Company 746,Startup,Australia,2026-01-28 06:52:44,Paid Social,True
-CUST-5c09adc1,Company 747,Startup,UK,2025-05-27 20:53:15,Organic Search,False
-CUST-3caa962d,Company 748,Startup,Germany,2025-07-23 13:49:22,Organic Search,True
-CUST-69410593,Company 749,Mid-Market,Germany,2026-05-06 22:08:09,Outbound Sales,True
-CUST-c666c845,Company 750,Mid-Market,UK,2024-12-03 21:40:00,Referral,True
-CUST-e2fd37f4,Company 751,SMB,Canada,2025-04-26 22:07:17,Outbound Sales,True
-CUST-120eb793,Company 752,Enterprise,Canada,2025-06-08 05:06:35,Outbound Sales,True
-CUST-bcb7edf8,Company 753,SMB,Australia,2024-06-20 08:00:49,Outbound Sales,False
-CUST-a3d6e5ec,Company 754,SMB,USA,2025-02-07 02:49:31,Organic Search,False
-CUST-75a2d98b,Company 755,SMB,Canada,2024-12-19 20:39:25,Organic Search,True
-CUST-2b2bfdba,Company 756,Startup,USA,2024-11-15 23:19:35,Outbound Sales,True
-CUST-312938fd,Company 757,Startup,Germany,2025-08-17 00:15:09,Organic Search,True
-CUST-49195643,Company 758,Mid-Market,USA,2024-09-20 16:28:50,Referral,False
-CUST-80149380,Company 759,SMB,Germany,2025-12-21 23:20:21,Outbound Sales,True
-CUST-2d544a89,Company 760,Startup,UK,2024-10-08 00:21:41,Organic Search,True
-CUST-ad91b077,Company 761,Mid-Market,UK,2025-01-24 03:07:14,Paid Social,True
-CUST-085a7924,Company 762,Startup,Australia,2026-01-03 19:28:56,Outbound Sales,True
-CUST-de82adb1,Company 763,SMB,Canada,2026-04-01 20:41:56,Outbound Sales,True
-CUST-2e940709,Company 764,SMB,Australia,2026-05-04 16:51:09,Referral,False
-CUST-16d4582c,Company 765,Startup,Germany,2025-05-18 07:49:14,Direct,True
-CUST-84c09698,Company 766,SMB,Australia,2024-06-14 19:42:41,Direct,True
-CUST-714bd6b4,Company 767,Startup,USA,2025-01-06 12:36:47,Referral,True
-CUST-ee341a66,Company 768,Startup,Germany,2025-03-13 23:18:15,Referral,False
-CUST-82c8d8be,Company 769,Enterprise,UK,2026-04-14 00:03:33,Referral,False
-CUST-97d3d8e4,Company 770,Startup,Canada,2025-04-01 15:11:04,Direct,True
-CUST-e70bd133,Company 771,Startup,Germany,2025-10-28 18:36:32,Referral,False
-CUST-d6ef7ffb,Company 772,Mid-Market,Germany,2025-02-01 06:55:29,Organic Search,True
-CUST-3b20d8b3,Company 773,Startup,USA,2024-10-23 16:58:31,Outbound Sales,True
-CUST-d11984dc,Company 774,SMB,Canada,2026-02-21 07:17:04,Outbound Sales,True
-CUST-3af5845d,Company 775,Startup,UK,2025-11-13 13:27:09,Paid Social,True
-CUST-a6fc897f,Company 776,Startup,Germany,2025-04-11 17:46:19,Paid Social,True
-CUST-66502c44,Company 777,SMB,Germany,2024-11-06 18:17:36,Outbound Sales,True
-CUST-7d69a4ca,Company 778,Startup,USA,2026-01-22 11:48:02,Organic Search,True
-CUST-e5fe2b23,Company 779,Startup,Australia,2025-01-06 08:38:27,Direct,False
-CUST-2399b93c,Company 780,Startup,UK,2026-02-18 14:13:56,Direct,True
-CUST-a46ba972,Company 781,Startup,Canada,2026-03-23 14:10:32,Organic Search,True
-CUST-a0a24116,Company 782,Startup,Germany,2025-11-02 18:12:07,Direct,True
-CUST-3ac032b8,Company 783,SMB,Germany,2025-07-12 01:25:50,Referral,False
-CUST-0f4300a7,Company 784,Startup,UK,2025-04-12 21:54:27,Outbound Sales,True
-CUST-18c47b49,Company 785,SMB,Australia,2025-01-19 12:12:36,Outbound Sales,True
-CUST-139cee93,Company 786,SMB,Germany,2025-11-03 03:18:49,Organic Search,False
-CUST-e1bd2e79,Company 787,Startup,UK,2026-03-14 01:20:41,Direct,True
-CUST-b321b91d,Company 788,SMB,USA,2025-12-23 14:32:39,Paid Social,True
-CUST-f2eb4c6d,Company 789,Enterprise,Australia,2025-07-14 01:28:16,Paid Social,False
-CUST-968702e4,Company 790,Mid-Market,Canada,2024-06-03 20:29:49,Direct,True
-CUST-38c2a5b2,Company 791,SMB,Germany,2025-04-12 10:58:32,Paid Social,True
-CUST-c30713a0,Company 792,Startup,UK,2024-06-09 00:28:15,Organic Search,True
-CUST-282c92db,Company 793,SMB,USA,2025-08-28 09:29:29,Organic Search,True
-CUST-0e2610e0,Company 794,Startup,Canada,2024-09-03 01:42:32,Direct,True
-CUST-97cbde60,Company 795,SMB,UK,2025-07-14 05:47:05,Paid Social,True
-CUST-af683561,Company 796,Startup,UK,2025-10-03 11:49:15,Organic Search,True
-CUST-bc3fb2d0,Company 797,SMB,Canada,2024-05-10 07:43:48,Organic Search,True
-CUST-378af3ab,Company 798,SMB,USA,2025-06-28 00:22:53,Referral,False
-CUST-e569da5e,Company 799,Startup,USA,2024-11-27 07:52:43,Referral,True
-CUST-8925dbd6,Company 800,Startup,Australia,2026-02-17 07:09:05,Organic Search,True
-CUST-89533620,Company 801,SMB,Germany,2025-08-01 02:45:45,Direct,False
-CUST-9be7d170,Company 802,Enterprise,Canada,2025-09-19 09:18:06,Outbound Sales,True
-CUST-b080e00f,Company 803,Mid-Market,Canada,2025-02-05 08:25:02,Outbound Sales,True
-CUST-ae0f44fc,Company 804,Enterprise,Canada,2025-10-21 03:00:27,Organic Search,False
-CUST-84aeccf2,Company 805,Startup,USA,2025-12-03 11:55:30,Organic Search,True
-CUST-8aab79ce,Company 806,SMB,Germany,2024-09-16 23:00:19,Organic Search,True
-CUST-17918c1c,Company 807,SMB,Australia,2025-07-29 05:37:34,Direct,False
-CUST-91de8665,Company 808,SMB,UK,2024-11-24 09:21:45,Referral,True
-CUST-11156cfe,Company 809,Mid-Market,UK,2024-09-17 06:57:11,Organic Search,True
-CUST-f64fa4c3,Company 810,SMB,Canada,2026-01-29 13:28:27,Organic Search,True
-CUST-80ce41ce,Company 811,SMB,Germany,2026-05-07 01:44:33,Paid Social,True
-CUST-3e052394,Company 812,SMB,USA,2025-04-29 04:58:55,Direct,True
-CUST-2872acb4,Company 813,SMB,Germany,2024-09-19 13:45:19,Organic Search,False
-CUST-7d4497d2,Company 814,Startup,Germany,2025-05-25 09:43:18,Paid Social,True
-CUST-299a503a,Company 815,Mid-Market,USA,2024-09-02 16:21:04,Outbound Sales,False
-CUST-edd3b552,Company 816,Startup,Canada,2024-06-03 09:06:53,Organic Search,True
-CUST-e0bba678,Company 817,SMB,Germany,2025-12-01 05:30:22,Organic Search,False
-CUST-080da586,Company 818,Startup,UK,2025-07-21 09:58:54,Paid Social,False
-CUST-b520298d,Company 819,Startup,USA,2025-07-21 14:58:24,Direct,True
-CUST-a4e24551,Company 820,Startup,Australia,2025-05-15 13:08:05,Organic Search,True
-CUST-78ba4365,Company 821,Startup,Canada,2025-05-09 12:44:17,Outbound Sales,True
-CUST-28f39c37,Company 822,SMB,USA,2025-10-04 19:42:02,Organic Search,True
-CUST-3af3ee83,Company 823,SMB,Australia,2025-03-01 09:21:47,Outbound Sales,False
-CUST-6dd472b0,Company 824,SMB,Australia,2024-12-03 15:14:26,Referral,False
-CUST-61f9c394,Company 825,SMB,Germany,2026-03-08 14:05:37,Referral,True
-CUST-aeb331e5,Company 826,Enterprise,Germany,2024-11-14 05:53:16,Outbound Sales,True
-CUST-ca7eff95,Company 827,SMB,Germany,2025-09-30 05:02:06,Direct,True
-CUST-a7c12151,Company 828,Startup,USA,2025-03-03 14:48:13,Organic Search,True
-CUST-f33f4e02,Company 829,SMB,USA,2025-08-16 07:46:30,Organic Search,True
-CUST-fccf0628,Company 830,Startup,Canada,2024-07-10 06:14:23,Referral,False
-CUST-63748bb8,Company 831,Startup,Germany,2024-10-09 23:47:42,Outbound Sales,False
-CUST-6d0d4c61,Company 832,Startup,Australia,2025-03-01 06:59:50,Organic Search,True
-CUST-f79505dc,Company 833,SMB,UK,2024-10-15 06:54:33,Organic Search,True
-CUST-e3ad43ab,Company 834,SMB,Canada,2026-03-01 11:32:17,Direct,True
-CUST-2e4e6ff0,Company 835,SMB,USA,2025-04-06 17:22:17,Paid Social,True
-CUST-fe255d4f,Company 836,SMB,Canada,2026-04-27 17:47:54,Referral,True
-CUST-965b3e1d,Company 837,Startup,Canada,2024-08-28 14:32:23,Referral,True
-CUST-006f8d23,Company 838,SMB,Canada,2024-10-13 03:10:36,Paid Social,False
-CUST-23f47afb,Company 839,Startup,Canada,2024-11-11 02:50:57,Organic Search,True
-CUST-e6dfd6f8,Company 840,SMB,UK,2025-11-19 03:00:53,Direct,True
-CUST-6a61bd4e,Company 841,Startup,Germany,2025-01-29 11:28:58,Direct,False
-CUST-25c76e06,Company 842,Startup,Australia,2024-05-22 22:11:36,Referral,False
-CUST-5c3501c1,Company 843,SMB,Canada,2024-08-30 20:57:25,Direct,True
-CUST-5421dac1,Company 844,SMB,Canada,2025-09-04 15:17:55,Paid Social,True
-CUST-ddaa84de,Company 845,SMB,Canada,2024-07-18 19:11:39,Organic Search,True
-CUST-5ca98895,Company 846,Mid-Market,Germany,2024-07-27 20:45:49,Paid Social,False
-CUST-385168c4,Company 847,SMB,USA,2026-03-23 05:34:09,Outbound Sales,False
-CUST-55b35881,Company 848,Mid-Market,USA,2024-10-22 23:07:20,Referral,True
-CUST-d5780f73,Company 849,SMB,UK,2025-03-25 13:42:32,Direct,True
-CUST-f1a7757f,Company 850,SMB,USA,2024-07-09 15:31:54,Outbound Sales,False
-CUST-2fa31bc6,Company 851,SMB,Canada,2025-01-14 09:04:32,Direct,True
-CUST-e068850e,Company 852,Startup,Canada,2025-01-30 06:16:35,Organic Search,True
-CUST-38586e34,Company 853,Mid-Market,Canada,2026-02-09 03:21:27,Organic Search,True
-CUST-fbc83c96,Company 854,Startup,UK,2025-12-01 18:58:41,Organic Search,True
-CUST-7d7661ce,Company 855,SMB,Canada,2024-10-03 13:07:28,Direct,True
-CUST-9c9d1f25,Company 856,SMB,USA,2025-12-02 03:43:22,Outbound Sales,False
-CUST-ddb1e5a1,Company 857,Startup,Germany,2024-08-13 10:24:11,Organic Search,False
-CUST-09fc0fb3,Company 858,Enterprise,Germany,2024-09-01 16:53:19,Outbound Sales,True
-CUST-a1472ce2,Company 859,SMB,Australia,2026-04-21 07:59:42,Direct,True
-CUST-513f13e0,Company 860,SMB,USA,2024-05-13 05:19:58,Outbound Sales,True
-CUST-9e3c6478,Company 861,SMB,Canada,2024-08-21 19:02:15,Direct,True
-CUST-199c2696,Company 862,SMB,Germany,2024-08-06 15:05:47,Direct,True
-CUST-fb0eee8f,Company 863,SMB,USA,2026-01-23 05:33:22,Referral,False
-CUST-e25fe3c0,Company 864,Startup,Germany,2025-06-22 03:32:55,Direct,True
-CUST-8116f475,Company 865,SMB,Canada,2024-11-07 01:48:01,Direct,True
-CUST-770ddcce,Company 866,SMB,Germany,2025-11-23 10:13:05,Paid Social,True
-CUST-dd860064,Company 867,SMB,Australia,2026-05-02 15:56:06,Organic Search,False
-CUST-e4dbd38d,Company 868,Startup,Australia,2025-07-28 02:02:10,Referral,False
-CUST-24820ce9,Company 869,Mid-Market,Germany,2025-08-19 17:09:50,Referral,False
-CUST-1800dd8d,Company 870,SMB,USA,2025-04-01 01:32:40,Referral,False
-CUST-fd71a399,Company 871,SMB,USA,2025-08-20 10:37:52,Paid Social,True
-CUST-39164db8,Company 872,Startup,USA,2024-07-25 01:42:04,Direct,True
-CUST-d32c5846,Company 873,SMB,Germany,2025-06-17 05:36:33,Organic Search,True
-CUST-127420f7,Company 874,SMB,USA,2025-10-01 13:39:47,Outbound Sales,True
-CUST-a06a15c2,Company 875,SMB,Canada,2025-07-08 19:27:09,Direct,True
-CUST-9e751c77,Company 876,Startup,Australia,2025-09-09 00:22:35,Paid Social,True
-CUST-15a1b230,Company 877,SMB,Canada,2025-12-09 03:29:41,Direct,True
-CUST-f07a9d8a,Company 878,SMB,USA,2025-08-06 14:22:31,Direct,True
-CUST-0f8dafb1,Company 879,Startup,Canada,2025-01-23 16:50:57,Paid Social,True
-CUST-f462e572,Company 880,Startup,USA,2024-10-10 16:46:56,Referral,False
-CUST-b539a44b,Company 881,SMB,Germany,2025-07-31 18:56:34,Referral,True
-CUST-d5d86457,Company 882,Startup,Canada,2025-08-28 03:31:41,Organic Search,True
-CUST-7451acfe,Company 883,SMB,Germany,2025-07-27 16:19:44,Organic Search,True
-CUST-85cef7dd,Company 884,SMB,Germany,2024-12-15 20:16:21,Referral,True
-CUST-30fd8ae7,Company 885,Enterprise,UK,2024-12-30 23:14:05,Outbound Sales,True
-CUST-72166496,Company 886,Startup,USA,2025-08-09 13:36:28,Direct,True
-CUST-04ab9914,Company 887,Mid-Market,Australia,2026-01-31 14:18:45,Outbound Sales,True
-CUST-da152191,Company 888,SMB,USA,2025-01-03 22:06:02,Direct,True
-CUST-fb326979,Company 889,Mid-Market,Australia,2026-04-26 21:14:01,Referral,True
-CUST-53c7df35,Company 890,Startup,USA,2025-09-21 23:37:14,Organic Search,True
-CUST-2ff11590,Company 891,SMB,Germany,2025-01-23 05:30:06,Organic Search,True
-CUST-e1557fc8,Company 892,Mid-Market,Canada,2026-01-02 05:38:24,Outbound Sales,True
-CUST-710834fd,Company 893,Mid-Market,Canada,2025-08-05 21:57:37,Organic Search,True
-CUST-74d4074a,Company 894,Mid-Market,UK,2024-07-03 03:32:20,Referral,True
-CUST-4c7b21c2,Company 895,SMB,Australia,2025-08-04 21:21:21,Outbound Sales,True
-CUST-d971a88c,Company 896,Startup,Australia,2025-12-21 01:52:33,Direct,True
-CUST-79b6296a,Company 897,SMB,Australia,2025-09-26 09:37:23,Organic Search,True
-CUST-e9f5ab3a,Company 898,SMB,Germany,2024-06-02 18:55:53,Paid Social,True
-CUST-79022429,Company 899,Startup,Australia,2026-01-02 01:14:28,Organic Search,False
-CUST-6a3a2bbc,Company 900,Enterprise,Canada,2025-12-29 08:08:58,Direct,False
-CUST-6b83044a,Company 901,SMB,Germany,2024-09-22 15:32:09,Outbound Sales,False
-CUST-9ebe17bf,Company 902,Startup,USA,2025-07-09 00:48:47,Direct,True
-CUST-29fae1cc,Company 903,SMB,Australia,2026-02-06 14:11:44,Paid Social,True
-CUST-84ea2760,Company 904,SMB,Australia,2025-11-20 14:07:05,Referral,True
-CUST-e06bec91,Company 905,SMB,USA,2024-10-03 16:11:52,Organic Search,True
-CUST-25843f67,Company 906,SMB,Australia,2025-04-19 23:23:51,Outbound Sales,True
-CUST-b816b9ad,Company 907,SMB,USA,2025-06-05 07:07:35,Referral,True
-CUST-2adaf15e,Company 908,Mid-Market,Germany,2024-06-04 11:59:52,Direct,False
-CUST-5971db78,Company 909,Mid-Market,Canada,2026-02-10 00:18:37,Outbound Sales,True
-CUST-35bc9068,Company 910,Mid-Market,USA,2025-05-14 12:14:46,Referral,False
-CUST-9d2ca3e2,Company 911,Startup,UK,2025-09-15 10:00:51,Outbound Sales,True
-CUST-210f9436,Company 912,Startup,USA,2024-12-12 16:34:21,Paid Social,True
-CUST-2a67390c,Company 913,Mid-Market,Australia,2026-03-19 06:33:57,Paid Social,True
-CUST-6b8f3170,Company 914,Mid-Market,Germany,2025-06-22 01:51:46,Organic Search,True
-CUST-a82e02f2,Company 915,Startup,Germany,2026-02-25 09:26:11,Organic Search,False
-CUST-16de82b8,Company 916,Mid-Market,USA,2024-07-17 10:13:23,Paid Social,True
-CUST-e2a77980,Company 917,SMB,Canada,2025-11-28 12:46:29,Outbound Sales,True
-CUST-2eac505c,Company 918,Startup,UK,2024-09-12 04:42:01,Paid Social,False
-CUST-3f3c783a,Company 919,SMB,Germany,2025-08-19 13:19:22,Organic Search,True
-CUST-00f7a941,Company 920,Startup,Australia,2025-03-11 16:55:54,Paid Social,False
-CUST-50b81a0f,Company 921,Startup,Australia,2025-08-08 10:59:51,Paid Social,True
-CUST-d72429e4,Company 922,SMB,Canada,2025-10-13 15:09:40,Outbound Sales,True
-CUST-002c5a55,Company 923,Enterprise,Germany,2024-09-20 12:41:31,Referral,True
-CUST-0e113f52,Company 924,SMB,USA,2026-04-13 17:43:57,Organic Search,True
-CUST-f458a803,Company 925,Startup,Australia,2025-07-29 15:23:27,Outbound Sales,True
-CUST-6dde2ce4,Company 926,Startup,Canada,2025-02-09 06:53:34,Paid Social,True
-CUST-583c9016,Company 927,Startup,Germany,2026-02-08 20:48:04,Paid Social,False
-CUST-d6f7d2a0,Company 928,Mid-Market,Germany,2025-11-05 07:03:16,Referral,False
-CUST-1d8f9187,Company 929,Startup,Germany,2024-11-17 17:51:06,Organic Search,True
-CUST-3ee22b5c,Company 930,Startup,Germany,2024-09-10 21:17:36,Organic Search,True
-CUST-5a84f77e,Company 931,Startup,Germany,2026-02-13 13:38:04,Direct,True
-CUST-e902c373,Company 932,Startup,Australia,2025-10-24 19:06:40,Organic Search,True
-CUST-24e4a87d,Company 933,Startup,Canada,2025-05-17 14:28:41,Referral,True
-CUST-ab8797cd,Company 934,Startup,Germany,2025-12-13 10:27:56,Direct,True
-CUST-12b7f8ea,Company 935,SMB,UK,2026-03-06 15:17:50,Direct,True
-CUST-665ab41c,Company 936,SMB,UK,2024-06-07 21:52:00,Paid Social,True
-CUST-051bbe6e,Company 937,Mid-Market,Canada,2025-03-13 09:32:56,Paid Social,False
-CUST-3cf4e609,Company 938,Startup,USA,2025-10-15 15:21:34,Organic Search,True
-CUST-c094c78f,Company 939,SMB,USA,2026-02-26 14:35:24,Direct,True
-CUST-2da09d3b,Company 940,Startup,USA,2025-08-28 08:42:06,Paid Social,True
-CUST-67e9cec6,Company 941,Startup,UK,2025-10-19 04:28:16,Referral,True
-CUST-67483be3,Company 942,Startup,USA,2025-02-06 23:40:06,Paid Social,True
-CUST-8cca6b6d,Company 943,Mid-Market,Australia,2024-05-23 14:08:00,Paid Social,True
-CUST-f080fb6f,Company 944,SMB,Germany,2024-06-25 06:09:13,Direct,False
-CUST-f7b14f6c,Company 945,Mid-Market,UK,2025-02-12 15:18:37,Direct,True
-CUST-99ffcd3c,Company 946,Startup,Canada,2025-09-14 15:26:00,Outbound Sales,True
-CUST-09887606,Company 947,Startup,Canada,2024-08-07 06:55:32,Referral,False
-CUST-0ed81a6a,Company 948,Startup,Germany,2024-05-13 19:00:15,Direct,False
-CUST-8814fd1f,Company 949,SMB,UK,2025-10-20 00:43:06,Organic Search,True
-CUST-483c60f8,Company 950,Startup,USA,2024-06-30 00:31:31,Referral,True
-CUST-b4d2d6e4,Company 951,Startup,USA,2025-01-03 22:44:05,Referral,True
-CUST-6998440a,Company 952,SMB,Australia,2026-04-10 20:41:17,Direct,True
-CUST-71ddaf9d,Company 953,Startup,Australia,2026-01-26 23:56:53,Referral,True
-CUST-8aad30ab,Company 954,SMB,USA,2025-01-09 10:23:21,Direct,True
-CUST-c4728ad9,Company 955,SMB,Canada,2024-07-11 09:48:40,Paid Social,True
-CUST-9b8f1b99,Company 956,Startup,Canada,2025-07-31 00:14:41,Outbound Sales,True
-CUST-d5eb10ea,Company 957,SMB,Australia,2026-02-06 02:48:32,Paid Social,True
-CUST-b1b90856,Company 958,Startup,Germany,2025-01-28 02:53:08,Direct,True
-CUST-d00ce93d,Company 959,Startup,USA,2025-03-20 12:51:13,Direct,True
-CUST-c4e0d532,Company 960,SMB,Australia,2025-06-18 22:01:21,Paid Social,True
-CUST-73c557ed,Company 961,SMB,Australia,2024-12-26 12:53:38,Organic Search,True
-CUST-9a714ef8,Company 962,SMB,USA,2026-03-20 01:58:31,Organic Search,True
-CUST-b87fc3b6,Company 963,SMB,USA,2025-09-18 23:41:21,Organic Search,True
-CUST-654f2566,Company 964,SMB,Canada,2024-10-05 17:53:46,Direct,True
-CUST-0d15833f,Company 965,SMB,Germany,2026-01-09 11:09:42,Referral,True
-CUST-14cf1de7,Company 966,Enterprise,Germany,2025-10-06 11:25:11,Direct,True
-CUST-c88f1e95,Company 967,SMB,USA,2025-04-19 11:44:36,Referral,False
-CUST-56142681,Company 968,Mid-Market,UK,2024-10-06 00:48:41,Paid Social,False
-CUST-9f829f30,Company 969,Startup,Australia,2024-11-24 20:55:47,Outbound Sales,True
-CUST-69acd5fb,Company 970,Startup,Australia,2026-02-09 14:46:21,Referral,True
-CUST-71aa2d1c,Company 971,SMB,USA,2025-12-25 05:02:30,Organic Search,True
-CUST-cdc31391,Company 972,SMB,UK,2024-12-23 20:44:30,Direct,True
-CUST-12536090,Company 973,Startup,Canada,2025-10-29 13:30:04,Paid Social,True
-CUST-eaaa9b3e,Company 974,Startup,USA,2024-07-29 15:01:22,Organic Search,False
-CUST-074ab72a,Company 975,Startup,USA,2025-04-05 12:56:54,Paid Social,True
-CUST-7320bf8f,Company 976,Startup,Australia,2024-12-28 07:28:31,Outbound Sales,True
-CUST-28e383f7,Company 977,Mid-Market,USA,2026-04-02 10:04:01,Direct,False
-CUST-3fac006b,Company 978,Mid-Market,USA,2025-07-08 18:12:57,Direct,False
-CUST-57b0cd8d,Company 979,SMB,USA,2025-10-24 00:28:11,Outbound Sales,False
-CUST-471d405e,Company 980,SMB,Australia,2025-01-11 20:07:56,Direct,True
-CUST-6bc876c4,Company 981,SMB,Canada,2024-07-19 18:39:01,Referral,True
-CUST-c036c01c,Company 982,SMB,Canada,2025-12-24 10:14:50,Paid Social,True
-CUST-983e5a9a,Company 983,SMB,USA,2026-03-18 23:40:21,Organic Search,True
-CUST-d25fbd3a,Company 984,Startup,Australia,2025-12-06 16:05:10,Outbound Sales,True
-CUST-a2554258,Company 985,Startup,Canada,2024-09-29 05:58:28,Referral,True
-CUST-f1fa2eaa,Company 986,SMB,Canada,2024-06-22 07:43:15,Organic Search,False
-CUST-c0ff1e61,Company 987,Startup,Canada,2025-09-06 18:58:29,Organic Search,True
-CUST-f1c921e9,Company 988,SMB,Australia,2024-08-02 11:27:43,Outbound Sales,True
-CUST-15a94920,Company 989,Startup,Australia,2024-05-26 23:00:09,Referral,True
-CUST-101127c9,Company 990,Mid-Market,USA,2025-02-24 20:51:47,Organic Search,True
-CUST-35d006d6,Company 991,Startup,Germany,2024-09-02 13:41:17,Organic Search,True
-CUST-259df05d,Company 992,Startup,Canada,2024-07-04 21:58:18,Referral,True
-CUST-fac15203,Company 993,SMB,Germany,2024-06-28 16:37:51,Direct,True
-CUST-5592705c,Company 994,Mid-Market,Australia,2026-04-03 16:11:43,Organic Search,False
-CUST-f91b5040,Company 995,SMB,Australia,2025-03-31 04:47:17,Paid Social,True
-CUST-84193de4,Company 996,Mid-Market,Australia,2025-09-27 06:17:21,Referral,False
-CUST-ec4a6918,Company 997,Mid-Market,Germany,2024-06-27 07:56:53,Organic Search,True
-CUST-eab4156b,Company 998,Startup,Australia,2025-02-09 00:17:17,Outbound Sales,True
-CUST-022e23b5,Company 999,SMB,USA,2025-07-08 00:36:23,Paid Social,True
+CUST-37610024,Company 0,Startup,Germany,2024-07-05 03:40:36,Outbound Sales,True
+CUST-CCE39333,Company 1,Startup,Australia,2025-11-16 23:42:35,Organic Search,False
+CUST-DE3AD5A3,Company 2,SMB,Australia,2025-08-21 20:05:34,Direct,False
+CUST-6A8F1D6C,Company 3,SMB,Germany,2025-03-17 09:09:00,Outbound Sales,True
+CUST-84B8FB89,Company 4,Startup,UK,2025-03-13 02:25:36,Outbound Sales,True
+CUST-89561C76,Company 5,SMB,Canada,2026-01-17 18:38:07,Paid Social,False
+CUST-124D2330,Company 6,Startup,Canada,2024-07-02 17:46:03,Referral,False
+CUST-1C3313B6,Company 7,SMB,Germany,2025-09-22 01:53:16,Organic Search,True
+CUST-2A915907,Company 8,Mid-Market,Australia,2024-09-25 01:44:46,Organic Search,True
+CUST-B84350D4,Company 9,Mid-Market,UK,2024-07-08 17:59:13,Paid Social,True
+CUST-A85DF973,Company 10,Startup,Canada,2025-05-20 07:54:42,Outbound Sales,True
+CUST-A54777F3,Company 11,Mid-Market,USA,2026-04-13 04:54:12,Referral,True
+CUST-4D652CDA,Company 12,SMB,Germany,2025-10-20 02:22:53,Direct,True
+CUST-9AF4CCE4,Company 13,SMB,Canada,2025-11-07 15:10:03,Paid Social,True
+CUST-551DFFFC,Company 14,Mid-Market,Canada,2025-10-06 18:12:06,Organic Search,False
+CUST-F98FD767,Company 15,SMB,Canada,2025-11-25 19:50:47,Paid Social,True
+CUST-4D395DDE,Company 16,Startup,UK,2025-05-10 15:43:46,Organic Search,True
+CUST-5D77EFC9,Company 17,Enterprise,Canada,2024-08-02 12:33:03,Organic Search,True
+CUST-CA3F9B5E,Company 18,Startup,Germany,2026-01-04 00:23:20,Referral,True
+CUST-65596ABD,Company 19,Startup,UK,2025-03-25 18:45:41,Organic Search,True
+CUST-66FE4E37,Company 20,SMB,USA,2025-05-01 06:09:56,Organic Search,True
+CUST-C03160B1,Company 21,Mid-Market,UK,2025-01-26 16:22:52,Direct,True
+CUST-9A60DED1,Company 22,Startup,USA,2024-09-11 06:16:10,Paid Social,True
+CUST-B4947880,Company 23,Mid-Market,UK,2026-03-08 12:55:21,Direct,False
+CUST-D3B021DA,Company 24,SMB,Germany,2025-11-22 13:03:42,Organic Search,True
+CUST-7BED8E05,Company 25,Startup,USA,2025-08-14 00:31:00,Paid Social,False
+CUST-4920AB3B,Company 26,Startup,Germany,2025-02-18 18:17:58,Direct,False
+CUST-E1D8DEEE,Company 27,Startup,UK,2025-12-22 14:47:00,Referral,False
+CUST-1BA54B0F,Company 28,SMB,Australia,2025-06-03 03:55:05,Direct,True
+CUST-9EF94C07,Company 29,Startup,Germany,2025-03-20 16:37:00,Direct,True
+CUST-1E4D99B5,Company 30,Startup,UK,2025-03-25 20:03:04,Direct,True
+CUST-C280B940,Company 31,SMB,Canada,2024-10-13 21:13:20,Paid Social,True
+CUST-F2D6AB8C,Company 32,Startup,USA,2024-07-07 06:13:16,Paid Social,True
+CUST-10145AE4,Company 33,Enterprise,USA,2025-06-09 20:19:31,Direct,False
+CUST-E1247949,Company 34,SMB,Australia,2026-02-08 03:49:48,Organic Search,True
+CUST-31340849,Company 35,SMB,Australia,2024-06-16 14:04:41,Referral,False
+CUST-B8473638,Company 36,Mid-Market,USA,2026-01-17 13:15:48,Referral,True
+CUST-E5153171,Company 37,Mid-Market,UK,2025-12-26 04:05:53,Paid Social,True
+CUST-A17F56A5,Company 38,Startup,USA,2024-11-19 00:49:47,Paid Social,True
+CUST-40696408,Company 39,Startup,UK,2025-08-05 02:45:36,Paid Social,True
+CUST-BC447D50,Company 40,SMB,UK,2024-08-29 14:48:48,Referral,True
+CUST-5BEA698E,Company 41,Startup,UK,2025-11-05 09:41:49,Referral,True
+CUST-93D5D028,Company 42,Startup,Canada,2025-09-24 09:09:44,Organic Search,True
+CUST-12F57229,Company 43,Mid-Market,USA,2025-01-14 19:17:41,Direct,True
+CUST-276DE774,Company 44,SMB,Australia,2024-06-19 13:57:30,Organic Search,True
+CUST-142B7A84,Company 45,SMB,Germany,2026-04-09 14:37:45,Direct,False
+CUST-90DD2F0C,Company 46,Mid-Market,Germany,2025-03-22 08:26:41,Paid Social,True
+CUST-1575F549,Company 47,Startup,USA,2026-02-11 23:28:55,Paid Social,True
+CUST-44D30D03,Company 48,SMB,Germany,2025-09-07 21:08:27,Direct,True
+CUST-CCE45833,Company 49,SMB,Australia,2025-11-20 05:16:43,Paid Social,True
+CUST-D4CE4E4E,Company 50,Mid-Market,USA,2025-11-06 17:26:17,Paid Social,True
+CUST-376CE362,Company 51,Mid-Market,Germany,2024-09-20 02:04:12,Referral,True
+CUST-9ED3FFC8,Company 52,Startup,UK,2025-01-21 15:38:01,Outbound Sales,False
+CUST-EE4D1390,Company 53,Enterprise,Germany,2025-04-06 16:57:07,Organic Search,True
+CUST-5A18A787,Company 54,SMB,Canada,2025-04-29 09:18:28,Paid Social,True
+CUST-8B8ECE62,Company 55,SMB,Australia,2024-06-01 23:26:31,Outbound Sales,True
+CUST-A8578740,Company 56,SMB,USA,2025-06-03 23:53:51,Direct,True
+CUST-D553148E,Company 57,SMB,UK,2024-08-21 15:09:06,Paid Social,True
+CUST-4112CA3A,Company 58,SMB,UK,2025-10-25 15:56:45,Direct,True
+CUST-EB931375,Company 59,Mid-Market,UK,2025-09-11 15:01:03,Organic Search,True
+CUST-846A8ED0,Company 60,SMB,UK,2026-03-05 10:41:15,Organic Search,True
+CUST-A2C06924,Company 61,Startup,UK,2025-10-26 16:13:58,Referral,False
+CUST-CCC970DC,Company 62,Startup,USA,2025-01-23 15:34:45,Direct,True
+CUST-DEED430B,Company 63,Startup,Germany,2026-04-07 06:46:13,Referral,True
+CUST-DDF48164,Company 64,Startup,Canada,2025-02-24 22:05:53,Paid Social,True
+CUST-8B59858E,Company 65,Startup,Australia,2024-12-24 20:27:36,Outbound Sales,True
+CUST-4532DEB9,Company 66,Mid-Market,Germany,2026-02-21 00:59:11,Direct,True
+CUST-FB33E508,Company 67,SMB,USA,2025-01-26 10:27:14,Referral,True
+CUST-118AB172,Company 68,SMB,USA,2024-06-25 17:31:57,Organic Search,False
+CUST-EFC95E91,Company 69,SMB,Canada,2025-04-08 18:37:04,Organic Search,True
+CUST-291486B2,Company 70,Startup,Canada,2025-12-02 20:18:47,Referral,True
+CUST-F01B5C37,Company 71,SMB,UK,2024-09-16 07:32:17,Outbound Sales,False
+CUST-2700A916,Company 72,Startup,Germany,2025-04-03 22:43:07,Outbound Sales,False
+CUST-9E6D05EF,Company 73,Startup,Canada,2024-08-03 20:13:29,Paid Social,True
+CUST-A5916A71,Company 74,SMB,Germany,2025-09-14 03:05:53,Organic Search,True
+CUST-9FADF576,Company 75,Startup,USA,2025-04-13 06:21:01,Outbound Sales,True
+CUST-CCCAC505,Company 76,SMB,Australia,2024-12-28 01:02:23,Referral,False
+CUST-B8B565D7,Company 77,Startup,UK,2024-10-13 15:27:06,Paid Social,True
+CUST-759EE8A0,Company 78,SMB,Canada,2025-06-17 02:02:17,Referral,False
+CUST-A24E4A4D,Company 79,SMB,Canada,2025-09-01 23:08:28,Outbound Sales,True
+CUST-2EAA1170,Company 80,SMB,Australia,2026-03-18 10:09:46,Paid Social,False
+CUST-4BF6001B,Company 81,Mid-Market,UK,2025-03-16 02:54:05,Referral,True
+CUST-1B5821AF,Company 82,SMB,UK,2024-08-26 07:15:23,Referral,True
+CUST-C903E7D0,Company 83,Startup,UK,2025-12-29 20:31:19,Direct,True
+CUST-0D41E8EE,Company 84,Startup,UK,2025-08-03 17:28:14,Referral,True
+CUST-A8D1FA2C,Company 85,Mid-Market,USA,2025-09-24 04:38:40,Paid Social,True
+CUST-0EA0AC68,Company 86,SMB,USA,2024-07-10 23:24:38,Outbound Sales,True
+CUST-32AF6D55,Company 87,Mid-Market,UK,2024-12-15 00:39:48,Outbound Sales,True
+CUST-D2D00814,Company 88,Enterprise,Canada,2025-11-12 12:37:31,Outbound Sales,True
+CUST-27DAA597,Company 89,Startup,UK,2025-12-29 13:11:30,Referral,False
+CUST-D01682D5,Company 90,SMB,UK,2025-03-14 16:59:45,Organic Search,False
+CUST-72B71754,Company 91,SMB,Germany,2025-12-09 11:28:17,Paid Social,True
+CUST-D1786905,Company 92,SMB,UK,2026-01-05 10:26:29,Direct,True
+CUST-517C8393,Company 93,Enterprise,Australia,2025-02-07 20:37:16,Outbound Sales,True
+CUST-D9286B3B,Company 94,SMB,Germany,2026-02-15 14:29:42,Direct,False
+CUST-085EA84A,Company 95,Startup,USA,2024-11-27 11:30:30,Direct,True
+CUST-8C428601,Company 96,Startup,UK,2024-10-22 21:03:08,Organic Search,True
+CUST-E20BA9AE,Company 97,Startup,USA,2025-09-11 05:19:16,Referral,False
+CUST-159DDF9F,Company 98,Startup,UK,2025-08-08 20:04:01,Paid Social,False
+CUST-BFC0D6D6,Company 99,SMB,UK,2024-08-11 00:27:48,Organic Search,True
+CUST-708114B8,Company 100,Startup,USA,2025-12-29 21:32:52,Outbound Sales,True
+CUST-3DB41889,Company 101,Startup,USA,2024-09-23 22:23:30,Organic Search,True
+CUST-56F8D7AF,Company 102,Startup,Canada,2025-12-09 13:49:56,Organic Search,False
+CUST-7097D913,Company 103,Startup,Germany,2024-05-06 08:59:13,Organic Search,True
+CUST-75F2B393,Company 104,Startup,UK,2025-12-03 16:40:55,Direct,True
+CUST-B1428649,Company 105,Startup,Australia,2025-11-26 10:54:54,Organic Search,True
+CUST-7159794D,Company 106,Mid-Market,UK,2025-11-21 15:58:58,Outbound Sales,True
+CUST-713A7B4E,Company 107,Startup,Australia,2025-08-29 08:11:13,Direct,True
+CUST-F83A4925,Company 108,SMB,UK,2025-04-10 05:51:22,Paid Social,True
+CUST-66D289AB,Company 109,SMB,Canada,2025-09-27 18:29:50,Organic Search,False
+CUST-2E5F00D8,Company 110,Startup,Germany,2024-11-19 07:10:15,Direct,False
+CUST-CE4DCCD1,Company 111,Startup,USA,2025-11-21 22:22:21,Organic Search,True
+CUST-02F91E61,Company 112,Startup,Australia,2025-06-10 14:56:05,Outbound Sales,False
+CUST-6C38BF8C,Company 113,SMB,UK,2025-04-01 00:12:15,Paid Social,True
+CUST-9317BE17,Company 114,Startup,Canada,2025-05-05 02:13:17,Direct,True
+CUST-8C1BDC39,Company 115,Startup,Germany,2025-06-20 04:20:44,Organic Search,True
+CUST-9BF68CF9,Company 116,SMB,Germany,2024-05-28 04:50:08,Organic Search,False
+CUST-B7961BC2,Company 117,Mid-Market,USA,2024-08-11 01:14:36,Paid Social,False
+CUST-7A7AF523,Company 118,Enterprise,Australia,2024-10-27 04:49:48,Organic Search,False
+CUST-9E304AFA,Company 119,Startup,Germany,2024-07-23 14:34:00,Referral,False
+CUST-C60BAF2B,Company 120,SMB,Australia,2025-03-17 22:01:47,Outbound Sales,False
+CUST-25BCEBD3,Company 121,Startup,Canada,2025-08-31 22:25:11,Outbound Sales,True
+CUST-29FA7124,Company 122,SMB,Germany,2025-08-21 17:35:37,Paid Social,False
+CUST-82C25789,Company 123,Startup,Canada,2025-04-09 21:36:19,Referral,True
+CUST-EC9CF353,Company 124,SMB,Australia,2026-01-15 05:00:06,Direct,True
+CUST-4531BF5D,Company 125,Startup,Australia,2025-06-17 14:56:11,Organic Search,True
+CUST-720D85B4,Company 126,Mid-Market,Australia,2024-06-27 19:32:18,Organic Search,True
+CUST-259B406D,Company 127,SMB,Canada,2025-11-10 10:46:47,Direct,True
+CUST-00E36B8D,Company 128,Startup,Germany,2025-06-24 11:00:10,Direct,True
+CUST-911BBCCC,Company 129,Startup,UK,2025-08-07 08:15:53,Organic Search,True
+CUST-F417353C,Company 130,Startup,Canada,2025-06-17 17:20:26,Outbound Sales,True
+CUST-D1CBAACD,Company 131,Enterprise,Germany,2025-06-09 02:42:39,Referral,False
+CUST-DC253138,Company 132,SMB,USA,2024-07-06 02:43:25,Direct,True
+CUST-6ADEA430,Company 133,Enterprise,Germany,2025-06-13 05:18:34,Outbound Sales,True
+CUST-5C538CBA,Company 134,Mid-Market,USA,2025-12-02 06:52:08,Outbound Sales,True
+CUST-0C211463,Company 135,Startup,Canada,2024-12-08 21:12:20,Outbound Sales,True
+CUST-FE87BC24,Company 136,Startup,Canada,2025-07-15 01:43:33,Paid Social,True
+CUST-88001C45,Company 137,Startup,Canada,2024-05-23 11:55:42,Outbound Sales,False
+CUST-389E18CE,Company 138,Startup,Canada,2025-01-09 16:11:09,Direct,True
+CUST-FC82BB75,Company 139,Startup,Canada,2025-03-15 19:17:19,Referral,False
+CUST-A7ADD720,Company 140,Startup,Canada,2026-04-18 09:34:35,Outbound Sales,False
+CUST-1586638C,Company 141,Enterprise,Canada,2024-10-04 15:31:24,Organic Search,True
+CUST-3D30A1EE,Company 142,SMB,Canada,2024-11-18 21:07:36,Direct,False
+CUST-581F461D,Company 143,Startup,Germany,2025-02-23 05:25:18,Organic Search,True
+CUST-8303FDE2,Company 144,Startup,Canada,2026-04-25 15:30:05,Paid Social,False
+CUST-717AFC32,Company 145,Enterprise,Germany,2026-01-13 23:37:18,Direct,False
+CUST-3A20CCF1,Company 146,SMB,Australia,2024-05-26 07:49:14,Outbound Sales,False
+CUST-26D0DA5B,Company 147,Startup,Australia,2024-10-18 18:37:11,Outbound Sales,True
+CUST-2FA78A53,Company 148,Enterprise,USA,2025-12-21 19:44:10,Paid Social,False
+CUST-C15C4E29,Company 149,SMB,Germany,2024-06-12 13:27:50,Paid Social,False
+CUST-16D0D0C4,Company 150,Startup,UK,2026-01-15 15:21:12,Direct,True
+CUST-16EB2332,Company 151,Startup,USA,2024-11-22 09:50:44,Outbound Sales,False
+CUST-877A1EF7,Company 152,SMB,Germany,2026-03-01 21:15:55,Outbound Sales,False
+CUST-2B2FEA72,Company 153,Startup,USA,2024-12-01 07:45:45,Paid Social,True
+CUST-AFE0FEA3,Company 154,SMB,Australia,2025-03-14 01:13:49,Organic Search,False
+CUST-ECFDA835,Company 155,Startup,Germany,2025-08-27 04:46:38,Referral,True
+CUST-BF8F5E08,Company 156,SMB,Australia,2024-08-01 04:26:18,Paid Social,True
+CUST-44C82EE4,Company 157,SMB,Germany,2025-06-11 15:12:11,Organic Search,True
+CUST-1FB81845,Company 158,SMB,Australia,2025-05-04 15:52:17,Organic Search,True
+CUST-63099D47,Company 159,SMB,USA,2025-11-24 05:53:47,Direct,False
+CUST-2C362A7B,Company 160,Startup,Australia,2026-04-28 03:47:34,Paid Social,True
+CUST-023F303E,Company 161,Mid-Market,USA,2025-08-28 22:46:23,Direct,True
+CUST-A3459293,Company 162,Mid-Market,UK,2025-02-23 16:56:47,Paid Social,True
+CUST-FECC133E,Company 163,SMB,USA,2025-02-21 15:53:52,Referral,True
+CUST-A00C3195,Company 164,Startup,Canada,2025-03-02 02:38:13,Referral,False
+CUST-B01E9898,Company 165,Startup,Germany,2025-12-16 05:38:13,Direct,False
+CUST-22C14FD9,Company 166,Startup,UK,2024-12-21 11:41:58,Organic Search,True
+CUST-6EA960EA,Company 167,SMB,Australia,2024-08-30 21:21:55,Direct,True
+CUST-2645B381,Company 168,SMB,Germany,2024-12-31 00:47:09,Referral,True
+CUST-0A2FE7D2,Company 169,Mid-Market,Germany,2024-05-17 13:54:55,Paid Social,True
+CUST-7B0333AA,Company 170,SMB,Australia,2024-07-17 11:37:04,Paid Social,True
+CUST-24A32BDC,Company 171,Startup,Canada,2024-07-05 17:38:18,Direct,True
+CUST-6785B597,Company 172,Startup,UK,2025-11-15 05:35:53,Paid Social,True
+CUST-FF7DCDB3,Company 173,SMB,Australia,2025-10-10 07:44:08,Direct,True
+CUST-110057AA,Company 174,SMB,Canada,2025-09-21 15:25:27,Paid Social,True
+CUST-D62108F4,Company 175,Startup,Germany,2025-04-03 04:05:20,Paid Social,True
+CUST-5D0FC132,Company 176,SMB,UK,2025-10-06 10:51:54,Referral,False
+CUST-D3B2A135,Company 177,Mid-Market,UK,2024-08-26 17:28:53,Direct,False
+CUST-581D46E9,Company 178,SMB,USA,2026-02-17 10:53:30,Direct,True
+CUST-102E6222,Company 179,Mid-Market,UK,2025-05-01 18:18:16,Referral,False
+CUST-5074AE49,Company 180,SMB,USA,2026-03-16 18:39:37,Paid Social,False
+CUST-02F4B2E5,Company 181,Enterprise,Germany,2024-08-20 04:30:28,Organic Search,True
+CUST-8BFBD4B7,Company 182,SMB,USA,2025-04-29 01:13:22,Outbound Sales,True
+CUST-2FE6B5F2,Company 183,Startup,Germany,2025-09-21 07:31:58,Organic Search,True
+CUST-E356EB0D,Company 184,SMB,Australia,2025-04-27 19:21:54,Direct,False
+CUST-1FD26BD1,Company 185,SMB,Germany,2025-03-22 16:39:28,Paid Social,True
+CUST-A68ECECD,Company 186,Startup,Canada,2024-08-30 08:04:15,Paid Social,True
+CUST-494408AC,Company 187,Startup,USA,2025-02-03 03:29:30,Organic Search,True
+CUST-EE3C9DC4,Company 188,SMB,Australia,2024-10-22 07:11:05,Outbound Sales,True
+CUST-2786C911,Company 189,SMB,USA,2024-12-07 02:29:30,Direct,False
+CUST-BF24C6DE,Company 190,Startup,Germany,2025-09-12 02:26:08,Paid Social,True
+CUST-0AB4038C,Company 191,SMB,Germany,2025-08-04 02:33:03,Referral,False
+CUST-88CF4CCA,Company 192,SMB,USA,2025-07-18 06:04:53,Organic Search,False
+CUST-549DF25D,Company 193,Startup,Germany,2025-01-20 02:57:24,Direct,False
+CUST-7382A67F,Company 194,SMB,USA,2026-04-01 13:48:50,Direct,True
+CUST-A3AC2F01,Company 195,Startup,UK,2024-07-03 23:37:35,Direct,False
+CUST-1E21E938,Company 196,SMB,Australia,2025-01-06 02:11:25,Organic Search,True
+CUST-451153EF,Company 197,Startup,Australia,2024-07-26 03:27:48,Outbound Sales,True
+CUST-BBC85AFD,Company 198,SMB,UK,2025-01-03 10:17:43,Paid Social,False
+CUST-23C72204,Company 199,SMB,Australia,2026-04-03 04:26:49,Referral,True
+CUST-5BC00145,Company 200,SMB,Australia,2025-01-23 08:56:13,Referral,True
+CUST-9FDFAA41,Company 201,Mid-Market,Germany,2026-02-23 06:20:01,Paid Social,True
+CUST-63B14F12,Company 202,Startup,USA,2025-04-27 09:33:01,Organic Search,False
+CUST-91DBF105,Company 203,SMB,UK,2025-09-23 18:52:08,Paid Social,False
+CUST-F8F8812D,Company 204,SMB,Germany,2025-03-30 21:57:15,Outbound Sales,True
+CUST-7215EE87,Company 205,Startup,Australia,2024-11-11 02:02:30,Outbound Sales,False
+CUST-CD276CB1,Company 206,Startup,Australia,2025-11-09 21:18:00,Outbound Sales,True
+CUST-6E09BC7B,Company 207,SMB,Canada,2026-04-08 11:58:12,Paid Social,True
+CUST-F21ECFAB,Company 208,SMB,UK,2024-11-09 08:57:20,Referral,True
+CUST-593B3686,Company 209,Startup,Australia,2025-11-20 11:42:57,Organic Search,False
+CUST-DD10A3F2,Company 210,Startup,UK,2024-11-07 15:10:22,Referral,True
+CUST-D4830153,Company 211,Startup,UK,2025-10-06 07:54:58,Direct,True
+CUST-1BB8F0AC,Company 212,Startup,Australia,2025-11-27 23:23:41,Referral,True
+CUST-A7274F8F,Company 213,Startup,Canada,2025-03-25 00:48:48,Referral,False
+CUST-8A5CB623,Company 214,Mid-Market,UK,2025-10-20 22:49:52,Outbound Sales,True
+CUST-EC407A61,Company 215,SMB,USA,2024-11-15 17:40:19,Direct,True
+CUST-9327A5AC,Company 216,Mid-Market,Canada,2024-06-27 20:31:17,Paid Social,False
+CUST-6D2A8F0A,Company 217,Startup,Australia,2024-07-10 08:46:10,Direct,True
+CUST-388930EF,Company 218,Startup,Canada,2025-03-23 07:51:20,Organic Search,True
+CUST-2A07BD4E,Company 219,SMB,Germany,2026-02-18 21:35:38,Organic Search,True
+CUST-802C9044,Company 220,SMB,UK,2024-08-02 03:08:47,Direct,False
+CUST-14D4381E,Company 221,Enterprise,Germany,2025-03-29 17:12:02,Outbound Sales,True
+CUST-AE2DE60C,Company 222,Startup,Germany,2025-09-26 22:38:30,Direct,True
+CUST-82C553A8,Company 223,Mid-Market,Germany,2024-09-25 17:24:22,Referral,True
+CUST-11C15E6F,Company 224,Enterprise,Germany,2025-10-09 18:43:09,Organic Search,False
+CUST-0B94F615,Company 225,SMB,Canada,2024-12-10 08:21:36,Direct,False
+CUST-46A0389E,Company 226,Mid-Market,UK,2025-12-12 07:44:10,Referral,True
+CUST-83F15F85,Company 227,SMB,Germany,2025-06-27 19:55:36,Paid Social,True
+CUST-E6536AFB,Company 228,SMB,Australia,2025-06-04 05:48:55,Organic Search,False
+CUST-47982525,Company 229,SMB,Australia,2024-09-07 01:03:32,Organic Search,True
+CUST-B110201C,Company 230,Mid-Market,UK,2025-04-04 03:22:03,Outbound Sales,True
+CUST-A0576216,Company 231,Mid-Market,Germany,2026-01-16 07:52:56,Referral,True
+CUST-F27DA024,Company 232,SMB,USA,2024-05-15 06:03:37,Paid Social,True
+CUST-4A17BCAE,Company 233,Mid-Market,Canada,2025-11-05 17:15:43,Paid Social,True
+CUST-BD228B9A,Company 234,Startup,Canada,2025-04-25 17:11:49,Organic Search,True
+CUST-E1039D02,Company 235,SMB,UK,2025-10-08 04:59:27,Outbound Sales,True
+CUST-D6736D3A,Company 236,SMB,Australia,2025-08-28 04:58:52,Organic Search,True
+CUST-C8203950,Company 237,SMB,Australia,2025-03-12 10:16:12,Referral,False
+CUST-D0A507B4,Company 238,SMB,USA,2024-12-12 07:50:57,Paid Social,True
+CUST-1C0C2BFF,Company 239,Enterprise,UK,2025-08-01 22:27:03,Paid Social,True
+CUST-208C4C5F,Company 240,Mid-Market,UK,2024-08-11 08:43:45,Paid Social,False
+CUST-D2E77D29,Company 241,Startup,Australia,2025-07-01 09:23:47,Outbound Sales,True
+CUST-BAF03B4F,Company 242,Enterprise,Canada,2024-07-09 03:03:03,Organic Search,False
+CUST-695098EA,Company 243,SMB,Germany,2025-08-18 09:18:44,Paid Social,True
+CUST-CC697A58,Company 244,SMB,Australia,2025-08-02 23:37:02,Paid Social,False
+CUST-9C019996,Company 245,SMB,Germany,2024-07-01 15:27:52,Paid Social,True
+CUST-5EFAA543,Company 246,SMB,USA,2025-11-04 23:11:16,Organic Search,True
+CUST-CCD4B251,Company 247,Startup,USA,2025-02-28 12:56:44,Outbound Sales,True
+CUST-80F62A5D,Company 248,Startup,UK,2025-11-26 10:15:02,Paid Social,True
+CUST-ACE965ED,Company 249,SMB,UK,2024-05-31 09:04:49,Direct,True
+CUST-B2FBA988,Company 250,SMB,Germany,2024-09-09 00:04:40,Paid Social,False
+CUST-486D5177,Company 251,SMB,USA,2025-04-26 14:43:08,Outbound Sales,False
+CUST-6057D2FC,Company 252,SMB,UK,2024-09-15 09:42:18,Paid Social,True
+CUST-3C657632,Company 253,Startup,UK,2024-12-27 19:10:06,Paid Social,False
+CUST-2D412A2A,Company 254,SMB,USA,2025-08-26 05:41:42,Paid Social,False
+CUST-5BBE8D7D,Company 255,SMB,USA,2024-08-14 12:03:49,Paid Social,False
+CUST-6C6235A4,Company 256,Startup,USA,2025-09-07 17:21:19,Organic Search,True
+CUST-642C56AF,Company 257,Enterprise,Canada,2024-07-15 11:37:11,Referral,True
+CUST-F56B92E6,Company 258,SMB,Canada,2024-09-05 21:14:39,Organic Search,True
+CUST-C72E3515,Company 259,Startup,Canada,2025-07-03 23:31:58,Paid Social,True
+CUST-D8AD6E96,Company 260,Mid-Market,Canada,2025-12-01 05:49:34,Paid Social,False
+CUST-6DC75493,Company 261,Enterprise,Germany,2024-09-02 12:47:19,Paid Social,True
+CUST-60B126F1,Company 262,Mid-Market,Australia,2024-12-05 23:52:25,Referral,True
+CUST-9D9744B8,Company 263,Startup,Canada,2026-03-07 08:06:16,Direct,True
+CUST-E6C8F21D,Company 264,Enterprise,Germany,2026-04-23 11:15:29,Outbound Sales,False
+CUST-E0C220C1,Company 265,Mid-Market,Germany,2025-06-29 04:11:28,Paid Social,True
+CUST-33BED97C,Company 266,Enterprise,Germany,2025-03-23 08:06:30,Outbound Sales,True
+CUST-BC981CE6,Company 267,Mid-Market,USA,2025-01-09 05:09:32,Organic Search,False
+CUST-7BA5A4F6,Company 268,Startup,Australia,2025-07-22 02:09:27,Direct,False
+CUST-A7A866A4,Company 269,SMB,USA,2025-07-06 08:50:21,Referral,True
+CUST-D94CCB52,Company 270,SMB,Canada,2024-12-02 04:04:23,Direct,False
+CUST-D9553E44,Company 271,SMB,Germany,2024-05-17 15:31:25,Outbound Sales,False
+CUST-557E362B,Company 272,Startup,Canada,2024-08-19 14:15:01,Paid Social,True
+CUST-366BD711,Company 273,Enterprise,UK,2026-03-31 17:57:26,Organic Search,False
+CUST-A13C20EA,Company 274,Startup,Australia,2025-03-02 06:04:26,Referral,True
+CUST-1ABD7017,Company 275,Startup,USA,2025-04-18 01:57:22,Organic Search,True
+CUST-2D0673BB,Company 276,Mid-Market,UK,2025-04-06 23:43:27,Referral,True
+CUST-52E052F1,Company 277,Startup,Australia,2025-11-23 09:31:16,Referral,True
+CUST-FB2E578B,Company 278,Startup,Germany,2024-06-17 10:02:20,Outbound Sales,True
+CUST-EF7FF9AD,Company 279,SMB,USA,2024-06-30 09:25:46,Direct,True
+CUST-CC72ABE6,Company 280,Startup,Germany,2024-11-18 08:50:37,Outbound Sales,True
+CUST-9A462EB6,Company 281,SMB,Australia,2025-04-21 06:15:14,Organic Search,True
+CUST-68DFBD84,Company 282,Startup,USA,2025-09-02 22:05:35,Direct,True
+CUST-BCFC9FDB,Company 283,Startup,Canada,2025-04-24 05:11:11,Organic Search,True
+CUST-983CC5FC,Company 284,SMB,Canada,2025-03-19 01:15:52,Referral,True
+CUST-5B25D29C,Company 285,Startup,USA,2026-03-16 14:43:10,Referral,True
+CUST-743625A5,Company 286,SMB,UK,2024-08-26 13:03:06,Outbound Sales,True
+CUST-A5881705,Company 287,Startup,USA,2025-06-22 08:40:31,Referral,False
+CUST-A2F9D002,Company 288,Startup,USA,2025-05-31 20:07:35,Paid Social,True
+CUST-B0C4093A,Company 289,SMB,Canada,2025-04-11 15:32:03,Organic Search,False
+CUST-F2CE1905,Company 290,SMB,Canada,2025-12-11 13:06:25,Outbound Sales,True
+CUST-999C524E,Company 291,SMB,UK,2024-11-11 21:24:49,Direct,False
+CUST-A76970FB,Company 292,Mid-Market,UK,2026-03-28 06:06:01,Organic Search,False
+CUST-672D327B,Company 293,Enterprise,USA,2024-12-29 01:05:19,Outbound Sales,False
+CUST-155EA421,Company 294,SMB,Germany,2025-06-02 20:28:42,Outbound Sales,True
+CUST-52FA0EE1,Company 295,Enterprise,UK,2025-05-16 02:10:49,Direct,True
+CUST-DCD0B109,Company 296,Mid-Market,Australia,2026-01-11 08:06:31,Referral,True
+CUST-2268A0CA,Company 297,Startup,Canada,2025-03-17 09:43:43,Organic Search,True
+CUST-9B47FF0C,Company 298,Startup,Australia,2024-11-24 17:28:22,Organic Search,False
+CUST-E9B81C47,Company 299,Startup,Germany,2024-05-16 18:38:37,Paid Social,False
+CUST-F965BA2F,Company 300,SMB,UK,2025-01-21 11:38:34,Referral,True
+CUST-714F78F2,Company 301,Startup,Germany,2025-12-25 04:38:04,Organic Search,True
+CUST-045CDBCF,Company 302,SMB,UK,2024-05-08 05:43:54,Organic Search,True
+CUST-1608CA19,Company 303,Mid-Market,USA,2026-02-14 04:44:12,Referral,True
+CUST-4877261F,Company 304,Mid-Market,UK,2025-06-01 06:19:50,Referral,True
+CUST-CA92DA61,Company 305,Startup,UK,2024-08-11 09:09:50,Referral,True
+CUST-8AF99D3B,Company 306,Mid-Market,USA,2024-12-07 14:10:54,Referral,False
+CUST-5EA42CD2,Company 307,SMB,USA,2025-06-09 10:42:47,Outbound Sales,True
+CUST-FA8B072F,Company 308,Startup,Australia,2024-12-17 10:55:36,Referral,True
+CUST-C8769D5C,Company 309,Enterprise,Canada,2024-07-19 06:14:49,Direct,True
+CUST-58076542,Company 310,Enterprise,Canada,2025-08-30 04:07:30,Outbound Sales,False
+CUST-2DAF1D0B,Company 311,Startup,Australia,2025-09-03 17:38:47,Paid Social,True
+CUST-A70897CD,Company 312,SMB,UK,2024-07-26 18:40:36,Organic Search,True
+CUST-4A9F9F0F,Company 313,Mid-Market,Canada,2024-11-22 07:12:57,Referral,True
+CUST-922A28DA,Company 314,Startup,Australia,2024-10-26 00:39:33,Paid Social,True
+CUST-67BA9206,Company 315,Startup,Germany,2025-08-25 09:05:04,Outbound Sales,True
+CUST-5130E926,Company 316,SMB,UK,2025-10-16 02:46:43,Direct,True
+CUST-991D4F24,Company 317,Startup,UK,2025-10-13 16:56:44,Outbound Sales,True
+CUST-29367E1F,Company 318,SMB,USA,2026-03-17 07:05:49,Organic Search,False
+CUST-088652B9,Company 319,Mid-Market,USA,2025-11-13 02:42:14,Referral,True
+CUST-3EF420B5,Company 320,SMB,USA,2024-12-21 02:18:13,Direct,True
+CUST-28E46B22,Company 321,SMB,Germany,2024-07-18 15:37:16,Direct,True
+CUST-56F7E3DC,Company 322,Startup,Germany,2025-07-23 16:32:32,Paid Social,False
+CUST-CE8D154B,Company 323,Startup,Canada,2026-02-28 16:31:39,Outbound Sales,False
+CUST-E47A938E,Company 324,Enterprise,Germany,2026-04-12 20:43:16,Paid Social,False
+CUST-30570032,Company 325,SMB,USA,2024-10-16 01:20:56,Outbound Sales,True
+CUST-A2BBC80C,Company 326,SMB,UK,2024-10-20 14:41:57,Direct,True
+CUST-45A4097E,Company 327,Startup,UK,2024-05-28 07:28:04,Organic Search,False
+CUST-FD5D4F6E,Company 328,SMB,Australia,2024-08-12 02:54:46,Outbound Sales,False
+CUST-F7DB6CE3,Company 329,Startup,Germany,2025-06-10 01:00:54,Organic Search,True
+CUST-67834B82,Company 330,SMB,Australia,2025-06-04 03:59:36,Paid Social,True
+CUST-64F16106,Company 331,SMB,UK,2025-01-26 18:33:30,Outbound Sales,True
+CUST-FDAECE0D,Company 332,Startup,Australia,2024-12-13 06:25:09,Outbound Sales,False
+CUST-A28B8898,Company 333,Startup,USA,2025-12-27 17:54:58,Outbound Sales,True
+CUST-8F3F54C5,Company 334,SMB,UK,2025-04-01 19:47:40,Direct,True
+CUST-CCC9B682,Company 335,Startup,Canada,2025-12-12 00:33:56,Referral,True
+CUST-970B0E9E,Company 336,Startup,USA,2026-04-04 03:28:19,Paid Social,True
+CUST-F3CF236B,Company 337,SMB,Australia,2024-12-18 12:16:24,Referral,True
+CUST-49283ECD,Company 338,SMB,Australia,2024-09-25 23:58:30,Direct,True
+CUST-A99C17CE,Company 339,Enterprise,Canada,2026-03-27 14:47:50,Organic Search,False
+CUST-E002B661,Company 340,Startup,UK,2025-08-07 10:14:26,Direct,True
+CUST-2267837D,Company 341,SMB,USA,2024-11-29 08:52:49,Direct,True
+CUST-50DA04F2,Company 342,SMB,Germany,2025-07-28 22:59:13,Paid Social,True
+CUST-B9D6D51A,Company 343,Mid-Market,Canada,2025-05-11 23:48:03,Paid Social,True
+CUST-91702E1D,Company 344,Startup,Germany,2026-02-21 00:55:26,Direct,True
+CUST-9FD76CB0,Company 345,SMB,Germany,2024-11-03 20:30:30,Organic Search,True
+CUST-CD56BEB2,Company 346,Startup,USA,2026-04-24 17:01:36,Organic Search,True
+CUST-7429FB83,Company 347,Mid-Market,USA,2026-03-15 07:29:00,Referral,False
+CUST-0DCF7274,Company 348,Startup,Germany,2024-09-09 21:53:56,Paid Social,True
+CUST-8B8C82BE,Company 349,Mid-Market,USA,2024-08-29 03:55:44,Referral,True
+CUST-8357EB7D,Company 350,Mid-Market,Australia,2025-05-25 04:54:27,Direct,True
+CUST-C6D5D4F2,Company 351,Startup,USA,2024-06-02 18:50:02,Direct,False
+CUST-AA917E51,Company 352,Startup,Germany,2024-12-05 02:56:24,Direct,True
+CUST-13CE2FE6,Company 353,SMB,Australia,2025-03-14 14:54:01,Direct,False
+CUST-11F45F2B,Company 354,SMB,Canada,2026-04-08 15:25:13,Outbound Sales,False
+CUST-C9F4ED59,Company 355,Startup,USA,2026-04-25 10:25:11,Outbound Sales,True
+CUST-619335B9,Company 356,Startup,Australia,2024-08-19 14:58:47,Paid Social,True
+CUST-A5DB6D51,Company 357,SMB,USA,2026-02-10 22:11:08,Referral,False
+CUST-6DAB6CBE,Company 358,SMB,Canada,2024-07-06 09:04:22,Outbound Sales,True
+CUST-80F4CB80,Company 359,Startup,Australia,2025-10-29 11:36:45,Organic Search,True
+CUST-5AA3C555,Company 360,Startup,Germany,2026-01-08 07:39:36,Referral,True
+CUST-70321C46,Company 361,Startup,USA,2026-02-10 06:41:03,Direct,True
+CUST-1276D8CD,Company 362,SMB,Australia,2024-10-11 02:16:56,Outbound Sales,True
+CUST-C2C6984E,Company 363,Mid-Market,USA,2026-02-12 05:11:06,Direct,True
+CUST-D205894C,Company 364,Startup,Germany,2024-07-24 15:59:07,Outbound Sales,True
+CUST-CD725ED3,Company 365,Startup,Germany,2025-05-14 18:23:54,Organic Search,True
+CUST-39D130EE,Company 366,Startup,UK,2025-04-08 18:26:01,Organic Search,True
+CUST-FED4FB42,Company 367,Mid-Market,Canada,2024-12-17 15:04:37,Outbound Sales,False
+CUST-BD567C9A,Company 368,SMB,USA,2024-05-17 03:26:25,Direct,True
+CUST-7581F149,Company 369,Startup,Australia,2025-11-15 13:39:28,Direct,True
+CUST-43B73E78,Company 370,Enterprise,UK,2024-12-31 23:25:32,Organic Search,True
+CUST-805D1151,Company 371,Startup,UK,2025-08-27 00:18:19,Paid Social,True
+CUST-555AD2ED,Company 372,SMB,Canada,2025-02-24 11:03:11,Outbound Sales,True
+CUST-406B17B1,Company 373,Startup,Germany,2025-01-28 18:29:00,Paid Social,True
+CUST-BE0EE387,Company 374,Startup,Canada,2026-02-06 23:54:16,Direct,True
+CUST-3234CE24,Company 375,SMB,Canada,2024-07-08 23:03:21,Paid Social,True
+CUST-17F4B61D,Company 376,SMB,Canada,2025-10-20 17:32:09,Paid Social,True
+CUST-D17A23FD,Company 377,Startup,Australia,2025-10-28 03:45:14,Organic Search,True
+CUST-A25AE6A4,Company 378,SMB,UK,2025-02-02 09:27:00,Outbound Sales,True
+CUST-5EB49512,Company 379,SMB,Australia,2024-11-08 14:18:29,Outbound Sales,True
+CUST-6B655332,Company 380,Startup,Germany,2024-05-04 20:58:47,Organic Search,True
+CUST-1DFAE353,Company 381,Startup,Australia,2026-03-15 20:57:59,Paid Social,True
+CUST-3F10BD76,Company 382,SMB,Australia,2026-03-23 20:15:18,Direct,True
+CUST-28842F98,Company 383,Mid-Market,Germany,2024-10-23 21:48:16,Paid Social,True
+CUST-3E8F6D95,Company 384,SMB,UK,2024-05-24 07:04:53,Referral,True
+CUST-0C039F9F,Company 385,SMB,Germany,2024-07-29 14:43:08,Paid Social,True
+CUST-73BE4591,Company 386,Mid-Market,Germany,2024-06-19 09:06:10,Organic Search,False
+CUST-3B5074DA,Company 387,Mid-Market,UK,2025-12-28 17:05:38,Paid Social,True
+CUST-E924024A,Company 388,Startup,Germany,2026-02-11 02:17:19,Direct,True
+CUST-7D559ECD,Company 389,SMB,UK,2024-08-20 21:32:28,Organic Search,True
+CUST-86FD7E65,Company 390,Startup,Canada,2025-10-28 02:52:30,Outbound Sales,False
+CUST-5FB61D44,Company 391,SMB,Germany,2024-09-08 20:46:50,Organic Search,True
+CUST-B4ADD025,Company 392,Mid-Market,USA,2025-01-24 01:30:05,Organic Search,True
+CUST-A4653D28,Company 393,Startup,UK,2025-07-12 13:11:11,Direct,False
+CUST-DEB4EE3B,Company 394,Startup,Germany,2025-10-08 13:07:02,Direct,True
+CUST-D4F66EBB,Company 395,SMB,Canada,2026-01-29 10:19:37,Paid Social,False
+CUST-538127E2,Company 396,SMB,Australia,2024-06-02 16:37:49,Paid Social,True
+CUST-5D635C26,Company 397,Mid-Market,USA,2024-09-21 09:32:07,Organic Search,True
+CUST-C0BBF404,Company 398,SMB,Germany,2024-11-21 18:30:39,Referral,True
+CUST-C6B0B5FA,Company 399,SMB,Australia,2024-12-13 12:52:14,Paid Social,True
+CUST-AD36BFA0,Company 400,SMB,Australia,2026-04-29 13:26:53,Organic Search,False
+CUST-2C47B21D,Company 401,Enterprise,USA,2025-11-19 12:07:57,Paid Social,True
+CUST-60BC8815,Company 402,SMB,Australia,2024-12-20 21:42:35,Outbound Sales,False
+CUST-D3845B8D,Company 403,Startup,UK,2026-04-10 10:23:56,Paid Social,True
+CUST-7B02D74F,Company 404,Startup,UK,2025-04-30 11:51:30,Outbound Sales,True
+CUST-E44AD768,Company 405,SMB,UK,2025-05-01 12:59:08,Paid Social,False
+CUST-5C0EF8C3,Company 406,Mid-Market,Germany,2025-03-13 14:24:13,Organic Search,True
+CUST-306C9097,Company 407,SMB,Germany,2024-08-14 01:05:03,Paid Social,False
+CUST-366AD063,Company 408,SMB,Canada,2026-03-14 02:12:21,Paid Social,True
+CUST-E3B30AC7,Company 409,Startup,USA,2024-05-11 04:09:49,Organic Search,False
+CUST-A31F18F4,Company 410,Startup,Australia,2024-09-05 05:21:35,Direct,True
+CUST-50F2BC1E,Company 411,Startup,UK,2024-10-15 15:34:25,Paid Social,True
+CUST-C3C38357,Company 412,Startup,USA,2024-11-20 21:17:32,Referral,True
+CUST-BF23D6FC,Company 413,Startup,Canada,2024-08-05 05:31:30,Direct,True
+CUST-50E1DDB3,Company 414,Startup,Canada,2024-05-14 02:41:02,Direct,True
+CUST-5A0AE6D8,Company 415,Mid-Market,Germany,2025-09-07 16:34:47,Direct,True
+CUST-0BD87492,Company 416,Mid-Market,Australia,2026-04-08 14:18:34,Organic Search,False
+CUST-FE88587C,Company 417,SMB,USA,2024-07-28 22:30:19,Referral,True
+CUST-376ABA09,Company 418,SMB,UK,2024-12-03 11:17:48,Organic Search,False
+CUST-79FDC1D8,Company 419,Mid-Market,Canada,2025-05-05 14:54:01,Referral,False
+CUST-52B15B49,Company 420,Startup,Germany,2026-03-09 01:50:29,Outbound Sales,True
+CUST-FB974E28,Company 421,Startup,Germany,2025-09-19 19:28:40,Referral,True
+CUST-0D287201,Company 422,SMB,UK,2025-11-11 07:36:57,Direct,True
+CUST-B7EF7E51,Company 423,Mid-Market,Germany,2025-06-29 05:09:46,Paid Social,True
+CUST-F0755BF5,Company 424,SMB,Australia,2025-03-01 10:28:01,Outbound Sales,True
+CUST-A56E79D7,Company 425,Mid-Market,Canada,2024-09-23 20:04:09,Paid Social,True
+CUST-F476E362,Company 426,Startup,Australia,2026-01-21 22:47:16,Direct,True
+CUST-A55C4F20,Company 427,SMB,Germany,2025-12-09 00:15:42,Referral,True
+CUST-9115E370,Company 428,Startup,UK,2024-05-19 07:46:30,Outbound Sales,True
+CUST-FF9D3739,Company 429,SMB,UK,2025-10-05 05:55:58,Outbound Sales,True
+CUST-4A4DD965,Company 430,SMB,Germany,2024-07-01 14:28:46,Organic Search,True
+CUST-ED60506D,Company 431,SMB,UK,2025-10-22 10:59:59,Outbound Sales,True
+CUST-891129CF,Company 432,Startup,UK,2025-12-24 22:42:40,Organic Search,False
+CUST-05F63E56,Company 433,Startup,UK,2024-08-04 16:07:54,Direct,True
+CUST-8C903671,Company 434,SMB,Germany,2025-03-13 16:48:15,Outbound Sales,True
+CUST-202963E7,Company 435,Startup,UK,2024-07-30 08:09:59,Referral,True
+CUST-E24AC14C,Company 436,Mid-Market,Germany,2025-06-19 02:47:03,Outbound Sales,True
+CUST-4204EA10,Company 437,Startup,Australia,2026-03-09 02:53:45,Paid Social,True
+CUST-84619B5F,Company 438,Mid-Market,Australia,2024-06-29 00:50:04,Paid Social,True
+CUST-99E4D936,Company 439,SMB,Australia,2025-02-15 05:34:11,Paid Social,False
+CUST-C4BC642A,Company 440,Startup,USA,2026-04-11 09:04:17,Paid Social,True
+CUST-6E002990,Company 441,Mid-Market,Canada,2024-12-06 16:37:15,Referral,False
+CUST-C1E3EF19,Company 442,SMB,UK,2024-08-05 12:26:12,Direct,True
+CUST-CC5AE87C,Company 443,SMB,Australia,2025-04-22 15:59:32,Referral,True
+CUST-B68AB660,Company 444,SMB,Germany,2025-05-07 02:41:15,Direct,True
+CUST-C7CF35F8,Company 445,Startup,UK,2025-08-27 21:22:51,Paid Social,True
+CUST-AA3A1D84,Company 446,Startup,Canada,2024-12-16 00:40:55,Organic Search,False
+CUST-DD5C6E30,Company 447,Startup,Germany,2026-03-29 14:31:10,Direct,False
+CUST-36352A13,Company 448,SMB,Canada,2025-05-16 08:19:06,Outbound Sales,False
+CUST-EAD4F703,Company 449,SMB,Canada,2024-11-26 02:32:16,Outbound Sales,True
+CUST-3A0B7D26,Company 450,SMB,USA,2026-04-02 00:11:00,Paid Social,False
+CUST-A8D5747B,Company 451,SMB,Canada,2026-03-07 02:38:37,Direct,True
+CUST-F080304F,Company 452,Mid-Market,UK,2025-04-30 09:22:00,Referral,False
+CUST-45B6AE16,Company 453,Startup,Australia,2024-05-19 03:32:17,Referral,True
+CUST-30DF0A33,Company 454,Startup,Australia,2025-07-10 18:19:14,Organic Search,True
+CUST-70113F38,Company 455,Startup,Germany,2025-06-10 07:04:10,Direct,True
+CUST-06754D23,Company 456,SMB,USA,2024-08-17 04:36:42,Organic Search,True
+CUST-9F5FF8FB,Company 457,SMB,Australia,2025-08-06 19:14:38,Organic Search,True
+CUST-C8B92A1E,Company 458,SMB,UK,2026-01-04 18:42:12,Referral,False
+CUST-C52C10B0,Company 459,SMB,Canada,2024-07-17 07:19:21,Organic Search,False
+CUST-1949F8E4,Company 460,SMB,Australia,2025-10-11 00:36:45,Paid Social,False
+CUST-69606482,Company 461,Mid-Market,Australia,2024-08-11 10:44:59,Direct,True
+CUST-98A00C4F,Company 462,Mid-Market,USA,2025-10-29 15:26:10,Referral,True
+CUST-D0263286,Company 463,Startup,UK,2025-03-02 22:52:58,Direct,True
+CUST-D551BF2E,Company 464,SMB,Germany,2024-05-05 18:04:23,Organic Search,True
+CUST-7CE7D614,Company 465,Startup,Canada,2026-04-06 08:22:59,Referral,True
+CUST-D3BFFC22,Company 466,Mid-Market,UK,2024-08-30 03:48:03,Outbound Sales,True
+CUST-153C5E61,Company 467,SMB,Canada,2025-07-10 02:39:55,Outbound Sales,True
+CUST-4781EA8D,Company 468,SMB,Australia,2024-09-10 11:19:24,Referral,True
+CUST-F0EB7C61,Company 469,SMB,UK,2026-03-13 02:34:00,Direct,True
+CUST-A3A590BA,Company 470,Enterprise,Germany,2025-10-21 23:27:48,Outbound Sales,True
+CUST-92B1E869,Company 471,Mid-Market,Germany,2025-12-09 04:24:11,Direct,True
+CUST-1FCD52FC,Company 472,Startup,Australia,2025-03-12 10:02:23,Organic Search,False
+CUST-B39DFCA3,Company 473,SMB,UK,2025-04-07 04:31:32,Outbound Sales,True
+CUST-284021E2,Company 474,Startup,UK,2025-08-07 00:57:23,Paid Social,False
+CUST-6F534962,Company 475,SMB,Canada,2025-11-24 21:03:20,Outbound Sales,True
+CUST-9A260E87,Company 476,SMB,Canada,2026-01-09 07:04:54,Paid Social,False
+CUST-EB27E365,Company 477,SMB,Canada,2024-05-14 00:30:01,Outbound Sales,False
+CUST-192AE005,Company 478,Mid-Market,Germany,2025-08-28 09:35:42,Direct,False
+CUST-F06DAC64,Company 479,Startup,Germany,2024-07-19 16:12:10,Direct,True
+CUST-6AAADC22,Company 480,Startup,UK,2024-11-27 04:33:51,Paid Social,True
+CUST-E158C117,Company 481,Startup,Germany,2025-12-27 11:35:21,Outbound Sales,True
+CUST-45813546,Company 482,SMB,UK,2024-10-30 20:59:26,Organic Search,True
+CUST-95D46003,Company 483,Mid-Market,Canada,2025-12-03 16:14:07,Direct,True
+CUST-91B28631,Company 484,Startup,USA,2025-04-03 23:53:48,Paid Social,True
+CUST-C4EB2301,Company 485,SMB,UK,2024-10-17 19:51:56,Direct,True
+CUST-AADEFCA5,Company 486,Mid-Market,Australia,2024-12-30 23:57:29,Paid Social,True
+CUST-57C6164A,Company 487,SMB,Canada,2025-05-23 11:04:59,Referral,True
+CUST-EB6F8270,Company 488,Startup,Germany,2025-11-10 13:22:42,Paid Social,True
+CUST-AB56AE83,Company 489,Startup,USA,2025-07-17 09:23:49,Organic Search,False
+CUST-274BC75B,Company 490,Startup,Germany,2026-03-13 06:04:54,Organic Search,False
+CUST-C8C7CFE1,Company 491,Startup,UK,2026-01-24 10:47:11,Referral,True
+CUST-657BBAE5,Company 492,SMB,Germany,2025-11-01 22:45:13,Paid Social,True
+CUST-C3BB132F,Company 493,Startup,Australia,2025-07-15 06:26:14,Paid Social,True
+CUST-968DB455,Company 494,SMB,Canada,2024-11-28 14:16:25,Referral,True
+CUST-9D9033F2,Company 495,Startup,USA,2025-02-26 04:15:14,Paid Social,True
+CUST-CA87A1E4,Company 496,Enterprise,Canada,2024-07-26 19:01:40,Paid Social,True
+CUST-BC93D50A,Company 497,Startup,USA,2025-01-29 03:42:15,Paid Social,False
+CUST-A2DCA8DF,Company 498,SMB,Canada,2026-03-08 07:47:37,Paid Social,True
+CUST-FA9336FA,Company 499,Mid-Market,USA,2025-03-07 21:27:14,Referral,False
+CUST-6582CCC5,Company 500,SMB,Germany,2024-07-23 00:31:44,Direct,True
+CUST-D3C7513A,Company 501,Mid-Market,UK,2025-08-19 21:49:53,Outbound Sales,True
+CUST-177F19E3,Company 502,Mid-Market,UK,2026-04-03 17:00:45,Referral,False
+CUST-1FA7DD7C,Company 503,Startup,USA,2026-01-24 06:26:09,Organic Search,True
+CUST-807A4DC0,Company 504,SMB,Australia,2024-11-17 01:49:10,Paid Social,False
+CUST-7FA058A7,Company 505,Startup,Australia,2025-03-28 08:16:24,Paid Social,True
+CUST-CEBED870,Company 506,SMB,Australia,2025-05-23 15:24:33,Direct,True
+CUST-8FC75FCE,Company 507,Startup,USA,2024-10-28 22:08:56,Paid Social,True
+CUST-0FAB84E3,Company 508,SMB,UK,2024-11-13 03:29:00,Outbound Sales,False
+CUST-4458CB31,Company 509,Startup,Australia,2024-10-20 18:19:28,Paid Social,True
+CUST-4A329A97,Company 510,SMB,Canada,2026-04-27 01:03:51,Direct,False
+CUST-1A7BA5A5,Company 511,SMB,USA,2025-10-27 14:10:12,Organic Search,False
+CUST-41B5B64A,Company 512,Startup,USA,2026-01-04 19:48:13,Outbound Sales,True
+CUST-F580C31A,Company 513,SMB,UK,2025-12-18 02:17:05,Outbound Sales,True
+CUST-A7DF862D,Company 514,Mid-Market,Australia,2026-04-01 04:11:36,Referral,False
+CUST-ECA0F58C,Company 515,Startup,USA,2024-07-16 20:28:19,Paid Social,False
+CUST-B9D5BA19,Company 516,Startup,Australia,2026-02-03 14:12:01,Organic Search,True
+CUST-44E58561,Company 517,Enterprise,Germany,2024-06-18 14:06:40,Referral,True
+CUST-0DEBA7AB,Company 518,SMB,Australia,2025-04-13 01:22:34,Direct,True
+CUST-54D3B935,Company 519,Startup,Australia,2025-07-08 22:28:40,Outbound Sales,True
+CUST-87E7C4B8,Company 520,Startup,UK,2025-01-17 05:43:34,Referral,False
+CUST-2265E428,Company 521,Startup,Australia,2024-08-15 16:57:18,Direct,True
+CUST-ACD384DB,Company 522,SMB,USA,2024-09-18 09:07:09,Outbound Sales,True
+CUST-FDBD1648,Company 523,Startup,UK,2025-12-24 00:06:59,Outbound Sales,True
+CUST-D6310C82,Company 524,SMB,UK,2024-12-19 16:02:33,Direct,True
+CUST-5B0E5317,Company 525,Startup,USA,2024-12-13 13:03:48,Organic Search,True
+CUST-785B846F,Company 526,SMB,USA,2026-03-06 01:17:59,Organic Search,False
+CUST-74C10D52,Company 527,Startup,USA,2024-08-14 00:38:10,Direct,True
+CUST-38E9E1D7,Company 528,SMB,USA,2026-02-28 03:28:35,Direct,True
+CUST-EAAF04DE,Company 529,SMB,UK,2026-03-04 07:24:09,Organic Search,False
+CUST-70EA0D78,Company 530,Startup,USA,2025-07-11 22:45:53,Organic Search,True
+CUST-88508B8E,Company 531,SMB,USA,2024-08-29 20:06:56,Referral,True
+CUST-30FBE78E,Company 532,Startup,Australia,2024-08-22 18:40:56,Referral,True
+CUST-930F78FC,Company 533,SMB,USA,2024-11-24 20:17:45,Organic Search,False
+CUST-6B89F540,Company 534,Startup,USA,2025-06-26 12:19:19,Direct,False
+CUST-3E05CD90,Company 535,SMB,USA,2024-08-21 03:18:24,Organic Search,True
+CUST-9159D16E,Company 536,SMB,USA,2025-03-29 15:07:36,Referral,True
+CUST-26DC1040,Company 537,SMB,Canada,2024-07-24 07:23:09,Outbound Sales,True
+CUST-2292200D,Company 538,Mid-Market,Australia,2025-05-30 09:46:40,Outbound Sales,True
+CUST-EF559426,Company 539,Mid-Market,Germany,2024-05-16 10:30:47,Direct,True
+CUST-17F02B0D,Company 540,Startup,Canada,2025-09-30 14:18:49,Referral,False
+CUST-28B15C1D,Company 541,Startup,USA,2024-06-10 10:31:39,Outbound Sales,False
+CUST-5D016B5D,Company 542,Startup,Germany,2024-09-20 05:16:42,Referral,True
+CUST-74EF301D,Company 543,Enterprise,USA,2024-09-05 11:43:06,Direct,False
+CUST-69A4AF4C,Company 544,SMB,Germany,2025-12-28 15:00:59,Referral,False
+CUST-6BC8E52A,Company 545,Mid-Market,Canada,2024-06-08 23:15:05,Direct,True
+CUST-6D33526C,Company 546,Startup,Australia,2025-03-10 08:37:45,Outbound Sales,True
+CUST-4F251796,Company 547,Startup,UK,2025-07-06 12:50:22,Direct,False
+CUST-045AC865,Company 548,SMB,Germany,2025-05-12 16:14:31,Outbound Sales,True
+CUST-511CFA62,Company 549,Startup,Canada,2025-09-09 22:07:06,Organic Search,False
+CUST-87FC0318,Company 550,Mid-Market,Canada,2025-12-08 06:20:06,Organic Search,True
+CUST-93BF0918,Company 551,SMB,Australia,2025-02-12 08:24:20,Organic Search,True
+CUST-82708163,Company 552,Mid-Market,Germany,2025-12-26 14:22:37,Direct,False
+CUST-CA7A423D,Company 553,SMB,Canada,2024-12-19 03:12:14,Referral,True
+CUST-97C49B52,Company 554,Startup,Canada,2026-04-19 15:05:09,Paid Social,True
+CUST-11AA14FE,Company 555,Startup,Germany,2025-05-04 07:17:58,Organic Search,True
+CUST-CD80B6B8,Company 556,SMB,UK,2025-10-20 06:57:13,Outbound Sales,True
+CUST-2B34ED91,Company 557,SMB,USA,2026-01-29 18:05:11,Referral,True
+CUST-82912875,Company 558,Startup,Canada,2025-11-30 15:14:59,Referral,True
+CUST-C704BE9E,Company 559,Startup,USA,2026-01-12 07:49:33,Direct,True
+CUST-A029ECDA,Company 560,Startup,USA,2025-05-27 15:43:04,Direct,True
+CUST-48D3A313,Company 561,SMB,Canada,2024-06-01 17:40:59,Organic Search,True
+CUST-2AF6F706,Company 562,Startup,Germany,2025-04-25 22:49:24,Organic Search,False
+CUST-73F214C1,Company 563,SMB,Germany,2024-09-10 11:51:07,Outbound Sales,True
+CUST-A5073E54,Company 564,Startup,UK,2026-02-09 01:19:21,Paid Social,True
+CUST-7D94275F,Company 565,SMB,Canada,2024-10-20 19:46:12,Referral,True
+CUST-DE96727E,Company 566,Startup,USA,2024-10-14 11:47:00,Referral,True
+CUST-157C59FF,Company 567,Enterprise,Germany,2024-10-30 01:16:13,Paid Social,False
+CUST-E09455CC,Company 568,SMB,UK,2025-08-13 01:45:39,Paid Social,True
+CUST-21B07CF0,Company 569,Startup,Germany,2025-06-21 23:59:45,Referral,True
+CUST-CC13BB42,Company 570,Startup,Australia,2026-03-24 15:41:31,Organic Search,False
+CUST-5E286FE0,Company 571,SMB,Germany,2025-02-28 20:55:03,Direct,False
+CUST-C6501EED,Company 572,Startup,UK,2024-11-23 01:30:48,Outbound Sales,False
+CUST-1B0080EA,Company 573,Startup,Australia,2024-06-05 22:55:55,Referral,False
+CUST-923E4376,Company 574,SMB,Germany,2024-05-06 03:58:11,Referral,False
+CUST-1F92FAAD,Company 575,SMB,Germany,2025-01-28 17:43:10,Organic Search,True
+CUST-3E4B9B6B,Company 576,SMB,Australia,2026-03-07 20:19:14,Organic Search,True
+CUST-1B108E1B,Company 577,Startup,Australia,2025-05-18 08:09:05,Paid Social,True
+CUST-39D36631,Company 578,SMB,USA,2026-02-12 06:57:15,Paid Social,True
+CUST-1A11366F,Company 579,SMB,Australia,2024-07-14 05:17:30,Organic Search,True
+CUST-FED89FC8,Company 580,Startup,Germany,2024-07-08 02:59:02,Outbound Sales,True
+CUST-AC0CC207,Company 581,Startup,UK,2025-12-30 10:11:37,Organic Search,True
+CUST-BCA4AA24,Company 582,Startup,UK,2024-07-17 22:07:13,Referral,False
+CUST-36D1175E,Company 583,Startup,Germany,2024-06-07 22:22:18,Direct,False
+CUST-028BDB79,Company 584,Startup,UK,2025-02-19 23:42:14,Referral,True
+CUST-C25CC5F4,Company 585,Startup,Canada,2026-03-07 03:13:46,Paid Social,True
+CUST-E8279D9D,Company 586,Startup,Germany,2025-09-16 05:59:48,Paid Social,True
+CUST-8C3FC43A,Company 587,SMB,Germany,2024-07-12 08:27:44,Referral,True
+CUST-F7DD99B1,Company 588,SMB,Australia,2026-01-02 02:32:09,Paid Social,False
+CUST-E44DE558,Company 589,SMB,USA,2026-01-06 19:25:59,Referral,False
+CUST-E2A975A3,Company 590,Startup,UK,2025-12-06 12:12:12,Organic Search,False
+CUST-72196827,Company 591,SMB,Australia,2026-02-18 22:28:59,Organic Search,False
+CUST-0A35777A,Company 592,SMB,Canada,2024-10-23 02:39:46,Referral,False
+CUST-A414A6AB,Company 593,SMB,UK,2026-04-16 02:04:41,Referral,True
+CUST-89F6ABEE,Company 594,SMB,UK,2024-12-21 02:35:57,Organic Search,True
+CUST-A3F851A8,Company 595,SMB,UK,2025-12-07 11:29:36,Outbound Sales,True
+CUST-EB04C4AA,Company 596,Startup,Canada,2025-06-27 22:28:01,Organic Search,True
+CUST-0773E169,Company 597,Startup,UK,2025-11-21 00:26:47,Outbound Sales,True
+CUST-8EA5C91A,Company 598,Mid-Market,Germany,2025-08-02 07:23:46,Referral,True
+CUST-9E706988,Company 599,Enterprise,Canada,2025-08-13 00:18:25,Outbound Sales,False
+CUST-D5DB0623,Company 600,SMB,Germany,2025-07-24 21:17:50,Outbound Sales,True
+CUST-6A88D03E,Company 601,Startup,USA,2025-11-20 16:00:58,Paid Social,False
+CUST-505FF103,Company 602,Startup,Germany,2025-10-22 12:01:57,Referral,False
+CUST-066C24E0,Company 603,Mid-Market,Australia,2024-08-07 05:21:16,Paid Social,True
+CUST-D7B79556,Company 604,Startup,USA,2025-12-25 00:28:53,Direct,True
+CUST-334F67AA,Company 605,Mid-Market,UK,2025-05-27 07:54:43,Paid Social,True
+CUST-721E72D8,Company 606,SMB,Germany,2024-12-22 20:25:17,Direct,True
+CUST-93D8B932,Company 607,Startup,Germany,2025-05-11 09:11:04,Outbound Sales,True
+CUST-15BA9F92,Company 608,Mid-Market,Germany,2026-04-06 21:33:01,Direct,False
+CUST-1CC7DCC2,Company 609,Mid-Market,Canada,2026-01-17 00:39:50,Organic Search,True
+CUST-E7942B95,Company 610,SMB,Germany,2025-12-30 14:23:52,Paid Social,True
+CUST-3C450A2C,Company 611,Startup,Germany,2025-04-03 20:14:41,Referral,False
+CUST-2943BBEF,Company 612,Startup,USA,2025-11-24 10:05:42,Direct,True
+CUST-4D54F1F6,Company 613,Startup,Germany,2025-02-06 02:46:04,Direct,True
+CUST-42DCBD62,Company 614,Mid-Market,Canada,2025-09-13 21:37:09,Direct,True
+CUST-1B337326,Company 615,Mid-Market,USA,2025-08-10 21:08:54,Paid Social,True
+CUST-3243CBC8,Company 616,Startup,Canada,2024-10-30 08:28:23,Direct,True
+CUST-C1F8D4B3,Company 617,SMB,Canada,2024-11-11 12:26:14,Referral,True
+CUST-3A744262,Company 618,Startup,USA,2024-06-14 15:03:09,Outbound Sales,True
+CUST-E6686E8D,Company 619,Startup,Australia,2024-08-11 00:44:33,Referral,True
+CUST-351CBAE8,Company 620,Mid-Market,UK,2025-03-13 12:59:55,Outbound Sales,True
+CUST-264C668B,Company 621,Startup,UK,2025-04-14 20:24:35,Outbound Sales,True
+CUST-805DE4CA,Company 622,Mid-Market,Canada,2024-08-29 12:54:54,Organic Search,True
+CUST-423A59A6,Company 623,SMB,Australia,2025-03-01 07:54:06,Paid Social,True
+CUST-D43E11C3,Company 624,SMB,Germany,2025-07-16 01:11:24,Paid Social,True
+CUST-2F4072AC,Company 625,SMB,Germany,2024-10-17 18:37:31,Organic Search,True
+CUST-6F9D98C6,Company 626,Startup,UK,2025-01-02 21:54:37,Organic Search,True
+CUST-3FD621DC,Company 627,Startup,Australia,2025-01-24 06:48:24,Referral,True
+CUST-9E6527CF,Company 628,Startup,Australia,2025-05-04 16:32:38,Paid Social,False
+CUST-C7B2DE10,Company 629,Startup,Canada,2025-01-23 11:11:44,Organic Search,True
+CUST-770E60A7,Company 630,SMB,Canada,2025-10-20 23:16:10,Paid Social,False
+CUST-28315F9A,Company 631,Mid-Market,USA,2024-12-26 01:43:20,Paid Social,True
+CUST-57E4370E,Company 632,Startup,Germany,2025-03-13 17:52:16,Organic Search,True
+CUST-0A2F47D3,Company 633,Startup,Australia,2025-02-02 00:12:38,Organic Search,False
+CUST-A5902619,Company 634,SMB,Canada,2024-09-11 12:41:05,Referral,False
+CUST-D71066BD,Company 635,SMB,Canada,2025-09-13 14:13:24,Outbound Sales,False
+CUST-B0740AB6,Company 636,SMB,Canada,2024-10-19 21:01:00,Direct,True
+CUST-7F5019BF,Company 637,Mid-Market,USA,2025-11-30 17:00:51,Referral,False
+CUST-762B2844,Company 638,Startup,Germany,2026-03-24 15:59:27,Outbound Sales,True
+CUST-6B4B9AD2,Company 639,SMB,Germany,2025-09-02 17:10:19,Outbound Sales,True
+CUST-C43C9206,Company 640,Startup,Australia,2026-02-28 22:25:02,Organic Search,True
+CUST-3B774513,Company 641,Startup,Australia,2026-01-14 13:25:11,Outbound Sales,False
+CUST-873D3466,Company 642,Startup,Canada,2025-04-17 01:33:02,Organic Search,True
+CUST-EEDAC83A,Company 643,SMB,Australia,2025-11-14 07:29:02,Organic Search,False
+CUST-F4E7A670,Company 644,SMB,Canada,2024-12-26 16:53:17,Direct,True
+CUST-2674C005,Company 645,Startup,Germany,2025-04-02 03:54:30,Referral,False
+CUST-5615160C,Company 646,Startup,Germany,2025-05-26 20:49:03,Organic Search,False
+CUST-883544E9,Company 647,SMB,Australia,2026-04-02 03:50:15,Paid Social,False
+CUST-5A12BF2D,Company 648,Startup,Germany,2026-01-10 10:46:47,Paid Social,True
+CUST-821F3A08,Company 649,Mid-Market,USA,2025-04-23 03:42:43,Paid Social,True
+CUST-13499CE3,Company 650,Startup,USA,2025-08-20 09:19:48,Outbound Sales,True
+CUST-C41A21FB,Company 651,Mid-Market,Canada,2024-09-25 17:17:09,Paid Social,True
+CUST-9A3CBDBC,Company 652,Mid-Market,Canada,2025-12-09 04:56:41,Paid Social,True
+CUST-B49B3E7D,Company 653,SMB,Germany,2025-06-08 17:13:30,Organic Search,True
+CUST-AD828933,Company 654,Mid-Market,Canada,2025-05-24 21:17:39,Organic Search,True
+CUST-D5B45DF0,Company 655,Mid-Market,Canada,2025-11-11 09:17:14,Organic Search,True
+CUST-F19B6F11,Company 656,Enterprise,Australia,2025-08-06 00:43:00,Direct,True
+CUST-37B61A7E,Company 657,SMB,UK,2024-06-22 21:37:23,Direct,False
+CUST-985B5E8F,Company 658,Startup,Canada,2024-11-27 08:29:10,Direct,True
+CUST-802EBAAD,Company 659,Enterprise,Canada,2024-09-07 00:06:58,Outbound Sales,False
+CUST-0EB3CD1D,Company 660,Startup,Canada,2025-10-19 11:19:41,Direct,False
+CUST-A03897DD,Company 661,Startup,Australia,2024-05-26 15:46:42,Organic Search,True
+CUST-02D2837C,Company 662,Mid-Market,Australia,2024-09-25 18:07:42,Paid Social,False
+CUST-8B7E955C,Company 663,Mid-Market,Canada,2025-07-11 03:14:13,Paid Social,True
+CUST-3778E762,Company 664,Startup,Canada,2025-09-20 04:51:47,Outbound Sales,True
+CUST-68885BF7,Company 665,Startup,Canada,2025-05-03 09:54:06,Paid Social,True
+CUST-F74901C8,Company 666,SMB,USA,2026-01-19 07:47:53,Organic Search,True
+CUST-41C17A40,Company 667,Startup,Canada,2026-03-02 19:49:49,Referral,True
+CUST-DE625166,Company 668,Mid-Market,UK,2024-08-05 10:26:30,Direct,True
+CUST-F648DD0F,Company 669,SMB,USA,2026-03-27 07:59:39,Organic Search,False
+CUST-132D0CF8,Company 670,Startup,USA,2025-07-23 11:55:58,Referral,True
+CUST-4879F0F2,Company 671,SMB,Canada,2025-08-08 10:33:34,Paid Social,False
+CUST-D520486C,Company 672,Startup,USA,2024-07-09 10:04:39,Outbound Sales,False
+CUST-E4B81F90,Company 673,SMB,Germany,2025-07-28 23:11:43,Outbound Sales,True
+CUST-EEF40069,Company 674,Startup,Canada,2025-10-12 18:32:16,Paid Social,True
+CUST-88A63B41,Company 675,SMB,UK,2025-06-28 23:27:38,Direct,False
+CUST-899A273B,Company 676,SMB,Germany,2024-07-01 16:19:16,Direct,True
+CUST-0C19E931,Company 677,SMB,Canada,2025-05-17 22:56:41,Referral,True
+CUST-58632B6B,Company 678,SMB,Germany,2026-03-15 05:39:56,Organic Search,True
+CUST-3F27FA0B,Company 679,Startup,Germany,2025-10-11 02:15:26,Paid Social,False
+CUST-0BE8F5E3,Company 680,Mid-Market,USA,2024-08-09 07:23:12,Organic Search,True
+CUST-AEC391EA,Company 681,Mid-Market,UK,2026-04-01 18:07:21,Referral,True
+CUST-BBA071F1,Company 682,Mid-Market,Canada,2026-03-31 23:34:54,Organic Search,True
+CUST-01BC75ED,Company 683,Mid-Market,Australia,2024-09-01 15:48:34,Direct,True
+CUST-C2278C65,Company 684,Startup,USA,2025-12-06 15:29:26,Referral,True
+CUST-39BBF790,Company 685,SMB,USA,2025-02-21 21:41:01,Outbound Sales,False
+CUST-F9ED0243,Company 686,Startup,Australia,2025-07-08 09:18:31,Paid Social,False
+CUST-F8C9A20A,Company 687,Mid-Market,Australia,2025-03-21 23:39:50,Organic Search,True
+CUST-261FD888,Company 688,Startup,USA,2025-11-23 07:34:27,Referral,True
+CUST-53C1AFF0,Company 689,SMB,Canada,2026-04-28 13:28:50,Organic Search,True
+CUST-E8409926,Company 690,SMB,Germany,2025-12-02 10:24:43,Organic Search,True
+CUST-9DC53DD1,Company 691,Startup,USA,2026-03-11 21:37:38,Outbound Sales,True
+CUST-DF328102,Company 692,Startup,UK,2026-03-22 14:23:38,Outbound Sales,True
+CUST-9C271DAE,Company 693,Startup,UK,2024-07-05 18:38:49,Referral,True
+CUST-51545B44,Company 694,Mid-Market,Germany,2024-11-01 23:16:34,Outbound Sales,True
+CUST-54922716,Company 695,SMB,UK,2025-10-09 22:55:37,Organic Search,True
+CUST-96966D0F,Company 696,Startup,Canada,2025-07-05 18:07:46,Organic Search,True
+CUST-F237688B,Company 697,SMB,UK,2024-06-06 14:33:39,Paid Social,True
+CUST-AD927911,Company 698,Startup,Germany,2024-07-09 09:15:42,Organic Search,False
+CUST-71433423,Company 699,SMB,USA,2025-05-15 23:59:25,Outbound Sales,False
+CUST-2D54B322,Company 700,SMB,UK,2025-07-24 19:13:23,Organic Search,False
+CUST-6F369150,Company 701,Startup,UK,2024-08-31 10:26:34,Direct,False
+CUST-AA79D550,Company 702,Startup,Australia,2024-09-03 01:01:25,Outbound Sales,True
+CUST-89C94CFE,Company 703,Enterprise,Australia,2024-08-03 10:02:26,Referral,False
+CUST-EFF49D01,Company 704,Enterprise,Canada,2025-06-17 09:56:04,Paid Social,True
+CUST-83469B51,Company 705,Startup,USA,2024-05-06 17:35:44,Direct,True
+CUST-A77F16CF,Company 706,SMB,Germany,2025-06-22 20:58:57,Direct,True
+CUST-0B726B5E,Company 707,SMB,Canada,2025-04-13 10:16:12,Referral,True
+CUST-34D6D2FC,Company 708,SMB,Australia,2025-04-06 04:03:35,Direct,True
+CUST-7B9EA16F,Company 709,Startup,UK,2025-09-08 20:55:12,Paid Social,True
+CUST-F59C8358,Company 710,Startup,Australia,2025-05-17 12:30:31,Referral,False
+CUST-D1F8AA1E,Company 711,SMB,Australia,2025-10-14 06:09:29,Outbound Sales,False
+CUST-7200BDA9,Company 712,SMB,UK,2025-11-09 15:56:16,Direct,True
+CUST-7BA7B045,Company 713,SMB,Germany,2026-03-03 16:27:46,Organic Search,True
+CUST-B563BD25,Company 714,SMB,UK,2025-12-05 10:46:02,Direct,False
+CUST-02795323,Company 715,SMB,UK,2025-05-13 22:12:44,Outbound Sales,True
+CUST-3AAB962C,Company 716,SMB,UK,2025-04-25 06:31:27,Outbound Sales,True
+CUST-A8769B33,Company 717,Startup,Germany,2024-10-20 01:36:52,Direct,True
+CUST-EF9AAB7E,Company 718,Mid-Market,UK,2025-07-12 16:52:37,Organic Search,True
+CUST-AEDA0548,Company 719,Enterprise,Germany,2024-08-10 13:39:10,Direct,True
+CUST-A3F13D0D,Company 720,SMB,Canada,2026-03-11 19:15:31,Outbound Sales,False
+CUST-C10E8241,Company 721,Startup,Germany,2026-01-07 21:10:31,Outbound Sales,False
+CUST-CADCB386,Company 722,Startup,Australia,2024-07-27 09:43:56,Organic Search,True
+CUST-60D1D6E7,Company 723,Mid-Market,USA,2025-11-25 17:56:49,Paid Social,True
+CUST-159E6C52,Company 724,Startup,Australia,2024-07-25 11:39:16,Direct,False
+CUST-7E1D3FBD,Company 725,SMB,USA,2025-10-09 11:51:55,Organic Search,True
+CUST-F546D9D4,Company 726,SMB,Canada,2024-07-04 00:39:42,Outbound Sales,True
+CUST-AE35EDC9,Company 727,Startup,UK,2025-04-22 09:08:55,Organic Search,True
+CUST-C7DDEB12,Company 728,Mid-Market,Germany,2025-08-24 05:45:53,Referral,True
+CUST-B15D2C8B,Company 729,SMB,Germany,2025-10-15 00:45:57,Outbound Sales,True
+CUST-92FE1455,Company 730,SMB,Australia,2025-03-02 14:01:02,Referral,True
+CUST-8E97CD3D,Company 731,Mid-Market,Canada,2026-03-04 18:50:35,Referral,True
+CUST-579AA5E4,Company 732,Startup,Australia,2025-11-17 06:06:40,Paid Social,True
+CUST-FBAC914A,Company 733,SMB,UK,2024-09-30 00:47:54,Outbound Sales,True
+CUST-252A3582,Company 734,Mid-Market,UK,2025-09-02 23:58:27,Direct,True
+CUST-75703E6E,Company 735,SMB,UK,2025-10-16 06:57:57,Organic Search,False
+CUST-F15194D8,Company 736,SMB,Canada,2024-12-30 13:20:00,Paid Social,True
+CUST-6CE2806C,Company 737,Mid-Market,Germany,2025-10-21 21:48:45,Paid Social,True
+CUST-A3C1AEB9,Company 738,Mid-Market,Australia,2026-02-15 19:22:54,Direct,True
+CUST-00059D36,Company 739,Startup,UK,2025-12-18 11:50:32,Paid Social,False
+CUST-5CD5D6B1,Company 740,SMB,UK,2025-11-08 15:33:47,Direct,True
+CUST-733F35BC,Company 741,SMB,Australia,2025-08-07 04:23:42,Direct,False
+CUST-4477867E,Company 742,Mid-Market,Canada,2024-11-14 11:46:19,Paid Social,True
+CUST-468723D1,Company 743,SMB,UK,2025-12-02 12:18:21,Referral,True
+CUST-BBAAB634,Company 744,SMB,Australia,2025-01-21 20:38:38,Paid Social,True
+CUST-9E66AF0B,Company 745,Startup,Canada,2025-05-24 12:05:17,Referral,True
+CUST-F568F538,Company 746,SMB,Australia,2024-12-16 12:59:18,Paid Social,False
+CUST-9DE62921,Company 747,Startup,Australia,2024-12-15 12:03:32,Outbound Sales,False
+CUST-6A305105,Company 748,Startup,Australia,2024-08-24 01:21:21,Paid Social,True
+CUST-1DB02F8D,Company 749,Mid-Market,Canada,2026-04-02 17:56:07,Organic Search,False
+CUST-D3B83A39,Company 750,Mid-Market,Germany,2024-08-16 21:09:52,Organic Search,True
+CUST-FA783CE2,Company 751,Mid-Market,Australia,2024-07-02 23:15:15,Outbound Sales,True
+CUST-D71AB697,Company 752,Startup,UK,2026-03-15 08:57:11,Outbound Sales,True
+CUST-84F538A3,Company 753,Mid-Market,USA,2025-06-10 03:49:50,Paid Social,True
+CUST-A70C7750,Company 754,Startup,UK,2025-03-16 16:04:43,Referral,False
+CUST-6F08F5F4,Company 755,Startup,Germany,2025-10-21 08:50:54,Direct,True
+CUST-C3A5837A,Company 756,Startup,Canada,2025-02-04 19:45:47,Organic Search,True
+CUST-A1225201,Company 757,SMB,USA,2024-08-02 09:11:12,Direct,True
+CUST-9151C75D,Company 758,Startup,Canada,2025-10-15 16:05:37,Referral,True
+CUST-ECC6CCCB,Company 759,Enterprise,USA,2024-09-06 11:30:40,Outbound Sales,True
+CUST-1EB0BA5B,Company 760,SMB,Canada,2025-06-08 16:26:18,Outbound Sales,True
+CUST-EF6B651B,Company 761,SMB,Canada,2026-03-24 19:38:19,Organic Search,True
+CUST-91E171C7,Company 762,Startup,Germany,2026-03-15 09:10:21,Paid Social,True
+CUST-4EAEE87F,Company 763,SMB,Canada,2025-01-19 08:55:04,Direct,True
+CUST-E06B4A38,Company 764,Startup,Canada,2025-11-21 14:52:55,Organic Search,True
+CUST-8B6483EE,Company 765,Mid-Market,Germany,2025-07-22 06:04:47,Direct,True
+CUST-4E85D73C,Company 766,Startup,Germany,2025-04-15 22:33:17,Organic Search,False
+CUST-FFCCAAF3,Company 767,SMB,Australia,2024-08-11 03:32:26,Organic Search,False
+CUST-A0A44022,Company 768,SMB,UK,2025-01-30 17:49:04,Organic Search,True
+CUST-3DB4BF9D,Company 769,Startup,Canada,2025-08-19 21:36:17,Paid Social,False
+CUST-6AFF6FB4,Company 770,SMB,UK,2026-04-21 05:47:04,Referral,True
+CUST-06F80977,Company 771,SMB,Canada,2024-05-04 13:40:58,Organic Search,True
+CUST-69FD7EE0,Company 772,SMB,USA,2025-10-06 23:09:33,Outbound Sales,False
+CUST-A65B2C7C,Company 773,Mid-Market,Canada,2026-01-08 19:49:18,Paid Social,False
+CUST-A3E60195,Company 774,SMB,USA,2026-03-26 08:55:49,Organic Search,False
+CUST-371D9454,Company 775,Mid-Market,Canada,2025-03-06 09:02:26,Paid Social,True
+CUST-00A15B8F,Company 776,Mid-Market,Australia,2024-07-26 11:44:40,Referral,True
+CUST-C09AEF8D,Company 777,Startup,Australia,2024-11-14 19:20:42,Organic Search,True
+CUST-00B9E8F2,Company 778,SMB,Canada,2026-01-11 21:21:00,Organic Search,True
+CUST-3B13D065,Company 779,SMB,USA,2026-01-31 21:25:11,Outbound Sales,True
+CUST-8EB2F7AA,Company 780,SMB,UK,2025-08-09 01:32:03,Direct,True
+CUST-AE21B411,Company 781,SMB,USA,2024-07-29 14:24:48,Paid Social,True
+CUST-C3A9AADA,Company 782,Startup,Germany,2024-07-29 00:04:04,Referral,True
+CUST-32764C4D,Company 783,Startup,Australia,2025-04-15 01:34:31,Outbound Sales,True
+CUST-E3201234,Company 784,Startup,Canada,2025-07-04 10:16:48,Paid Social,True
+CUST-D1D1B913,Company 785,SMB,USA,2024-05-24 15:16:24,Direct,True
+CUST-E649C852,Company 786,SMB,USA,2025-09-13 20:24:29,Organic Search,True
+CUST-09941AB0,Company 787,SMB,Australia,2025-06-02 11:48:56,Paid Social,True
+CUST-DE1F92E5,Company 788,SMB,UK,2024-05-09 23:32:34,Direct,True
+CUST-287B7C45,Company 789,SMB,USA,2024-07-09 20:16:13,Organic Search,True
+CUST-1CFDB3C7,Company 790,Startup,USA,2025-03-28 15:39:02,Outbound Sales,False
+CUST-18771557,Company 791,SMB,UK,2025-10-10 11:41:48,Outbound Sales,True
+CUST-62140B8B,Company 792,SMB,Germany,2025-12-24 12:59:57,Paid Social,True
+CUST-95784656,Company 793,SMB,Australia,2025-03-11 20:24:14,Paid Social,True
+CUST-EAC9AF98,Company 794,SMB,UK,2024-12-02 14:41:24,Organic Search,False
+CUST-F1717332,Company 795,Mid-Market,Germany,2026-04-07 20:47:50,Direct,False
+CUST-57D27240,Company 796,Mid-Market,USA,2025-03-31 17:45:44,Organic Search,True
+CUST-219E1044,Company 797,Startup,USA,2024-12-17 05:37:40,Paid Social,True
+CUST-BE2CE4A4,Company 798,SMB,USA,2025-03-19 21:20:36,Direct,True
+CUST-C27F2B65,Company 799,SMB,Australia,2024-05-09 19:50:44,Referral,False
+CUST-B6D80CA7,Company 800,SMB,Canada,2024-12-07 09:46:04,Direct,True
+CUST-DFA4E049,Company 801,Startup,Australia,2025-05-12 08:30:50,Paid Social,True
+CUST-9D7AF8AA,Company 802,SMB,USA,2026-03-02 11:06:07,Referral,False
+CUST-8B013C12,Company 803,Startup,USA,2025-10-21 21:43:14,Referral,False
+CUST-EF2D00C4,Company 804,Startup,Australia,2025-11-22 08:16:17,Referral,True
+CUST-F93A88FD,Company 805,SMB,USA,2025-06-02 18:40:40,Direct,True
+CUST-3D8A7FD3,Company 806,Startup,USA,2024-07-20 17:30:32,Outbound Sales,True
+CUST-940616AA,Company 807,Mid-Market,Canada,2025-02-10 09:01:54,Paid Social,True
+CUST-11846E45,Company 808,Startup,Germany,2026-04-28 20:02:49,Outbound Sales,True
+CUST-513E3C71,Company 809,SMB,UK,2024-06-02 05:52:33,Paid Social,False
+CUST-77EDD279,Company 810,Startup,Canada,2026-02-01 19:35:03,Paid Social,False
+CUST-CA29C0AD,Company 811,SMB,Germany,2025-09-12 16:21:50,Direct,True
+CUST-AD4A27DA,Company 812,Enterprise,Canada,2024-11-24 06:04:32,Direct,True
+CUST-51430848,Company 813,Enterprise,UK,2025-11-19 22:21:41,Referral,True
+CUST-EF0EEAB1,Company 814,Startup,USA,2026-01-01 22:25:41,Paid Social,True
+CUST-FC13B279,Company 815,SMB,Canada,2024-06-01 13:11:54,Outbound Sales,False
+CUST-35F639CC,Company 816,Enterprise,Australia,2024-07-17 16:28:12,Paid Social,True
+CUST-34E77F38,Company 817,Startup,Germany,2025-08-29 23:55:59,Direct,True
+CUST-B950604D,Company 818,Startup,Australia,2026-04-30 08:18:53,Outbound Sales,True
+CUST-DE6A857B,Company 819,SMB,USA,2024-05-18 11:53:37,Direct,True
+CUST-69166739,Company 820,SMB,USA,2025-08-29 22:47:47,Referral,True
+CUST-6FA1663E,Company 821,Enterprise,Canada,2024-08-08 15:54:37,Outbound Sales,False
+CUST-1FAC8496,Company 822,Startup,USA,2025-08-18 14:11:24,Outbound Sales,False
+CUST-0FB07A71,Company 823,SMB,Canada,2025-07-30 00:28:35,Direct,True
+CUST-CBC74B72,Company 824,Startup,Australia,2024-07-06 00:31:17,Direct,False
+CUST-6FA3C62F,Company 825,SMB,UK,2025-09-09 22:21:22,Organic Search,True
+CUST-279B96E8,Company 826,SMB,Canada,2026-02-14 20:01:30,Direct,False
+CUST-9722FDEA,Company 827,SMB,Germany,2026-01-21 07:31:58,Outbound Sales,True
+CUST-30FF824B,Company 828,Mid-Market,USA,2024-05-22 04:04:16,Direct,True
+CUST-72C94CDA,Company 829,Startup,Australia,2024-10-27 12:27:28,Paid Social,False
+CUST-8AE7652C,Company 830,SMB,UK,2024-10-23 19:18:27,Organic Search,True
+CUST-017D0217,Company 831,SMB,Australia,2025-03-27 21:40:53,Paid Social,True
+CUST-D8580F79,Company 832,Startup,Germany,2024-08-13 09:44:35,Paid Social,True
+CUST-80A2FEEE,Company 833,Startup,USA,2026-01-14 16:09:11,Outbound Sales,True
+CUST-D28C91A6,Company 834,Startup,Germany,2025-11-19 00:58:27,Direct,True
+CUST-FAD4EF62,Company 835,Mid-Market,USA,2025-12-12 02:17:15,Organic Search,True
+CUST-C188137E,Company 836,SMB,Canada,2024-09-22 16:32:17,Organic Search,False
+CUST-8D3C2115,Company 837,Startup,Australia,2024-05-11 15:18:42,Outbound Sales,True
+CUST-96140BC2,Company 838,SMB,Australia,2026-02-24 18:22:54,Outbound Sales,True
+CUST-A5EF52C4,Company 839,Mid-Market,Australia,2024-11-27 21:40:31,Referral,True
+CUST-F6CDB355,Company 840,Startup,Canada,2025-08-23 01:50:00,Organic Search,False
+CUST-688CB7AD,Company 841,SMB,Canada,2026-02-23 21:19:41,Organic Search,True
+CUST-ABFFC2A4,Company 842,SMB,UK,2024-05-27 09:34:14,Organic Search,True
+CUST-C6AC904F,Company 843,Startup,Australia,2024-05-04 23:53:36,Referral,True
+CUST-2F0D837E,Company 844,Startup,Canada,2024-05-04 23:07:50,Referral,True
+CUST-624E836B,Company 845,SMB,Germany,2024-08-23 02:49:37,Outbound Sales,False
+CUST-FEC01A7F,Company 846,SMB,UK,2024-06-07 17:02:48,Organic Search,True
+CUST-C8EBBD41,Company 847,SMB,Germany,2025-12-20 14:03:52,Organic Search,False
+CUST-5476D2E7,Company 848,Mid-Market,UK,2025-07-17 07:48:32,Outbound Sales,True
+CUST-3D886FFC,Company 849,Startup,Germany,2026-04-16 10:25:08,Outbound Sales,True
+CUST-9B68B6BD,Company 850,Startup,USA,2025-12-07 01:57:40,Referral,True
+CUST-AC30D817,Company 851,SMB,USA,2026-04-04 03:03:07,Organic Search,True
+CUST-1EDFC04A,Company 852,SMB,UK,2024-10-22 03:26:43,Organic Search,True
+CUST-06A21422,Company 853,Startup,Canada,2024-11-27 02:14:56,Organic Search,True
+CUST-B9C7FED0,Company 854,Enterprise,Germany,2026-01-11 01:38:34,Referral,True
+CUST-5097CDF9,Company 855,SMB,UK,2024-10-26 18:20:47,Outbound Sales,True
+CUST-E3008E66,Company 856,SMB,USA,2024-06-11 18:42:12,Referral,True
+CUST-C295EABA,Company 857,Startup,UK,2025-09-01 11:09:35,Paid Social,True
+CUST-E6DB26E8,Company 858,Mid-Market,Canada,2025-12-06 16:53:12,Referral,True
+CUST-405C05C8,Company 859,Startup,Canada,2026-04-07 18:47:51,Organic Search,True
+CUST-8AFE50E7,Company 860,SMB,Germany,2026-03-09 06:58:33,Outbound Sales,True
+CUST-5B97CFBC,Company 861,Startup,UK,2024-07-27 18:26:22,Outbound Sales,True
+CUST-2D7CD07D,Company 862,Enterprise,Germany,2025-11-15 15:20:20,Referral,True
+CUST-6467F401,Company 863,SMB,Germany,2026-01-08 16:09:39,Outbound Sales,True
+CUST-F1C361E8,Company 864,SMB,Germany,2025-09-22 15:04:34,Direct,True
+CUST-2E6A99D9,Company 865,SMB,Canada,2025-12-20 10:53:26,Direct,True
+CUST-1997126D,Company 866,Mid-Market,Australia,2026-01-02 17:24:48,Paid Social,True
+CUST-F2991849,Company 867,Mid-Market,UK,2025-03-22 23:33:33,Outbound Sales,True
+CUST-1F5613AB,Company 868,SMB,Germany,2024-05-30 07:27:02,Referral,True
+CUST-33F86ABD,Company 869,Mid-Market,USA,2025-03-30 00:31:30,Organic Search,False
+CUST-DAC902A8,Company 870,Startup,USA,2024-09-25 07:13:21,Outbound Sales,True
+CUST-6016B85F,Company 871,SMB,Australia,2024-07-23 00:32:21,Organic Search,False
+CUST-109D1A55,Company 872,Startup,Canada,2024-07-31 04:39:46,Direct,True
+CUST-A373EBF9,Company 873,Startup,Germany,2025-09-22 01:59:31,Organic Search,True
+CUST-AEB0A567,Company 874,Mid-Market,Germany,2025-05-04 07:22:58,Referral,True
+CUST-6B94DEE4,Company 875,Startup,Germany,2025-05-30 01:58:26,Direct,True
+CUST-59CCE38E,Company 876,Startup,UK,2025-10-26 23:41:45,Direct,False
+CUST-FEF4F8BC,Company 877,Startup,USA,2025-06-05 05:39:04,Referral,True
+CUST-71168D85,Company 878,SMB,USA,2025-08-03 21:48:27,Referral,False
+CUST-0D8DAE06,Company 879,SMB,Australia,2024-07-02 19:08:55,Paid Social,True
+CUST-D44FADF6,Company 880,Enterprise,UK,2026-01-12 07:49:00,Outbound Sales,False
+CUST-56397C43,Company 881,SMB,Canada,2025-03-24 14:38:20,Direct,False
+CUST-FEE4A72B,Company 882,Startup,Canada,2024-08-22 07:19:53,Organic Search,True
+CUST-B1E79DD2,Company 883,Startup,USA,2025-12-15 17:30:53,Organic Search,True
+CUST-90ABFB98,Company 884,Enterprise,Canada,2025-10-19 06:33:41,Paid Social,True
+CUST-BBF692F1,Company 885,Startup,USA,2024-06-08 17:00:51,Referral,True
+CUST-7FE1026A,Company 886,SMB,USA,2024-09-18 22:05:12,Direct,False
+CUST-C9BEF5B3,Company 887,Startup,USA,2024-05-12 11:55:48,Paid Social,True
+CUST-CE6A09BF,Company 888,Enterprise,Australia,2024-11-14 15:41:35,Direct,True
+CUST-E7C38C77,Company 889,Startup,Canada,2024-07-12 23:39:22,Outbound Sales,True
+CUST-613397F8,Company 890,Startup,Australia,2025-10-01 05:31:49,Direct,True
+CUST-1696C5EE,Company 891,Mid-Market,Canada,2025-05-17 11:07:51,Organic Search,False
+CUST-E3298F75,Company 892,Mid-Market,UK,2026-04-16 13:11:16,Organic Search,True
+CUST-1072FC4D,Company 893,Startup,Germany,2025-10-30 01:54:34,Direct,False
+CUST-C54E34C4,Company 894,Mid-Market,Australia,2025-07-21 10:14:38,Direct,False
+CUST-CA8C36C7,Company 895,SMB,Canada,2025-05-07 19:10:11,Outbound Sales,True
+CUST-15F7F672,Company 896,Startup,USA,2024-06-09 18:50:43,Direct,True
+CUST-086BBBEE,Company 897,SMB,UK,2024-06-21 05:55:32,Referral,True
+CUST-7ADF4DD7,Company 898,SMB,Australia,2025-07-24 21:43:59,Direct,True
+CUST-1A0CB43B,Company 899,SMB,Canada,2024-05-04 04:43:23,Paid Social,True
+CUST-E8649F9B,Company 900,Mid-Market,Australia,2024-05-31 21:58:53,Referral,False
+CUST-8A72DAB6,Company 901,Startup,Canada,2024-10-07 23:15:29,Referral,True
+CUST-7CA32E0C,Company 902,SMB,USA,2026-02-05 10:13:58,Referral,False
+CUST-13862B85,Company 903,Mid-Market,Australia,2025-04-01 00:27:21,Organic Search,False
+CUST-02F3C2E0,Company 904,SMB,Germany,2025-09-30 23:48:41,Referral,False
+CUST-FD677D6E,Company 905,Startup,Germany,2025-02-25 10:34:14,Paid Social,True
+CUST-A313C5AC,Company 906,Mid-Market,Australia,2024-09-04 09:11:59,Referral,True
+CUST-A7F74437,Company 907,Startup,USA,2025-01-26 22:39:44,Referral,True
+CUST-CAD33DA8,Company 908,Startup,Australia,2024-07-06 22:57:07,Referral,True
+CUST-2D54887F,Company 909,Startup,UK,2025-11-14 06:50:05,Outbound Sales,True
+CUST-953AEDF2,Company 910,Startup,Australia,2024-09-11 23:30:07,Direct,True
+CUST-D4BE0FEC,Company 911,Startup,USA,2025-01-30 18:07:19,Organic Search,True
+CUST-CE5B1F64,Company 912,Startup,Canada,2026-04-16 10:04:34,Referral,True
+CUST-33A06EC3,Company 913,Mid-Market,Germany,2025-07-07 03:11:45,Referral,True
+CUST-0BE4D99F,Company 914,Startup,USA,2025-03-31 17:58:56,Organic Search,True
+CUST-C2D65C19,Company 915,SMB,USA,2025-06-01 09:35:01,Organic Search,True
+CUST-08BC4E1F,Company 916,SMB,Australia,2025-11-24 09:05:53,Paid Social,False
+CUST-D0F54477,Company 917,Startup,USA,2024-11-02 18:31:14,Outbound Sales,True
+CUST-E25D3B3E,Company 918,Startup,Germany,2025-08-08 13:52:26,Direct,False
+CUST-D9354085,Company 919,Startup,Australia,2026-01-28 01:33:19,Outbound Sales,False
+CUST-BD5EF8C7,Company 920,SMB,Germany,2025-06-22 20:40:42,Outbound Sales,True
+CUST-BC3D717B,Company 921,SMB,Canada,2025-03-22 23:22:53,Direct,True
+CUST-24852325,Company 922,SMB,Canada,2024-08-14 22:40:55,Referral,True
+CUST-085FF7A4,Company 923,SMB,Germany,2024-10-29 06:01:56,Paid Social,True
+CUST-41CB7D57,Company 924,SMB,Canada,2026-03-22 14:20:54,Organic Search,True
+CUST-C2ECF888,Company 925,Mid-Market,Canada,2025-05-31 02:52:27,Paid Social,True
+CUST-EF00E7FB,Company 926,Mid-Market,USA,2024-12-06 23:31:22,Direct,False
+CUST-E02C01B0,Company 927,Startup,Germany,2025-03-02 09:48:47,Organic Search,False
+CUST-02593FD4,Company 928,SMB,Germany,2025-06-26 22:51:41,Paid Social,False
+CUST-EE98A6C2,Company 929,Startup,Germany,2025-05-28 09:49:33,Organic Search,True
+CUST-C34D3634,Company 930,Startup,USA,2025-09-23 20:04:28,Referral,True
+CUST-9A4516FB,Company 931,Enterprise,Germany,2024-11-04 23:16:15,Outbound Sales,False
+CUST-15EA71C8,Company 932,Mid-Market,Germany,2025-08-17 22:33:53,Outbound Sales,True
+CUST-8B210ABC,Company 933,SMB,USA,2025-03-20 03:42:15,Paid Social,True
+CUST-45768FDF,Company 934,Startup,Australia,2026-03-18 15:12:50,Direct,True
+CUST-C24889BF,Company 935,SMB,Canada,2024-08-24 06:48:26,Outbound Sales,True
+CUST-F6CF1F14,Company 936,SMB,Canada,2024-08-17 08:39:03,Direct,True
+CUST-62783F73,Company 937,Startup,Germany,2025-04-03 00:15:22,Paid Social,True
+CUST-A4FFEC43,Company 938,Startup,Canada,2025-05-07 02:20:23,Paid Social,True
+CUST-DE916C2D,Company 939,SMB,Canada,2025-09-17 08:08:00,Referral,True
+CUST-B9C64547,Company 940,Enterprise,UK,2025-02-19 22:40:57,Direct,True
+CUST-D2A28B08,Company 941,Mid-Market,Australia,2026-02-27 00:18:08,Outbound Sales,True
+CUST-DD9C9C19,Company 942,Mid-Market,Australia,2025-04-12 03:26:10,Outbound Sales,True
+CUST-470E76EC,Company 943,Mid-Market,USA,2024-08-03 09:58:25,Organic Search,False
+CUST-508E5336,Company 944,SMB,Germany,2024-07-27 00:41:27,Referral,True
+CUST-F7C8A8E5,Company 945,Startup,USA,2026-04-11 14:04:13,Paid Social,True
+CUST-9F7A2781,Company 946,SMB,UK,2024-08-06 21:20:15,Direct,False
+CUST-D5C74D33,Company 947,Startup,Australia,2026-03-23 22:21:10,Paid Social,True
+CUST-46115E7D,Company 948,SMB,USA,2024-11-19 23:53:00,Paid Social,False
+CUST-3A17DC03,Company 949,Startup,UK,2024-07-08 04:31:47,Paid Social,True
+CUST-BF72E0BD,Company 950,Startup,UK,2024-12-09 10:25:28,Organic Search,True
+CUST-CE47CB2D,Company 951,Startup,Germany,2025-07-23 17:30:34,Referral,True
+CUST-FD080CF5,Company 952,Startup,Canada,2025-03-09 08:51:51,Organic Search,True
+CUST-AC37F2A1,Company 953,SMB,Canada,2025-11-25 11:22:06,Paid Social,False
+CUST-67EDAE36,Company 954,Mid-Market,Australia,2025-07-21 00:30:06,Organic Search,False
+CUST-BCB71E49,Company 955,SMB,Canada,2025-02-17 13:44:05,Organic Search,False
+CUST-6FAE935A,Company 956,SMB,Germany,2025-08-07 06:42:07,Paid Social,False
+CUST-78BD2A77,Company 957,Startup,USA,2026-04-10 04:01:30,Outbound Sales,True
+CUST-87833829,Company 958,SMB,UK,2025-02-25 14:55:36,Outbound Sales,False
+CUST-FD3F88A8,Company 959,Startup,Australia,2024-08-21 00:20:00,Paid Social,True
+CUST-3D7A90FD,Company 960,SMB,Australia,2025-02-23 09:52:48,Direct,False
+CUST-99655B91,Company 961,Mid-Market,Germany,2026-01-04 06:48:49,Outbound Sales,True
+CUST-9D5F476C,Company 962,SMB,UK,2024-10-06 20:51:06,Paid Social,True
+CUST-A5EB1CD7,Company 963,Startup,USA,2026-03-24 20:58:47,Outbound Sales,False
+CUST-50E7F1E6,Company 964,Startup,Australia,2025-07-04 11:07:31,Organic Search,False
+CUST-6BFAD729,Company 965,SMB,Germany,2025-07-14 03:33:53,Paid Social,True
+CUST-DB82A880,Company 966,SMB,UK,2024-12-18 10:33:24,Paid Social,True
+CUST-D542064E,Company 967,Startup,Canada,2026-03-03 22:24:30,Organic Search,True
+CUST-EE8B2825,Company 968,Mid-Market,Germany,2024-05-27 07:46:05,Outbound Sales,False
+CUST-C142DBFC,Company 969,Startup,Canada,2024-12-05 00:43:17,Outbound Sales,True
+CUST-3D125B68,Company 970,Mid-Market,Australia,2025-03-02 10:22:07,Paid Social,True
+CUST-157CAC78,Company 971,Mid-Market,USA,2025-04-14 09:51:55,Outbound Sales,True
+CUST-64BA964E,Company 972,SMB,UK,2025-04-12 02:48:16,Referral,True
+CUST-B7DFCB79,Company 973,SMB,USA,2024-08-16 23:38:10,Outbound Sales,True
+CUST-633483F2,Company 974,SMB,Germany,2024-10-12 16:23:13,Outbound Sales,True
+CUST-823DE8F5,Company 975,SMB,Germany,2024-07-09 12:38:30,Direct,False
+CUST-26A86B0C,Company 976,Startup,Australia,2025-06-22 21:27:46,Organic Search,False
+CUST-3BC093D5,Company 977,SMB,Canada,2025-01-12 03:13:11,Outbound Sales,False
+CUST-757899CB,Company 978,SMB,USA,2025-06-18 00:19:25,Referral,True
+CUST-485B6FBD,Company 979,SMB,Canada,2025-07-05 11:47:43,Outbound Sales,True
+CUST-19D81BB6,Company 980,Mid-Market,USA,2025-09-25 11:04:41,Outbound Sales,False
+CUST-77F7522D,Company 981,SMB,Germany,2025-06-04 08:03:45,Organic Search,False
+CUST-6E4B1CF5,Company 982,SMB,Germany,2025-08-17 00:03:26,Direct,True
+CUST-205E7270,Company 983,Startup,Australia,2025-07-03 14:52:11,Organic Search,True
+CUST-7D1A5AA4,Company 984,Mid-Market,UK,2025-08-20 06:37:37,Organic Search,False
+CUST-4A6DFA31,Company 985,Startup,UK,2025-07-25 03:36:05,Outbound Sales,True
+CUST-C301272A,Company 986,SMB,USA,2024-12-17 20:04:18,Outbound Sales,False
+CUST-AB15EE7A,Company 987,Startup,Canada,2024-10-27 18:54:12,Outbound Sales,True
+CUST-7D96292E,Company 988,SMB,Canada,2025-11-26 19:48:45,Outbound Sales,True
+CUST-9AAA2BE8,Company 989,Mid-Market,Germany,2025-01-06 04:08:18,Referral,True
+CUST-2E8ECFC3,Company 990,Startup,Germany,2025-06-05 21:00:34,Direct,True
+CUST-F231375D,Company 991,Startup,USA,2024-09-21 18:58:06,Outbound Sales,False
+CUST-8063D0BC,Company 992,Startup,UK,2025-03-11 22:26:48,Direct,True
+CUST-AFDCF38B,Company 993,SMB,Canada,2025-05-22 15:42:28,Referral,True
+CUST-46CDBE81,Company 994,Startup,UK,2025-07-31 23:44:19,Paid Social,False
+CUST-DDD4BD2F,Company 995,Startup,USA,2025-05-20 06:07:08,Referral,False
+CUST-B7ADC3DD,Company 996,Startup,Australia,2025-01-19 06:42:59,Outbound Sales,False
+CUST-09561B78,Company 997,SMB,Germany,2026-04-03 02:13:59,Referral,True
+CUST-B7161DBE,Company 998,Startup,Canada,2025-05-10 07:11:29,Direct,False
+CUST-9846146C,Company 999,Startup,UK,2025-12-12 01:25:23,Organic Search,True

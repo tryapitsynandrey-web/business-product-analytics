@@ -1,78 +1,95 @@
 metric_name,display_name,category,source_datasets,required_columns,formula_description,business_owner,business_purpose,risk_if_misread,lineage_status
-Unknown,Monthly Recurring Revenue (MRR),revenue,,,Not provided,Finance,"Tracks the predictable monthly revenue base. Primary leading indicator of business health and growth trajectory.
+monthly_recurring_revenue,Monthly Recurring Revenue (MRR),revenue,subscriptions,"subscriptions.monthly_price, subscriptions.status","Sum of monthly_price for all subscriptions whose status is Active or Past Due.
+",Finance,"Tracks the predictable monthly revenue base. Primary leading indicator of business health and growth trajectory.
 ","Including canceled subscriptions inflates MRR and masks revenue loss.
 ",Valid
-Unknown,Average Revenue Per User (ARPU),revenue,,,Not provided,Finance,"Measures revenue efficiency per customer. Used to evaluate pricing strategy and segment-level monetisation.
+average_revenue_per_user,Average Revenue Per User (ARPU),revenue,subscriptions,"subscriptions.customer_id, subscriptions.monthly_price, subscriptions.status","MRR divided by the count of unique customers with Active or Past Due subscriptions.
+",Finance,"Measures revenue efficiency per customer. Used to evaluate pricing strategy and segment-level monetisation.
 ","Using total customers (including inactive) as denominator deflates ARPU.
 ",Valid
-Unknown,Expansion Revenue,revenue,,,Not provided,Finance,"Quantifies revenue generated from upsells and plan upgrades. A growing expansion revenue signals successful product-led growth.
+expansion_revenue,Expansion Revenue,revenue,subscriptions,"subscriptions.monthly_price, subscriptions.plan, subscriptions.status","Sum of monthly_price for subscriptions whose plan is Premium or Enterprise and status is Active.
+",Finance,"Quantifies revenue generated from upsells and plan upgrades. A growing expansion revenue signals successful product-led growth.
 ","Treating all premium-plan MRR as expansion overstates growth if these were original plan choices, not upgrades.
 ",Valid
-Unknown,Contraction Revenue,revenue,,,Not provided,Finance,"Flags revenue that is contractually owed but not yet collected, signalling billing health risk.
+contraction_revenue,Contraction Revenue,revenue,subscriptions,"subscriptions.monthly_price, subscriptions.status","Sum of monthly_price for subscriptions with status Past Due (revenue at risk of being lost due to billing failure).
+",Finance,"Flags revenue that is contractually owed but not yet collected, signalling billing health risk.
 ","Ignoring this metric leads to MRR overstatement and delayed churn response.
 ",Valid
-Unknown,Gross Revenue Retention (GRR),revenue,,,Not provided,Finance,"Measures what percentage of possible revenue is actually being retained, ignoring expansion. Core SaaS health benchmark.
+gross_revenue_retention,Gross Revenue Retention (GRR),revenue,subscriptions,"subscriptions.monthly_price, subscriptions.status","Active MRR divided by total billed MRR (Active + Past Due + Canceled revenue). Bounded [0, 1].
+",Finance,"Measures what percentage of possible revenue is actually being retained, ignoring expansion. Core SaaS health benchmark.
 ","Confusing GRR with NRR leads to overestimating retention when expansion is masking underlying churn.
 ",Valid
-Unknown,Net Revenue Retention (NRR),revenue,,,Not provided,Finance,"The gold-standard SaaS retention metric. An NRR above 1.0 means the existing customer base is growing revenue without new acquisition.
+net_revenue_retention,Net Revenue Retention (NRR),revenue,subscriptions,"subscriptions.monthly_price, subscriptions.plan, subscriptions.status","(Active MRR + Expansion MRR) divided by total billed MRR. Can exceed 1.0 if expansion outweighs churn.
+",Finance,"The gold-standard SaaS retention metric. An NRR above 1.0 means the existing customer base is growing revenue without new acquisition.
 ","Using NRR without GRR hides whether growth comes from retention or expansion.
 ",Valid
-Unknown,Revenue at Risk,revenue,,,Not provided,Finance,"Quantifies the dollar value exposed to churn so finance and CS can prioritise retention investment.
+revenue_at_risk,Revenue at Risk,revenue,subscriptions,"subscriptions.customer_id, subscriptions.monthly_price, subscriptions.status","Sum of monthly_price for all subscriptions belonging to customers flagged as High or Critical churn risk.
+",Finance,"Quantifies the dollar value exposed to churn so finance and CS can prioritise retention investment.
 ","Underestimating at-risk revenue leads to under-resourcing customer success.
 ",Valid
-Unknown,Activation Rate,product,,,Not provided,Product,"Measures what proportion of signed-up customers completed the minimum set of actions indicating they derived initial value from the product.
+activation_rate,Activation Rate,product,"customers, product_usage","customers.customer_id, product_usage.customer_id, product_usage.key_actions","Count of customers with cumulative key_actions > activation_threshold divided by total customers. Activation threshold is 5 key actions.
+",Product,"Measures what proportion of signed-up customers completed the minimum set of actions indicating they derived initial value from the product.
 ","Using logins instead of key_actions conflates presence with engagement.
 ",Valid
-Unknown,Usage Frequency,product,,,Not provided,Product,"Tracks how frequently customers engage with the product. Declining frequency is an early churn signal.
+usage_frequency,Usage Frequency,product,"customers, product_usage","customers.customer_id, customers.is_active, product_usage.customer_id, product_usage.logins","Mean number of monthly logins per active customer across all usage records.
+",Product,"Tracks how frequently customers engage with the product. Declining frequency is an early churn signal.
 ","Averaging across all customers including inactive ones deflates frequency.
 ",Valid
-Unknown,Key Action Rate,product,,,Not provided,Product,"Measures how productively customers use each session. Low key action rate indicates friction or lack of product discovery.
+key_action_rate,Key Action Rate,product,"customers, product_usage","customers.customer_id, customers.is_active, product_usage.customer_id, product_usage.key_actions, product_usage.logins","Total key_actions divided by total logins across all active customers. Measures depth of engagement per session.
+",Product,"Measures how productively customers use each session. Low key action rate indicates friction or lack of product discovery.
 ","High key_action totals for a single power-user segment can mask poor broader adoption.
 ",Valid
-Unknown,Engagement Drop Rate,product,,,Not provided,Product,"Identifies customers in active decline before they reach the churned state. Key early-warning intervention trigger.
+engagement_drop_rate,Engagement Drop Rate,product,"customers, product_usage","customers.customer_id, customers.is_active, product_usage.customer_id, product_usage.date, product_usage.logins","Proportion of active customers whose last-month logins are below 20% of their personal 3-month average, indicating a significant engagement drop.
+",Product,"Identifies customers in active decline before they reach the churned state. Key early-warning intervention trigger.
 ","Point-in-time measurement without trend context misses seasonal patterns.
 ",Valid
-Unknown,Feature Adoption Proxy,product,,,Not provided,Product,"Approximates how broadly customers explore the product feature set. Sticky customers tend to use more features.
+feature_adoption_proxy,Feature Adoption Proxy,product,"customers, product_usage","customers.customer_id, customers.is_active, product_usage.customer_id, product_usage.features_used","Mean number of features_used per active customer per usage record.
+",Product,"Approximates how broadly customers explore the product feature set. Sticky customers tend to use more features.
 ","High features_used count does not guarantee adoption of high-value features.
 ",Valid
-Unknown,Customer Churn Rate,customer,,,Not provided,Product,"Primary retention health metric. Sustained churn above 3% monthly signals structural product or market fit issues.
+customer_churn_rate,Customer Churn Rate,customer,"customers, subscriptions","customers.customer_id, subscriptions.customer_id, subscriptions.status","Count of customers with Canceled subscriptions divided by total customers.
+",Product,"Primary retention health metric. Sustained churn above 3% monthly signals structural product or market fit issues.
 ","Using total customers including trials in denominator understates churn rate.
 ",Valid
-Unknown,Retention Rate,customer,,,Not provided,Product,"Complement of churn rate. Retention rate above 97% monthly is a strong SaaS health signal.
+retention_rate,Retention Rate,customer,"customers, subscriptions","customers.customer_id, subscriptions.customer_id, subscriptions.status","1 minus customer_churn_rate. Proportion of customers currently Active.
+",Product,"Complement of churn rate. Retention rate above 97% monthly is a strong SaaS health signal.
 ","High headline retention can mask segment-level retention differences.
 ",Valid
-Unknown,Average Net Promoter Score (NPS),customer,,,Not provided,Customer Success,"Measures customer sentiment and likelihood to recommend. Strong leading indicator of organic growth and churn risk.
+average_nps,Average Net Promoter Score (NPS),customer,nps_scores,"nps_scores.customer_id, nps_scores.score","Mean of all NPS score values collected. Scores range 0-10.
+",Customer Success,"Measures customer sentiment and likelihood to recommend. Strong leading indicator of organic growth and churn risk.
 ","Low response rate (under 30%) makes mean NPS unreliable as a population estimate.
 ",Valid
-Unknown,Support Burden,customer,,,Not provided,Customer Success,"Measures how much operational support load the customer base generates. High support burden correlates with poor product experience and churn risk.
+support_burden,Support Burden,customer,"customers, support_tickets","customers.customer_id, customers.is_active, support_tickets.customer_id, support_tickets.ticket_id","Mean number of support tickets per active customer.
+",Customer Success,"Measures how much operational support load the customer base generates. High support burden correlates with poor product experience and churn risk.
 ","Using raw ticket count without normalising by customer count biases toward larger customer bases.
 ",Valid
-Unknown,Time to Activation,customer,,,Not provided,Product,"Measures onboarding velocity. Shorter time to activation correlates with higher 90-day retention. A key lever for onboarding optimisation.
+time_to_activation,Time to Activation,customer,"customers, product_usage","customers.customer_id, customers.signup_date, product_usage.customer_id, product_usage.date, product_usage.key_actions","Mean number of days between signup_date and the date of the first recorded key_action > 0 in product_usage. Only calculated for activated customers.
+",Product,"Measures onboarding velocity. Shorter time to activation correlates with higher 90-day retention. A key lever for onboarding optimisation.
 ","Including non-activated customers with no activation date skews the mean toward infinity or NaN.
 ",Valid
-Unknown,Gross Profit,business_health_profitability,,,Not provided,Finance,"Measures profit after deducting direct production or delivery costs.
-",Excluding indirect costs overstates gross profit.,Valid
-Unknown,Gross Margin,business_health_profitability,,,Not provided,Finance,Measures production/delivery efficiency as a decimal 0-1.,Including non-COGS costs deflates gross margin.,Valid
-Unknown,Operating Margin,business_health_profitability,,,Not provided,Finance,Tracks core operational profitability before interest and taxes.,Excluding one-time charges inflates margin.,Valid
-Unknown,Net Margin,business_health_profitability,,,Not provided,Finance,Bottom-line profitability after all expenses.,Excluding tax or interest expense overstates net margin.,Valid
-Unknown,EBITDA,business_health_profitability,,,Not provided,Finance,"Approximates operational cash generation. Widely used for cross-company comparison and valuation multiples.
-",Treating EBITDA as free cash flow ignores capex and working capital.,Valid
-Unknown,Return on Investment (ROI),business_health_profitability,,,Not provided,Finance,Measures the profitability of an investment relative to its cost.,Ignoring time horizon inflates ROI for long-duration investments.,Valid
-Unknown,Annual Recurring Revenue (ARR),business_health_revenue,,,Not provided,Finance,Annualises the recurring revenue base for investor reporting.,Using total revenue instead of MRR inflates ARR.,Valid
-Unknown,Revenue Growth Rate,business_health_revenue,,,Not provided,Finance,Measures the rate of revenue expansion or contraction between periods.,Comparing different period lengths distorts the rate.,Valid
-Unknown,Revenue Concentration,business_health_revenue,,,Not provided,Finance,"Identifies dependency on individual customers. High concentration increases risk.
-",Measuring by contract value rather than recognised revenue is misleading.,Valid
-Unknown,Customer Lifetime Value (LTV),business_health_unit_economics,,,Not provided,Finance,"Estimates the total gross-margin-adjusted revenue expected from a customer.
-",Using total revenue instead of gross margin overstates LTV.,Valid
-Unknown,Customer Acquisition Cost (CAC),business_health_unit_economics,,,Not provided,Finance,Total sales and marketing investment to acquire one new customer.,Excluding any acquisition spend component understates CAC.,Valid
-Unknown,LTV:CAC Ratio,business_health_unit_economics,,,Not provided,Finance,"The primary unit economics health metric. A ratio >= 3.0 is the SaaS benchmark.
-",A high ratio driven by very low CAC may indicate under-investment.,Valid
-Unknown,Free Cash Flow (FCF),business_health_cashflow,,,Not provided,Finance,Cash available after sustaining and expanding the asset base.,Confusing FCF with net income ignores non-cash and capex items.,Valid
-Unknown,Cash Runway (Months),business_health_cashflow,,,Not provided,Finance,"Months the business can operate before exhausting cash reserves.
-",Using gross burn instead of net burn overstates urgency.,Valid
-Unknown,Customer Growth Rate,business_health_growth,,,Not provided,Growth,Tracks the rate at which the customer base expands or contracts.,Counting trials as customers inflates the rate.,Valid
-Unknown,Growth Efficiency,business_health_growth,,,Not provided,Growth,Revenue growth generated per dollar of S&M investment.,Including expansion revenue inflates the efficiency metric.,Valid
-Unknown,Revenue Per Employee,business_health_efficiency,,,Not provided,Operations,Primary operational productivity benchmark.,Excluding contractors understates productivity.,Valid
-Unknown,Sales Efficiency (Magic Number),business_health_efficiency,,,Not provided,Operations,Measures how effectively S&M spend converts to new revenue.,Including renewal revenue in new revenue inflates the metric.,Valid
-Unknown,Customer Concentration Risk,business_health_risk,,,Not provided,Finance,Quantifies the revenue risk from over-reliance on a single customer.,Using ARR instead of recognised revenue misrepresents timing risk.,Valid
-Unknown,Churn Exposure,business_health_risk,,,Not provided,Customer Success,Proportion of total revenue threatened by high-risk customers.,Using customer count instead of revenue understates high-value impact.,Valid
+gross_profit,Gross Profit,business_health_profitability,manual_inputs,,Revenue - Cost of Goods Sold,Finance,"Measures profit after deducting direct production or delivery costs.
+",Excluding indirect costs overstates gross profit.,Manual Input
+gross_margin,Gross Margin,business_health_profitability,manual_inputs,,Gross Profit / Revenue,Finance,Measures production/delivery efficiency as a decimal 0-1.,Including non-COGS costs deflates gross margin.,Manual Input
+operating_margin,Operating Margin,business_health_profitability,manual_inputs,,Operating Profit / Revenue,Finance,Tracks core operational profitability before interest and taxes.,Excluding one-time charges inflates margin.,Manual Input
+net_margin,Net Margin,business_health_profitability,manual_inputs,,Net Profit / Revenue,Finance,Bottom-line profitability after all expenses.,Excluding tax or interest expense overstates net margin.,Manual Input
+ebitda,EBITDA,business_health_profitability,manual_inputs,,Net Income + Interest + Taxes + Depreciation + Amortization,Finance,"Approximates operational cash generation. Widely used for cross-company comparison and valuation multiples.
+",Treating EBITDA as free cash flow ignores capex and working capital.,Manual Input
+roi,Return on Investment (ROI),business_health_profitability,manual_inputs,,(Gain - Cost) / Cost,Finance,Measures the profitability of an investment relative to its cost.,Ignoring time horizon inflates ROI for long-duration investments.,Manual Input
+annual_recurring_revenue,Annual Recurring Revenue (ARR),business_health_revenue,manual_inputs,,MRR x 12,Finance,Annualises the recurring revenue base for investor reporting.,Using total revenue instead of MRR inflates ARR.,Manual Input
+revenue_growth_rate,Revenue Growth Rate,business_health_revenue,manual_inputs,,(Current Revenue - Previous Revenue) / |Previous Revenue|,Finance,Measures the rate of revenue expansion or contraction between periods.,Comparing different period lengths distorts the rate.,Manual Input
+revenue_concentration,Revenue Concentration,business_health_revenue,manual_inputs,,Largest Customer Revenue / Total Revenue,Finance,"Identifies dependency on individual customers. High concentration increases risk.
+",Measuring by contract value rather than recognised revenue is misleading.,Manual Input
+customer_lifetime_value,Customer Lifetime Value (LTV),business_health_unit_economics,manual_inputs,,(ARPU x Gross Margin) / Churn Rate,Finance,"Estimates the total gross-margin-adjusted revenue expected from a customer.
+",Using total revenue instead of gross margin overstates LTV.,Manual Input
+customer_acquisition_cost,Customer Acquisition Cost (CAC),business_health_unit_economics,manual_inputs,,(Marketing Spend + Sales Spend) / New Customers,Finance,Total sales and marketing investment to acquire one new customer.,Excluding any acquisition spend component understates CAC.,Manual Input
+ltv_to_cac_ratio,LTV:CAC Ratio,business_health_unit_economics,manual_inputs,,LTV / CAC,Finance,"The primary unit economics health metric. A ratio >= 3.0 is the SaaS benchmark.
+",A high ratio driven by very low CAC may indicate under-investment.,Manual Input
+free_cash_flow,Free Cash Flow (FCF),business_health_cashflow,manual_inputs,,Operating Cash Flow - Capital Expenditures,Finance,Cash available after sustaining and expanding the asset base.,Confusing FCF with net income ignores non-cash and capex items.,Manual Input
+runway_months,Cash Runway (Months),business_health_cashflow,manual_inputs,,Cash Balance / Monthly Burn Rate,Finance,"Months the business can operate before exhausting cash reserves.
+",Using gross burn instead of net burn overstates urgency.,Manual Input
+customer_growth_rate,Customer Growth Rate,business_health_growth,manual_inputs,,(Current Customers - Previous Customers) / |Previous Customers|,Growth,Tracks the rate at which the customer base expands or contracts.,Counting trials as customers inflates the rate.,Manual Input
+growth_efficiency,Growth Efficiency,business_health_growth,manual_inputs,,Revenue Growth / Sales and Marketing Spend,Growth,Revenue growth generated per dollar of S&M investment.,Including expansion revenue inflates the efficiency metric.,Manual Input
+revenue_per_employee,Revenue Per Employee,business_health_efficiency,manual_inputs,,Total Revenue / Employee Count,Operations,Primary operational productivity benchmark.,Excluding contractors understates productivity.,Manual Input
+sales_efficiency,Sales Efficiency (Magic Number),business_health_efficiency,manual_inputs,,New Revenue / Sales and Marketing Spend,Operations,Measures how effectively S&M spend converts to new revenue.,Including renewal revenue in new revenue inflates the metric.,Manual Input
+customer_concentration_risk,Customer Concentration Risk,business_health_risk,manual_inputs,,Largest Customer Revenue / Total Revenue,Finance,Quantifies the revenue risk from over-reliance on a single customer.,Using ARR instead of recognised revenue misrepresents timing risk.,Manual Input
+churn_exposure,Churn Exposure,business_health_risk,manual_inputs,,Revenue At Risk / Total Revenue,Customer Success,Proportion of total revenue threatened by high-risk customers.,Using customer count instead of revenue understates high-value impact.,Manual Input

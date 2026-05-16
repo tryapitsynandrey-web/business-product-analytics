@@ -14,7 +14,6 @@ Design contract:
 from __future__ import annotations
 
 import logging
-import uuid
 from typing import Any, Dict, List
 
 from core.prioritization import calculate_priority_score, assign_priority_band
@@ -61,6 +60,9 @@ class InterventionPlanner:
     Transforms recommendation dicts into structured intervention records.
     """
 
+    def __init__(self) -> None:
+        self._next_sequence = 1
+
     # ------------------------------------------------------------------
     # Public interface
     # ------------------------------------------------------------------
@@ -80,8 +82,8 @@ class InterventionPlanner:
         List of intervention dicts, each containing all required fields.
         """
         interventions: List[Dict[str, Any]] = []
-        for rec in recommendations:
-            intervention = self.build_intervention_record(rec)
+        for sequence, rec in enumerate(recommendations, start=1):
+            intervention = self.build_intervention_record(rec, sequence=sequence)
             interventions.append(intervention)
 
         logger.info("Created %d intervention(s) from %d recommendation(s).",
@@ -128,7 +130,11 @@ class InterventionPlanner:
     # Record builder
     # ------------------------------------------------------------------
 
-    def build_intervention_record(self, recommendation: Dict[str, Any]) -> Dict[str, Any]:
+    def build_intervention_record(
+        self,
+        recommendation: Dict[str, Any],
+        sequence: int | None = None,
+    ) -> Dict[str, Any]:
         """
         Build a single, fully-populated intervention dict from a recommendation.
 
@@ -151,9 +157,12 @@ class InterventionPlanner:
             effort_weight=effort_level,
         )
         priority_band = assign_priority_band(priority_score)
+        if sequence is None:
+            sequence = self._next_sequence
+            self._next_sequence += 1
 
         return {
-            "intervention_id": f"IV-{uuid.uuid4().hex[:8].upper()}",
+            "intervention_id": f"IV-{sequence:08d}",
             "recommendation_title": recommendation.get("recommendation_title", "Unnamed"),
             "category": recommendation.get("category", "general"),
             "target_segment": recommendation.get("segment", "All"),

@@ -1,6 +1,13 @@
 import pandas as pd
 from typing import Any, Optional
 
+EXECUTIVE_METRICS = {
+    "monthly_recurring_revenue": "Total MRR",
+    "customer_churn_rate": "Churn Rate",
+    "average_revenue_per_user": "ARPU",
+    "revenue_at_risk": "Revenue at Risk",
+}
+
 def format_currency(value: object) -> str:
     """Format a float as currency (e.g., $1,234.56)."""
     try:
@@ -156,3 +163,84 @@ def prepare_category_counts(df: pd.DataFrame | None, category_column: str = "cat
         
     counts = df[category_column].value_counts().to_frame("count")
     return counts
+
+def get_executive_metric_values(kpis: pd.DataFrame | None) -> dict[str, Optional[Any]]:
+    """Return the main executive KPI values keyed by canonical metric name."""
+    source = kpis if kpis is not None else pd.DataFrame()
+    return {
+        metric_name: select_metric_value(source, metric_name)
+        for metric_name in EXECUTIVE_METRICS
+    }
+
+def determine_business_status(health_scores: pd.DataFrame | None) -> str:
+    """Summarize health score statuses into one executive status label."""
+    if health_scores is None or health_scores.empty or "status" not in health_scores.columns:
+        return "Unknown"
+
+    statuses = set(health_scores["status"].dropna().astype(str))
+    if "Critical" in statuses:
+        return "Critical"
+    if "Risk" in statuses or "At Risk" in statuses:
+        return "Risk"
+    if "Watch" in statuses or "Warning" in statuses:
+        return "Watch"
+    return "Healthy"
+
+def prepare_top_actions(
+    interventions: pd.DataFrame | None,
+    limit: int = 10,
+) -> pd.DataFrame:
+    """Return top interventions ordered by priority score."""
+    if interventions is None or interventions.empty:
+        return pd.DataFrame()
+
+    df = interventions.copy()
+    if "priority_score" in df.columns:
+        df["priority_score"] = pd.to_numeric(df["priority_score"], errors="coerce").fillna(0)
+        df = df.sort_values("priority_score", ascending=False)
+
+    display_cols = [
+        "intervention_id",
+        "recommendation_title",
+        "priority_band",
+        "estimated_revenue_impact",
+        "priority_score",
+        "effort_level",
+        "suggested_owner",
+        "target_segment",
+    ]
+    cols = [col for col in display_cols if col in df.columns]
+    return df[cols].head(limit).reset_index(drop=True)
+
+def filter_customer_360(
+    customers: pd.DataFrame | None,
+    risk_bands: list[str] | None = None,
+    segments: list[str] | None = None,
+    plans: list[str] | None = None,
+) -> pd.DataFrame:
+    """Apply common Customer 360 filters."""
+    if customers is None or customers.empty:
+        return pd.DataFrame()
+
+    df = customers.copy()
+    if risk_bands:
+        df = filter_dataframe_by_values(df, "churn_risk_band", risk_bands)
+    if segments:
+        df = filter_dataframe_by_values(df, "segment", segments)
+    if plans:
+        df = filter_dataframe_by_values(df, "plan", plans)
+    return df
+
+def build_customer_profile_summary(customer_row: pd.Series | dict[str, Any]) -> dict[str, Any]:
+    """Return a compact Customer 360 profile summary for display."""
+    row = dict(customer_row)
+    return {
+        "Customer": row.get("customer_id", "Unknown"),
+        "Segment": row.get("segment", "Unknown"),
+        "Plan": row.get("plan", "Unknown"),
+        "Risk Band": row.get("churn_risk_band", "Unknown"),
+        "Current MRR": row.get("current_mrr", 0.0),
+        "Revenue at Risk": row.get("revenue_at_risk", 0.0),
+        "Usage Trend": row.get("usage_trend", "Unknown"),
+        "Recommended Action": row.get("recommended_action", "No action required"),
+    }

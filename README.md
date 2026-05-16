@@ -70,43 +70,54 @@ business-product-analytics/
 
 ## Usage
 
-Generate synthetic data and run the pipeline:
+Install dependencies, run the local pipeline, and open the dashboard:
 
 ```bash
-python src/adapters/synthetic_data_generator.py
-python src/main.py
+make setup
+make run
+make dashboard
+```
+
+Useful local commands:
+
+```bash
+make status
+make test
+python src/main.py status
+python src/main.py dashboard
 ```
 
 ## Local Streamlit Dashboard
 
-ProductPulse includes a minimal, local-only Streamlit dashboard to explore the generated analytics.
-It includes interactive filters and native Streamlit visualizations to slice and aggregate the data.
-It reads directly from the local SQLite database. No data leaves your machine, and it does not use
-any cloud deployment or authentication.
+ProductPulse includes a local-only Streamlit dashboard with an executive cockpit,
+prioritized actions, Customer 360 drill-down, KPI review, risk queues, decision
+traces, and metric lineage. It reads directly from the local SQLite database.
+No data leaves your machine, and it does not use any cloud deployment or authentication.
 
 To use the dashboard:
 
-1. Enable SQLite persistence by setting `persistence.sqlite.enabled: true` in `config/config.yaml`.
-2. Run the pipeline to generate the database:
+1. Run the pipeline to generate CSV, report, and SQLite artifacts:
 
    ```bash
-   export PYTHONPATH=src
-   python src/main.py
+   make run
    ```
 
-3. Launch the Streamlit app:
+2. Launch the Streamlit app:
 
    ```bash
-   streamlit run app/streamlit_app.py
+   make dashboard
    ```
 
-If the dashboard reports a missing database or stale data, use the sidebar refresh instructions or rerun `python src/main.py` in your terminal to regenerate the local `.db` file.
+If the dashboard reports a missing database or stale data, rerun `make run`.
 
 ## Configuration
 
 All business rules and metric definitions reside in the `config/` directory.
 Modify `churn_rules.yaml` to adjust the weighting of churn drivers, or update
 `metric_catalog.yaml` to add new tracked KPIs.
+Synthetic data generation is anchored by `reproducibility.as_of_date` and
+`reproducibility.random_seed` in `config/config.yaml`, so repeated pipeline
+runs produce stable CSV and report snapshots.
 
 ## Data Storage
 

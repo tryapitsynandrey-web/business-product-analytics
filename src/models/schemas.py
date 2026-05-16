@@ -12,14 +12,23 @@ DATASET_NAMES = [
     "targets"
 ]
 
-CUSTOMER_COLUMNS = ["customer_id", "signup_date", "segment", "is_activated", "activation_date"]
-SUBSCRIPTION_COLUMNS = ["subscription_id", "customer_id", "plan", "status", "monthly_price", "start_date", "end_date"]
-TRANSACTION_COLUMNS = ["transaction_id", "customer_id", "subscription_id", "amount", "status", "transaction_date"]
-PRODUCT_USAGE_COLUMNS = ["customer_id", "date", "key_actions", "total_actions"]
-SUPPORT_TICKET_COLUMNS = ["ticket_id", "customer_id", "date_opened", "date_closed", "status"]
-NPS_COLUMNS = ["customer_id", "date", "score"]
-ACQUISITION_CHANNEL_COLUMNS = ["customer_id", "channel"]
-TARGET_COLUMNS = ["date", "metric", "target_value"]
+CUSTOMER_COLUMNS = [
+    "customer_id", "company_name", "segment", "country", "signup_date",
+    "acquisition_channel", "is_active"
+]
+SUBSCRIPTION_COLUMNS = [
+    "subscription_id", "customer_id", "plan", "status", "start_date",
+    "monthly_price", "billing_cycle"
+]
+TRANSACTION_COLUMNS = [
+    "transaction_id", "customer_id", "subscription_id", "amount", "currency",
+    "status", "transaction_date"
+]
+PRODUCT_USAGE_COLUMNS = ["usage_id", "customer_id", "date", "logins", "key_actions"]
+SUPPORT_TICKET_COLUMNS = ["ticket_id", "customer_id", "date_opened", "status"]
+NPS_COLUMNS = ["score_id", "customer_id", "date", "score"]
+ACQUISITION_CHANNEL_COLUMNS = ["channel_name", "cost_per_acquisition"]
+TARGET_COLUMNS = ["metric_name", "target_value", "date"]
 
 @dataclass
 class DatasetSchema:

@@ -1,6 +1,6 @@
 # ProductPulse - Executive Analytics Summary
 
-Generated: 2026-05-08
+Generated: 2026-05-01
 
 ---
 
@@ -8,14 +8,14 @@ Generated: 2026-05-08
 
 | Metric | Value |
 | --- | --- |
-| Monthly Recurring Revenue (MRR) | $241,003 |
-| Average Revenue Per User (ARPU) | $345.77 |
-| Gross Revenue Retention (GRR) | 68.2% |
-| Net Revenue Retention (NRR) | 121.1% |
-| Revenue at Risk | $24,433 |
-| Customer Churn Rate | 30.3% |
-| Customer Retention Rate | 69.7% |
-| Average NPS | 6.1 |
+| Monthly Recurring Revenue (MRR) | $284,090 |
+| Average Revenue Per User (ARPU) | $400.13 |
+| Gross Revenue Retention (GRR) | 76.4% |
+| Net Revenue Retention (NRR) | 137.6% |
+| Revenue at Risk | $133,831 |
+| Customer Churn Rate | 29.0% |
+| Customer Retention Rate | 71.0% |
+| Average NPS | 6.4 |
 
 ---
 
@@ -23,36 +23,36 @@ Generated: 2026-05-08
 
 | KPI | Value | Signal |
 | --- | --- | --- |
-| monthly_recurring_revenue | $241,003 | Active |
-| customer_churn_rate | 30.3% | High |
-| gross_revenue_retention | 68.2% | Below benchmark |
-| net_revenue_retention | 121.1% | Positive expansion |
-| average_nps | 6.1 | Acceptable |
+| monthly_recurring_revenue | $284,090 | Active |
+| customer_churn_rate | 29.0% | High |
+| gross_revenue_retention | 76.4% | Below benchmark |
+| net_revenue_retention | 137.6% | Positive expansion |
+| average_nps | 6.4 | Acceptable |
 
 ---
 
 ## 3. Revenue Movement
 
-- **MRR:** $241,003
-- **Expansion Revenue (high-tier plans):** $186,788
-- **Contraction Revenue (Past Due):** $24,433
-- **Net Revenue Retention:** 121.1% - Revenue base is growing from existing customers.
+- **MRR:** $284,090
+- **Expansion Revenue (high-tier plans):** $227,778
+- **Contraction Revenue (Past Due):** $34,832
+- **Net Revenue Retention:** 137.6% - Revenue base is growing from existing customers.
 
 ---
 
 ## 4. Retention and Churn
 
-- **Churn Rate:** 30.3% of customers have a Canceled subscription.
-- **Retention Rate:** 69.7% of customers are currently retained.
-- **Revenue at Risk:** $24,433 across 305 High/Critical risk customers.
+- **Churn Rate:** 29.0% of customers have a Canceled subscription.
+- **Retention Rate:** 71.0% of customers are currently retained.
+- **Revenue at Risk:** $133,831 across 319 High/Critical risk customers.
 
 Risk distribution:
 
 | Band | Count |
 | --- | --- |
-| Critical | 7 |
-| High | 298 |
-| Medium | 133 |
+| Critical | 11 |
+| High | 308 |
+| Medium | 132 |
 | Low | 259 |
 
 ---
@@ -61,50 +61,50 @@ Risk distribution:
 
 | Metric | Value |
 | --- | --- |
-| Activation Rate | 98.4% |
-| Usage Frequency (avg logins/customer) | 256.4 |
+| Activation Rate | 98.8% |
+| Usage Frequency (avg logins/customer) | 253.0 |
 | Key Action Rate (actions/login) | 3.00 |
 | Feature Adoption Proxy (features/session) | 5.5 |
 | Engagement Drop Rate | 0.0% |
-| Time to Activation (avg days) | 7.0 |
+| Time to Activation (avg days) | 13.5 |
 
 ---
 
 ## 6. Customer Risk Segments
 
-7 customer(s) are in **Critical** risk - immediate executive action required.
-298 customer(s) are in **High** risk - customer success intervention needed.
-133 customer(s) are in **Medium** risk - monitor and run automated engagement.
+11 customer(s) are in **Critical** risk - immediate executive action required.
+308 customer(s) are in **High** risk - customer success intervention needed.
+132 customer(s) are in **Medium** risk - monitor and run automated engagement.
 259 customer(s) are in **Low** risk - no immediate action required.
 
 ---
 
 ## 7. Revenue Leakage
 
-Total identified leakage: **$290,542** across **937** event(s).
+Total identified leakage: **$348,835** across **953** event(s).
 
 | Leakage Type | Estimated Loss |
 | --- | --- |
-| Failed Payment | $195,017 |
-| Refund | $71,092 |
-| Unpaid Active Subscription | $24,433 |
+| Failed Payment | $224,317 |
+| Refund | $89,686 |
+| Unpaid Active Subscription | $34,832 |
 | Active Usage Without Billing | $0 |
 
 ---
 
 ## 8. Top Recommendations
 
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-e9f5ab3a, Confidence: High, Owner: Billing Automation)
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-1ac141c4, Confidence: High, Owner: Billing Automation)
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-372b3f0a, Confidence: High, Owner: Billing Automation)
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-6a61bd4e, Confidence: High, Owner: Billing Automation)
-- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-714bd6b4, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-30FF824B, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-642C56AF, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-D1D1B913, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-0C039F9F, Confidence: High, Owner: Billing Automation)
+- **Automated Payment Recovery — Failed Transaction** (Customer: CUST-5097CDF9, Confidence: High, Owner: Billing Automation)
 
 ---
 
 ## 9. Interventions
 
-876 intervention(s) have been planned.
+909 intervention(s) have been planned.
 Highest-priority intervention: **Automated Payment Recovery — Failed Transaction** (band: Critical).
 
 See `reports/intervention_plan.md` for the full prioritised list.

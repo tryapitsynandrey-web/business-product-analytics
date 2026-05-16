@@ -4,12 +4,32 @@ Tests for src/core/pipeline.py
 
 from __future__ import annotations
 
-import os
-import pytest
+import yaml
+import pandas as pd
+
 from core.pipeline import ProductAnalyticsPipeline
+from utils.paths import PROJECT_ROOT
+
+
+def _write_test_config(tmp_path, *, sqlite_enabled: bool = False):
+    config = yaml.safe_load((PROJECT_ROOT / "config" / "config.yaml").read_text())
+    config["synthetic_data"]["num_customers"] = 80
+    config["paths"] = {
+        "data_dir": str(tmp_path / "data"),
+        "synthetic_data_dir": str(tmp_path / "data" / "synthetic"),
+        "processed_data_dir": str(tmp_path / "data" / "processed"),
+        "exports_dir": str(tmp_path / "data" / "exports"),
+        "reports_dir": str(tmp_path / "reports"),
+    }
+    config["persistence"]["sqlite"]["enabled"] = sqlite_enabled
+    config["persistence"]["sqlite"]["path"] = str(tmp_path / "data" / "local" / "test.db")
+
+    config_path = tmp_path / "config.yaml"
+    config_path.write_text(yaml.safe_dump(config), encoding="utf-8")
+    return config_path
 
 class TestPipelineIntegration:
-    def test_pipeline_runs_successfully_end_to_end(self):
+    def test_pipeline_runs_successfully_end_to_end(self, tmp_path):
         """
         Integration test verifying the pipeline completes fully end-to-end.
 
@@ -19,7 +39,7 @@ class TestPipelineIntegration:
         - generated_outputs is non-empty
         - no exception is raised
         """
-        pipeline = ProductAnalyticsPipeline()
+        pipeline = ProductAnalyticsPipeline(config_path=_write_test_config(tmp_path))
         result = pipeline.run()
 
         assert result is not None
@@ -44,17 +64,22 @@ class TestPipelineIntegration:
         for expected in expected_artifacts:
             assert expected in outputs_str
 
-    def test_pipeline_sqlite_disabled_by_default(self):
-        pipeline = ProductAnalyticsPipeline()
+        kpis = pd.read_csv(tmp_path / "data" / "processed" / "kpi_summary.csv")
+        assert kpis["metric_name"].value_counts()["revenue_at_risk"] == 1
+
+        lineage = pd.read_csv(tmp_path / "data" / "exports" / "metric_lineage.csv")
+        assert "Unknown" not in set(lineage["metric_name"])
+        assert lineage["source_datasets"].notna().all()
+
+    def test_pipeline_sqlite_disabled_by_default(self, tmp_path):
+        pipeline = ProductAnalyticsPipeline(config_path=_write_test_config(tmp_path))
         assert pipeline._sqlite_enabled is False
 
     def test_pipeline_sqlite_enabled(self, tmp_path):
-        db_path = tmp_path / "test.db"
-        pipeline = ProductAnalyticsPipeline()
-        
-        # Override config programmatically
-        pipeline._sqlite_enabled = True
-        pipeline._sqlite_path = str(db_path)
+        db_path = tmp_path / "data" / "local" / "test.db"
+        pipeline = ProductAnalyticsPipeline(
+            config_path=_write_test_config(tmp_path, sqlite_enabled=True)
+        )
         
         result = pipeline.run()
         
@@ -64,3 +89,18 @@ class TestPipelineIntegration:
         outputs_str = " ".join(result.generated_outputs)
         assert "sqlite://kpi_summary" in outputs_str
         assert "sqlite://data_quality_scores" in outputs_str
+
+    def test_pipeline_outputs_are_reproducible(self, tmp_path):
+        config_path = _write_test_config(tmp_path)
+
+        first = ProductAnalyticsPipeline(config_path=config_path).run()
+        assert first.success is True
+        first_kpis = (tmp_path / "data" / "processed" / "kpi_summary.csv").read_text()
+        first_traces = (tmp_path / "data" / "exports" / "decision_traces.csv").read_text()
+        first_plan = (tmp_path / "data" / "processed" / "intervention_plan.csv").read_text()
+
+        second = ProductAnalyticsPipeline(config_path=config_path).run()
+        assert second.success is True
+        assert (tmp_path / "data" / "processed" / "kpi_summary.csv").read_text() == first_kpis
+        assert (tmp_path / "data" / "exports" / "decision_traces.csv").read_text() == first_traces
+        assert (tmp_path / "data" / "processed" / "intervention_plan.csv").read_text() == first_plan

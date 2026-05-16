@@ -17,7 +17,7 @@
 
 ## System Health
 
-- **Tests**: 490 passing tests.
+- **Tests**: 499 passing tests.
 - **Local-First Status**: 100% (no cloud, API, or external DBs).
 
 ## Known Limitations

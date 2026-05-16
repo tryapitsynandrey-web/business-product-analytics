@@ -50,10 +50,12 @@ _BUSINESS_RISK = {
 _VALIDITY_CHECKS = {
     "allowed_values",
     "numeric_non_negative",
+    "nps_range",
     "nps_score_range",
+    "date_columns",
     "date_format",
 }
-_UNIQUENESS_CHECKS = {"no_duplicate_primary_keys"}
+_UNIQUENESS_CHECKS = {"no_duplicate_keys", "no_duplicate_primary_keys"}
 _INTEGRITY_CHECKS = {"referential_integrity"}
 
 

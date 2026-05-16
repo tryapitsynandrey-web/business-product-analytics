@@ -15,7 +15,12 @@ from app.ui_helpers import (
     filter_dataframe_by_numeric_range,
     prepare_metric_chart_data,
     prepare_status_counts,
-    prepare_category_counts
+    prepare_category_counts,
+    get_executive_metric_values,
+    determine_business_status,
+    prepare_top_actions,
+    filter_customer_360,
+    build_customer_profile_summary,
 )
 
 def test_format_currency():
@@ -161,3 +166,64 @@ def test_prepare_category_counts():
     assert counts.loc["Cat1", "count"] == 2
     
     assert prepare_category_counts(None).empty
+
+def test_get_executive_metric_values_uses_canonical_names():
+    df = pd.DataFrame([
+        {"metric_name": "monthly_recurring_revenue", "value": 1000.0},
+        {"metric_name": "customer_churn_rate", "value": 0.05},
+        {"metric_name": "average_revenue_per_user", "value": 100.0},
+        {"metric_name": "revenue_at_risk", "value": 250.0},
+    ])
+
+    values = get_executive_metric_values(df)
+
+    assert values["monthly_recurring_revenue"] == 1000.0
+    assert values["customer_churn_rate"] == 0.05
+    assert values["average_revenue_per_user"] == 100.0
+    assert values["revenue_at_risk"] == 250.0
+
+def test_determine_business_status_prioritizes_worst_status():
+    assert determine_business_status(pd.DataFrame({"status": ["Healthy", "Watch"]})) == "Watch"
+    assert determine_business_status(pd.DataFrame({"status": ["Risk", "Healthy"]})) == "Risk"
+    assert determine_business_status(pd.DataFrame({"status": ["Critical", "Healthy"]})) == "Critical"
+    assert determine_business_status(pd.DataFrame()) == "Unknown"
+
+def test_prepare_top_actions_sorts_by_priority_score():
+    df = pd.DataFrame([
+        {"intervention_id": "IV-2", "recommendation_title": "B", "priority_score": 10, "priority_band": "Low"},
+        {"intervention_id": "IV-1", "recommendation_title": "A", "priority_score": 50, "priority_band": "High"},
+    ])
+
+    actions = prepare_top_actions(df, limit=1)
+
+    assert len(actions) == 1
+    assert actions.iloc[0]["intervention_id"] == "IV-1"
+
+def test_filter_customer_360_applies_common_filters():
+    df = pd.DataFrame([
+        {"customer_id": "C1", "churn_risk_band": "High", "segment": "SMB", "plan": "Pro"},
+        {"customer_id": "C2", "churn_risk_band": "Low", "segment": "Enterprise", "plan": "Basic"},
+    ])
+
+    filtered = filter_customer_360(df, risk_bands=["High"], segments=["SMB"], plans=["Pro"])
+
+    assert len(filtered) == 1
+    assert filtered.iloc[0]["customer_id"] == "C1"
+
+def test_build_customer_profile_summary_returns_display_fields():
+    row = {
+        "customer_id": "C1",
+        "segment": "SMB",
+        "plan": "Pro",
+        "churn_risk_band": "High",
+        "current_mrr": 199.0,
+        "revenue_at_risk": 199.0,
+        "usage_trend": "Declining",
+        "recommended_action": "Call customer",
+    }
+
+    summary = build_customer_profile_summary(row)
+
+    assert summary["Customer"] == "C1"
+    assert summary["Revenue at Risk"] == 199.0
+    assert summary["Recommended Action"] == "Call customer"

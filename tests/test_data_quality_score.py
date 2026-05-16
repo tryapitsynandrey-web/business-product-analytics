@@ -95,7 +95,7 @@ class TestUniquenessScore:
         assert score < 1.0
 
     def test_validation_issue_triggers_zero_without_pk(self):
-        issue = _make_issue("customers", "no_duplicate_primary_keys")
+        issue = _make_issue("customers", "no_duplicate_keys")
         scorer = DataQualityScorer([issue], _clean_datasets())
         score = scorer.calculate_uniqueness_score("customers")
         assert score == pytest.approx(0.0)
@@ -123,6 +123,12 @@ class TestValidityScore:
         scorer = DataQualityScorer([issue], _clean_datasets())
         score = scorer.calculate_validity_score("customers")
         assert score == pytest.approx(1.0)
+
+    @pytest.mark.parametrize("check_name", ["date_columns", "nps_range"])
+    def test_validation_check_names_reduce_validity(self, check_name):
+        issue = _make_issue("customers", check_name)
+        scorer = DataQualityScorer([issue], _clean_datasets())
+        assert scorer.calculate_validity_score("customers") < 1.0
 
 
 # ---------------------------------------------------------------------------

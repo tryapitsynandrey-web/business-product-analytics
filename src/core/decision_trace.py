@@ -13,7 +13,6 @@ Design contract:
 from __future__ import annotations
 
 import logging
-import uuid
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from typing import Any, Dict, List
@@ -42,8 +41,8 @@ class DecisionTrace:
     confidence_level: str      # 'High' | 'Medium' | 'Low'
 
 
-def _new_trace_id() -> str:
-    return f"TRC-{uuid.uuid4().hex[:10].upper()}"
+def _new_trace_id(sequence: int) -> str:
+    return f"TRC-{sequence:010d}"
 
 
 def _utc_now() -> str:
@@ -68,8 +67,10 @@ class DecisionTraceEngine:
     traces = engine.export_traces()
     """
 
-    def __init__(self) -> None:
+    def __init__(self, created_at: str | None = None) -> None:
         self._traces: List[DecisionTrace] = []
+        self._created_at = created_at
+        self._next_sequence = 1
 
     # ------------------------------------------------------------------
     # Factory
@@ -95,8 +96,8 @@ class DecisionTraceEngine:
             The created trace object.
         """
         trace = DecisionTrace(
-            trace_id=_new_trace_id(),
-            created_at=_utc_now(),
+            trace_id=_new_trace_id(self._next_sequence),
+            created_at=self._created_at or _utc_now(),
             entity_type=entity_type,
             entity_id=entity_id,
             signal=signal,
@@ -106,6 +107,7 @@ class DecisionTraceEngine:
             generated_action=generated_action,
             confidence_level=confidence_level,
         )
+        self._next_sequence += 1
         self._traces.append(trace)
         return trace
 

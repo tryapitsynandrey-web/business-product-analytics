@@ -1,6 +1,6 @@
 # ProductPulse - Metric Definitions
 
-Generated: 2026-05-08
+Generated: 2026-05-01
 
 This document is the authoritative metric glossary for the ProductPulse analytics engine.
 All formulas are implemented deterministically in Python; this document describes the

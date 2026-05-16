@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import logging
 from datetime import date
+from pathlib import Path
 from typing import Any, Dict, List
 
 from utils.paths import REPORTS_DIR
@@ -67,9 +68,10 @@ def _kpi(kpis: List[Any], metric_name: str, default: float = 0.0) -> float:
     )
 
 
-def _write_report(filename: str, content: str) -> None:
+def _write_report(filename: str, content: str, reports_dir: Path = REPORTS_DIR) -> None:
     """Write markdown content to the reports directory."""
-    path = REPORTS_DIR / filename
+    reports_dir.mkdir(parents=True, exist_ok=True)
+    path = reports_dir / filename
     path.write_text(content, encoding="utf-8")
     logger.info("Generated report: %s", path)
 
@@ -81,6 +83,14 @@ def _write_report(filename: str, content: str) -> None:
 class ReportGenerator:
     """Generates all ProductPulse markdown reports from pipeline results."""
 
+    def __init__(
+        self,
+        reports_dir: Path | None = None,
+        generated_on: date | None = None,
+    ) -> None:
+        self.reports_dir = reports_dir or REPORTS_DIR
+        self.generated_on = generated_on
+
     # ------------------------------------------------------------------
     # Executive Summary
     # ------------------------------------------------------------------
@@ -89,7 +99,7 @@ class ReportGenerator:
         """
         Write reports/executive_summary.md using canonical Phase 2 output schemas.
         """
-        generated_on = date.today().isoformat()
+        generated_on = (self.generated_on or date.today()).isoformat()
         kpis = results.get("kpis", [])
         leakages = results.get("leakages", [])
         risk_profiles = results.get("risk_profiles", [])
@@ -327,7 +337,7 @@ See `reports/data_quality_report.md` for per-dataset detail.
 
 Report generated automatically by ProductPulse Analytics Engine.
 """
-        _write_report("executive_summary.md", content)
+        _write_report("executive_summary.md", content, self.reports_dir)
 
     # ------------------------------------------------------------------
     # Data Quality Report
@@ -335,12 +345,13 @@ Report generated automatically by ProductPulse Analytics Engine.
 
     def generate_data_quality_report(self, data_quality_results: List[Any]) -> None:
         """Write reports/data_quality_report.md."""
-        generated_on = date.today().isoformat()
+        generated_on = (self.generated_on or date.today()).isoformat()
 
         if not data_quality_results:
             _write_report(
                 "data_quality_report.md",
                 f"# Data Quality Report\n\nGenerated: {generated_on}\n\nNo data quality results available.\n",
+                self.reports_dir,
             )
             return
 
@@ -385,7 +396,7 @@ Generated: {generated_on}
 
 Report generated automatically by ProductPulse Analytics Engine.
 """
-        _write_report("data_quality_report.md", content)
+        _write_report("data_quality_report.md", content, self.reports_dir)
 
     # ------------------------------------------------------------------
     # Intervention Plan Report
@@ -393,12 +404,13 @@ Report generated automatically by ProductPulse Analytics Engine.
 
     def generate_intervention_plan(self, interventions: List[Dict[str, Any]]) -> None:
         """Write reports/intervention_plan.md."""
-        generated_on = date.today().isoformat()
+        generated_on = (self.generated_on or date.today()).isoformat()
 
         if not interventions:
             _write_report(
                 "intervention_plan.md",
                 f"# Intervention Plan\n\nGenerated: {generated_on}\n\nNo interventions generated.\n",
+                self.reports_dir,
             )
             return
 
@@ -431,7 +443,7 @@ Generated: {generated_on}
 
 Report generated automatically by ProductPulse Analytics Engine.
 """
-        _write_report("intervention_plan.md", content)
+        _write_report("intervention_plan.md", content, self.reports_dir)
 
     # ------------------------------------------------------------------
     # Risk Register
@@ -439,7 +451,7 @@ Report generated automatically by ProductPulse Analytics Engine.
 
     def generate_risk_register(self, results: Dict[str, Any]) -> None:
         """Write reports/risk_register.md."""
-        generated_on = date.today().isoformat()
+        generated_on = (self.generated_on or date.today()).isoformat()
         risk_profiles = results.get("risk_profiles", [])
         leakages = results.get("leakages", [])
 
@@ -498,7 +510,7 @@ Generated: {generated_on}
 
 Report generated automatically by ProductPulse Analytics Engine.
 """
-        _write_report("risk_register.md", content)
+        _write_report("risk_register.md", content, self.reports_dir)
 
     # ------------------------------------------------------------------
     # Metric Definitions Report
@@ -506,7 +518,7 @@ Report generated automatically by ProductPulse Analytics Engine.
 
     def generate_metric_definitions(self, metric_catalog: Dict[str, Any]) -> None:
         """Write reports/metric_definitions.md from the loaded metric catalog."""
-        generated_on = date.today().isoformat()
+        generated_on = (self.generated_on or date.today()).isoformat()
         metrics = metric_catalog.get("metrics", [])
 
         # Use ## (h2) for each metric entry — avoids MD001 h1→h3 jump
@@ -546,4 +558,4 @@ governance contract each metric must satisfy.
 
 Report generated automatically by ProductPulse Analytics Engine.
 """
-        _write_report("metric_definitions.md", content)
+        _write_report("metric_definitions.md", content, self.reports_dir)

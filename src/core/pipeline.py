@@ -74,6 +74,19 @@ def _load_config(config_path: Path) -> Dict[str, Any]:
         return yaml.safe_load(fh)
 
 
+def _resolve_project_path(path_value: str | Path) -> Path:
+    """Resolve config paths relative to the project root unless absolute."""
+    path = Path(path_value)
+    return path if path.is_absolute() else PROJECT_ROOT / path
+
+
+def _parse_config_date(value: Any, default: date | None = None) -> date:
+    """Parse an ISO date from config, falling back to default or today."""
+    if value is None:
+        return default or date.today()
+    return pd.Timestamp(value).date()
+
+
 # ---------------------------------------------------------------------------
 # Pipeline class
 # ---------------------------------------------------------------------------
@@ -107,20 +120,40 @@ class ProductAnalyticsPipeline:
         self._run_validation: bool = pipeline_cfg.get("run_validation", True)
         self._write_outputs: bool = pipeline_cfg.get("write_outputs", True)
 
+        paths_cfg = self.config.get("paths", {})
+        self._synthetic_data_dir = _resolve_project_path(
+            paths_cfg.get("synthetic_data_dir", "data/synthetic")
+        )
+        self._processed_data_dir = _resolve_project_path(
+            paths_cfg.get("processed_data_dir", "data/processed")
+        )
+        self._exports_dir = _resolve_project_path(
+            paths_cfg.get("exports_dir", "data/exports")
+        )
+        self._reports_dir = _resolve_project_path(paths_cfg.get("reports_dir", "reports"))
+
         persistence_cfg = self.config.get("persistence", {}).get("sqlite", {})
         self._sqlite_enabled: bool = persistence_cfg.get("enabled", False)
-        self._sqlite_path: str = persistence_cfg.get("path", str(SQLITE_DB_PATH))
+        self._sqlite_path: str = str(
+            _resolve_project_path(persistence_cfg.get("path", str(SQLITE_DB_PATH)))
+        )
         self._sqlite_if_exists: str = persistence_cfg.get("if_exists", "replace")
 
         # Reproducibility seed
-        self._seed: int = self.config.get("reproducibility", {}).get("random_seed", 42)
+        repro_cfg = self.config.get("reproducibility", {})
+        self._seed: int = repro_cfg.get("random_seed", 42)
+        self._as_of_date: date = _parse_config_date(repro_cfg.get("as_of_date"))
 
         # Required datasets from config
         self._required_datasets: List[str] = self.config.get("required_datasets", [])
 
         # Adapters
-        self.data_loader = DataLoader()
-        self.data_writer = DataWriter()
+        self.data_loader = DataLoader(data_dir=self._synthetic_data_dir)
+        self.data_writer = DataWriter(
+            processed_dir=self._processed_data_dir,
+            exports_dir=self._exports_dir,
+            reports_dir=self._reports_dir,
+        )
 
         # Phase 2 engines
         self.governance = MetricGovernance()
@@ -131,7 +164,10 @@ class ProductAnalyticsPipeline:
 
         # Phase 3 engines
         self.intervention_planner = InterventionPlanner()
-        self.reporter = ReportGenerator()
+        self.reporter = ReportGenerator(
+            reports_dir=self._reports_dir,
+            generated_on=self._as_of_date,
+        )
 
     # ------------------------------------------------------------------
     # Internal phase methods
@@ -144,7 +180,10 @@ class ProductAnalyticsPipeline:
             self.config.get("synthetic_data", {}).get("num_customers", 1000)
         )
         generator = SyntheticDataGenerator(
-            seed=self._seed, num_customers=num_customers
+            seed=self._seed,
+            num_customers=num_customers,
+            as_of_date=self._as_of_date,
+            output_dir=self._synthetic_data_dir,
         )
         generator.generate_all()
         self.logger.info("Synthetic data generation complete.")
@@ -190,10 +229,13 @@ class ProductAnalyticsPipeline:
 
     def _phase_analytics(self, datasets: Dict[str, Any]) -> Dict[str, Any]:
         """Execute Phase 2 analytics engines in dependency order."""
-        target_date = date.today()
+        target_date = self._as_of_date
 
         self.logger.info("Phase 2: calculating KPIs.")
         kpis = self.kpi_engine.calculate_kpis(datasets, target_date)
+        # revenue_at_risk depends on churn scoring; drop the standalone proxy
+        # and append the churn-informed value below.
+        kpis = [k for k in kpis if k.metric_name != "revenue_at_risk"]
         for kpi in kpis:
             self.logger.info("KPI  %-30s = %s", kpi.metric_name, kpi.value)
 
@@ -275,7 +317,9 @@ class ProductAnalyticsPipeline:
 
         # Decision traces
         self.logger.info("Phase 3: generating decision traces.")
-        tracer = DecisionTraceEngine()
+        tracer = DecisionTraceEngine(
+            created_at=f"{self._as_of_date.isoformat()}T00:00:00+00:00"
+        )
         tracer.trace_all_churn_risks(analytics["risk_profiles"])
         tracer.trace_all_leakages(analytics["leakages"])
         tracer.trace_all_recommendations(analytics["recommendations"])

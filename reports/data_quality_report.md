@@ -1,6 +1,6 @@
 # ProductPulse - Data Quality Report
 
-Generated: 2026-05-08
+Generated: 2026-05-01
 
 ---
 
@@ -12,7 +12,7 @@ Generated: 2026-05-08
 | customers | 100.00% | 100.00% | 100.00% | 100.00% | 100.00% | Good |
 | nps_scores | 100.00% | 100.00% | 100.00% | 100.00% | 100.00% | Good |
 | product_usage | 100.00% | 100.00% | 100.00% | 100.00% | 100.00% | Good |
-| subscriptions | 92.26% | 100.00% | 100.00% | 100.00% | 98.06% | Good |
+| subscriptions | 92.11% | 100.00% | 100.00% | 100.00% | 98.03% | Good |
 | support_tickets | 100.00% | 100.00% | 100.00% | 100.00% | 100.00% | Good |
 | targets | 100.00% | 100.00% | 100.00% | 100.00% | 100.00% | Good |
 | transactions | 100.00% | 100.00% | 100.00% | 100.00% | 100.00% | Good |

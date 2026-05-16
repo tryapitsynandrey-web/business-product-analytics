@@ -10,6 +10,7 @@ from models.schemas import (
 def test_schema_constants_exist():
     assert "customers" in DATASET_NAMES
     assert "customer_id" in CUSTOMER_COLUMNS
+    assert "is_active" in CUSTOMER_COLUMNS
 
 def test_dataset_schemas():
     assert "customers" in DATASET_SCHEMAS
@@ -17,6 +18,15 @@ def test_dataset_schemas():
     assert cust_schema.dataset_name == "customers"
     assert cust_schema.primary_key == "customer_id"
     assert "customer_id" in cust_schema.required_columns
+
+def test_dataset_schemas_match_config_required_columns():
+    import yaml
+    from utils.paths import CONFIG_DIR
+
+    config = yaml.safe_load((CONFIG_DIR / "config.yaml").read_text())
+    for dataset, columns in config["required_columns"].items():
+        assert dataset in DATASET_SCHEMAS
+        assert DATASET_SCHEMAS[dataset].required_columns == columns
 
 def test_output_schema_constants_exist():
     assert len(KPI_SUMMARY_COLUMNS) > 0

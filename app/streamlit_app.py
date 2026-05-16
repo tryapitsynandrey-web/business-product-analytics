@@ -4,21 +4,48 @@ from pathlib import Path
 
 from adapters.sqlite_reader import SQLiteReader
 from utils.paths import SQLITE_DB_PATH
-from app.ui_helpers import (
-    format_currency,
-    format_percentage,
-    select_metric_value,
-    status_badge_text,
-    format_file_size,
-    format_timestamp,
-    db_status_label,
-    safe_dataframe_empty_message,
-    get_filter_options,
-    filter_dataframe_by_values,
-    prepare_metric_chart_data,
-    prepare_status_counts,
-    prepare_category_counts
-)
+try:
+    from app.ui_helpers import (
+        format_currency,
+        format_percentage,
+        select_metric_value,
+        status_badge_text,
+        format_file_size,
+        format_timestamp,
+        db_status_label,
+        safe_dataframe_empty_message,
+        get_filter_options,
+        filter_dataframe_by_values,
+        prepare_metric_chart_data,
+        prepare_status_counts,
+        prepare_category_counts,
+        get_executive_metric_values,
+        determine_business_status,
+        prepare_top_actions,
+        filter_customer_360,
+        build_customer_profile_summary,
+    )
+except ModuleNotFoundError:
+    from ui_helpers import (
+        format_currency,
+        format_percentage,
+        select_metric_value,
+        status_badge_text,
+        format_file_size,
+        format_timestamp,
+        db_status_label,
+        safe_dataframe_empty_message,
+        get_filter_options,
+        filter_dataframe_by_values,
+        prepare_metric_chart_data,
+        prepare_status_counts,
+        prepare_category_counts,
+        get_executive_metric_values,
+        determine_business_status,
+        prepare_top_actions,
+        filter_customer_360,
+        build_customer_profile_summary,
+    )
 
 # ── Page Configuration ──────────────────────────────────────────────────
 st.set_page_config(
@@ -26,6 +53,21 @@ st.set_page_config(
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"
+)
+
+st.markdown(
+    """
+    <style>
+    .block-container { padding-top: 1.5rem; }
+    div[data-testid="stMetric"] {
+        border: 1px solid rgba(49, 51, 63, 0.16);
+        border-radius: 8px;
+        padding: 12px 14px;
+        background: rgba(250, 250, 250, 0.65);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 # ── DB Status & Initialization ──────────────────────────────────────────
@@ -70,7 +112,9 @@ else:
 st.sidebar.divider()
 
 pages = [
-    "Executive Overview",
+    "Executive Cockpit",
+    "Top Actions",
+    "Customer 360",
     "KPI Summary",
     "Product / Business Health",
     "High-Risk Customers",
@@ -89,45 +133,51 @@ st.sidebar.caption("Local-only mode. No data leaves this machine.")
 if not db_exists or not reader:
     st.title("ProductPulse")
     st.warning(f"Local SQLite database was not found at `{SQLITE_DB_PATH}`.")
-    st.info("Run the pipeline with SQLite persistence enabled, then reload this page.")
+    st.info("Run the local pipeline, then reload this page.")
     st.code('''
-# Ensure persistence.sqlite.enabled is true in config/config.yaml
-export PYTHONPATH=src
-python src/main.py
+make run
 ''', language="bash")
     st.stop()
 
 # ── Main Content ────────────────────────────────────────────────────────
 st.title(selection)
 
-if selection == "Executive Overview":
+if selection == "Executive Cockpit":
     kpis = fetch_data(reader, "get_kpi_summary", db_mtime)
+    health = fetch_data(reader, "get_health_scores", db_mtime)
+    high_risk = fetch_data(reader, "get_high_risk_customers", db_mtime)
+    plan = fetch_data(reader, "get_intervention_plan", db_mtime)
+    leakages = fetch_data(reader, "read_table", db_mtime, table_name="revenue_leakage")
+    metric_values = get_executive_metric_values(kpis)
     
-    st.subheader("Key Business Metrics")
-    col1, col2, col3, col4 = st.columns(4)
+    st.subheader("Business Snapshot")
+    col1, col2, col3, col4, col5 = st.columns(5)
     
     with col1:
-        mrr = select_metric_value(kpis, "Total MRR")
+        mrr = metric_values["monthly_recurring_revenue"]
         st.metric("Total MRR", format_currency(mrr) if mrr is not None else "N/A")
         
     with col2:
-        churn = select_metric_value(kpis, "Churn Rate")
+        churn = metric_values["customer_churn_rate"]
         st.metric("Churn Rate", format_percentage(churn) if churn is not None else "N/A")
         
     with col3:
-        arpu = select_metric_value(kpis, "ARPU")
+        arpu = metric_values["average_revenue_per_user"]
         st.metric("ARPU", format_currency(arpu) if arpu is not None else "N/A")
         
     with col4:
-        risk = select_metric_value(kpis, "Revenue at Risk")
+        risk = metric_values["revenue_at_risk"]
         st.metric("Revenue at Risk", format_currency(risk) if risk is not None else "N/A")
+
+    with col5:
+        st.metric("Business Status", determine_business_status(health))
         
     st.divider()
     
-    col_h1, col_h2 = st.columns([1, 1])
+    col_h1, col_h2, col_h3 = st.columns([1, 1, 1])
     
     with col_h1:
-        st.subheader("Critical Health Areas")
+        st.subheader("Health Areas")
         critical_health = fetch_data(reader, "get_critical_health_scores", db_mtime)
         if not critical_health.empty:
             for _, row in critical_health.iterrows():
@@ -136,14 +186,164 @@ if selection == "Executive Overview":
             st.success("No critical health areas detected.")
             
     with col_h2:
-        st.subheader("Top Priority Recommendations")
-        top_recs = fetch_data(reader, "get_top_recommendations", db_mtime, limit=3)
-        if not top_recs.empty:
-            for _, row in top_recs.iterrows():
-                impact = format_currency(row.get('estimated_revenue_impact', 0))
-                st.info(f"**{row['recommendation_title']}** ({row['category']}) - Impact: {impact}")
+        st.subheader("Risk Queue")
+        st.metric("High / Critical Customers", len(high_risk))
+        if not high_risk.empty and "risk_band" in high_risk.columns:
+            risk_counts = prepare_category_counts(high_risk, "risk_band")
+            if not risk_counts.empty:
+                st.bar_chart(risk_counts)
         else:
-            st.write("No recommendations generated.")
+            st.success("No high-risk customers identified.")
+
+    with col_h3:
+        st.subheader("Revenue Leakage")
+        leakage_total = (
+            pd.to_numeric(leakages.get("estimated_revenue_loss"), errors="coerce").sum()
+            if not leakages.empty and "estimated_revenue_loss" in leakages.columns
+            else 0.0
+        )
+        st.metric("Identified Leakage", format_currency(leakage_total))
+        if not leakages.empty and "leakage_type" in leakages.columns:
+            leakage_counts = prepare_category_counts(leakages, "leakage_type")
+            if not leakage_counts.empty:
+                st.bar_chart(leakage_counts)
+
+    st.divider()
+    st.subheader("Top Actions")
+    top_actions = prepare_top_actions(plan, limit=5)
+    if not top_actions.empty:
+        display_actions = top_actions.copy()
+        if "estimated_revenue_impact" in display_actions.columns:
+            display_actions["estimated_revenue_impact"] = display_actions[
+                "estimated_revenue_impact"
+            ].apply(format_currency)
+        if "priority_band" in display_actions.columns:
+            display_actions["priority_band"] = display_actions["priority_band"].apply(status_badge_text)
+        st.dataframe(display_actions, width="stretch", hide_index=True)
+    else:
+        st.info(safe_dataframe_empty_message(top_actions, "top actions"))
+
+elif selection == "Top Actions":
+    st.write("Prioritized business actions sorted by expected impact and urgency.")
+    plan = fetch_data(reader, "get_intervention_plan", db_mtime)
+    if not plan.empty:
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            priority = st.multiselect("Priority", get_filter_options(plan, "priority_band"))
+            plan = filter_dataframe_by_values(plan, "priority_band", priority)
+        with col2:
+            owner = st.multiselect("Owner", get_filter_options(plan, "suggested_owner"))
+            plan = filter_dataframe_by_values(plan, "suggested_owner", owner)
+        with col3:
+            effort = st.multiselect("Effort", get_filter_options(plan, "effort_level"))
+            plan = filter_dataframe_by_values(plan, "effort_level", effort)
+
+        top_actions = prepare_top_actions(plan, limit=25)
+        if not top_actions.empty:
+            chart_data = prepare_metric_chart_data(
+                plan,
+                metric_column="recommendation_title",
+                value_column="priority_score",
+            )
+            if not chart_data.empty:
+                st.bar_chart(chart_data.head(25))
+            st.dataframe(top_actions, width="stretch", hide_index=True)
+        else:
+            st.info(safe_dataframe_empty_message(top_actions, "top actions"))
+    else:
+        st.info(safe_dataframe_empty_message(plan, "intervention plan"))
+
+elif selection == "Customer 360":
+    st.write("Customer-level operational, revenue, risk, and recommendation view.")
+    customers = fetch_data(reader, "get_customer_360", db_mtime)
+    recs = fetch_data(reader, "get_recommendations", db_mtime)
+    traces = fetch_data(reader, "get_decision_traces", db_mtime)
+
+    if not customers.empty:
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            risk_options = get_filter_options(customers, "churn_risk_band")
+            default_risks = [r for r in ["Critical", "High"] if r in risk_options]
+            risk_bands = st.multiselect(
+                "Risk Band",
+                risk_options,
+                default=default_risks,
+            )
+        with col2:
+            segments = st.multiselect("Segment", get_filter_options(customers, "segment"))
+        with col3:
+            plans = st.multiselect("Plan", get_filter_options(customers, "plan"))
+
+        filtered_customers = filter_customer_360(customers, risk_bands, segments, plans)
+        st.caption(f"{len(filtered_customers)} customer(s) in current view")
+
+        if not filtered_customers.empty:
+            options = filtered_customers["customer_id"].astype(str).tolist()
+            selected_customer = st.selectbox("Customer", options)
+            selected_row = filtered_customers[
+                filtered_customers["customer_id"].astype(str) == selected_customer
+            ].iloc[0]
+            summary = build_customer_profile_summary(selected_row)
+
+            m1, m2, m3, m4 = st.columns(4)
+            with m1:
+                st.metric("Current MRR", format_currency(summary["Current MRR"]))
+            with m2:
+                st.metric("Revenue at Risk", format_currency(summary["Revenue at Risk"]))
+            with m3:
+                st.metric("Risk Band", summary["Risk Band"])
+            with m4:
+                st.metric("Usage Trend", summary["Usage Trend"])
+
+            detail_left, detail_right = st.columns([1, 1])
+            with detail_left:
+                st.subheader("Profile")
+                profile_rows = pd.DataFrame(
+                    [
+                        {
+                            "field": key,
+                            "value": (
+                                format_currency(value)
+                                if key in {"Current MRR", "Revenue at Risk"}
+                                else str(value)
+                            ),
+                        }
+                        for key, value in summary.items()
+                    ]
+                )
+                st.dataframe(profile_rows, width="stretch", hide_index=True)
+            with detail_right:
+                st.subheader("Recommended Action")
+                st.info(str(summary["Recommended Action"]))
+
+            st.subheader("Customer Recommendations")
+            customer_recs = (
+                recs[recs["customer_id"].astype(str) == selected_customer]
+                if not recs.empty and "customer_id" in recs.columns
+                else pd.DataFrame()
+            )
+            if not customer_recs.empty:
+                st.dataframe(customer_recs, width="stretch", hide_index=True)
+            else:
+                st.info("No recommendations for this customer.")
+
+            st.subheader("Decision Trace")
+            customer_traces = (
+                traces[traces["entity_id"].astype(str) == selected_customer]
+                if not traces.empty and "entity_id" in traces.columns
+                else pd.DataFrame()
+            )
+            if not customer_traces.empty:
+                st.dataframe(customer_traces, width="stretch", hide_index=True)
+            else:
+                st.info("No customer-specific trace records.")
+
+            st.subheader("Filtered Customer List")
+            st.dataframe(filtered_customers, width="stretch", hide_index=True)
+        else:
+            st.info("No customers match the selected filters.")
+    else:
+        st.info(safe_dataframe_empty_message(customers, "Customer 360"))
 
 elif selection == "KPI Summary":
     st.write("Complete breakdown of calculated KPIs based on operational signals.")
@@ -165,7 +365,7 @@ elif selection == "KPI Summary":
         if not chart_data.empty:
             st.bar_chart(chart_data)
             
-        st.dataframe(kpis, use_container_width=True, hide_index=True)
+        st.dataframe(kpis, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(kpis, "KPI summary"))
 
@@ -185,7 +385,7 @@ elif selection == "Product / Business Health":
         display_health = health.copy()
         if "status" in display_health.columns:
             display_health["status"] = display_health["status"].apply(status_badge_text)
-        st.dataframe(display_health, use_container_width=True, hide_index=True)
+        st.dataframe(display_health, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(health, "health score"))
 
@@ -216,7 +416,7 @@ elif selection == "High-Risk Customers":
             if not counts.empty:
                 st.bar_chart(counts)
                 
-        st.dataframe(high_risk, use_container_width=True, hide_index=True)
+        st.dataframe(high_risk, width="stretch", hide_index=True)
     else:
         st.success("No high-risk customers identified.")
 
@@ -245,7 +445,7 @@ elif selection == "Recommendations":
             if not chart_data.empty:
                 st.bar_chart(chart_data)
                 
-        st.dataframe(recs, use_container_width=True, hide_index=True)
+        st.dataframe(recs, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(recs, "recommendations"))
 
@@ -275,7 +475,7 @@ elif selection == "Intervention Plan":
         display_plan = plan.copy()
         if "priority_band" in display_plan.columns:
             display_plan["priority_band"] = display_plan["priority_band"].apply(status_badge_text)
-        st.dataframe(display_plan, use_container_width=True, hide_index=True)
+        st.dataframe(display_plan, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(plan, "intervention plan"))
 
@@ -283,7 +483,7 @@ elif selection == "Decision Traces":
     st.write("Audit log of all decisions, triggers, and the explicit signals that caused them.")
     traces = fetch_data(reader, "get_decision_traces", db_mtime)
     if not traces.empty:
-        st.dataframe(traces, use_container_width=True, hide_index=True)
+        st.dataframe(traces, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(traces, "decision traces"))
 
@@ -293,7 +493,7 @@ elif selection == "Metric Lineage":
     if not lineage.empty:
         cols = st.columns(3)
         col_idx = 0
-        for col_name in ["implementation_status", "category", "source_datasets"]:
+        for col_name in ["lineage_status", "category", "source_datasets"]:
             if col_name in lineage.columns:
                 with cols[col_idx % 3]:
                     options = get_filter_options(lineage, col_name)
@@ -301,10 +501,10 @@ elif selection == "Metric Lineage":
                     lineage = filter_dataframe_by_values(lineage, col_name, selected)
                 col_idx += 1
                 
-        st.dataframe(lineage, use_container_width=True, hide_index=True)
+        st.dataframe(lineage, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(lineage, "metric lineage"))
 
 st.divider()
 if st.button("Show refresh instructions"):
-    st.info("To refresh data, run the following in your terminal:\\n`export PYTHONPATH=src && python src/main.py`\\nThen reload this page.")
+    st.info("To refresh data, run `make run` in your terminal, then reload this page.")

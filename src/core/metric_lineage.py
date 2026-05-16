@@ -9,26 +9,46 @@ class MetricLineageEngine:
             
         metrics = metric_catalog.get("metrics", [])
         for metric in metrics:
-            sources = metric.get("data_sources", [])
-            source_datasets = []
+            source_datasets = list(metric.get("source_datasets", []))
             required_columns = []
-            for src in sources:
+
+            required_by_dataset = metric.get("required_columns_by_dataset", {})
+            for dataset, columns in required_by_dataset.items():
+                if dataset not in source_datasets:
+                    source_datasets.append(dataset)
+                for col in columns:
+                    required_columns.append(f"{dataset}.{col}")
+
+            # Backward compatibility for older test/catalog fixtures.
+            for src in metric.get("data_sources", []):
                 dataset = src.get("dataset", "Unknown")
-                source_datasets.append(dataset)
+                if dataset not in source_datasets:
+                    source_datasets.append(dataset)
                 for col in src.get("required_columns", []):
                     required_columns.append(f"{dataset}.{col}")
+
+            lineage_status = "Valid"
+            if not source_datasets:
+                source_datasets = ["manual_inputs"]
+                lineage_status = "Manual Input"
                     
             lineage.append({
-                "metric_name": metric.get("name", "Unknown"),
-                "display_name": metric.get("display_name", metric.get("name", "Unknown")),
+                "metric_name": metric.get("metric_name", metric.get("name", "Unknown")),
+                "display_name": metric.get(
+                    "display_name",
+                    metric.get("metric_name", metric.get("name", "Unknown")),
+                ),
                 "category": metric.get("category", "Unknown"),
                 "source_datasets": ", ".join(sorted(set(source_datasets))),
                 "required_columns": ", ".join(sorted(set(required_columns))),
-                "formula_description": metric.get("formula", "Not provided"),
+                "formula_description": metric.get(
+                    "formula_description",
+                    metric.get("formula", "Not provided"),
+                ),
                 "business_owner": metric.get("business_owner", "Unassigned"),
                 "business_purpose": metric.get("business_purpose", "Not provided"),
                 "risk_if_misread": metric.get("risk_if_misread", "Not documented"),
-                "lineage_status": "Valid"
+                "lineage_status": lineage_status
             })
         return lineage
 
@@ -45,6 +65,7 @@ class MetricLineageEngine:
         
         for lin in lineage_list:
             sources = [s.strip() for s in lin["source_datasets"].split(",")] if lin["source_datasets"] else []
+            sources = [s for s in sources if s != "manual_inputs"]
             missing = [s for s in sources if s not in available_set]
             if missing:
                 lin["lineage_status"] = f"Missing Source: {', '.join(missing)}"

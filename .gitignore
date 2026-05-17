@@ -7,7 +7,11 @@ __pycache__/
 .ruff_cache/
 .pyre/
 .pytype/
+.pyrefly/
 .hypothesis/
+.dmypy.json
+.dmypy/
+__pypackages__/
 
 # Virtual environments
 .venv/
@@ -15,18 +19,23 @@ venv/
 env/
 ENV/
 .env/
+.envrc
 
 # Packaging and build outputs
 build/
 dist/
 site/
+*.whl
 *.egg-info/
 .eggs/
 pip-wheel-metadata/
 
 # Test and coverage outputs
 .coverage
+.coverage.*
 coverage.xml
+coverage.json
+coverage.lcov
 htmlcov/
 .tox/
 .nox/
@@ -48,23 +57,37 @@ pytest-report.xml
 # Local databases and runtime storage
 *.db
 *.db-journal
+*.db-shm
+*.db-wal
 *.sqlite
 *.sqlite3
 *.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
 data/local/
+data/tmp/
+data/temp/
 
 # Logs and temporary files
 *.log
 *.tmp
 *.temp
+*.bak
+*.orig
+*.rej
 tmp/
 temp/
+logs/
 
 # Jupyter local state
 .ipynb_checkpoints/
+.jupyter/
 
 # IDE, editor, and OS files
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
 Thumbs.db
 desktop.ini
 .idea/
@@ -73,10 +96,20 @@ desktop.ini
 *.swo
 *.swn
 
-# Local agent/runtime scratch files
-.agent/cache/
-.agent/tmp/
-.agent/logs/
+# Local AI agent, editor assistant, and runtime scratch files
+.antigravity/
+.agent/
+.agents/
+.claude/
+.clinerules/
+.codex/
+.continue/
+.cursor/
+.opencode/
+.windsurf/
+.github/copilot-instructions.md
+AGENTS.md
+skills-lock.json
 
 # Node/frontend dependency and build artifacts
 node_modules/

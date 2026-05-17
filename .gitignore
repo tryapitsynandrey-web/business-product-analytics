@@ -1,9 +1,92 @@
-.venv/
+# Python bytecode and caches
 __pycache__/
+*.py[cod]
+*$py.class
 .pytest_cache/
-.DS_Store
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.hypothesis/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env/
+
+# Packaging and build outputs
+build/
+dist/
+site/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Test and coverage outputs
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+junit.xml
+pytest-report.xml
+
+# Local environment files and secrets
 .env
+.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.secret
+.streamlit/secrets.toml
+.streamlit/credentials.toml
+
+# Local databases and runtime storage
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+data/local/
+
+# Logs and temporary files
 *.log
 *.tmp
-data/local/*.db
+*.temp
+tmp/
+temp/
+
+# Jupyter local state
+.ipynb_checkpoints/
+
+# IDE, editor, and OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+
+# Local agent/runtime scratch files
+.agent/cache/
+.agent/tmp/
+.agent/logs/
+
+# Node/frontend dependency and build artifacts
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.next/
+.nuxt/
+coverage/
+
+# Generated local helper output
 project_tree.txt

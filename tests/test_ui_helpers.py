@@ -8,6 +8,8 @@ from app.ui_helpers import (
     status_badge_text,
     format_file_size,
     format_timestamp,
+    format_duration,
+    build_data_freshness_summary,
     db_status_label,
     safe_dataframe_empty_message,
     get_filter_options,
@@ -24,6 +26,8 @@ from app.ui_helpers import (
     filter_customer_360,
     build_customer_profile_summary,
     summarize_filter_state,
+    dataframe_to_csv_bytes,
+    build_export_filename,
 )
 
 
@@ -98,6 +102,29 @@ def test_format_timestamp():
     assert format_timestamp(1672531200) == "2023-01-01 00:00:00"
     assert format_timestamp(None) == "Unknown"
     assert format_timestamp("invalid") == "Unknown"
+
+
+def test_format_duration():
+    assert format_duration(30) == "<1 minute"
+    assert format_duration(60) == "1 minute"
+    assert format_duration(3600) == "1 hour"
+    assert format_duration(86400) == "1 day"
+    assert format_duration("invalid") == "Unknown"
+
+
+def test_build_data_freshness_summary_statuses():
+    now = 1_700_000_000
+
+    fresh = build_data_freshness_summary(now - 3600, now_timestamp=now)
+    aging = build_data_freshness_summary(now - 48 * 3600, now_timestamp=now)
+    stale = build_data_freshness_summary(now - 96 * 3600, now_timestamp=now)
+    missing = build_data_freshness_summary(None, now_timestamp=now)
+
+    assert fresh["status"] == "🟢 Fresh"
+    assert fresh["age"] == "1 hour"
+    assert aging["status"] == "🟡 Aging"
+    assert stale["status"] == "🔴 Stale"
+    assert missing["status"] == "🔴 Missing"
 
 
 def test_db_status_label():
@@ -242,6 +269,21 @@ def test_prepare_display_dataframe_formats_selected_columns():
     assert display.iloc[0]["status"] == "🔴 Critical"
     assert display.iloc[0]["score"] == "9.88"
     assert prepare_display_dataframe(None).empty
+
+
+def test_dataframe_to_csv_bytes():
+    csv_bytes = dataframe_to_csv_bytes(pd.DataFrame({"a": [1], "b": ["x"]}))
+
+    assert csv_bytes == b"a,b\n1,x\n"
+    assert dataframe_to_csv_bytes(None) == b""
+
+
+def test_build_export_filename():
+    assert build_export_filename("Top Actions", timestamp=1672531200) == (
+        "top-actions_20230101_000000.csv"
+    )
+    assert build_export_filename("  $$$  ") == "productpulse-export.csv"
+    assert build_export_filename("Metric Lineage", timestamp="bad") == "metric-lineage_export.csv"
 
 
 def test_get_executive_metric_values_uses_canonical_names():

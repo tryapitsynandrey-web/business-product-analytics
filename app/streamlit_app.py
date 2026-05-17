@@ -11,8 +11,11 @@ try:
         format_percentage,
         format_file_size,
         format_timestamp,
+        build_data_freshness_summary,
         db_status_label,
         safe_dataframe_empty_message,
+        dataframe_to_csv_bytes,
+        build_export_filename,
         get_filter_options,
         filter_dataframe_by_values,
         filter_dataframe_by_search,
@@ -33,8 +36,11 @@ except ModuleNotFoundError:
         format_percentage,
         format_file_size,
         format_timestamp,
+        build_data_freshness_summary,
         db_status_label,
         safe_dataframe_empty_message,
+        dataframe_to_csv_bytes,
+        build_export_filename,
         get_filter_options,
         filter_dataframe_by_values,
         filter_dataframe_by_search,
@@ -103,6 +109,39 @@ def fetch_data(
         return pd.DataFrame()
 
 
+@st.cache_data(show_spinner=False)
+def fetch_table_inventory(_reader: SQLiteReader | None, _mtime: float | None) -> pd.DataFrame:
+    if not _reader:
+        return pd.DataFrame(columns=["table", "rows"])
+
+    rows = []
+    try:
+        table_names = sorted(_reader.list_tables())
+    except Exception as e:
+        st.error(f"Failed to load table inventory: {str(e)}")
+        return pd.DataFrame(columns=["table", "rows"])
+
+    for table_name in table_names:
+        try:
+            rows.append({"table": table_name, "rows": _reader.get_table_row_count(table_name)})
+        except ValueError:
+            continue
+    return pd.DataFrame(rows)
+
+
+def render_csv_download(label: str, df: pd.DataFrame, filename_label: str, key: str) -> None:
+    if df.empty:
+        return
+
+    st.download_button(
+        label,
+        data=dataframe_to_csv_bytes(df),
+        file_name=build_export_filename(filename_label, db_mtime),
+        mime="text/csv",
+        key=key,
+    )
+
+
 # ── Sidebar Navigation & Status ─────────────────────────────────────────
 st.sidebar.title("ProductPulse")
 st.sidebar.caption("Business Product Analytics")
@@ -158,6 +197,43 @@ if selection == "Executive Cockpit":
     plan = fetch_data(reader, "get_intervention_plan", db_mtime)
     leakages = fetch_data(reader, "read_table", db_mtime, table_name="revenue_leakage")
     metric_values = get_executive_metric_values(kpis)
+    table_inventory = fetch_table_inventory(reader, db_mtime)
+    freshness = build_data_freshness_summary(db_mtime)
+
+    st.subheader("Data Freshness")
+    freshness_row_1 = st.columns(2)
+    with freshness_row_1[0]:
+        st.metric("Database Freshness", freshness["status"])
+    with freshness_row_1[1]:
+        st.metric("Data Age", freshness["age"])
+
+    freshness_row_2 = st.columns(2)
+    with freshness_row_2[0]:
+        st.metric("Last Updated", freshness["updated_at"])
+    with freshness_row_2[1]:
+        st.metric("Local DB Size", format_file_size(db_size))
+
+    if not table_inventory.empty:
+        total_rows = pd.to_numeric(table_inventory["rows"], errors="coerce").sum()
+        inv_col1, inv_col2 = st.columns(2)
+        with inv_col1:
+            st.metric("Tables Loaded", len(table_inventory))
+        with inv_col2:
+            st.metric("Rows Available", f"{int(total_rows):,}")
+        st.caption(freshness["caption"])
+        with st.expander("Data Inventory", expanded=False):
+            display_inventory = prepare_display_dataframe(table_inventory, number_columns=["rows"])
+            st.dataframe(display_inventory, width="stretch", hide_index=True)
+            render_csv_download(
+                "Download data inventory CSV",
+                table_inventory,
+                "data-inventory",
+                "download_data_inventory",
+            )
+    else:
+        st.caption(freshness["caption"])
+
+    st.divider()
 
     st.subheader("Business Snapshot")
     col1, col2, col3, col4, col5 = st.columns(5)
@@ -228,6 +304,12 @@ if selection == "Executive Cockpit":
             number_columns=["priority_score"],
         )
         st.dataframe(display_actions, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download top actions CSV",
+            top_actions,
+            "executive-top-actions",
+            "download_executive_top_actions",
+        )
     else:
         st.info(safe_dataframe_empty_message(top_actions, "top actions"))
 
@@ -298,6 +380,12 @@ elif selection == "Top Actions":
                 number_columns=["priority_score"],
             )
             st.dataframe(display_actions, width="stretch", hide_index=True)
+            render_csv_download(
+                "Download current actions CSV",
+                top_actions,
+                "top-actions",
+                "download_top_actions",
+            )
         else:
             st.info(safe_dataframe_empty_message(top_actions, "top actions"))
     else:
@@ -399,6 +487,12 @@ elif selection == "Customer 360":
                     number_columns=["priority_score", "impact_score"],
                 )
                 st.dataframe(display_recs, width="stretch", hide_index=True)
+                render_csv_download(
+                    "Download customer recommendations CSV",
+                    customer_recs,
+                    "customer-recommendations",
+                    "download_customer_recommendations",
+                )
             else:
                 st.info("No recommendations for this customer.")
 
@@ -410,6 +504,12 @@ elif selection == "Customer 360":
             )
             if not customer_traces.empty:
                 st.dataframe(customer_traces, width="stretch", hide_index=True)
+                render_csv_download(
+                    "Download customer trace CSV",
+                    customer_traces,
+                    "customer-decision-trace",
+                    "download_customer_trace",
+                )
             else:
                 st.info("No customer-specific trace records.")
 
@@ -421,6 +521,12 @@ elif selection == "Customer 360":
                 number_columns=["churn_risk_score", "latest_usage_frequency"],
             )
             st.dataframe(display_customers, width="stretch", hide_index=True)
+            render_csv_download(
+                "Download filtered customers CSV",
+                filtered_customers,
+                "filtered-customers",
+                "download_filtered_customers",
+            )
         else:
             st.info("No customers match the selected filters.")
     else:
@@ -448,6 +554,7 @@ elif selection == "KPI Summary":
 
         display_kpis = prepare_display_dataframe(kpis, number_columns=["value"])
         st.dataframe(display_kpis, width="stretch", hide_index=True)
+        render_csv_download("Download KPI summary CSV", kpis, "kpi-summary", "download_kpis")
     else:
         st.info(safe_dataframe_empty_message(kpis, "KPI summary"))
 
@@ -470,6 +577,12 @@ elif selection == "Product / Business Health":
             number_columns=["score"],
         )
         st.dataframe(display_health, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download health scores CSV",
+            health,
+            "health-scores",
+            "download_health_scores",
+        )
     else:
         st.info(safe_dataframe_empty_message(health, "health score"))
 
@@ -507,6 +620,12 @@ elif selection == "High-Risk Customers":
             number_columns=["risk_score", "churn_risk_score"],
         )
         st.dataframe(display_high_risk, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download high-risk customers CSV",
+            high_risk,
+            "high-risk-customers",
+            "download_high_risk_customers",
+        )
     else:
         st.success("No high-risk customers identified.")
 
@@ -552,6 +671,12 @@ elif selection == "Recommendations":
             number_columns=["impact_score", "priority_score", "confidence_weight"],
         )
         st.dataframe(display_recs, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download recommendations CSV",
+            recs,
+            "recommendations",
+            "download_recommendations",
+        )
     else:
         st.info(safe_dataframe_empty_message(recs, "recommendations"))
 
@@ -591,6 +716,12 @@ elif selection == "Intervention Plan":
             number_columns=["priority_score"],
         )
         st.dataframe(display_plan, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download intervention plan CSV",
+            plan,
+            "intervention-plan",
+            "download_intervention_plan",
+        )
     else:
         st.info(safe_dataframe_empty_message(plan, "intervention plan"))
 
@@ -605,6 +736,12 @@ elif selection == "Decision Traces":
             ["entity_type", "entity_id", "signal", "triggered_rule", "generated_action"],
         )
         st.dataframe(traces, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download decision traces CSV",
+            traces,
+            "decision-traces",
+            "download_decision_traces",
+        )
     else:
         st.info(safe_dataframe_empty_message(traces, "decision traces"))
 
@@ -624,6 +761,12 @@ elif selection == "Metric Lineage":
 
         display_lineage = prepare_display_dataframe(lineage, status_columns=["lineage_status"])
         st.dataframe(display_lineage, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download metric lineage CSV",
+            lineage,
+            "metric-lineage",
+            "download_metric_lineage",
+        )
     else:
         st.info(safe_dataframe_empty_message(lineage, "metric lineage"))
 

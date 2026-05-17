@@ -1,3 +1,4 @@
+import re
 import pandas as pd
 from typing import Any, Optional
 
@@ -102,6 +103,76 @@ def format_timestamp(timestamp: object) -> str:
         return dt.strftime("%Y-%m-%d %H:%M:%S")
     except (ValueError, TypeError):
         return "Unknown"
+
+
+def format_duration(age_seconds: object) -> str:
+    """Format a duration in seconds into a compact human-readable age."""
+    try:
+        seconds = max(0.0, float(age_seconds))  # type: ignore
+    except (ValueError, TypeError):
+        return "Unknown"
+
+    if seconds < 60:
+        return "<1 minute"
+    if seconds < 3600:
+        minutes = int(seconds // 60)
+        return f"{minutes} minute{'s' if minutes != 1 else ''}"
+    if seconds < 86400:
+        hours = int(seconds // 3600)
+        return f"{hours} hour{'s' if hours != 1 else ''}"
+
+    days = int(seconds // 86400)
+    return f"{days} day{'s' if days != 1 else ''}"
+
+
+def build_data_freshness_summary(
+    updated_timestamp: object,
+    now_timestamp: object | None = None,
+    warning_hours: float = 24.0,
+    stale_hours: float = 72.0,
+) -> dict[str, str]:
+    """Return display-ready freshness fields for the local analytics database."""
+    if updated_timestamp is None:
+        return {
+            "status": "🔴 Missing",
+            "updated_at": "Unknown",
+            "age": "Unknown",
+            "caption": "No local database timestamp is available.",
+        }
+
+    try:
+        updated = float(updated_timestamp)  # type: ignore
+        now = (
+            float(now_timestamp)  # type: ignore
+            if now_timestamp is not None
+            else pd.Timestamp.now().timestamp()
+        )
+        if updated != updated or now != now:
+            raise ValueError("timestamp is NaN")
+    except (ValueError, TypeError):
+        return {
+            "status": "🔴 Unknown",
+            "updated_at": "Unknown",
+            "age": "Unknown",
+            "caption": "Database timestamp could not be parsed.",
+        }
+
+    age_seconds = max(0.0, now - updated)
+    age_hours = age_seconds / 3600
+    if age_hours <= warning_hours:
+        status = "🟢 Fresh"
+    elif age_hours <= stale_hours:
+        status = "🟡 Aging"
+    else:
+        status = "🔴 Stale"
+
+    age = format_duration(age_seconds)
+    return {
+        "status": status,
+        "updated_at": format_timestamp(updated),
+        "age": age,
+        "caption": f"Local analytics database was updated {age} ago.",
+    }
 
 
 def db_status_label(exists: bool) -> str:
@@ -353,3 +424,30 @@ def prepare_display_dataframe(
             display[col] = display[col].apply(lambda value: format_number(value, decimals=2))
 
     return display
+
+
+def dataframe_to_csv_bytes(df: pd.DataFrame | None) -> bytes:
+    """Serialize a dataframe to UTF-8 CSV bytes for dashboard downloads."""
+    if df is None:
+        return b""
+    return df.to_csv(index=False).encode("utf-8")
+
+
+def build_export_filename(label: str, timestamp: object | None = None) -> str:
+    """Build a stable, GitHub-safe CSV export filename."""
+    slug = re.sub(r"[^a-z0-9]+", "-", str(label).lower()).strip("-")
+    if not slug:
+        slug = "productpulse-export"
+
+    if timestamp is None:
+        return f"{slug}.csv"
+
+    try:
+        ts_float = float(timestamp)  # type: ignore
+        if ts_float != ts_float:
+            raise ValueError("timestamp is NaN")
+        suffix = pd.to_datetime(ts_float, unit="s").strftime("%Y%m%d_%H%M%S")
+    except (ValueError, TypeError):
+        suffix = "export"
+
+    return f"{slug}_{suffix}.csv"

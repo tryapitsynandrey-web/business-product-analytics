@@ -16,6 +16,9 @@ from app.ui_helpers import (
     filter_dataframe_by_values,
     filter_dataframe_by_search,
     filter_dataframe_by_numeric_range,
+    get_quick_view_options,
+    describe_quick_view,
+    apply_quick_view,
     prepare_metric_chart_data,
     prepare_status_counts,
     prepare_category_counts,
@@ -202,6 +205,149 @@ def test_filter_dataframe_by_numeric_range():
 
     # None handling
     assert filter_dataframe_by_numeric_range(None, "val", 1, 10).empty
+
+
+def test_get_quick_view_options_and_description():
+    assert "Revenue Risk" in get_quick_view_options("top_actions")
+    assert get_quick_view_options("unknown") == ["All"]
+    assert describe_quick_view("High Priority") == (
+        "Critical and high-priority work, sorted by priority score."
+    )
+
+
+def test_apply_quick_view_high_priority_filters_and_sorts():
+    df = pd.DataFrame(
+        [
+            {"id": "low", "priority_band": "Low", "priority_score": 10},
+            {"id": "critical", "priority_band": "Critical", "priority_score": 80},
+            {"id": "high", "priority_band": "High", "priority_score": 90},
+        ]
+    )
+
+    filtered = apply_quick_view(df, "High Priority")
+
+    assert filtered["id"].tolist() == ["high", "critical"]
+
+
+def test_apply_quick_view_revenue_risk_keeps_largest_exposure():
+    df = pd.DataFrame(
+        [
+            {"id": "a", "estimated_revenue_impact": 10},
+            {"id": "b", "estimated_revenue_impact": 20},
+            {"id": "c", "estimated_revenue_impact": 30},
+            {"id": "d", "estimated_revenue_impact": 100},
+        ]
+    )
+
+    filtered = apply_quick_view(df, "Revenue Risk")
+
+    assert filtered["id"].tolist() == ["d"]
+
+
+def test_apply_quick_view_retention_focus_uses_risk_or_keywords():
+    risk_df = pd.DataFrame(
+        [
+            {"id": "safe", "churn_risk_band": "Low", "churn_risk_score": 0.1},
+            {"id": "risk", "churn_risk_band": "High", "churn_risk_score": 0.9},
+        ]
+    )
+    keyword_df = pd.DataFrame(
+        [
+            {"id": "growth", "recommendation_title": "Expansion offer"},
+            {"id": "save", "recommendation_title": "Retention call"},
+        ]
+    )
+
+    assert apply_quick_view(risk_df, "Retention Focus")["id"].tolist() == ["risk"]
+    assert apply_quick_view(keyword_df, "Retention Focus")["id"].tolist() == ["save"]
+
+
+def test_apply_quick_view_quick_wins_and_governance_issues():
+    work_df = pd.DataFrame(
+        [
+            {"id": "large", "effort_level": "High", "priority_score": 100},
+            {"id": "small", "effort_level": "Low", "priority_score": 50},
+        ]
+    )
+    lineage_df = pd.DataFrame(
+        [
+            {"id": "ok", "lineage_status": "Healthy"},
+            {"id": "issue", "lineage_status": "Missing"},
+        ]
+    )
+
+    assert apply_quick_view(work_df, "Quick Wins")["id"].tolist() == ["small"]
+    assert apply_quick_view(lineage_df, "Governance Issues")["id"].tolist() == ["issue"]
+
+
+def test_apply_quick_view_additional_presets():
+    df = pd.DataFrame(
+        [
+            {
+                "id": "a",
+                "suggested_owner": "Sales",
+                "priority_score": 20,
+                "confidence_level": "Low",
+                "usage_trend": "Flat",
+                "risk_band": "Critical",
+            },
+            {
+                "id": "b",
+                "suggested_owner": "CS",
+                "priority_score": 80,
+                "confidence_level": "High",
+                "usage_trend": "Increasing",
+                "risk_band": "High",
+            },
+        ]
+    )
+
+    assert apply_quick_view(df, "All Actions")["id"].tolist() == ["a", "b"]
+    assert apply_quick_view(df, "Owner Queue")["id"].tolist() == ["b", "a"]
+    assert apply_quick_view(df, "Expansion Watch")["id"].tolist() == ["b"]
+    assert apply_quick_view(df, "Critical Only")["id"].tolist() == ["a"]
+    assert apply_quick_view(df, "High Confidence")["id"].tolist() == ["b"]
+    assert apply_quick_view(df, "Unknown Preset")["id"].tolist() == ["a", "b"]
+    assert apply_quick_view(None, "All").empty
+
+
+def test_apply_quick_view_score_fallbacks():
+    priority_df = pd.DataFrame(
+        [
+            {"id": "low", "priority_score": 10},
+            {"id": "medium", "priority_score": 50},
+            {"id": "top", "priority_score": 100},
+        ]
+    )
+    confidence_df = pd.DataFrame(
+        [
+            {"id": "low", "confidence_weight": 0.2},
+            {"id": "top", "confidence_weight": 0.9},
+        ]
+    )
+    expansion_df = pd.DataFrame(
+        [
+            {"id": "small", "current_mrr": 10},
+            {"id": "large", "current_mrr": 100},
+        ]
+    )
+
+    assert apply_quick_view(priority_df, "High Priority")["id"].tolist() == ["top"]
+    assert apply_quick_view(confidence_df, "High Confidence")["id"].tolist() == ["top"]
+    assert apply_quick_view(expansion_df, "Expansion Watch")["id"].tolist() == ["large"]
+
+
+def test_apply_quick_view_governance_and_owner_review_fallbacks():
+    no_status_df = pd.DataFrame([{"id": "a", "metric_name": "m1"}])
+    owner_df = pd.DataFrame(
+        [
+            {"id": "b", "metric_owner": "Data", "lineage_status": "Missing"},
+            {"id": "a", "metric_owner": "Analytics", "lineage_status": "Healthy"},
+        ]
+    )
+
+    assert apply_quick_view(no_status_df, "Governance Issues")["id"].tolist() == ["a"]
+    assert apply_quick_view(owner_df, "Owner Review")["id"].tolist() == ["a", "b"]
 
 
 def test_prepare_metric_chart_data():

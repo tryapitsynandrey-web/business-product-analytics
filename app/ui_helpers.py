@@ -9,6 +9,40 @@ EXECUTIVE_METRICS = {
     "revenue_at_risk": "Revenue at Risk",
 }
 
+QUICK_VIEW_OPTIONS = {
+    "top_actions": ["All Actions", "High Priority", "Revenue Risk", "Quick Wins", "Owner Queue"],
+    "customer_360": ["Retention Focus", "All Customers", "Revenue Risk", "Expansion Watch"],
+    "high_risk_customers": ["All High-Risk", "Critical Only", "Revenue Risk"],
+    "recommendations": [
+        "All Recommendations",
+        "High Confidence",
+        "Revenue Risk",
+        "Retention Focus",
+        "Owner Queue",
+    ],
+    "intervention_plan": ["All Interventions", "High Priority", "Revenue Risk", "Quick Wins"],
+    "metric_lineage": ["All Metrics", "Governance Issues", "Owner Review"],
+}
+
+QUICK_VIEW_DESCRIPTIONS = {
+    "All Actions": "All actions are visible before manual filters.",
+    "All Customers": "All customer records are visible before manual filters.",
+    "All High-Risk": "All high-risk queue records are visible before manual filters.",
+    "All Recommendations": "All recommendations are visible before manual filters.",
+    "All Interventions": "All intervention records are visible before manual filters.",
+    "All Metrics": "All metric lineage records are visible before manual filters.",
+    "High Priority": "Critical and high-priority work, sorted by priority score.",
+    "Revenue Risk": "Records with the largest revenue exposure or impact.",
+    "Quick Wins": "Low-effort work, sorted by priority score.",
+    "Owner Queue": "Records grouped by owner for handoff and review.",
+    "Retention Focus": "Customers or actions tied to high churn and retention risk.",
+    "Expansion Watch": "Customers with expansion-friendly usage and revenue signals.",
+    "Critical Only": "Only records marked Critical.",
+    "High Confidence": "Recommendations with stronger confidence signals.",
+    "Governance Issues": "Metrics with lineage or ownership issues.",
+    "Owner Review": "Metric records sorted by owner and status.",
+}
+
 
 def format_currency(value: object) -> str:
     """Format a float as currency (e.g., $1,234.56)."""
@@ -256,6 +290,232 @@ def filter_dataframe_by_numeric_range(
         mask = mask & (df_copy[column_name] <= max_value)
 
     return df_copy[mask]
+
+
+def get_quick_view_options(view_name: str) -> list[str]:
+    """Return quick-view preset labels for a dashboard view."""
+    return QUICK_VIEW_OPTIONS.get(view_name, ["All"])
+
+
+def describe_quick_view(quick_view: str) -> str:
+    """Return a short user-facing description of a quick-view preset."""
+    return QUICK_VIEW_DESCRIPTIONS.get(quick_view, "Custom quick view.")
+
+
+def _filter_by_any_value(
+    df: pd.DataFrame,
+    columns: list[str],
+    values: set[str],
+) -> pd.DataFrame:
+    available = [col for col in columns if col in df.columns]
+    if not available:
+        return df
+
+    mask = pd.Series(False, index=df.index)
+    for col in available:
+        mask = mask | df[col].astype(str).str.lower().isin(values)
+    return df[mask]
+
+
+def _filter_by_keywords(
+    df: pd.DataFrame,
+    columns: list[str],
+    keywords: tuple[str, ...],
+) -> pd.DataFrame:
+    available = [col for col in columns if col in df.columns]
+    if not available:
+        return df
+
+    pattern = "|".join(re.escape(keyword) for keyword in keywords)
+    mask = pd.Series(False, index=df.index)
+    for col in available:
+        mask = mask | df[col].astype(str).str.contains(pattern, case=False, na=False)
+    return df[mask]
+
+
+def _filter_top_numeric_quantile(
+    df: pd.DataFrame,
+    columns: list[str],
+    quantile: float = 0.75,
+) -> pd.DataFrame:
+    available = [col for col in columns if col in df.columns]
+    if not available:
+        return df
+
+    score = pd.Series(0.0, index=df.index)
+    for col in available:
+        values = pd.to_numeric(df[col], errors="coerce").fillna(0)
+        score = score.where(score >= values, values)
+
+    positive = score[score > 0]
+    if positive.empty:
+        return df
+
+    threshold = positive.quantile(quantile)
+    filtered = df[score >= threshold]
+    return filtered if not filtered.empty else df
+
+
+def _sort_by_existing_columns(
+    df: pd.DataFrame,
+    columns: list[str],
+    ascending: list[bool],
+) -> pd.DataFrame:
+    available_columns = []
+    available_ascending = []
+    for col, asc in zip(columns, ascending):
+        if col in df.columns:
+            available_columns.append(col)
+            available_ascending.append(asc)
+
+    if not available_columns:
+        return df
+
+    sortable = df.copy()
+    numeric_columns = {
+        "estimated_revenue_impact",
+        "revenue_at_risk",
+        "current_mrr",
+        "total_revenue",
+    }
+    for col in available_columns:
+        if col.endswith("_score") or col in numeric_columns:
+            sortable[col] = pd.to_numeric(sortable[col], errors="coerce").fillna(0)
+    return sortable.sort_values(available_columns, ascending=available_ascending)
+
+
+def apply_quick_view(
+    df: pd.DataFrame | None,
+    quick_view: str,
+) -> pd.DataFrame:
+    """Apply a dashboard quick-view preset to a dataframe."""
+    if df is None or df.empty:
+        return pd.DataFrame()
+
+    view = str(quick_view or "").strip()
+    data = df.copy()
+    if view.startswith("All ") or view == "All":
+        return data
+
+    if view == "High Priority":
+        priority_columns = ["priority_band", "risk_band", "churn_risk_band", "status"]
+        filtered = _filter_by_any_value(
+            data,
+            priority_columns,
+            {"critical", "high"},
+        )
+        if (filtered.empty or not any(col in data.columns for col in priority_columns)) and (
+            "priority_score" in data.columns
+        ):
+            scores = pd.to_numeric(data["priority_score"], errors="coerce").fillna(0)
+            filtered = data[scores >= scores.quantile(0.75)]
+        return _sort_by_existing_columns(filtered, ["priority_score"], [False])
+
+    if view == "Revenue Risk":
+        filtered = _filter_top_numeric_quantile(
+            data,
+            [
+                "estimated_revenue_impact",
+                "revenue_at_risk",
+                "current_mrr",
+                "total_revenue",
+            ],
+        )
+        return _sort_by_existing_columns(
+            filtered,
+            ["estimated_revenue_impact", "revenue_at_risk", "current_mrr", "total_revenue"],
+            [False, False, False, False],
+        )
+
+    if view == "Quick Wins":
+        filtered = _filter_by_any_value(data, ["effort_level"], {"low", "small"})
+        return _sort_by_existing_columns(filtered, ["priority_score"], [False])
+
+    if view == "Owner Queue":
+        return _sort_by_existing_columns(
+            data,
+            ["suggested_owner", "owner", "priority_score", "estimated_revenue_impact"],
+            [True, True, False, False],
+        )
+
+    if view == "Retention Focus":
+        risk_columns = ["churn_risk_band", "risk_band", "priority_band"]
+        filtered = _filter_by_any_value(
+            data,
+            risk_columns,
+            {"critical", "high"},
+        )
+        if filtered.empty or not any(col in data.columns for col in risk_columns):
+            keyword_filtered = _filter_by_keywords(
+                data,
+                [
+                    "recommendation_title",
+                    "reason",
+                    "expected_action",
+                    "recommended_action",
+                    "main_driver",
+                    "category",
+                ],
+                ("retention", "churn", "save", "renewal"),
+            )
+            filtered = keyword_filtered if not keyword_filtered.empty else filtered
+        return _sort_by_existing_columns(
+            filtered,
+            ["churn_risk_score", "risk_score", "priority_score", "revenue_at_risk"],
+            [False, False, False, False],
+        )
+
+    if view == "Expansion Watch":
+        expansion_columns = ["usage_trend", "recommended_action", "main_driver", "segment", "plan"]
+        filtered = _filter_by_keywords(
+            data,
+            expansion_columns,
+            ("increasing", "expansion", "upsell", "growth", "enterprise"),
+        )
+        if filtered.empty or not any(col in data.columns for col in expansion_columns):
+            filtered = _filter_top_numeric_quantile(data, ["current_mrr", "total_revenue"], 0.75)
+        return _sort_by_existing_columns(filtered, ["current_mrr", "total_revenue"], [False, False])
+
+    if view == "Critical Only":
+        return _filter_by_any_value(
+            data,
+            ["risk_band", "churn_risk_band", "priority_band", "status"],
+            {"critical"},
+        )
+
+    if view == "High Confidence":
+        confidence_columns = ["confidence_level"]
+        filtered = _filter_by_any_value(data, ["confidence_level"], {"high"})
+        if (filtered.empty or not any(col in data.columns for col in confidence_columns)) and (
+            "confidence_weight" in data.columns
+        ):
+            weights = pd.to_numeric(data["confidence_weight"], errors="coerce").fillna(0)
+            filtered = data[weights >= weights.quantile(0.75)]
+        return _sort_by_existing_columns(
+            filtered,
+            ["confidence_weight", "priority_score", "impact_score"],
+            [False, False, False],
+        )
+
+    if view == "Governance Issues":
+        healthy_values = {"healthy", "active", "ready", "good", "ok"}
+        available = [col for col in ["lineage_status", "status"] if col in data.columns]
+        if not available:
+            return data
+        mask = pd.Series(False, index=data.index)
+        for col in available:
+            values = data[col].astype(str).str.lower()
+            mask = mask | (~values.isin(healthy_values))
+        return data[mask]
+
+    if view == "Owner Review":
+        return _sort_by_existing_columns(
+            data,
+            ["owner", "metric_owner", "lineage_status"],
+            [True, True, True],
+        )
+
+    return data
 
 
 def prepare_metric_chart_data(

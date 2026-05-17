@@ -128,10 +128,10 @@ ProductPulse includes a local-only Streamlit dashboard with an executive cockpit
 prioritized actions, Customer 360 drill-down, KPI review, risk queues, decision
 traces, and metric lineage. The dashboard includes searchable action, customer,
 recommendation, intervention, and trace views, plus formatted KPI and revenue
-tables, mobile-safe Customer 360 summary cards, local data freshness indicators,
-and CSV exports for filtered views. It reads directly from the local SQLite
-database. No data leaves your machine, and it does not use any cloud deployment
-or authentication.
+tables, mobile-safe Customer 360 summary cards, quick-view presets for common
+analysis workflows, local data freshness indicators, and CSV exports for
+filtered views. It reads directly from the local SQLite database. No data leaves
+your machine, and it does not use any cloud deployment or authentication.
 
 To use the dashboard:
 

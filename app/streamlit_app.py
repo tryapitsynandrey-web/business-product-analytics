@@ -19,6 +19,9 @@ try:
         get_filter_options,
         filter_dataframe_by_values,
         filter_dataframe_by_search,
+        get_quick_view_options,
+        describe_quick_view,
+        apply_quick_view,
         prepare_metric_chart_data,
         prepare_status_counts,
         prepare_category_counts,
@@ -44,6 +47,9 @@ except ModuleNotFoundError:
         get_filter_options,
         filter_dataframe_by_values,
         filter_dataframe_by_search,
+        get_quick_view_options,
+        describe_quick_view,
+        apply_quick_view,
         prepare_metric_chart_data,
         prepare_status_counts,
         prepare_category_counts,
@@ -140,6 +146,13 @@ def render_csv_download(label: str, df: pd.DataFrame, filename_label: str, key: 
         mime="text/csv",
         key=key,
     )
+
+
+def render_quick_view(view_name: str, key: str) -> str:
+    options = get_quick_view_options(view_name)
+    selected = st.radio("Quick View", options, horizontal=True, key=key)
+    st.caption(describe_quick_view(selected))
+    return selected
 
 
 # ── Sidebar Navigation & Status ─────────────────────────────────────────
@@ -317,6 +330,9 @@ elif selection == "Top Actions":
     st.write("Prioritized business actions sorted by expected impact and urgency.")
     plan = fetch_data(reader, "get_intervention_plan", db_mtime)
     if not plan.empty:
+        quick_view = render_quick_view("top_actions", "quick_view_top_actions")
+        plan = apply_quick_view(plan, quick_view)
+
         col1, col2, col3 = st.columns(3)
         with col1:
             priority = st.multiselect("Priority", get_filter_options(plan, "priority_band"))
@@ -337,6 +353,7 @@ elif selection == "Top Actions":
         st.caption(
             summarize_filter_state(
                 {
+                    "Quick View": [] if quick_view == "All Actions" else [quick_view],
                     "Priority": priority,
                     "Owner": owner,
                     "Effort": effort,
@@ -398,14 +415,15 @@ elif selection == "Customer 360":
     traces = fetch_data(reader, "get_decision_traces", db_mtime)
 
     if not customers.empty:
+        quick_view = render_quick_view("customer_360", "quick_view_customer_360")
+        customers = apply_quick_view(customers, quick_view)
+
         col1, col2, col3 = st.columns(3)
         with col1:
             risk_options = get_filter_options(customers, "churn_risk_band")
-            default_risks = [r for r in ["Critical", "High"] if r in risk_options]
             risk_bands = st.multiselect(
                 "Risk Band",
                 risk_options,
-                default=default_risks,
             )
         with col2:
             segments = st.multiselect("Segment", get_filter_options(customers, "segment"))
@@ -422,6 +440,7 @@ elif selection == "Customer 360":
         st.caption(
             summarize_filter_state(
                 {
+                    "Quick View": [] if quick_view == "All Customers" else [quick_view],
                     "Risk Band": risk_bands,
                     "Segment": segments,
                     "Plan": plans,
@@ -590,6 +609,9 @@ elif selection == "High-Risk Customers":
     st.write("Customers prioritized by churn risk algorithms.")
     high_risk = fetch_data(reader, "get_high_risk_customers", db_mtime)
     if not high_risk.empty:
+        quick_view = render_quick_view("high_risk_customers", "quick_view_high_risk")
+        high_risk = apply_quick_view(high_risk, quick_view)
+
         cols = st.columns(4)
         col_idx = 0
 
@@ -633,6 +655,9 @@ elif selection == "Recommendations":
     st.write("Rule-based business interventions targeted at high-value or at-risk segments.")
     recs = fetch_data(reader, "get_recommendations", db_mtime)
     if not recs.empty:
+        quick_view = render_quick_view("recommendations", "quick_view_recommendations")
+        recs = apply_quick_view(recs, quick_view)
+
         col1, col2 = st.columns(2)
         with col1:
             if "confidence_level" in recs.columns:
@@ -684,6 +709,9 @@ elif selection == "Intervention Plan":
     st.write("Strategic plan grouped by impact and effort.")
     plan = fetch_data(reader, "get_intervention_plan", db_mtime)
     if not plan.empty:
+        quick_view = render_quick_view("intervention_plan", "quick_view_intervention_plan")
+        plan = apply_quick_view(plan, quick_view)
+
         cols = st.columns(3)
         col_idx = 0
         for col_name in ["priority_band", "effort_level", "suggested_owner", "status"]:
@@ -749,6 +777,9 @@ elif selection == "Metric Lineage":
     st.write("Governance view of all tracked metrics, their formula descriptions, and ownership.")
     lineage = fetch_data(reader, "get_metric_lineage", db_mtime)
     if not lineage.empty:
+        quick_view = render_quick_view("metric_lineage", "quick_view_metric_lineage")
+        lineage = apply_quick_view(lineage, quick_view)
+
         cols = st.columns(3)
         col_idx = 0
         for col_name in ["lineage_status", "category", "source_datasets"]:

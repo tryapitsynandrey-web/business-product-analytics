@@ -70,7 +70,7 @@ def _show_status(config_path: Path | None) -> int:
     print(f"SQLite enabled: {pipeline._sqlite_enabled}")
 
     if not db_path.exists():
-        print("Status: database missing. Run `python src/main.py run` first.")
+        print("Status: database missing. Run `productpulse run` first.")
         return 1
 
     reader = SQLiteReader(db_path)

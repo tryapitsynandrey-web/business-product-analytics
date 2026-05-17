@@ -1,6 +1,7 @@
 # ProductPulse - Business Product Analytics Decision Engine
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
+![CI](https://github.com/tryapitsynandrey-web/business-product-analytics/actions/workflows/ci.yml/badge.svg)
 ![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-150458?logo=pandas)
 ![Pytest](https://img.shields.io/badge/Pytest-7.0%2B-0A9EDC?logo=pytest)
 ![Architecture](https://img.shields.io/badge/Architecture-Modular-success)
@@ -64,9 +65,8 @@ business-product-analytics/
 ## Installation
 
 1. Clone the repository
-2. Set up a virtual environment: `python3 -m venv venv && source venv/bin/activate`
-3. Install dependencies: `pip install -r requirements.txt`
-4. Set PYTHONPATH: `export PYTHONPATH=src`
+2. Set up a virtual environment: `python3 -m venv .venv`
+3. Install the project in editable mode: `make setup`
 
 ## Usage
 
@@ -83,8 +83,17 @@ Useful local commands:
 ```bash
 make status
 make test
-python src/main.py status
-python src/main.py dashboard
+make ci
+productpulse status
+productpulse dashboard
+```
+
+The `productpulse` CLI is installed by `make setup` and supports:
+
+```bash
+productpulse run
+productpulse status
+productpulse dashboard
 ```
 
 ## Local Streamlit Dashboard

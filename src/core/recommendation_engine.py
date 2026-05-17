@@ -23,7 +23,6 @@ from typing import Any, Callable, Dict, List, Optional
 import pandas as pd
 import yaml
 
-from models.enums import RiskBand
 from models.risk_profile import ChurnRiskProfile
 from utils.paths import CONFIG_DIR
 
@@ -101,7 +100,6 @@ class RecommendationEngine:
         rule_id so each rule fires at most once per customer.
         """
         customers = datasets["customers"]
-        subs = datasets["subscriptions"]
         leakages = leakages or []
 
         recs: List[Dict[str, Any]] = []

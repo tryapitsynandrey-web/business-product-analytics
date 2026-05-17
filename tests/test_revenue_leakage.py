@@ -47,7 +47,7 @@ class TestFailedPaymentLeakage:
         leakages = engine.detect_leakage(
             {"subscriptions": subs, "transactions": txns, "product_usage": usage}
         )
-        failed = [l for l in leakages if l["leakage_type"] == "Failed Payment"]
+        failed = [leakage for leakage in leakages if leakage["leakage_type"] == "Failed Payment"]
         assert len(failed) == 1
         assert failed[0]["customer_id"] == "C1"
         assert failed[0]["estimated_revenue_loss"] == pytest.approx(100.0)
@@ -63,7 +63,7 @@ class TestFailedPaymentLeakage:
         leakages = engine.detect_leakage(
             {"subscriptions": subs, "transactions": txns, "product_usage": usage}
         )
-        failed = [l for l in leakages if l["leakage_type"] == "Failed Payment"]
+        failed = [leakage for leakage in leakages if leakage["leakage_type"] == "Failed Payment"]
         assert len(failed) == 1
         assert failed[0]["estimated_revenue_loss"] == pytest.approx(200.0)
 
@@ -75,7 +75,7 @@ class TestFailedPaymentLeakage:
         leakages = engine.detect_leakage(
             {"subscriptions": subs, "transactions": txns, "product_usage": usage}
         )
-        failed = [l for l in leakages if l["leakage_type"] == "Failed Payment"]
+        failed = [leakage for leakage in leakages if leakage["leakage_type"] == "Failed Payment"]
         assert failed == []
 
 
@@ -88,7 +88,7 @@ class TestRefundLeakage:
         leakages = engine.detect_leakage(
             {"subscriptions": subs, "transactions": txns, "product_usage": usage}
         )
-        refunds = [l for l in leakages if l["leakage_type"] == "Refund"]
+        refunds = [leakage for leakage in leakages if leakage["leakage_type"] == "Refund"]
         assert len(refunds) == 1
         assert refunds[0]["estimated_revenue_loss"] == pytest.approx(100.0)
 
@@ -102,7 +102,7 @@ class TestUnpaidActiveSubscription:
         leakages = engine.detect_leakage(
             {"subscriptions": subs, "transactions": txns, "product_usage": usage}
         )
-        unpaid = [l for l in leakages if l["leakage_type"] == "Unpaid Active Subscription"]
+        unpaid = [leakage for leakage in leakages if leakage["leakage_type"] == "Unpaid Active Subscription"]
         assert len(unpaid) == 1
         assert unpaid[0]["estimated_revenue_loss"] == pytest.approx(300.0)
 
@@ -114,7 +114,7 @@ class TestUnpaidActiveSubscription:
         leakages = engine.detect_leakage(
             {"subscriptions": subs, "transactions": txns, "product_usage": usage}
         )
-        unpaid = [l for l in leakages if l["leakage_type"] == "Unpaid Active Subscription"]
+        unpaid = [leakage for leakage in leakages if leakage["leakage_type"] == "Unpaid Active Subscription"]
         assert unpaid == []
 
 
@@ -134,8 +134,11 @@ class TestActiveUsageWithoutBilling:
         leakages = engine.detect_leakage(
             {"subscriptions": subs, "transactions": txns, "product_usage": usage}
         )
-        unbilled = [l for l in leakages if l["leakage_type"] == "Active Usage Without Billing"]
-        assert any(l["customer_id"] == "C2" for l in unbilled)
+        unbilled = [
+            leakage for leakage in leakages
+            if leakage["leakage_type"] == "Active Usage Without Billing"
+        ]
+        assert any(leakage["customer_id"] == "C2" for leakage in unbilled)
 
     def test_billable_customer_with_usage_not_flagged(self, engine):
         subs = _base_subscriptions(["Active"], [100.0], ["C1"])
@@ -145,7 +148,10 @@ class TestActiveUsageWithoutBilling:
         leakages = engine.detect_leakage(
             {"subscriptions": subs, "transactions": txns, "product_usage": usage}
         )
-        unbilled = [l for l in leakages if l["leakage_type"] == "Active Usage Without Billing"]
+        unbilled = [
+            leakage for leakage in leakages
+            if leakage["leakage_type"] == "Active Usage Without Billing"
+        ]
         assert unbilled == []
 
 
@@ -176,5 +182,8 @@ class TestOutputStructure:
             {"subscriptions": subs, "transactions": txns, "product_usage": usage}
         )
         payment_types = {"Failed Payment", "Refund"}
-        payment_leakages = [l for l in leakages if l["leakage_type"] in payment_types]
+        payment_leakages = [
+            leakage for leakage in leakages
+            if leakage["leakage_type"] in payment_types
+        ]
         assert payment_leakages == []

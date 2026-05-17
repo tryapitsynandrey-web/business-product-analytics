@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 
 # Get the absolute path to the project root

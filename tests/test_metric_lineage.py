@@ -2,6 +2,7 @@ import pytest
 import pandas as pd
 from core.metric_lineage import MetricLineageEngine
 
+
 @pytest.fixture
 def metric_catalog():
     return {
@@ -17,10 +18,11 @@ def metric_catalog():
                 "formula_description": "churned / total",
                 "business_owner": "Product",
                 "business_purpose": "Measure retention",
-                "risk_if_misread": "False confidence"
+                "risk_if_misread": "False confidence",
             }
         ]
     }
+
 
 def test_build_lineage_table(metric_catalog):
     engine = MetricLineageEngine()
@@ -30,15 +32,18 @@ def test_build_lineage_table(metric_catalog):
     assert df["metric_name"].iloc[0] == "customer_churn_rate"
     assert df["source_datasets"].iloc[0] == "subscriptions"
 
+
 def test_valid_source_datasets(metric_catalog):
     engine = MetricLineageEngine()
     lineage = engine.validate_lineage_sources(metric_catalog, ["subscriptions", "customers"])
     assert lineage[0]["lineage_status"] == "Valid"
 
+
 def test_missing_source_dataset(metric_catalog):
     engine = MetricLineageEngine()
     lineage = engine.validate_lineage_sources(metric_catalog, ["customers"])
     assert "Missing Source" in lineage[0]["lineage_status"]
+
 
 def test_empty_catalog():
     engine = MetricLineageEngine()
@@ -46,12 +51,29 @@ def test_empty_catalog():
     assert df.empty
     assert "metric_name" in df.columns
 
+
 def test_required_columns_flattened(metric_catalog):
     engine = MetricLineageEngine()
     df = engine.build_lineage_table(metric_catalog)
     cols = df["required_columns"].iloc[0]
     assert "subscriptions.customer_id" in cols
     assert "subscriptions.status" in cols
+
+
+def test_get_metric_lineage_returns_single_metric(metric_catalog):
+    engine = MetricLineageEngine()
+
+    lineage = engine.get_metric_lineage("customer_churn_rate", metric_catalog)
+
+    assert lineage["metric_name"] == "customer_churn_rate"
+    assert lineage["lineage_status"] == "Valid"
+
+
+def test_get_metric_lineage_returns_empty_dict_for_unknown_metric(metric_catalog):
+    engine = MetricLineageEngine()
+
+    assert engine.get_metric_lineage("missing_metric", metric_catalog) == {}
+
 
 def test_current_catalog_shape_is_supported():
     from core.metric_governance import MetricGovernance

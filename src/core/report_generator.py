@@ -130,13 +130,13 @@ class ReportGenerator:
         tta = _kpi(kpis, "time_to_activation")
 
         total_leakage = sum(
-            float(l.get("estimated_revenue_loss", 0.0)) for l in leakages
+            float(leakage.get("estimated_revenue_loss", 0.0)) for leakage in leakages
         )
         leakage_types: Dict[str, float] = {}
-        for l in leakages:
-            lt = l.get("leakage_type", "Unknown")
+        for leakage in leakages:
+            lt = leakage.get("leakage_type", "Unknown")
             leakage_types[lt] = leakage_types.get(lt, 0.0) + float(
-                l.get("estimated_revenue_loss", 0.0)
+                leakage.get("estimated_revenue_loss", 0.0)
             )
 
         high_risk = [p for p in risk_profiles if p.risk_band.value in ("High", "Critical")]
@@ -150,7 +150,6 @@ class ReportGenerator:
         risk_dq = [s for s in dq_scores if s.status == "Risk"]
 
         # --- build table blocks ---
-        snapshot_sep = _table_separator(2, 2)
         snapshot_rows = "\n".join([
             _table_row("Monthly Recurring Revenue (MRR)", f"${mrr:,.0f}"),
             _table_row("Average Revenue Per User (ARPU)", f"${arpu:,.2f}"),
@@ -174,8 +173,6 @@ class ReportGenerator:
             _table_row("average_nps", f"{avg_nps:.1f}",
                        "Detractor zone" if avg_nps < 6 else "Acceptable"),
         ])
-        kpi_sep = _table_separator(2, 2, 2)
-
         risk_dist_rows = "\n".join([
             _table_row("Critical", len(critical)),
             _table_row("High", len(high_risk) - len(critical)),
@@ -476,12 +473,12 @@ Report generated automatically by ProductPulse Analytics Engine.
         if leakages:
             leakage_rows_block = "\n".join(
                 _table_row(
-                    l.get("leakage_type", "N/A"),
-                    l.get("customer_id", "N/A"),
-                    f"${float(l.get('estimated_revenue_loss', 0.0)):,.0f}",
-                    l.get("recommended_action", "N/A"),
+                    leakage.get("leakage_type", "N/A"),
+                    leakage.get("customer_id", "N/A"),
+                    f"${float(leakage.get('estimated_revenue_loss', 0.0)):,.0f}",
+                    leakage.get("recommended_action", "N/A"),
                 )
-                for l in leakages
+                for leakage in leakages
             )
         else:
             leakage_rows_block = "No leakage events detected."

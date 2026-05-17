@@ -3,7 +3,7 @@ import pandas as pd
 from pathlib import Path
 from typing import List, Union
 
-from models.schemas import SQLITE_ALLOWED_TABLES, SQLITE_UI_QUERY_TABLES
+from models.schemas import SQLITE_ALLOWED_TABLES
 
 class SQLiteReader:
     """Safe, read-only adapter for SQLite persistence layer."""

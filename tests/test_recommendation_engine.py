@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import pytest
 import pandas as pd
-from datetime import date
 
 from core.recommendation_engine import RecommendationEngine
 from models.enums import RiskBand

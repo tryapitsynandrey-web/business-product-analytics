@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import Dict, Any, List
+from typing import Dict, Any
 
 class ChurnAnalysisEngine:
     def analyze_churn_by_month(self, subscriptions: pd.DataFrame) -> pd.DataFrame:

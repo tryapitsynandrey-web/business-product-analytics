@@ -7,6 +7,7 @@ from __future__ import annotations
 import yaml
 import pandas as pd
 
+from adapters.sqlite_reader import SQLiteReader
 from core.pipeline import ProductAnalyticsPipeline
 from utils.paths import PROJECT_ROOT
 
@@ -28,6 +29,7 @@ def _write_test_config(tmp_path, *, sqlite_enabled: bool = False):
     config_path.write_text(yaml.safe_dump(config), encoding="utf-8")
     return config_path
 
+
 class TestPipelineIntegration:
     def test_pipeline_runs_successfully_end_to_end(self, tmp_path):
         """
@@ -46,9 +48,9 @@ class TestPipelineIntegration:
         assert result.success is True
         assert result.validation_passed is True
         assert len(result.generated_outputs) > 0
-        
+
         outputs_str = " ".join(result.generated_outputs)
-        
+
         expected_artifacts = [
             "data/processed/kpi_summary.csv",
             "data/processed/customer_360.csv",
@@ -59,7 +61,7 @@ class TestPipelineIntegration:
             "data/exports/revenue_leakage.csv",
             "data/exports/recommendations.csv",
             "data/exports/decision_traces.csv",
-            "data/exports/metric_lineage.csv"
+            "data/exports/metric_lineage.csv",
         ]
         for expected in expected_artifacts:
             assert expected in outputs_str
@@ -80,15 +82,19 @@ class TestPipelineIntegration:
         pipeline = ProductAnalyticsPipeline(
             config_path=_write_test_config(tmp_path, sqlite_enabled=True)
         )
-        
+
         result = pipeline.run()
-        
+
         assert result.success is True
         assert db_path.exists()
-        
+
         outputs_str = " ".join(result.generated_outputs)
         assert "sqlite://kpi_summary" in outputs_str
         assert "sqlite://data_quality_scores" in outputs_str
+
+        risk_profiles = SQLiteReader(db_path).read_table("churn_risk_profiles")
+        assert not risk_profiles.empty
+        assert set(risk_profiles["risk_band"]).issubset({"Low", "Medium", "High", "Critical"})
 
     def test_pipeline_outputs_are_reproducible(self, tmp_path):
         config_path = _write_test_config(tmp_path)

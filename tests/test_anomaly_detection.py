@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import pytest
 from core.anomaly_detection import AnomalyDetectionEngine
 
 def test_percentage_deviation():

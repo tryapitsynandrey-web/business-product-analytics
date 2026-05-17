@@ -83,6 +83,10 @@ Useful local commands:
 ```bash
 make status
 make test
+make lint
+make format
+make typecheck
+make coverage
 make ci
 productpulse status
 productpulse dashboard
@@ -95,6 +99,27 @@ productpulse run
 productpulse status
 productpulse dashboard
 ```
+
+## Code Quality
+
+Local and GitHub CI checks use the same project commands:
+
+```bash
+make lint
+make typecheck
+make test
+make coverage
+make ci
+```
+
+`make ci` compiles Python modules, runs Ruff lint checks, runs Pyrefly type
+checks, and executes the full pytest suite. Use `make format` to apply Ruff
+formatting to `src`, `app`, and `tests`. Use `make coverage` when you need a
+local branch-aware coverage report.
+
+The automated suite covers the deterministic pipeline, analytics engines,
+business-health metrics, IO adapters, SQLite persistence, report generation,
+CLI commands, Streamlit helper logic, validation, and schema contracts.
 
 ## Local Streamlit Dashboard
 

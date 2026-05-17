@@ -24,9 +24,45 @@ from utils.validation import (
 )
 
 
+def test_validation_result_tracks_warnings_without_failing():
+    result = ValidationResult(passed=True)
+    result.increment_check()
+    result.add_issue(
+        ValidationIssue(
+            dataset="customers",
+            check_name="sample_warning",
+            severity="warning",
+            message="warning only",
+            affected_column="customer_id",
+            affected_rows_count=1,
+        )
+    )
+
+    assert result.total_checks == 1
+    assert result.failed_checks == 1
+    assert result.passed is True
+
+
+def test_validation_result_error_marks_result_failed():
+    result = ValidationResult(passed=True)
+    result.add_issue(
+        ValidationIssue(
+            dataset="customers",
+            check_name="sample_error",
+            severity="error",
+            message="blocking error",
+            affected_column="customer_id",
+            affected_rows_count=1,
+        )
+    )
+
+    assert result.passed is False
+
+
 # ---------------------------------------------------------------------------
 # Fixtures — reusable minimal DataFrames
 # ---------------------------------------------------------------------------
+
 
 @pytest.fixture()
 def valid_customers() -> pd.DataFrame:
@@ -74,6 +110,7 @@ def valid_nps() -> pd.DataFrame:
 # Minimal config for run_dataset_validation
 # ---------------------------------------------------------------------------
 
+
 @pytest.fixture()
 def minimal_config() -> dict:
     return {
@@ -113,6 +150,7 @@ def minimal_config() -> dict:
 # Test: validate_required_datasets
 # ---------------------------------------------------------------------------
 
+
 class TestValidateRequiredDatasets:
     def test_all_present_returns_no_issues(self, valid_customers, valid_subscriptions):
         issues = validate_required_datasets(
@@ -139,6 +177,7 @@ class TestValidateRequiredDatasets:
 # Test: validate_required_columns
 # ---------------------------------------------------------------------------
 
+
 class TestValidateRequiredColumns:
     def test_all_columns_present_returns_no_issues(self, valid_customers):
         issues = validate_required_columns(
@@ -154,15 +193,14 @@ class TestValidateRequiredColumns:
         assert issues[0].affected_column == "nonexistent_col"
 
     def test_multiple_missing_columns_each_produce_an_issue(self, valid_customers):
-        issues = validate_required_columns(
-            valid_customers, ["missing_a", "missing_b"], "customers"
-        )
+        issues = validate_required_columns(valid_customers, ["missing_a", "missing_b"], "customers")
         assert len(issues) == 2
 
 
 # ---------------------------------------------------------------------------
 # Test: validate_no_duplicate_keys
 # ---------------------------------------------------------------------------
+
 
 class TestValidateNoDuplicateKeys:
     def test_unique_keys_returns_no_issues(self, valid_customers):
@@ -185,6 +223,7 @@ class TestValidateNoDuplicateKeys:
 # Test: validate_not_empty
 # ---------------------------------------------------------------------------
 
+
 class TestValidateNotEmpty:
     def test_non_empty_df_passes(self, valid_customers):
         issues = validate_not_empty(valid_customers, "customers")
@@ -200,15 +239,14 @@ class TestValidateNotEmpty:
 # Test: validate_date_columns
 # ---------------------------------------------------------------------------
 
+
 class TestValidateDateColumns:
     def test_valid_dates_return_no_issues(self, valid_customers):
         issues = validate_date_columns(valid_customers, ["signup_date"], "customers")
         assert issues == []
 
     def test_invalid_date_string_returns_error(self):
-        df = pd.DataFrame(
-            {"signup_date": ["2023-01-01", "not-a-date", "2024-12-31"]}
-        )
+        df = pd.DataFrame({"signup_date": ["2023-01-01", "not-a-date", "2024-12-31"]})
         issues = validate_date_columns(df, ["signup_date"], "customers")
         assert len(issues) == 1
         assert issues[0].affected_rows_count == 1
@@ -222,6 +260,7 @@ class TestValidateDateColumns:
 # ---------------------------------------------------------------------------
 # Test: validate_allowed_values
 # ---------------------------------------------------------------------------
+
 
 class TestValidateAllowedValues:
     def test_all_values_allowed_returns_no_issues(self, valid_subscriptions):
@@ -240,15 +279,14 @@ class TestValidateAllowedValues:
         assert issues[0].affected_rows_count == 1
 
     def test_missing_column_returns_no_issues(self, valid_subscriptions):
-        issues = validate_allowed_values(
-            valid_subscriptions, "nonexistent", ["A"], "subscriptions"
-        )
+        issues = validate_allowed_values(valid_subscriptions, "nonexistent", ["A"], "subscriptions")
         assert issues == []
 
 
 # ---------------------------------------------------------------------------
 # Test: validate_numeric_non_negative
 # ---------------------------------------------------------------------------
+
 
 class TestValidateNumericNonNegative:
     def test_positive_values_return_no_issues(self, valid_subscriptions):
@@ -273,19 +311,24 @@ class TestValidateNumericNonNegative:
 # Test: validate_nps_range
 # ---------------------------------------------------------------------------
 
+
 class TestValidateNpsRange:
     def test_valid_scores_return_no_issues(self, valid_nps):
         issues = validate_nps_range(valid_nps, "score", 0, 10)
         assert issues == []
 
     def test_score_above_max_returns_error(self):
-        df = pd.DataFrame({"score_id": ["N1"], "customer_id": ["C1"], "date": ["2023-01-01"], "score": [11]})
+        df = pd.DataFrame(
+            {"score_id": ["N1"], "customer_id": ["C1"], "date": ["2023-01-01"], "score": [11]}
+        )
         issues = validate_nps_range(df, "score", 0, 10)
         assert len(issues) == 1
         assert issues[0].check_name == "nps_range"
 
     def test_score_below_min_returns_error(self):
-        df = pd.DataFrame({"score_id": ["N1"], "customer_id": ["C1"], "date": ["2023-01-01"], "score": [-1]})
+        df = pd.DataFrame(
+            {"score_id": ["N1"], "customer_id": ["C1"], "date": ["2023-01-01"], "score": [-1]}
+        )
         issues = validate_nps_range(df, "score", 0, 10)
         assert len(issues) == 1
 
@@ -294,7 +337,9 @@ class TestValidateNpsRange:
         assert issues == []
 
     def test_custom_dataset_name_is_used(self, valid_nps):
-        df = pd.DataFrame({"score_id": ["N1"], "customer_id": ["C1"], "date": ["2023-01-01"], "score": [11]})
+        df = pd.DataFrame(
+            {"score_id": ["N1"], "customer_id": ["C1"], "date": ["2023-01-01"], "score": [11]}
+        )
         issues = validate_nps_range(df, "score", 0, 10, dataset_name="custom_nps")
         assert len(issues) == 1
         assert issues[0].dataset == "custom_nps"
@@ -304,12 +349,16 @@ class TestValidateNpsRange:
 # Test: validate_referential_integrity
 # ---------------------------------------------------------------------------
 
+
 class TestValidateReferentialIntegrity:
     def test_all_child_keys_exist_in_parent(self, valid_customers, valid_subscriptions):
         issues = validate_referential_integrity(
-            valid_customers, valid_subscriptions,
-            "customer_id", "customer_id",
-            "customers", "subscriptions",
+            valid_customers,
+            valid_subscriptions,
+            "customer_id",
+            "customer_id",
+            "customers",
+            "subscriptions",
         )
         assert issues == []
 
@@ -322,18 +371,24 @@ class TestValidateReferentialIntegrity:
             }
         )
         issues = validate_referential_integrity(
-            valid_customers, orphan_subs,
-            "customer_id", "customer_id",
-            "customers", "subscriptions",
+            valid_customers,
+            orphan_subs,
+            "customer_id",
+            "customer_id",
+            "customers",
+            "subscriptions",
         )
         assert len(issues) == 1
         assert issues[0].affected_rows_count == 1
 
     def test_missing_column_returns_no_issues(self, valid_customers, valid_subscriptions):
         issues = validate_referential_integrity(
-            valid_customers, valid_subscriptions,
-            "nonexistent", "customer_id",
-            "customers", "subscriptions",
+            valid_customers,
+            valid_subscriptions,
+            "nonexistent",
+            "customer_id",
+            "customers",
+            "subscriptions",
         )
         assert issues == []
 
@@ -341,6 +396,7 @@ class TestValidateReferentialIntegrity:
 # ---------------------------------------------------------------------------
 # Test: run_dataset_validation (integration)
 # ---------------------------------------------------------------------------
+
 
 class TestRunDatasetValidation:
     def test_clean_datasets_pass_validation(
@@ -351,17 +407,13 @@ class TestRunDatasetValidation:
         assert result.passed is True
         assert result.failed_checks == 0
 
-    def test_missing_required_dataset_fails_validation(
-        self, valid_customers, minimal_config
-    ):
+    def test_missing_required_dataset_fails_validation(self, valid_customers, minimal_config):
         # subscriptions is required but absent
         result = run_dataset_validation({"customers": valid_customers}, minimal_config)
         assert result.passed is False
         assert any(i.dataset == "subscriptions" for i in result.issues)
 
-    def test_duplicate_primary_key_fails_validation(
-        self, valid_subscriptions, minimal_config
-    ):
+    def test_duplicate_primary_key_fails_validation(self, valid_subscriptions, minimal_config):
         dup_customers = pd.DataFrame(
             {
                 "customer_id": ["C1", "C1"],  # intentional duplicate
@@ -375,9 +427,7 @@ class TestRunDatasetValidation:
         assert result.passed is False
         assert any(i.check_name == "no_duplicate_keys" for i in result.issues)
 
-    def test_referential_integrity_failure_fails_validation(
-        self, valid_customers, minimal_config
-    ):
+    def test_referential_integrity_failure_fails_validation(self, valid_customers, minimal_config):
         orphan_subs = pd.DataFrame(
             {
                 "subscription_id": ["S99"],

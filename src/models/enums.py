@@ -31,3 +31,10 @@ class HealthStatus(str, Enum):
     WATCH = "Watch"
     RISK = "Risk"
     CRITICAL = "Critical"
+
+class InterventionType(str, Enum):
+    RETENTION = "Retention"
+    BILLING_RECOVERY = "Billing Recovery"
+    ENGAGEMENT = "Engagement"
+    UPSELL = "Upsell"
+    GENERAL = "General"

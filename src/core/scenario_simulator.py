@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import Dict, Any, List
+from typing import Dict, Any
 
 class ScenarioSimulator:
     def simulate_churn_reduction(self, baseline_revenue: float, churn_rate: float, improvement_rate: float) -> Dict[str, Any]:

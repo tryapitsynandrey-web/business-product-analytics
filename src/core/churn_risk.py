@@ -31,14 +31,14 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 _OPERATORS: Dict[str, Callable[[Any, Any], bool]] = {
-    "less_than":        lambda v, t: v < t,
-    "less_or_equal":    lambda v, t: v <= t,
-    "greater_than":     lambda v, t: v > t,
+    "less_than": lambda v, t: v < t,
+    "less_or_equal": lambda v, t: v <= t,
+    "greater_than": lambda v, t: v > t,
     "greater_or_equal": lambda v, t: v >= t,
-    "equals":           lambda v, t: v == t,
-    "not_equals":       lambda v, t: v != t,
-    "contains":         lambda v, t: t in v if isinstance(v, (list, str)) else False,
-    "is_true":          lambda v, _: bool(v),
+    "equals": lambda v, t: v == t,
+    "not_equals": lambda v, t: v != t,
+    "contains": lambda v, t: t in v if isinstance(v, (list, str)) else False,
+    "is_true": lambda v, _: bool(v),
 }
 
 
@@ -62,6 +62,7 @@ def _apply_operator(operator: str, value: Any, threshold: Any) -> bool:
 # ---------------------------------------------------------------------------
 # ChurnRiskEngine
 # ---------------------------------------------------------------------------
+
 
 class ChurnRiskEngine:
     """
@@ -92,9 +93,7 @@ class ChurnRiskEngine:
     # Signal computation
     # ------------------------------------------------------------------
 
-    def calculate_customer_signals(
-        self, datasets: Dict[str, pd.DataFrame]
-    ) -> pd.DataFrame:
+    def calculate_customer_signals(self, datasets: Dict[str, pd.DataFrame]) -> pd.DataFrame:
         """
         Compute one row per active customer with all signal columns required
         by the churn rules.
@@ -107,14 +106,13 @@ class ChurnRiskEngine:
             key_actions_last_period — total key actions across all usage records
         """
         customers = datasets["customers"].copy()
-        subs = datasets["subscriptions"]
         usage = datasets["product_usage"]
         nps = datasets["nps_scores"]
         tickets = datasets["support_tickets"]
         transactions = datasets["transactions"]
 
         # Only score active customers
-        active = customers[customers["is_active"] == True][["customer_id"]].copy()
+        active = customers[customers["is_active"].eq(True)][["customer_id"]].copy()
 
         # logins_last_period
         login_agg = (
@@ -156,9 +154,7 @@ class ChurnRiskEngine:
 
         # support_ticket_count
         ticket_count = (
-            tickets.groupby("customer_id")
-            .size()
-            .reset_index(name="support_ticket_count")
+            tickets.groupby("customer_id").size().reset_index(name="support_ticket_count")
         )
 
         # Merge all signals onto active customers
@@ -185,9 +181,7 @@ class ChurnRiskEngine:
     # Rule application
     # ------------------------------------------------------------------
 
-    def apply_churn_rules(
-        self, signals_row: Dict[str, Any]
-    ) -> tuple[float, List[str]]:
+    def apply_churn_rules(self, signals_row: Dict[str, Any]) -> tuple[float, List[str]]:
         """
         Apply all enabled rules to a single customer's signal dict.
 
@@ -210,10 +204,7 @@ class ChurnRiskEngine:
             raw_value = signals_row.get(signal_name)
 
             # Treat missing NPS as no signal (do not flag as low NPS)
-            if raw_value is None or (
-                signal_name == "latest_nps_score"
-                and pd.isna(raw_value)
-            ):
+            if raw_value is None or (signal_name == "latest_nps_score" and pd.isna(raw_value)):
                 continue
 
             if _apply_operator(operator, raw_value, threshold):
@@ -252,18 +243,14 @@ class ChurnRiskEngine:
         """
         if risk_band not in (RiskBand.HIGH, RiskBand.CRITICAL):
             return 0.0
-        customer_subs = subs[
-            (subs["customer_id"] == customer_id) & (subs["status"] == "Active")
-        ]
+        customer_subs = subs[(subs["customer_id"] == customer_id) & (subs["status"] == "Active")]
         return float(customer_subs["monthly_price"].sum())
 
     # ------------------------------------------------------------------
     # Main evaluation method
     # ------------------------------------------------------------------
 
-    def evaluate_risk(
-        self, datasets: Dict[str, pd.DataFrame]
-    ) -> List[ChurnRiskProfile]:
+    def evaluate_risk(self, datasets: Dict[str, pd.DataFrame]) -> List[ChurnRiskProfile]:
         """
         Score every active customer and return a list of ChurnRiskProfile objects.
 
@@ -274,14 +261,13 @@ class ChurnRiskEngine:
         subs = datasets["subscriptions"]
         profiles: List[ChurnRiskProfile] = []
 
-        for signals_dict in signals_df.to_dict("records"):
+        for raw_signals in signals_df.to_dict("records"):
+            signals_dict: Dict[str, Any] = {str(key): value for key, value in raw_signals.items()}
             customer_id = signals_dict["customer_id"]
 
             risk_score, drivers = self.apply_churn_rules(signals_dict)
             risk_band = self.assign_risk_band(risk_score)
-            revenue_at_risk = self.calculate_revenue_at_risk(
-                customer_id, risk_band, subs
-            )
+            revenue_at_risk = self.calculate_revenue_at_risk(customer_id, risk_band, subs)
 
             explanation = (
                 f"Risk drivers: {', '.join(drivers)}."
@@ -301,8 +287,7 @@ class ChurnRiskEngine:
             )
 
         logger.info(
-            "Churn risk scored %d active customers. "
-            "Critical: %d, High: %d, Medium: %d, Low: %d.",
+            "Churn risk scored %d active customers. Critical: %d, High: %d, Medium: %d, Low: %d.",
             len(profiles),
             sum(1 for p in profiles if p.risk_band == RiskBand.CRITICAL),
             sum(1 for p in profiles if p.risk_band == RiskBand.HIGH),

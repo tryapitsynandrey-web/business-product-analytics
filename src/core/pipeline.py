@@ -41,16 +41,18 @@ from core.health_score import ProductHealthScoreEngine
 from models.schemas import OUTPUT_SCHEMAS
 from utils.paths import PROJECT_ROOT, SQLITE_DB_PATH
 from utils.validation import ValidationResult, run_dataset_validation
-from adapters.sqlite_writer import SQLiteWriter
+from adapters.sqlite_writer import SQLiteIfExists, SQLiteWriter
 
 
 # ---------------------------------------------------------------------------
 # Result dataclass
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class PipelineResult:
     """Structured outcome of a pipeline run."""
+
     success: bool
     validation_passed: bool
     outputs_written: bool
@@ -62,6 +64,7 @@ class PipelineResult:
 # ---------------------------------------------------------------------------
 # Config loader
 # ---------------------------------------------------------------------------
+
 
 def _load_config(config_path: Path) -> Dict[str, Any]:
     """Parse config/config.yaml and return as a plain dict."""
@@ -87,9 +90,20 @@ def _parse_config_date(value: Any, default: date | None = None) -> date:
     return pd.Timestamp(value).date()
 
 
+def _parse_sqlite_if_exists(value: Any) -> SQLiteIfExists:
+    """Validate the configured pandas SQLite table-write mode."""
+    allowed: set[SQLiteIfExists] = {"append", "delete_rows", "fail", "replace"}
+    if value in allowed:
+        return value
+    raise ValueError(
+        "persistence.sqlite.if_exists must be one of: append, delete_rows, fail, replace"
+    )
+
+
 # ---------------------------------------------------------------------------
 # Pipeline class
 # ---------------------------------------------------------------------------
+
 
 class ProductAnalyticsPipeline:
     """
@@ -108,9 +122,7 @@ class ProductAnalyticsPipeline:
         # Logging
         log_cfg = self.config.get("logging", {})
         log_level = getattr(logging, log_cfg.get("level", "INFO").upper(), logging.INFO)
-        log_format = log_cfg.get(
-            "format", "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-        )
+        log_format = log_cfg.get("format", "%(asctime)s - %(name)s - %(levelname)s - %(message)s")
         logging.basicConfig(level=log_level, format=log_format)
         self.logger = logging.getLogger(__name__)
 
@@ -127,9 +139,7 @@ class ProductAnalyticsPipeline:
         self._processed_data_dir = _resolve_project_path(
             paths_cfg.get("processed_data_dir", "data/processed")
         )
-        self._exports_dir = _resolve_project_path(
-            paths_cfg.get("exports_dir", "data/exports")
-        )
+        self._exports_dir = _resolve_project_path(paths_cfg.get("exports_dir", "data/exports"))
         self._reports_dir = _resolve_project_path(paths_cfg.get("reports_dir", "reports"))
 
         persistence_cfg = self.config.get("persistence", {}).get("sqlite", {})
@@ -137,7 +147,9 @@ class ProductAnalyticsPipeline:
         self._sqlite_path: str = str(
             _resolve_project_path(persistence_cfg.get("path", str(SQLITE_DB_PATH)))
         )
-        self._sqlite_if_exists: str = persistence_cfg.get("if_exists", "replace")
+        self._sqlite_if_exists: SQLiteIfExists = _parse_sqlite_if_exists(
+            persistence_cfg.get("if_exists", "replace")
+        )
 
         # Reproducibility seed
         repro_cfg = self.config.get("reproducibility", {})
@@ -176,9 +188,7 @@ class ProductAnalyticsPipeline:
     def _phase_generate_synthetic(self) -> None:
         """Generate synthetic SaaS data and persist to data/synthetic/."""
         self.logger.info("Phase: generating synthetic data (seed=%d).", self._seed)
-        num_customers = (
-            self.config.get("synthetic_data", {}).get("num_customers", 1000)
-        )
+        num_customers = self.config.get("synthetic_data", {}).get("num_customers", 1000)
         generator = SyntheticDataGenerator(
             seed=self._seed,
             num_customers=num_customers,
@@ -191,12 +201,8 @@ class ProductAnalyticsPipeline:
     def _phase_load(self) -> Dict[str, Any]:
         """Load all required datasets through the DataLoader adapter."""
         self.logger.info("Phase: loading datasets.")
-        datasets = self.data_loader.load_all(
-            required_datasets=self._required_datasets or None
-        )
-        self.logger.info(
-            "Loaded %d dataset(s): %s.", len(datasets), ", ".join(datasets.keys())
-        )
+        datasets = self.data_loader.load_all(required_datasets=self._required_datasets or None)
+        self.logger.info("Loaded %d dataset(s): %s.", len(datasets), ", ".join(datasets.keys()))
         return datasets
 
     def _phase_validate(self, datasets: Dict[str, Any]) -> ValidationResult:
@@ -241,12 +247,8 @@ class ProductAnalyticsPipeline:
 
         self.logger.info("Phase 2: evaluating churn risk.")
         risk_profiles = self.churn_risk.evaluate_risk(datasets)
-        high_critical = [
-            p for p in risk_profiles if p.risk_band.value in ("High", "Critical")
-        ]
-        self.logger.info(
-            "Churn risk: %d high/critical customer(s) identified.", len(high_critical)
-        )
+        high_critical = [p for p in risk_profiles if p.risk_band.value in ("High", "Critical")]
+        self.logger.info("Churn risk: %d high/critical customer(s) identified.", len(high_critical))
 
         # Supplement KPIs with revenue_at_risk now that churn IDs are known
         high_risk_ids = [p.customer_id for p in high_critical]
@@ -301,7 +303,7 @@ class ProductAnalyticsPipeline:
             recommendations=analytics["recommendations"],
         )
         customer_360_df = c360_engine.build_customer_360_view()
-        
+
         self.logger.info("Phase 3: segmenting customers.")
         seg_engine = SegmentationEngine()
         customer_360_df = seg_engine.assign_customer_segments(customer_360_df)
@@ -317,9 +319,7 @@ class ProductAnalyticsPipeline:
 
         # Decision traces
         self.logger.info("Phase 3: generating decision traces.")
-        tracer = DecisionTraceEngine(
-            created_at=f"{self._as_of_date.isoformat()}T00:00:00+00:00"
-        )
+        tracer = DecisionTraceEngine(created_at=f"{self._as_of_date.isoformat()}T00:00:00+00:00")
         tracer.trace_all_churn_risks(analytics["risk_profiles"])
         tracer.trace_all_leakages(analytics["leakages"])
         tracer.trace_all_recommendations(analytics["recommendations"])
@@ -335,12 +335,12 @@ class ProductAnalyticsPipeline:
         # Health Scores
         self.logger.info("Phase 3: calculating health scores.")
         health_engine = ProductHealthScoreEngine()
-        
+
         metrics_dict = {k.metric_name: k.value for k in analytics.get("kpis", [])}
         overall_dq = [s.overall_score for s in dq_scores]
         if overall_dq:
             metrics_dict["data_quality_score"] = sum(overall_dq) / len(overall_dq)
-            
+
         health_scores_df = health_engine.build_health_score_table(metrics_dict)
 
         return {
@@ -378,7 +378,7 @@ class ProductAnalyticsPipeline:
                 pd.DataFrame(kpi_rows),
                 self.data_writer.processed_dir / "kpi_summary.csv",
                 OUTPUT_SCHEMAS["kpi_summary"],
-                "kpi_summary"
+                "kpi_summary",
             )
             written.append("data/processed/kpi_summary.csv")
 
@@ -389,7 +389,7 @@ class ProductAnalyticsPipeline:
                 c360_df,
                 self.data_writer.processed_dir / "customer_360.csv",
                 OUTPUT_SCHEMAS["customer_360"],
-                "customer_360"
+                "customer_360",
             )
             written.append("data/processed/customer_360.csv")
 
@@ -412,7 +412,7 @@ class ProductAnalyticsPipeline:
                 pd.DataFrame(dq_rows),
                 self.data_writer.processed_dir / "data_quality_scores.csv",
                 OUTPUT_SCHEMAS["data_quality_scores"],
-                "data_quality_scores"
+                "data_quality_scores",
             )
             written.append("data/processed/data_quality_scores.csv")
 
@@ -423,7 +423,7 @@ class ProductAnalyticsPipeline:
                 health_scores_df,
                 self.data_writer.processed_dir / "health_scores.csv",
                 OUTPUT_SCHEMAS["health_scores"],
-                "health_scores"
+                "health_scores",
             )
             written.append("data/processed/health_scores.csv")
 
@@ -434,7 +434,7 @@ class ProductAnalyticsPipeline:
                 pd.DataFrame(interventions),
                 self.data_writer.processed_dir / "intervention_plan.csv",
                 OUTPUT_SCHEMAS["intervention_plan"],
-                "intervention_plan"
+                "intervention_plan",
             )
             written.append("data/processed/intervention_plan.csv")
 
@@ -457,7 +457,7 @@ class ProductAnalyticsPipeline:
                 pd.DataFrame(risk_rows),
                 self.data_writer.exports_dir / "churn_risk_profiles.csv",
                 OUTPUT_SCHEMAS["churn_risk_profiles"],
-                "churn_risk_profiles"
+                "churn_risk_profiles",
             )
             written.append("data/exports/churn_risk_profiles.csv")
 
@@ -467,7 +467,7 @@ class ProductAnalyticsPipeline:
                 pd.DataFrame(analytics["leakages"]),
                 self.data_writer.exports_dir / "revenue_leakage.csv",
                 OUTPUT_SCHEMAS["revenue_leakage"],
-                "revenue_leakage"
+                "revenue_leakage",
             )
             written.append("data/exports/revenue_leakage.csv")
 
@@ -477,7 +477,7 @@ class ProductAnalyticsPipeline:
                 pd.DataFrame(analytics["recommendations"]),
                 self.data_writer.exports_dir / "recommendations.csv",
                 OUTPUT_SCHEMAS["recommendations"],
-                "recommendations"
+                "recommendations",
             )
             written.append("data/exports/recommendations.csv")
 
@@ -488,7 +488,7 @@ class ProductAnalyticsPipeline:
                 pd.DataFrame(traces),
                 self.data_writer.exports_dir / "decision_traces.csv",
                 OUTPUT_SCHEMAS["decision_traces"],
-                "decision_traces"
+                "decision_traces",
             )
             written.append("data/exports/decision_traces.csv")
 
@@ -499,7 +499,7 @@ class ProductAnalyticsPipeline:
                 metric_lineage_df,
                 self.data_writer.exports_dir / "metric_lineage.csv",
                 OUTPUT_SCHEMAS["metric_lineage"],
-                "metric_lineage"
+                "metric_lineage",
             )
             written.append("data/exports/metric_lineage.csv")
 
@@ -513,9 +513,7 @@ class ProductAnalyticsPipeline:
         self.reporter.generate_executive_summary(full_results)
         written.append("reports/executive_summary.md")
 
-        self.reporter.generate_data_quality_report(
-            decision.get("data_quality_scores", [])
-        )
+        self.reporter.generate_data_quality_report(decision.get("data_quality_scores", []))
         written.append("reports/data_quality_report.md")
 
         self.reporter.generate_intervention_plan(interventions)
@@ -538,10 +536,10 @@ class ProductAnalyticsPipeline:
         """Write schema-controlled artifacts to local SQLite database."""
         self.logger.info("Phase: writing SQLite outputs to %s.", self._sqlite_path)
         writer = SQLiteWriter(self._sqlite_path)
-        
+
         # Build artifacts dict
         artifacts = {}
-        
+
         # KPI Summary
         kpi_rows = [
             {
@@ -554,17 +552,17 @@ class ProductAnalyticsPipeline:
         ]
         if kpi_rows:
             artifacts["kpi_summary"] = pd.DataFrame(kpi_rows)
-            
+
         # Health Scores
         health_scores_df = decision.get("health_scores")
         if health_scores_df is not None and not health_scores_df.empty:
             artifacts["health_scores"] = health_scores_df
-            
+
         # Customer 360
         c360_df = decision.get("customer_360")
         if c360_df is not None and not c360_df.empty:
             artifacts["customer_360"] = c360_df
-            
+
         # Data Quality Scores
         dq_rows = [
             {
@@ -581,18 +579,18 @@ class ProductAnalyticsPipeline:
         ]
         if dq_rows:
             artifacts["data_quality_scores"] = pd.DataFrame(dq_rows)
-            
+
         # Intervention Plan
         interventions = decision.get("interventions", [])
         if interventions:
             artifacts["intervention_plan"] = pd.DataFrame(interventions)
-            
+
         # Churn Risk Profiles
         risk_rows = [
             {
                 "customer_id": p.customer_id,
                 "risk_score": p.risk_score,
-                "risk_band": p.risk_band,
+                "risk_band": p.risk_band.value,
                 "drivers": ", ".join(p.drivers) if isinstance(p.drivers, list) else p.drivers,
                 "revenue_at_risk": p.revenue_at_risk,
                 "explanation": p.explanation,
@@ -601,24 +599,24 @@ class ProductAnalyticsPipeline:
         ]
         if risk_rows:
             artifacts["churn_risk_profiles"] = pd.DataFrame(risk_rows)
-            
+
         # Revenue Leakage
         if analytics.get("leakages"):
             artifacts["revenue_leakage"] = pd.DataFrame(analytics["leakages"])
-            
+
         # Recommendations
         if analytics.get("recommendations"):
             artifacts["recommendations"] = pd.DataFrame(analytics["recommendations"])
-            
+
         # Decision Traces
         traces = decision.get("decision_traces", [])
         if traces:
             artifacts["decision_traces"] = pd.DataFrame(traces)
-            
+
         # Metric Lineage
         if decision.get("metric_lineage") is not None and not decision["metric_lineage"].empty:
             artifacts["metric_lineage"] = decision["metric_lineage"]
-            
+
         try:
             tables = writer.write_artifacts(artifacts, if_exists=self._sqlite_if_exists)
             return [f"sqlite://{table}" for table in tables]
@@ -678,9 +676,7 @@ class ProductAnalyticsPipeline:
             analytics = self._phase_analytics(datasets)
 
             # Phase 5 — Phase 3 decision layer
-            decision = self._phase_decision_layer(
-                datasets, analytics, validation_issues
-            )
+            decision = self._phase_decision_layer(datasets, analytics, validation_issues)
 
             # Phase 6 — Write outputs (optional)
             outputs_written = False

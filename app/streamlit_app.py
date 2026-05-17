@@ -4,11 +4,11 @@ from pathlib import Path
 
 from adapters.sqlite_reader import SQLiteReader
 from utils.paths import SQLITE_DB_PATH
+
 try:
     from app.ui_helpers import (
         format_currency,
         format_percentage,
-        select_metric_value,
         status_badge_text,
         format_file_size,
         format_timestamp,
@@ -29,7 +29,6 @@ except ModuleNotFoundError:
     from ui_helpers import (
         format_currency,
         format_percentage,
-        select_metric_value,
         status_badge_text,
         format_file_size,
         format_timestamp,
@@ -49,10 +48,7 @@ except ModuleNotFoundError:
 
 # ── Page Configuration ──────────────────────────────────────────────────
 st.set_page_config(
-    page_title="ProductPulse",
-    page_icon="📈",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title="ProductPulse", page_icon="📈", layout="wide", initial_sidebar_state="expanded"
 )
 
 st.markdown(
@@ -76,6 +72,7 @@ db_exists = db_path.exists()
 db_mtime = db_path.stat().st_mtime if db_exists else None
 db_size = db_path.stat().st_size if db_exists else None
 
+
 @st.cache_resource
 def get_reader() -> SQLiteReader | None:
     try:
@@ -83,11 +80,15 @@ def get_reader() -> SQLiteReader | None:
     except FileNotFoundError:
         return None
 
+
 reader = get_reader()
+
 
 # ── Safe Data Loader ────────────────────────────────────────────────────
 @st.cache_data(show_spinner=False)
-def fetch_data(_reader: SQLiteReader, method_name: str, _mtime: float | None, **kwargs) -> pd.DataFrame:
+def fetch_data(
+    _reader: SQLiteReader, method_name: str, _mtime: float | None, **kwargs
+) -> pd.DataFrame:
     if not _reader:
         return pd.DataFrame()
     try:
@@ -96,6 +97,7 @@ def fetch_data(_reader: SQLiteReader, method_name: str, _mtime: float | None, **
     except Exception as e:
         st.error(f"Failed to load data ({method_name}): {str(e)}")
         return pd.DataFrame()
+
 
 # ── Sidebar Navigation & Status ─────────────────────────────────────────
 st.sidebar.title("ProductPulse")
@@ -121,7 +123,7 @@ pages = [
     "Recommendations",
     "Intervention Plan",
     "Decision Traces",
-    "Metric Lineage"
+    "Metric Lineage",
 ]
 
 selection = st.sidebar.radio("Navigation", pages)
@@ -134,9 +136,12 @@ if not db_exists or not reader:
     st.title("ProductPulse")
     st.warning(f"Local SQLite database was not found at `{SQLITE_DB_PATH}`.")
     st.info("Run the local pipeline, then reload this page.")
-    st.code('''
+    st.code(
+        """
 make run
-''', language="bash")
+""",
+        language="bash",
+    )
     st.stop()
 
 # ── Main Content ────────────────────────────────────────────────────────
@@ -149,33 +154,33 @@ if selection == "Executive Cockpit":
     plan = fetch_data(reader, "get_intervention_plan", db_mtime)
     leakages = fetch_data(reader, "read_table", db_mtime, table_name="revenue_leakage")
     metric_values = get_executive_metric_values(kpis)
-    
+
     st.subheader("Business Snapshot")
     col1, col2, col3, col4, col5 = st.columns(5)
-    
+
     with col1:
         mrr = metric_values["monthly_recurring_revenue"]
         st.metric("Total MRR", format_currency(mrr) if mrr is not None else "N/A")
-        
+
     with col2:
         churn = metric_values["customer_churn_rate"]
         st.metric("Churn Rate", format_percentage(churn) if churn is not None else "N/A")
-        
+
     with col3:
         arpu = metric_values["average_revenue_per_user"]
         st.metric("ARPU", format_currency(arpu) if arpu is not None else "N/A")
-        
+
     with col4:
         risk = metric_values["revenue_at_risk"]
         st.metric("Revenue at Risk", format_currency(risk) if risk is not None else "N/A")
 
     with col5:
         st.metric("Business Status", determine_business_status(health))
-        
+
     st.divider()
-    
+
     col_h1, col_h2, col_h3 = st.columns([1, 1, 1])
-    
+
     with col_h1:
         st.subheader("Health Areas")
         critical_health = fetch_data(reader, "get_critical_health_scores", db_mtime)
@@ -184,7 +189,7 @@ if selection == "Executive Cockpit":
                 st.error(f"**{row['area']}** (Score: {row['score']}) - {row['explanation']}")
         else:
             st.success("No critical health areas detected.")
-            
+
     with col_h2:
         st.subheader("Risk Queue")
         st.metric("High / Critical Customers", len(high_risk))
@@ -198,7 +203,7 @@ if selection == "Executive Cockpit":
     with col_h3:
         st.subheader("Revenue Leakage")
         leakage_total = (
-            pd.to_numeric(leakages.get("estimated_revenue_loss"), errors="coerce").sum()
+            pd.to_numeric(leakages["estimated_revenue_loss"], errors="coerce").sum()
             if not leakages.empty and "estimated_revenue_loss" in leakages.columns
             else 0.0
         )
@@ -218,7 +223,9 @@ if selection == "Executive Cockpit":
                 "estimated_revenue_impact"
             ].apply(format_currency)
         if "priority_band" in display_actions.columns:
-            display_actions["priority_band"] = display_actions["priority_band"].apply(status_badge_text)
+            display_actions["priority_band"] = display_actions["priority_band"].apply(
+                status_badge_text
+            )
         st.dataframe(display_actions, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(top_actions, "top actions"))
@@ -360,11 +367,11 @@ elif selection == "KPI Summary":
                 options = get_filter_options(kpis, "category")
                 selected = st.multiselect("Category", options)
                 kpis = filter_dataframe_by_values(kpis, "category", selected)
-                
+
         chart_data = prepare_metric_chart_data(kpis)
         if not chart_data.empty:
             st.bar_chart(chart_data)
-            
+
         st.dataframe(kpis, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(kpis, "KPI summary"))
@@ -377,11 +384,11 @@ elif selection == "Product / Business Health":
             options = get_filter_options(health, "status")
             selected = st.multiselect("Status", options)
             health = filter_dataframe_by_values(health, "status", selected)
-            
+
             counts = prepare_status_counts(health, "status")
             if not counts.empty:
                 st.bar_chart(counts)
-                
+
         display_health = health.copy()
         if "status" in display_health.columns:
             display_health["status"] = display_health["status"].apply(status_badge_text)
@@ -395,14 +402,14 @@ elif selection == "High-Risk Customers":
     if not high_risk.empty:
         cols = st.columns(4)
         col_idx = 0
-        
+
         if "risk_band" in high_risk.columns:
             with cols[col_idx % 4]:
                 options = get_filter_options(high_risk, "risk_band")
                 selected = st.multiselect("Risk Band", options)
                 high_risk = filter_dataframe_by_values(high_risk, "risk_band", selected)
             col_idx += 1
-            
+
         for segment in ["revenue_segment", "usage_segment", "risk_segment", "nps_segment"]:
             if segment in high_risk.columns:
                 with cols[col_idx % 4]:
@@ -410,12 +417,12 @@ elif selection == "High-Risk Customers":
                     selected = st.multiselect(segment.replace("_", " ").title(), options)
                     high_risk = filter_dataframe_by_values(high_risk, segment, selected)
                 col_idx += 1
-                
+
         if "risk_band" in high_risk.columns:
             counts = prepare_category_counts(high_risk, "risk_band")
             if not counts.empty:
                 st.bar_chart(counts)
-                
+
         st.dataframe(high_risk, width="stretch", hide_index=True)
     else:
         st.success("No high-risk customers identified.")
@@ -435,16 +442,20 @@ elif selection == "Recommendations":
                 options = get_filter_options(recs, "category")
                 selected = st.multiselect("Category", options)
                 recs = filter_dataframe_by_values(recs, "category", selected)
-                
+
         if "impact_score" in recs.columns and "recommendation_title" in recs.columns:
-            chart_data = prepare_metric_chart_data(recs, metric_column="recommendation_title", value_column="impact_score")
+            chart_data = prepare_metric_chart_data(
+                recs, metric_column="recommendation_title", value_column="impact_score"
+            )
             if not chart_data.empty:
                 st.bar_chart(chart_data)
         elif "priority_score" in recs.columns and "recommendation_title" in recs.columns:
-            chart_data = prepare_metric_chart_data(recs, metric_column="recommendation_title", value_column="priority_score")
+            chart_data = prepare_metric_chart_data(
+                recs, metric_column="recommendation_title", value_column="priority_score"
+            )
             if not chart_data.empty:
                 st.bar_chart(chart_data)
-                
+
         st.dataframe(recs, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(recs, "recommendations"))
@@ -462,7 +473,7 @@ elif selection == "Intervention Plan":
                     selected = st.multiselect(col_name.replace("_", " ").title(), options)
                     plan = filter_dataframe_by_values(plan, col_name, selected)
                 col_idx += 1
-                
+
         if "priority_band" in plan.columns:
             counts = prepare_category_counts(plan, "priority_band")
             if not counts.empty:
@@ -471,7 +482,7 @@ elif selection == "Intervention Plan":
             counts = prepare_category_counts(plan, "effort_level")
             if not counts.empty:
                 st.bar_chart(counts)
-                
+
         display_plan = plan.copy()
         if "priority_band" in display_plan.columns:
             display_plan["priority_band"] = display_plan["priority_band"].apply(status_badge_text)
@@ -500,7 +511,7 @@ elif selection == "Metric Lineage":
                     selected = st.multiselect(col_name.replace("_", " ").title(), options)
                     lineage = filter_dataframe_by_values(lineage, col_name, selected)
                 col_idx += 1
-                
+
         st.dataframe(lineage, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(lineage, "metric lineage"))

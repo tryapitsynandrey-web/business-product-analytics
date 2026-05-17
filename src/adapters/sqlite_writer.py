@@ -1,12 +1,15 @@
 import sqlite3
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Literal, Optional
 import pandas as pd
 
 from models.schemas import OUTPUT_SCHEMAS
 
 logger = logging.getLogger(__name__)
+
+SQLiteIfExists = Literal["append", "delete_rows", "fail", "replace"]
+
 
 class SQLiteWriter:
     """
@@ -22,7 +25,7 @@ class SQLiteWriter:
         table_name: str,
         df: pd.DataFrame,
         expected_columns: Optional[List[str]] = None,
-        if_exists: str = "replace",
+        if_exists: SQLiteIfExists = "replace",
     ) -> None:
         """
         Write a single DataFrame to a SQLite table.
@@ -45,7 +48,11 @@ class SQLiteWriter:
             logger.error("Failed to write table '%s' to SQLite: %s", table_name, e)
             raise
 
-    def write_artifacts(self, artifacts: Dict[str, pd.DataFrame], if_exists: str = "replace") -> List[str]:
+    def write_artifacts(
+        self,
+        artifacts: Dict[str, pd.DataFrame],
+        if_exists: SQLiteIfExists = "replace",
+    ) -> List[str]:
         """
         Write a dictionary of artifact DataFrames to SQLite.
 
@@ -65,7 +72,12 @@ class SQLiteWriter:
         for artifact_name, df in artifacts.items():
             table_name = self.normalize_table_name(artifact_name)
             expected_columns = OUTPUT_SCHEMAS.get(artifact_name)
-            self.write_dataframe(table_name, df, expected_columns=expected_columns, if_exists=if_exists)
+            self.write_dataframe(
+                table_name,
+                df,
+                expected_columns=expected_columns,
+                if_exists=if_exists,
+            )
             written_tables.append(table_name)
         return written_tables
 

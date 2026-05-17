@@ -43,7 +43,7 @@ DATASET_SCHEMAS = {
     "product_usage": DatasetSchema("product_usage", PRODUCT_USAGE_COLUMNS, None),
     "support_tickets": DatasetSchema("support_tickets", SUPPORT_TICKET_COLUMNS, "ticket_id"),
     "nps_scores": DatasetSchema("nps_scores", NPS_COLUMNS, None),
-    "acquisition_channels": DatasetSchema("acquisition_channels", ACQUISITION_CHANNEL_COLUMNS, "customer_id"),
+    "acquisition_channels": DatasetSchema("acquisition_channels", ACQUISITION_CHANNEL_COLUMNS, "channel_name"),
     "targets": DatasetSchema("targets", TARGET_COLUMNS, None)
 }
 

@@ -82,6 +82,7 @@ def _make_intervention() -> dict:
 # create_trace factory
 # ---------------------------------------------------------------------------
 
+
 class TestCreateTrace:
     def test_returns_decision_trace_instance(self, engine):
         trace = engine.create_trace(
@@ -122,6 +123,7 @@ class TestCreateTrace:
 # trace_churn_risk
 # ---------------------------------------------------------------------------
 
+
 class TestTraceChurnRisk:
     def test_churn_trace_entity_type_is_churn_risk(self, engine):
         trace = engine.trace_churn_risk(_make_profile())
@@ -151,6 +153,7 @@ class TestTraceChurnRisk:
 # trace_revenue_leakage
 # ---------------------------------------------------------------------------
 
+
 class TestTraceRevenueLeakage:
     def test_leakage_trace_entity_type(self, engine):
         trace = engine.trace_revenue_leakage(_make_leakage())
@@ -169,6 +172,7 @@ class TestTraceRevenueLeakage:
 # trace_recommendation
 # ---------------------------------------------------------------------------
 
+
 class TestTraceRecommendation:
     def test_recommendation_trace_entity_type(self, engine):
         trace = engine.trace_recommendation(_make_recommendation())
@@ -182,6 +186,7 @@ class TestTraceRecommendation:
 # ---------------------------------------------------------------------------
 # trace_intervention
 # ---------------------------------------------------------------------------
+
 
 class TestTraceIntervention:
     def test_intervention_trace_entity_type(self, engine):
@@ -197,6 +202,7 @@ class TestTraceIntervention:
 # export_traces
 # ---------------------------------------------------------------------------
 
+
 class TestExportTraces:
     def test_export_returns_list_of_dicts(self, engine):
         engine.trace_churn_risk(_make_profile())
@@ -208,9 +214,16 @@ class TestExportTraces:
         engine.trace_churn_risk(_make_profile())
         traces = engine.export_traces()
         required = {
-            "trace_id", "created_at", "entity_type", "entity_id",
-            "signal", "triggered_rule", "evidence", "business_impact",
-            "generated_action", "confidence_level",
+            "trace_id",
+            "created_at",
+            "entity_type",
+            "entity_id",
+            "signal",
+            "triggered_rule",
+            "evidence",
+            "business_impact",
+            "generated_action",
+            "confidence_level",
         }
         for trace in traces:
             assert required.issubset(trace.keys())
@@ -223,3 +236,31 @@ class TestExportTraces:
         engine.trace_churn_risk(_make_profile("C2"))
         engine.trace_revenue_leakage(_make_leakage())
         assert engine.trace_count == len(engine.export_traces())
+
+
+class TestBulkTraceCreators:
+    def test_bulk_trace_methods_filter_and_trace_expected_entities(self, engine):
+        engine.trace_all_churn_risks(
+            [
+                _make_profile("LOW", risk_band=RiskBand.LOW, revenue_at_risk=0.0),
+                _make_profile("HIGH", risk_band=RiskBand.HIGH, revenue_at_risk=1000.0),
+            ]
+        )
+        engine.trace_all_leakages(
+            [
+                _make_leakage(customer_id="ZERO", revenue_loss=0.0),
+                _make_leakage(customer_id="LOSS", revenue_loss=25.0),
+            ]
+        )
+        engine.trace_all_recommendations([_make_recommendation()])
+        engine.trace_all_interventions([_make_intervention()])
+
+        traces = engine.export_traces()
+        assert [trace["entity_type"] for trace in traces] == [
+            "ChurnRisk",
+            "RevenueLeakage",
+            "Recommendation",
+            "Intervention",
+        ]
+        assert traces[0]["entity_id"] == "HIGH"
+        assert traces[1]["entity_id"] == "LOSS"

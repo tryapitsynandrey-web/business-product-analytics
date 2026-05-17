@@ -1,5 +1,4 @@
 import pandas as pd
-import pytest
 from app.ui_helpers import (
     format_currency,
     format_percentage,

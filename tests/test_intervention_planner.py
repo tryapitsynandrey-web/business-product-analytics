@@ -43,16 +43,25 @@ def _make_recommendation(
 # Record builder
 # ---------------------------------------------------------------------------
 
+
 class TestBuildInterventionRecord:
     def test_record_has_all_required_fields(self, planner):
         rec = _make_recommendation()
         iv = planner.build_intervention_record(rec)
 
         required = {
-            "intervention_id", "recommendation_title", "category",
-            "target_segment", "affected_customers", "estimated_revenue_impact",
-            "expected_action", "suggested_owner", "confidence_level",
-            "effort_level", "priority_score", "priority_band",
+            "intervention_id",
+            "recommendation_title",
+            "category",
+            "target_segment",
+            "affected_customers",
+            "estimated_revenue_impact",
+            "expected_action",
+            "suggested_owner",
+            "confidence_level",
+            "effort_level",
+            "priority_score",
+            "priority_band",
         }
         assert required.issubset(iv.keys())
 
@@ -84,6 +93,7 @@ class TestBuildInterventionRecord:
 # ---------------------------------------------------------------------------
 # Effort estimation
 # ---------------------------------------------------------------------------
+
 
 class TestEstimateEffortLevel:
     def test_explicit_effort_level_used(self, planner):
@@ -117,6 +127,7 @@ class TestEstimateEffortLevel:
 # Revenue protected
 # ---------------------------------------------------------------------------
 
+
 class TestEstimateRevenueProtected:
     def test_revenue_extracted_from_recommendation(self, planner):
         rec = {"estimated_revenue_impact": 3000.0}
@@ -126,9 +137,18 @@ class TestEstimateRevenueProtected:
         assert planner.estimate_revenue_protected({}) == pytest.approx(0.0)
 
 
+class TestSuggestOwner:
+    def test_suggest_owner_defaults_to_unassigned(self, planner):
+        assert planner.suggest_owner({}) == "Unassigned"
+
+    def test_suggest_owner_preserves_explicit_owner(self, planner):
+        assert planner.suggest_owner({"suggested_owner": "Finance"}) == "Finance"
+
+
 # ---------------------------------------------------------------------------
 # Intervention plan creation
 # ---------------------------------------------------------------------------
+
 
 class TestCreateInterventionPlan:
     def test_one_intervention_per_recommendation(self, planner):

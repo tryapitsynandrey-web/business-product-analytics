@@ -1,11 +1,8 @@
-import sqlite3
 import pandas as pd
 import pytest
-from pathlib import Path
 
 from adapters.sqlite_reader import SQLiteReader
 from adapters.sqlite_writer import SQLiteWriter
-from models.schemas import SQLITE_ALLOWED_TABLES
 
 @pytest.fixture
 def populated_db_path(tmp_path):

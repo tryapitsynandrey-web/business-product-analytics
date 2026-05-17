@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import List
-from models.enums import InterventionType, RecommendationPriority
+from models.enums import InterventionType
 
 @dataclass
 class BusinessRecommendation:

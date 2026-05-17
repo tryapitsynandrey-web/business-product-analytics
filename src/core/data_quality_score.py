@@ -22,8 +22,8 @@ Status bands  (derived from overall_score):
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass, field
-from typing import Any, Dict, List
+from dataclasses import dataclass
+from typing import Dict, List
 
 import pandas as pd
 

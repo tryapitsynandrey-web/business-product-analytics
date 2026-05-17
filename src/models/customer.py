@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from datetime import date
-from typing import Optional
 from models.enums import Segment
 
 @dataclass

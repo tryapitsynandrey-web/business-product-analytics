@@ -55,7 +55,7 @@ def test_output_schemas_no_duplicates():
         assert len(schema) == len(set(schema)), f"Schema {name} has duplicate columns"
 
 def test_sqlite_schemas():
-    from models.schemas import SQLITE_TABLE_SCHEMAS, SQLITE_ALLOWED_TABLES, SQLITE_UI_QUERY_TABLES
+    from models.schemas import SQLITE_TABLE_SCHEMAS
     assert SQLITE_TABLE_SCHEMAS == OUTPUT_SCHEMAS
     for name, schema in SQLITE_TABLE_SCHEMAS.items():
         assert len(schema) > 0

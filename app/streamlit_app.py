@@ -9,41 +9,45 @@ try:
     from app.ui_helpers import (
         format_currency,
         format_percentage,
-        status_badge_text,
         format_file_size,
         format_timestamp,
         db_status_label,
         safe_dataframe_empty_message,
         get_filter_options,
         filter_dataframe_by_values,
+        filter_dataframe_by_search,
         prepare_metric_chart_data,
         prepare_status_counts,
         prepare_category_counts,
+        prepare_display_dataframe,
         get_executive_metric_values,
         determine_business_status,
         prepare_top_actions,
         filter_customer_360,
         build_customer_profile_summary,
+        summarize_filter_state,
     )
 except ModuleNotFoundError:
     from ui_helpers import (
         format_currency,
         format_percentage,
-        status_badge_text,
         format_file_size,
         format_timestamp,
         db_status_label,
         safe_dataframe_empty_message,
         get_filter_options,
         filter_dataframe_by_values,
+        filter_dataframe_by_search,
         prepare_metric_chart_data,
         prepare_status_counts,
         prepare_category_counts,
+        prepare_display_dataframe,
         get_executive_metric_values,
         determine_business_status,
         prepare_top_actions,
         filter_customer_360,
         build_customer_profile_summary,
+        summarize_filter_state,
     )
 
 # ── Page Configuration ──────────────────────────────────────────────────
@@ -217,15 +221,12 @@ if selection == "Executive Cockpit":
     st.subheader("Top Actions")
     top_actions = prepare_top_actions(plan, limit=5)
     if not top_actions.empty:
-        display_actions = top_actions.copy()
-        if "estimated_revenue_impact" in display_actions.columns:
-            display_actions["estimated_revenue_impact"] = display_actions[
-                "estimated_revenue_impact"
-            ].apply(format_currency)
-        if "priority_band" in display_actions.columns:
-            display_actions["priority_band"] = display_actions["priority_band"].apply(
-                status_badge_text
-            )
+        display_actions = prepare_display_dataframe(
+            top_actions,
+            currency_columns=["estimated_revenue_impact"],
+            status_columns=["priority_band"],
+            number_columns=["priority_score"],
+        )
         st.dataframe(display_actions, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(top_actions, "top actions"))
@@ -245,6 +246,42 @@ elif selection == "Top Actions":
             effort = st.multiselect("Effort", get_filter_options(plan, "effort_level"))
             plan = filter_dataframe_by_values(plan, "effort_level", effort)
 
+        search_term = st.text_input("Search Actions", "")
+        plan = filter_dataframe_by_search(
+            plan,
+            search_term,
+            ["recommendation_title", "suggested_owner", "target_segment", "expected_action"],
+        )
+        st.caption(
+            summarize_filter_state(
+                {
+                    "Priority": priority,
+                    "Owner": owner,
+                    "Effort": effort,
+                    "Search": [search_term] if search_term else [],
+                },
+                empty_label="Showing all actions",
+            )
+        )
+
+        summary_cols = st.columns(3)
+        with summary_cols[0]:
+            st.metric("Actions in View", len(plan))
+        with summary_cols[1]:
+            high_count = (
+                plan["priority_band"].astype(str).isin(["Critical", "High"]).sum()
+                if "priority_band" in plan.columns
+                else 0
+            )
+            st.metric("Critical / High", int(high_count))
+        with summary_cols[2]:
+            impact_total = (
+                pd.to_numeric(plan["estimated_revenue_impact"], errors="coerce").sum()
+                if "estimated_revenue_impact" in plan.columns
+                else 0.0
+            )
+            st.metric("Revenue Impact", format_currency(impact_total))
+
         top_actions = prepare_top_actions(plan, limit=25)
         if not top_actions.empty:
             chart_data = prepare_metric_chart_data(
@@ -254,7 +291,13 @@ elif selection == "Top Actions":
             )
             if not chart_data.empty:
                 st.bar_chart(chart_data.head(25))
-            st.dataframe(top_actions, width="stretch", hide_index=True)
+            display_actions = prepare_display_dataframe(
+                top_actions,
+                currency_columns=["estimated_revenue_impact"],
+                status_columns=["priority_band"],
+                number_columns=["priority_score"],
+            )
+            st.dataframe(display_actions, width="stretch", hide_index=True)
         else:
             st.info(safe_dataframe_empty_message(top_actions, "top actions"))
     else:
@@ -282,6 +325,23 @@ elif selection == "Customer 360":
             plans = st.multiselect("Plan", get_filter_options(customers, "plan"))
 
         filtered_customers = filter_customer_360(customers, risk_bands, segments, plans)
+        search_term = st.text_input("Search Customers", "")
+        filtered_customers = filter_dataframe_by_search(
+            filtered_customers,
+            search_term,
+            ["customer_id", "segment", "plan", "recommended_action", "main_driver"],
+        )
+        st.caption(
+            summarize_filter_state(
+                {
+                    "Risk Band": risk_bands,
+                    "Segment": segments,
+                    "Plan": plans,
+                    "Search": [search_term] if search_term else [],
+                },
+                empty_label="Showing default customer queue",
+            )
+        )
         st.caption(f"{len(filtered_customers)} customer(s) in current view")
 
         if not filtered_customers.empty:
@@ -292,14 +352,16 @@ elif selection == "Customer 360":
             ].iloc[0]
             summary = build_customer_profile_summary(selected_row)
 
-            m1, m2, m3, m4 = st.columns(4)
-            with m1:
+            metric_row_1 = st.columns(2)
+            with metric_row_1[0]:
                 st.metric("Current MRR", format_currency(summary["Current MRR"]))
-            with m2:
+            with metric_row_1[1]:
                 st.metric("Revenue at Risk", format_currency(summary["Revenue at Risk"]))
-            with m3:
+
+            metric_row_2 = st.columns(2)
+            with metric_row_2[0]:
                 st.metric("Risk Band", summary["Risk Band"])
-            with m4:
+            with metric_row_2[1]:
                 st.metric("Usage Trend", summary["Usage Trend"])
 
             detail_left, detail_right = st.columns([1, 1])
@@ -330,7 +392,13 @@ elif selection == "Customer 360":
                 else pd.DataFrame()
             )
             if not customer_recs.empty:
-                st.dataframe(customer_recs, width="stretch", hide_index=True)
+                display_recs = prepare_display_dataframe(
+                    customer_recs,
+                    currency_columns=["estimated_revenue_impact"],
+                    status_columns=["priority_band", "confidence_level"],
+                    number_columns=["priority_score", "impact_score"],
+                )
+                st.dataframe(display_recs, width="stretch", hide_index=True)
             else:
                 st.info("No recommendations for this customer.")
 
@@ -346,7 +414,13 @@ elif selection == "Customer 360":
                 st.info("No customer-specific trace records.")
 
             st.subheader("Filtered Customer List")
-            st.dataframe(filtered_customers, width="stretch", hide_index=True)
+            display_customers = prepare_display_dataframe(
+                filtered_customers,
+                currency_columns=["current_mrr", "total_revenue", "revenue_at_risk"],
+                status_columns=["churn_risk_band", "health_status"],
+                number_columns=["churn_risk_score", "latest_usage_frequency"],
+            )
+            st.dataframe(display_customers, width="stretch", hide_index=True)
         else:
             st.info("No customers match the selected filters.")
     else:
@@ -372,7 +446,8 @@ elif selection == "KPI Summary":
         if not chart_data.empty:
             st.bar_chart(chart_data)
 
-        st.dataframe(kpis, width="stretch", hide_index=True)
+        display_kpis = prepare_display_dataframe(kpis, number_columns=["value"])
+        st.dataframe(display_kpis, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(kpis, "KPI summary"))
 
@@ -389,9 +464,11 @@ elif selection == "Product / Business Health":
             if not counts.empty:
                 st.bar_chart(counts)
 
-        display_health = health.copy()
-        if "status" in display_health.columns:
-            display_health["status"] = display_health["status"].apply(status_badge_text)
+        display_health = prepare_display_dataframe(
+            health,
+            status_columns=["status"],
+            number_columns=["score"],
+        )
         st.dataframe(display_health, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(health, "health score"))
@@ -423,7 +500,13 @@ elif selection == "High-Risk Customers":
             if not counts.empty:
                 st.bar_chart(counts)
 
-        st.dataframe(high_risk, width="stretch", hide_index=True)
+        display_high_risk = prepare_display_dataframe(
+            high_risk,
+            currency_columns=["revenue_at_risk"],
+            status_columns=["risk_band", "health_status"],
+            number_columns=["risk_score", "churn_risk_score"],
+        )
+        st.dataframe(display_high_risk, width="stretch", hide_index=True)
     else:
         st.success("No high-risk customers identified.")
 
@@ -442,6 +525,12 @@ elif selection == "Recommendations":
                 options = get_filter_options(recs, "category")
                 selected = st.multiselect("Category", options)
                 recs = filter_dataframe_by_values(recs, "category", selected)
+        search_term = st.text_input("Search Recommendations", "")
+        recs = filter_dataframe_by_search(
+            recs,
+            search_term,
+            ["recommendation_title", "reason", "customer_id", "segment", "suggested_owner"],
+        )
 
         if "impact_score" in recs.columns and "recommendation_title" in recs.columns:
             chart_data = prepare_metric_chart_data(
@@ -456,7 +545,13 @@ elif selection == "Recommendations":
             if not chart_data.empty:
                 st.bar_chart(chart_data)
 
-        st.dataframe(recs, width="stretch", hide_index=True)
+        display_recs = prepare_display_dataframe(
+            recs,
+            currency_columns=["estimated_revenue_impact"],
+            status_columns=["confidence_level", "priority_band"],
+            number_columns=["impact_score", "priority_score", "confidence_weight"],
+        )
+        st.dataframe(display_recs, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(recs, "recommendations"))
 
@@ -473,6 +568,12 @@ elif selection == "Intervention Plan":
                     selected = st.multiselect(col_name.replace("_", " ").title(), options)
                     plan = filter_dataframe_by_values(plan, col_name, selected)
                 col_idx += 1
+        search_term = st.text_input("Search Plan", "")
+        plan = filter_dataframe_by_search(
+            plan,
+            search_term,
+            ["recommendation_title", "expected_action", "suggested_owner", "target_segment"],
+        )
 
         if "priority_band" in plan.columns:
             counts = prepare_category_counts(plan, "priority_band")
@@ -483,9 +584,12 @@ elif selection == "Intervention Plan":
             if not counts.empty:
                 st.bar_chart(counts)
 
-        display_plan = plan.copy()
-        if "priority_band" in display_plan.columns:
-            display_plan["priority_band"] = display_plan["priority_band"].apply(status_badge_text)
+        display_plan = prepare_display_dataframe(
+            plan,
+            currency_columns=["estimated_revenue_impact"],
+            status_columns=["priority_band", "confidence_level"],
+            number_columns=["priority_score"],
+        )
         st.dataframe(display_plan, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(plan, "intervention plan"))
@@ -494,6 +598,12 @@ elif selection == "Decision Traces":
     st.write("Audit log of all decisions, triggers, and the explicit signals that caused them.")
     traces = fetch_data(reader, "get_decision_traces", db_mtime)
     if not traces.empty:
+        trace_search = st.text_input("Search Traces", "")
+        traces = filter_dataframe_by_search(
+            traces,
+            trace_search,
+            ["entity_type", "entity_id", "signal", "triggered_rule", "generated_action"],
+        )
         st.dataframe(traces, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(traces, "decision traces"))
@@ -512,7 +622,8 @@ elif selection == "Metric Lineage":
                     lineage = filter_dataframe_by_values(lineage, col_name, selected)
                 col_idx += 1
 
-        st.dataframe(lineage, width="stretch", hide_index=True)
+        display_lineage = prepare_display_dataframe(lineage, status_columns=["lineage_status"])
+        st.dataframe(display_lineage, width="stretch", hide_index=True)
     else:
         st.info(safe_dataframe_empty_message(lineage, "metric lineage"))
 

@@ -8,6 +8,7 @@ EXECUTIVE_METRICS = {
     "revenue_at_risk": "Revenue at Risk",
 }
 
+
 def format_currency(value: object) -> str:
     """Format a float as currency (e.g., $1,234.56)."""
     try:
@@ -15,6 +16,7 @@ def format_currency(value: object) -> str:
         return f"${val:,.2f}"
     except (ValueError, TypeError):
         return "N/A"
+
 
 def format_percentage(value: object) -> str:
     """Format a float as percentage (e.g., 15.5%)."""
@@ -24,28 +26,46 @@ def format_percentage(value: object) -> str:
     except (ValueError, TypeError):
         return "N/A"
 
+
+def format_number(value: object, decimals: int = 0) -> str:
+    """Format a numeric value with thousands separators."""
+    if value is None:
+        return "N/A"
+    try:
+        val = float(value)  # type: ignore
+        if val != val:
+            return "N/A"
+        return f"{val:,.{decimals}f}"
+    except (ValueError, TypeError):
+        return "N/A"
+
+
 def safe_metric_value(value: Any, fallback: str = "N/A") -> str:
     """Safely return a metric value as string or fallback if missing."""
     if pd.isna(value) or value is None:
         return fallback
     return str(value)
 
-def select_metric_value(df: pd.DataFrame, metric_name: str, value_column: str = "value") -> Optional[Any]:
+
+def select_metric_value(
+    df: pd.DataFrame, metric_name: str, value_column: str = "value"
+) -> Optional[Any]:
     """Extract a specific metric value from a KPI summary dataframe."""
     if df.empty or "metric_name" not in df.columns or value_column not in df.columns:
         return None
-        
+
     filtered = df[df["metric_name"] == metric_name]
     if filtered.empty:
         return None
-        
+
     return filtered.iloc[0][value_column]
+
 
 def status_badge_text(status: object) -> str:
     """Return a stylized or standard string based on status text."""
     if not isinstance(status, str):
         return "Unknown"
-        
+
     status = status.title()
     if status in ["Healthy", "Good", "Active"]:
         return f"🟢 {status}"
@@ -53,8 +73,9 @@ def status_badge_text(status: object) -> str:
         return f"🟡 {status}"
     elif status in ["Critical", "High", "Failed", "Past Due", "Canceled", "Expired"]:
         return f"🔴 {status}"
-        
+
     return status
+
 
 def format_file_size(size_bytes: object) -> str:
     """Format bytes into readable string."""
@@ -62,7 +83,7 @@ def format_file_size(size_bytes: object) -> str:
         return "Unknown"
     try:
         size = float(size_bytes)  # type: ignore
-        for unit in ['B', 'KB', 'MB', 'GB']:
+        for unit in ["B", "KB", "MB", "GB"]:
             if size < 1024.0:
                 return f"{size:.1f} {unit}"
             size /= 1024.0
@@ -70,20 +91,23 @@ def format_file_size(size_bytes: object) -> str:
     except (ValueError, TypeError):
         return "Unknown"
 
+
 def format_timestamp(timestamp: object) -> str:
     """Format UNIX timestamp to human readable string."""
     if timestamp is None:
         return "Unknown"
     try:
         ts_float = float(timestamp)  # type: ignore
-        dt = pd.to_datetime(ts_float, unit='s')
+        dt = pd.to_datetime(ts_float, unit="s")
         return dt.strftime("%Y-%m-%d %H:%M:%S")
     except (ValueError, TypeError):
         return "Unknown"
 
+
 def db_status_label(exists: bool) -> str:
     """Return stylized DB status."""
     return "🟢 Online" if exists else "🔴 Missing"
+
 
 def safe_dataframe_empty_message(df: pd.DataFrame | None, label: str) -> str:
     """Return a message indicating a dataframe is empty or missing."""
@@ -91,86 +115,125 @@ def safe_dataframe_empty_message(df: pd.DataFrame | None, label: str) -> str:
         return f"No {label} data available."
     return ""
 
+
 def get_filter_options(df: pd.DataFrame | None, column_name: str) -> list[str]:
     """Get sorted unique values for a column to use in a filter."""
     if df is None or df.empty or column_name not in df.columns:
         return []
-    
+
     # Drop NAs and convert to strings, then sort
     unique_vals = df[column_name].dropna().unique()
     return sorted([str(x) for x in unique_vals])
 
-def filter_dataframe_by_values(df: pd.DataFrame | None, column_name: str, selected_values: list[str]) -> pd.DataFrame:
+
+def filter_dataframe_by_values(
+    df: pd.DataFrame | None, column_name: str, selected_values: list[str]
+) -> pd.DataFrame:
     """Filter a dataframe by a list of selected values for a specific column."""
     if df is None or df.empty:
         return pd.DataFrame()
-        
+
     df_copy = df.copy()
     if column_name not in df_copy.columns or not selected_values:
         return df_copy
-        
+
     # We convert column values to string for safe comparison
     mask = df_copy[column_name].astype(str).isin(selected_values)
     return df_copy[mask]
 
-def filter_dataframe_by_numeric_range(df: pd.DataFrame | None, column_name: str, min_value: float | None, max_value: float | None) -> pd.DataFrame:
+
+def filter_dataframe_by_search(
+    df: pd.DataFrame | None,
+    search_term: str,
+    columns: list[str],
+) -> pd.DataFrame:
+    """Filter rows where any selected column contains the search term."""
+    if df is None or df.empty:
+        return pd.DataFrame()
+
+    term = str(search_term or "").strip()
+    if not term:
+        return df.copy()
+
+    df_copy = df.copy()
+    searchable_columns = [col for col in columns if col in df_copy.columns]
+    if not searchable_columns:
+        return df_copy
+
+    mask = pd.Series(False, index=df_copy.index)
+    for col in searchable_columns:
+        mask = mask | df_copy[col].astype(str).str.contains(term, case=False, na=False)
+    return df_copy[mask]
+
+
+def filter_dataframe_by_numeric_range(
+    df: pd.DataFrame | None, column_name: str, min_value: float | None, max_value: float | None
+) -> pd.DataFrame:
     """Filter a dataframe by a numeric range."""
     if df is None or df.empty:
         return pd.DataFrame()
-        
+
     df_copy = df.copy()
     if column_name not in df_copy.columns:
         return df_copy
-        
+
     mask = pd.Series(True, index=df_copy.index)
-    
+
     if min_value is not None:
         mask = mask & (df_copy[column_name] >= min_value)
     if max_value is not None:
         mask = mask & (df_copy[column_name] <= max_value)
-        
+
     return df_copy[mask]
 
-def prepare_metric_chart_data(df: pd.DataFrame | None, metric_column: str = "metric_name", value_column: str = "value") -> pd.DataFrame:
+
+def prepare_metric_chart_data(
+    df: pd.DataFrame | None, metric_column: str = "metric_name", value_column: str = "value"
+) -> pd.DataFrame:
     """Prepare data for a KPI metric bar chart, ensuring numeric values and setting index."""
     if df is None or df.empty or metric_column not in df.columns or value_column not in df.columns:
         return pd.DataFrame()
-        
+
     chart_data = df.copy()
-    
+
     # Convert values to numeric, dropping those that can't be converted
-    chart_data[value_column] = pd.to_numeric(chart_data[value_column], errors='coerce')
+    chart_data[value_column] = pd.to_numeric(chart_data[value_column], errors="coerce")
     chart_data = chart_data.dropna(subset=[value_column])
-    
+
     if chart_data.empty:
         return pd.DataFrame()
-        
+
     chart_data = chart_data.set_index(metric_column)
     return chart_data[[value_column]]
+
 
 def prepare_status_counts(df: pd.DataFrame | None, status_column: str = "status") -> pd.DataFrame:
     """Prepare a count of statuses for a bar chart."""
     if df is None or df.empty or status_column not in df.columns:
         return pd.DataFrame()
-        
+
     counts = df[status_column].value_counts().to_frame("count")
     return counts
 
-def prepare_category_counts(df: pd.DataFrame | None, category_column: str = "category") -> pd.DataFrame:
+
+def prepare_category_counts(
+    df: pd.DataFrame | None, category_column: str = "category"
+) -> pd.DataFrame:
     """Prepare a count of categories for a bar chart."""
     if df is None or df.empty or category_column not in df.columns:
         return pd.DataFrame()
-        
+
     counts = df[category_column].value_counts().to_frame("count")
     return counts
+
 
 def get_executive_metric_values(kpis: pd.DataFrame | None) -> dict[str, Optional[Any]]:
     """Return the main executive KPI values keyed by canonical metric name."""
     source = kpis if kpis is not None else pd.DataFrame()
     return {
-        metric_name: select_metric_value(source, metric_name)
-        for metric_name in EXECUTIVE_METRICS
+        metric_name: select_metric_value(source, metric_name) for metric_name in EXECUTIVE_METRICS
     }
+
 
 def determine_business_status(health_scores: pd.DataFrame | None) -> str:
     """Summarize health score statuses into one executive status label."""
@@ -185,6 +248,7 @@ def determine_business_status(health_scores: pd.DataFrame | None) -> str:
     if "Watch" in statuses or "Warning" in statuses:
         return "Watch"
     return "Healthy"
+
 
 def prepare_top_actions(
     interventions: pd.DataFrame | None,
@@ -212,6 +276,7 @@ def prepare_top_actions(
     cols = [col for col in display_cols if col in df.columns]
     return df[cols].head(limit).reset_index(drop=True)
 
+
 def filter_customer_360(
     customers: pd.DataFrame | None,
     risk_bands: list[str] | None = None,
@@ -231,6 +296,7 @@ def filter_customer_360(
         df = filter_dataframe_by_values(df, "plan", plans)
     return df
 
+
 def build_customer_profile_summary(customer_row: pd.Series | dict[str, Any]) -> dict[str, Any]:
     """Return a compact Customer 360 profile summary for display."""
     row = dict(customer_row)
@@ -244,3 +310,46 @@ def build_customer_profile_summary(customer_row: pd.Series | dict[str, Any]) -> 
         "Usage Trend": row.get("usage_trend", "Unknown"),
         "Recommended Action": row.get("recommended_action", "No action required"),
     }
+
+
+def summarize_filter_state(
+    filters: dict[str, list[str] | None], empty_label: str = "No filters applied"
+) -> str:
+    """Return a compact summary of active filter selections."""
+    active = []
+    for label, values in filters.items():
+        cleaned = [str(value) for value in (values or []) if str(value).strip()]
+        if cleaned:
+            active.append(f"{label}: {', '.join(cleaned)}")
+    return "; ".join(active) if active else empty_label
+
+
+def prepare_display_dataframe(
+    df: pd.DataFrame | None,
+    currency_columns: list[str] | None = None,
+    percentage_columns: list[str] | None = None,
+    status_columns: list[str] | None = None,
+    number_columns: list[str] | None = None,
+) -> pd.DataFrame:
+    """Return a copy formatted for Streamlit table display."""
+    if df is None or df.empty:
+        return pd.DataFrame()
+
+    display = df.copy()
+    for col in currency_columns or []:
+        if col in display.columns:
+            display[col] = display[col].apply(format_currency)
+
+    for col in percentage_columns or []:
+        if col in display.columns:
+            display[col] = display[col].apply(format_percentage)
+
+    for col in status_columns or []:
+        if col in display.columns:
+            display[col] = display[col].apply(status_badge_text)
+
+    for col in number_columns or []:
+        if col in display.columns:
+            display[col] = display[col].apply(lambda value: format_number(value, decimals=2))
+
+    return display

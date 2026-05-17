@@ -34,7 +34,7 @@ ci:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m compileall -q src app tests
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m ruff check src app tests
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m pyrefly check
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m pytest
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m pytest --cov=src --cov=app --cov-report=term-missing
 
 clean-cache:
 	find . -type d -name __pycache__ -prune -exec rm -rf {} +

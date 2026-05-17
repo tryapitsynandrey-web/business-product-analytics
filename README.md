@@ -113,9 +113,10 @@ make ci
 ```
 
 `make ci` compiles Python modules, runs Ruff lint checks, runs Pyrefly type
-checks, and executes the full pytest suite. Use `make format` to apply Ruff
-formatting to `src`, `app`, and `tests`. Use `make coverage` when you need a
-local branch-aware coverage report.
+checks, and executes the full pytest suite with the branch-aware coverage gate.
+Use `make format` to apply Ruff formatting to `src`, `app`, and `tests`. Use
+`make coverage` when you need the coverage report without the compile, lint,
+and type-check stages.
 
 The automated suite covers the deterministic pipeline, analytics engines,
 business-health metrics, IO adapters, SQLite persistence, report generation,
@@ -125,8 +126,11 @@ CLI commands, Streamlit helper logic, validation, and schema contracts.
 
 ProductPulse includes a local-only Streamlit dashboard with an executive cockpit,
 prioritized actions, Customer 360 drill-down, KPI review, risk queues, decision
-traces, and metric lineage. It reads directly from the local SQLite database.
-No data leaves your machine, and it does not use any cloud deployment or authentication.
+traces, and metric lineage. The dashboard includes searchable action, customer,
+recommendation, intervention, and trace views, plus formatted KPI and revenue
+tables and mobile-safe Customer 360 summary cards for easier review. It reads
+directly from the local SQLite database. No data leaves your machine, and it
+does not use any cloud deployment or authentication.
 
 To use the dashboard:
 

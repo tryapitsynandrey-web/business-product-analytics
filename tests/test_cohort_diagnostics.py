@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from core.cohort_diagnostics import CohortDiagnosticsEngine
+from contrib.cohort_diagnostics import CohortDiagnosticsEngine
 
 
 @pytest.fixture

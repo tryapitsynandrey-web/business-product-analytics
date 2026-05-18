@@ -1,4 +1,4 @@
-from core.root_cause_analysis import RootCauseAnalysisEngine
+from contrib.root_cause_analysis import RootCauseAnalysisEngine
 
 
 def test_metric_change_cause():

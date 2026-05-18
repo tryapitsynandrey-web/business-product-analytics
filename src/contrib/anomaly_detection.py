@@ -6,7 +6,7 @@ class AnomalyDetectionEngine:
     def detect_percentage_deviation(
         self, series: pd.Series, baseline_window: int = 3, threshold: float = 0.2
     ) -> List[Dict[str, Any]]:
-        results = []
+        results: list[dict[str, Any]] = []
         if len(series) < baseline_window + 1:
             return results
 
@@ -23,9 +23,9 @@ class AnomalyDetectionEngine:
                 results.append(
                     {
                         "period": str(series.index[i]),
-                        "actual_value": float(actual),
-                        "baseline_value": float(baseline),
-                        "deviation": float(deviation),
+                        "actual_value": actual,
+                        "baseline_value": baseline,
+                        "deviation": deviation,
                         "severity": self._get_severity(abs(deviation), threshold),
                         "method": "percentage_deviation",
                     }
@@ -35,7 +35,7 @@ class AnomalyDetectionEngine:
     def detect_z_score_anomalies(
         self, series: pd.Series, threshold: float = 2.0
     ) -> List[Dict[str, Any]]:
-        results = []
+        results: list[dict[str, Any]] = []
         if len(series) < 3:
             return results
 
@@ -53,9 +53,9 @@ class AnomalyDetectionEngine:
                 results.append(
                     {
                         "period": str(series.index[i]),
-                        "actual_value": float(actual),
-                        "baseline_value": float(mean),
-                        "deviation": float(z_score),
+                        "actual_value": actual,
+                        "baseline_value": mean,
+                        "deviation": z_score,
                         "severity": self._get_z_severity(abs(z_score), threshold),
                         "method": "z_score",
                     }
@@ -65,7 +65,7 @@ class AnomalyDetectionEngine:
     def detect_moving_average_anomalies(
         self, series: pd.Series, window: int = 3, threshold: float = 0.2
     ) -> List[Dict[str, Any]]:
-        results = []
+        results: list[dict[str, Any]] = []
         if len(series) < window + 1:
             return results
 
@@ -84,9 +84,9 @@ class AnomalyDetectionEngine:
                 results.append(
                     {
                         "period": str(series.index[i]),
-                        "actual_value": float(actual),
-                        "baseline_value": float(baseline),
-                        "deviation": float(deviation),
+                        "actual_value": actual,
+                        "baseline_value": baseline,
+                        "deviation": deviation,
                         "severity": self._get_severity(abs(deviation), threshold),
                         "method": "moving_average",
                     }

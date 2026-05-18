@@ -4,7 +4,7 @@ from typing import Dict, Any, List
 
 class MetricLineageEngine:
     def build_metric_lineage(self, metric_catalog: Dict[str, Any]) -> List[Dict[str, Any]]:
-        lineage = []
+        lineage: list[dict[str, str]] = []
         if not metric_catalog:
             return lineage
 

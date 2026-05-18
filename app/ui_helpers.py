@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+import streamlit as st
 from typing import Any, Optional
 
 EXECUTIVE_METRICS = {
@@ -312,6 +313,7 @@ def get_filter_options(df: pd.DataFrame | None, column_name: str) -> list[str]:
     return sorted([str(x) for x in unique_vals])
 
 
+@st.cache_data  # type: ignore
 def filter_dataframe_by_values(
     df: pd.DataFrame | None, column_name: str, selected_values: list[str]
 ) -> pd.DataFrame:
@@ -328,6 +330,7 @@ def filter_dataframe_by_values(
     return df_copy[mask]
 
 
+@st.cache_data  # type: ignore
 def filter_dataframe_by_search(
     df: pd.DataFrame | None,
     search_term: str,
@@ -337,7 +340,7 @@ def filter_dataframe_by_search(
     if df is None or df.empty:
         return pd.DataFrame()
 
-    term = str(search_term or "").strip()
+    term = (search_term or "").strip()
     if not term:
         return df.copy()
 
@@ -352,6 +355,7 @@ def filter_dataframe_by_search(
     return df_copy[mask]
 
 
+@st.cache_data  # type: ignore
 def filter_dataframe_by_numeric_range(
     df: pd.DataFrame | None, column_name: str, min_value: float | None, max_value: float | None
 ) -> pd.DataFrame:
@@ -465,6 +469,7 @@ def _sort_by_existing_columns(
     return sortable.sort_values(available_columns, ascending=available_ascending)
 
 
+@st.cache_data  # type: ignore
 def apply_quick_view(
     df: pd.DataFrame | None,
     quick_view: str,
@@ -473,7 +478,7 @@ def apply_quick_view(
     if df is None or df.empty:
         return pd.DataFrame()
 
-    view = str(quick_view or "").strip()
+    view = (quick_view or "").strip()
     data = df.copy()
     if view.startswith("All ") or view == "All":
         return data
@@ -599,6 +604,7 @@ def apply_quick_view(
     return data
 
 
+@st.cache_data  # type: ignore
 def prepare_metric_chart_data(
     df: pd.DataFrame | None, metric_column: str = "metric_name", value_column: str = "value"
 ) -> pd.DataFrame:
@@ -619,6 +625,7 @@ def prepare_metric_chart_data(
     return chart_data[[value_column]]
 
 
+@st.cache_data  # type: ignore
 def prepare_status_counts(df: pd.DataFrame | None, status_column: str = "status") -> pd.DataFrame:
     """Prepare a count of statuses for a bar chart."""
     if df is None or df.empty or status_column not in df.columns:
@@ -628,6 +635,7 @@ def prepare_status_counts(df: pd.DataFrame | None, status_column: str = "status"
     return counts
 
 
+@st.cache_data  # type: ignore
 def prepare_category_counts(
     df: pd.DataFrame | None, category_column: str = "category"
 ) -> pd.DataFrame:
@@ -662,6 +670,7 @@ def determine_business_status(health_scores: pd.DataFrame | None) -> str:
     return "Healthy"
 
 
+@st.cache_data  # type: ignore
 def prepare_top_actions(
     interventions: pd.DataFrame | None,
     limit: int = 10,
@@ -824,7 +833,7 @@ def build_decision_brief(
     impact_col, impact_total = _sum_first_existing_numeric(data, DECISION_BRIEF_IMPACT_COLUMNS)
     impact_label = DECISION_BRIEF_IMPACT_LABELS.get(impact_col or "", "Revenue Impact")
     urgent_count = _count_urgent_records(data)
-    records = int(len(data))
+    records = len(data)
     formatted_impact = format_currency(impact_total)
 
     summary = (
@@ -1033,12 +1042,12 @@ def build_data_quality_overview(df: pd.DataFrame | None) -> dict[str, object]:
         lowest_dimension = str(first_row["dimension"])
         lowest_dimension_score = float(first_row["average_score"])
 
-    average_score = float(scores.mean()) if not scores.empty else 0.0
+    average_score = scores.mean() if not scores.empty else 0.0
     return {
-        "datasets": int(len(data)),
+        "datasets": len(data),
         "average_score": average_score,
         "average_score_display": format_percentage(average_score),
-        "needs_attention": int(attention_mask.sum()),
+        "needs_attention": attention_mask.sum(),
         "worst_status": worst_status,
         "lowest_dimension": lowest_dimension,
         "lowest_dimension_score": lowest_dimension_score,
@@ -1059,7 +1068,7 @@ def prepare_quality_dimension_summary(df: pd.DataFrame | None) -> pd.DataFrame:
         values = pd.to_numeric(df[col], errors="coerce").dropna()
         if values.empty:
             continue
-        average_score = float(values.mean())
+        average_score = values.mean()
         rows.append(
             {
                 "dimension": label,
@@ -1092,7 +1101,7 @@ def prepare_quality_issue_queue(df: pd.DataFrame | None) -> pd.DataFrame:
         return pd.DataFrame(columns=columns)
 
     if "overall_score" in data.columns:
-        data["overall_score"] = pd.to_numeric(data["overall_score"], errors="coerce").fillna(0.0)
+        data["overall_score"] = pd.to_numeric(data["overall_score"], errors="coerce").fillna(0.0)  # type: ignore
     else:
         score_cols = [col for col in QUALITY_SCORE_COLUMNS if col in data.columns]
         data["overall_score"] = (
@@ -1115,7 +1124,7 @@ def prepare_quality_issue_queue(df: pd.DataFrame | None) -> pd.DataFrame:
 
     return (
         data[columns + ["_status_order"]]
-        .sort_values(["_status_order", "overall_score", "dataset"], ascending=[True, True, True])
+        .sort_values(["_status_order", "overall_score", "dataset"], ascending=True)
         .drop(columns=["_status_order"])
         .reset_index(drop=True)
     )
@@ -1162,7 +1171,7 @@ def summarize_filter_state(
     """Return a compact summary of active filter selections."""
     active = []
     for label, values in filters.items():
-        cleaned = [str(value) for value in (values or []) if str(value).strip()]
+        cleaned = [value for value in (values or []) if value.strip()]
         if cleaned:
             active.append(f"{label}: {', '.join(cleaned)}")
     return "; ".join(active) if active else empty_label
@@ -1208,7 +1217,7 @@ def dataframe_to_csv_bytes(df: pd.DataFrame | None) -> bytes:
 
 def build_export_filename(label: str, timestamp: object | None = None) -> str:
     """Build a stable, GitHub-safe CSV export filename."""
-    slug = re.sub(r"[^a-z0-9]+", "-", str(label).lower()).strip("-")
+    slug = re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-")
     if not slug:
         slug = "productpulse-export"
 

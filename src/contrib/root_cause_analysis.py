@@ -10,7 +10,7 @@ class RootCauseAnalysisEngine:
         previous_value: float,
         drivers: Dict[str, float],
     ) -> List[Dict[str, Any]]:
-        causes = []
+        causes: list[dict[str, Any]] = []
         if previous_value == 0:
             return causes
 
@@ -38,7 +38,7 @@ class RootCauseAnalysisEngine:
         usage_summary: Optional[Dict[str, Any]] = None,
         nps_summary: Optional[Dict[str, Any]] = None,
     ) -> List[Dict[str, Any]]:
-        causes = []
+        causes: list[dict[str, Any]] = []
         churn_rate = churn_summary.get("churn_rate", 0.0)
 
         if churn_rate < 0.05:
@@ -98,7 +98,7 @@ class RootCauseAnalysisEngine:
         refund_summary: Optional[Dict[str, Any]] = None,
         failed_payment_summary: Optional[Dict[str, Any]] = None,
     ) -> List[Dict[str, Any]]:
-        causes = []
+        causes: list[dict[str, Any]] = []
         growth = revenue_summary.get("revenue_growth_rate", 0.0)
 
         if growth >= 0:

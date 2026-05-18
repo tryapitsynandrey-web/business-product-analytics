@@ -70,6 +70,8 @@ class KPIEngine:
 
     def __init__(self, governance: MetricGovernance) -> None:
         self.governance = governance
+        self._active_ids_cache: Optional[set[str]] = None
+        self._active_subs_cache: Optional[pd.DataFrame] = None
 
     @classmethod
     def get_supported_metrics(cls) -> Dict[str, str]:
@@ -77,8 +79,18 @@ class KPIEngine:
 
     def _active_customer_ids(self, datasets: Dict[str, pd.DataFrame]) -> set[str]:
         """Return a set of customer IDs for all currently active customers."""
-        customers = datasets["customers"]
-        return set(customers.loc[customers["is_active"].eq(True), "customer_id"])
+        if getattr(self, "_active_ids_cache", None) is None:
+            customers = datasets["customers"]
+            self._active_ids_cache = set(customers.loc[customers["is_active"].eq(True), "customer_id"])
+        assert self._active_ids_cache is not None
+        return self._active_ids_cache
+
+    def _active_subscriptions(self, datasets: Dict[str, pd.DataFrame]) -> pd.DataFrame:
+        if getattr(self, "_active_subs_cache", None) is None:
+            subs = datasets["subscriptions"]
+            self._active_subs_cache = subs[subs["status"].isin(_ACTIVE_STATUSES)]
+        assert self._active_subs_cache is not None
+        return self._active_subs_cache
 
     # ------------------------------------------------------------------
     # Orchestrator
@@ -118,6 +130,10 @@ class KPIEngine:
             except Exception as exc:  # pylint: disable=broad-except
                 logger.error("Error calculating metric '%s': %s", metric_name, exc)
 
+        # Clear caches after run
+        self._active_ids_cache = None
+        self._active_subs_cache = None
+
         return results
 
     # ------------------------------------------------------------------
@@ -126,8 +142,7 @@ class KPIEngine:
 
     def calculate_mrr(self, datasets: Dict[str, pd.DataFrame], target_date: date) -> MetricResult:
         """Sum of monthly_price for Active and Past Due subscriptions."""
-        subs = datasets["subscriptions"]
-        active = subs[subs["status"].isin(_ACTIVE_STATUSES)]
+        active = self._active_subscriptions(datasets)
         value = float(active["monthly_price"].sum())
         return MetricResult(
             metric_name="monthly_recurring_revenue",
@@ -139,8 +154,7 @@ class KPIEngine:
 
     def calculate_arpu(self, datasets: Dict[str, pd.DataFrame], target_date: date) -> MetricResult:
         """MRR divided by count of unique paying customers."""
-        subs = datasets["subscriptions"]
-        active = subs[subs["status"].isin(_ACTIVE_STATUSES)]
+        active = self._active_subscriptions(datasets)
         mrr = float(active["monthly_price"].sum())
         unique_customers = active["customer_id"].nunique()
         value = _safe_divide(mrr, unique_customers)
@@ -156,10 +170,8 @@ class KPIEngine:
         self, datasets: Dict[str, pd.DataFrame], target_date: date
     ) -> MetricResult:
         """MRR from Premium and Enterprise plan subscriptions that are Active."""
-        subs = datasets["subscriptions"]
-        expansion = subs[
-            subs["status"].isin(_ACTIVE_STATUSES) & subs["plan"].isin(_EXPANSION_PLANS)
-        ]
+        active = self._active_subscriptions(datasets)
+        expansion = active[active["plan"].isin(_EXPANSION_PLANS)]
         value = float(expansion["monthly_price"].sum())
         return MetricResult(
             metric_name="expansion_revenue",
@@ -189,7 +201,7 @@ class KPIEngine:
     ) -> MetricResult:
         """Active MRR / (Active + Past Due + Canceled MRR), bounded [0, 1]."""
         subs = datasets["subscriptions"]
-        active_mrr = float(subs[subs["status"].isin(_ACTIVE_STATUSES)]["monthly_price"].sum())
+        active_mrr = float(self._active_subscriptions(datasets)["monthly_price"].sum())
         total_mrr = float(
             subs[subs["status"].isin({"Active", "Past Due", "Canceled"})]["monthly_price"].sum()
         )
@@ -207,12 +219,9 @@ class KPIEngine:
     ) -> MetricResult:
         """(Active MRR + Expansion MRR) / Total billed MRR. Can exceed 1.0."""
         subs = datasets["subscriptions"]
-        active_mrr = float(subs[subs["status"].isin(_ACTIVE_STATUSES)]["monthly_price"].sum())
-        expansion_mrr = float(
-            subs[subs["status"].isin(_ACTIVE_STATUSES) & subs["plan"].isin(_EXPANSION_PLANS)][
-                "monthly_price"
-            ].sum()
-        )
+        active = self._active_subscriptions(datasets)
+        active_mrr = float(active["monthly_price"].sum())
+        expansion_mrr = float(active[active["plan"].isin(_EXPANSION_PLANS)]["monthly_price"].sum())
         total_billed = float(
             subs[subs["status"].isin({"Active", "Past Due", "Canceled"})]["monthly_price"].sum()
         )
@@ -243,10 +252,8 @@ class KPIEngine:
         """
         subs = datasets["subscriptions"]
         if high_risk_customer_ids:
-            at_risk = subs[
-                subs["customer_id"].isin(high_risk_customer_ids)
-                & subs["status"].isin(_ACTIVE_STATUSES)
-            ]
+            active = self._active_subscriptions(datasets)
+            at_risk = active[active["customer_id"].isin(high_risk_customer_ids)]
         else:
             # Fallback proxy: Past Due subscriptions represent known revenue risk
             at_risk = subs[subs["status"] == "Past Due"]
@@ -284,7 +291,7 @@ class KPIEngine:
             )
 
         user_actions = usage.groupby("customer_id")["key_actions"].sum()
-        activated_count = int((user_actions > _ACTIVATION_KEY_ACTION_THRESHOLD).sum())
+        activated_count = (user_actions > _ACTIVATION_KEY_ACTION_THRESHOLD).sum()
         value = _safe_divide(activated_count, total)
         return MetricResult(
             metric_name="activation_rate",
@@ -316,7 +323,7 @@ class KPIEngine:
             )
 
         monthly_logins = active_usage.groupby("customer_id")["logins"].mean()
-        value = float(monthly_logins.mean())
+        value = monthly_logins.mean()
         return MetricResult(
             metric_name="usage_frequency",
             value=value,
@@ -369,7 +376,8 @@ class KPIEngine:
                 explanation="Insufficient usage data to calculate engagement drop rate.",
             )
 
-        active_usage["date"] = pd.to_datetime(active_usage["date"])
+        # Avoid copying by operating on the subset and optimizing datetime conversion
+        active_usage.loc[:, "date"] = pd.to_datetime(active_usage["date"], format="mixed", cache=True)
         active_usage = active_usage.sort_values("date")
 
         # Use the last 3 distinct period dates available
@@ -408,7 +416,7 @@ class KPIEngine:
             )
 
         dropped = (comparison["latest"] < comparison["baseline"] * 0.20).sum()
-        value = _safe_divide(int(dropped), len(comparison))
+        value = _safe_divide(dropped, len(comparison))
         return MetricResult(
             metric_name="engagement_drop_rate",
             value=value,
@@ -438,7 +446,7 @@ class KPIEngine:
                 explanation="No active customer usage records found.",
             )
 
-        value = float(active_usage["features_used"].mean())
+        value = active_usage["features_used"].mean()
         return MetricResult(
             metric_name="feature_adoption_proxy",
             value=value,
@@ -500,7 +508,7 @@ class KPIEngine:
                 explanation="No NPS scores available.",
             )
 
-        value = float(scores.mean())
+        value = scores.mean()
         return MetricResult(
             metric_name="average_nps",
             value=value,
@@ -549,9 +557,9 @@ class KPIEngine:
         usage = datasets["product_usage"]
 
         usage = usage.copy()
-        usage["date"] = pd.to_datetime(usage["date"])
+        usage["date"] = pd.to_datetime(usage["date"], format="mixed", cache=True)
         customers = customers.copy()
-        customers["signup_date"] = pd.to_datetime(customers["signup_date"])
+        customers["signup_date"] = pd.to_datetime(customers["signup_date"], format="mixed", cache=True)
 
         # Find first date each customer had key_actions > 0
         qualifying = usage[usage["key_actions"] > 0]
@@ -575,7 +583,7 @@ class KPIEngine:
         merged["days_to_activation"] = activation_delta.apply(lambda delta: delta.days)
         # Drop negative values (data artifact) and compute mean
         valid = merged[merged["days_to_activation"] >= 0]
-        value = float(valid["days_to_activation"].mean()) if not valid.empty else 0.0
+        value = valid["days_to_activation"].mean() if not valid.empty else 0.0
         return MetricResult(
             metric_name="time_to_activation",
             value=value,

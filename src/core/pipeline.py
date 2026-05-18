@@ -13,7 +13,6 @@ and the validation layer in a deterministic, logged sequence.
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 from typing import Any, Dict, List
@@ -43,29 +42,12 @@ from core.report_generator import ReportGenerator
 from core.revenue_leakage import RevenueLeakageEngine
 from core.scenario_simulator import ScenarioSimulator
 from core.segmentation import SegmentationEngine
-from models.pipeline_results import AnalyticsResult, DecisionLayerResult
+from models.pipeline_results import AnalyticsResult, DecisionLayerResult, PipelineResult
 from utils.paths import PROJECT_ROOT, SQLITE_DB_PATH, ensure_directories
 from utils.validation import ValidationResult, run_dataset_validation
 
 
-# ---------------------------------------------------------------------------
-# Result dataclass
-# ---------------------------------------------------------------------------
 
-
-@dataclass
-class PipelineResult:
-    """Structured outcome of a pipeline run."""
-
-    success: bool
-    validation_passed: bool
-    outputs_written: bool
-    message: str
-    issues: List[str] = field(default_factory=list)
-    generated_outputs: List[str] = field(default_factory=list)
-
-
-# ---------------------------------------------------------------------------
 # Config loader
 # ---------------------------------------------------------------------------
 

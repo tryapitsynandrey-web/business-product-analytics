@@ -1,6 +1,6 @@
 import pandas as pd
 import pytest
-from core.churn_analysis import ChurnAnalysisEngine
+from contrib.churn_analysis import ChurnAnalysisEngine
 
 
 @pytest.fixture

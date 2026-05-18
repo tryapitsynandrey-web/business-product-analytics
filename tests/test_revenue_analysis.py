@@ -1,6 +1,6 @@
 import pandas as pd
 import pytest
-from core.revenue_analysis import RevenueAnalysisEngine
+from contrib.revenue_analysis import RevenueAnalysisEngine
 
 
 @pytest.fixture

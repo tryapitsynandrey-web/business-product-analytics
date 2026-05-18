@@ -5,6 +5,18 @@ from typing import Any
 
 import pandas as pd
 
+@dataclass
+class PipelineResult:
+    """Structured outcome of a pipeline run."""
+
+    success: bool
+    validation_passed: bool
+    outputs_written: bool
+    message: str
+    issues: list[str] = field(default_factory=list)
+    generated_outputs: list[str] = field(default_factory=list)
+
+
 
 @dataclass
 class AnalyticsResult:

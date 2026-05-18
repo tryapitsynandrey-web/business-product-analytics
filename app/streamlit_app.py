@@ -29,6 +29,9 @@ try:
         get_executive_metric_values,
         determine_business_status,
         prepare_top_actions,
+        build_decision_brief,
+        decision_brief_to_markdown,
+        prepare_owner_workload_summary,
         filter_customer_360,
         build_customer_profile_summary,
         summarize_filter_state,
@@ -57,6 +60,9 @@ except ModuleNotFoundError:
         get_executive_metric_values,
         determine_business_status,
         prepare_top_actions,
+        build_decision_brief,
+        decision_brief_to_markdown,
+        prepare_owner_workload_summary,
         filter_customer_360,
         build_customer_profile_summary,
         summarize_filter_state,
@@ -153,6 +159,76 @@ def render_quick_view(view_name: str, key: str) -> str:
     selected = st.radio("Quick View", options, horizontal=True, key=key)
     st.caption(describe_quick_view(selected))
     return selected
+
+
+def render_decision_brief(
+    title: str,
+    df: pd.DataFrame,
+    quick_view: str,
+    key: str,
+) -> None:
+    brief = build_decision_brief(df, title, quick_view)
+
+    with st.expander("Decision Brief", expanded=True):
+        metric_cols = st.columns(3)
+        with metric_cols[0]:
+            st.metric("Records", int(brief["records"]))
+        with metric_cols[1]:
+            st.metric(str(brief["impact_label"]), str(brief["formatted_impact"]))
+        with metric_cols[2]:
+            st.metric("Critical / High", int(brief["urgent_count"]))
+
+        st.write(str(brief["summary"]))
+        st.caption(str(brief["why_it_matters"]))
+
+        top_actions = brief.get("top_actions", [])
+        if isinstance(top_actions, list) and top_actions:
+            actions_df = pd.DataFrame(top_actions)
+            actions_df = actions_df.rename(
+                columns={
+                    "title": "Record",
+                    "action": "Next Action",
+                    "owner": "Owner",
+                    "status": "Status",
+                    "impact": "Impact",
+                }
+            )
+            display_cols = ["Record", "Next Action", "Owner", "Status", "Impact"]
+            st.dataframe(actions_df[display_cols], width="stretch", hide_index=True)
+
+        st.download_button(
+            "Download decision brief MD",
+            data=decision_brief_to_markdown(brief).encode("utf-8"),
+            file_name=build_export_filename(f"{key}-decision-brief", db_mtime).replace(
+                ".csv", ".md"
+            ),
+            mime="text/markdown",
+            key=f"download_{key}_decision_brief",
+        )
+
+
+def render_owner_workload(df: pd.DataFrame, key: str) -> None:
+    summary = prepare_owner_workload_summary(df)
+    if summary.empty:
+        return
+
+    with st.expander("Owner Workload", expanded=False):
+        display = summary.rename(
+            columns={
+                "owner": "Owner",
+                "records": "Records",
+                "critical_high": "Critical / High",
+                "impact_total": "Impact Total",
+            }
+        )
+        display["Impact Total"] = display["Impact Total"].apply(format_currency)
+        st.dataframe(display, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download owner workload CSV",
+            summary,
+            f"{key}-owner-workload",
+            f"download_{key}_owner_workload",
+        )
 
 
 # ── Sidebar Navigation & Status ─────────────────────────────────────────
@@ -310,6 +386,12 @@ if selection == "Executive Cockpit":
     st.subheader("Top Actions")
     top_actions = prepare_top_actions(plan, limit=5)
     if not top_actions.empty:
+        render_decision_brief(
+            "Executive Top Actions",
+            top_actions,
+            "Executive Cockpit",
+            "executive_top_actions",
+        )
         display_actions = prepare_display_dataframe(
             top_actions,
             currency_columns=["estimated_revenue_impact"],
@@ -381,6 +463,9 @@ elif selection == "Top Actions":
             )
             st.metric("Revenue Impact", format_currency(impact_total))
 
+        render_decision_brief("Top Actions", plan, quick_view, "top_actions")
+        render_owner_workload(plan, "top_actions")
+
         top_actions = prepare_top_actions(plan, limit=25)
         if not top_actions.empty:
             chart_data = prepare_metric_chart_data(
@@ -450,6 +535,13 @@ elif selection == "Customer 360":
             )
         )
         st.caption(f"{len(filtered_customers)} customer(s) in current view")
+
+        render_decision_brief(
+            "Customer 360",
+            filtered_customers,
+            quick_view,
+            "customer_360",
+        )
 
         if not filtered_customers.empty:
             options = filtered_customers["customer_id"].astype(str).tolist()
@@ -635,6 +727,13 @@ elif selection == "High-Risk Customers":
             if not counts.empty:
                 st.bar_chart(counts)
 
+        render_decision_brief(
+            "High-Risk Customers",
+            high_risk,
+            quick_view,
+            "high_risk_customers",
+        )
+
         display_high_risk = prepare_display_dataframe(
             high_risk,
             currency_columns=["revenue_at_risk"],
@@ -675,6 +774,9 @@ elif selection == "Recommendations":
             search_term,
             ["recommendation_title", "reason", "customer_id", "segment", "suggested_owner"],
         )
+
+        render_decision_brief("Recommendations", recs, quick_view, "recommendations")
+        render_owner_workload(recs, "recommendations")
 
         if "impact_score" in recs.columns and "recommendation_title" in recs.columns:
             chart_data = prepare_metric_chart_data(
@@ -727,6 +829,9 @@ elif selection == "Intervention Plan":
             search_term,
             ["recommendation_title", "expected_action", "suggested_owner", "target_segment"],
         )
+
+        render_decision_brief("Intervention Plan", plan, quick_view, "intervention_plan")
+        render_owner_workload(plan, "intervention_plan")
 
         if "priority_band" in plan.columns:
             counts = prepare_category_counts(plan, "priority_band")

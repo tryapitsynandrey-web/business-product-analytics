@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from datetime import date
 from typing import Optional, List, Dict
 
+
 @dataclass
 class MetricResult:
     metric_name: str
@@ -12,6 +13,7 @@ class MetricResult:
     is_anomaly: bool = False
     confidence_interval: Optional[tuple[float, float]] = None
     explanation: Optional[str] = None
+
 
 @dataclass
 class MetricRegistryEntry:
@@ -27,6 +29,7 @@ class MetricRegistryEntry:
     enabled: bool
     implementation_key: Optional[str]
     implementation_status: str
+
 
 @dataclass
 class MetricRegistryResult:

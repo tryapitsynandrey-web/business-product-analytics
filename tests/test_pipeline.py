@@ -161,16 +161,18 @@ def test_phase_validate_logs_error_result(monkeypatch, tmp_path):
         total_checks=1,
         failed_checks=1,
     )
-    monkeypatch.setattr(pipeline_module, "run_dataset_validation", lambda datasets, config: validation)
+    monkeypatch.setattr(
+        pipeline_module, "run_dataset_validation", lambda datasets, config: validation
+    )
 
     result = pipeline._phase_validate({"customers": pd.DataFrame()})
 
     assert result.passed is False
 
 
-def test_phase_write_outputs_handles_empty_optional_artifacts(tmp_path):
+def test_phase_write_outputs_handles_empty_optional_artifacts(monkeypatch, tmp_path):
     pipeline = _make_pipeline_for_unit_tests(tmp_path)
-    pipeline.governance._catalog = {}
+    monkeypatch.setattr(pipeline.governance, "get_catalog", lambda: {})
     empty_decision = {
         "customer_360": pd.DataFrame(),
         "data_quality_scores": [],
@@ -199,31 +201,23 @@ def test_phase_write_outputs_handles_empty_optional_artifacts(tmp_path):
 def test_phase_write_sqlite_outputs_handles_empty_and_write_failure(monkeypatch, tmp_path):
     pipeline = _make_pipeline_for_unit_tests(tmp_path, persistence={"sqlite": {"enabled": True}})
 
-    class EmptyWriter:
-        def __init__(self, path):
-            self.path = path
+    def empty_write(db_path, artifacts, if_exists):
+        assert artifacts == {}
+        return []
 
-        def write_artifacts(self, artifacts, if_exists):
-            assert artifacts == {}
-            return []
-
-    monkeypatch.setattr(pipeline_module, "SQLiteWriter", EmptyWriter)
+    monkeypatch.setattr(pipeline.output_serializer, "write_sqlite_artifacts", empty_write)
     assert pipeline._phase_write_sqlite_outputs({"kpis": []}, {}) == []
 
-    class FailingWriter:
-        def __init__(self, path):
-            self.path = path
+    def failing_write(db_path, artifacts, if_exists):
+        raise RuntimeError("sqlite down")
 
-        def write_artifacts(self, artifacts, if_exists):
-            raise RuntimeError("sqlite down")
-
-    monkeypatch.setattr(pipeline_module, "SQLiteWriter", FailingWriter)
+    monkeypatch.setattr(pipeline.output_serializer, "write_sqlite_artifacts", failing_write)
     assert pipeline._phase_write_sqlite_outputs({"kpis": []}, {}) == []
 
 
 def test_phase_decision_layer_handles_empty_data_quality_scores(monkeypatch, tmp_path):
     pipeline = _make_pipeline_for_unit_tests(tmp_path)
-    pipeline.governance._catalog = {}
+    monkeypatch.setattr(pipeline.governance, "get_catalog", lambda: {})
 
     class EmptyDataQualityScorer:
         def __init__(self, issues, datasets, primary_keys):
@@ -323,7 +317,9 @@ def test_run_returns_file_not_found_and_unexpected_errors(monkeypatch, tmp_path)
         tmp_path,
         pipeline={"generate_synthetic_data": False},
     )
-    monkeypatch.setattr(pipeline, "_phase_load", lambda: (_ for _ in ()).throw(FileNotFoundError("missing data")))
+    monkeypatch.setattr(
+        pipeline, "_phase_load", lambda: (_ for _ in ()).throw(FileNotFoundError("missing data"))
+    )
     missing = pipeline.run()
 
     pipeline = _make_pipeline_for_unit_tests(
@@ -331,7 +327,9 @@ def test_run_returns_file_not_found_and_unexpected_errors(monkeypatch, tmp_path)
         pipeline={"generate_synthetic_data": False, "run_validation": False},
     )
     monkeypatch.setattr(pipeline, "_phase_load", lambda: {})
-    monkeypatch.setattr(pipeline, "_phase_analytics", lambda datasets: (_ for _ in ()).throw(RuntimeError("boom")))
+    monkeypatch.setattr(
+        pipeline, "_phase_analytics", lambda datasets: (_ for _ in ()).throw(RuntimeError("boom"))
+    )
     unexpected = pipeline.run()
 
     assert missing.success is False

@@ -26,19 +26,21 @@ logger = logging.getLogger(__name__)
 # Trace dataclass (kept from original stub, extended)
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class DecisionTrace:
     """Immutable record of a single business decision and its justification."""
+
     trace_id: str
-    created_at: str            # ISO-8601 UTC timestamp
-    entity_type: str           # 'ChurnRisk' | 'RevenueLeakage' | 'Recommendation' | 'Intervention'
+    created_at: str  # ISO-8601 UTC timestamp
+    entity_type: str  # 'ChurnRisk' | 'RevenueLeakage' | 'Recommendation' | 'Intervention'
     entity_id: str
     signal: str
     triggered_rule: str
     evidence: str
     business_impact: str
     generated_action: str
-    confidence_level: str      # 'High' | 'Medium' | 'Low'
+    confidence_level: str  # 'High' | 'Medium' | 'Low'
 
 
 def _new_trace_id(sequence: int) -> str:
@@ -52,6 +54,7 @@ def _utc_now() -> str:
 # ---------------------------------------------------------------------------
 # DecisionTraceEngine
 # ---------------------------------------------------------------------------
+
 
 class DecisionTraceEngine:
     """
@@ -204,9 +207,7 @@ class DecisionTraceEngine:
     # Bulk trace creators (used by pipeline)
     # ------------------------------------------------------------------
 
-    def trace_all_churn_risks(
-        self, profiles: List[ChurnRiskProfile]
-    ) -> None:
+    def trace_all_churn_risks(self, profiles: List[ChurnRiskProfile]) -> None:
         """Trace every high/critical churn risk profile."""
         for profile in profiles:
             if profile.risk_band.value in ("High", "Critical"):
@@ -218,16 +219,12 @@ class DecisionTraceEngine:
             if float(leakage.get("estimated_revenue_loss", 0.0)) > 0:
                 self.trace_revenue_leakage(leakage)
 
-    def trace_all_recommendations(
-        self, recommendations: List[Dict[str, Any]]
-    ) -> None:
+    def trace_all_recommendations(self, recommendations: List[Dict[str, Any]]) -> None:
         """Trace all recommendations."""
         for rec in recommendations:
             self.trace_recommendation(rec)
 
-    def trace_all_interventions(
-        self, interventions: List[Dict[str, Any]]
-    ) -> None:
+    def trace_all_interventions(self, interventions: List[Dict[str, Any]]) -> None:
         """Trace all interventions."""
         for iv in interventions:
             self.trace_intervention(iv)
@@ -253,6 +250,7 @@ class DecisionTraceEngine:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def _risk_score_to_confidence(risk_score: float) -> str:
     """Map a 0–1 risk score to a confidence label."""

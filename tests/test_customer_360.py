@@ -17,6 +17,7 @@ from models.risk_profile import ChurnRiskProfile
 # Helpers
 # ---------------------------------------------------------------------------
 
+
 def _make_datasets(
     num_customers: int = 3,
     include_nps: bool = True,
@@ -25,28 +26,34 @@ def _make_datasets(
     today = date.today()
     cids = [f"C{i}" for i in range(num_customers)]
 
-    customers = pd.DataFrame({
-        "customer_id": cids,
-        "is_active": [True] * num_customers,
-        "signup_date": [today - timedelta(days=60)] * num_customers,
-        "segment": ["SMB"] * num_customers,
-    })
+    customers = pd.DataFrame(
+        {
+            "customer_id": cids,
+            "is_active": [True] * num_customers,
+            "signup_date": [today - timedelta(days=60)] * num_customers,
+            "segment": ["SMB"] * num_customers,
+        }
+    )
 
-    subscriptions = pd.DataFrame({
-        "subscription_id": [f"S{i}" for i in range(num_customers)],
-        "customer_id": cids,
-        "status": ["Active"] * num_customers,
-        "monthly_price": [100.0] * num_customers,
-        "plan": ["Pro"] * num_customers,
-    })
+    subscriptions = pd.DataFrame(
+        {
+            "subscription_id": [f"S{i}" for i in range(num_customers)],
+            "customer_id": cids,
+            "status": ["Active"] * num_customers,
+            "monthly_price": [100.0] * num_customers,
+            "plan": ["Pro"] * num_customers,
+        }
+    )
 
-    transactions = pd.DataFrame({
-        "transaction_id": [f"TX{i}" for i in range(num_customers)],
-        "customer_id": cids,
-        "subscription_id": [f"S{i}" for i in range(num_customers)],
-        "amount": [100.0] * num_customers,
-        "status": ["Success"] * num_customers,
-    })
+    transactions = pd.DataFrame(
+        {
+            "transaction_id": [f"TX{i}" for i in range(num_customers)],
+            "customer_id": cids,
+            "subscription_id": [f"S{i}" for i in range(num_customers)],
+            "amount": [100.0] * num_customers,
+            "status": ["Success"] * num_customers,
+        }
+    )
 
     if multi_period_usage:
         # Two distinct date periods
@@ -54,36 +61,58 @@ def _make_datasets(
         p2 = pd.Timestamp(today - timedelta(days=10))
         usage_rows = []
         for cid in cids:
-            usage_rows.append({"usage_id": f"U{cid}a", "customer_id": cid,
-                                "date": p1, "logins": 20, "key_actions": 10, "features_used": 3})
-            usage_rows.append({"usage_id": f"U{cid}b", "customer_id": cid,
-                                "date": p2, "logins": 25, "key_actions": 12, "features_used": 4})
+            usage_rows.append(
+                {
+                    "usage_id": f"U{cid}a",
+                    "customer_id": cid,
+                    "date": p1,
+                    "logins": 20,
+                    "key_actions": 10,
+                    "features_used": 3,
+                }
+            )
+            usage_rows.append(
+                {
+                    "usage_id": f"U{cid}b",
+                    "customer_id": cid,
+                    "date": p2,
+                    "logins": 25,
+                    "key_actions": 12,
+                    "features_used": 4,
+                }
+            )
         product_usage = pd.DataFrame(usage_rows)
     else:
-        product_usage = pd.DataFrame({
-            "usage_id": [f"U{i}" for i in range(num_customers)],
-            "customer_id": cids,
-            "date": [pd.Timestamp(today - timedelta(days=10))] * num_customers,
-            "logins": [20] * num_customers,
-            "key_actions": [10] * num_customers,
-            "features_used": [3] * num_customers,
-        })
+        product_usage = pd.DataFrame(
+            {
+                "usage_id": [f"U{i}" for i in range(num_customers)],
+                "customer_id": cids,
+                "date": [pd.Timestamp(today - timedelta(days=10))] * num_customers,
+                "logins": [20] * num_customers,
+                "key_actions": [10] * num_customers,
+                "features_used": [3] * num_customers,
+            }
+        )
 
     if include_nps:
-        nps_scores = pd.DataFrame({
-            "score_id": [f"N{i}" for i in range(num_customers)],
-            "customer_id": cids,
-            "date": [pd.Timestamp(today - timedelta(days=5))] * num_customers,
-            "score": [8] * num_customers,
-        })
+        nps_scores = pd.DataFrame(
+            {
+                "score_id": [f"N{i}" for i in range(num_customers)],
+                "customer_id": cids,
+                "date": [pd.Timestamp(today - timedelta(days=5))] * num_customers,
+                "score": [8] * num_customers,
+            }
+        )
     else:
         nps_scores = pd.DataFrame(columns=["score_id", "customer_id", "date", "score"])
 
-    support_tickets = pd.DataFrame({
-        "ticket_id": [f"T{i}" for i in range(num_customers)],
-        "customer_id": cids,
-        "status": ["Closed"] * num_customers,
-    })
+    support_tickets = pd.DataFrame(
+        {
+            "ticket_id": [f"T{i}" for i in range(num_customers)],
+            "customer_id": cids,
+            "status": ["Closed"] * num_customers,
+        }
+    )
 
     return {
         "customers": customers,
@@ -118,6 +147,7 @@ def _make_profiles(
 # One row per customer
 # ---------------------------------------------------------------------------
 
+
 class TestOneRowPerCustomer:
     def test_output_has_one_row_per_customer(self):
         datasets = _make_datasets(num_customers=4)
@@ -136,12 +166,11 @@ class TestOneRowPerCustomer:
 # Churn risk attached
 # ---------------------------------------------------------------------------
 
+
 class TestAttachChurnRisk:
     def test_churn_risk_score_attached_correctly(self):
         datasets = _make_datasets(num_customers=2)
-        profiles = _make_profiles(
-            ["C0"], band=RiskBand.CRITICAL, revenue_at_risk=500.0
-        )
+        profiles = _make_profiles(["C0"], band=RiskBand.CRITICAL, revenue_at_risk=500.0)
         engine = Customer360Engine(datasets, profiles, [])
         df = engine.build_customer_360_view()
 
@@ -180,6 +209,7 @@ class TestAttachChurnRisk:
 # Recommendations attached
 # ---------------------------------------------------------------------------
 
+
 class TestAttachRecommendations:
     def test_recommendation_title_attached_as_recommended_action(self):
         datasets = _make_datasets(num_customers=1)
@@ -206,6 +236,7 @@ class TestAttachRecommendations:
 # ---------------------------------------------------------------------------
 # Usage trend classification
 # ---------------------------------------------------------------------------
+
 
 class TestUsageTrend:
     def test_usage_trend_column_present(self):
@@ -243,6 +274,7 @@ class TestUsageTrend:
 # Missing NPS handled safely
 # ---------------------------------------------------------------------------
 
+
 class TestMissingNPS:
     def test_missing_nps_does_not_raise(self):
         datasets = _make_datasets(num_customers=2, include_nps=False)
@@ -256,25 +288,28 @@ class TestMissingNPS:
         df = engine.build_customer_360_view()
         assert df["latest_nps"].isnull().all()
 
+
 # ---------------------------------------------------------------------------
 # Segmentation integration
 # ---------------------------------------------------------------------------
+
 
 class TestSegmentationIntegration:
     def test_segmentation_columns_additive(self):
         datasets = _make_datasets(num_customers=2)
         engine = Customer360Engine(datasets, [], [])
         df = engine.build_customer_360_view()
-        
+
         from core.segmentation import SegmentationEngine
+
         seg_engine = SegmentationEngine()
         seg_df = seg_engine.assign_customer_segments(df)
-        
+
         assert "revenue_segment" in seg_df.columns
         assert "usage_segment" in seg_df.columns
         assert "risk_segment" in seg_df.columns
         assert "nps_segment" in seg_df.columns
-        
+
         # Original columns still present
         assert "customer_id" in seg_df.columns
         assert "latest_usage_frequency" in seg_df.columns

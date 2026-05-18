@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class ScenarioResult:
     scenario_name: str

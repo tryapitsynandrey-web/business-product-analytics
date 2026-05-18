@@ -1,14 +1,15 @@
 import pandas as pd
 
+
 class SegmentationEngine:
     def segment_by_revenue(self, df: pd.DataFrame) -> pd.DataFrame:
         df_out = df.copy()
         if "mrr" not in df_out.columns and "total_revenue" not in df_out.columns:
             df_out["revenue_segment"] = "No Revenue"
             return df_out
-            
+
         col = "mrr" if "mrr" in df_out.columns else "total_revenue"
-        
+
         def assign(val):
             if pd.isna(val) or val <= 0:
                 return "No Revenue"
@@ -17,7 +18,7 @@ class SegmentationEngine:
             elif val >= 100:
                 return "Mid Value"
             return "Low Value"
-            
+
         df_out["revenue_segment"] = df_out[col].apply(assign)
         return df_out
 
@@ -26,7 +27,7 @@ class SegmentationEngine:
         if "total_actions" not in df_out.columns:
             df_out["usage_segment"] = "No Usage"
             return df_out
-            
+
         def assign(val):
             if pd.isna(val) or val == 0:
                 return "No Usage"
@@ -35,7 +36,7 @@ class SegmentationEngine:
             elif val >= 10:
                 return "Regular User"
             return "Low Usage"
-            
+
         df_out["usage_segment"] = df_out["total_actions"].apply(assign)
         return df_out
 
@@ -44,7 +45,7 @@ class SegmentationEngine:
         if "churn_risk_score" not in df_out.columns:
             df_out["risk_segment"] = "Unknown Risk"
             return df_out
-            
+
         def assign(val):
             if pd.isna(val):
                 return "Unknown Risk"
@@ -55,7 +56,7 @@ class SegmentationEngine:
             elif val >= 40:
                 return "Medium Risk"
             return "Low Risk"
-            
+
         df_out["risk_segment"] = df_out["churn_risk_score"].apply(assign)
         return df_out
 
@@ -64,7 +65,7 @@ class SegmentationEngine:
         if "latest_nps" not in df_out.columns:
             df_out["nps_segment"] = "No NPS"
             return df_out
-            
+
         def assign(val):
             if pd.isna(val):
                 return "No NPS"
@@ -73,7 +74,7 @@ class SegmentationEngine:
             elif val >= 7:
                 return "Passive"
             return "Detractor"
-            
+
         df_out["nps_segment"] = df_out["latest_nps"].apply(assign)
         return df_out
 
@@ -83,7 +84,7 @@ class SegmentationEngine:
             for col in ["revenue_segment", "usage_segment", "risk_segment", "nps_segment"]:
                 df[col] = pd.Series(dtype=str)
             return df
-            
+
         df = self.segment_by_revenue(customer_360)
         df = self.segment_by_usage(df)
         df = self.segment_by_risk(df)
@@ -93,20 +94,28 @@ class SegmentationEngine:
     def build_segment_summary(self, customer_360: pd.DataFrame) -> pd.DataFrame:
         df = self.assign_customer_segments(customer_360)
         if df.empty:
-            return pd.DataFrame(columns=["segment_type", "segment_name", "customer_count", "percentage"])
-            
+            return pd.DataFrame(
+                columns=["segment_type", "segment_name", "customer_count", "percentage"]
+            )
+
         results = []
         total = len(df)
-        
-        for col, stype in [("revenue_segment", "Revenue"), ("usage_segment", "Usage"), 
-                           ("risk_segment", "Risk"), ("nps_segment", "NPS")]:
+
+        for col, stype in [
+            ("revenue_segment", "Revenue"),
+            ("usage_segment", "Usage"),
+            ("risk_segment", "Risk"),
+            ("nps_segment", "NPS"),
+        ]:
             counts = df[col].value_counts().to_dict()
             for name, count in counts.items():
-                results.append({
-                    "segment_type": stype,
-                    "segment_name": name,
-                    "customer_count": count,
-                    "percentage": float(count / total) if total > 0 else 0.0
-                })
-                
+                results.append(
+                    {
+                        "segment_type": stype,
+                        "segment_name": name,
+                        "customer_count": count,
+                        "percentage": float(count / total) if total > 0 else 0.0,
+                    }
+                )
+
         return pd.DataFrame(results)

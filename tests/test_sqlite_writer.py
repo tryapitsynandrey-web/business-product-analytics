@@ -73,6 +73,11 @@ def test_writer_read_table_raises_for_missing_table(writer):
         writer.read_table("missing_table")
 
 
+def test_writer_read_table_rejects_invalid_table_name(writer):
+    with pytest.raises(ValueError, match="Invalid table name"):
+        writer.read_table("safe_table; DROP TABLE safe_table")
+
+
 def test_writer_replaces_table_deterministically(writer):
     df1 = pd.DataFrame({"a": [1]})
     writer.write_dataframe("test_table", df1)

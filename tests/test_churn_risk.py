@@ -32,54 +32,75 @@ def _make_churn_datasets(
 ) -> dict:
     """Build a minimal dataset for a single customer's churn risk test."""
     today = date.today()
-    customers = pd.DataFrame({
-        "customer_id": [customer_id],
-        "is_active": [is_active],
-        "signup_date": [today - timedelta(days=180)],
-        "segment": ["SMB"],
-    })
-    subscriptions = pd.DataFrame({
-        "subscription_id": ["S1"],
-        "customer_id": [customer_id],
-        "status": [sub_status],
-        "monthly_price": [monthly_price],
-        "plan": ["Pro"],
-    })
-    product_usage = pd.DataFrame({
-        "usage_id": ["U1"],
-        "customer_id": [customer_id],
-        "date": [pd.Timestamp(today - timedelta(days=10))],
-        "logins": [logins],
-        "key_actions": [key_actions],
-        "features_used": [3],
-    })
+    customers = pd.DataFrame(
+        {
+            "customer_id": [customer_id],
+            "is_active": [is_active],
+            "signup_date": [today - timedelta(days=180)],
+            "segment": ["SMB"],
+        }
+    )
+    subscriptions = pd.DataFrame(
+        {
+            "subscription_id": ["S1"],
+            "customer_id": [customer_id],
+            "status": [sub_status],
+            "monthly_price": [monthly_price],
+            "plan": ["Pro"],
+        }
+    )
+    product_usage = pd.DataFrame(
+        {
+            "usage_id": ["U1"],
+            "customer_id": [customer_id],
+            "date": [pd.Timestamp(today - timedelta(days=10))],
+            "logins": [logins],
+            "key_actions": [key_actions],
+            "features_used": [3],
+        }
+    )
     nps_rows = []
     if nps_score is not None:
-        nps_rows.append({
-            "score_id": "N1", "customer_id": customer_id,
-            "date": pd.Timestamp(today - timedelta(days=5)), "score": nps_score,
-        })
-    nps_scores = pd.DataFrame(nps_rows) if nps_rows else pd.DataFrame(
-        columns=["score_id", "customer_id", "date", "score"]
+        nps_rows.append(
+            {
+                "score_id": "N1",
+                "customer_id": customer_id,
+                "date": pd.Timestamp(today - timedelta(days=5)),
+                "score": nps_score,
+            }
+        )
+    nps_scores = (
+        pd.DataFrame(nps_rows)
+        if nps_rows
+        else pd.DataFrame(columns=["score_id", "customer_id", "date", "score"])
     )
 
     tx_rows = [
         {
-            "transaction_id": f"TX{i}", "customer_id": customer_id,
-            "subscription_id": "S1", "amount": 100.0, "status": "Failed",
+            "transaction_id": f"TX{i}",
+            "customer_id": customer_id,
+            "subscription_id": "S1",
+            "amount": 100.0,
+            "status": "Failed",
         }
         for i in range(failed_payments)
     ]
-    transactions = pd.DataFrame(tx_rows) if tx_rows else pd.DataFrame(
-        columns=["transaction_id", "customer_id", "subscription_id", "amount", "status"]
+    transactions = (
+        pd.DataFrame(tx_rows)
+        if tx_rows
+        else pd.DataFrame(
+            columns=["transaction_id", "customer_id", "subscription_id", "amount", "status"]
+        )
     )
 
     ticket_rows = [
         {"ticket_id": f"T{i}", "customer_id": customer_id, "status": "Open"}
         for i in range(ticket_count)
     ]
-    support_tickets = pd.DataFrame(ticket_rows) if ticket_rows else pd.DataFrame(
-        columns=["ticket_id", "customer_id", "status"]
+    support_tickets = (
+        pd.DataFrame(ticket_rows)
+        if ticket_rows
+        else pd.DataFrame(columns=["ticket_id", "customer_id", "status"])
     )
 
     return {
@@ -117,8 +138,11 @@ class TestApplyOperator:
 class TestLowRiskCustomer:
     def test_high_logins_high_nps_no_failures_is_low_risk(self, engine):
         datasets = _make_churn_datasets(
-            logins=500, key_actions=100, nps_score=9,
-            failed_payments=0, ticket_count=0,
+            logins=500,
+            key_actions=100,
+            nps_score=9,
+            failed_payments=0,
+            ticket_count=0,
         )
         profiles = engine.evaluate_risk(datasets)
         assert len(profiles) == 1
@@ -128,7 +152,9 @@ class TestLowRiskCustomer:
 
     def test_low_risk_customer_has_zero_revenue_at_risk(self, engine):
         datasets = _make_churn_datasets(
-            logins=500, nps_score=9, failed_payments=0,
+            logins=500,
+            nps_score=9,
+            failed_payments=0,
         )
         profiles = engine.evaluate_risk(datasets)
         assert profiles[0].revenue_at_risk == pytest.approx(0.0)
@@ -137,11 +163,11 @@ class TestLowRiskCustomer:
 class TestCriticalRiskCustomer:
     def test_low_logins_low_nps_failed_payments_triggers_critical(self, engine):
         datasets = _make_churn_datasets(
-            logins=2,          # triggers CR_001 (< 10)
-            key_actions=1,     # triggers CR_005 (< 5)
-            nps_score=3,       # triggers CR_002 (<= 6)
-            failed_payments=2, # triggers CR_003 (>= 1)
-            ticket_count=4,    # triggers CR_004 (>= 3)
+            logins=2,  # triggers CR_001 (< 10)
+            key_actions=1,  # triggers CR_005 (< 5)
+            nps_score=3,  # triggers CR_002 (<= 6)
+            failed_payments=2,  # triggers CR_003 (>= 1)
+            ticket_count=4,  # triggers CR_004 (>= 3)
         )
         profiles = engine.evaluate_risk(datasets)
         assert len(profiles) == 1
@@ -152,8 +178,12 @@ class TestCriticalRiskCustomer:
 
     def test_critical_risk_has_non_zero_revenue_at_risk(self, engine):
         datasets = _make_churn_datasets(
-            logins=2, nps_score=3, failed_payments=2,
-            key_actions=1, ticket_count=4, monthly_price=500.0,
+            logins=2,
+            nps_score=3,
+            failed_payments=2,
+            key_actions=1,
+            ticket_count=4,
+            monthly_price=500.0,
         )
         profiles = engine.evaluate_risk(datasets)
         p = profiles[0]
@@ -164,14 +194,19 @@ class TestCriticalRiskCustomer:
 class TestDriverDetection:
     def test_failed_payment_rule_triggers_driver(self, engine):
         datasets = _make_churn_datasets(
-            logins=100, nps_score=9, failed_payments=1, key_actions=50,
+            logins=100,
+            nps_score=9,
+            failed_payments=1,
+            key_actions=50,
         )
         profiles = engine.evaluate_risk(datasets)
         assert "Failed Payments" in profiles[0].drivers
 
     def test_low_nps_rule_triggers_driver(self, engine):
         datasets = _make_churn_datasets(
-            logins=100, nps_score=4, failed_payments=0,
+            logins=100,
+            nps_score=4,
+            failed_payments=0,
         )
         profiles = engine.evaluate_risk(datasets)
         assert "Low NPS" in profiles[0].drivers
@@ -185,8 +220,11 @@ class TestDriverDetection:
 class TestNoScoreWithoutDrivers:
     def test_zero_risk_score_has_empty_drivers_list(self, engine):
         datasets = _make_churn_datasets(
-            logins=500, key_actions=200, nps_score=10,
-            failed_payments=0, ticket_count=0,
+            logins=500,
+            key_actions=200,
+            nps_score=10,
+            failed_payments=0,
+            ticket_count=0,
         )
         profiles = engine.evaluate_risk(datasets)
         p = profiles[0]
@@ -217,8 +255,12 @@ class TestRevenueAtRisk:
     def test_medium_risk_customer_has_zero_revenue_at_risk(self, engine):
         # Only low_nps triggers (weight 0.20 → Medium band)
         datasets = _make_churn_datasets(
-            logins=500, nps_score=5, failed_payments=0,
-            key_actions=100, ticket_count=0, monthly_price=300.0,
+            logins=500,
+            nps_score=5,
+            failed_payments=0,
+            key_actions=100,
+            ticket_count=0,
+            monthly_price=300.0,
         )
         profiles = engine.evaluate_risk(datasets)
         p = profiles[0]
@@ -228,8 +270,12 @@ class TestRevenueAtRisk:
     def test_high_risk_revenue_at_risk_equals_active_sub_mrr(self, engine):
         # CR_003 (failed_payments >= 1) weight=0.40 → High band
         datasets = _make_churn_datasets(
-            logins=500, nps_score=9, failed_payments=1,
-            key_actions=100, ticket_count=0, monthly_price=250.0,
+            logins=500,
+            nps_score=9,
+            failed_payments=1,
+            key_actions=100,
+            ticket_count=0,
+            monthly_price=250.0,
             sub_status="Active",
         )
         profiles = engine.evaluate_risk(datasets)

@@ -44,8 +44,7 @@ class DataLoader:
 
     def __init__(self, data_dir: Path | None = None) -> None:
         self.data_dir: Path = (
-            data_dir if data_dir is not None
-            else PROJECT_ROOT / "data" / "synthetic"
+            data_dir if data_dir is not None else PROJECT_ROOT / "data" / "synthetic"
         )
 
     def load_all(
@@ -103,8 +102,6 @@ class DataLoader:
                     df[col] = pd.to_datetime(df[col], errors="coerce")
 
             datasets[name] = df
-            logger.debug(
-                "Loaded '%s': %d rows, %d columns.", name, len(df), len(df.columns)
-            )
+            logger.debug("Loaded '%s': %d rows, %d columns.", name, len(df), len(df.columns))
 
         return datasets

@@ -34,9 +34,7 @@ def calculate_operating_cash_flow(
     return net_income + non_cash_expenses - working_capital_change
 
 
-def calculate_free_cash_flow(
-    operating_cash_flow: float, capital_expenditures: float
-) -> float:
+def calculate_free_cash_flow(operating_cash_flow: float, capital_expenditures: float) -> float:
     """
     Free Cash Flow = Operating Cash Flow - Capital Expenditures.
 
@@ -46,9 +44,7 @@ def calculate_free_cash_flow(
     return operating_cash_flow - capital_expenditures
 
 
-def calculate_burn_rate(
-    monthly_cash_outflow: float, monthly_cash_inflow: float
-) -> float:
+def calculate_burn_rate(monthly_cash_outflow: float, monthly_cash_inflow: float) -> float:
     """
     Burn Rate = Monthly Cash Outflow - Monthly Cash Inflow.
 

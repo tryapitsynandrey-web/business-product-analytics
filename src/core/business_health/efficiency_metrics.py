@@ -18,9 +18,7 @@ from __future__ import annotations
 from core.business_health._utils import safe_divide
 
 
-def calculate_revenue_per_employee(
-    total_revenue: float, employee_count: float
-) -> float:
+def calculate_revenue_per_employee(total_revenue: float, employee_count: float) -> float:
     """
     Revenue Per Employee = Total Revenue / Employee Count.
 
@@ -30,9 +28,7 @@ def calculate_revenue_per_employee(
     return safe_divide(total_revenue, employee_count)
 
 
-def calculate_profit_per_employee(
-    net_profit: float, employee_count: float
-) -> float:
+def calculate_profit_per_employee(net_profit: float, employee_count: float) -> float:
     """
     Profit Per Employee = Net Profit / Employee Count.
 
@@ -43,9 +39,7 @@ def calculate_profit_per_employee(
     return safe_divide(net_profit, employee_count)
 
 
-def calculate_support_cost_per_customer(
-    support_cost: float, customers: float
-) -> float:
+def calculate_support_cost_per_customer(support_cost: float, customers: float) -> float:
     """
     Support Cost Per Customer = Support Cost / Customers.
 
@@ -56,9 +50,7 @@ def calculate_support_cost_per_customer(
     return safe_divide(support_cost, customers)
 
 
-def calculate_cost_to_serve_per_customer(
-    total_service_cost: float, customers: float
-) -> float:
+def calculate_cost_to_serve_per_customer(total_service_cost: float, customers: float) -> float:
     """
     Cost to Serve Per Customer = Total Service Cost / Customers.
 
@@ -69,9 +61,7 @@ def calculate_cost_to_serve_per_customer(
     return safe_divide(total_service_cost, customers)
 
 
-def calculate_sales_efficiency(
-    new_revenue: float, sales_and_marketing_spend: float
-) -> float:
+def calculate_sales_efficiency(new_revenue: float, sales_and_marketing_spend: float) -> float:
     """
     Sales Efficiency = New Revenue / Sales & Marketing Spend.
 
@@ -82,9 +72,7 @@ def calculate_sales_efficiency(
     return safe_divide(new_revenue, sales_and_marketing_spend)
 
 
-def calculate_marketing_efficiency(
-    new_customers: float, marketing_spend: float
-) -> float:
+def calculate_marketing_efficiency(new_customers: float, marketing_spend: float) -> float:
     """
     Marketing Efficiency = New Customers / Marketing Spend.
 

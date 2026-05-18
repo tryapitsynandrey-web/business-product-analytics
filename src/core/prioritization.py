@@ -44,6 +44,7 @@ def _parse_effort_weight(effort_level: Any) -> float:
 # Public API
 # ---------------------------------------------------------------------------
 
+
 def calculate_priority_score(
     impact_score: float,
     confidence_weight: float,
@@ -141,9 +142,7 @@ def rank_interventions(
             impact = float(iv.get("estimated_revenue_impact", 0.0))
             confidence_str = iv.get("confidence_level", "Medium")
             # Map string label back to float
-            confidence = {"High": 0.85, "Medium": 0.65, "Low": 0.40}.get(
-                confidence_str, 0.65
-            )
+            confidence = {"High": 0.85, "Medium": 0.65, "Low": 0.40}.get(confidence_str, 0.65)
             score = calculate_priority_score(impact, confidence, effort)
             band = assign_priority_band(score)
             enriched.append({**iv, "priority_score": score, "priority_band": band})

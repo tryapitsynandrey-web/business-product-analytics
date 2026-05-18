@@ -23,25 +23,26 @@ import yaml
 
 from adapters.data_loader import DataLoader
 from adapters.data_writer import DataWriter
+from adapters.output_serializer import OutputSerializer
+from adapters.sqlite_writer import SQLiteIfExists
 from adapters.synthetic_data_generator import SyntheticDataGenerator
-from core.metric_governance import MetricGovernance
-from core.kpi_engine import KPIEngine
 from core.churn_risk import ChurnRiskEngine
-from core.revenue_leakage import RevenueLeakageEngine
-from core.recommendation_engine import RecommendationEngine
 from core.customer_360 import Customer360Engine
-from core.decision_trace import DecisionTraceEngine
-from core.prioritization import rank_interventions, rank_recommendations
-from core.intervention_planner import InterventionPlanner
 from core.data_quality_score import DataQualityScorer
-from core.report_generator import ReportGenerator
-from core.segmentation import SegmentationEngine
-from core.metric_lineage import MetricLineageEngine
+from core.decision_trace import DecisionTraceEngine
 from core.health_score import ProductHealthScoreEngine
-from models.schemas import OUTPUT_SCHEMAS
-from utils.paths import PROJECT_ROOT, SQLITE_DB_PATH
+from core.intervention_planner import InterventionPlanner
+from core.kpi_engine import KPIEngine
+from core.metric_governance import MetricGovernance
+from core.metric_lineage import MetricLineageEngine
+from core.prioritization import rank_interventions, rank_recommendations
+from core.recommendation_engine import RecommendationEngine
+from core.report_generator import ReportGenerator
+from core.revenue_leakage import RevenueLeakageEngine
+from core.segmentation import SegmentationEngine
+from models.pipeline_results import AnalyticsResult, DecisionLayerResult
+from utils.paths import PROJECT_ROOT, SQLITE_DB_PATH, ensure_directories
 from utils.validation import ValidationResult, run_dataset_validation
-from adapters.sqlite_writer import SQLiteIfExists, SQLiteWriter
 
 
 # ---------------------------------------------------------------------------
@@ -100,6 +101,32 @@ def _parse_sqlite_if_exists(value: Any) -> SQLiteIfExists:
     )
 
 
+def _as_analytics_result(analytics: AnalyticsResult | Dict[str, Any]) -> AnalyticsResult:
+    """Accept legacy dicts in unit tests while production uses typed results."""
+    if isinstance(analytics, AnalyticsResult):
+        return analytics
+    return AnalyticsResult(
+        kpis=analytics.get("kpis", []),
+        risk_profiles=analytics.get("risk_profiles", []),
+        leakages=analytics.get("leakages", []),
+        recommendations=analytics.get("recommendations", []),
+    )
+
+
+def _as_decision_result(decision: DecisionLayerResult | Dict[str, Any]) -> DecisionLayerResult:
+    """Accept legacy dicts in unit tests while production uses typed results."""
+    if isinstance(decision, DecisionLayerResult):
+        return decision
+    return DecisionLayerResult(
+        data_quality_scores=decision.get("data_quality_scores", []),
+        customer_360=decision.get("customer_360", pd.DataFrame()),
+        interventions=decision.get("interventions", []),
+        decision_traces=decision.get("decision_traces", []),
+        metric_lineage=decision.get("metric_lineage", pd.DataFrame()),
+        health_scores=decision.get("health_scores", pd.DataFrame()),
+    )
+
+
 # ---------------------------------------------------------------------------
 # Pipeline class
 # ---------------------------------------------------------------------------
@@ -115,9 +142,28 @@ class ProductAnalyticsPipeline:
         Override the default config file location.
     """
 
-    def __init__(self, config_path: Path | None = None) -> None:
+    def __init__(
+        self,
+        config_path: Path | None = None,
+        *,
+        data_loader: DataLoader | None = None,
+        data_writer: DataWriter | None = None,
+        governance: MetricGovernance | None = None,
+        kpi_engine: KPIEngine | None = None,
+        churn_risk: ChurnRiskEngine | None = None,
+        leakage: RevenueLeakageEngine | None = None,
+        recommendations: RecommendationEngine | None = None,
+        intervention_planner: InterventionPlanner | None = None,
+        reporter: ReportGenerator | None = None,
+        output_serializer: OutputSerializer | None = None,
+    ) -> None:
         resolved_path = config_path or (PROJECT_ROOT / "config" / "config.yaml")
         self.config: Dict[str, Any] = _load_config(resolved_path)
+        self._config_dir = (
+            resolved_path.parent
+            if (resolved_path.parent / "metric_catalog.yaml").exists()
+            else PROJECT_ROOT / "config"
+        )
 
         # Logging
         log_cfg = self.config.get("logging", {})
@@ -150,6 +196,15 @@ class ProductAnalyticsPipeline:
         self._sqlite_if_exists: SQLiteIfExists = _parse_sqlite_if_exists(
             persistence_cfg.get("if_exists", "replace")
         )
+        ensure_directories(
+            [
+                self._synthetic_data_dir,
+                self._processed_data_dir,
+                self._exports_dir,
+                self._reports_dir,
+                Path(self._sqlite_path).parent,
+            ]
+        )
 
         # Reproducibility seed
         repro_cfg = self.config.get("reproducibility", {})
@@ -160,23 +215,33 @@ class ProductAnalyticsPipeline:
         self._required_datasets: List[str] = self.config.get("required_datasets", [])
 
         # Adapters
-        self.data_loader = DataLoader(data_dir=self._synthetic_data_dir)
-        self.data_writer = DataWriter(
+        self.data_loader = data_loader or DataLoader(data_dir=self._synthetic_data_dir)
+        self.data_writer = data_writer or DataWriter(
             processed_dir=self._processed_data_dir,
             exports_dir=self._exports_dir,
             reports_dir=self._reports_dir,
         )
+        self.output_serializer = output_serializer or OutputSerializer(
+            run_id=f"productpulse-{self._as_of_date.isoformat()}",
+            generated_at=f"{self._as_of_date.isoformat()}T00:00:00+00:00",
+        )
 
         # Phase 2 engines
-        self.governance = MetricGovernance()
-        self.kpi_engine = KPIEngine(self.governance)
-        self.churn_risk = ChurnRiskEngine()
-        self.leakage = RevenueLeakageEngine()
-        self.recommendations = RecommendationEngine()
+        self.governance = governance or MetricGovernance(
+            catalog_path=self._config_dir / "metric_catalog.yaml"
+        )
+        self.kpi_engine = kpi_engine or KPIEngine(self.governance)
+        self.churn_risk = churn_risk or ChurnRiskEngine(
+            rules_path=self._config_dir / "churn_rules.yaml"
+        )
+        self.leakage = leakage or RevenueLeakageEngine()
+        self.recommendations = recommendations or RecommendationEngine(
+            rules_path=self._config_dir / "recommendation_rules.yaml"
+        )
 
         # Phase 3 engines
-        self.intervention_planner = InterventionPlanner()
-        self.reporter = ReportGenerator(
+        self.intervention_planner = intervention_planner or InterventionPlanner()
+        self.reporter = reporter or ReportGenerator(
             reports_dir=self._reports_dir,
             generated_on=self._as_of_date,
         )
@@ -233,7 +298,7 @@ class ProductAnalyticsPipeline:
             )
         return result
 
-    def _phase_analytics(self, datasets: Dict[str, Any]) -> Dict[str, Any]:
+    def _phase_analytics(self, datasets: Dict[str, Any]) -> AnalyticsResult:
         """Execute Phase 2 analytics engines in dependency order."""
         target_date = self._as_of_date
 
@@ -269,20 +334,21 @@ class ProductAnalyticsPipeline:
         recs = rank_recommendations(recs)
         self.logger.info("Recommendations: %d generated.", len(recs))
 
-        return {
-            "kpis": kpis,
-            "risk_profiles": risk_profiles,
-            "leakages": leakages,
-            "recommendations": recs,
-        }
+        return AnalyticsResult(
+            kpis=kpis,
+            risk_profiles=risk_profiles,
+            leakages=leakages,
+            recommendations=recs,
+        )
 
     def _phase_decision_layer(
         self,
         datasets: Dict[str, Any],
-        analytics: Dict[str, Any],
+        analytics: AnalyticsResult | Dict[str, Any],
         validation_issues: List[Any],
-    ) -> Dict[str, Any]:
+    ) -> DecisionLayerResult:
         """Execute Phase 3: decision layer, Customer 360, tracing, interventions."""
+        analytics_result = _as_analytics_result(analytics)
 
         # Data quality scoring
         self.logger.info("Phase 3: scoring data quality.")
@@ -299,8 +365,8 @@ class ProductAnalyticsPipeline:
         self.logger.info("Phase 3: building Customer 360 view.")
         c360_engine = Customer360Engine(
             datasets=datasets,
-            risk_profiles=analytics["risk_profiles"],
-            recommendations=analytics["recommendations"],
+            risk_profiles=analytics_result.risk_profiles,
+            recommendations=analytics_result.recommendations,
         )
         customer_360_df = c360_engine.build_customer_360_view()
 
@@ -312,7 +378,7 @@ class ProductAnalyticsPipeline:
         # Intervention planning
         self.logger.info("Phase 3: creating intervention plan.")
         interventions = self.intervention_planner.create_intervention_plan(
-            analytics["recommendations"]
+            analytics_result.recommendations
         )
         interventions = rank_interventions(interventions)
         self.logger.info("Interventions: %d planned.", len(interventions))
@@ -320,9 +386,9 @@ class ProductAnalyticsPipeline:
         # Decision traces
         self.logger.info("Phase 3: generating decision traces.")
         tracer = DecisionTraceEngine(created_at=f"{self._as_of_date.isoformat()}T00:00:00+00:00")
-        tracer.trace_all_churn_risks(analytics["risk_profiles"])
-        tracer.trace_all_leakages(analytics["leakages"])
-        tracer.trace_all_recommendations(analytics["recommendations"])
+        tracer.trace_all_churn_risks(analytics_result.risk_profiles)
+        tracer.trace_all_leakages(analytics_result.leakages)
+        tracer.trace_all_recommendations(analytics_result.recommendations)
         tracer.trace_all_interventions(interventions)
         traces = tracer.export_traces()
         self.logger.info("Decision traces: %d recorded.", len(traces))
@@ -330,200 +396,58 @@ class ProductAnalyticsPipeline:
         # Metric Lineage
         self.logger.info("Phase 3: building metric lineage.")
         lineage_engine = MetricLineageEngine()
-        metric_lineage_df = lineage_engine.build_lineage_table(self.governance._catalog)
+        metric_lineage_df = lineage_engine.build_lineage_table(self.governance.get_catalog())
 
         # Health Scores
         self.logger.info("Phase 3: calculating health scores.")
         health_engine = ProductHealthScoreEngine()
 
-        metrics_dict = {k.metric_name: k.value for k in analytics.get("kpis", [])}
+        metrics_dict = {k.metric_name: k.value for k in analytics_result.kpis}
         overall_dq = [s.overall_score for s in dq_scores]
         if overall_dq:
             metrics_dict["data_quality_score"] = sum(overall_dq) / len(overall_dq)
 
         health_scores_df = health_engine.build_health_score_table(metrics_dict)
 
-        return {
-            "data_quality_scores": dq_scores,
-            "customer_360": customer_360_df,
-            "interventions": interventions,
-            "decision_traces": traces,
-            "metric_lineage": metric_lineage_df,
-            "health_scores": health_scores_df,
-        }
+        return DecisionLayerResult(
+            data_quality_scores=dq_scores,
+            customer_360=customer_360_df,
+            interventions=interventions,
+            decision_traces=traces,
+            metric_lineage=metric_lineage_df,
+            health_scores=health_scores_df,
+        )
 
     def _phase_write_outputs(
         self,
-        analytics: Dict[str, Any],
-        decision: Dict[str, Any],
+        analytics: AnalyticsResult | Dict[str, Any],
+        decision: DecisionLayerResult | Dict[str, Any],
     ) -> List[str]:
         """Persist all analytics and decision layer outputs."""
         self.logger.info("Phase: writing outputs.")
-        written: List[str] = []
+        analytics_result = _as_analytics_result(analytics)
+        decision_result = _as_decision_result(decision)
 
-        # ── data/processed/ ──────────────────────────────────────────────
+        artifacts = self.output_serializer.build_artifacts(analytics_result, decision_result)
+        written = self.output_serializer.write_csv_artifacts(self.data_writer, artifacts)
 
-        # KPI summary
-        kpi_rows = [
-            {
-                "metric_name": k.metric_name,
-                "value": k.value,
-                "grain": k.grain,
-                "explanation": k.explanation,
-            }
-            for k in analytics["kpis"]
-        ]
-        if kpi_rows:
-            self.data_writer.write_dataframe_with_schema(
-                pd.DataFrame(kpi_rows),
-                self.data_writer.processed_dir / "kpi_summary.csv",
-                OUTPUT_SCHEMAS["kpi_summary"],
-                "kpi_summary",
-            )
-            written.append("data/processed/kpi_summary.csv")
-
-        # Customer 360
-        c360_df = decision.get("customer_360")
-        if c360_df is not None and not c360_df.empty:
-            self.data_writer.write_dataframe_with_schema(
-                c360_df,
-                self.data_writer.processed_dir / "customer_360.csv",
-                OUTPUT_SCHEMAS["customer_360"],
-                "customer_360",
-            )
-            written.append("data/processed/customer_360.csv")
-
-        # Data quality scores
-        dq_rows = [
-            {
-                "dataset": s.dataset,
-                "completeness_score": s.completeness_score,
-                "uniqueness_score": s.uniqueness_score,
-                "validity_score": s.validity_score,
-                "referential_integrity_score": s.referential_integrity_score,
-                "overall_score": s.overall_score,
-                "status": s.status,
-                "business_risk": s.business_risk,
-            }
-            for s in decision.get("data_quality_scores", [])
-        ]
-        if dq_rows:
-            self.data_writer.write_dataframe_with_schema(
-                pd.DataFrame(dq_rows),
-                self.data_writer.processed_dir / "data_quality_scores.csv",
-                OUTPUT_SCHEMAS["data_quality_scores"],
-                "data_quality_scores",
-            )
-            written.append("data/processed/data_quality_scores.csv")
-
-        # Health Scores
-        health_scores_df = decision.get("health_scores")
-        if health_scores_df is not None and not health_scores_df.empty:
-            self.data_writer.write_dataframe_with_schema(
-                health_scores_df,
-                self.data_writer.processed_dir / "health_scores.csv",
-                OUTPUT_SCHEMAS["health_scores"],
-                "health_scores",
-            )
-            written.append("data/processed/health_scores.csv")
-
-        # Intervention plan
-        interventions = decision.get("interventions", [])
-        if interventions:
-            self.data_writer.write_dataframe_with_schema(
-                pd.DataFrame(interventions),
-                self.data_writer.processed_dir / "intervention_plan.csv",
-                OUTPUT_SCHEMAS["intervention_plan"],
-                "intervention_plan",
-            )
-            written.append("data/processed/intervention_plan.csv")
-
-        # ── data/exports/ ────────────────────────────────────────────────
-
-        # Churn risk profiles
-        risk_rows = [
-            {
-                "customer_id": p.customer_id,
-                "risk_score": p.risk_score,
-                "risk_band": p.risk_band.value,
-                "drivers": " | ".join(p.drivers),
-                "revenue_at_risk": p.revenue_at_risk,
-                "explanation": p.explanation,
-            }
-            for p in analytics["risk_profiles"]
-        ]
-        if risk_rows:
-            self.data_writer.write_dataframe_with_schema(
-                pd.DataFrame(risk_rows),
-                self.data_writer.exports_dir / "churn_risk_profiles.csv",
-                OUTPUT_SCHEMAS["churn_risk_profiles"],
-                "churn_risk_profiles",
-            )
-            written.append("data/exports/churn_risk_profiles.csv")
-
-        # Revenue leakage
-        if analytics["leakages"]:
-            self.data_writer.write_dataframe_with_schema(
-                pd.DataFrame(analytics["leakages"]),
-                self.data_writer.exports_dir / "revenue_leakage.csv",
-                OUTPUT_SCHEMAS["revenue_leakage"],
-                "revenue_leakage",
-            )
-            written.append("data/exports/revenue_leakage.csv")
-
-        # Recommendations
-        if analytics["recommendations"]:
-            self.data_writer.write_dataframe_with_schema(
-                pd.DataFrame(analytics["recommendations"]),
-                self.data_writer.exports_dir / "recommendations.csv",
-                OUTPUT_SCHEMAS["recommendations"],
-                "recommendations",
-            )
-            written.append("data/exports/recommendations.csv")
-
-        # Decision traces
-        traces = decision.get("decision_traces", [])
-        if traces:
-            self.data_writer.write_dataframe_with_schema(
-                pd.DataFrame(traces),
-                self.data_writer.exports_dir / "decision_traces.csv",
-                OUTPUT_SCHEMAS["decision_traces"],
-                "decision_traces",
-            )
-            written.append("data/exports/decision_traces.csv")
-
-        # Metric Lineage
-        metric_lineage_df = decision.get("metric_lineage")
-        if metric_lineage_df is not None and not metric_lineage_df.empty:
-            self.data_writer.write_dataframe_with_schema(
-                metric_lineage_df,
-                self.data_writer.exports_dir / "metric_lineage.csv",
-                OUTPUT_SCHEMAS["metric_lineage"],
-                "metric_lineage",
-            )
-            written.append("data/exports/metric_lineage.csv")
-
-        # ── reports/ ─────────────────────────────────────────────────────
-
-        # Merge results for reporter
-        full_results = {**analytics, **decision}
+        full_results = {**analytics_result.as_dict(), **decision_result.as_dict()}
 
         self.logger.info("Phase: generating reports.")
 
         self.reporter.generate_executive_summary(full_results)
         written.append("reports/executive_summary.md")
 
-        self.reporter.generate_data_quality_report(decision.get("data_quality_scores", []))
+        self.reporter.generate_data_quality_report(decision_result.data_quality_scores)
         written.append("reports/data_quality_report.md")
 
-        self.reporter.generate_intervention_plan(interventions)
+        self.reporter.generate_intervention_plan(decision_result.interventions)
         written.append("reports/intervention_plan.md")
 
-        self.reporter.generate_risk_register(analytics)
+        self.reporter.generate_risk_register(analytics_result.as_dict())
         written.append("reports/risk_register.md")
 
-        # Metric definitions from governance catalog
-        catalog = self.governance._catalog
+        catalog = self.governance.get_catalog()
         if catalog:
             self.reporter.generate_metric_definitions(catalog)
             written.append("reports/metric_definitions.md")
@@ -531,95 +455,21 @@ class ProductAnalyticsPipeline:
         return written
 
     def _phase_write_sqlite_outputs(
-        self, analytics: Dict[str, Any], decision: Dict[str, Any]
+        self,
+        analytics: AnalyticsResult | Dict[str, Any],
+        decision: DecisionLayerResult | Dict[str, Any],
     ) -> List[str]:
         """Write schema-controlled artifacts to local SQLite database."""
         self.logger.info("Phase: writing SQLite outputs to %s.", self._sqlite_path)
-        writer = SQLiteWriter(self._sqlite_path)
-
-        # Build artifacts dict
-        artifacts = {}
-
-        # KPI Summary
-        kpi_rows = [
-            {
-                "metric_name": k.metric_name,
-                "value": k.value,
-                "grain": k.grain,
-                "explanation": k.explanation,
-            }
-            for k in analytics.get("kpis", [])
-        ]
-        if kpi_rows:
-            artifacts["kpi_summary"] = pd.DataFrame(kpi_rows)
-
-        # Health Scores
-        health_scores_df = decision.get("health_scores")
-        if health_scores_df is not None and not health_scores_df.empty:
-            artifacts["health_scores"] = health_scores_df
-
-        # Customer 360
-        c360_df = decision.get("customer_360")
-        if c360_df is not None and not c360_df.empty:
-            artifacts["customer_360"] = c360_df
-
-        # Data Quality Scores
-        dq_rows = [
-            {
-                "dataset": s.dataset,
-                "completeness_score": s.completeness_score,
-                "uniqueness_score": s.uniqueness_score,
-                "validity_score": s.validity_score,
-                "referential_integrity_score": s.referential_integrity_score,
-                "overall_score": s.overall_score,
-                "status": s.status,
-                "business_risk": s.business_risk,
-            }
-            for s in decision.get("data_quality_scores", [])
-        ]
-        if dq_rows:
-            artifacts["data_quality_scores"] = pd.DataFrame(dq_rows)
-
-        # Intervention Plan
-        interventions = decision.get("interventions", [])
-        if interventions:
-            artifacts["intervention_plan"] = pd.DataFrame(interventions)
-
-        # Churn Risk Profiles
-        risk_rows = [
-            {
-                "customer_id": p.customer_id,
-                "risk_score": p.risk_score,
-                "risk_band": p.risk_band.value,
-                "drivers": ", ".join(p.drivers) if isinstance(p.drivers, list) else p.drivers,
-                "revenue_at_risk": p.revenue_at_risk,
-                "explanation": p.explanation,
-            }
-            for p in analytics.get("risk_profiles", [])
-        ]
-        if risk_rows:
-            artifacts["churn_risk_profiles"] = pd.DataFrame(risk_rows)
-
-        # Revenue Leakage
-        if analytics.get("leakages"):
-            artifacts["revenue_leakage"] = pd.DataFrame(analytics["leakages"])
-
-        # Recommendations
-        if analytics.get("recommendations"):
-            artifacts["recommendations"] = pd.DataFrame(analytics["recommendations"])
-
-        # Decision Traces
-        traces = decision.get("decision_traces", [])
-        if traces:
-            artifacts["decision_traces"] = pd.DataFrame(traces)
-
-        # Metric Lineage
-        if decision.get("metric_lineage") is not None and not decision["metric_lineage"].empty:
-            artifacts["metric_lineage"] = decision["metric_lineage"]
-
+        analytics_result = _as_analytics_result(analytics)
+        decision_result = _as_decision_result(decision)
+        artifacts = self.output_serializer.build_artifacts(analytics_result, decision_result)
         try:
-            tables = writer.write_artifacts(artifacts, if_exists=self._sqlite_if_exists)
-            return [f"sqlite://{table}" for table in tables]
+            return self.output_serializer.write_sqlite_artifacts(
+                self._sqlite_path,
+                artifacts,
+                self._sqlite_if_exists,
+            )
         except Exception as e:
             self.logger.error("Failed to write SQLite outputs: %s", e)
             return []

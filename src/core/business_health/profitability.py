@@ -19,6 +19,7 @@ from core.business_health._utils import safe_divide
 # Profitability Metrics
 # ---------------------------------------------------------------------------
 
+
 def calculate_gross_profit(revenue: float, cost_of_goods_sold: float) -> float:
     """
     Gross Profit = Revenue - Cost of Goods Sold.
@@ -110,6 +111,7 @@ def calculate_ebitda_margin(revenue: float, ebitda: float) -> float:
 # Return Metrics
 # ---------------------------------------------------------------------------
 
+
 def calculate_roi(gain_from_investment: float, cost_of_investment: float) -> float:
     """
     ROI = (Gain - Cost) / Cost.
@@ -153,9 +155,7 @@ def calculate_roic(nopat: float, invested_capital: float) -> float:
     return safe_divide(nopat, invested_capital)
 
 
-def calculate_payback_period(
-    initial_investment: float, annual_cash_inflow: float
-) -> float:
+def calculate_payback_period(initial_investment: float, annual_cash_inflow: float) -> float:
     """
     Payback Period = Initial Investment / Annual Cash Inflow.
 

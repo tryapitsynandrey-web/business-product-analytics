@@ -40,12 +40,14 @@ _RISK_THRESHOLD: float = 30.0
 # Result types
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class AreaScore:
     """Health score for a single analytical domain."""
+
     area: str
-    score: float           # 0–100
-    status: str            # Healthy | Stable | Watch | Risk | Critical
+    score: float  # 0–100
+    status: str  # Healthy | Stable | Watch | Risk | Critical
     explanation: str
     inputs: Dict[str, Any] = field(default_factory=dict)
 
@@ -53,6 +55,7 @@ class AreaScore:
 @dataclass
 class CompositeScore:
     """Aggregated business health score across all domains."""
+
     composite_score: float
     status: str
     area_scores: List[AreaScore] = field(default_factory=list)
@@ -62,6 +65,7 @@ class CompositeScore:
 # ---------------------------------------------------------------------------
 # Internal helpers
 # ---------------------------------------------------------------------------
+
 
 def _status_from_score(score: float) -> str:
     """Map a 0–100 score to a status label."""
@@ -100,6 +104,7 @@ def _score_ratio(value: float, target: float, inverse: bool = False) -> float:
 # ---------------------------------------------------------------------------
 # Domain scorers
 # ---------------------------------------------------------------------------
+
 
 def score_profitability(
     gross_margin: float,
@@ -196,10 +201,7 @@ def score_cashflow(runway_months: float, free_cash_flow: float) -> AreaScore:
         area="cashflow",
         score=round(score, 2),
         status=status,
-        explanation=(
-            f"Runway {runway_months:.1f} months; "
-            f"free cash flow ${free_cash_flow:,.0f}."
-        ),
+        explanation=(f"Runway {runway_months:.1f} months; free cash flow ${free_cash_flow:,.0f}."),
         inputs={"runway_months": runway_months, "free_cash_flow": free_cash_flow},
     )
 
@@ -221,8 +223,7 @@ def score_unit_economics(ltv_to_cac: float, cac_payback_months: float) -> AreaSc
         score=round(score, 2),
         status=status,
         explanation=(
-            f"LTV:CAC ratio {ltv_to_cac:.2f}x; "
-            f"CAC payback {cac_payback_months:.1f} months."
+            f"LTV:CAC ratio {ltv_to_cac:.2f}x; CAC payback {cac_payback_months:.1f} months."
         ),
         inputs={"ltv_to_cac": ltv_to_cac, "cac_payback_months": cac_payback_months},
     )
@@ -333,6 +334,7 @@ def score_risk(
 # Engine class
 # ---------------------------------------------------------------------------
 
+
 class BusinessHealthScoreEngine:
     """
     Combines domain area scores into a composite business health assessment.
@@ -371,61 +373,73 @@ class BusinessHealthScoreEngine:
 
         # Profitability
         pi = profitability_inputs or {}
-        area_scores.append(score_profitability(
-            gross_margin=pi.get("gross_margin", 0.0),
-            operating_margin=pi.get("operating_margin", 0.0),
-            net_margin=pi.get("net_margin", 0.0),
-        ))
+        area_scores.append(
+            score_profitability(
+                gross_margin=pi.get("gross_margin", 0.0),
+                operating_margin=pi.get("operating_margin", 0.0),
+                net_margin=pi.get("net_margin", 0.0),
+            )
+        )
 
         # Revenue
         ri = revenue_inputs or {}
-        area_scores.append(score_revenue_health(
-            revenue_growth_rate=ri.get("revenue_growth_rate", 0.0),
-            recurring_revenue_ratio=ri.get("recurring_revenue_ratio", 0.0),
-            refund_rate=ri.get("refund_rate", 0.0),
-            failed_payment_rate=ri.get("failed_payment_rate", 0.0),
-        ))
+        area_scores.append(
+            score_revenue_health(
+                revenue_growth_rate=ri.get("revenue_growth_rate", 0.0),
+                recurring_revenue_ratio=ri.get("recurring_revenue_ratio", 0.0),
+                refund_rate=ri.get("refund_rate", 0.0),
+                failed_payment_rate=ri.get("failed_payment_rate", 0.0),
+            )
+        )
 
         # Cash flow
         ci = cashflow_inputs or {}
-        area_scores.append(score_cashflow(
-            runway_months=ci.get("runway_months", 0.0),
-            free_cash_flow=ci.get("free_cash_flow", 0.0),
-        ))
+        area_scores.append(
+            score_cashflow(
+                runway_months=ci.get("runway_months", 0.0),
+                free_cash_flow=ci.get("free_cash_flow", 0.0),
+            )
+        )
 
         # Unit economics
         ue = unit_economics_inputs or {}
-        area_scores.append(score_unit_economics(
-            ltv_to_cac=ue.get("ltv_to_cac", 0.0),
-            cac_payback_months=ue.get("cac_payback_months", 0.0),
-        ))
+        area_scores.append(
+            score_unit_economics(
+                ltv_to_cac=ue.get("ltv_to_cac", 0.0),
+                cac_payback_months=ue.get("cac_payback_months", 0.0),
+            )
+        )
 
         # Growth
         gi = growth_inputs or {}
-        area_scores.append(score_growth(
-            customer_growth_rate=gi.get("customer_growth_rate", 0.0),
-            revenue_growth_rate=gi.get("revenue_growth_rate", 0.0),
-            growth_efficiency=gi.get("growth_efficiency", 0.0),
-        ))
+        area_scores.append(
+            score_growth(
+                customer_growth_rate=gi.get("customer_growth_rate", 0.0),
+                revenue_growth_rate=gi.get("revenue_growth_rate", 0.0),
+                growth_efficiency=gi.get("growth_efficiency", 0.0),
+            )
+        )
 
         # Efficiency
         ei = efficiency_inputs or {}
-        area_scores.append(score_efficiency(
-            revenue_per_employee=ei.get("revenue_per_employee", 0.0),
-            sales_efficiency=ei.get("sales_efficiency", 0.0),
-        ))
+        area_scores.append(
+            score_efficiency(
+                revenue_per_employee=ei.get("revenue_per_employee", 0.0),
+                sales_efficiency=ei.get("sales_efficiency", 0.0),
+            )
+        )
 
         # Risk
         rki = risk_inputs or {}
-        area_scores.append(score_risk(
-            customer_concentration=rki.get("customer_concentration", 0.0),
-            churn_exposure=rki.get("churn_exposure", 0.0),
-            cashflow_risk_score=rki.get("cashflow_risk_score", 100.0),
-        ))
-
-        composite = safe_divide(
-            sum(a.score for a in area_scores), len(area_scores)
+        area_scores.append(
+            score_risk(
+                customer_concentration=rki.get("customer_concentration", 0.0),
+                churn_exposure=rki.get("churn_exposure", 0.0),
+                cashflow_risk_score=rki.get("cashflow_risk_score", 100.0),
+            )
         )
+
+        composite = safe_divide(sum(a.score for a in area_scores), len(area_scores))
         composite = round(clamp_score(composite), 2)
         status = _status_from_score(composite)
 

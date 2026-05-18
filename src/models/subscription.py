@@ -3,6 +3,7 @@ from datetime import date
 from typing import Optional
 from models.enums import Plan, SubscriptionStatus
 
+
 @dataclass
 class SubscriptionState:
     subscription_id: str

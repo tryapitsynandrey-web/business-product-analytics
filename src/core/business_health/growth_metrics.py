@@ -17,9 +17,7 @@ from __future__ import annotations
 from core.business_health._utils import safe_divide, percentage_change
 
 
-def calculate_customer_growth_rate(
-    current_customers: float, previous_customers: float
-) -> float:
+def calculate_customer_growth_rate(current_customers: float, previous_customers: float) -> float:
     """
     Customer Growth Rate = (Current - Previous) / |Previous|.
 
@@ -28,9 +26,7 @@ def calculate_customer_growth_rate(
     return percentage_change(current_customers, previous_customers)
 
 
-def calculate_user_growth_rate(
-    current_users: float, previous_users: float
-) -> float:
+def calculate_user_growth_rate(current_users: float, previous_users: float) -> float:
     """
     User Growth Rate = (Current - Previous) / |Previous|.
 
@@ -64,9 +60,7 @@ def calculate_retention_growth_rate(
     return percentage_change(current_retention_rate, previous_retention_rate)
 
 
-def calculate_growth_efficiency(
-    revenue_growth: float, sales_and_marketing_spend: float
-) -> float:
+def calculate_growth_efficiency(revenue_growth: float, sales_and_marketing_spend: float) -> float:
     """
     Growth Efficiency = Revenue Growth / Sales & Marketing Spend.
 

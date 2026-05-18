@@ -1,9 +1,9 @@
-dataset,completeness_score,uniqueness_score,validity_score,referential_integrity_score,overall_score,status,business_risk
-acquisition_channels,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
-customers,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
-nps_scores,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
-product_usage,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
-subscriptions,0.9211,1.0,1.0,1.0,0.9803,Good,Low — dataset meets quality standards.
-support_tickets,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
-targets,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
-transactions,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.
+dataset,completeness_score,uniqueness_score,validity_score,referential_integrity_score,overall_score,status,business_risk,run_id,generated_at
+acquisition_channels,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+customers,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+nps_scores,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+product_usage,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+subscriptions,0.9211,1.0,1.0,1.0,0.9803,Good,Low — dataset meets quality standards.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+support_tickets,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+targets,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+transactions,1.0,1.0,1.0,1.0,1.0,Good,Low — dataset meets quality standards.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00

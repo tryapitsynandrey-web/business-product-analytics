@@ -20,6 +20,11 @@ class SQLiteWriter:
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
 
+    def _validate_table_name(self, table_name: str) -> None:
+        """Validate table names before interpolating them into SQL statements."""
+        if not table_name.isidentifier():
+            raise ValueError(f"Invalid table name: {table_name}")
+
     def write_dataframe(
         self,
         table_name: str,
@@ -93,6 +98,7 @@ class SQLiteWriter:
 
     def read_table(self, table_name: str) -> pd.DataFrame:
         """Read a table from the database into a DataFrame."""
+        self._validate_table_name(table_name)
         if not self.table_exists(table_name):
             raise ValueError(f"Table '{table_name}' does not exist in {self.db_path}")
         with sqlite3.connect(self.db_path) as conn:

@@ -17,12 +17,14 @@ from typing import Dict, List, Any
 # Structured result types
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class ValidationIssue:
     """Represents a single failed validation check."""
+
     dataset: str
     check_name: str
-    severity: str          # 'error' | 'warning'
+    severity: str  # 'error' | 'warning'
     message: str
     affected_column: str
     affected_rows_count: int
@@ -31,6 +33,7 @@ class ValidationIssue:
 @dataclass
 class ValidationResult:
     """Aggregated outcome of all validation checks."""
+
     passed: bool
     issues: List[ValidationIssue] = field(default_factory=list)
     total_checks: int = 0
@@ -49,6 +52,7 @@ class ValidationResult:
 # ---------------------------------------------------------------------------
 # Individual validation functions
 # ---------------------------------------------------------------------------
+
 
 def validate_required_datasets(
     datasets: Dict[str, pd.DataFrame],
@@ -91,9 +95,7 @@ def validate_required_columns(
                     dataset=dataset_name,
                     check_name="required_columns",
                     severity="error",
-                    message=(
-                        f"Required column '{col}' is missing from dataset '{dataset_name}'."
-                    ),
+                    message=(f"Required column '{col}' is missing from dataset '{dataset_name}'."),
                     affected_column=col,
                     affected_rows_count=0,
                 )
@@ -281,9 +283,7 @@ def validate_nps_range(
         return issues
 
     numeric_scores = pd.to_numeric(df[column], errors="coerce")
-    out_of_range = int(
-        ((numeric_scores < min_score) | (numeric_scores > max_score)).sum()
-    )
+    out_of_range = int(((numeric_scores < min_score) | (numeric_scores > max_score)).sum())
     if out_of_range > 0:
         issues.append(
             ValidationIssue(
@@ -342,6 +342,7 @@ def validate_referential_integrity(
 # Orchestrating function: runs all configured checks in one call
 # ---------------------------------------------------------------------------
 
+
 def run_dataset_validation(
     datasets: Dict[str, pd.DataFrame],
     config: Dict[str, Any],
@@ -367,9 +368,7 @@ def run_dataset_validation(
     referential_rules: List[Dict[str, str]] = config.get("referential_integrity", [])
     domain = config.get("domain_constraints", {})
 
-    allowed_subscription_statuses: List[str] = domain.get(
-        "allowed_subscription_statuses", []
-    )
+    allowed_subscription_statuses: List[str] = domain.get("allowed_subscription_statuses", [])
     allowed_payment_statuses: List[str] = domain.get("allowed_payment_statuses", [])
     nps_cfg: Dict[str, int] = domain.get("nps", {"min_score": 0, "max_score": 10})
     non_negative_cfg: Dict[str, List[str]] = domain.get("non_negative_columns", {})
@@ -381,7 +380,6 @@ def run_dataset_validation(
 
     # Per-dataset checks (only for datasets that actually loaded)
     for name, df in datasets.items():
-
         # 2. Not empty
         result.increment_check()
         for issue in validate_not_empty(df, name):
@@ -390,49 +388,37 @@ def run_dataset_validation(
         # 3. Required columns
         if name in required_columns_map:
             result.increment_check()
-            for issue in validate_required_columns(
-                df, required_columns_map[name], name
-            ):
+            for issue in validate_required_columns(df, required_columns_map[name], name):
                 result.add_issue(issue)
 
         # 4. Duplicate primary keys
         if name in primary_keys_map:
             result.increment_check()
-            for issue in validate_no_duplicate_keys(
-                df, primary_keys_map[name], name
-            ):
+            for issue in validate_no_duplicate_keys(df, primary_keys_map[name], name):
                 result.add_issue(issue)
 
         # 5. Date column parseability
         if name in date_columns_map:
             result.increment_check()
-            for issue in validate_date_columns(
-                df, date_columns_map[name], name
-            ):
+            for issue in validate_date_columns(df, date_columns_map[name], name):
                 result.add_issue(issue)
 
         # 6. Allowed subscription statuses
         if name == "subscriptions" and allowed_subscription_statuses:
             result.increment_check()
-            for issue in validate_allowed_values(
-                df, "status", allowed_subscription_statuses, name
-            ):
+            for issue in validate_allowed_values(df, "status", allowed_subscription_statuses, name):
                 result.add_issue(issue)
 
         # 7. Allowed payment statuses
         if name == "transactions" and allowed_payment_statuses:
             result.increment_check()
-            for issue in validate_allowed_values(
-                df, "status", allowed_payment_statuses, name
-            ):
+            for issue in validate_allowed_values(df, "status", allowed_payment_statuses, name):
                 result.add_issue(issue)
 
         # 8. Non-negative numeric columns
         if name in non_negative_cfg:
             result.increment_check()
-            for issue in validate_numeric_non_negative(
-                df, non_negative_cfg[name], name
-            ):
+            for issue in validate_numeric_non_negative(df, non_negative_cfg[name], name):
                 result.add_issue(issue)
 
     # 9. NPS score range

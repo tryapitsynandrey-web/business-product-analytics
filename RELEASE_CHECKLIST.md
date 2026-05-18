@@ -1,5 +1,7 @@
 # Release Checklist
 
+[← Back to README](README.md)
+
 Before tagging a new release or merging a major feature, run the following verification steps:
 
 ## 1. Environment Verification
@@ -33,7 +35,7 @@ grep -R "SELECT\|INSERT\|UPDATE\|DELETE\|DROP\|CREATE" app
 
 ```bash
 grep -R "requests\|httpx\|urllib\|openai\|api_key\|secret\|telemetry" src config app README.md
-grep -R "plotly\|altair\|dash" app requirements.txt README.md
+grep -R "plotly\|altair\|dash" app pyproject.toml README.md
 ```
 
 *Ensure no external network calls or heavy UI dependencies have crept in.*
@@ -41,16 +43,15 @@ grep -R "plotly\|altair\|dash" app requirements.txt README.md
 ## 5. Automated Tests
 
 ```bash
-python -m compileall src tests app
-python -m pytest -v
+make ci
 ```
 
-*Ensure 100% test pass rate.*
+*Ensure 100% test pass rate and current 100% coverage.*
 
 ## 6. End-to-End Pipeline
 
 ```bash
-python src/main.py
+make run
 ```
 
 *Verify successful synthetic data generation and artifact creation.*
@@ -66,7 +67,7 @@ npx markdownlint-cli "reports/*.md" "README.md" "*.md"
 ## 8. Dashboard Manual Check
 
 ```bash
-streamlit run app/streamlit_app.py
+make dashboard
 ```
 
 *Click through all sidebar tabs and interact with filters.*

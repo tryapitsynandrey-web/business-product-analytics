@@ -19,6 +19,7 @@ from core.prioritization import (
 # Priority score formula
 # ---------------------------------------------------------------------------
 
+
 class TestCalculatePriorityScore:
     def test_basic_formula(self):
         score = calculate_priority_score(
@@ -65,6 +66,7 @@ class TestCalculatePriorityScore:
 # Priority band assignment
 # ---------------------------------------------------------------------------
 
+
 class TestAssignPriorityBand:
     def test_above_critical_threshold_is_critical(self):
         assert assign_priority_band(10000.0) == "Critical"
@@ -91,6 +93,7 @@ class TestAssignPriorityBand:
 # ---------------------------------------------------------------------------
 # Ranking recommendations
 # ---------------------------------------------------------------------------
+
 
 class TestRankRecommendations:
     def _make_recs(self) -> list:
@@ -142,6 +145,7 @@ class TestRankRecommendations:
 # ---------------------------------------------------------------------------
 # Ranking interventions
 # ---------------------------------------------------------------------------
+
 
 class TestRankInterventions:
     def _make_interventions(self) -> list:

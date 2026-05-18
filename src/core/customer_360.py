@@ -23,13 +23,14 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # Usage trend thresholds
 # ---------------------------------------------------------------------------
-_TREND_INCREASE_THRESHOLD: float = 0.10   # >10% increase
-_TREND_DECLINE_THRESHOLD: float = -0.10   # >10% decline
+_TREND_INCREASE_THRESHOLD: float = 0.10  # >10% increase
+_TREND_DECLINE_THRESHOLD: float = -0.10  # >10% decline
 
 
 # ---------------------------------------------------------------------------
 # Customer360Engine
 # ---------------------------------------------------------------------------
+
 
 class Customer360Engine:
     """
@@ -53,9 +54,7 @@ class Customer360Engine:
         self._recommendations = recommendations
 
         # Index risk profiles by customer_id for O(1) join
-        self._risk_index: Dict[str, ChurnRiskProfile] = {
-            p.customer_id: p for p in risk_profiles
-        }
+        self._risk_index: Dict[str, ChurnRiskProfile] = {p.customer_id: p for p in risk_profiles}
         # Index first recommendation per customer
         self._rec_index: Dict[str, Dict[str, Any]] = {}
         for rec in recommendations:
@@ -88,10 +87,7 @@ class Customer360Engine:
             .rename(columns={"monthly_price": "current_mrr"})
         )
         plan_by_cust = (
-            subs.sort_values("status")
-            .groupby("customer_id")["plan"]
-            .first()
-            .reset_index()
+            subs.sort_values("status").groupby("customer_id")["plan"].first().reset_index()
         )
         status_by_cust = (
             subs.sort_values("status")
@@ -135,17 +131,13 @@ class Customer360Engine:
 
         # ── Support ───────────────────────────────────────────────────
         ticket_counts = (
-            tickets.groupby("customer_id")
-            .size()
-            .reset_index(name="support_ticket_count")
+            tickets.groupby("customer_id").size().reset_index(name="support_ticket_count")
         )
 
         # ── Failed payments ───────────────────────────────────────────
         failed_tx = transactions[transactions["status"] == "Failed"]
         failed_counts = (
-            failed_tx.groupby("customer_id")
-            .size()
-            .reset_index(name="failed_payment_count")
+            failed_tx.groupby("customer_id").size().reset_index(name="failed_payment_count")
         )
 
         # ── Assemble ──────────────────────────────────────────────────
@@ -205,7 +197,11 @@ class Customer360Engine:
         Labels: Increasing | Stable | Declining | No Data
         """
         if usage.empty or "date" not in usage.columns:
-            empty = usage[["customer_id"]].drop_duplicates() if not usage.empty else pd.DataFrame(columns=["customer_id"])
+            empty = (
+                usage[["customer_id"]].drop_duplicates()
+                if not usage.empty
+                else pd.DataFrame(columns=["customer_id"])
+            )
             empty["usage_trend"] = "No Data"
             return empty
 
@@ -222,21 +218,15 @@ class Customer360Engine:
         latest = periods[-1]
         previous = periods[-2]
 
-        latest_logins = (
-            u[u["date"] == latest]
-            .groupby("customer_id")["logins"]
-            .sum()
-        )
-        prev_logins = (
-            u[u["date"] == previous]
-            .groupby("customer_id")["logins"]
-            .sum()
-        )
+        latest_logins = u[u["date"] == latest].groupby("customer_id")["logins"].sum()
+        prev_logins = u[u["date"] == previous].groupby("customer_id")["logins"].sum()
 
-        comparison = pd.DataFrame({
-            "latest": latest_logins,
-            "previous": prev_logins,
-        }).fillna(0)
+        comparison = pd.DataFrame(
+            {
+                "latest": latest_logins,
+                "previous": prev_logins,
+            }
+        ).fillna(0)
 
         import numpy as np
 
@@ -249,39 +239,31 @@ class Customer360Engine:
             (prev == 0) & (latest == 0),
             (prev == 0) & (latest > 0),
             change > _TREND_INCREASE_THRESHOLD,
-            change < _TREND_DECLINE_THRESHOLD
+            change < _TREND_DECLINE_THRESHOLD,
         ]
-        choices = [
-            "No Data",
-            "Increasing",
-            "Increasing",
-            "Declining"
-        ]
+        choices = ["No Data", "Increasing", "Increasing", "Declining"]
 
         comparison["usage_trend"] = np.select(conditions, choices, default="Stable")
-        return comparison[["usage_trend"]].reset_index().rename(
-            columns={"index": "customer_id"}
-        )
+        return comparison[["usage_trend"]].reset_index().rename(columns={"index": "customer_id"})
 
     def attach_churn_risk(self, df: pd.DataFrame) -> pd.DataFrame:
         """Join churn risk fields onto the 360 DataFrame from the risk index."""
         df = df.copy()
         df["churn_risk_score"] = df["customer_id"].map(
-            lambda cid: self._risk_index[cid].risk_score
-            if cid in self._risk_index else 0.0
+            lambda cid: self._risk_index[cid].risk_score if cid in self._risk_index else 0.0
         )
         df["churn_risk_band"] = df["customer_id"].map(
-            lambda cid: self._risk_index[cid].risk_band.value
-            if cid in self._risk_index else "Low"
+            lambda cid: self._risk_index[cid].risk_band.value if cid in self._risk_index else "Low"
         )
         df["revenue_at_risk"] = df["customer_id"].map(
-            lambda cid: self._risk_index[cid].revenue_at_risk
-            if cid in self._risk_index else 0.0
+            lambda cid: self._risk_index[cid].revenue_at_risk if cid in self._risk_index else 0.0
         )
         df["main_driver"] = df["customer_id"].map(
-            lambda cid: self._risk_index[cid].drivers[0]
-            if cid in self._risk_index and self._risk_index[cid].drivers
-            else "None"
+            lambda cid: (
+                self._risk_index[cid].drivers[0]
+                if cid in self._risk_index and self._risk_index[cid].drivers
+                else "None"
+            )
         )
         return df
 
@@ -289,8 +271,11 @@ class Customer360Engine:
         """Add the highest-priority recommended_action per customer."""
         df = df.copy()
         df["recommended_action"] = df["customer_id"].map(
-            lambda cid: self._rec_index[cid].get("recommendation_title", "Monitor")
-            if cid in self._rec_index else "No action required"
+            lambda cid: (
+                self._rec_index[cid].get("recommendation_title", "Monitor")
+                if cid in self._rec_index
+                else "No action required"
+            )
         )
         return df
 

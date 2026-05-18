@@ -106,31 +106,12 @@ class KPIEngine:
         """
         results: List[MetricResult] = []
 
-        calculators = {
-            "monthly_recurring_revenue": self.calculate_mrr,
-            "average_revenue_per_user": self.calculate_arpu,
-            "expansion_revenue": self.calculate_expansion_revenue,
-            "contraction_revenue": self.calculate_contraction_revenue,
-            "gross_revenue_retention": self.calculate_gross_revenue_retention,
-            "net_revenue_retention": self.calculate_net_revenue_retention,
-            "revenue_at_risk": self.calculate_revenue_at_risk,
-            "activation_rate": self.calculate_activation_rate,
-            "usage_frequency": self.calculate_usage_frequency,
-            "key_action_rate": self.calculate_key_action_rate,
-            "engagement_drop_rate": self.calculate_engagement_drop_rate,
-            "feature_adoption_proxy": self.calculate_feature_adoption_proxy,
-            "customer_churn_rate": self.calculate_customer_churn_rate,
-            "retention_rate": self.calculate_retention_rate,
-            "average_nps": self.calculate_average_nps,
-            "support_burden": self.calculate_support_burden,
-            "time_to_activation": self.calculate_time_to_activation,
-        }
-
-        for metric_name, fn in calculators.items():
+        for metric_name, method_name in self.SUPPORTED_METRICS.items():
             if not self.governance.validate_metric(metric_name, datasets):
                 logger.warning("Skipping metric '%s' — governance check failed.", metric_name)
                 continue
             try:
+                fn = getattr(self, method_name)
                 result = fn(datasets, target_date)
                 if result is not None:
                     results.append(result)

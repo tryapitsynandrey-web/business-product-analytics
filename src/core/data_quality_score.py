@@ -63,9 +63,11 @@ _INTEGRITY_CHECKS = {"referential_integrity"}
 # Result dataclass
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class DatasetQualityScore:
     """Quality score record for a single dataset."""
+
     dataset: str
     completeness_score: float
     uniqueness_score: float
@@ -79,6 +81,7 @@ class DatasetQualityScore:
 # ---------------------------------------------------------------------------
 # Scorer class
 # ---------------------------------------------------------------------------
+
 
 class DataQualityScorer:
     """
@@ -142,8 +145,7 @@ class DataQualityScorer:
 
         # Otherwise fall back to validation issues
         duplicates_flagged = any(
-            i.dataset == dataset_name and i.check_name in _UNIQUENESS_CHECKS
-            for i in self._issues
+            i.dataset == dataset_name and i.check_name in _UNIQUENESS_CHECKS for i in self._issues
         )
         return 0.0 if duplicates_flagged else 1.0
 
@@ -153,8 +155,10 @@ class DataQualityScorer:
         Treats each flagged issue as one validity failure; score floored at 0.
         """
         validity_issues = [
-            i for i in self._issues
-            if i.dataset == dataset_name and i.check_name in _VALIDITY_CHECKS
+            i
+            for i in self._issues
+            if i.dataset == dataset_name
+            and i.check_name in _VALIDITY_CHECKS
             and i.severity == "error"
         ]
         if not validity_issues:
@@ -169,8 +173,10 @@ class DataQualityScorer:
         Penalties are applied per issue.
         """
         ri_issues = [
-            i for i in self._issues
-            if i.dataset == dataset_name and i.check_name in _INTEGRITY_CHECKS
+            i
+            for i in self._issues
+            if i.dataset == dataset_name
+            and i.check_name in _INTEGRITY_CHECKS
             and i.severity == "error"
         ]
         if not ri_issues:
@@ -231,6 +237,8 @@ class DataQualityScorer:
             scores.append(score)
             logger.info(
                 "Data quality  %-25s overall=%.2f  status=%s",
-                name, score.overall_score, score.status,
+                name,
+                score.overall_score,
+                score.status,
             )
         return scores

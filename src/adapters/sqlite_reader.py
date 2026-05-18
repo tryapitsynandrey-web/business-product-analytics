@@ -5,6 +5,7 @@ from typing import List, Union
 
 from models.schemas import SQLITE_ALLOWED_TABLES
 
+
 class SQLiteReader:
     """Safe, read-only adapter for SQLite persistence layer."""
 
@@ -43,7 +44,7 @@ class SQLiteReader:
         self._validate_table_name(table_name)
         if not self.table_exists(table_name):
             return 0
-            
+
         query = f"SELECT COUNT(*) FROM {table_name}"
         with self._get_connection() as conn:
             cursor = conn.execute(query)
@@ -54,7 +55,7 @@ class SQLiteReader:
         self._validate_table_name(table_name)
         if not self.table_exists(table_name):
             return pd.DataFrame()
-            
+
         query = f"SELECT * FROM {table_name}"
         with self._get_connection() as conn:
             return pd.read_sql_query(query, conn)
@@ -64,18 +65,18 @@ class SQLiteReader:
         self._validate_table_name(table_name)
         if not self.table_exists(table_name):
             return pd.DataFrame()
-            
+
         if not columns:
             raise ValueError("Columns list cannot be empty")
-            
+
         # Ensure columns don't contain SQL injection vectors by checking against alphanumeric/underscores
         for col in columns:
             if not col.isidentifier():
                 raise ValueError(f"Invalid column name: {col}")
-                
+
         cols_str = ", ".join(columns)
         query = f"SELECT {cols_str} FROM {table_name}"
-        
+
         with self._get_connection() as conn:
             # We can let SQLite catch missing columns natively, but we will catch the sqlite3.OperationalError
             try:
@@ -88,10 +89,10 @@ class SQLiteReader:
         self._validate_table_name(table_name)
         if limit < 0:
             raise ValueError("Limit cannot be negative")
-            
+
         if not self.table_exists(table_name):
             return pd.DataFrame()
-            
+
         query = f"SELECT * FROM {table_name} LIMIT ?"
         with self._get_connection() as conn:
             return pd.read_sql_query(query, conn, params=(limit,))
@@ -123,7 +124,7 @@ class SQLiteReader:
         """Return customers with High or Critical churn risk band."""
         if not self.table_exists("churn_risk_profiles"):
             return pd.DataFrame()
-            
+
         query = "SELECT * FROM churn_risk_profiles WHERE risk_band IN ('High', 'Critical') ORDER BY risk_score DESC"
         with self._get_connection() as conn:
             return pd.read_sql_query(query, conn)
@@ -132,10 +133,10 @@ class SQLiteReader:
         """Return top prioritized recommendations."""
         if limit < 0:
             raise ValueError("Limit cannot be negative")
-            
+
         if not self.table_exists("recommendations"):
             return pd.DataFrame()
-            
+
         query = "SELECT * FROM recommendations ORDER BY priority_score DESC LIMIT ?"
         with self._get_connection() as conn:
             return pd.read_sql_query(query, conn, params=(limit,))
@@ -144,7 +145,7 @@ class SQLiteReader:
         """Return health areas with Critical status."""
         if not self.table_exists("health_scores"):
             return pd.DataFrame()
-            
+
         query = "SELECT * FROM health_scores WHERE status = 'Critical'"
         with self._get_connection() as conn:
             return pd.read_sql_query(query, conn)

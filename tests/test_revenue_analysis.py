@@ -168,7 +168,9 @@ def test_summarize_revenue_health_status_bands():
     def txns(success, refunded, failed):
         rows = [{"status": "Success", "amount": success, "transaction_date": "2023-01-01"}]
         if refunded:
-            rows.append({"status": "Refunded", "amount": refunded, "transaction_date": "2023-01-02"})
+            rows.append(
+                {"status": "Refunded", "amount": refunded, "transaction_date": "2023-01-02"}
+            )
         if failed:
             rows.append({"status": "Failed", "amount": failed, "transaction_date": "2023-01-03"})
         return pd.DataFrame(rows)

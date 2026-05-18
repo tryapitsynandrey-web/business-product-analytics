@@ -1,5 +1,5 @@
-area,score,status,explanation
-Customer Retention,5.000000000000003,Critical,retention_rate is 0.71
-User Activation,100.0,Healthy,activation_rate is 0.99
-Support Load,14.577464788732385,Critical,support_burden is 2.71
-Data Quality,100.0,Healthy,data_quality_score is 1.00
+area,score,status,explanation,run_id,generated_at
+Customer Retention,5.000000000000003,Critical,retention_rate is 0.71,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+User Activation,100.0,Healthy,activation_rate is 0.99,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+Support Load,14.577464788732385,Critical,support_burden is 2.71,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+Data Quality,100.0,Healthy,data_quality_score is 1.00,productpulse-2026-05-01,2026-05-01T00:00:00+00:00

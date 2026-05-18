@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import List
 from models.enums import RiskBand
 
+
 @dataclass
 class ChurnRiskProfile:
     customer_id: str

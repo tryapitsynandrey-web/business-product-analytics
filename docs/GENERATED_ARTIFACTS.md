@@ -1,7 +1,9 @@
 # Generated Artifacts Policy
 
+[← Back to README](../README.md)
+
 This repository generates several artifacts automatically through the
-`src/main.py` pipeline. Below is the official Git policy for managing these
+`make run` pipeline. Below is the official Git policy for managing these
 artifacts to balance repository hygiene with portfolio demonstration value.
 
 ## Artifact Classification
@@ -18,7 +20,7 @@ artifacts to balance repository hygiene with portfolio demonstration value.
 ## Handling Noisy Diffs
 
 Because the CSVs and Markdown reports are kept tracked as "demo snapshots",
-rerunning the pipeline (`python src/main.py`) locally will generate high-volume
+rerunning the pipeline (`make run`) locally will generate high-volume
 diffs (e.g., thousands of lines changed in `.csv` files).
 
 **Developer Guidelines:**
@@ -28,3 +30,11 @@ diffs (e.g., thousands of lines changed in `.csv` files).
    unless you are deliberately updating the official portfolio snapshot. You can
    stage your code changes explicitly (e.g., `git add src/`), or restore the
    generated files (`git restore data/ reports/`) before committing.
+
+## Generated Report Links
+
+- [Executive summary](../reports/executive_summary.md)
+- [Metric definitions](../reports/metric_definitions.md)
+- [Data quality report](../reports/data_quality_report.md)
+- [Intervention plan](../reports/intervention_plan.md)
+- [Risk register](../reports/risk_register.md)

@@ -130,7 +130,7 @@ def test_get_metric_lineage_returns_empty_dict_for_unknown_metric(metric_catalog
 def test_current_catalog_shape_is_supported():
     from core.metric_governance import MetricGovernance
 
-    catalog = MetricGovernance()._catalog
+    catalog = MetricGovernance().get_catalog()
     df = MetricLineageEngine().build_lineage_table(catalog)
 
     assert not df.empty

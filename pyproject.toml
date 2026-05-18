@@ -12,6 +12,28 @@ license = { file = "LICENSE" }
 authors = [
   { name = "ProductPulse contributors" }
 ]
+keywords = [
+  "analytics",
+  "business-intelligence",
+  "saas-metrics",
+  "churn-prediction",
+  "kpi-dashboard",
+  "data-governance",
+  "revenue-analytics",
+  "decision-engine",
+  "python-analytics",
+  "streamlit-dashboard",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Topic :: Office/Business :: Financial :: Accounting",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
 dependencies = [
   "pandas>=2.0.0",
   "numpy>=1.24.0",
@@ -72,7 +94,7 @@ omit = [
 ]
 
 [tool.coverage.report]
-fail_under = 90
+fail_under = 100
 show_missing = true
 skip_empty = true
 exclude_also = [

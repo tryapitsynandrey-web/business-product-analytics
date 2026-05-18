@@ -42,16 +42,13 @@ class DataWriter:
         reports_dir: Path | None = None,
     ) -> None:
         self.processed_dir: Path = (
-            processed_dir if processed_dir is not None
-            else PROJECT_ROOT / "data" / "processed"
+            processed_dir if processed_dir is not None else PROJECT_ROOT / "data" / "processed"
         )
         self.exports_dir: Path = (
-            exports_dir if exports_dir is not None
-            else PROJECT_ROOT / "data" / "exports"
+            exports_dir if exports_dir is not None else PROJECT_ROOT / "data" / "exports"
         )
         self.reports_dir: Path = (
-            reports_dir if reports_dir is not None
-            else PROJECT_ROOT / "reports"
+            reports_dir if reports_dir is not None else PROJECT_ROOT / "reports"
         )
 
     # ------------------------------------------------------------------
@@ -146,7 +143,13 @@ class DataWriter:
         df.to_csv(path, index=False)
         logger.debug("Written dict-list CSV '%s' to %s", filename, path)
 
-    def validate_output_schema(self, data: pd.DataFrame | list, expected_columns: list, artifact_name: str, allow_extra: bool = True) -> None:
+    def validate_output_schema(
+        self,
+        data: pd.DataFrame | list,
+        expected_columns: list,
+        artifact_name: str,
+        allow_extra: bool = True,
+    ) -> None:
         """Validate output data matches the expected column schema."""
         if isinstance(data, pd.DataFrame):
             cols = data.columns.tolist()
@@ -156,29 +159,49 @@ class DataWriter:
             cols = list(data[0].keys())
         else:
             raise ValueError(f"Data must be DataFrame or list of dicts. Got {type(data)}")
-            
+
         missing = [c for c in expected_columns if c not in cols]
         if missing:
-            raise ValueError(f"Output schema validation failed for '{artifact_name}'. Missing required columns: {missing}")
-            
+            raise ValueError(
+                f"Output schema validation failed for '{artifact_name}'. Missing required columns: {missing}"
+            )
+
         if not allow_extra:
             extra = [c for c in cols if c not in expected_columns]
             if extra:
-                raise ValueError(f"Output schema validation failed for '{artifact_name}'. Extra columns not allowed: {extra}")
+                raise ValueError(
+                    f"Output schema validation failed for '{artifact_name}'. Extra columns not allowed: {extra}"
+                )
 
-    def write_dataframe_with_schema(self, df: pd.DataFrame, path: Path | str, expected_columns: list, artifact_name: str, allow_extra: bool = True) -> None:
+    def write_dataframe_with_schema(
+        self,
+        df: pd.DataFrame,
+        path: Path | str,
+        expected_columns: list,
+        artifact_name: str,
+        allow_extra: bool = True,
+    ) -> None:
         """Validate dataframe schema and write to disk."""
         self.validate_output_schema(df, expected_columns, artifact_name, allow_extra=allow_extra)
-        
+
         filepath = Path(path)
         self._ensure_dir(filepath.parent)
         df.to_csv(filepath, index=False)
         logger.debug("Written schema-validated DataFrame '%s' to %s", artifact_name, filepath)
 
-    def write_dicts_as_csv_with_schema(self, records: list, path: Path | str, expected_columns: list, artifact_name: str, allow_extra: bool = True) -> None:
+    def write_dicts_as_csv_with_schema(
+        self,
+        records: list,
+        path: Path | str,
+        expected_columns: list,
+        artifact_name: str,
+        allow_extra: bool = True,
+    ) -> None:
         """Validate dict records schema and write to disk."""
-        self.validate_output_schema(records, expected_columns, artifact_name, allow_extra=allow_extra)
-        
+        self.validate_output_schema(
+            records, expected_columns, artifact_name, allow_extra=allow_extra
+        )
+
         filepath = Path(path)
         self._ensure_dir(filepath.parent)
         df = pd.DataFrame(records)

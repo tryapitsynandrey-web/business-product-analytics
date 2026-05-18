@@ -169,7 +169,15 @@ class TestBusinessHealthScoreEngine:
     def test_area_names_present(self):
         result = self.engine.calculate()
         areas = {a.area for a in result.area_scores}
-        expected = {"profitability", "revenue", "cashflow", "unit_economics", "growth", "efficiency", "risk"}
+        expected = {
+            "profitability",
+            "revenue",
+            "cashflow",
+            "unit_economics",
+            "growth",
+            "efficiency",
+            "risk",
+        }
         assert areas == expected
 
     def test_status_is_valid_label(self):
@@ -181,13 +189,30 @@ class TestBusinessHealthScoreEngine:
 
     def test_excellent_inputs_produce_healthy_status(self):
         result = self.engine.calculate(
-            profitability_inputs={"gross_margin": 0.80, "operating_margin": 0.30, "net_margin": 0.20},
-            revenue_inputs={"revenue_growth_rate": 0.30, "recurring_revenue_ratio": 0.90, "refund_rate": 0.005, "failed_payment_rate": 0.01},
+            profitability_inputs={
+                "gross_margin": 0.80,
+                "operating_margin": 0.30,
+                "net_margin": 0.20,
+            },
+            revenue_inputs={
+                "revenue_growth_rate": 0.30,
+                "recurring_revenue_ratio": 0.90,
+                "refund_rate": 0.005,
+                "failed_payment_rate": 0.01,
+            },
             cashflow_inputs={"runway_months": 24.0, "free_cash_flow": 100_000.0},
             unit_economics_inputs={"ltv_to_cac": 5.0, "cac_payback_months": 6.0},
-            growth_inputs={"customer_growth_rate": 0.20, "revenue_growth_rate": 0.30, "growth_efficiency": 2.0},
+            growth_inputs={
+                "customer_growth_rate": 0.20,
+                "revenue_growth_rate": 0.30,
+                "growth_efficiency": 2.0,
+            },
             efficiency_inputs={"revenue_per_employee": 200_000.0, "sales_efficiency": 2.0},
-            risk_inputs={"customer_concentration": 0.05, "churn_exposure": 0.02, "cashflow_risk_score": 5.0},
+            risk_inputs={
+                "customer_concentration": 0.05,
+                "churn_exposure": 0.02,
+                "cashflow_risk_score": 5.0,
+            },
         )
         assert result.status in {"Healthy", "Stable"}
         assert result.composite_score >= 70.0
@@ -198,7 +223,11 @@ class TestBusinessHealthScoreEngine:
 
     def test_deterministic_for_same_inputs(self):
         inputs = dict(
-            profitability_inputs={"gross_margin": 0.65, "operating_margin": 0.15, "net_margin": 0.08},
+            profitability_inputs={
+                "gross_margin": 0.65,
+                "operating_margin": 0.15,
+                "net_margin": 0.08,
+            },
         )
         r1 = self.engine.calculate(**inputs)
         r2 = self.engine.calculate(**inputs)

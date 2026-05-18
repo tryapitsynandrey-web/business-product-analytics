@@ -11,7 +11,7 @@ Markdown quality rules enforced here:
     - Cell values are sanitised (pipes replaced, newlines stripped)
     - Date headers use plain text, not *emphasis* (avoids MD036)
     - Single blank line before --- separators (avoids MD012)
-    - Metric definitions use ## subheadings (avoids MD001 h1→h3 jump)
+    - Metric definitions use ## category and ### metric headings
 
 Reports generated:
     1. executive_summary.md
@@ -28,14 +28,26 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Dict, List
 
-from utils.paths import REPORTS_DIR
-
 logger = logging.getLogger(__name__)
+DEFAULT_REPORTS_DIR = Path(__file__).resolve().parents[2] / "reports"
+_CATEGORY_TITLES = {
+    "revenue": "Revenue Metrics",
+    "product": "Product Engagement Metrics",
+    "customer": "Customer Health Metrics",
+    "business_health_profitability": "Profitability Metrics",
+    "business_health_revenue": "Revenue Health Metrics",
+    "business_health_unit_economics": "Unit Economics Metrics",
+    "business_health_cashflow": "Cash Flow Metrics",
+    "business_health_growth": "Growth Metrics",
+    "business_health_efficiency": "Efficiency Metrics",
+    "business_health_risk": "Risk Metrics",
+}
 
 
 # ---------------------------------------------------------------------------
 # Markdown helpers
 # ---------------------------------------------------------------------------
+
 
 def _cell(value: Any) -> str:
     """
@@ -60,6 +72,14 @@ def _table_separator(*widths: int) -> str:
     return "| " + " | ".join("---" for _ in widths) + " |"
 
 
+def _category_title(category: Any) -> str:
+    """Return a readable category heading for metric glossary sections."""
+    category_key = str(category or "uncategorized")
+    if category_key in _CATEGORY_TITLES:
+        return _CATEGORY_TITLES[category_key]
+    return f"{category_key.replace('_', ' ').title()} Metrics"
+
+
 def _kpi(kpis: List[Any], metric_name: str, default: float = 0.0) -> float:
     """Safely extract a KPI value by canonical metric_name."""
     return next(
@@ -68,8 +88,13 @@ def _kpi(kpis: List[Any], metric_name: str, default: float = 0.0) -> float:
     )
 
 
-def _write_report(filename: str, content: str, reports_dir: Path = REPORTS_DIR) -> None:
+def _write_report(
+    filename: str,
+    content: str,
+    reports_dir: Path | None = None,
+) -> None:
     """Write markdown content to the reports directory."""
+    reports_dir = reports_dir or DEFAULT_REPORTS_DIR
     reports_dir.mkdir(parents=True, exist_ok=True)
     path = reports_dir / filename
     path.write_text(content, encoding="utf-8")
@@ -80,6 +105,7 @@ def _write_report(filename: str, content: str, reports_dir: Path = REPORTS_DIR) 
 # ReportGenerator
 # ---------------------------------------------------------------------------
 
+
 class ReportGenerator:
     """Generates all ProductPulse markdown reports from pipeline results."""
 
@@ -88,7 +114,7 @@ class ReportGenerator:
         reports_dir: Path | None = None,
         generated_on: date | None = None,
     ) -> None:
-        self.reports_dir = reports_dir or REPORTS_DIR
+        self.reports_dir = reports_dir or DEFAULT_REPORTS_DIR
         self.generated_on = generated_on
 
     # ------------------------------------------------------------------
@@ -150,44 +176,65 @@ class ReportGenerator:
         risk_dq = [s for s in dq_scores if s.status == "Risk"]
 
         # --- build table blocks ---
-        snapshot_rows = "\n".join([
-            _table_row("Monthly Recurring Revenue (MRR)", f"${mrr:,.0f}"),
-            _table_row("Average Revenue Per User (ARPU)", f"${arpu:,.2f}"),
-            _table_row("Gross Revenue Retention (GRR)", f"{grr:.1%}"),
-            _table_row("Net Revenue Retention (NRR)", f"{nrr:.1%}"),
-            _table_row("Revenue at Risk", f"${rar:,.0f}"),
-            _table_row("Customer Churn Rate", f"{churn_rate:.1%}"),
-            _table_row("Customer Retention Rate", f"{retention_rate:.1%}"),
-            _table_row("Average NPS", f"{avg_nps:.1f}"),
-        ])
+        snapshot_rows = "\n".join(
+            [
+                _table_row("Monthly Recurring Revenue (MRR)", f"${mrr:,.0f}"),
+                _table_row("Average Revenue Per User (ARPU)", f"${arpu:,.2f}"),
+                _table_row("Gross Revenue Retention (GRR)", f"{grr:.1%}"),
+                _table_row("Net Revenue Retention (NRR)", f"{nrr:.1%}"),
+                _table_row("Revenue at Risk", f"${rar:,.0f}"),
+                _table_row("Customer Churn Rate", f"{churn_rate:.1%}"),
+                _table_row("Customer Retention Rate", f"{retention_rate:.1%}"),
+                _table_row("Average NPS", f"{avg_nps:.1f}"),
+            ]
+        )
 
-        kpi_signal_rows = "\n".join([
-            _table_row("monthly_recurring_revenue", f"${mrr:,.0f}",
-                       "Watch" if mrr == 0 else "Active"),
-            _table_row("customer_churn_rate", f"{churn_rate:.1%}",
-                       "High" if churn_rate > 0.10 else "Acceptable"),
-            _table_row("gross_revenue_retention", f"{grr:.1%}",
-                       "Below benchmark" if grr < 0.85 else "Good"),
-            _table_row("net_revenue_retention", f"{nrr:.1%}",
-                       "Positive expansion" if nrr >= 1.0 else "Contraction"),
-            _table_row("average_nps", f"{avg_nps:.1f}",
-                       "Detractor zone" if avg_nps < 6 else "Acceptable"),
-        ])
-        risk_dist_rows = "\n".join([
-            _table_row("Critical", len(critical)),
-            _table_row("High", len(high_risk) - len(critical)),
-            _table_row("Medium", len(medium_risk)),
-            _table_row("Low", len(low_risk)),
-        ])
+        kpi_signal_rows = "\n".join(
+            [
+                _table_row(
+                    "monthly_recurring_revenue", f"${mrr:,.0f}", "Watch" if mrr == 0 else "Active"
+                ),
+                _table_row(
+                    "customer_churn_rate",
+                    f"{churn_rate:.1%}",
+                    "High" if churn_rate > 0.10 else "Acceptable",
+                ),
+                _table_row(
+                    "gross_revenue_retention",
+                    f"{grr:.1%}",
+                    "Below benchmark" if grr < 0.85 else "Good",
+                ),
+                _table_row(
+                    "net_revenue_retention",
+                    f"{nrr:.1%}",
+                    "Positive expansion" if nrr >= 1.0 else "Contraction",
+                ),
+                _table_row(
+                    "average_nps",
+                    f"{avg_nps:.1f}",
+                    "Detractor zone" if avg_nps < 6 else "Acceptable",
+                ),
+            ]
+        )
+        risk_dist_rows = "\n".join(
+            [
+                _table_row("Critical", len(critical)),
+                _table_row("High", len(high_risk) - len(critical)),
+                _table_row("Medium", len(medium_risk)),
+                _table_row("Low", len(low_risk)),
+            ]
+        )
 
-        engagement_rows = "\n".join([
-            _table_row("Activation Rate", f"{activation_rate:.1%}"),
-            _table_row("Usage Frequency (avg logins/customer)", f"{usage_freq:.1f}"),
-            _table_row("Key Action Rate (actions/login)", f"{key_action_rate:.2f}"),
-            _table_row("Feature Adoption Proxy (features/session)", f"{feature_adoption:.1f}"),
-            _table_row("Engagement Drop Rate", f"{engagement_drop:.1%}"),
-            _table_row("Time to Activation (avg days)", f"{tta:.1f}"),
-        ])
+        engagement_rows = "\n".join(
+            [
+                _table_row("Activation Rate", f"{activation_rate:.1%}"),
+                _table_row("Usage Frequency (avg logins/customer)", f"{usage_freq:.1f}"),
+                _table_row("Key Action Rate (actions/login)", f"{key_action_rate:.2f}"),
+                _table_row("Feature Adoption Proxy (features/session)", f"{feature_adoption:.1f}"),
+                _table_row("Engagement Drop Rate", f"{engagement_drop:.1%}"),
+                _table_row("Time to Activation (avg days)", f"{tta:.1f}"),
+            ]
+        )
 
         leakage_rows_block = "\n".join(
             _table_row(lt, f"${amt:,.0f}")
@@ -230,6 +277,13 @@ class ReportGenerator:
         content = f"""# ProductPulse - Executive Analytics Summary
 
 Generated: {generated_on}
+
+## Related Reports
+
+- [Data Quality Report](data_quality_report.md)
+- [Intervention Plan](intervention_plan.md)
+- [Risk Register](risk_register.md)
+- [Metric Definitions](metric_definitions.md)
 
 ---
 
@@ -347,7 +401,14 @@ Report generated automatically by ProductPulse Analytics Engine.
         if not data_quality_results:
             _write_report(
                 "data_quality_report.md",
-                f"# Data Quality Report\n\nGenerated: {generated_on}\n\nNo data quality results available.\n",
+                (
+                    "# Data Quality Report\n\n"
+                    f"Generated: {generated_on}\n\n"
+                    "## Related Reports\n\n"
+                    "- [Executive Summary](executive_summary.md)\n"
+                    "- [Metric Definitions](metric_definitions.md)\n\n"
+                    "No data quality results available.\n"
+                ),
                 self.reports_dir,
             )
             return
@@ -365,15 +426,23 @@ Report generated automatically by ProductPulse Analytics Engine.
             for s in data_quality_results
         )
 
-        risk_lines = "\n".join(
-            f"- **{_cell(s.dataset)}** ({_cell(s.status)}): {_cell(s.business_risk)}"
-            for s in data_quality_results
-            if s.status in ("Risk", "Critical")
-        ) or "No datasets at risk."
+        risk_lines = (
+            "\n".join(
+                f"- **{_cell(s.dataset)}** ({_cell(s.status)}): {_cell(s.business_risk)}"
+                for s in data_quality_results
+                if s.status in ("Risk", "Critical")
+            )
+            or "No datasets at risk."
+        )
 
         content = f"""# ProductPulse - Data Quality Report
 
 Generated: {generated_on}
+
+## Related Reports
+
+- [Executive Summary](executive_summary.md)
+- [Metric Definitions](metric_definitions.md)
 
 ---
 
@@ -406,7 +475,14 @@ Report generated automatically by ProductPulse Analytics Engine.
         if not interventions:
             _write_report(
                 "intervention_plan.md",
-                f"# Intervention Plan\n\nGenerated: {generated_on}\n\nNo interventions generated.\n",
+                (
+                    "# Intervention Plan\n\n"
+                    f"Generated: {generated_on}\n\n"
+                    "## Related Reports\n\n"
+                    "- [Executive Summary](executive_summary.md)\n"
+                    "- [Risk Register](risk_register.md)\n\n"
+                    "No interventions generated.\n"
+                ),
                 self.reports_dir,
             )
             return
@@ -427,6 +503,11 @@ Report generated automatically by ProductPulse Analytics Engine.
         content = f"""# ProductPulse - Intervention Plan
 
 Generated: {generated_on}
+
+## Related Reports
+
+- [Executive Summary](executive_summary.md)
+- [Risk Register](risk_register.md)
 
 ---
 
@@ -452,9 +533,7 @@ Report generated automatically by ProductPulse Analytics Engine.
         risk_profiles = results.get("risk_profiles", [])
         leakages = results.get("leakages", [])
 
-        high_critical = [
-            p for p in risk_profiles if p.risk_band.value in ("High", "Critical")
-        ]
+        high_critical = [p for p in risk_profiles if p.risk_band.value in ("High", "Critical")]
 
         if high_critical:
             risk_rows_block = "\n".join(
@@ -487,6 +566,11 @@ Report generated automatically by ProductPulse Analytics Engine.
 
 Generated: {generated_on}
 
+## Related Reports
+
+- [Executive Summary](executive_summary.md)
+- [Intervention Plan](intervention_plan.md)
+
 ---
 
 ## High and Critical Churn Risk Customers
@@ -518,30 +602,50 @@ Report generated automatically by ProductPulse Analytics Engine.
         generated_on = (self.generated_on or date.today()).isoformat()
         metrics = metric_catalog.get("metrics", [])
 
-        # Use ## (h2) for each metric entry — avoids MD001 h1→h3 jump
-        metric_blocks: List[str] = []
-        for m in metrics:
-            display = _cell(m.get("display_name", m.get("metric_name", "Unknown")))
-            block = (
-                f"## {display}\n\n"
-                f"- **ID:** `{_cell(m.get('metric_name', 'N/A'))}`\n"
-                f"- **Category:** {_cell(m.get('category', 'N/A'))}\n"
-                f"- **Owner:** {_cell(m.get('business_owner', 'N/A'))}\n"
-                f"- **Grain:** {_cell(m.get('grain', 'N/A'))}\n"
-                f"- **Formula:** {_cell(m.get('formula_description', 'N/A'))}\n"
-                f"- **Purpose:** {_cell(m.get('business_purpose', 'N/A'))}\n"
-                f"- **Interpretation:** {_cell(m.get('interpretation_notes', 'N/A'))}\n"
-                f"- **Risk if misread:** {_cell(m.get('risk_if_misread', 'N/A'))}\n"
-                f"- **Null policy:** {_cell(m.get('allowed_null_policy', 'N/A'))}\n"
-                f"- **Enabled:** {m.get('enabled', True)}\n"
-            )
-            metric_blocks.append(block)
+        grouped_metrics: Dict[str, List[Dict[str, Any]]] = {}
+        for metric in metrics:
+            grouped_metrics.setdefault(
+                str(metric.get("category", "uncategorized")),
+                [],
+            ).append(metric)
 
-        metrics_section = "\n\n---\n\n".join(b.rstrip("\n") for b in metric_blocks)
+        category_blocks: List[str] = []
+        for category, category_metrics in grouped_metrics.items():
+            metric_blocks: List[str] = []
+            for metric in category_metrics:
+                display = _cell(metric.get("display_name", metric.get("metric_name", "Unknown")))
+                block = (
+                    f"### {display}\n\n"
+                    f"- **ID:** `{_cell(metric.get('metric_name', 'N/A'))}`\n"
+                    f"- **Category:** {_cell(metric.get('category', 'N/A'))}\n"
+                    f"- **Owner:** {_cell(metric.get('business_owner', 'N/A'))}\n"
+                    f"- **Grain:** {_cell(metric.get('grain', 'N/A'))}\n"
+                    f"- **Formula:** {_cell(metric.get('formula_description', 'N/A'))}\n"
+                    f"- **Purpose:** {_cell(metric.get('business_purpose', 'N/A'))}\n"
+                    f"- **Interpretation:** {_cell(metric.get('interpretation_notes', 'N/A'))}\n"
+                    f"- **Risk if misread:** {_cell(metric.get('risk_if_misread', 'N/A'))}\n"
+                    f"- **Null policy:** {_cell(metric.get('allowed_null_policy', 'N/A'))}\n"
+                    f"- **Enabled:** {metric.get('enabled', True)}\n"
+                )
+                metric_blocks.append(block)
+            category_blocks.append(
+                f"## {_category_title(category)}\n\n"
+                + "\n\n".join(block.rstrip("\n") for block in metric_blocks)
+            )
+
+        metrics_section = (
+            "\n\n---\n\n".join(category_blocks) if category_blocks else "No metrics defined."
+        )
 
         content = f"""# ProductPulse - Metric Definitions
 
 Generated: {generated_on}
+
+## Related Reports
+
+- [Executive Summary](executive_summary.md)
+- [Data Quality Report](data_quality_report.md)
+- [Risk Register](risk_register.md)
 
 This document is the authoritative metric glossary for the ProductPulse analytics engine.
 All formulas are implemented deterministically in Python; this document describes the

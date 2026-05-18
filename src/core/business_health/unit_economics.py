@@ -29,9 +29,7 @@ def calculate_ltv(arpu: float, gross_margin: float, churn_rate: float) -> float:
     return safe_divide(arpu * gross_margin, churn_rate)
 
 
-def calculate_cac(
-    marketing_spend: float, sales_spend: float, new_customers: float
-) -> float:
+def calculate_cac(marketing_spend: float, sales_spend: float, new_customers: float) -> float:
     """
     CAC = (Marketing Spend + Sales Spend) / New Customers.
 
@@ -51,9 +49,7 @@ def calculate_ltv_to_cac_ratio(ltv: float, cac: float) -> float:
     return safe_divide(ltv, cac)
 
 
-def calculate_cac_payback_period(
-    cac: float, arpu: float, gross_margin: float
-) -> float:
+def calculate_cac_payback_period(cac: float, arpu: float, gross_margin: float) -> float:
     """
     CAC Payback Period = CAC / (ARPU × Gross Margin).
 
@@ -65,9 +61,7 @@ def calculate_cac_payback_period(
     return safe_divide(cac, arpu * gross_margin)
 
 
-def calculate_customer_profitability(
-    revenue_per_customer: float, cost_to_serve: float
-) -> float:
+def calculate_customer_profitability(revenue_per_customer: float, cost_to_serve: float) -> float:
     """
     Customer Profitability = Revenue Per Customer - Cost to Serve.
 

@@ -27,9 +27,7 @@ class RevenueLeakageEngine:
     Detects and quantifies revenue leakage using vectorized Pandas operations.
     """
 
-    def detect_leakage(
-        self, datasets: Dict[str, pd.DataFrame]
-    ) -> List[Dict[str, Any]]:
+    def detect_leakage(self, datasets: Dict[str, pd.DataFrame]) -> List[Dict[str, Any]]:
         """
         Run all leakage detectors and return a combined flat list.
 
@@ -64,9 +62,7 @@ class RevenueLeakageEngine:
     # Individual detectors — all vectorized
     # ------------------------------------------------------------------
 
-    def _detect_failed_payments(
-        self, transactions: pd.DataFrame
-    ) -> List[Dict[str, Any]]:
+    def _detect_failed_payments(self, transactions: pd.DataFrame) -> List[Dict[str, Any]]:
         """
         Flag every Failed transaction as a leakage event.
 
@@ -94,23 +90,20 @@ class RevenueLeakageEngine:
                     "leakage_type": "Failed Payment",
                     "customer_id": row["customer_id"],
                     "estimated_revenue_loss": loss,
-                    "estimated_loss": loss,          # backward-compat alias
+                    "estimated_loss": loss,  # backward-compat alias
                     "affected_customers": 1,
                     "recommended_action": (
                         "Trigger automated dunning sequence: retry payment, "
                         "then request updated payment method."
                     ),
                     "evidence": (
-                        f"{int(row['event_count'])} failed transaction(s) totalling "
-                        f"${loss:,.2f}."
+                        f"{int(row['event_count'])} failed transaction(s) totalling ${loss:,.2f}."
                     ),
                 }
             )
         return results
 
-    def _detect_refunds(
-        self, transactions: pd.DataFrame
-    ) -> List[Dict[str, Any]]:
+    def _detect_refunds(self, transactions: pd.DataFrame) -> List[Dict[str, Any]]:
         """
         Flag every Refunded transaction as realised revenue leakage.
 
@@ -144,16 +137,13 @@ class RevenueLeakageEngine:
                         "engineering. If billing error, correct and re-invoice."
                     ),
                     "evidence": (
-                        f"{int(row['event_count'])} refunded transaction(s) totalling "
-                        f"${loss:,.2f}."
+                        f"{int(row['event_count'])} refunded transaction(s) totalling ${loss:,.2f}."
                     ),
                 }
             )
         return results
 
-    def _detect_unpaid_active_subscriptions(
-        self, subs: pd.DataFrame
-    ) -> List[Dict[str, Any]]:
+    def _detect_unpaid_active_subscriptions(self, subs: pd.DataFrame) -> List[Dict[str, Any]]:
         """
         Flag subscriptions in Past Due status — service is being delivered but
         not paid for.
@@ -199,9 +189,7 @@ class RevenueLeakageEngine:
         if usage.empty:
             return []
 
-        billable_customers = set(
-            subs.loc[subs["status"].isin(_BILLABLE_STATUSES), "customer_id"]
-        )
+        billable_customers = set(subs.loc[subs["status"].isin(_BILLABLE_STATUSES), "customer_id"])
         usage_customers = set(usage["customer_id"].unique())
 
         # Customers with usage but no billable subscription

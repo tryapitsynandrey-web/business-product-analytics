@@ -2,13 +2,21 @@
 
 Generated: 2026-05-01
 
+## Related Reports
+
+- [Executive Summary](executive_summary.md)
+- [Data Quality Report](data_quality_report.md)
+- [Risk Register](risk_register.md)
+
 This document is the authoritative metric glossary for the ProductPulse analytics engine.
 All formulas are implemented deterministically in Python; this document describes the
 governance contract each metric must satisfy.
 
 ---
 
-## Monthly Recurring Revenue (MRR)
+## Revenue Metrics
+
+### Monthly Recurring Revenue (MRR)
 
 - **ID:** `monthly_recurring_revenue`
 - **Category:** revenue
@@ -21,9 +29,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Average Revenue Per User (ARPU)
+### Average Revenue Per User (ARPU)
 
 - **ID:** `average_revenue_per_user`
 - **Category:** revenue
@@ -36,9 +42,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Expansion Revenue
+### Expansion Revenue
 
 - **ID:** `expansion_revenue`
 - **Category:** revenue
@@ -51,9 +55,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Contraction Revenue
+### Contraction Revenue
 
 - **ID:** `contraction_revenue`
 - **Category:** revenue
@@ -66,9 +68,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Gross Revenue Retention (GRR)
+### Gross Revenue Retention (GRR)
 
 - **ID:** `gross_revenue_retention`
 - **Category:** revenue
@@ -81,9 +81,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Net Revenue Retention (NRR)
+### Net Revenue Retention (NRR)
 
 - **ID:** `net_revenue_retention`
 - **Category:** revenue
@@ -96,9 +94,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Revenue at Risk
+### Revenue at Risk
 
 - **ID:** `revenue_at_risk`
 - **Category:** revenue
@@ -113,7 +109,9 @@ governance contract each metric must satisfy.
 
 ---
 
-## Activation Rate
+## Product Engagement Metrics
+
+### Activation Rate
 
 - **ID:** `activation_rate`
 - **Category:** product
@@ -126,9 +124,7 @@ governance contract each metric must satisfy.
 - **Null policy:** fill_zero
 - **Enabled:** True
 
----
-
-## Usage Frequency
+### Usage Frequency
 
 - **ID:** `usage_frequency`
 - **Category:** product
@@ -141,9 +137,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Key Action Rate
+### Key Action Rate
 
 - **ID:** `key_action_rate`
 - **Category:** product
@@ -156,9 +150,7 @@ governance contract each metric must satisfy.
 - **Null policy:** fill_zero
 - **Enabled:** True
 
----
-
-## Engagement Drop Rate
+### Engagement Drop Rate
 
 - **ID:** `engagement_drop_rate`
 - **Category:** product
@@ -171,9 +163,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Feature Adoption Proxy
+### Feature Adoption Proxy
 
 - **ID:** `feature_adoption_proxy`
 - **Category:** product
@@ -188,7 +178,9 @@ governance contract each metric must satisfy.
 
 ---
 
-## Customer Churn Rate
+## Customer Health Metrics
+
+### Customer Churn Rate
 
 - **ID:** `customer_churn_rate`
 - **Category:** customer
@@ -201,9 +193,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Retention Rate
+### Retention Rate
 
 - **ID:** `retention_rate`
 - **Category:** customer
@@ -216,9 +206,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Average Net Promoter Score (NPS)
+### Average Net Promoter Score (NPS)
 
 - **ID:** `average_nps`
 - **Category:** customer
@@ -231,9 +219,7 @@ governance contract each metric must satisfy.
 - **Null policy:** drop_row
 - **Enabled:** True
 
----
-
-## Support Burden
+### Support Burden
 
 - **ID:** `support_burden`
 - **Category:** customer
@@ -246,9 +232,7 @@ governance contract each metric must satisfy.
 - **Null policy:** fill_zero
 - **Enabled:** True
 
----
-
-## Time to Activation
+### Time to Activation
 
 - **ID:** `time_to_activation`
 - **Category:** customer
@@ -263,7 +247,9 @@ governance contract each metric must satisfy.
 
 ---
 
-## Gross Profit
+## Profitability Metrics
+
+### Gross Profit
 
 - **ID:** `gross_profit`
 - **Category:** business_health_profitability
@@ -276,9 +262,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Gross Margin
+### Gross Margin
 
 - **ID:** `gross_margin`
 - **Category:** business_health_profitability
@@ -291,9 +275,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Operating Margin
+### Operating Margin
 
 - **ID:** `operating_margin`
 - **Category:** business_health_profitability
@@ -306,9 +288,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Net Margin
+### Net Margin
 
 - **ID:** `net_margin`
 - **Category:** business_health_profitability
@@ -321,9 +301,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## EBITDA
+### EBITDA
 
 - **ID:** `ebitda`
 - **Category:** business_health_profitability
@@ -336,9 +314,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Return on Investment (ROI)
+### Return on Investment (ROI)
 
 - **ID:** `roi`
 - **Category:** business_health_profitability
@@ -353,7 +329,9 @@ governance contract each metric must satisfy.
 
 ---
 
-## Annual Recurring Revenue (ARR)
+## Revenue Health Metrics
+
+### Annual Recurring Revenue (ARR)
 
 - **ID:** `annual_recurring_revenue`
 - **Category:** business_health_revenue
@@ -366,9 +344,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Revenue Growth Rate
+### Revenue Growth Rate
 
 - **ID:** `revenue_growth_rate`
 - **Category:** business_health_revenue
@@ -381,9 +357,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Revenue Concentration
+### Revenue Concentration
 
 - **ID:** `revenue_concentration`
 - **Category:** business_health_revenue
@@ -398,7 +372,9 @@ governance contract each metric must satisfy.
 
 ---
 
-## Customer Lifetime Value (LTV)
+## Unit Economics Metrics
+
+### Customer Lifetime Value (LTV)
 
 - **ID:** `customer_lifetime_value`
 - **Category:** business_health_unit_economics
@@ -411,9 +387,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Customer Acquisition Cost (CAC)
+### Customer Acquisition Cost (CAC)
 
 - **ID:** `customer_acquisition_cost`
 - **Category:** business_health_unit_economics
@@ -426,9 +400,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## LTV:CAC Ratio
+### LTV:CAC Ratio
 
 - **ID:** `ltv_to_cac_ratio`
 - **Category:** business_health_unit_economics
@@ -443,7 +415,9 @@ governance contract each metric must satisfy.
 
 ---
 
-## Free Cash Flow (FCF)
+## Cash Flow Metrics
+
+### Free Cash Flow (FCF)
 
 - **ID:** `free_cash_flow`
 - **Category:** business_health_cashflow
@@ -456,9 +430,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Cash Runway (Months)
+### Cash Runway (Months)
 
 - **ID:** `runway_months`
 - **Category:** business_health_cashflow
@@ -473,7 +445,9 @@ governance contract each metric must satisfy.
 
 ---
 
-## Customer Growth Rate
+## Growth Metrics
+
+### Customer Growth Rate
 
 - **ID:** `customer_growth_rate`
 - **Category:** business_health_growth
@@ -486,9 +460,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Growth Efficiency
+### Growth Efficiency
 
 - **ID:** `growth_efficiency`
 - **Category:** business_health_growth
@@ -503,7 +475,9 @@ governance contract each metric must satisfy.
 
 ---
 
-## Revenue Per Employee
+## Efficiency Metrics
+
+### Revenue Per Employee
 
 - **ID:** `revenue_per_employee`
 - **Category:** business_health_efficiency
@@ -516,9 +490,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Sales Efficiency (Magic Number)
+### Sales Efficiency (Magic Number)
 
 - **ID:** `sales_efficiency`
 - **Category:** business_health_efficiency
@@ -533,7 +505,9 @@ governance contract each metric must satisfy.
 
 ---
 
-## Customer Concentration Risk
+## Risk Metrics
+
+### Customer Concentration Risk
 
 - **ID:** `customer_concentration_risk`
 - **Category:** business_health_risk
@@ -546,9 +520,7 @@ governance contract each metric must satisfy.
 - **Null policy:** error
 - **Enabled:** True
 
----
-
-## Churn Exposure
+### Churn Exposure
 
 - **ID:** `churn_exposure`
 - **Category:** business_health_risk

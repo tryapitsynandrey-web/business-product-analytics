@@ -96,7 +96,7 @@ def test_report_generator_writes_all_reports_and_sanitizes_table_cells(tmp_path)
                 {
                     "metric_name": "monthly_recurring_revenue",
                     "display_name": "MRR | Current",
-                    "category": "Revenue",
+                    "category": "revenue",
                     "business_owner": "Finance",
                     "grain": "overall",
                     "formula_description": "sum active subscriptions",
@@ -105,7 +105,20 @@ def test_report_generator_writes_all_reports_and_sanitizes_table_cells(tmp_path)
                     "risk_if_misread": "overstates cash",
                     "allowed_null_policy": "not allowed",
                     "enabled": True,
-                }
+                },
+                {
+                    "metric_name": "custom_metric",
+                    "display_name": "Custom Metric",
+                    "category": "custom_metric_family",
+                    "business_owner": "Operations",
+                    "grain": "overall",
+                    "formula_description": "custom formula",
+                    "business_purpose": "custom tracking",
+                    "interpretation_notes": "custom notes",
+                    "risk_if_misread": "custom risk",
+                    "allowed_null_policy": "allowed",
+                    "enabled": True,
+                },
             ]
         }
     )
@@ -133,7 +146,10 @@ def test_report_generator_writes_all_reports_and_sanitizes_table_cells(tmp_path)
     assert "Retry now" in risk_register
     assert "customers/raw" in data_quality
     assert "billing / join risk with newline" in data_quality
+    assert "## Revenue Metrics" in definitions
     assert "MRR / Current" in definitions
+    assert "### Custom Metric" in definitions
+    assert "## Custom Metric Family Metrics" in definitions
 
 
 def test_report_generator_handles_empty_report_inputs(tmp_path):

@@ -15,6 +15,7 @@ Design contract:
 from __future__ import annotations
 
 import logging
+from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
 
 import pandas as pd
@@ -22,9 +23,9 @@ import yaml
 
 from models.enums import RiskBand
 from models.risk_profile import ChurnRiskProfile
-from utils.paths import CONFIG_DIR
 
 logger = logging.getLogger(__name__)
+DEFAULT_CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
 # ---------------------------------------------------------------------------
 # Safe operator dispatch — no eval, no exec
@@ -75,7 +76,7 @@ class ChurnRiskEngine:
     """
 
     def __init__(self, rules_path: Optional[Any] = None) -> None:
-        self._rules_path = rules_path or (CONFIG_DIR / "churn_rules.yaml")
+        self._rules_path = rules_path or (DEFAULT_CONFIG_DIR / "churn_rules.yaml")
         raw = self._load_yaml()
         self._rules: List[Dict[str, Any]] = [
             r for r in raw.get("rules", []) if r.get("enabled", True)

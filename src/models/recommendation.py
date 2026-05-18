@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import List
 from models.enums import InterventionType
 
+
 @dataclass
 class BusinessRecommendation:
     recommendation_id: str

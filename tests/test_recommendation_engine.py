@@ -27,13 +27,15 @@ def _make_datasets(customers_data: list | None = None) -> dict:
             {"customer_id": "C3", "segment": "Mid-Market", "is_active": True},
         ]
     customers = pd.DataFrame(customers_data)
-    subscriptions = pd.DataFrame({
-        "subscription_id": [f"S{i}" for i in range(len(customers_data))],
-        "customer_id": [c["customer_id"] for c in customers_data],
-        "status": ["Active"] * len(customers_data),
-        "monthly_price": [1000.0] * len(customers_data),
-        "plan": ["Enterprise"] * len(customers_data),
-    })
+    subscriptions = pd.DataFrame(
+        {
+            "subscription_id": [f"S{i}" for i in range(len(customers_data))],
+            "customer_id": [c["customer_id"] for c in customers_data],
+            "status": ["Active"] * len(customers_data),
+            "monthly_price": [1000.0] * len(customers_data),
+            "plan": ["Enterprise"] * len(customers_data),
+        }
+    )
     return {
         "customers": customers,
         "subscriptions": subscriptions,
@@ -82,9 +84,7 @@ class TestChurnRiskRecommendations:
         )
 
     def test_no_recommendation_for_low_risk_customer(self, engine):
-        datasets = _make_datasets([
-            {"customer_id": "C1", "segment": "SMB", "is_active": True}
-        ])
+        datasets = _make_datasets([{"customer_id": "C1", "segment": "SMB", "is_active": True}])
         profiles = [
             ChurnRiskProfile(
                 customer_id="C1",
@@ -97,10 +97,7 @@ class TestChurnRiskRecommendations:
         ]
         recs = engine.generate_recommendations(datasets, profiles, leakages=[])
         # Low risk with no drivers should trigger no churn-risk rules
-        churn_recs = [
-            r for r in recs
-            if r.get("rule_id") in ("REC_001", "REC_003", "REC_006")
-        ]
+        churn_recs = [r for r in recs if r.get("rule_id") in ("REC_001", "REC_003", "REC_006")]
         assert churn_recs == []
 
     def test_missing_customer_profile_is_skipped(self, engine):

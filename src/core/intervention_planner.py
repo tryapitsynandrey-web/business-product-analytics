@@ -55,6 +55,7 @@ _CONFIDENCE_WEIGHTS: Dict[str, float] = {
 # InterventionPlanner class
 # ---------------------------------------------------------------------------
 
+
 class InterventionPlanner:
     """
     Transforms recommendation dicts into structured intervention records.
@@ -86,8 +87,11 @@ class InterventionPlanner:
             intervention = self.build_intervention_record(rec, sequence=sequence)
             interventions.append(intervention)
 
-        logger.info("Created %d intervention(s) from %d recommendation(s).",
-                    len(interventions), len(recommendations))
+        logger.info(
+            "Created %d intervention(s) from %d recommendation(s).",
+            len(interventions),
+            len(recommendations),
+        )
         return interventions
 
     # ------------------------------------------------------------------

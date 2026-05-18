@@ -18,28 +18,29 @@ Design contract:
 from __future__ import annotations
 
 import logging
+from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
 
 import pandas as pd
 import yaml
 
 from models.risk_profile import ChurnRiskProfile
-from utils.paths import CONFIG_DIR
 
 logger = logging.getLogger(__name__)
+DEFAULT_CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
 # ---------------------------------------------------------------------------
 # Safe operator dispatch
 # ---------------------------------------------------------------------------
 
 _OPERATORS: Dict[str, Callable[[Any, Any], bool]] = {
-    "equals":           lambda v, t: str(v) == str(t),
-    "not_equals":       lambda v, t: str(v) != str(t),
-    "greater_than":     lambda v, t: float(v) > float(t),
+    "equals": lambda v, t: str(v) == str(t),
+    "not_equals": lambda v, t: str(v) != str(t),
+    "greater_than": lambda v, t: float(v) > float(t),
     "greater_or_equal": lambda v, t: float(v) >= float(t),
-    "less_than":        lambda v, t: float(v) < float(t),
-    "less_or_equal":    lambda v, t: float(v) <= float(t),
-    "contains":         lambda v, t: str(t).lower() in str(v).lower(),
+    "less_than": lambda v, t: float(v) < float(t),
+    "less_or_equal": lambda v, t: float(v) <= float(t),
+    "contains": lambda v, t: str(t).lower() in str(v).lower(),
 }
 
 
@@ -58,6 +59,7 @@ def _match(operator: str, value: Any, threshold: Any) -> bool:
 # RecommendationEngine
 # ---------------------------------------------------------------------------
 
+
 class RecommendationEngine:
     """
     Generates business recommendations from churn risk profiles and leakage
@@ -65,7 +67,7 @@ class RecommendationEngine:
     """
 
     def __init__(self, rules_path: Optional[Any] = None) -> None:
-        self._rules_path = rules_path or (CONFIG_DIR / "recommendation_rules.yaml")
+        self._rules_path = rules_path or (DEFAULT_CONFIG_DIR / "recommendation_rules.yaml")
         raw = self._load_yaml()
         self._rules: List[Dict[str, Any]] = [
             r for r in raw.get("rules", []) if r.get("enabled", True)
@@ -121,16 +123,18 @@ class RecommendationEngine:
             )
             for rule in matched:
                 revenue_impact = profile.revenue_at_risk
-                recs.append(self._build_recommendation(
-                    rule=rule,
-                    customer_id=profile.customer_id,
-                    segment=segment,
-                    estimated_revenue_impact=revenue_impact,
-                    evidence_source=(
-                        f"Churn risk band: {profile.risk_band.value}. "
-                        f"Drivers: {', '.join(profile.drivers) or 'none'}."
-                    ),
-                ))
+                recs.append(
+                    self._build_recommendation(
+                        rule=rule,
+                        customer_id=profile.customer_id,
+                        segment=segment,
+                        estimated_revenue_impact=revenue_impact,
+                        evidence_source=(
+                            f"Churn risk band: {profile.risk_band.value}. "
+                            f"Drivers: {', '.join(profile.drivers) or 'none'}."
+                        ),
+                    )
+                )
 
         # --- Leakage recommendations
         for leakage in leakages:
@@ -143,17 +147,18 @@ class RecommendationEngine:
                 customer_rows = customers[customers["customer_id"] == cid]
                 segment = (
                     str(customer_rows.iloc[0].get("segment", ""))
-                    if not customer_rows.empty else "Unknown"
+                    if not customer_rows.empty
+                    else "Unknown"
                 )
-                recs.append(self._build_recommendation(
-                    rule=rule,
-                    customer_id=cid,
-                    segment=segment,
-                    estimated_revenue_impact=float(
-                        leakage.get("estimated_revenue_loss", 0.0)
-                    ),
-                    evidence_source=leakage.get("evidence", "Leakage event detected."),
-                ))
+                recs.append(
+                    self._build_recommendation(
+                        rule=rule,
+                        customer_id=cid,
+                        segment=segment,
+                        estimated_revenue_impact=float(leakage.get("estimated_revenue_loss", 0.0)),
+                        evidence_source=leakage.get("evidence", "Leakage event detected."),
+                    )
+                )
 
         logger.info("Generated %d recommendation(s).", len(recs))
         return recs
@@ -202,9 +207,7 @@ class RecommendationEngine:
                 filter_op = rule.get("filter_operator", "equals")
                 filter_val = rule.get("filter_value")
                 secondary_value = context.get(filter_field)
-                if secondary_value is None or not _match(
-                    filter_op, secondary_value, filter_val
-                ):
+                if secondary_value is None or not _match(filter_op, secondary_value, filter_val):
                     continue
 
             matched.append(rule)

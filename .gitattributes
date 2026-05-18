@@ -11,6 +11,13 @@
 *.yml text eol=lf
 *.json text eol=lf
 *.env.example text eol=lf
+*.cfg text eol=lf
+*.csv text eol=lf
+*.ini text eol=lf
+*.lock text eol=lf
+*.sh text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
 Makefile text eol=lf
 
 # Data snapshots are text, but should be treated as generated portfolio artifacts.
@@ -41,6 +48,10 @@ reports/*.md text eol=lf linguist-generated=true
 
 # Keep local-only and generated caches out of source archives.
 .venv/** export-ignore
+.agents/** export-ignore
+.antigravity/** export-ignore
+.codex/** export-ignore
+.gemini/** export-ignore
 __pycache__/** export-ignore
 .pytest_cache/** export-ignore
 .ruff_cache/** export-ignore

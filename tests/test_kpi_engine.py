@@ -18,6 +18,7 @@ from core.metric_governance import MetricGovernance
 # Shared helpers
 # ---------------------------------------------------------------------------
 
+
 @pytest.fixture()
 def governance() -> MetricGovernance:
     return MetricGovernance()
@@ -55,42 +56,50 @@ def _make_datasets(
     today = date.today()
     signup_dates = [today - timedelta(days=30 * (i + 1)) for i in range(num_customers)]
 
-    customers = pd.DataFrame({
-        "customer_id": customer_ids,
-        "is_active": active_flags,
-        "signup_date": signup_dates,
-        "segment": ["SMB"] * num_customers,
-    })
+    customers = pd.DataFrame(
+        {
+            "customer_id": customer_ids,
+            "is_active": active_flags,
+            "signup_date": signup_dates,
+            "segment": ["SMB"] * num_customers,
+        }
+    )
 
-    subscriptions = pd.DataFrame({
-        "subscription_id": [f"S{i}" for i in range(num_customers)],
-        "customer_id": customer_ids,
-        "status": subscription_statuses,
-        "monthly_price": monthly_prices,
-        "plan": plans,
-    })
+    subscriptions = pd.DataFrame(
+        {
+            "subscription_id": [f"S{i}" for i in range(num_customers)],
+            "customer_id": customer_ids,
+            "status": subscription_statuses,
+            "monthly_price": monthly_prices,
+            "plan": plans,
+        }
+    )
 
     # product_usage — one record per customer
     usage_logins = logins if logins is not None else [20] * num_customers
     usage_key_actions = key_actions if key_actions is not None else [10] * num_customers
     usage_features = features_used if features_used is not None else [3] * num_customers
-    product_usage = pd.DataFrame({
-        "usage_id": [f"U{i}" for i in range(num_customers)],
-        "customer_id": customer_ids,
-        "date": [pd.Timestamp(today - timedelta(days=10))] * num_customers,
-        "logins": usage_logins,
-        "key_actions": usage_key_actions,
-        "features_used": usage_features,
-    })
+    product_usage = pd.DataFrame(
+        {
+            "usage_id": [f"U{i}" for i in range(num_customers)],
+            "customer_id": customer_ids,
+            "date": [pd.Timestamp(today - timedelta(days=10))] * num_customers,
+            "logins": usage_logins,
+            "key_actions": usage_key_actions,
+            "features_used": usage_features,
+        }
+    )
 
     # nps_scores
     if nps_scores is not None:
-        nps_df = pd.DataFrame({
-            "score_id": [f"N{i}" for i in range(len(nps_scores))],
-            "customer_id": customer_ids[:len(nps_scores)],
-            "date": [pd.Timestamp(today - timedelta(days=5))] * len(nps_scores),
-            "score": nps_scores,
-        })
+        nps_df = pd.DataFrame(
+            {
+                "score_id": [f"N{i}" for i in range(len(nps_scores))],
+                "customer_id": customer_ids[: len(nps_scores)],
+                "date": [pd.Timestamp(today - timedelta(days=5))] * len(nps_scores),
+                "score": nps_scores,
+            }
+        )
     else:
         nps_df = pd.DataFrame(columns=["score_id", "customer_id", "date", "score"])
 
@@ -98,24 +107,34 @@ def _make_datasets(
     ticket_rows = []
     for cid in customer_ids:
         for j in range(ticket_counts_per_customer):
-            ticket_rows.append({"ticket_id": f"T_{cid}_{j}", "customer_id": cid, "status": "Closed"})
-    support_tickets = pd.DataFrame(ticket_rows) if ticket_rows else pd.DataFrame(
-        columns=["ticket_id", "customer_id", "status"]
+            ticket_rows.append(
+                {"ticket_id": f"T_{cid}_{j}", "customer_id": cid, "status": "Closed"}
+            )
+    support_tickets = (
+        pd.DataFrame(ticket_rows)
+        if ticket_rows
+        else pd.DataFrame(columns=["ticket_id", "customer_id", "status"])
     )
 
     # transactions
     tx_rows = []
     for cid in customer_ids:
         for j in range(failed_tx_counts_per_customer):
-            tx_rows.append({
-                "transaction_id": f"TX_{cid}_{j}",
-                "customer_id": cid,
-                "subscription_id": f"S{cid}",
-                "amount": 100.0,
-                "status": "Failed",
-            })
-    transactions = pd.DataFrame(tx_rows) if tx_rows else pd.DataFrame(
-        columns=["transaction_id", "customer_id", "subscription_id", "amount", "status"]
+            tx_rows.append(
+                {
+                    "transaction_id": f"TX_{cid}_{j}",
+                    "customer_id": cid,
+                    "subscription_id": f"S{cid}",
+                    "amount": 100.0,
+                    "status": "Failed",
+                }
+            )
+    transactions = (
+        pd.DataFrame(tx_rows)
+        if tx_rows
+        else pd.DataFrame(
+            columns=["transaction_id", "customer_id", "subscription_id", "amount", "status"]
+        )
     )
 
     return {
@@ -137,6 +156,7 @@ def _make_datasets(
 # ---------------------------------------------------------------------------
 # MRR
 # ---------------------------------------------------------------------------
+
 
 class TestMRR:
     def test_mrr_sums_active_and_past_due_only(self, engine):
@@ -168,6 +188,7 @@ class TestMRR:
 # ARPU
 # ---------------------------------------------------------------------------
 
+
 class TestARPU:
     def test_arpu_is_mrr_divided_by_paying_customers(self, engine):
         datasets = _make_datasets(
@@ -193,6 +214,7 @@ class TestARPU:
 # ---------------------------------------------------------------------------
 # Churn Rate
 # ---------------------------------------------------------------------------
+
 
 class TestChurnRate:
     def test_churn_rate_correct_proportion(self, engine):
@@ -223,6 +245,7 @@ class TestChurnRate:
 # NPS Average
 # ---------------------------------------------------------------------------
 
+
 class TestAverageNPS:
     def test_nps_mean_of_scores(self, engine):
         datasets = _make_datasets(num_customers=3, nps_scores=[8, 4, 10])
@@ -239,6 +262,7 @@ class TestAverageNPS:
 # ---------------------------------------------------------------------------
 # Support Burden
 # ---------------------------------------------------------------------------
+
 
 class TestSupportBurden:
     def test_support_burden_mean_tickets_per_active_customer(self, engine):
@@ -266,6 +290,7 @@ class TestSupportBurden:
 # Activation Rate
 # ---------------------------------------------------------------------------
 
+
 class TestActivationRate:
     def test_activation_rate_customers_above_threshold(self, engine):
         # Threshold = 5 key actions.  Two customers above, one below.
@@ -292,6 +317,7 @@ class TestActivationRate:
 # Revenue at Risk
 # ---------------------------------------------------------------------------
 
+
 class TestRevenueAtRisk:
     def test_revenue_at_risk_sums_active_mrr_of_at_risk_customers(self, engine):
         datasets = _make_datasets(
@@ -308,14 +334,14 @@ class TestRevenueAtRisk:
 
     def test_revenue_at_risk_zero_when_no_high_risk_customers(self, engine):
         datasets = _make_datasets(num_customers=2)
-        result = engine.calculate_revenue_at_risk(
-            datasets, date.today(), high_risk_customer_ids=[]
-        )
+        result = engine.calculate_revenue_at_risk(datasets, date.today(), high_risk_customer_ids=[])
         # Falls back to Past Due proxy
         assert result.value == pytest.approx(0.0)
 
+
 def test_kpi_engine_supported_metrics():
     from core.kpi_engine import KPIEngine
+
     supported = KPIEngine.get_supported_metrics()
     assert "monthly_recurring_revenue" in supported
     assert supported["monthly_recurring_revenue"] == "calculate_mrr"
@@ -380,19 +406,19 @@ def test_engagement_drop_rate_returns_zero_without_overlapping_customers(engine)
     datasets = _make_datasets(num_customers=2)
     datasets["product_usage"] = pd.DataFrame(
         [
-                {
-                    "usage_id": "U1",
-                    "customer_id": "C0",
-                    "date": today,
-                    "logins": 10,
-                    "key_actions": 1,
-                    "features_used": 1,
-                },
-                {
-                    "usage_id": "U2",
-                    "customer_id": "C1",
-                    "date": today - pd.Timedelta(days=30),
-                    "logins": 10,
+            {
+                "usage_id": "U1",
+                "customer_id": "C0",
+                "date": today,
+                "logins": 10,
+                "key_actions": 1,
+                "features_used": 1,
+            },
+            {
+                "usage_id": "U2",
+                "customer_id": "C1",
+                "date": today - pd.Timedelta(days=30),
+                "logins": 10,
                 "key_actions": 1,
                 "features_used": 1,
             },

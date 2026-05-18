@@ -1,12 +1,11 @@
-# ProductPulse - Business Product Analytics Decision Engine
+# ProductPulse — Business Product Analytics Decision Engine
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
 ![CI](https://github.com/tryapitsynandrey-web/business-product-analytics/actions/workflows/ci.yml/badge.svg)
 ![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-150458?logo=pandas)
 ![Pytest](https://img.shields.io/badge/Pytest-7.0%2B-0A9EDC?logo=pytest)
+![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)
 ![Architecture](https://img.shields.io/badge/Architecture-Modular-success)
-
-## Description
 
 ProductPulse is a modular, rule-based analytics decision engine built to convert
 raw operational signals from a SaaS product into explainable business decisions.
@@ -18,35 +17,79 @@ recommendations without relying on opaque machine learning models.
 No real customer data exists in this repository. The project does not currently
 use ML predictions and is not a production SaaS deployment.
 
+## Table of Contents
+
+- [Key Features](#key-features)
+- [Architecture](#architecture)
+- [Quick Start](#quick-start)
+- [Configuration](#configuration)
+- [How It Works](#how-it-works)
+- [Development](#development)
+- [Documentation](#documentation)
+- [Skill Mapping](#skill-mapping)
+- [Limitations & Future Work](#limitations--future-work)
+- [License](#license)
+
+## Key Features
+
+### Metric Governance Engine
+
+Enforces that metrics computed at runtime strictly align with a declarative
+YAML catalog. Every KPI must have documented ownership, risk factors, and
+formulas before execution.
+
+### Rule-Based Churn Scoring
+
+Evaluates multiple configured operational signals (e.g., usage drops, high
+support volume) to flag at-risk accounts deterministically using a safe
+operator dispatch table — no `eval`, no ML.
+
+### Revenue Leakage Detection
+
+Scans billing states and transaction histories to flag missed collections,
+failed payments, and unpaid active subscriptions.
+
+### Prioritized Recommendations
+
+Rule-based engine translating risks and anomalies into actionable business
+interventions with impact scores and confidence levels.
+
+### Local Streamlit Dashboard
+
+Includes a local-only Streamlit dashboard with an executive cockpit,
+prioritized actions, Customer 360 drill-down, KPI review, data quality review,
+risk queues, decision traces, and metric lineage. Features include:
+
+- Searchable action, customer, recommendation, and trace views
+- Quick-view presets for common analysis workflows
+- Decision Brief summaries with Markdown exports
+- Owner workload summaries for handoff queues
+- Local data freshness indicators and CSV exports
+
+No data leaves your machine. No cloud deployment or authentication required.
+
+### End-to-End Orchestration
+
+Unified pipeline managing synthetic data generation, loading, validation,
+analytics calculation, and reporting in a single deterministic run.
+
 ## Architecture
 
 The system utilizes a clean, adapter-driven architecture separating IO from
 business logic. The `src/core/` module is completely agnostic to file formats
-or data sources, making the logic testable and governance-friendly. The system
-is orchestrated by a unified pipeline that handles the flow from synthetic
-generation to the recommendation engine.
+or data sources, making the logic testable and governance-friendly.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the detailed layer map,
+data flow, and architecture decisions.
 
-## Features
+### Tech Stack
 
-- **Metric Governance Engine:** Enforces that metrics computed at runtime
-  strictly align with a declarative YAML catalog.
-- **Rule-based Churn Scoring:** Evaluates multiple configured operational
-  signals (e.g., usage drops, high support volume) to flag at-risk accounts
-  deterministically.
-- **Revenue Leakage Detection:** Scans billing states and transaction histories
-  to flag missed collections.
-- **Prioritized Recommendations:** Rule-based engine translating risks and
-  anomalies into actionable business interventions.
-- **End-to-End Orchestration:** Unified pipeline managing loading, validation,
-  analytics calculation, and reporting.
+- **Language:** Python 3.10+
+- **Libraries:** Pandas, NumPy, PyYAML, Streamlit
+- **Testing:** Pytest (690 tests, 100% coverage gate)
+- **Linting:** Ruff
+- **Type Checking:** Pyrefly
 
-## Tech Stack
-
-- **Language:** Python
-- **Libraries:** Pandas, NumPy, PyYAML
-- **Testing:** Pytest
-
-## Project Structure
+### Project Structure
 
 ```text
 business-product-analytics/
@@ -59,135 +102,141 @@ business-product-analytics/
 │   ├── core/            # Business logic, engines, and orchestrator
 │   ├── models/          # Typed domain objects
 │   └── utils/           # Shared helpers and paths
+├── app/                 # Streamlit dashboard
 └── tests/               # Pytest suite
 ```
 
-## Installation
+## Quick Start
+
+### Installation
 
 1. Clone the repository
 2. Set up a virtual environment: `python3 -m venv .venv`
 3. Install the project in editable mode: `make setup`
 
-## Usage
-
-Install dependencies, run the local pipeline, and open the dashboard:
+### Run the Pipeline
 
 ```bash
-make setup
 make run
+```
+
+This generates synthetic data, runs all analytics engines, and writes CSV,
+SQLite, and Markdown report artifacts.
+
+### Launch the Dashboard
+
+```bash
 make dashboard
 ```
 
-Useful local commands:
+If the dashboard reports a missing database or stale data, rerun `make run`.
 
-```bash
-make status
-make test
-make lint
-make format
-make typecheck
-make coverage
-make ci
-productpulse status
-productpulse dashboard
-```
+### CLI Reference
 
 The `productpulse` CLI is installed by `make setup` and supports:
 
 ```bash
-productpulse run
-productpulse status
-productpulse dashboard
+productpulse run        # Run the full analytics pipeline
+productpulse status     # Show pipeline and database status
+productpulse dashboard  # Launch the Streamlit dashboard
 ```
-
-## Code Quality
-
-Local and GitHub CI checks use the same project commands:
-
-```bash
-make lint
-make typecheck
-make test
-make coverage
-make ci
-```
-
-`make ci` compiles Python modules, runs Ruff lint checks, runs Pyrefly type
-checks, and executes the full pytest suite with the branch-aware coverage gate.
-Use `make format` to apply Ruff formatting to `src`, `app`, and `tests`. Use
-`make coverage` when you need the coverage report without the compile, lint,
-and type-check stages.
-
-The automated suite covers the deterministic pipeline, analytics engines,
-business-health metrics, IO adapters, SQLite persistence, report generation,
-CLI commands, Streamlit helper logic, validation, and schema contracts.
-
-## Local Streamlit Dashboard
-
-ProductPulse includes a local-only Streamlit dashboard with an executive cockpit,
-prioritized actions, Customer 360 drill-down, KPI review, data quality review,
-risk queues, decision traces, and metric lineage. The dashboard includes
-searchable action, customer, recommendation, intervention, and trace views, plus
-formatted KPI and revenue tables, mobile-safe Customer 360 summary cards,
-quick-view presets for common analysis workflows, Decision Brief summaries with
-Markdown exports, owner workload summaries for handoff queues, local data
-freshness indicators, and CSV exports for filtered views. It reads directly from
-the local SQLite database. No data leaves your machine, and it does not use any
-cloud deployment or authentication.
-
-To use the dashboard:
-
-1. Run the pipeline to generate CSV, report, and SQLite artifacts:
-
-   ```bash
-   make run
-   ```
-
-2. Launch the Streamlit app:
-
-   ```bash
-   make dashboard
-   ```
-
-If the dashboard reports a missing database or stale data, rerun `make run`.
 
 ## Configuration
 
-All business rules and metric definitions reside in the `config/` directory.
-Modify `churn_rules.yaml` to adjust the weighting of churn drivers, or update
-`metric_catalog.yaml` to add new tracked KPIs.
+### Business Rules (YAML)
+
+All business rules and metric definitions reside in the `config/` directory:
+
+- `churn_rules.yaml` — churn driver weights and thresholds
+- `metric_catalog.yaml` — tracked KPIs with ownership and formulas
+- `recommendation_rules.yaml` — recommendation triggers and actions
+
+### Reproducibility
+
 Synthetic data generation is anchored by `reproducibility.as_of_date` and
 `reproducibility.random_seed` in `config/config.yaml`, so repeated pipeline
 runs produce stable CSV and report snapshots.
 
-## Data Storage
+### Data Storage
 
-Data flows from the `data/synthetic` directory, is processed in memory by
-Pandas, and output artifacts (when exported) land in `data/exports`.
+Data flows from the `data/synthetic/` directory, is processed in memory by
+Pandas, and output artifacts land in `data/exports/`. A local SQLite database
+at `data/local/productpulse.db` serves the Streamlit dashboard.
 
 **Note:** For demonstration purposes, generated data and markdown reports are
 committed to this repository as snapshots. See
 [docs/GENERATED_ARTIFACTS.md](docs/GENERATED_ARTIFACTS.md) for handling noisy
 diffs during local development.
 
-## Governance Layer
+## How It Works
+
+### Governance Layer
 
 The project employs a strict Governance Layer to prevent analytical drift.
 The `MetricGovernance` engine verifies that the `KPIEngine` is only computing
 metrics that have been documented with ownership, risk factors, and formulas
 in the metric catalog.
 
-## Decision Engine Logic
+### Decision Engine Logic
 
 The decision engine applies deterministic thresholding rather than stochastic
-modeling. This is to ensure 100% explainability. When a customer is flagged as
+modeling. This ensures 100% explainability. When a customer is flagged as
 "Critical Risk," the system produces an exact trace of which rule was triggered
 and what the recommended intervention is.
 
-## Development Notes
+### Data Flow
+
+```text
+Synthetic CSVs → DataLoader → Validation Gate → Analytics Engines
+  → Decision Layer → CSV + SQLite + Markdown Reports
+```
+
+## Development
+
+### Local Commands
+
+```bash
+make setup      # Install in editable mode with dev dependencies
+make run        # Run the full pipeline
+make dashboard  # Launch Streamlit dashboard
+make status     # Show pipeline status
+make test       # Run pytest suite
+make lint       # Run Ruff linter
+make format     # Apply Ruff formatting
+make typecheck  # Run Pyrefly type checker
+make coverage   # Run tests with coverage report
+make ci         # Full CI: compile + lint + typecheck + coverage
+```
+
+### CI Pipeline
+
+`make ci` compiles Python modules, runs Ruff lint checks, runs Pyrefly type
+checks, and executes the full pytest suite with the branch-aware coverage gate.
+GitHub Actions runs the same `make ci` on every push and PR to `main`.
+
+### Guidelines
 
 - Use `pytest` for all unit testing.
 - Maintain a strict boundary between `src/adapters` (IO) and `src/core` (logic).
+- Do not commit changes to `data/` or `reports/` unless updating the official snapshot.
+
+## Documentation
+
+| Document | Description |
+| --- | --- |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Development setup, architecture boundaries, contribution guide |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and notable changes |
+| [PROJECT_STATUS.md](PROJECT_STATUS.md) | Current implementation phase and capabilities |
+| [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) | Pre-release verification steps |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Layer diagram, data flow, ADRs, and scale boundaries |
+| [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) | Docs-silo bridge to the canonical contribution guide |
+| [docs/GENERATED_ARTIFACTS.md](docs/GENERATED_ARTIFACTS.md) | Git policy for generated data and reports |
+| [docs/METRIC_CATALOG.md](docs/METRIC_CATALOG.md) | Human-readable metric catalog guide |
+| [reports/executive_summary.md](reports/executive_summary.md) | Auto-generated executive analytics summary |
+| [reports/metric_definitions.md](reports/metric_definitions.md) | Full metric catalog with formulas |
+| [reports/data_quality_report.md](reports/data_quality_report.md) | Per-dataset quality scores |
+| [reports/intervention_plan.md](reports/intervention_plan.md) | Prioritized interventions |
+| [reports/risk_register.md](reports/risk_register.md) | Churn and revenue leakage risk register |
 
 ## Skill Mapping
 
@@ -199,13 +248,15 @@ and what the recommended intervention is.
 | Business Logic Orchestration | `src/core/pipeline.py` | Automates repetitive analytical reporting workflows. | Google Project Management |
 | Domain Driven Design | `src/models/` | Creates a typed vocabulary for analytical entities. | IBM Data Science |
 
-## Limitations
+## Limitations & Future Work
+
+### Current Limitations
 
 - Synthetic data does not perfectly mirror long-tail enterprise edge cases.
 - In-memory Pandas limits dataset size (does not currently stream from a data warehouse).
 - Recommendations are rule-based, not AI-driven.
 
-## Future Improvements
+### Future Improvements
 
 - Implementation of an LLM summarization layer for executive reports.
 - Advanced statistical cohort retention modeling.

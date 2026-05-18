@@ -2,6 +2,11 @@
 
 Generated: 2026-05-01
 
+## Related Reports
+
+- [Executive Summary](executive_summary.md)
+- [Risk Register](risk_register.md)
+
 ---
 
 ## Prioritised Interventions

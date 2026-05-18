@@ -28,9 +28,7 @@ def calculate_arr(mrr: float) -> float:
     return mrr * 12.0
 
 
-def calculate_revenue_growth_rate(
-    current_revenue: float, previous_revenue: float
-) -> float:
+def calculate_revenue_growth_rate(current_revenue: float, previous_revenue: float) -> float:
     """
     Revenue Growth Rate = (Current - Previous) / |Previous|.
 
@@ -40,9 +38,7 @@ def calculate_revenue_growth_rate(
     return percentage_change(current_revenue, previous_revenue)
 
 
-def calculate_revenue_concentration(
-    total_revenue: float, largest_customer_revenue: float
-) -> float:
+def calculate_revenue_concentration(total_revenue: float, largest_customer_revenue: float) -> float:
     """
     Revenue Concentration = Largest Customer Revenue / Total Revenue.
 
@@ -52,9 +48,7 @@ def calculate_revenue_concentration(
     return safe_divide(largest_customer_revenue, total_revenue)
 
 
-def calculate_recurring_revenue_ratio(
-    recurring_revenue: float, total_revenue: float
-) -> float:
+def calculate_recurring_revenue_ratio(recurring_revenue: float, total_revenue: float) -> float:
     """
     Recurring Revenue Ratio = Recurring Revenue / Total Revenue.
 
@@ -64,9 +58,7 @@ def calculate_recurring_revenue_ratio(
     return safe_divide(recurring_revenue, total_revenue)
 
 
-def calculate_expansion_revenue_ratio(
-    expansion_revenue: float, total_revenue: float
-) -> float:
+def calculate_expansion_revenue_ratio(expansion_revenue: float, total_revenue: float) -> float:
     """
     Expansion Revenue Ratio = Expansion Revenue / Total Revenue.
 
@@ -86,9 +78,7 @@ def calculate_refund_rate(refunds: float, total_revenue: float) -> float:
     return safe_divide(refunds, total_revenue)
 
 
-def calculate_failed_payment_rate(
-    failed_payments: float, total_payments: float
-) -> float:
+def calculate_failed_payment_rate(failed_payments: float, total_payments: float) -> float:
     """
     Failed Payment Rate = Failed Payments / Total Payments.
 

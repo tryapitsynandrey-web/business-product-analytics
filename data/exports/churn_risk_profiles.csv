@@ -1,711 +1,711 @@
-customer_id,risk_score,risk_band,drivers,revenue_at_risk,explanation
-CUST-37610024,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6A8F1D6C,0.0,Low,,0.0,No significant risk signals detected.
-CUST-84B8FB89,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1C3313B6,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2A915907,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-B84350D4,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-A85DF973,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-A54777F3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4D652CDA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9AF4CCE4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F98FD767,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4D395DDE,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-5D77EFC9,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-CA3F9B5E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-65596ABD,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-66FE4E37,0.4,High,Low NPS | High Support Burden,499.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-C03160B1,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-9A60DED1,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-D3B021DA,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-1BA54B0F,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-9EF94C07,0.8,Critical,Low NPS | Failed Payments | High Support Burden,0.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-1E4D99B5,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C280B940,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-F2D6AB8C,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-E1247949,0.0,Low,,0.0,No significant risk signals detected.
-CUST-B8473638,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E5153171,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A17F56A5,0.0,Low,,0.0,No significant risk signals detected.
-CUST-40696408,0.0,Low,,0.0,No significant risk signals detected.
-CUST-BC447D50,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-5BEA698E,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-93D5D028,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-12F57229,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-276DE774,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-90DD2F0C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1575F549,0.0,Low,,0.0,No significant risk signals detected.
-CUST-44D30D03,0.0,Low,,0.0,No significant risk signals detected.
-CUST-CCE45833,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D4CE4E4E,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-376CE362,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-EE4D1390,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5A18A787,0.6000000000000001,High,Low NPS | Failed Payments,499.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-8B8ECE62,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A8578740,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D553148E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4112CA3A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-EB931375,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-846A8ED0,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-CCC970DC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-DEED430B,0.0,Low,,0.0,No significant risk signals detected.
-CUST-DDF48164,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8B59858E,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-4532DEB9,0.0,Low,,0.0,No significant risk signals detected.
-CUST-FB33E508,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-EFC95E91,0.0,Low,,0.0,No significant risk signals detected.
-CUST-291486B2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9E6D05EF,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-A5916A71,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9FADF576,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-B8B565D7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A24E4A4D,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-4BF6001B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1B5821AF,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-C903E7D0,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-0D41E8EE,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A8D1FA2C,0.0,Low,,0.0,No significant risk signals detected.
-CUST-0EA0AC68,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-32AF6D55,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-D2D00814,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-72B71754,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D1786905,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-517C8393,0.0,Low,,0.0,No significant risk signals detected.
-CUST-085EA84A,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-8C428601,0.6000000000000001,High,Low NPS | Failed Payments,0.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-BFC0D6D6,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-708114B8,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-3DB41889,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7097D913,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-75F2B393,0.0,Low,,0.0,No significant risk signals detected.
-CUST-B1428649,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7159794D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-713A7B4E,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-F83A4925,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-CE4DCCD1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6C38BF8C,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9317BE17,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-8C1BDC39,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-25BCEBD3,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-82C25789,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-EC9CF353,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4531BF5D,0.4,High,Low NPS | High Support Burden,499.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-720D85B4,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-259B406D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-00E36B8D,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-911BBCCC,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F417353C,0.0,Low,,0.0,No significant risk signals detected.
-CUST-DC253138,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-6ADEA430,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-5C538CBA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-0C211463,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-FE87BC24,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-389E18CE,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1586638C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-581F461D,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-26D0DA5B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-16D0D0C4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2B2FEA72,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-ECFDA835,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-BF8F5E08,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-44C82EE4,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-1FB81845,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-2C362A7B,0.0,Low,,0.0,No significant risk signals detected.
-CUST-023F303E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A3459293,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-FECC133E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-22C14FD9,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6EA960EA,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-2645B381,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-0A2FE7D2,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-7B0333AA,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-24A32BDC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6785B597,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-FF7DCDB3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-110057AA,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-D62108F4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-581D46E9,0.0,Low,,0.0,No significant risk signals detected.
-CUST-02F4B2E5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8BFBD4B7,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-2FE6B5F2,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-1FD26BD1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A68ECECD,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-494408AC,0.0,Low,,0.0,No significant risk signals detected.
-CUST-EE3C9DC4,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-BF24C6DE,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-7382A67F,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1E21E938,0.0,Low,,0.0,No significant risk signals detected.
-CUST-451153EF,0.4,High,Low NPS | High Support Burden,0.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-23C72204,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5BC00145,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9FDFAA41,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F8F8812D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-CD276CB1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6E09BC7B,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F21ECFAB,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-DD10A3F2,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-D4830153,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1BB8F0AC,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8A5CB623,0.0,Low,,0.0,No significant risk signals detected.
-CUST-EC407A61,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6D2A8F0A,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-388930EF,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2A07BD4E,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-14D4381E,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-AE2DE60C,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-82C553A8,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-46A0389E,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-83F15F85,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-47982525,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-B110201C,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A0576216,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F27DA024,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-4A17BCAE,0.0,Low,,0.0,No significant risk signals detected.
-CUST-BD228B9A,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E1039D02,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-D6736D3A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-D0A507B4,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-1C0C2BFF,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D2E77D29,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-695098EA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9C019996,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5EFAA543,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-CCD4B251,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-80F62A5D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ACE965ED,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-6057D2FC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6C6235A4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-642C56AF,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-F56B92E6,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-C72E3515,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6DC75493,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-60B126F1,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-9D9744B8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E0C220C1,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-33BED97C,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-A7A866A4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-557E362B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-A13C20EA,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-1ABD7017,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-2D0673BB,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-52E052F1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-FB2E578B,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-EF7FF9AD,0.0,Low,,0.0,No significant risk signals detected.
-CUST-CC72ABE6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-9A462EB6,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-68DFBD84,0.0,Low,,0.0,No significant risk signals detected.
-CUST-BCFC9FDB,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-983CC5FC,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5B25D29C,0.0,Low,,0.0,No significant risk signals detected.
-CUST-743625A5,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A2F9D002,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-F2CE1905,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-155EA421,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-52FA0EE1,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-DCD0B109,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2268A0CA,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-F965BA2F,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-714F78F2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-045CDBCF,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-1608CA19,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4877261F,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-CA92DA61,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5EA42CD2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-FA8B072F,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-C8769D5C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-2DAF1D0B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-A70897CD,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-4A9F9F0F,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-922A28DA,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-67BA9206,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-5130E926,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-991D4F24,0.0,Low,,0.0,No significant risk signals detected.
-CUST-088652B9,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-3EF420B5,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-28E46B22,0.0,Low,,0.0,No significant risk signals detected.
-CUST-30570032,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A2BBC80C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-F7DB6CE3,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-67834B82,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-64F16106,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A28B8898,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8F3F54C5,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-CCC9B682,0.0,Low,,0.0,No significant risk signals detected.
-CUST-970B0E9E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F3CF236B,0.6000000000000001,High,Low NPS | Failed Payments,499.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-49283ECD,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E002B661,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-2267837D,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-50DA04F2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-B9D6D51A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-91702E1D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9FD76CB0,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-CD56BEB2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-0DCF7274,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-8B8C82BE,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8357EB7D,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-AA917E51,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-C9F4ED59,0.0,Low,,0.0,No significant risk signals detected.
-CUST-619335B9,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-6DAB6CBE,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-80F4CB80,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-5AA3C555,0.0,Low,,0.0,No significant risk signals detected.
-CUST-70321C46,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-1276D8CD,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-C2C6984E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D205894C,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-CD725ED3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-39D130EE,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-BD567C9A,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-7581F149,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-43B73E78,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-805D1151,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-555AD2ED,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-406B17B1,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-BE0EE387,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3234CE24,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-17F4B61D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D17A23FD,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A25AE6A4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5EB49512,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6B655332,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-1DFAE353,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3F10BD76,0.0,Low,,0.0,No significant risk signals detected.
-CUST-28842F98,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3E8F6D95,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-0C039F9F,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-3B5074DA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E924024A,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-7D559ECD,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5FB61D44,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-B4ADD025,0.0,Low,,0.0,No significant risk signals detected.
-CUST-DEB4EE3B,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-538127E2,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5D635C26,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C0BBF404,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-C6B0B5FA,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-2C47B21D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D3845B8D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7B02D74F,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-5C0EF8C3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-366AD063,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A31F18F4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-50F2BC1E,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-C3C38357,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-BF23D6FC,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-50E1DDB3,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5A0AE6D8,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-FE88587C,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-52B15B49,0.0,Low,,0.0,No significant risk signals detected.
-CUST-FB974E28,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-0D287201,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-B7EF7E51,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-F0755BF5,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A56E79D7,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-F476E362,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A55C4F20,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9115E370,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-FF9D3739,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4A4DD965,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ED60506D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-05F63E56,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-8C903671,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-202963E7,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-E24AC14C,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-4204EA10,0.0,Low,,0.0,No significant risk signals detected.
-CUST-84619B5F,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C4BC642A,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C1E3EF19,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-CC5AE87C,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-B68AB660,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C7CF35F8,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-EAD4F703,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-A8D5747B,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-45B6AE16,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-30DF0A33,0.0,Low,,0.0,No significant risk signals detected.
-CUST-70113F38,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-06754D23,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-9F5FF8FB,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-69606482,0.4,High,Low NPS | High Support Burden,199.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-98A00C4F,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D0263286,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-D551BF2E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7CE7D614,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D3BFFC22,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-153C5E61,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-4781EA8D,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-F0EB7C61,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A3A590BA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-92B1E869,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-B39DFCA3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6F534962,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-F06DAC64,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6AAADC22,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-E158C117,0.0,Low,,0.0,No significant risk signals detected.
-CUST-45813546,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-95D46003,0.0,Low,,0.0,No significant risk signals detected.
-CUST-91B28631,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-C4EB2301,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-AADEFCA5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-57C6164A,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-EB6F8270,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-C8C7CFE1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-657BBAE5,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C3BB132F,0.0,Low,,0.0,No significant risk signals detected.
-CUST-968DB455,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-9D9033F2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-CA87A1E4,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A2DCA8DF,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-6582CCC5,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-D3C7513A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1FA7DD7C,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7FA058A7,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-CEBED870,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-8FC75FCE,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-4458CB31,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-41B5B64A,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F580C31A,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-B9D5BA19,0.0,Low,,0.0,No significant risk signals detected.
-CUST-44E58561,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-0DEBA7AB,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-54D3B935,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-2265E428,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-ACD384DB,0.0,Low,,0.0,No significant risk signals detected.
-CUST-FDBD1648,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D6310C82,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5B0E5317,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-74C10D52,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-38E9E1D7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-70EA0D78,0.0,Low,,0.0,No significant risk signals detected.
-CUST-88508B8E,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-30FBE78E,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-3E05CD90,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-9159D16E,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-26DC1040,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-2292200D,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-EF559426,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-5D016B5D,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6BC8E52A,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-6D33526C,0.0,Low,,0.0,No significant risk signals detected.
-CUST-045AC865,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-87FC0318,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-93BF0918,0.0,Low,,0.0,No significant risk signals detected.
-CUST-CA7A423D,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-97C49B52,0.0,Low,,0.0,No significant risk signals detected.
-CUST-11AA14FE,0.4,High,Low NPS | High Support Burden,0.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-CD80B6B8,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-2B34ED91,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-82912875,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C704BE9E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A029ECDA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-48D3A313,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-73F214C1,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A5073E54,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7D94275F,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-DE96727E,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-E09455CC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-21B07CF0,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-1F92FAAD,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-3E4B9B6B,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1B108E1B,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-39D36631,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1A11366F,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-FED89FC8,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-AC0CC207,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-028BDB79,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-C25CC5F4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E8279D9D,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-8C3FC43A,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-A414A6AB,0.0,Low,,0.0,No significant risk signals detected.
-CUST-89F6ABEE,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A3F851A8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-EB04C4AA,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-0773E169,0.4,High,Low NPS | High Support Burden,199.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-8EA5C91A,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D5DB0623,0.0,Low,,0.0,No significant risk signals detected.
-CUST-066C24E0,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-D7B79556,0.0,Low,,0.0,No significant risk signals detected.
-CUST-334F67AA,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-721E72D8,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-93D8B932,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-1CC7DCC2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E7942B95,0.0,Low,,0.0,No significant risk signals detected.
-CUST-2943BBEF,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4D54F1F6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-42DCBD62,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-1B337326,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-3243CBC8,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-C1F8D4B3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3A744262,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-E6686E8D,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-351CBAE8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-264C668B,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-805DE4CA,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-423A59A6,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-D43E11C3,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-2F4072AC,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-6F9D98C6,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-3FD621DC,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-C7B2DE10,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-28315F9A,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-57E4370E,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-B0740AB6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-762B2844,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6B4B9AD2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-C43C9206,0.0,Low,,0.0,No significant risk signals detected.
-CUST-873D3466,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F4E7A670,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-5A12BF2D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-821F3A08,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-13499CE3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C41A21FB,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-9A3CBDBC,0.0,Low,,0.0,No significant risk signals detected.
-CUST-B49B3E7D,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-AD828933,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-D5B45DF0,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-F19B6F11,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-985B5E8F,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-A03897DD,0.6000000000000001,High,Low NPS | Failed Payments,499.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-8B7E955C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-3778E762,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-68885BF7,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-F74901C8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-41C17A40,0.0,Low,,0.0,No significant risk signals detected.
-CUST-DE625166,0.0,Low,,0.0,No significant risk signals detected.
-CUST-132D0CF8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E4B81F90,0.0,Low,,0.0,No significant risk signals detected.
-CUST-EEF40069,0.0,Low,,0.0,No significant risk signals detected.
-CUST-899A273B,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-0C19E931,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-58632B6B,0.0,Low,,0.0,No significant risk signals detected.
-CUST-0BE8F5E3,0.0,Low,,0.0,No significant risk signals detected.
-CUST-AEC391EA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-BBA071F1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-01BC75ED,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-C2278C65,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-F8C9A20A,0.0,Low,,0.0,No significant risk signals detected.
-CUST-261FD888,0.0,Low,,0.0,No significant risk signals detected.
-CUST-53C1AFF0,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E8409926,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9DC53DD1,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-DF328102,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9C271DAE,0.0,Low,,0.0,No significant risk signals detected.
-CUST-51545B44,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-54922716,0.0,Low,,0.0,No significant risk signals detected.
-CUST-96966D0F,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-F237688B,0.4,High,Low NPS | High Support Burden,0.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-AA79D550,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-EFF49D01,0.0,Low,,0.0,No significant risk signals detected.
-CUST-83469B51,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A77F16CF,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-0B726B5E,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-34D6D2FC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-7B9EA16F,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7200BDA9,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7BA7B045,0.0,Low,,0.0,No significant risk signals detected.
-CUST-02795323,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3AAB962C,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-A8769B33,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-EF9AAB7E,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-AEDA0548,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-CADCB386,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-60D1D6E7,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-7E1D3FBD,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.
-CUST-F546D9D4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-AE35EDC9,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-C7DDEB12,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-B15D2C8B,0.0,Low,,0.0,No significant risk signals detected.
-CUST-92FE1455,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8E97CD3D,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-579AA5E4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-FBAC914A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-252A3582,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-F15194D8,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-6CE2806C,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A3C1AEB9,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5CD5D6B1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4477867E,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-468723D1,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-BBAAB634,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-9E66AF0B,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6A305105,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-D3B83A39,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-FA783CE2,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-D71AB697,0.0,Low,,0.0,No significant risk signals detected.
-CUST-84F538A3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6F08F5F4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-C3A5837A,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A1225201,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-9151C75D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ECC6CCCB,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-1EB0BA5B,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-EF6B651B,0.0,Low,,0.0,No significant risk signals detected.
-CUST-91E171C7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-4EAEE87F,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-E06B4A38,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8B6483EE,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A0A44022,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6AFF6FB4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-06F80977,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-371D9454,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-00A15B8F,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C09AEF8D,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-00B9E8F2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3B13D065,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8EB2F7AA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-AE21B411,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-C3A9AADA,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-32764C4D,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-E3201234,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D1D1B913,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-E649C852,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-09941AB0,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-DE1F92E5,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-287B7C45,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-18771557,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-62140B8B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-95784656,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-57D27240,0.0,Low,,0.0,No significant risk signals detected.
-CUST-219E1044,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-BE2CE4A4,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-B6D80CA7,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-DFA4E049,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-EF2D00C4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F93A88FD,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3D8A7FD3,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-940616AA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-11846E45,0.0,Low,,0.0,No significant risk signals detected.
-CUST-CA29C0AD,0.0,Low,,0.0,No significant risk signals detected.
-CUST-AD4A27DA,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-51430848,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-EF0EEAB1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-35F639CC,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-34E77F38,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-B950604D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-DE6A857B,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-69166739,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-0FB07A71,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6FA3C62F,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9722FDEA,0.0,Low,,0.0,No significant risk signals detected.
-CUST-30FF824B,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-8AE7652C,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-017D0217,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-D8580F79,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-80A2FEEE,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-D28C91A6,0.0,Low,,0.0,No significant risk signals detected.
-CUST-FAD4EF62,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8D3C2115,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-96140BC2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A5EF52C4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-688CB7AD,0.0,Low,,0.0,No significant risk signals detected.
-CUST-ABFFC2A4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-C6AC904F,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-2F0D837E,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-FEC01A7F,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-5476D2E7,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-3D886FFC,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9B68B6BD,0.0,Low,,0.0,No significant risk signals detected.
-CUST-AC30D817,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1EDFC04A,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-06A21422,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-B9C7FED0,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5097CDF9,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-E3008E66,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-C295EABA,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-E6DB26E8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-405C05C8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-8AFE50E7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-5B97CFBC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-2D7CD07D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6467F401,0.0,Low,,0.0,No significant risk signals detected.
-CUST-F1C361E8,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-2E6A99D9,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-1997126D,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-F2991849,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-1F5613AB,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-DAC902A8,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-109D1A55,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-A373EBF9,0.0,Low,,0.0,No significant risk signals detected.
-CUST-AEB0A567,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-6B94DEE4,0.0,Low,,0.0,No significant risk signals detected.
-CUST-FEF4F8BC,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-0D8DAE06,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-FEE4A72B,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-B1E79DD2,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-90ABFB98,0.0,Low,,0.0,No significant risk signals detected.
-CUST-BBF692F1,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C9BEF5B3,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-CE6A09BF,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-E7C38C77,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-613397F8,0.0,Low,,0.0,No significant risk signals detected.
-CUST-E3298F75,0.0,Low,,0.0,No significant risk signals detected.
-CUST-CA8C36C7,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-15F7F672,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-086BBBEE,0.0,Low,,0.0,No significant risk signals detected.
-CUST-7ADF4DD7,0.0,Low,,0.0,No significant risk signals detected.
-CUST-1A0CB43B,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.
-CUST-8A72DAB6,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-FD677D6E,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-A313C5AC,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-A7F74437,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-CAD33DA8,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-2D54887F,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-953AEDF2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-D4BE0FEC,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.
-CUST-CE5B1F64,0.0,Low,,0.0,No significant risk signals detected.
-CUST-33A06EC3,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments."
-CUST-0BE4D99F,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-C2D65C19,0.4,High,Low NPS | High Support Burden,0.0,"Risk drivers: Low NPS, High Support Burden."
-CUST-D0F54477,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-BD5EF8C7,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-BC3D717B,0.0,Low,,0.0,No significant risk signals detected.
-CUST-24852325,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-085FF7A4,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-41CB7D57,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C2ECF888,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-EE98A6C2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C34D3634,0.0,Low,,0.0,No significant risk signals detected.
-CUST-15EA71C8,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-8B210ABC,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-45768FDF,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C24889BF,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-F6CF1F14,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-62783F73,0.0,Low,,0.0,No significant risk signals detected.
-CUST-A4FFEC43,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-DE916C2D,0.0,Low,,0.0,No significant risk signals detected.
-CUST-B9C64547,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-D2A28B08,0.0,Low,,0.0,No significant risk signals detected.
-CUST-DD9C9C19,0.8,Critical,Low NPS | Failed Payments | High Support Burden,1999.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-508E5336,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-F7C8A8E5,0.0,Low,,0.0,No significant risk signals detected.
-CUST-D5C74D33,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3A17DC03,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden."
-CUST-BF72E0BD,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.
-CUST-CE47CB2D,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-FD080CF5,0.0,Low,,0.0,No significant risk signals detected.
-CUST-78BD2A77,0.0,Low,,0.0,No significant risk signals detected.
-CUST-FD3F88A8,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-99655B91,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9D5F476C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-6BFAD729,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-DB82A880,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-D542064E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-C142DBFC,0.0,Low,,0.0,No significant risk signals detected.
-CUST-3D125B68,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.
-CUST-157CAC78,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-64BA964E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-B7DFCB79,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-633483F2,0.0,Low,,0.0,No significant risk signals detected.
-CUST-757899CB,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-485B6FBD,0.0,Low,,0.0,No significant risk signals detected.
-CUST-6E4B1CF5,0.0,Low,,0.0,No significant risk signals detected.
-CUST-205E7270,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-4A6DFA31,0.0,Low,,0.0,No significant risk signals detected.
-CUST-AB15EE7A,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden."
-CUST-7D96292E,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9AAA2BE8,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.
-CUST-2E8ECFC3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-8063D0BC,0.0,Low,,0.0,No significant risk signals detected.
-CUST-AFDCF38B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
-CUST-09561B78,0.0,Low,,0.0,No significant risk signals detected.
-CUST-9846146C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.
+customer_id,risk_score,risk_band,drivers,revenue_at_risk,explanation,run_id,generated_at
+CUST-37610024,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6A8F1D6C,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-84B8FB89,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1C3313B6,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2A915907,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B84350D4,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A85DF973,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A54777F3,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4D652CDA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9AF4CCE4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F98FD767,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4D395DDE,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5D77EFC9,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CA3F9B5E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-65596ABD,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-66FE4E37,0.4,High,Low NPS | High Support Burden,499.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C03160B1,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9A60DED1,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D3B021DA,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1BA54B0F,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9EF94C07,0.8,Critical,Low NPS | Failed Payments | High Support Burden,0.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1E4D99B5,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C280B940,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F2D6AB8C,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E1247949,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B8473638,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E5153171,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A17F56A5,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-40696408,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BC447D50,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5BEA698E,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-93D5D028,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-12F57229,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-276DE774,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-90DD2F0C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1575F549,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-44D30D03,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CCE45833,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D4CE4E4E,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-376CE362,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EE4D1390,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5A18A787,0.6000000000000001,High,Low NPS | Failed Payments,499.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8B8ECE62,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A8578740,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D553148E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4112CA3A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EB931375,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-846A8ED0,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CCC970DC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DEED430B,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DDF48164,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8B59858E,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4532DEB9,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FB33E508,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EFC95E91,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-291486B2,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9E6D05EF,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A5916A71,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9FADF576,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B8B565D7,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A24E4A4D,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4BF6001B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1B5821AF,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C903E7D0,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0D41E8EE,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A8D1FA2C,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0EA0AC68,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-32AF6D55,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D2D00814,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-72B71754,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D1786905,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-517C8393,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-085EA84A,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8C428601,0.6000000000000001,High,Low NPS | Failed Payments,0.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BFC0D6D6,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-708114B8,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3DB41889,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7097D913,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-75F2B393,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B1428649,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7159794D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-713A7B4E,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F83A4925,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CE4DCCD1,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6C38BF8C,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9317BE17,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8C1BDC39,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-25BCEBD3,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-82C25789,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EC9CF353,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4531BF5D,0.4,High,Low NPS | High Support Burden,499.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-720D85B4,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-259B406D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-00E36B8D,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-911BBCCC,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F417353C,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DC253138,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6ADEA430,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5C538CBA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0C211463,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FE87BC24,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-389E18CE,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1586638C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-581F461D,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-26D0DA5B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-16D0D0C4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2B2FEA72,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-ECFDA835,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BF8F5E08,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-44C82EE4,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1FB81845,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2C362A7B,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-023F303E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A3459293,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FECC133E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-22C14FD9,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6EA960EA,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2645B381,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0A2FE7D2,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7B0333AA,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-24A32BDC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6785B597,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FF7DCDB3,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-110057AA,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D62108F4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-581D46E9,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-02F4B2E5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8BFBD4B7,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2FE6B5F2,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1FD26BD1,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A68ECECD,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-494408AC,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EE3C9DC4,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BF24C6DE,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7382A67F,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1E21E938,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-451153EF,0.4,High,Low NPS | High Support Burden,0.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-23C72204,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5BC00145,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9FDFAA41,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F8F8812D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CD276CB1,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6E09BC7B,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F21ECFAB,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DD10A3F2,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D4830153,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1BB8F0AC,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8A5CB623,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EC407A61,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6D2A8F0A,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-388930EF,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2A07BD4E,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-14D4381E,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AE2DE60C,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-82C553A8,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-46A0389E,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-83F15F85,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-47982525,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B110201C,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A0576216,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F27DA024,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4A17BCAE,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BD228B9A,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E1039D02,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D6736D3A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D0A507B4,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1C0C2BFF,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D2E77D29,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-695098EA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9C019996,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5EFAA543,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CCD4B251,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-80F62A5D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-ACE965ED,0.8,Critical,Low NPS | Failed Payments | High Support Burden,49.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6057D2FC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6C6235A4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-642C56AF,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F56B92E6,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C72E3515,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6DC75493,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-60B126F1,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9D9744B8,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E0C220C1,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-33BED97C,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A7A866A4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-557E362B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A13C20EA,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1ABD7017,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2D0673BB,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-52E052F1,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FB2E578B,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EF7FF9AD,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CC72ABE6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9A462EB6,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-68DFBD84,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BCFC9FDB,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-983CC5FC,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5B25D29C,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-743625A5,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A2F9D002,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F2CE1905,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-155EA421,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-52FA0EE1,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DCD0B109,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2268A0CA,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F965BA2F,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-714F78F2,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-045CDBCF,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1608CA19,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4877261F,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CA92DA61,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5EA42CD2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FA8B072F,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C8769D5C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2DAF1D0B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A70897CD,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4A9F9F0F,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-922A28DA,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-67BA9206,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5130E926,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-991D4F24,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-088652B9,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3EF420B5,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-28E46B22,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-30570032,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A2BBC80C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F7DB6CE3,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-67834B82,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-64F16106,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A28B8898,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8F3F54C5,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CCC9B682,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-970B0E9E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F3CF236B,0.6000000000000001,High,Low NPS | Failed Payments,499.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-49283ECD,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E002B661,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2267837D,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-50DA04F2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B9D6D51A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-91702E1D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9FD76CB0,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CD56BEB2,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0DCF7274,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8B8C82BE,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8357EB7D,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AA917E51,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C9F4ED59,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-619335B9,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6DAB6CBE,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-80F4CB80,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5AA3C555,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-70321C46,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1276D8CD,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C2C6984E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D205894C,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CD725ED3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-39D130EE,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BD567C9A,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7581F149,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-43B73E78,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-805D1151,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-555AD2ED,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-406B17B1,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BE0EE387,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3234CE24,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-17F4B61D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D17A23FD,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A25AE6A4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5EB49512,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6B655332,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1DFAE353,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3F10BD76,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-28842F98,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3E8F6D95,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0C039F9F,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3B5074DA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E924024A,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7D559ECD,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5FB61D44,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B4ADD025,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DEB4EE3B,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-538127E2,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5D635C26,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C0BBF404,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C6B0B5FA,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2C47B21D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D3845B8D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7B02D74F,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5C0EF8C3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-366AD063,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A31F18F4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-50F2BC1E,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C3C38357,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BF23D6FC,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-50E1DDB3,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5A0AE6D8,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FE88587C,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-52B15B49,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FB974E28,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0D287201,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B7EF7E51,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F0755BF5,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A56E79D7,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F476E362,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A55C4F20,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9115E370,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FF9D3739,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4A4DD965,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-ED60506D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-05F63E56,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8C903671,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-202963E7,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E24AC14C,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4204EA10,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-84619B5F,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C4BC642A,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C1E3EF19,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CC5AE87C,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B68AB660,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C7CF35F8,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EAD4F703,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A8D5747B,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-45B6AE16,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-30DF0A33,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-70113F38,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-06754D23,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9F5FF8FB,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-69606482,0.4,High,Low NPS | High Support Burden,199.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-98A00C4F,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D0263286,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D551BF2E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7CE7D614,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D3BFFC22,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-153C5E61,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4781EA8D,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F0EB7C61,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A3A590BA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-92B1E869,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B39DFCA3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6F534962,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F06DAC64,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6AAADC22,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E158C117,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-45813546,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-95D46003,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-91B28631,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C4EB2301,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AADEFCA5,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-57C6164A,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EB6F8270,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C8C7CFE1,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-657BBAE5,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C3BB132F,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-968DB455,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9D9033F2,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CA87A1E4,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A2DCA8DF,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6582CCC5,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D3C7513A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1FA7DD7C,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7FA058A7,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CEBED870,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8FC75FCE,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4458CB31,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-41B5B64A,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F580C31A,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B9D5BA19,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-44E58561,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0DEBA7AB,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-54D3B935,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2265E428,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-ACD384DB,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FDBD1648,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D6310C82,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5B0E5317,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-74C10D52,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-38E9E1D7,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-70EA0D78,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-88508B8E,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-30FBE78E,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3E05CD90,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9159D16E,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-26DC1040,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2292200D,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EF559426,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5D016B5D,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6BC8E52A,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6D33526C,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-045AC865,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-87FC0318,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-93BF0918,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CA7A423D,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-97C49B52,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-11AA14FE,0.4,High,Low NPS | High Support Burden,0.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CD80B6B8,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2B34ED91,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-82912875,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C704BE9E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A029ECDA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-48D3A313,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-73F214C1,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A5073E54,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7D94275F,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DE96727E,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E09455CC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-21B07CF0,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1F92FAAD,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3E4B9B6B,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1B108E1B,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-39D36631,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1A11366F,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FED89FC8,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AC0CC207,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-028BDB79,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C25CC5F4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E8279D9D,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8C3FC43A,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A414A6AB,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-89F6ABEE,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A3F851A8,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EB04C4AA,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0773E169,0.4,High,Low NPS | High Support Burden,199.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8EA5C91A,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D5DB0623,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-066C24E0,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D7B79556,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-334F67AA,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-721E72D8,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-93D8B932,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1CC7DCC2,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E7942B95,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2943BBEF,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4D54F1F6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-42DCBD62,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1B337326,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3243CBC8,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C1F8D4B3,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3A744262,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E6686E8D,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-351CBAE8,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-264C668B,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-805DE4CA,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-423A59A6,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D43E11C3,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2F4072AC,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6F9D98C6,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3FD621DC,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C7B2DE10,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-28315F9A,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-57E4370E,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B0740AB6,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-762B2844,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6B4B9AD2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C43C9206,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-873D3466,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F4E7A670,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5A12BF2D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-821F3A08,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-13499CE3,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C41A21FB,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9A3CBDBC,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B49B3E7D,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AD828933,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D5B45DF0,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F19B6F11,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-985B5E8F,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A03897DD,0.6000000000000001,High,Low NPS | Failed Payments,499.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8B7E955C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3778E762,0.4,High,Low NPS | High Support Burden,49.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-68885BF7,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F74901C8,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-41C17A40,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DE625166,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-132D0CF8,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E4B81F90,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EEF40069,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-899A273B,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0C19E931,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-58632B6B,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0BE8F5E3,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AEC391EA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BBA071F1,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-01BC75ED,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C2278C65,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F8C9A20A,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-261FD888,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-53C1AFF0,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E8409926,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9DC53DD1,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DF328102,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9C271DAE,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-51545B44,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-54922716,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-96966D0F,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F237688B,0.4,High,Low NPS | High Support Burden,0.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AA79D550,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EFF49D01,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-83469B51,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A77F16CF,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0B726B5E,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-34D6D2FC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7B9EA16F,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7200BDA9,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7BA7B045,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-02795323,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3AAB962C,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A8769B33,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EF9AAB7E,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AEDA0548,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CADCB386,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-60D1D6E7,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7E1D3FBD,0.2,Medium,Low NPS,0.0,Risk drivers: Low NPS.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F546D9D4,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AE35EDC9,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C7DDEB12,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B15D2C8B,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-92FE1455,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8E97CD3D,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-579AA5E4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FBAC914A,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-252A3582,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F15194D8,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6CE2806C,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A3C1AEB9,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5CD5D6B1,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4477867E,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-468723D1,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BBAAB634,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9E66AF0B,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6A305105,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D3B83A39,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FA783CE2,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D71AB697,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-84F538A3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6F08F5F4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C3A5837A,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A1225201,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9151C75D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-ECC6CCCB,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1EB0BA5B,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EF6B651B,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-91E171C7,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4EAEE87F,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E06B4A38,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8B6483EE,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A0A44022,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6AFF6FB4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-06F80977,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-371D9454,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-00A15B8F,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C09AEF8D,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-00B9E8F2,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3B13D065,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8EB2F7AA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AE21B411,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C3A9AADA,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-32764C4D,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E3201234,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D1D1B913,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E649C852,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-09941AB0,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DE1F92E5,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-287B7C45,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-18771557,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-62140B8B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-95784656,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-57D27240,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-219E1044,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BE2CE4A4,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B6D80CA7,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DFA4E049,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EF2D00C4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F93A88FD,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3D8A7FD3,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-940616AA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-11846E45,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CA29C0AD,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AD4A27DA,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-51430848,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EF0EEAB1,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-35F639CC,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-34E77F38,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B950604D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DE6A857B,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-69166739,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0FB07A71,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6FA3C62F,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9722FDEA,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-30FF824B,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8AE7652C,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-017D0217,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D8580F79,0.6000000000000001,High,Low NPS | Failed Payments,199.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-80A2FEEE,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D28C91A6,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FAD4EF62,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8D3C2115,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-96140BC2,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A5EF52C4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-688CB7AD,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-ABFFC2A4,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C6AC904F,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2F0D837E,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FEC01A7F,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5476D2E7,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3D886FFC,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9B68B6BD,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AC30D817,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1EDFC04A,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-06A21422,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B9C7FED0,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5097CDF9,0.6000000000000001,High,Failed Payments | High Support Burden,1999.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E3008E66,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C295EABA,0.8,Critical,Low NPS | Failed Payments | High Support Burden,199.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E6DB26E8,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-405C05C8,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8AFE50E7,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-5B97CFBC,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2D7CD07D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6467F401,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F1C361E8,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2E6A99D9,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1997126D,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F2991849,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1F5613AB,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DAC902A8,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-109D1A55,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A373EBF9,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AEB0A567,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6B94DEE4,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FEF4F8BC,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0D8DAE06,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FEE4A72B,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B1E79DD2,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-90ABFB98,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BBF692F1,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C9BEF5B3,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CE6A09BF,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E7C38C77,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-613397F8,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-E3298F75,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CA8C36C7,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-15F7F672,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-086BBBEE,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7ADF4DD7,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-1A0CB43B,0.4,High,Failed Payments,499.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8A72DAB6,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FD677D6E,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A313C5AC,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A7F74437,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CAD33DA8,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2D54887F,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-953AEDF2,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D4BE0FEC,0.4,High,Failed Payments,0.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CE5B1F64,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-33A06EC3,0.6000000000000001,High,Low NPS | Failed Payments,49.0,"Risk drivers: Low NPS, Failed Payments.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-0BE4D99F,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C2D65C19,0.4,High,Low NPS | High Support Burden,0.0,"Risk drivers: Low NPS, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D0F54477,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BD5EF8C7,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BC3D717B,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-24852325,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-085FF7A4,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-41CB7D57,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C2ECF888,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-EE98A6C2,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C34D3634,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-15EA71C8,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8B210ABC,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-45768FDF,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C24889BF,0.6000000000000001,High,Failed Payments | High Support Burden,499.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F6CF1F14,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-62783F73,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-A4FFEC43,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DE916C2D,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B9C64547,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D2A28B08,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DD9C9C19,0.8,Critical,Low NPS | Failed Payments | High Support Burden,1999.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-508E5336,0.6000000000000001,High,Failed Payments | High Support Burden,0.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-F7C8A8E5,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D5C74D33,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3A17DC03,0.8,Critical,Low NPS | Failed Payments | High Support Burden,499.0,"Risk drivers: Low NPS, Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-BF72E0BD,0.4,High,Failed Payments,1999.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-CE47CB2D,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FD080CF5,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-78BD2A77,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-FD3F88A8,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-99655B91,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9D5F476C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6BFAD729,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-DB82A880,0.6000000000000001,High,Failed Payments | High Support Burden,199.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-D542064E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-C142DBFC,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-3D125B68,0.4,High,Failed Payments,49.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-157CAC78,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-64BA964E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-B7DFCB79,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-633483F2,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-757899CB,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-485B6FBD,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-6E4B1CF5,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-205E7270,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-4A6DFA31,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AB15EE7A,0.6000000000000001,High,Failed Payments | High Support Burden,49.0,"Risk drivers: Failed Payments, High Support Burden.",productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-7D96292E,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9AAA2BE8,0.4,High,Failed Payments,199.0,Risk drivers: Failed Payments.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-2E8ECFC3,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-8063D0BC,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-AFDCF38B,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-09561B78,0.0,Low,,0.0,No significant risk signals detected.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+CUST-9846146C,0.2,Medium,High Support Burden,0.0,Risk drivers: High Support Burden.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00

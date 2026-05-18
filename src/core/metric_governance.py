@@ -12,14 +12,15 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import yaml
 
-from utils.paths import CONFIG_DIR
 from models.metrics import MetricRegistryEntry, MetricRegistryResult
 
 logger = logging.getLogger(__name__)
+DEFAULT_CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
 IMPLEMENTATION_MAP: Dict[str, str] = {
     "monthly_recurring_revenue": "KPIEngine.calculate_mrr",
@@ -39,7 +40,6 @@ IMPLEMENTATION_MAP: Dict[str, str] = {
     "average_nps": "KPIEngine.calculate_average_nps",
     "support_burden": "KPIEngine.calculate_support_burden",
     "time_to_activation": "KPIEngine.calculate_time_to_activation",
-    
     # Business Health Metrics
     "gross_profit": "business_health.profitability.calculate_gross_profit",
     "gross_margin": "business_health.profitability.calculate_gross_margin",
@@ -67,18 +67,21 @@ IMPLEMENTATION_MAP: Dict[str, str] = {
 # Structured governance output
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class GovernanceIssue:
     """A single metric governance contract violation."""
+
     metric_name: str
     check_name: str
-    severity: str          # 'error' | 'warning'
+    severity: str  # 'error' | 'warning'
     message: str
 
 
 @dataclass
 class GovernanceCheckResult:
     """Outcome of validating a single metric contract."""
+
     metric_name: str
     passed: bool
     issues: List[GovernanceIssue] = field(default_factory=list)
@@ -87,6 +90,7 @@ class GovernanceCheckResult:
 # ---------------------------------------------------------------------------
 # MetricGovernance class
 # ---------------------------------------------------------------------------
+
 
 class MetricGovernance:
     """
@@ -99,12 +103,11 @@ class MetricGovernance:
     """
 
     def __init__(self, catalog_path: Optional[Any] = None) -> None:
-        self._catalog_path = catalog_path or (CONFIG_DIR / "metric_catalog.yaml")
+        self._catalog_path = catalog_path or (DEFAULT_CONFIG_DIR / "metric_catalog.yaml")
         self._catalog: Dict[str, Any] = self._load_catalog()
         # Index by metric_name for O(1) lookup
         self._index: Dict[str, Dict[str, Any]] = {
-            m["metric_name"]: m
-            for m in self._catalog.get("metrics", [])
+            m["metric_name"]: m for m in self._catalog.get("metrics", [])
         }
 
     # ------------------------------------------------------------------
@@ -118,6 +121,10 @@ class MetricGovernance:
     # ------------------------------------------------------------------
     # Public query methods
     # ------------------------------------------------------------------
+
+    def get_catalog(self) -> Dict[str, Any]:
+        """Return raw metric catalog for lineage and reporting consumers."""
+        return dict(self._catalog)
 
     def get_metric_definition(self, metric_name: str) -> Dict[str, Any]:
         """
@@ -138,9 +145,7 @@ class MetricGovernance:
     def get_enabled_metric_names(self) -> List[str]:
         """Return the names of all enabled metrics in catalog order."""
         return [
-            m["metric_name"]
-            for m in self._catalog.get("metrics", [])
-            if m.get("enabled", True)
+            m["metric_name"] for m in self._catalog.get("metrics", []) if m.get("enabled", True)
         ]
 
     def metric_exists(self, metric_name: str) -> bool:
@@ -175,60 +180,64 @@ class MetricGovernance:
 
         # Check 1: existence
         if metric_name not in self._index:
-            issues.append(GovernanceIssue(
-                metric_name=metric_name,
-                check_name="metric_existence",
-                severity="error",
-                message=(
-                    f"Metric '{metric_name}' is not defined in metric_catalog.yaml."
-                ),
-            ))
+            issues.append(
+                GovernanceIssue(
+                    metric_name=metric_name,
+                    check_name="metric_existence",
+                    severity="error",
+                    message=(f"Metric '{metric_name}' is not defined in metric_catalog.yaml."),
+                )
+            )
             return GovernanceCheckResult(metric_name=metric_name, passed=False, issues=issues)
 
         defn = self._index[metric_name]
 
         # Check 2: enabled flag
         if not defn.get("enabled", True):
-            issues.append(GovernanceIssue(
-                metric_name=metric_name,
-                check_name="metric_enabled",
-                severity="warning",
-                message=f"Metric '{metric_name}' is disabled in the catalog.",
-            ))
+            issues.append(
+                GovernanceIssue(
+                    metric_name=metric_name,
+                    check_name="metric_enabled",
+                    severity="warning",
+                    message=f"Metric '{metric_name}' is disabled in the catalog.",
+                )
+            )
             return GovernanceCheckResult(metric_name=metric_name, passed=False, issues=issues)
 
         # Check 3: required source datasets present
         for ds_name in defn.get("source_datasets", []):
             if ds_name not in datasets:
-                issues.append(GovernanceIssue(
-                    metric_name=metric_name,
-                    check_name="source_dataset_present",
-                    severity="error",
-                    message=(
-                        f"Metric '{metric_name}' requires dataset '{ds_name}', "
-                        "which is not present in the loaded datasets."
-                    ),
-                ))
+                issues.append(
+                    GovernanceIssue(
+                        metric_name=metric_name,
+                        check_name="source_dataset_present",
+                        severity="error",
+                        message=(
+                            f"Metric '{metric_name}' requires dataset '{ds_name}', "
+                            "which is not present in the loaded datasets."
+                        ),
+                    )
+                )
 
         # Check 4: required columns per dataset
-        col_requirements: Dict[str, List[str]] = defn.get(
-            "required_columns_by_dataset", {}
-        )
+        col_requirements: Dict[str, List[str]] = defn.get("required_columns_by_dataset", {})
         for ds_name, required_cols in col_requirements.items():
             if ds_name not in datasets:
                 continue  # already flagged by check 3
             df = datasets[ds_name]
             for col in required_cols:
                 if col not in df.columns:
-                    issues.append(GovernanceIssue(
-                        metric_name=metric_name,
-                        check_name="required_column_present",
-                        severity="error",
-                        message=(
-                            f"Metric '{metric_name}' requires column '{col}' "
-                            f"in dataset '{ds_name}', which is missing."
-                        ),
-                    ))
+                    issues.append(
+                        GovernanceIssue(
+                            metric_name=metric_name,
+                            check_name="required_column_present",
+                            severity="error",
+                            message=(
+                                f"Metric '{metric_name}' requires column '{col}' "
+                                f"in dataset '{ds_name}', which is missing."
+                            ),
+                        )
+                    )
 
         passed = not any(i.severity == "error" for i in issues)
         if issues:
@@ -236,9 +245,7 @@ class MetricGovernance:
                 level = logging.WARNING if issue.severity == "warning" else logging.ERROR
                 logger.log(level, "[Governance] %s — %s", metric_name, issue.message)
 
-        return GovernanceCheckResult(
-            metric_name=metric_name, passed=passed, issues=issues
-        )
+        return GovernanceCheckResult(metric_name=metric_name, passed=passed, issues=issues)
 
     def validate_metric(self, metric_name: str, datasets: Dict[str, Any]) -> bool:
         """
@@ -258,7 +265,7 @@ class MetricGovernance:
         defn = self.get_metric_definition(metric_name)
         enabled = defn.get("enabled", True)
         impl_key = IMPLEMENTATION_MAP.get(metric_name)
-        
+
         if not enabled:
             status = "Disabled"
         elif impl_key is not None:
@@ -278,7 +285,7 @@ class MetricGovernance:
             risk_if_misread=defn.get("risk_if_misread", ""),
             enabled=enabled,
             implementation_key=impl_key,
-            implementation_status=status
+            implementation_status=status,
         )
 
     def build_metric_registry(self) -> MetricRegistryResult:
@@ -286,23 +293,20 @@ class MetricGovernance:
         mapped = 0
         unmapped = 0
         disabled = 0
-        
+
         for metric_name in self._index:
             entry = self.get_registry_entry(metric_name)
             entries.append(entry)
-            
+
             if entry.implementation_status == "Mapped":
                 mapped += 1
             elif entry.implementation_status == "Disabled":
                 disabled += 1
             else:
                 unmapped += 1
-                
+
         return MetricRegistryResult(
-            entries=entries,
-            mapped_count=mapped,
-            unmapped_count=unmapped,
-            disabled_count=disabled
+            entries=entries, mapped_count=mapped, unmapped_count=unmapped, disabled_count=disabled
         )
 
     def get_enabled_registry_entries(self) -> List[MetricRegistryEntry]:
@@ -331,15 +335,17 @@ class MetricGovernance:
         registry = self.build_metric_registry()
         ui_records = []
         for entry in registry.entries:
-            ui_records.append({
-                "metric_name": entry.metric_name,
-                "display_name": entry.display_name,
-                "category": entry.category,
-                "business_owner": entry.business_owner,
-                "business_purpose": entry.business_purpose,
-                "interpretation_notes": entry.interpretation_notes,
-                "risk_if_misread": entry.risk_if_misread,
-                "enabled": entry.enabled,
-                "implementation_status": entry.implementation_status
-            })
+            ui_records.append(
+                {
+                    "metric_name": entry.metric_name,
+                    "display_name": entry.display_name,
+                    "category": entry.category,
+                    "business_owner": entry.business_owner,
+                    "business_purpose": entry.business_purpose,
+                    "interpretation_notes": entry.interpretation_notes,
+                    "risk_if_misread": entry.risk_if_misread,
+                    "enabled": entry.enabled,
+                    "implementation_status": entry.implementation_status,
+                }
+            )
         return ui_records

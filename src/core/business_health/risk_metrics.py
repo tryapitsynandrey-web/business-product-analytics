@@ -30,9 +30,7 @@ def calculate_customer_concentration_risk(
     return safe_divide(largest_customer_revenue, total_revenue)
 
 
-def calculate_margin_compression(
-    current_margin: float, previous_margin: float
-) -> float:
+def calculate_margin_compression(current_margin: float, previous_margin: float) -> float:
     """
     Margin Compression = Current Margin - Previous Margin.
 
@@ -43,9 +41,7 @@ def calculate_margin_compression(
     return current_margin - previous_margin
 
 
-def calculate_cashflow_risk_score(
-    runway_months: float, burn_rate: float
-) -> float:
+def calculate_cashflow_risk_score(runway_months: float, burn_rate: float) -> float:
     """
     Cash Flow Risk Score — 0 to 100 (higher = more risk).
 
@@ -74,9 +70,7 @@ def calculate_cashflow_risk_score(
     return clamp_score(75 + (6 - runway_months) / 6 * 25)
 
 
-def calculate_revenue_dependency_score(
-    top_segment_revenue: float, total_revenue: float
-) -> float:
+def calculate_revenue_dependency_score(top_segment_revenue: float, total_revenue: float) -> float:
     """
     Revenue Dependency Score = Top Segment Revenue / Total Revenue.
 
@@ -87,9 +81,7 @@ def calculate_revenue_dependency_score(
     return safe_divide(top_segment_revenue, total_revenue)
 
 
-def calculate_churn_exposure(
-    revenue_at_risk: float, total_revenue: float
-) -> float:
+def calculate_churn_exposure(revenue_at_risk: float, total_revenue: float) -> float:
     """
     Churn Exposure = Revenue At Risk / Total Revenue.
 

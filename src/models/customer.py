@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from datetime import date
 from models.enums import Segment
 
+
 @dataclass
 class CustomerProfile:
     customer_id: str

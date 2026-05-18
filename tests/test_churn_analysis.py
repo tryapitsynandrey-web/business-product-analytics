@@ -161,8 +161,7 @@ def test_summarize_churn_health_status_bands():
 
     def records(active_count, canceled_count):
         rows = [
-            {"customer_id": f"a{i}", "status": "Active", "plan": "Pro"}
-            for i in range(active_count)
+            {"customer_id": f"a{i}", "status": "Active", "plan": "Pro"} for i in range(active_count)
         ]
         rows.extend(
             {"customer_id": f"c{i}", "status": "Canceled", "plan": "Pro"}

@@ -15,19 +15,24 @@ from utils.validation import ValidationIssue
 # Fixtures
 # ---------------------------------------------------------------------------
 
+
 def _clean_datasets() -> dict:
     return {
-        "customers": pd.DataFrame({
-            "customer_id": ["C1", "C2", "C3"],
-            "is_active": [True, True, False],
-            "signup_date": ["2023-01-01", "2023-02-01", "2023-03-01"],
-        }),
-        "subscriptions": pd.DataFrame({
-            "subscription_id": ["S1", "S2", "S3"],
-            "customer_id": ["C1", "C2", "C3"],
-            "status": ["Active", "Active", "Canceled"],
-            "monthly_price": [100.0, 200.0, 150.0],
-        }),
+        "customers": pd.DataFrame(
+            {
+                "customer_id": ["C1", "C2", "C3"],
+                "is_active": [True, True, False],
+                "signup_date": ["2023-01-01", "2023-02-01", "2023-03-01"],
+            }
+        ),
+        "subscriptions": pd.DataFrame(
+            {
+                "subscription_id": ["S1", "S2", "S3"],
+                "customer_id": ["C1", "C2", "C3"],
+                "status": ["Active", "Active", "Canceled"],
+                "monthly_price": [100.0, 200.0, 150.0],
+            }
+        ),
     }
 
 
@@ -46,6 +51,7 @@ def _make_issue(dataset: str, check_name: str, severity: str = "error") -> Valid
 # Completeness score
 # ---------------------------------------------------------------------------
 
+
 class TestCompletenessScore:
     def test_fully_populated_dataset_scores_1(self):
         datasets = _clean_datasets()
@@ -54,10 +60,12 @@ class TestCompletenessScore:
         assert score == pytest.approx(1.0)
 
     def test_dataset_with_nulls_scores_below_1(self):
-        df = pd.DataFrame({
-            "id": ["A", "B", "C"],
-            "value": [1.0, None, 3.0],
-        })
+        df = pd.DataFrame(
+            {
+                "id": ["A", "B", "C"],
+                "value": [1.0, None, 3.0],
+            }
+        )
         scorer = DataQualityScorer([], {"test": df})
         score = scorer.calculate_completeness_score("test")
         assert score < 1.0
@@ -92,6 +100,7 @@ class TestCompletenessScore:
 # Uniqueness score
 # ---------------------------------------------------------------------------
 
+
 class TestUniquenessScore:
     def test_unique_pk_scores_1(self):
         datasets = _clean_datasets()
@@ -100,10 +109,12 @@ class TestUniquenessScore:
         assert score == pytest.approx(1.0)
 
     def test_duplicate_pk_scores_below_1(self):
-        df = pd.DataFrame({
-            "id": ["A", "A", "B"],
-            "value": [1, 2, 3],
-        })
+        df = pd.DataFrame(
+            {
+                "id": ["A", "A", "B"],
+                "value": [1, 2, 3],
+            }
+        )
         scorer = DataQualityScorer([], {"test": df}, primary_keys={"test": "id"})
         score = scorer.calculate_uniqueness_score("test")
         assert score < 1.0
@@ -123,6 +134,7 @@ class TestUniquenessScore:
 # ---------------------------------------------------------------------------
 # Validity score
 # ---------------------------------------------------------------------------
+
 
 class TestValidityScore:
     def test_no_validity_issues_scores_1(self):
@@ -154,6 +166,7 @@ class TestValidityScore:
 # Referential integrity score
 # ---------------------------------------------------------------------------
 
+
 class TestReferentialIntegrityScore:
     def test_no_ri_issues_scores_1(self):
         datasets = _clean_datasets()
@@ -171,6 +184,7 @@ class TestReferentialIntegrityScore:
 # ---------------------------------------------------------------------------
 # Dataset quality score + status
 # ---------------------------------------------------------------------------
+
 
 class TestDatasetQualityScore:
     def test_clean_data_returns_good_status(self):
@@ -191,16 +205,22 @@ class TestDatasetQualityScore:
         ]
         # Force a low uniqueness by using duplicate IDs
         df = pd.DataFrame({"customer_id": ["A", "A", "A"], "val": [1, 2, 3]})
-        scorer = DataQualityScorer(issues, {"customers": df}, primary_keys={"customers": "customer_id"})
+        scorer = DataQualityScorer(
+            issues, {"customers": df}, primary_keys={"customers": "customer_id"}
+        )
         result = scorer.calculate_dataset_quality_score("customers")
         assert result.status in ("Risk", "Critical", "Watch")
 
     def test_status_mapping_good(self):
         datasets = _clean_datasets()
-        scorer = DataQualityScorer([], datasets, primary_keys={
-            "customers": "customer_id",
-            "subscriptions": "subscription_id",
-        })
+        scorer = DataQualityScorer(
+            [],
+            datasets,
+            primary_keys={
+                "customers": "customer_id",
+                "subscriptions": "subscription_id",
+            },
+        )
         result = scorer.calculate_dataset_quality_score("subscriptions")
         assert result.status in ("Good", "Watch")
 
@@ -231,14 +251,14 @@ class TestDatasetQualityScore:
 
         assert FixedScoreScorer(0.8).calculate_dataset_quality_score("customers").status == "Watch"
         assert (
-            FixedScoreScorer(0.2).calculate_dataset_quality_score("customers").status
-            == "Critical"
+            FixedScoreScorer(0.2).calculate_dataset_quality_score("customers").status == "Critical"
         )
 
 
 # ---------------------------------------------------------------------------
 # Quality summary
 # ---------------------------------------------------------------------------
+
 
 class TestQualitySummary:
     def test_summary_produces_one_record_per_dataset(self):

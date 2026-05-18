@@ -29,9 +29,9 @@ class FunnelAnalysisEngine:
         # Key Actions
         key_action_users = set()
         if not product_usage.empty and "key_actions" in product_usage.columns:
-            key_action_users = set(
-                product_usage[product_usage["key_actions"] > 0]["customer_id"].unique()
-            )
+            usage_by_customer = product_usage.groupby("customer_id")["key_actions"].sum()
+            activated.update(usage_by_customer[usage_by_customer >= 5].index)
+            key_action_users = set(usage_by_customer[usage_by_customer > 0].index)
 
         # Paid Conversion
         paid_users = set()

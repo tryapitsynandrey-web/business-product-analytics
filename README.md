@@ -26,6 +26,7 @@ use ML predictions and is not a production SaaS deployment.
 - [How It Works](#how-it-works)
 - [Development](#development)
 - [Documentation](#documentation)
+- [Advanced Analytics](#advanced-analytics)
 - [Skill Mapping](#skill-mapping)
 - [Limitations & Future Work](#limitations--future-work)
 - [License](#license)
@@ -64,6 +65,7 @@ risk queues, decision traces, and metric lineage. Features include:
 - Quick-view presets for common analysis workflows
 - Decision Brief summaries with Markdown exports
 - Owner workload summaries for handoff queues
+- Scenario simulator, cohort retention, and funnel analysis views
 - Local data freshness indicators and CSV exports
 
 No data leaves your machine. No cloud deployment or authentication required.
@@ -85,7 +87,7 @@ data flow, and architecture decisions.
 
 - **Language:** Python 3.10+
 - **Libraries:** Pandas, NumPy, PyYAML, Streamlit
-- **Testing:** Pytest (690 tests, 100% coverage gate)
+- **Testing:** Pytest (694 tests, 100% coverage gate)
 - **Linting:** Ruff
 - **Type Checking:** Pyrefly
 
@@ -237,6 +239,16 @@ GitHub Actions runs the same `make ci` on every push and PR to `main`.
 | [reports/data_quality_report.md](reports/data_quality_report.md) | Per-dataset quality scores |
 | [reports/intervention_plan.md](reports/intervention_plan.md) | Prioritized interventions |
 | [reports/risk_register.md](reports/risk_register.md) | Churn and revenue leakage risk register |
+
+## Advanced Analytics
+
+The pipeline also publishes dashboard-ready advanced analytics:
+
+- `scenario_analysis` — modeled monthly and annualized upside from churn,
+  activation, ARPU, and failed-payment recovery scenarios
+- `cohort_summary` — signup cohort retention and revenue by period
+- `funnel_summary` and `segment_funnel` — activation, key action, paid
+  conversion, and month-1 retention funnel views
 
 ## Skill Mapping
 

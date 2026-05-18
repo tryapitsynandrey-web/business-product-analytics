@@ -222,6 +222,9 @@ pages = [
     "KPI Summary",
     "Data Quality",
     "Product / Business Health",
+    "Scenario Simulator",
+    "Cohort Retention",
+    "Funnel Analysis",
     "High-Risk Customers",
     "Recommendations",
     "Intervention Plan",
@@ -737,6 +740,178 @@ elif selection == "Product / Business Health":
         )
     else:
         st.info(safe_dataframe_empty_message(health, "health score"))
+
+elif selection == "Scenario Simulator":
+    st.write("Modeled business impact from standard improvement scenarios.")
+    scenarios = fetch_data(reader, "get_scenario_analysis", db_mtime)
+    if not scenarios.empty:
+        monthly_total = (
+            pd.to_numeric(scenarios["monthly_impact"], errors="coerce").sum()
+            if "monthly_impact" in scenarios.columns
+            else 0.0
+        )
+        annual_total = (
+            pd.to_numeric(scenarios["annualized_impact"], errors="coerce").sum()
+            if "annualized_impact" in scenarios.columns
+            else 0.0
+        )
+        best_row = (
+            scenarios.sort_values("annualized_impact", ascending=False).iloc[0]
+            if "annualized_impact" in scenarios.columns
+            else None
+        )
+
+        metric_cols = st.columns(3)
+        with metric_cols[0]:
+            st.metric("Scenarios", len(scenarios))
+        with metric_cols[1]:
+            st.metric("Monthly Upside", format_currency(monthly_total))
+        with metric_cols[2]:
+            st.metric("Annualized Upside", format_currency(annual_total))
+
+        if best_row is not None:
+            st.info(
+                f"Highest modeled upside: {best_row['scenario_name']} "
+                f"({format_currency(best_row['annualized_impact'])} annualized)."
+            )
+
+        chart_data = scenarios.copy()
+        if {"scenario_name", "annualized_impact"}.issubset(chart_data.columns):
+            chart_data = chart_data.set_index("scenario_name")[["annualized_impact"]]
+            st.bar_chart(chart_data)
+
+        display_scenarios = prepare_display_dataframe(
+            scenarios,
+            currency_columns=["monthly_impact", "annualized_impact"],
+            number_columns=["baseline_value", "simulated_value"],
+        )
+        st.dataframe(display_scenarios, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download scenario analysis CSV",
+            scenarios,
+            "scenario-analysis",
+            "download_scenario_analysis",
+        )
+    else:
+        st.info(safe_dataframe_empty_message(scenarios, "scenario analysis"))
+
+elif selection == "Cohort Retention":
+    st.write("Signup cohort retention and revenue by period.")
+    cohorts = fetch_data(reader, "get_cohort_summary", db_mtime)
+    if not cohorts.empty:
+        selected_cohorts = st.multiselect(
+            "Cohort Month",
+            get_filter_options(cohorts, "cohort_month"),
+        )
+        cohorts = filter_dataframe_by_values(cohorts, "cohort_month", selected_cohorts)
+
+        metric_cols = st.columns(3)
+        with metric_cols[0]:
+            st.metric("Cohorts", cohorts["cohort_month"].nunique())
+        with metric_cols[1]:
+            retention_avg = (
+                pd.to_numeric(cohorts["retention_rate"], errors="coerce").mean()
+                if "retention_rate" in cohorts.columns
+                else 0.0
+            )
+            st.metric("Avg Retention", format_percentage(retention_avg))
+        with metric_cols[2]:
+            revenue_total = (
+                pd.to_numeric(cohorts["revenue"], errors="coerce").sum()
+                if "revenue" in cohorts.columns
+                else 0.0
+            )
+            st.metric("Cohort Revenue", format_currency(revenue_total))
+
+        if {"period_number", "retention_rate"}.issubset(cohorts.columns):
+            retention_chart = (
+                cohorts.groupby("period_number")["retention_rate"].mean().reset_index()
+            )
+            retention_chart = retention_chart.set_index("period_number")
+            st.line_chart(retention_chart)
+
+        display_cohorts = prepare_display_dataframe(
+            cohorts,
+            currency_columns=["revenue", "revenue_per_customer"],
+            percentage_columns=["retention_rate"],
+            number_columns=["period_number", "customers_in_cohort", "retained_customers"],
+        )
+        st.dataframe(display_cohorts, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download cohort summary CSV",
+            cohorts,
+            "cohort-summary",
+            "download_cohort_summary",
+        )
+    else:
+        st.info(safe_dataframe_empty_message(cohorts, "cohort summary"))
+
+elif selection == "Funnel Analysis":
+    st.write("Activation funnel conversion and drop-off by step and segment.")
+    funnel = fetch_data(reader, "get_funnel_summary", db_mtime)
+    segment_funnel = fetch_data(reader, "get_segment_funnel", db_mtime)
+    if not funnel.empty:
+        bottleneck = (
+            funnel[funnel["step"] != "Signup"].sort_values("dropoff_rate", ascending=False).head(1)
+            if {"step", "dropoff_rate"}.issubset(funnel.columns)
+            else pd.DataFrame()
+        )
+
+        metric_cols = st.columns(3)
+        with metric_cols[0]:
+            st.metric("Funnel Steps", len(funnel))
+        with metric_cols[1]:
+            final_users = int(funnel.iloc[-1]["users"]) if "users" in funnel.columns else 0
+            st.metric("Final Step Users", final_users)
+        with metric_cols[2]:
+            if not bottleneck.empty:
+                st.metric(
+                    "Largest Drop-off",
+                    format_percentage(float(bottleneck.iloc[0]["dropoff_rate"])),
+                )
+            else:
+                st.metric("Largest Drop-off", "N/A")
+
+        if not bottleneck.empty:
+            st.warning(f"Bottleneck step: {bottleneck.iloc[0]['step']}")
+
+        if {"step", "users"}.issubset(funnel.columns):
+            st.bar_chart(funnel.set_index("step")[["users"]])
+
+        display_funnel = prepare_display_dataframe(
+            funnel,
+            percentage_columns=["conversion_rate", "dropoff_rate"],
+            number_columns=["users", "previous_step_users"],
+        )
+        st.dataframe(display_funnel, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download funnel summary CSV",
+            funnel,
+            "funnel-summary",
+            "download_funnel_summary",
+        )
+
+        if not segment_funnel.empty:
+            st.subheader("Segment Funnel")
+            selected_segments = st.multiselect(
+                "Segment",
+                get_filter_options(segment_funnel, "segment"),
+            )
+            segment_view = filter_dataframe_by_values(segment_funnel, "segment", selected_segments)
+            display_segment_funnel = prepare_display_dataframe(
+                segment_view,
+                percentage_columns=["conversion_rate", "dropoff_rate"],
+                number_columns=["users", "previous_step_users"],
+            )
+            st.dataframe(display_segment_funnel, width="stretch", hide_index=True)
+            render_csv_download(
+                "Download segment funnel CSV",
+                segment_view,
+                "segment-funnel",
+                "download_segment_funnel",
+            )
+    else:
+        st.info(safe_dataframe_empty_message(funnel, "funnel summary"))
 
 elif selection == "High-Risk Customers":
     st.write("Customers prioritized by churn risk algorithms.")

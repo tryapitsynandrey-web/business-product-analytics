@@ -38,3 +38,12 @@ diffs (e.g., thousands of lines changed in `.csv` files).
 - [Data quality report](../reports/data_quality_report.md)
 - [Intervention plan](../reports/intervention_plan.md)
 - [Risk register](../reports/risk_register.md)
+
+## Advanced Analytics Snapshots
+
+Current processed snapshots include:
+
+- `data/processed/scenario_analysis.csv`
+- `data/processed/cohort_summary.csv`
+- `data/processed/funnel_summary.csv`
+- `data/processed/segment_funnel.csv`

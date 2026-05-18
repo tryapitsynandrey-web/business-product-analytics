@@ -18,6 +18,10 @@ PROCESSED_ARTIFACTS = [
     "data_quality_scores",
     "health_scores",
     "intervention_plan",
+    "scenario_analysis",
+    "cohort_summary",
+    "funnel_summary",
+    "segment_funnel",
 ]
 
 EXPORT_ARTIFACTS = [
@@ -104,6 +108,12 @@ class OutputSerializer:
             artifacts, "decision_traces", _get(decision, "decision_traces", [])
         )
         self._add_dataframe_artifact(artifacts, "metric_lineage", _get(decision, "metric_lineage"))
+        self._add_dataframe_artifact(
+            artifacts, "scenario_analysis", _get(decision, "scenario_analysis")
+        )
+        self._add_dataframe_artifact(artifacts, "cohort_summary", _get(decision, "cohort_summary"))
+        self._add_dataframe_artifact(artifacts, "funnel_summary", _get(decision, "funnel_summary"))
+        self._add_dataframe_artifact(artifacts, "segment_funnel", _get(decision, "segment_funnel"))
 
         self._stamp_artifacts(artifacts)
         return artifacts

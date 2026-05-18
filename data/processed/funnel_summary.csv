@@ -1,0 +1,6 @@
+step,users,conversion_rate,dropoff_rate,previous_step_users,run_id,generated_at
+Signup,1000,1.0,0.0,1000,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+Activation,988,0.988,0.01200000000000001,1000,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+Key Action,988,1.0,0.0,988,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+Paid Conversion,988,1.0,0.0,988,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+Month-1 Retention,976,0.9878542510121457,0.012145748987854255,988,productpulse-2026-05-01,2026-05-01T00:00:00+00:00

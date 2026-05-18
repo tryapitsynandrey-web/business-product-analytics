@@ -114,6 +114,18 @@ class SQLiteReader:
     def get_intervention_plan(self) -> pd.DataFrame:
         return self.read_table("intervention_plan")
 
+    def get_scenario_analysis(self) -> pd.DataFrame:
+        return self.read_table("scenario_analysis")
+
+    def get_cohort_summary(self) -> pd.DataFrame:
+        return self.read_table("cohort_summary")
+
+    def get_funnel_summary(self) -> pd.DataFrame:
+        return self.read_table("funnel_summary")
+
+    def get_segment_funnel(self) -> pd.DataFrame:
+        return self.read_table("segment_funnel")
+
     def get_decision_traces(self) -> pd.DataFrame:
         return self.read_table("decision_traces")
 

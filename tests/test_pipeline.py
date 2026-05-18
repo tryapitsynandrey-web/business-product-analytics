@@ -12,10 +12,12 @@ from adapters.sqlite_reader import SQLiteReader
 import core.pipeline as pipeline_module
 from core.pipeline import (
     ProductAnalyticsPipeline,
+    _build_scenario_inputs,
     _load_config,
     _parse_config_date,
     _parse_sqlite_if_exists,
 )
+from models.pipeline_results import AnalyticsResult
 from utils.validation import ValidationIssue, ValidationResult
 from utils.paths import PROJECT_ROOT
 
@@ -75,6 +77,10 @@ class TestPipelineIntegration:
             "data/processed/data_quality_scores.csv",
             "data/processed/health_scores.csv",
             "data/processed/intervention_plan.csv",
+            "data/processed/scenario_analysis.csv",
+            "data/processed/cohort_summary.csv",
+            "data/processed/funnel_summary.csv",
+            "data/processed/segment_funnel.csv",
             "data/exports/churn_risk_profiles.csv",
             "data/exports/revenue_leakage.csv",
             "data/exports/recommendations.csv",
@@ -145,6 +151,57 @@ def test_config_parsers_cover_defaults_and_invalid_values():
         _parse_sqlite_if_exists("truncate")
 
 
+def test_build_scenario_inputs_extracts_kpis_and_leakage():
+    class Kpi:
+        def __init__(self, metric_name, value):
+            self.metric_name = metric_name
+            self.value = value
+
+    analytics = AnalyticsResult(
+        kpis=[
+            Kpi("monthly_recurring_revenue", 100000.0),
+            Kpi("customer_churn_rate", 0.05),
+            Kpi("activation_rate", 0.2),
+            Kpi("average_revenue_per_user", 50.0),
+            Kpi("gross_margin", 0.7),
+        ],
+        leakages=[
+            {"leakage_type": "Failed Payment", "estimated_revenue_loss": 1000.0},
+            {"leakage_type": "Refund", "estimated_revenue_loss": 999.0},
+        ],
+    )
+    datasets = {
+        "customers": pd.DataFrame({"customer_id": ["C1", "C2"]}),
+        "subscriptions": pd.DataFrame(
+            {
+                "customer_id": ["C1", "C2", "C3"],
+                "status": ["Active", "Past Due", "Canceled"],
+            }
+        ),
+    }
+
+    inputs = _build_scenario_inputs(datasets, analytics)
+
+    assert inputs == {
+        "baseline_revenue": 100000.0,
+        "revenue": 100000.0,
+        "churn_rate": 0.05,
+        "activation_rate": 0.2,
+        "arpu": 50.0,
+        "current_arpu": 50.0,
+        "current_margin": 0.7,
+        "signups": 2.0,
+        "active_customers": 2.0,
+        "failed_payment_amount": 1000.0,
+    }
+
+
+def test_build_scenario_inputs_handles_missing_optional_inputs():
+    inputs = _build_scenario_inputs({}, AnalyticsResult(kpis=[], leakages=[]))
+
+    assert inputs == {}
+
+
 def test_phase_validate_logs_error_result(monkeypatch, tmp_path):
     pipeline = _make_pipeline_for_unit_tests(tmp_path)
     issue = ValidationIssue(
@@ -178,6 +235,10 @@ def test_phase_write_outputs_handles_empty_optional_artifacts(monkeypatch, tmp_p
         "data_quality_scores": [],
         "health_scores": pd.DataFrame(),
         "interventions": [],
+        "scenario_analysis": pd.DataFrame(),
+        "cohort_summary": pd.DataFrame(),
+        "funnel_summary": pd.DataFrame(),
+        "segment_funnel": pd.DataFrame(),
         "decision_traces": [],
         "metric_lineage": pd.DataFrame(),
     }
@@ -254,6 +315,10 @@ def test_phase_decision_layer_handles_empty_data_quality_scores(monkeypatch, tmp
 
     assert decision["data_quality_scores"] == []
     assert decision["health_scores"].empty
+    assert decision["scenario_analysis"].empty
+    assert decision["cohort_summary"].empty
+    assert not decision["funnel_summary"].empty
+    assert decision["segment_funnel"].empty
 
 
 def test_run_returns_validation_failure_without_analytics(monkeypatch, tmp_path):

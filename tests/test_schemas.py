@@ -13,6 +13,10 @@ from models.schemas import (
     METRIC_LINEAGE_COLUMNS,
     RECOMMENDATION_COLUMNS,
     REVENUE_LEAKAGE_COLUMNS,
+    SCENARIO_ANALYSIS_COLUMNS,
+    COHORT_SUMMARY_COLUMNS,
+    FUNNEL_SUMMARY_COLUMNS,
+    SEGMENT_FUNNEL_COLUMNS,
 )
 
 
@@ -51,6 +55,10 @@ def test_output_schema_constants_exist():
     assert len(METRIC_LINEAGE_COLUMNS) > 0
     assert len(RECOMMENDATION_COLUMNS) > 0
     assert len(REVENUE_LEAKAGE_COLUMNS) > 0
+    assert len(SCENARIO_ANALYSIS_COLUMNS) > 0
+    assert len(COHORT_SUMMARY_COLUMNS) > 0
+    assert len(FUNNEL_SUMMARY_COLUMNS) > 0
+    assert len(SEGMENT_FUNNEL_COLUMNS) > 0
 
 
 def test_output_schemas_mapping_exists():
@@ -65,6 +73,10 @@ def test_output_schemas_mapping_exists():
         "metric_lineage",
         "recommendations",
         "revenue_leakage",
+        "scenario_analysis",
+        "cohort_summary",
+        "funnel_summary",
+        "segment_funnel",
         "ui_metric_catalog",
     ]
     for key in expected_keys:

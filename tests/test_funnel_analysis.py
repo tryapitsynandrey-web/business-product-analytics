@@ -87,6 +87,27 @@ def test_funnel_steps_activation_date_and_optional_inputs():
     assert steps["Paid Conversion"] == 0
 
 
+def test_funnel_steps_uses_product_usage_as_activation_proxy():
+    engine = FunnelAnalysisEngine()
+    customers = pd.DataFrame(
+        [
+            {"customer_id": "1", "signup_date": "2023-01-01"},
+            {"customer_id": "2", "signup_date": "2023-01-02"},
+        ]
+    )
+    product_usage = pd.DataFrame(
+        [
+            {"customer_id": "1", "key_actions": 5},
+            {"customer_id": "2", "key_actions": 1},
+        ]
+    )
+
+    steps = engine.calculate_funnel_steps(customers, product_usage, pd.DataFrame())
+
+    assert steps["Activation"] == 1
+    assert steps["Key Action"] == 1
+
+
 def test_step_conversion(customers, product_usage, subscriptions):
     engine = FunnelAnalysisEngine()
     steps = engine.calculate_funnel_steps(customers, product_usage, subscriptions)

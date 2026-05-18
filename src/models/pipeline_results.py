@@ -40,6 +40,10 @@ class DecisionLayerResult:
     decision_traces: list[dict[str, Any]] = field(default_factory=list)
     metric_lineage: pd.DataFrame = field(default_factory=pd.DataFrame)
     health_scores: pd.DataFrame = field(default_factory=pd.DataFrame)
+    scenario_analysis: pd.DataFrame = field(default_factory=pd.DataFrame)
+    cohort_summary: pd.DataFrame = field(default_factory=pd.DataFrame)
+    funnel_summary: pd.DataFrame = field(default_factory=pd.DataFrame)
+    segment_funnel: pd.DataFrame = field(default_factory=pd.DataFrame)
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -49,6 +53,10 @@ class DecisionLayerResult:
             "decision_traces": self.decision_traces,
             "metric_lineage": self.metric_lineage,
             "health_scores": self.health_scores,
+            "scenario_analysis": self.scenario_analysis,
+            "cohort_summary": self.cohort_summary,
+            "funnel_summary": self.funnel_summary,
+            "segment_funnel": self.segment_funnel,
         }
 
     def get(self, key: str, default: Any = None) -> Any:

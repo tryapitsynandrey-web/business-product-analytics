@@ -15,6 +15,8 @@ All notable changes to ProductPulse are documented in this file.
 - Typed pipeline phase result contracts
 - Deterministic run stamps on tabular outputs
 - 100% coverage gate in local CI
+- Scenario analysis, cohort summary, funnel summary, and segment funnel output artifacts
+- Dashboard pages for Scenario Simulator, Cohort Retention, and Funnel Analysis
 - Data quality dashboard review page
 - Decision brief summaries with Markdown exports
 - Owner workload summaries for handoff queues
@@ -29,6 +31,7 @@ All notable changes to ProductPulse are documented in this file.
 - Switched dependency source of truth to pyproject.toml only
 - Grouped generated metric definitions by catalog category
 - Added cross-links between generated Markdown reports
+- Wired previously standalone cohort, funnel, and scenario engines into the main pipeline
 
 ## [0.1.0] — 2026-05-17
 

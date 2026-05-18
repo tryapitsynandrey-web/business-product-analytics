@@ -85,6 +85,14 @@ def test_cohort_retention_stops_when_next_period_is_in_future_for_available_data
     assert df["period_number"].tolist() == [0]
 
 
+def test_cohort_retention_uses_configured_as_of_date(customers, subscriptions):
+    engine = CohortAnalysisEngine(as_of_date="2023-03-31")
+
+    df = engine.calculate_cohort_retention(customers, subscriptions)
+
+    assert df["period_number"].max() <= 2
+
+
 def test_calculate_cohort_revenue(customers, transactions):
     engine = CohortAnalysisEngine()
     df = engine.calculate_cohort_revenue(customers, transactions)

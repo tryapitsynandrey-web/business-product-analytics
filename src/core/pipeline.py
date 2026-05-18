@@ -27,9 +27,11 @@ from adapters.output_serializer import OutputSerializer
 from adapters.sqlite_writer import SQLiteIfExists
 from adapters.synthetic_data_generator import SyntheticDataGenerator
 from core.churn_risk import ChurnRiskEngine
+from core.cohort_analysis import CohortAnalysisEngine
 from core.customer_360 import Customer360Engine
 from core.data_quality_score import DataQualityScorer
 from core.decision_trace import DecisionTraceEngine
+from core.funnel_analysis import FunnelAnalysisEngine
 from core.health_score import ProductHealthScoreEngine
 from core.intervention_planner import InterventionPlanner
 from core.kpi_engine import KPIEngine
@@ -39,6 +41,7 @@ from core.prioritization import rank_interventions, rank_recommendations
 from core.recommendation_engine import RecommendationEngine
 from core.report_generator import ReportGenerator
 from core.revenue_leakage import RevenueLeakageEngine
+from core.scenario_simulator import ScenarioSimulator
 from core.segmentation import SegmentationEngine
 from models.pipeline_results import AnalyticsResult, DecisionLayerResult
 from utils.paths import PROJECT_ROOT, SQLITE_DB_PATH, ensure_directories
@@ -124,7 +127,61 @@ def _as_decision_result(decision: DecisionLayerResult | Dict[str, Any]) -> Decis
         decision_traces=decision.get("decision_traces", []),
         metric_lineage=decision.get("metric_lineage", pd.DataFrame()),
         health_scores=decision.get("health_scores", pd.DataFrame()),
+        scenario_analysis=decision.get("scenario_analysis", pd.DataFrame()),
+        cohort_summary=decision.get("cohort_summary", pd.DataFrame()),
+        funnel_summary=decision.get("funnel_summary", pd.DataFrame()),
+        segment_funnel=decision.get("segment_funnel", pd.DataFrame()),
     )
+
+
+def _kpi_value(kpis: list[Any], metric_name: str) -> float | None:
+    for kpi in kpis:
+        if kpi.metric_name == metric_name:
+            return float(kpi.value)
+    return None
+
+
+def _build_scenario_inputs(
+    datasets: Dict[str, Any],
+    analytics: AnalyticsResult,
+) -> Dict[str, float]:
+    customers = datasets.get("customers", pd.DataFrame())
+    subscriptions = datasets.get("subscriptions", pd.DataFrame())
+
+    mrr = _kpi_value(analytics.kpis, "monthly_recurring_revenue")
+    churn_rate = _kpi_value(analytics.kpis, "customer_churn_rate")
+    activation_rate = _kpi_value(analytics.kpis, "activation_rate")
+    arpu = _kpi_value(analytics.kpis, "average_revenue_per_user")
+    gross_margin = _kpi_value(analytics.kpis, "gross_margin")
+
+    inputs: Dict[str, float] = {}
+    if mrr is not None:
+        inputs["baseline_revenue"] = mrr
+        inputs["revenue"] = mrr
+    if churn_rate is not None:
+        inputs["churn_rate"] = churn_rate
+    if activation_rate is not None:
+        inputs["activation_rate"] = activation_rate
+    if arpu is not None:
+        inputs["arpu"] = arpu
+        inputs["current_arpu"] = arpu
+    if gross_margin is not None:
+        inputs["current_margin"] = gross_margin
+    if isinstance(customers, pd.DataFrame) and not customers.empty:
+        inputs["signups"] = float(customers["customer_id"].nunique())
+    if isinstance(subscriptions, pd.DataFrame) and not subscriptions.empty:
+        active = subscriptions[subscriptions["status"].isin(["Active", "Past Due"])]
+        inputs["active_customers"] = float(active["customer_id"].nunique())
+
+    failed_payment_amount = sum(
+        float(leakage.get("estimated_revenue_loss", 0.0))
+        for leakage in analytics.leakages
+        if leakage.get("leakage_type") == "Failed Payment"
+    )
+    if failed_payment_amount > 0:
+        inputs["failed_payment_amount"] = failed_payment_amount
+
+    return inputs
 
 
 # ---------------------------------------------------------------------------
@@ -409,6 +466,32 @@ class ProductAnalyticsPipeline:
 
         health_scores_df = health_engine.build_health_score_table(metrics_dict)
 
+        self.logger.info("Phase 3: running scenario simulations.")
+        scenario_inputs = _build_scenario_inputs(datasets, analytics_result)
+        scenario_analysis_df = ScenarioSimulator().run_default_scenarios(scenario_inputs)
+
+        self.logger.info("Phase 3: calculating cohort retention and revenue.")
+        cohort_engine = CohortAnalysisEngine(as_of_date=self._as_of_date)
+        cohort_summary_df = cohort_engine.build_cohort_summary(
+            datasets.get("customers", pd.DataFrame()),
+            datasets.get("subscriptions", pd.DataFrame()),
+            datasets.get("transactions", pd.DataFrame()),
+        )
+
+        self.logger.info("Phase 3: calculating activation funnel.")
+        funnel_engine = FunnelAnalysisEngine()
+        funnel_steps = funnel_engine.calculate_funnel_steps(
+            datasets.get("customers", pd.DataFrame()),
+            datasets.get("product_usage", pd.DataFrame()),
+            datasets.get("subscriptions", pd.DataFrame()),
+        )
+        funnel_summary_df = funnel_engine.calculate_step_conversion(funnel_steps)
+        segment_funnel_df = funnel_engine.calculate_segment_funnel(
+            datasets.get("customers", pd.DataFrame()),
+            datasets.get("product_usage", pd.DataFrame()),
+            datasets.get("subscriptions", pd.DataFrame()),
+        )
+
         return DecisionLayerResult(
             data_quality_scores=dq_scores,
             customer_360=customer_360_df,
@@ -416,6 +499,10 @@ class ProductAnalyticsPipeline:
             decision_traces=traces,
             metric_lineage=metric_lineage_df,
             health_scores=health_scores_df,
+            scenario_analysis=scenario_analysis_df,
+            cohort_summary=cohort_summary_df,
+            funnel_summary=funnel_summary_df,
+            segment_funnel=segment_funnel_df,
         )
 
     def _phase_write_outputs(

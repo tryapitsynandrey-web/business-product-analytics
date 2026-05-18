@@ -18,10 +18,12 @@
 8. **Automated Reporting**: Auto-generates Markdown executive summaries and quality reports.
 9. **Output Serializer**: Builds CSV and SQLite artifact payloads from one schema-aware adapter.
 10. **Architecture Docs**: Captures layer boundaries, ADRs, and metric catalog governance.
+11. **Advanced Analytics Outputs**: Publishes scenario simulation, cohort retention, and funnel analysis artifacts.
+12. **Advanced Dashboard Pages**: Adds Scenario Simulator, Cohort Retention, and Funnel Analysis views.
 
 ## System Health
 
-- **Tests**: 690 passing tests, 100% coverage gate.
+- **Tests**: 694 passing tests, 100% coverage gate.
 - **Local-First Status**: 100% (no cloud, API, or external DBs).
 
 ## Known Limitations

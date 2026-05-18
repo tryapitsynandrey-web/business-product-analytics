@@ -43,8 +43,9 @@ into adapters/core modules.
 3. Run validation gate and halt on blocking errors.
 4. Run Phase 2 analytics engines and return `AnalyticsResult`.
 5. Run decision layer and return `DecisionLayerResult`.
-6. Build output artifacts once through `OutputSerializer`.
-7. Write CSV, SQLite, and Markdown reports.
+6. Run advanced analytics outputs: scenario simulations, cohort retention, and funnel analysis.
+7. Build output artifacts once through `OutputSerializer`.
+8. Write CSV, SQLite, and Markdown reports.
 
 ## Data Contracts
 
@@ -60,6 +61,15 @@ Tabular output schemas remain centralized in `src/models/schemas.py`.
 `OutputSerializer` builds artifact DataFrames once, adds deterministic
 `run_id`/`generated_at` columns, then reuses the same artifact dictionary for
 CSV and SQLite writes.
+
+## Advanced Analytics Outputs
+
+| Artifact | Engine | Dashboard page |
+| --- | --- | --- |
+| `scenario_analysis` | `ScenarioSimulator` | Scenario Simulator |
+| `cohort_summary` | `CohortAnalysisEngine` | Cohort Retention |
+| `funnel_summary` | `FunnelAnalysisEngine` | Funnel Analysis |
+| `segment_funnel` | `FunnelAnalysisEngine` | Funnel Analysis |
 
 ## Configuration
 

@@ -177,6 +177,38 @@ REVENUE_LEAKAGE_COLUMNS = [
     "recommended_action",
     "evidence",
 ]
+SCENARIO_ANALYSIS_COLUMNS = [
+    "scenario_name",
+    "baseline_value",
+    "simulated_value",
+    "monthly_impact",
+    "annualized_impact",
+    "confidence_note",
+]
+COHORT_SUMMARY_COLUMNS = [
+    "cohort_month",
+    "period_number",
+    "customers_in_cohort",
+    "retained_customers",
+    "retention_rate",
+    "revenue",
+    "revenue_per_customer",
+]
+FUNNEL_SUMMARY_COLUMNS = [
+    "step",
+    "users",
+    "conversion_rate",
+    "dropoff_rate",
+    "previous_step_users",
+]
+SEGMENT_FUNNEL_COLUMNS = [
+    "segment",
+    "step",
+    "users",
+    "conversion_rate",
+    "dropoff_rate",
+    "previous_step_users",
+]
 UI_METRIC_CATALOG_COLUMNS = [
     "metric_name",
     "display_name",
@@ -200,6 +232,10 @@ OUTPUT_SCHEMAS = {
     "metric_lineage": METRIC_LINEAGE_COLUMNS,
     "recommendations": RECOMMENDATION_COLUMNS,
     "revenue_leakage": REVENUE_LEAKAGE_COLUMNS,
+    "scenario_analysis": SCENARIO_ANALYSIS_COLUMNS,
+    "cohort_summary": COHORT_SUMMARY_COLUMNS,
+    "funnel_summary": FUNNEL_SUMMARY_COLUMNS,
+    "segment_funnel": SEGMENT_FUNNEL_COLUMNS,
     "ui_metric_catalog": UI_METRIC_CATALOG_COLUMNS,
 }
 
@@ -214,6 +250,10 @@ SQLITE_UI_QUERY_TABLES = [
     "customer_360",
     "recommendations",
     "intervention_plan",
+    "scenario_analysis",
+    "cohort_summary",
+    "funnel_summary",
+    "segment_funnel",
     "decision_traces",
     "metric_lineage",
 ]

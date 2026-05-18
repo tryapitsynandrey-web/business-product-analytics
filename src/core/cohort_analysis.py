@@ -1,7 +1,16 @@
+from typing import Any
+
 import pandas as pd
 
 
 class CohortAnalysisEngine:
+    def __init__(self, as_of_date: Any | None = None) -> None:
+        self.as_of_date = (
+            pd.Timestamp(as_of_date).normalize()
+            if as_of_date is not None
+            else pd.Timestamp.today().normalize()
+        )
+
     def build_signup_cohorts(self, customers: pd.DataFrame) -> pd.DataFrame:
         if customers.empty or "signup_date" not in customers.columns:
             return pd.DataFrame(columns=["customer_id", "cohort_month"])
@@ -30,9 +39,7 @@ class CohortAnalysisEngine:
         df["end_date"] = pd.to_datetime(df["end_date"])
 
         # Max date to calculate periods
-        max_date = (
-            df["start_date"].max() if df["end_date"].isnull().all() else pd.to_datetime("today")
-        )
+        max_date = df["start_date"].max() if df["end_date"].isnull().all() else self.as_of_date
 
         results = []
         for cohort, group in df.groupby("cohort_month"):

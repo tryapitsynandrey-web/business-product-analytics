@@ -1,0 +1,5 @@
+scenario_name,baseline_value,simulated_value,monthly_impact,annualized_impact,confidence_note,run_id,generated_at
+Churn Reduction,0.29,0.261,8238.609999999999,98863.31999999998,Assumes uniform revenue distribution among churned customers.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+Activation Increase,0.988,1.0,4801.521126760567,57618.25352112681,Assumes new activated customers convert to paid at historical rates.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+ARPU Increase,400.1267605633803,420.1330985915493,14204.499999999998,170453.99999999997,Assumes zero increased churn from price elasticity.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00
+Failed Payment Recovery,0.0,0.3,67295.09999999999,807541.2,Based on implementing automated dunning.,productpulse-2026-05-01,2026-05-01T00:00:00+00:00

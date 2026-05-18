@@ -8,12 +8,16 @@ from adapters.data_writer import DataWriter
 from adapters.output_serializer import OutputSerializer
 from models.schemas import (
     CUSTOMER_360_COLUMNS,
+    COHORT_SUMMARY_COLUMNS,
     DECISION_TRACE_COLUMNS,
+    FUNNEL_SUMMARY_COLUMNS,
     HEALTH_SCORE_COLUMNS,
     INTERVENTION_PLAN_COLUMNS,
     METRIC_LINEAGE_COLUMNS,
     RECOMMENDATION_COLUMNS,
     REVENUE_LEAKAGE_COLUMNS,
+    SCENARIO_ANALYSIS_COLUMNS,
+    SEGMENT_FUNNEL_COLUMNS,
 )
 
 
@@ -62,6 +66,10 @@ def _serializer_inputs() -> tuple[SimpleNamespace, SimpleNamespace]:
         interventions=[_row(INTERVENTION_PLAN_COLUMNS)],
         decision_traces=[_row(DECISION_TRACE_COLUMNS)],
         metric_lineage=pd.DataFrame([_row(METRIC_LINEAGE_COLUMNS)]),
+        scenario_analysis=pd.DataFrame([_row(SCENARIO_ANALYSIS_COLUMNS)]),
+        cohort_summary=pd.DataFrame([_row(COHORT_SUMMARY_COLUMNS)]),
+        funnel_summary=pd.DataFrame([_row(FUNNEL_SUMMARY_COLUMNS)]),
+        segment_funnel=pd.DataFrame([_row(SEGMENT_FUNNEL_COLUMNS)]),
     )
     return analytics, decision
 
@@ -78,6 +86,10 @@ def test_build_artifacts_serializes_all_pipeline_outputs():
         "data_quality_scores",
         "health_scores",
         "intervention_plan",
+        "scenario_analysis",
+        "cohort_summary",
+        "funnel_summary",
+        "segment_funnel",
         "churn_risk_profiles",
         "revenue_leakage",
         "recommendations",

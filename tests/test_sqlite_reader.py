@@ -188,6 +188,66 @@ def populated_db_path(tmp_path):
             ]
         ),
     )
+    writer.write_dataframe(
+        "scenario_analysis",
+        pd.DataFrame(
+            [
+                {
+                    "scenario_name": "Churn Reduction",
+                    "baseline_value": 0.05,
+                    "simulated_value": 0.045,
+                    "monthly_impact": 500.0,
+                    "annualized_impact": 6000.0,
+                    "confidence_note": "Assumption",
+                }
+            ]
+        ),
+    )
+    writer.write_dataframe(
+        "cohort_summary",
+        pd.DataFrame(
+            [
+                {
+                    "cohort_month": "2026-01",
+                    "period_number": 0,
+                    "customers_in_cohort": 10,
+                    "retained_customers": 9,
+                    "retention_rate": 0.9,
+                    "revenue": 1000.0,
+                    "revenue_per_customer": 100.0,
+                }
+            ]
+        ),
+    )
+    writer.write_dataframe(
+        "funnel_summary",
+        pd.DataFrame(
+            [
+                {
+                    "step": "Signup",
+                    "users": 10,
+                    "conversion_rate": 1.0,
+                    "dropoff_rate": 0.0,
+                    "previous_step_users": 10,
+                }
+            ]
+        ),
+    )
+    writer.write_dataframe(
+        "segment_funnel",
+        pd.DataFrame(
+            [
+                {
+                    "segment": "SMB",
+                    "step": "Signup",
+                    "users": 10,
+                    "conversion_rate": 1.0,
+                    "dropoff_rate": 0.0,
+                    "previous_step_users": 10,
+                }
+            ]
+        ),
+    )
 
     return db_path
 
@@ -304,6 +364,10 @@ def test_ui_ready_methods_return_dataframes(populated_db_path):
     assert isinstance(reader.get_customer_360(), pd.DataFrame)
     assert isinstance(reader.get_recommendations(), pd.DataFrame)
     assert isinstance(reader.get_intervention_plan(), pd.DataFrame)
+    assert isinstance(reader.get_scenario_analysis(), pd.DataFrame)
+    assert isinstance(reader.get_cohort_summary(), pd.DataFrame)
+    assert isinstance(reader.get_funnel_summary(), pd.DataFrame)
+    assert isinstance(reader.get_segment_funnel(), pd.DataFrame)
     assert isinstance(reader.get_decision_traces(), pd.DataFrame)
     assert isinstance(reader.get_metric_lineage(), pd.DataFrame)
 

@@ -6,9 +6,17 @@ from __future__ import annotations
 
 import yaml
 import pandas as pd
+import pytest
 
 from adapters.sqlite_reader import SQLiteReader
-from core.pipeline import ProductAnalyticsPipeline
+import core.pipeline as pipeline_module
+from core.pipeline import (
+    ProductAnalyticsPipeline,
+    _load_config,
+    _parse_config_date,
+    _parse_sqlite_if_exists,
+)
+from utils.validation import ValidationIssue, ValidationResult
 from utils.paths import PROJECT_ROOT
 
 
@@ -28,6 +36,16 @@ def _write_test_config(tmp_path, *, sqlite_enabled: bool = False):
     config_path = tmp_path / "config.yaml"
     config_path.write_text(yaml.safe_dump(config), encoding="utf-8")
     return config_path
+
+
+def _make_pipeline_for_unit_tests(tmp_path, **overrides):
+    tmp_path.mkdir(parents=True, exist_ok=True)
+    config_path = _write_test_config(tmp_path)
+    config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    for section, values in overrides.items():
+        config.setdefault(section, {}).update(values)
+    config_path.write_text(yaml.safe_dump(config), encoding="utf-8")
+    return ProductAnalyticsPipeline(config_path=config_path)
 
 
 class TestPipelineIntegration:
@@ -110,3 +128,213 @@ class TestPipelineIntegration:
         assert (tmp_path / "data" / "processed" / "kpi_summary.csv").read_text() == first_kpis
         assert (tmp_path / "data" / "exports" / "decision_traces.csv").read_text() == first_traces
         assert (tmp_path / "data" / "processed" / "intervention_plan.csv").read_text() == first_plan
+
+
+def test_load_config_raises_for_missing_config(tmp_path):
+    with pytest.raises(FileNotFoundError, match="Configuration file not found"):
+        _load_config(tmp_path / "missing.yaml")
+
+
+def test_config_parsers_cover_defaults_and_invalid_values():
+    assert _parse_config_date(None).isoformat()
+    assert _parse_config_date(None, default=pd.Timestamp("2026-05-01").date()).isoformat() == (
+        "2026-05-01"
+    )
+    assert _parse_sqlite_if_exists("replace") == "replace"
+    with pytest.raises(ValueError, match="persistence.sqlite.if_exists"):
+        _parse_sqlite_if_exists("truncate")
+
+
+def test_phase_validate_logs_error_result(monkeypatch, tmp_path):
+    pipeline = _make_pipeline_for_unit_tests(tmp_path)
+    issue = ValidationIssue(
+        dataset="customers",
+        check_name="required_columns",
+        severity="error",
+        message="missing customer_id",
+        affected_column="customer_id",
+        affected_rows_count=1,
+    )
+    validation = ValidationResult(
+        passed=False,
+        issues=[issue],
+        total_checks=1,
+        failed_checks=1,
+    )
+    monkeypatch.setattr(pipeline_module, "run_dataset_validation", lambda datasets, config: validation)
+
+    result = pipeline._phase_validate({"customers": pd.DataFrame()})
+
+    assert result.passed is False
+
+
+def test_phase_write_outputs_handles_empty_optional_artifacts(tmp_path):
+    pipeline = _make_pipeline_for_unit_tests(tmp_path)
+    pipeline.governance._catalog = {}
+    empty_decision = {
+        "customer_360": pd.DataFrame(),
+        "data_quality_scores": [],
+        "health_scores": pd.DataFrame(),
+        "interventions": [],
+        "decision_traces": [],
+        "metric_lineage": pd.DataFrame(),
+    }
+    empty_analytics = {
+        "kpis": [],
+        "risk_profiles": [],
+        "leakages": [],
+        "recommendations": [],
+    }
+
+    written = pipeline._phase_write_outputs(empty_analytics, empty_decision)
+
+    assert written == [
+        "reports/executive_summary.md",
+        "reports/data_quality_report.md",
+        "reports/intervention_plan.md",
+        "reports/risk_register.md",
+    ]
+
+
+def test_phase_write_sqlite_outputs_handles_empty_and_write_failure(monkeypatch, tmp_path):
+    pipeline = _make_pipeline_for_unit_tests(tmp_path, persistence={"sqlite": {"enabled": True}})
+
+    class EmptyWriter:
+        def __init__(self, path):
+            self.path = path
+
+        def write_artifacts(self, artifacts, if_exists):
+            assert artifacts == {}
+            return []
+
+    monkeypatch.setattr(pipeline_module, "SQLiteWriter", EmptyWriter)
+    assert pipeline._phase_write_sqlite_outputs({"kpis": []}, {}) == []
+
+    class FailingWriter:
+        def __init__(self, path):
+            self.path = path
+
+        def write_artifacts(self, artifacts, if_exists):
+            raise RuntimeError("sqlite down")
+
+    monkeypatch.setattr(pipeline_module, "SQLiteWriter", FailingWriter)
+    assert pipeline._phase_write_sqlite_outputs({"kpis": []}, {}) == []
+
+
+def test_phase_decision_layer_handles_empty_data_quality_scores(monkeypatch, tmp_path):
+    pipeline = _make_pipeline_for_unit_tests(tmp_path)
+    pipeline.governance._catalog = {}
+
+    class EmptyDataQualityScorer:
+        def __init__(self, issues, datasets, primary_keys):
+            self.issues = issues
+            self.datasets = datasets
+            self.primary_keys = primary_keys
+
+        def generate_quality_summary(self):
+            return []
+
+    class EmptyCustomer360Engine:
+        def __init__(self, datasets, risk_profiles, recommendations):
+            self.datasets = datasets
+            self.risk_profiles = risk_profiles
+            self.recommendations = recommendations
+
+        def build_customer_360_view(self):
+            return pd.DataFrame()
+
+    class PassthroughSegmentationEngine:
+        def assign_customer_segments(self, customer_360):
+            return customer_360
+
+    monkeypatch.setattr(pipeline_module, "DataQualityScorer", EmptyDataQualityScorer)
+    monkeypatch.setattr(pipeline_module, "Customer360Engine", EmptyCustomer360Engine)
+    monkeypatch.setattr(pipeline_module, "SegmentationEngine", PassthroughSegmentationEngine)
+    monkeypatch.setattr(pipeline.intervention_planner, "create_intervention_plan", lambda recs: [])
+
+    decision = pipeline._phase_decision_layer(
+        {},
+        {"kpis": [], "risk_profiles": [], "leakages": [], "recommendations": []},
+        [],
+    )
+
+    assert decision["data_quality_scores"] == []
+    assert decision["health_scores"].empty
+
+
+def test_run_returns_validation_failure_without_analytics(monkeypatch, tmp_path):
+    pipeline = _make_pipeline_for_unit_tests(
+        tmp_path,
+        pipeline={
+            "generate_synthetic_data": False,
+            "run_validation": True,
+            "write_outputs": False,
+        },
+    )
+    issue = ValidationIssue(
+        dataset="customers",
+        check_name="not_empty",
+        severity="error",
+        message="customers empty",
+        affected_column="",
+        affected_rows_count=0,
+    )
+    validation = ValidationResult(
+        passed=False,
+        issues=[issue],
+        total_checks=1,
+        failed_checks=1,
+    )
+    monkeypatch.setattr(pipeline, "_phase_load", lambda: {"customers": pd.DataFrame()})
+    monkeypatch.setattr(pipeline, "_phase_validate", lambda datasets: validation)
+
+    result = pipeline.run()
+
+    assert result.success is False
+    assert result.issues == ["customers empty"]
+
+
+def test_run_success_without_validation_or_output_writes(monkeypatch, tmp_path):
+    pipeline = _make_pipeline_for_unit_tests(
+        tmp_path,
+        pipeline={
+            "generate_synthetic_data": False,
+            "run_validation": False,
+            "write_outputs": False,
+        },
+    )
+    monkeypatch.setattr(pipeline, "_phase_load", lambda: {})
+    monkeypatch.setattr(pipeline, "_phase_analytics", lambda datasets: {"kpis": []})
+    monkeypatch.setattr(
+        pipeline,
+        "_phase_decision_layer",
+        lambda datasets, analytics, issues: {},
+    )
+
+    result = pipeline.run()
+
+    assert result.success is True
+    assert result.outputs_written is False
+    assert result.generated_outputs == []
+
+
+def test_run_returns_file_not_found_and_unexpected_errors(monkeypatch, tmp_path):
+    pipeline = _make_pipeline_for_unit_tests(
+        tmp_path,
+        pipeline={"generate_synthetic_data": False},
+    )
+    monkeypatch.setattr(pipeline, "_phase_load", lambda: (_ for _ in ()).throw(FileNotFoundError("missing data")))
+    missing = pipeline.run()
+
+    pipeline = _make_pipeline_for_unit_tests(
+        tmp_path / "unexpected",
+        pipeline={"generate_synthetic_data": False, "run_validation": False},
+    )
+    monkeypatch.setattr(pipeline, "_phase_load", lambda: {})
+    monkeypatch.setattr(pipeline, "_phase_analytics", lambda datasets: (_ for _ in ()).throw(RuntimeError("boom")))
+    unexpected = pipeline.run()
+
+    assert missing.success is False
+    assert missing.message == "missing data"
+    assert unexpected.success is False
+    assert unexpected.message == "Unexpected error: boom"

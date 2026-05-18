@@ -60,6 +60,58 @@ def test_required_columns_flattened(metric_catalog):
     assert "subscriptions.status" in cols
 
 
+def test_required_columns_add_missing_dataset_to_sources():
+    catalog = {
+        "metrics": [
+            {
+                "metric_name": "activation_rate",
+                "required_columns_by_dataset": {"customers": ["customer_id"]},
+            }
+        ]
+    }
+
+    lineage = MetricLineageEngine().build_metric_lineage(catalog)
+
+    assert lineage[0]["source_datasets"] == "customers"
+    assert lineage[0]["required_columns"] == "customers.customer_id"
+
+
+def test_legacy_data_sources_are_flattened_and_added_to_sources():
+    catalog = {
+        "metrics": [
+            {
+                "name": "legacy_metric",
+                "data_sources": [
+                    {"dataset": "legacy_events", "required_columns": ["event_id", "customer_id"]}
+                ],
+            }
+        ]
+    }
+
+    lineage = MetricLineageEngine().build_metric_lineage(catalog)
+
+    assert lineage[0]["metric_name"] == "legacy_metric"
+    assert lineage[0]["source_datasets"] == "legacy_events"
+    assert "legacy_events.customer_id" in lineage[0]["required_columns"]
+
+
+def test_legacy_data_source_already_present_is_not_duplicated():
+    catalog = {
+        "metrics": [
+            {
+                "metric_name": "legacy_metric",
+                "source_datasets": ["legacy_events"],
+                "data_sources": [{"dataset": "legacy_events", "required_columns": ["event_id"]}],
+            }
+        ]
+    }
+
+    lineage = MetricLineageEngine().build_metric_lineage(catalog)
+
+    assert lineage[0]["source_datasets"] == "legacy_events"
+    assert lineage[0]["required_columns"] == "legacy_events.event_id"
+
+
 def test_get_metric_lineage_returns_single_metric(metric_catalog):
     engine = MetricLineageEngine()
 

@@ -54,3 +54,19 @@ def test_run_default_scenarios():
     assert not df.empty
     assert len(df) == 5
     assert 'scenario_name' in df.columns
+
+
+def test_run_default_scenarios_returns_schema_when_no_inputs_match():
+    simulator = ScenarioSimulator()
+
+    df = simulator.run_default_scenarios({})
+
+    assert df.empty
+    assert df.columns.tolist() == [
+        "scenario_name",
+        "baseline_value",
+        "simulated_value",
+        "monthly_impact",
+        "annualized_impact",
+        "confidence_note",
+    ]

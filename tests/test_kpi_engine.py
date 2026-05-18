@@ -319,3 +319,95 @@ def test_kpi_engine_supported_metrics():
     supported = KPIEngine.get_supported_metrics()
     assert "monthly_recurring_revenue" in supported
     assert supported["monthly_recurring_revenue"] == "calculate_mrr"
+
+
+def test_calculate_kpis_skips_metrics_that_fail_governance(monkeypatch, engine):
+    def fake_validate_metric(metric_name, datasets):
+        return metric_name != "monthly_recurring_revenue"
+
+    monkeypatch.setattr(engine.governance, "validate_metric", fake_validate_metric)
+
+    results = engine.calculate_kpis(_make_datasets(), date.today())
+
+    assert "monthly_recurring_revenue" not in {result.metric_name for result in results}
+
+
+def test_calculate_kpis_logs_and_continues_when_calculator_raises(monkeypatch, engine):
+    def boom(datasets, target_date):
+        raise RuntimeError("broken calculator")
+
+    monkeypatch.setattr(engine, "calculate_mrr", boom)
+
+    results = engine.calculate_kpis(_make_datasets(), date.today())
+
+    assert "monthly_recurring_revenue" not in {result.metric_name for result in results}
+    assert results
+
+
+def test_calculate_kpis_skips_none_calculator_results(monkeypatch, engine):
+    monkeypatch.setattr(engine, "calculate_mrr", lambda datasets, target_date: None)
+
+    results = engine.calculate_kpis(_make_datasets(), date.today())
+
+    assert "monthly_recurring_revenue" not in {result.metric_name for result in results}
+    assert results
+
+
+def test_usage_and_feature_metrics_return_zero_without_active_usage(engine):
+    datasets = _make_datasets(num_customers=2, active_flags=[False, False])
+
+    usage = engine.calculate_usage_frequency(datasets, date.today())
+    features = engine.calculate_feature_adoption_proxy(datasets, date.today())
+
+    assert usage.value == 0.0
+    assert features.value == 0.0
+
+
+def test_engagement_drop_rate_insufficient_data_paths(engine):
+    datasets = _make_datasets(num_customers=1)
+    no_date = _make_datasets(num_customers=1)
+    no_date["product_usage"] = no_date["product_usage"].drop(columns=["date"])
+
+    no_date_result = engine.calculate_engagement_drop_rate(no_date, date.today())
+    single_period_result = engine.calculate_engagement_drop_rate(datasets, date.today())
+
+    assert no_date_result.value == 0.0
+    assert single_period_result.value == 0.0
+
+
+def test_engagement_drop_rate_returns_zero_without_overlapping_customers(engine):
+    today = pd.Timestamp(date.today())
+    datasets = _make_datasets(num_customers=2)
+    datasets["product_usage"] = pd.DataFrame(
+        [
+                {
+                    "usage_id": "U1",
+                    "customer_id": "C0",
+                    "date": today,
+                    "logins": 10,
+                    "key_actions": 1,
+                    "features_used": 1,
+                },
+                {
+                    "usage_id": "U2",
+                    "customer_id": "C1",
+                    "date": today - pd.Timedelta(days=30),
+                    "logins": 10,
+                "key_actions": 1,
+                "features_used": 1,
+            },
+        ]
+    )
+
+    result = engine.calculate_engagement_drop_rate(datasets, date.today())
+
+    assert result.value == 0.0
+    assert "No overlapping customers" in result.explanation
+
+
+def test_time_to_activation_zero_when_no_customer_has_key_action(engine):
+    datasets = _make_datasets(num_customers=2, key_actions=[0, 0])
+
+    result = engine.calculate_time_to_activation(datasets, date.today())
+
+    assert result.value == 0.0

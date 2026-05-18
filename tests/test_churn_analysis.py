@@ -47,12 +47,14 @@ def test_churn_rate_calculation():
     engine = ChurnAnalysisEngine()
     rate = engine.calculate_churn_rate(80, 20)
     assert rate == 0.2
+    assert engine.calculate_churn_rate(0, 0) == 0.0
 
 
 def test_retention_rate_calculation():
     engine = ChurnAnalysisEngine()
     rate = engine.calculate_retention_rate(80, 20)
     assert rate == 0.8
+    assert engine.calculate_retention_rate(0, 0) == 0.0
 
 
 def test_summarize_churn_health(subscriptions):
@@ -131,3 +133,44 @@ def test_empty_input():
     summary = engine.summarize_churn_health(df)
     assert summary["active_customers"] == 0
     assert summary["churn_rate"] == 0.0
+
+    assert engine.analyze_churn_by_month(df).empty
+    assert engine.analyze_churn_by_segment(df, df).empty
+    assert engine.analyze_churn_by_plan(df).empty
+
+
+def test_churn_by_month_handles_all_missing_start_dates():
+    engine = ChurnAnalysisEngine()
+    df = pd.DataFrame(
+        [
+            {
+                "customer_id": "1",
+                "status": "Active",
+                "plan": "Pro",
+                "start_date": None,
+                "end_date": None,
+            }
+        ]
+    )
+
+    assert engine.analyze_churn_by_month(df).empty
+
+
+def test_summarize_churn_health_status_bands():
+    engine = ChurnAnalysisEngine()
+
+    def records(active_count, canceled_count):
+        rows = [
+            {"customer_id": f"a{i}", "status": "Active", "plan": "Pro"}
+            for i in range(active_count)
+        ]
+        rows.extend(
+            {"customer_id": f"c{i}", "status": "Canceled", "plan": "Pro"}
+            for i in range(canceled_count)
+        )
+        return pd.DataFrame(rows)
+
+    assert engine.summarize_churn_health(records(96, 4))["status"] == "Healthy"
+    assert engine.summarize_churn_health(records(95, 5))["status"] == "Watch"
+    assert engine.summarize_churn_health(records(92, 8))["status"] == "Risk"
+    assert engine.summarize_churn_health(records(80, 20))["status"] == "Critical"

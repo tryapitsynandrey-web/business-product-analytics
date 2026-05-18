@@ -9,7 +9,7 @@ from __future__ import annotations
 import pytest
 import pandas as pd
 
-from core.recommendation_engine import RecommendationEngine
+from core.recommendation_engine import RecommendationEngine, _match
 from models.enums import RiskBand
 from models.risk_profile import ChurnRiskProfile
 
@@ -102,6 +102,14 @@ class TestChurnRiskRecommendations:
             if r.get("rule_id") in ("REC_001", "REC_003", "REC_006")
         ]
         assert churn_recs == []
+
+    def test_missing_customer_profile_is_skipped(self, engine):
+        datasets = _make_datasets()
+        profiles = [_make_profile("MISSING", RiskBand.CRITICAL)]
+
+        recs = engine.generate_recommendations(datasets, profiles, leakages=[])
+
+        assert recs == []
 
 
 class TestLeakageRecommendations:
@@ -213,3 +221,8 @@ class TestMatchRecommendationRules:
         )
         leakage_rules = [r for r in matched if r.get("trigger_type") == "leakage"]
         assert leakage_rules == []
+
+
+def test_match_returns_false_for_unknown_operator_and_value_errors():
+    assert _match("unknown", "x", "x") is False
+    assert _match("greater_than", "not-a-number", 1) is False

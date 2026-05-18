@@ -47,3 +47,33 @@ def test_load_all_raises_clear_error_for_missing_required_dataset(tmp_path):
 
     with pytest.raises(FileNotFoundError, match="Required dataset 'customers' not found"):
         loader.load_all(["customers"])
+
+
+def test_load_all_uses_default_dataset_list_and_skips_missing_date_columns(tmp_path):
+    data_dir = tmp_path / "synthetic"
+    data_dir.mkdir()
+    for name in [
+        "customers",
+        "subscriptions",
+        "transactions",
+        "product_usage",
+        "support_tickets",
+        "nps_scores",
+        "acquisition_channels",
+        "targets",
+    ]:
+        _write_csv(data_dir / f"{name}.csv", [{"id": f"{name}-1"}])
+
+    datasets = DataLoader(data_dir=data_dir).load_all()
+
+    assert set(datasets) == {
+        "customers",
+        "subscriptions",
+        "transactions",
+        "product_usage",
+        "support_tickets",
+        "nps_scores",
+        "acquisition_channels",
+        "targets",
+    }
+    assert datasets["customers"]["id"].iloc[0] == "customers-1"

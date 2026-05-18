@@ -46,6 +46,17 @@ def test_validate_output_schema_empty_records_safe(data_writer):
     data_writer.validate_output_schema([], ["a", "b"], "test_artifact")
 
 
+def test_validate_output_schema_rejects_invalid_data_type(data_writer):
+    with pytest.raises(ValueError, match="Data must be DataFrame or list of dicts"):
+        data_writer.validate_output_schema({"a": 1}, ["a"], "test_artifact")
+
+
+def test_validate_output_schema_disallows_extra_when_none_missing(data_writer):
+    df = pd.DataFrame({"a": [1], "b": [2]})
+
+    data_writer.validate_output_schema(df, ["a", "b"], "test_artifact", allow_extra=False)
+
+
 def test_write_processed_and_exports_create_csv_files(data_writer):
     processed_df = pd.DataFrame({"metric_name": ["MRR"], "value": [100.0]})
     export_df = pd.DataFrame({"customer_id": ["C1"], "risk_score": [0.9]})

@@ -199,6 +199,19 @@ class TestNoScoreWithoutDrivers:
         # Inactive customer should be excluded from scoring
         assert len(profiles) == 0
 
+    def test_latest_nps_signal_empty_when_date_column_missing(self, engine):
+        datasets = _make_churn_datasets()
+        datasets["nps_scores"] = pd.DataFrame({"customer_id": ["C1"], "score": [4]})
+
+        signals = engine.calculate_customer_signals(datasets)
+
+        assert "latest_nps_score" in signals.columns
+        assert pd.isna(signals.loc[0, "latest_nps_score"])
+
+
+def test_apply_operator_returns_false_for_type_errors():
+    assert _apply_operator("less_than", "bad", 10) is False
+
 
 class TestRevenueAtRisk:
     def test_medium_risk_customer_has_zero_revenue_at_risk(self, engine):

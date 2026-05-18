@@ -54,12 +54,23 @@ def test_writer_lists_tables(writer):
     assert set(tables) == {"table1", "table2"}
 
 
+def test_writer_lists_no_tables_when_database_missing(db_path):
+    writer = SQLiteWriter(db_path)
+
+    assert writer.list_tables() == []
+
+
 def test_writer_can_read_table_back_into_dataframe(writer):
     df = pd.DataFrame({"a": [1, 2], "b": ["x", "y"]})
     writer.write_dataframe("test_table", df)
 
     read_df = writer.read_table("test_table")
     pd.testing.assert_frame_equal(df, read_df)
+
+
+def test_writer_read_table_raises_for_missing_table(writer):
+    with pytest.raises(ValueError, match="does not exist"):
+        writer.read_table("missing_table")
 
 
 def test_writer_replaces_table_deterministically(writer):

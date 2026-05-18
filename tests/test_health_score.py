@@ -21,6 +21,13 @@ def test_inverse_scoring():
     assert score_mid == pytest.approx(50.0, rel=1e-5)
 
 
+def test_area_score_handles_nan_and_low_normal_value():
+    engine = ProductHealthScoreEngine()
+
+    assert engine.calculate_area_score(float("nan"), 0.8, 0.5) == 0.0
+    assert engine.calculate_area_score(0.2, 0.8, 0.5) == 0.0
+
+
 def test_product_health_score_output():
     engine = ProductHealthScoreEngine()
     metrics = {"retention_rate": 0.95, "churn_rate": 0.02}
@@ -58,3 +65,10 @@ def test_business_health_summary_scores_revenue_leakage_and_data_quality():
     assert by_area["Revenue Growth"]["status"] == "Healthy"
     assert by_area["Revenue Leakage"]["score"] == pytest.approx(75.0)
     assert by_area["Data Quality"]["status"] == "Healthy"
+
+
+def test_health_score_table_handles_empty_or_all_nan_metrics():
+    engine = ProductHealthScoreEngine()
+
+    assert engine.build_health_score_table({}).empty
+    assert engine.build_health_score_table({"retention_rate": float("nan")}).empty

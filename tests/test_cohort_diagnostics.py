@@ -33,6 +33,17 @@ def test_status_mapping(cohort_summary):
     assert df[df["cohort_month"] == "2023-04"]["status"].iloc[0] == "Healthy"
 
 
+def test_status_mapping_includes_risk_band():
+    engine = CohortDiagnosticsEngine()
+    summary = pd.DataFrame(
+        [{"cohort_month": "2023-05", "period_number": 1, "retention_rate": 0.69}]
+    )
+
+    df = engine.identify_weak_cohorts(summary, 0.80)
+
+    assert df.iloc[0]["status"] == "Risk"
+
+
 def test_diagnostics_output_structure(cohort_summary):
     engine = CohortDiagnosticsEngine()
     df = engine.build_cohort_diagnostics(cohort_summary, 0.80)
@@ -74,3 +85,17 @@ def test_empty_cohort_diagnostics_return_stable_schema():
         "likely_driver",
         "recommended_action",
     ]
+
+
+def test_empty_cohort_helpers_return_stable_schemas():
+    engine = CohortDiagnosticsEngine()
+
+    assert list(engine.calculate_cohort_delta(pd.DataFrame(), 0.8).columns) == [
+        "cohort_month",
+        "period_number",
+        "retention_rate",
+        "baseline_retention",
+        "delta",
+    ]
+    assert "status" in engine.identify_weak_cohorts(pd.DataFrame(), 0.8).columns
+    assert "recommended_action" in engine.diagnose_cohort_drivers(pd.DataFrame()).columns

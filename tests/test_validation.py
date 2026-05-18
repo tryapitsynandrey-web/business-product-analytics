@@ -8,6 +8,7 @@ No external services or real customer data are used.
 import pandas as pd
 import pytest
 
+import utils.validation as validation_module
 from utils.validation import (
     ValidationIssue,
     ValidationResult,
@@ -256,6 +257,21 @@ class TestValidateDateColumns:
         issues = validate_date_columns(valid_customers, ["nonexistent_date"], "customers")
         assert issues == []
 
+    def test_parse_exception_returns_error_issue(self, monkeypatch):
+        def boom(*args, **kwargs):
+            raise ValueError("parse exploded")
+
+        monkeypatch.setattr(validation_module.pd, "to_datetime", boom)
+
+        issues = validate_date_columns(
+            pd.DataFrame({"signup_date": ["2023-01-01"]}),
+            ["signup_date"],
+            "customers",
+        )
+
+        assert len(issues) == 1
+        assert "parse exploded" in issues[0].message
+
 
 # ---------------------------------------------------------------------------
 # Test: validate_allowed_values
@@ -305,6 +321,11 @@ class TestValidateNumericNonNegative:
         df = pd.DataFrame({"amount": [0.0, 100.0]})
         issues = validate_numeric_non_negative(df, ["amount"], "transactions")
         assert issues == []
+
+    def test_missing_numeric_column_is_skipped(self):
+        df = pd.DataFrame({"amount": [1.0]})
+
+        assert validate_numeric_non_negative(df, ["missing"], "transactions") == []
 
 
 # ---------------------------------------------------------------------------
@@ -448,3 +469,52 @@ class TestRunDatasetValidation:
         datasets = {"customers": valid_customers, "subscriptions": valid_subscriptions}
         result = run_dataset_validation(datasets, minimal_config)
         assert result.total_checks > 0
+
+    def test_run_validation_reports_per_dataset_issue_types(self, valid_customers, minimal_config):
+        bad_subscriptions = pd.DataFrame(
+            {
+                "subscription_id": ["S1"],
+                "customer_id": ["C1"],
+                "status": ["Bad"],
+                "monthly_price": [-10.0],
+                "start_date": ["not-a-date"],
+            }
+        )
+        datasets = {
+            "customers": valid_customers,
+            "subscriptions": bad_subscriptions,
+            "transactions": pd.DataFrame({"status": ["Bad"]}),
+            "nps_scores": pd.DataFrame({"score": [11]}),
+            "extra_dataset": pd.DataFrame({"value": [1]}),
+        }
+        config = {
+            **minimal_config,
+            "required_datasets": [
+                "customers",
+                "subscriptions",
+                "transactions",
+                "nps_scores",
+                "extra_dataset",
+            ],
+        }
+
+        result = run_dataset_validation(datasets, config)
+        checks = {issue.check_name for issue in result.issues}
+
+        assert {"date_columns", "allowed_values", "numeric_non_negative", "nps_range"}.issubset(
+            checks
+        )
+
+    def test_run_validation_reports_empty_and_missing_required_columns(
+        self, valid_customers, minimal_config
+    ):
+        datasets = {
+            "customers": valid_customers.drop(columns=["segment"]),
+            "subscriptions": pd.DataFrame(),
+        }
+
+        result = run_dataset_validation(datasets, minimal_config)
+        checks = {issue.check_name for issue in result.issues}
+
+        assert "not_empty" in checks
+        assert "required_columns" in checks

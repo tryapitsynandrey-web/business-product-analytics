@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import pytest
 
-from core.decision_trace import DecisionTrace, DecisionTraceEngine
+from core.decision_trace import DecisionTrace, DecisionTraceEngine, _risk_score_to_confidence
 from models.enums import RiskBand
 from models.risk_profile import ChurnRiskProfile
 
@@ -117,6 +117,10 @@ class TestCreateTrace:
     def test_trace_is_stored_internally(self, engine):
         engine.create_trace("T", "E1", "s", "r", "e", "b", "a", "High")
         assert engine.trace_count == 1
+
+
+def test_risk_score_to_confidence_low_band():
+    assert _risk_score_to_confidence(0.1) == "Low"
 
 
 # ---------------------------------------------------------------------------

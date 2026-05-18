@@ -73,6 +73,20 @@ class TestCompletenessScore:
         score = scorer.calculate_completeness_score("empty")
         assert score == pytest.approx(1.0)
 
+    def test_zero_cell_non_empty_frame_returns_1(self):
+        class NonEmptyZeroCellFrame(pd.DataFrame):
+            @property
+            def empty(self):
+                return False
+
+            @property
+            def size(self):
+                return 0
+
+        scorer = DataQualityScorer([], {"weird": NonEmptyZeroCellFrame()})
+
+        assert scorer.calculate_completeness_score("weird") == pytest.approx(1.0)
+
 
 # ---------------------------------------------------------------------------
 # Uniqueness score
@@ -99,6 +113,11 @@ class TestUniquenessScore:
         scorer = DataQualityScorer([issue], _clean_datasets())
         score = scorer.calculate_uniqueness_score("customers")
         assert score == pytest.approx(0.0)
+
+    def test_empty_dataset_returns_1(self):
+        scorer = DataQualityScorer([], {"empty": pd.DataFrame()})
+
+        assert scorer.calculate_uniqueness_score("empty") == pytest.approx(1.0)
 
 
 # ---------------------------------------------------------------------------
@@ -191,6 +210,30 @@ class TestDatasetQualityScore:
         result = scorer.calculate_dataset_quality_score("customers")
         assert isinstance(result.business_risk, str)
         assert len(result.business_risk) > 0
+
+    def test_watch_and_critical_status_bands(self):
+        class FixedScoreScorer(DataQualityScorer):
+            def __init__(self, score: float):
+                super().__init__([], {"customers": pd.DataFrame({"id": [1]})})
+                self.score = score
+
+            def calculate_completeness_score(self, dataset_name: str) -> float:
+                return self.score
+
+            def calculate_uniqueness_score(self, dataset_name: str) -> float:
+                return self.score
+
+            def calculate_validity_score(self, dataset_name: str) -> float:
+                return self.score
+
+            def calculate_referential_integrity_score(self, dataset_name: str) -> float:
+                return self.score
+
+        assert FixedScoreScorer(0.8).calculate_dataset_quality_score("customers").status == "Watch"
+        assert (
+            FixedScoreScorer(0.2).calculate_dataset_quality_score("customers").status
+            == "Critical"
+        )
 
 
 # ---------------------------------------------------------------------------

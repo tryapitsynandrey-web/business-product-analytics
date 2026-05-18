@@ -1,5 +1,6 @@
 import pandas as pd
 import pytest
+import sqlite3
 
 from adapters.sqlite_reader import SQLiteReader
 from adapters.sqlite_writer import SQLiteWriter
@@ -44,6 +45,14 @@ def populated_db_path(tmp_path):
     
     return db_path
 
+
+@pytest.fixture
+def empty_db_path(tmp_path):
+    db_path = tmp_path / "empty.db"
+    with sqlite3.connect(db_path):
+        pass
+    return db_path
+
 def test_reader_raises_file_not_found_for_missing_db(tmp_path):
     missing_db = tmp_path / "missing.db"
     with pytest.raises(FileNotFoundError):
@@ -70,6 +79,24 @@ def test_reader_reads_full_table(populated_db_path):
     assert not df.empty
     assert len(df) == 2
     assert list(df.columns) == ["metric_name", "value", "grain", "explanation"]
+
+
+def test_reader_returns_empty_for_allowed_missing_tables(empty_db_path):
+    reader = SQLiteReader(empty_db_path)
+
+    assert reader.read_table("kpi_summary").empty
+    assert reader.read_columns("kpi_summary", ["metric_name"]).empty
+    assert reader.read_top("kpi_summary").empty
+    assert reader.get_high_risk_customers().empty
+    assert reader.get_top_recommendations().empty
+    assert reader.get_critical_health_scores().empty
+
+
+def test_reader_rejects_empty_column_list_when_table_exists(populated_db_path):
+    reader = SQLiteReader(populated_db_path)
+
+    with pytest.raises(ValueError, match="Columns list cannot be empty"):
+        reader.read_columns("kpi_summary", [])
 
 def test_reader_reads_selected_columns(populated_db_path):
     reader = SQLiteReader(populated_db_path)
@@ -134,6 +161,13 @@ def test_top_recommendations_query(populated_db_path):
     assert len(df) == 1
     assert df.iloc[0]["rule_id"] == "R1"
     assert df.iloc[0]["priority_score"] == 90.0
+
+
+def test_top_recommendations_rejects_negative_limit(populated_db_path):
+    reader = SQLiteReader(populated_db_path)
+
+    with pytest.raises(ValueError, match="Limit cannot be negative"):
+        reader.get_top_recommendations(limit=-1)
 
 def test_critical_health_scores_query(populated_db_path):
     reader = SQLiteReader(populated_db_path)

@@ -228,6 +228,16 @@ class TestUsageTrend:
         # With only one unique date, trend should be No Data
         assert all(t == "No Data" for t in df["usage_trend"].values)
 
+    def test_usage_trend_no_date_column_returns_no_data_per_customer(self):
+        datasets = _make_datasets(num_customers=2)
+        usage = datasets["product_usage"].drop(columns=["date"])
+        engine = Customer360Engine(datasets, [], [])
+
+        trend = engine.calculate_usage_trend(usage)
+
+        assert trend["customer_id"].tolist() == ["C0", "C1"]
+        assert trend["usage_trend"].tolist() == ["No Data", "No Data"]
+
 
 # ---------------------------------------------------------------------------
 # Missing NPS handled safely

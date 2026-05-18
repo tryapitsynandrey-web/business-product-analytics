@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import pytest
 import pandas as pd
+import yaml
 
 from core.metric_governance import MetricGovernance, GovernanceCheckResult
 
@@ -141,3 +142,53 @@ class TestContractValidation:
     def test_validate_metric_returns_false_for_unknown(self, governance, minimal_datasets):
         passed = governance.validate_metric("unknown_metric", minimal_datasets)
         assert passed is False
+
+    def test_disabled_metric_fails_with_warning_issue(self, tmp_path):
+        catalog_path = tmp_path / "metric_catalog.yaml"
+        catalog_path.write_text(
+            yaml.safe_dump(
+                {
+                    "metrics": [
+                        {
+                            "metric_name": "disabled_metric",
+                            "enabled": False,
+                            "source_datasets": [],
+                        }
+                    ]
+                }
+            ),
+            encoding="utf-8",
+        )
+        governance = MetricGovernance(catalog_path=catalog_path)
+
+        result = governance.validate_metric_contract("disabled_metric", {})
+
+        assert result.passed is False
+        assert result.issues[0].check_name == "metric_enabled"
+
+
+class TestMetricRegistry:
+    def test_registry_counts_mapped_disabled_and_unmapped_metrics(self, tmp_path):
+        catalog_path = tmp_path / "metric_catalog.yaml"
+        catalog_path.write_text(
+            yaml.safe_dump(
+                {
+                    "metrics": [
+                        {"metric_name": "monthly_recurring_revenue", "enabled": True},
+                        {"metric_name": "disabled_metric", "enabled": False},
+                        {"metric_name": "unmapped_metric", "enabled": True},
+                    ]
+                }
+            ),
+            encoding="utf-8",
+        )
+        governance = MetricGovernance(catalog_path=catalog_path)
+
+        registry = governance.build_metric_registry()
+
+        assert registry.mapped_count == 1
+        assert registry.disabled_count == 1
+        assert registry.unmapped_count == 1
+        statuses = {entry.metric_name: entry.implementation_status for entry in registry.entries}
+        assert statuses["disabled_metric"] == "Disabled"
+        assert statuses["unmapped_metric"] == "Unmapped"

@@ -59,6 +59,12 @@ def test_generator_is_deterministic_for_same_seed_and_as_of_date(tmp_path):
         pd.testing.assert_frame_equal(first[name], second[name])
 
 
+def test_generator_uses_default_as_of_date_when_none(tmp_path):
+    generator = SyntheticDataGenerator(seed=1, num_customers=1, output_dir=tmp_path)
+
+    assert generator.end_date == pd.Timestamp("2026-05-01")
+
+
 def test_individual_generator_methods_preserve_foreign_key_relationships(tmp_path):
     generator = SyntheticDataGenerator(
         seed=13,

@@ -78,6 +78,12 @@ def test_empty_transactions():
     assert df.empty
     assert "period" in df.columns
 
+    assert engine.analyze_revenue_by_segment(empty, empty).empty
+    assert engine.analyze_revenue_by_plan(empty, empty).empty
+    assert engine.calculate_refund_impact(empty) == 0.0
+    assert engine.calculate_failed_payment_impact(empty) == 0.0
+    assert engine.calculate_revenue_movement(empty).empty
+
 
 def test_revenue_by_segment_tracks_unknown_customers(transactions):
     engine = RevenueAnalysisEngine()
@@ -134,3 +140,40 @@ def test_revenue_movement_calculates_period_growth(transactions):
     feb = df[df["period"] == "2023-02"].iloc[0]
     assert feb["previous_revenue"] == 80.0
     assert feb["revenue_growth_rate"] == pytest.approx(1.5)
+
+
+def test_revenue_grouping_without_status_or_amount_columns():
+    engine = RevenueAnalysisEngine()
+    transactions = pd.DataFrame(
+        [
+            {"transaction_date": "2023-01-05", "customer_id": "1", "subscription_id": "s1"},
+            {"transaction_date": "2023-01-10", "customer_id": "2", "subscription_id": "s2"},
+        ]
+    )
+    customers = pd.DataFrame(
+        [{"customer_id": "1", "segment": "Enterprise"}, {"customer_id": "2", "segment": "SMB"}]
+    )
+    subscriptions = pd.DataFrame(
+        [{"subscription_id": "s1", "plan": "Pro"}, {"subscription_id": "s2", "plan": "Basic"}]
+    )
+
+    assert engine.analyze_revenue_by_month(transactions)["net_revenue"].sum() == 0.0
+    assert engine.analyze_revenue_by_segment(transactions, customers)["net_revenue"].sum() == 0.0
+    assert engine.analyze_revenue_by_plan(transactions, subscriptions)["net_revenue"].sum() == 0.0
+
+
+def test_summarize_revenue_health_status_bands():
+    engine = RevenueAnalysisEngine()
+
+    def txns(success, refunded, failed):
+        rows = [{"status": "Success", "amount": success, "transaction_date": "2023-01-01"}]
+        if refunded:
+            rows.append({"status": "Refunded", "amount": refunded, "transaction_date": "2023-01-02"})
+        if failed:
+            rows.append({"status": "Failed", "amount": failed, "transaction_date": "2023-01-03"})
+        return pd.DataFrame(rows)
+
+    assert engine.summarize_revenue_health(txns(100, 1, 1))["status"] == "Healthy"
+    assert engine.summarize_revenue_health(txns(100, 3, 1))["status"] == "Watch"
+    assert engine.summarize_revenue_health(txns(100, 6, 1))["status"] == "Risk"
+    assert engine.summarize_revenue_health(txns(100, 11, 1))["status"] == "Critical"

@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import date
 from types import SimpleNamespace
 
-from core.report_generator import ReportGenerator
+from core.report_generator import ReportGenerator, _table_separator
 from models.enums import RiskBand
 
 
@@ -159,3 +159,20 @@ def test_report_generator_handles_empty_report_inputs(tmp_path):
     assert "authoritative metric glossary" in (tmp_path / "metric_definitions.md").read_text(
         encoding="utf-8"
     )
+
+
+def test_executive_summary_handles_empty_recommendations(tmp_path):
+    generator = ReportGenerator(
+        reports_dir=tmp_path,
+        generated_on=date(2026, 5, 1),
+    )
+
+    generator.generate_executive_summary({"kpis": [], "leakages": [], "recommendations": []})
+
+    assert "No recommendations generated." in (tmp_path / "executive_summary.md").read_text(
+        encoding="utf-8"
+    )
+
+
+def test_table_separator_helper_renders_markdown_separator():
+    assert _table_separator(1, 2, 3) == "| --- | --- | --- |"

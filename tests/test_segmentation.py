@@ -56,3 +56,27 @@ def test_empty_dataframe_handling():
     df = engine.assign_customer_segments(pd.DataFrame())
     assert df.empty
     assert "revenue_segment" in df.columns
+
+
+def test_missing_segment_source_columns_use_fallback_labels():
+    engine = SegmentationEngine()
+    df = pd.DataFrame([{"customer_id": "1"}, {"customer_id": "2", "churn_risk_score": None}])
+
+    revenue = engine.segment_by_revenue(df)
+    risk = engine.segment_by_risk(df.drop(columns=["churn_risk_score"]))
+    risk_with_nan = engine.segment_by_risk(df)
+    nps = engine.segment_by_nps(df)
+
+    assert revenue["revenue_segment"].tolist() == ["No Revenue", "No Revenue"]
+    assert risk["risk_segment"].tolist() == ["Unknown Risk", "Unknown Risk"]
+    assert risk_with_nan["risk_segment"].iloc[1] == "Unknown Risk"
+    assert nps["nps_segment"].tolist() == ["No NPS", "No NPS"]
+
+
+def test_segment_summary_empty_input_returns_schema():
+    engine = SegmentationEngine()
+
+    df = engine.build_segment_summary(pd.DataFrame())
+
+    assert df.empty
+    assert df.columns.tolist() == ["segment_type", "segment_name", "customer_count", "percentage"]

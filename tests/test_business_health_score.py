@@ -17,6 +17,7 @@ from core.business_health.business_health_score import (
     score_efficiency,
     score_risk,
     _status_from_score,
+    _score_ratio,
 )
 
 
@@ -41,6 +42,10 @@ class TestStatusFromScore:
 
     def test_zero_is_critical(self):
         assert _status_from_score(0.0) == "Critical"
+
+
+def test_score_ratio_returns_neutral_when_target_is_zero():
+    assert _score_ratio(10.0, 0.0) == 50.0
 
 
 class TestScoreProfitability:

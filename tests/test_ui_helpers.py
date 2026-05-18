@@ -60,6 +60,7 @@ def test_format_percentage():
 def test_format_number():
     assert format_number(1234) == "1,234"
     assert format_number(1234.567, decimals=2) == "1,234.57"
+    assert format_number(float("nan")) == "N/A"
     assert format_number("invalid") == "N/A"
     assert format_number(None) == "N/A"
 
@@ -103,6 +104,7 @@ def test_format_file_size():
     assert format_file_size(1024) == "1.0 KB"
     assert format_file_size(1048576) == "1.0 MB"
     assert format_file_size(1073741824) == "1.0 GB"
+    assert format_file_size(1099511627776) == "1.0 TB"
     assert format_file_size(None) == "Unknown"
     assert format_file_size("invalid") == "Unknown"
 
@@ -129,12 +131,14 @@ def test_build_data_freshness_summary_statuses():
     aging = build_data_freshness_summary(now - 48 * 3600, now_timestamp=now)
     stale = build_data_freshness_summary(now - 96 * 3600, now_timestamp=now)
     missing = build_data_freshness_summary(None, now_timestamp=now)
+    unknown = build_data_freshness_summary(float("nan"), now_timestamp=now)
 
     assert fresh["status"] == "🟢 Fresh"
     assert fresh["age"] == "1 hour"
     assert aging["status"] == "🟡 Aging"
     assert stale["status"] == "🔴 Stale"
     assert missing["status"] == "🔴 Missing"
+    assert unknown["status"] == "🔴 Unknown"
 
 
 def test_db_status_label():
@@ -249,6 +253,19 @@ def test_apply_quick_view_revenue_risk_keeps_largest_exposure():
     filtered = apply_quick_view(df, "Revenue Risk")
 
     assert filtered["id"].tolist() == ["d"]
+
+
+def test_apply_quick_view_revenue_risk_fallbacks_return_input():
+    no_numeric = pd.DataFrame([{"id": "a", "name": "No numeric exposure"}])
+    zero_numeric = pd.DataFrame(
+        [
+            {"id": "a", "estimated_revenue_impact": 0},
+            {"id": "b", "estimated_revenue_impact": 0},
+        ]
+    )
+
+    assert apply_quick_view(no_numeric, "Revenue Risk")["id"].tolist() == ["a"]
+    assert apply_quick_view(zero_numeric, "Revenue Risk")["id"].tolist() == ["a", "b"]
 
 
 def test_apply_quick_view_retention_focus_uses_risk_or_keywords():
@@ -367,6 +384,9 @@ def test_prepare_metric_chart_data():
 
     assert prepare_metric_chart_data(None).empty
     assert prepare_metric_chart_data(df, "missing_col").empty
+    assert prepare_metric_chart_data(
+        pd.DataFrame({"metric_name": ["A"], "value": ["invalid"]})
+    ).empty
 
 
 def test_prepare_status_counts():
@@ -463,6 +483,7 @@ def test_determine_business_status_prioritizes_worst_status():
     assert (
         determine_business_status(pd.DataFrame({"status": ["Critical", "Healthy"]})) == "Critical"
     )
+    assert determine_business_status(pd.DataFrame({"status": ["Healthy", "Good"]})) == "Healthy"
     assert determine_business_status(pd.DataFrame()) == "Unknown"
 
 
@@ -488,6 +509,20 @@ def test_prepare_top_actions_sorts_by_priority_score():
 
     assert len(actions) == 1
     assert actions.iloc[0]["intervention_id"] == "IV-1"
+
+
+def test_prepare_top_actions_handles_empty_and_missing_score():
+    assert prepare_top_actions(None).empty
+    df = pd.DataFrame(
+        [
+            {"intervention_id": "IV-1", "recommendation_title": "A"},
+            {"intervention_id": "IV-2", "recommendation_title": "B"},
+        ]
+    )
+
+    actions = prepare_top_actions(df)
+
+    assert actions["intervention_id"].tolist() == ["IV-1", "IV-2"]
 
 
 def test_build_decision_brief_summarizes_intervention_view():
@@ -565,6 +600,61 @@ def test_decision_brief_empty_and_markdown_export():
     assert "No rows match current decision view." in brief["summary"]
     assert "# Recommendations" in markdown
     assert "- Quick view: Revenue Risk" in markdown
+
+
+def test_decision_brief_why_it_matters_variants_and_markdown_skip():
+    impact_only = build_decision_brief(
+        pd.DataFrame([{"recommendation_title": "A", "estimated_revenue_impact": 10}]),
+        "Impact",
+    )
+    urgent_only = build_decision_brief(
+        pd.DataFrame([{"recommendation_title": "B", "priority_band": "High"}]),
+        "Urgent",
+    )
+    neutral = build_decision_brief(pd.DataFrame([{"recommendation_title": "C"}]), "Neutral")
+
+    markdown = decision_brief_to_markdown(
+        {
+            "title": "Mixed",
+            "quick_view": "All",
+            "records": 1,
+            "impact_label": "Impact",
+            "formatted_impact": "$0.00",
+            "urgent_count": 0,
+            "summary": "Summary",
+            "why_it_matters": "Why",
+            "top_actions": ["bad-item", {"title": "Good", "action": "Act"}],
+        }
+    )
+
+    assert "protect or capture" in impact_only["why_it_matters"]
+    assert "clear urgent operational risk" in urgent_only["why_it_matters"]
+    assert "assign owners" in neutral["why_it_matters"]
+    assert "Good" in markdown
+    assert "bad-item" not in markdown
+
+
+def test_decision_brief_falls_back_for_blank_values_and_zero_sort_score():
+    brief = build_decision_brief(
+        pd.DataFrame(
+            [
+                {
+                    "recommendation_title": "nan",
+                    "recommended_action": "   ",
+                    "suggested_owner": "none",
+                    "priority_band": "<NA>",
+                    "priority_score": 0,
+                }
+            ]
+        ),
+        "Fallbacks",
+    )
+
+    action = brief["top_actions"][0]
+    assert action["title"] == "Record"
+    assert action["action"] == "Review record details."
+    assert action["owner"] == "Unassigned"
+    assert action["status"] == "Unscored"
 
 
 def test_prepare_owner_workload_summary_groups_and_sorts():
@@ -645,6 +735,43 @@ def test_build_data_quality_overview_summarizes_scores():
     assert overview["lowest_dimension"] == "Referential Integrity"
 
 
+def test_build_data_quality_overview_without_overall_or_status():
+    df = pd.DataFrame(
+        [
+            {"dataset": "customers", "completeness_score": 0.8, "validity_score": 0.7},
+            {"dataset": "subscriptions"},
+        ]
+    )
+
+    overview = build_data_quality_overview(df)
+
+    assert overview["datasets"] == 2
+    assert overview["needs_attention"] == 2
+
+
+def test_build_data_quality_overview_without_score_columns():
+    overview = build_data_quality_overview(pd.DataFrame([{"dataset": "customers"}]))
+
+    assert overview["lowest_dimension"] == "Unknown"
+    assert overview["lowest_dimension_score"] == 0.0
+
+
+def test_build_data_quality_overview_handles_empty_status_series_branch():
+    class NonEmptyFrame(pd.DataFrame):
+        @property
+        def _constructor(self):
+            return NonEmptyFrame
+
+        @property
+        def empty(self):
+            return False
+
+    overview = build_data_quality_overview(NonEmptyFrame(columns=["overall_score"]))
+
+    assert overview["datasets"] == 0
+    assert overview["worst_status"] == "Unknown"
+
+
 def test_prepare_quality_dimension_summary_orders_lowest_first():
     df = pd.DataFrame(
         [
@@ -661,6 +788,14 @@ def test_prepare_quality_dimension_summary_orders_lowest_first():
 
     assert summary["dimension"].tolist()[0] == "Validity"
     assert summary.iloc[0]["status"] == "Risk"
+
+
+def test_prepare_quality_dimension_summary_skips_missing_and_invalid_columns():
+    summary = prepare_quality_dimension_summary(
+        pd.DataFrame([{"dataset": "customers", "completeness_score": "bad"}])
+    )
+
+    assert summary.empty
 
 
 def test_prepare_quality_issue_queue_adds_weakest_dimension_and_sorts_risk():
@@ -696,10 +831,33 @@ def test_prepare_quality_issue_queue_adds_weakest_dimension_and_sorts_risk():
     assert queue.iloc[0]["lowest_dimension_score"] == 0.4
 
 
+def test_prepare_quality_issue_queue_derives_missing_columns():
+    queue = prepare_quality_issue_queue(
+        pd.DataFrame(
+            [
+                {"dataset": "customers", "completeness_score": "bad"},
+                {"dataset": "subscriptions", "validity_score": 0.8},
+            ]
+        )
+    )
+
+    assert queue.iloc[0]["dataset"] == "customers"
+    assert queue.iloc[0]["status"] == "Critical"
+    assert queue.iloc[0]["business_risk"] == ""
+
+
 def test_quality_helpers_handle_missing_data():
     assert build_data_quality_overview(None)["datasets"] == 0
     assert prepare_quality_dimension_summary(None).empty
+    assert prepare_quality_issue_queue(None).empty
     assert prepare_quality_issue_queue(pd.DataFrame({"status": ["Good"]})).empty
+
+
+def test_filter_customer_360_handles_empty_and_optional_filters():
+    df = pd.DataFrame([{"customer_id": "C1", "segment": "SMB"}])
+
+    assert filter_customer_360(None).empty
+    assert filter_customer_360(df)["customer_id"].tolist() == ["C1"]
 
 
 def test_filter_customer_360_applies_common_filters():
@@ -738,3 +896,21 @@ def test_build_customer_profile_summary_returns_display_fields():
     assert summary["Customer"] == "C1"
     assert summary["Revenue at Risk"] == 199.0
     assert summary["Recommended Action"] == "Call customer"
+
+
+def test_prepare_display_dataframe_ignores_missing_requested_columns():
+    df = pd.DataFrame([{"amount": 10}])
+
+    display = prepare_display_dataframe(
+        df,
+        currency_columns=["missing_currency"],
+        percentage_columns=["missing_percentage"],
+        status_columns=["missing_status"],
+        number_columns=["missing_number"],
+    )
+
+    assert display.equals(df)
+
+
+def test_build_export_filename_handles_nan_timestamp():
+    assert build_export_filename("Report", timestamp=float("nan")) == "report_export.csv"

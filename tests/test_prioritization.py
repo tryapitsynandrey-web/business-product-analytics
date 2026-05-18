@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import pytest
 
+import core.prioritization as prioritization
 from core.prioritization import (
     assign_priority_band,
     calculate_priority_score,
@@ -50,6 +51,13 @@ class TestCalculatePriorityScore:
 
     def test_numeric_effort_weight_used_directly(self):
         score = calculate_priority_score(100.0, 1.0, 2.0)
+        assert score == pytest.approx(50.0)
+
+    def test_non_positive_parsed_effort_defaults_to_one(self, monkeypatch):
+        monkeypatch.setattr(prioritization, "_parse_effort_weight", lambda _: 0.0)
+
+        score = calculate_priority_score(100.0, 0.5, "Low")
+
         assert score == pytest.approx(50.0)
 
 
@@ -163,3 +171,18 @@ class TestRankInterventions:
 
     def test_empty_list_returns_empty(self):
         assert rank_interventions([]) == []
+
+    def test_missing_priority_score_is_computed_from_intervention_fields(self):
+        ranked = rank_interventions(
+            [
+                {
+                    "intervention_id": "IV-003",
+                    "estimated_revenue_impact": 3000.0,
+                    "confidence_level": "High",
+                    "effort_level": "Medium",
+                }
+            ]
+        )
+
+        assert ranked[0]["priority_score"] == pytest.approx(1275.0)
+        assert ranked[0]["priority_band"] == "High"

@@ -29,6 +29,10 @@ from app.ui_helpers import (
     build_decision_brief,
     decision_brief_to_markdown,
     prepare_owner_workload_summary,
+    quality_status_for_score,
+    build_data_quality_overview,
+    prepare_quality_dimension_summary,
+    prepare_quality_issue_queue,
     filter_customer_360,
     build_customer_profile_summary,
     summarize_filter_state,
@@ -596,6 +600,106 @@ def test_prepare_owner_workload_summary_handles_missing_owner():
     assert prepare_owner_workload_summary(None).empty
     assert prepare_owner_workload_summary(pd.DataFrame()).empty
     assert prepare_owner_workload_summary(pd.DataFrame({"priority_band": ["High"]})).empty
+
+
+def test_quality_status_for_score_uses_expected_bands():
+    assert quality_status_for_score(0.95) == "Good"
+    assert quality_status_for_score(0.8) == "Watch"
+    assert quality_status_for_score(0.6) == "Risk"
+    assert quality_status_for_score(0.4) == "Critical"
+    assert quality_status_for_score("bad") == "Unknown"
+
+
+def test_build_data_quality_overview_summarizes_scores():
+    df = pd.DataFrame(
+        [
+            {
+                "dataset": "customers",
+                "completeness_score": 0.95,
+                "uniqueness_score": 1.0,
+                "validity_score": 0.9,
+                "referential_integrity_score": 1.0,
+                "overall_score": 0.9625,
+                "status": "Good",
+                "business_risk": "Low",
+            },
+            {
+                "dataset": "subscriptions",
+                "completeness_score": 0.7,
+                "uniqueness_score": 0.8,
+                "validity_score": 0.6,
+                "referential_integrity_score": 0.4,
+                "overall_score": 0.65,
+                "status": "Risk",
+                "business_risk": "High",
+            },
+        ]
+    )
+
+    overview = build_data_quality_overview(df)
+
+    assert overview["datasets"] == 2
+    assert overview["average_score_display"] == "80.6%"
+    assert overview["needs_attention"] == 1
+    assert overview["worst_status"] == "Risk"
+    assert overview["lowest_dimension"] == "Referential Integrity"
+
+
+def test_prepare_quality_dimension_summary_orders_lowest_first():
+    df = pd.DataFrame(
+        [
+            {
+                "completeness_score": 0.9,
+                "uniqueness_score": 1.0,
+                "validity_score": 0.7,
+                "referential_integrity_score": 0.8,
+            }
+        ]
+    )
+
+    summary = prepare_quality_dimension_summary(df)
+
+    assert summary["dimension"].tolist()[0] == "Validity"
+    assert summary.iloc[0]["status"] == "Risk"
+
+
+def test_prepare_quality_issue_queue_adds_weakest_dimension_and_sorts_risk():
+    df = pd.DataFrame(
+        [
+            {
+                "dataset": "customers",
+                "completeness_score": 0.95,
+                "uniqueness_score": 1.0,
+                "validity_score": 0.9,
+                "referential_integrity_score": 1.0,
+                "overall_score": 0.96,
+                "status": "Good",
+                "business_risk": "Low",
+            },
+            {
+                "dataset": "subscriptions",
+                "completeness_score": 0.5,
+                "uniqueness_score": 0.7,
+                "validity_score": 0.6,
+                "referential_integrity_score": 0.4,
+                "overall_score": 0.55,
+                "status": "Risk",
+                "business_risk": "High",
+            },
+        ]
+    )
+
+    queue = prepare_quality_issue_queue(df)
+
+    assert queue["dataset"].tolist() == ["subscriptions", "customers"]
+    assert queue.iloc[0]["lowest_dimension"] == "Referential Integrity"
+    assert queue.iloc[0]["lowest_dimension_score"] == 0.4
+
+
+def test_quality_helpers_handle_missing_data():
+    assert build_data_quality_overview(None)["datasets"] == 0
+    assert prepare_quality_dimension_summary(None).empty
+    assert prepare_quality_issue_queue(pd.DataFrame({"status": ["Good"]})).empty
 
 
 def test_filter_customer_360_applies_common_filters():

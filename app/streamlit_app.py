@@ -32,6 +32,9 @@ try:
         build_decision_brief,
         decision_brief_to_markdown,
         prepare_owner_workload_summary,
+        build_data_quality_overview,
+        prepare_quality_dimension_summary,
+        prepare_quality_issue_queue,
         filter_customer_360,
         build_customer_profile_summary,
         summarize_filter_state,
@@ -63,6 +66,9 @@ except ModuleNotFoundError:
         build_decision_brief,
         decision_brief_to_markdown,
         prepare_owner_workload_summary,
+        build_data_quality_overview,
+        prepare_quality_dimension_summary,
+        prepare_quality_issue_queue,
         filter_customer_360,
         build_customer_profile_summary,
         summarize_filter_state,
@@ -250,6 +256,7 @@ pages = [
     "Top Actions",
     "Customer 360",
     "KPI Summary",
+    "Data Quality",
     "Product / Business Health",
     "High-Risk Customers",
     "Recommendations",
@@ -668,6 +675,76 @@ elif selection == "KPI Summary":
         render_csv_download("Download KPI summary CSV", kpis, "kpi-summary", "download_kpis")
     else:
         st.info(safe_dataframe_empty_message(kpis, "KPI summary"))
+
+elif selection == "Data Quality":
+    quality = fetch_data(reader, "read_table", db_mtime, table_name="data_quality_scores")
+    if not quality.empty:
+        col1, col2 = st.columns(2)
+        with col1:
+            if "status" in quality.columns:
+                selected_status = st.multiselect("Status", get_filter_options(quality, "status"))
+                quality = filter_dataframe_by_values(quality, "status", selected_status)
+        with col2:
+            search_term = st.text_input("Search Dataset", "")
+            quality = filter_dataframe_by_search(quality, search_term, ["dataset", "business_risk"])
+
+        overview = build_data_quality_overview(quality)
+        metric_cols = st.columns(4)
+        with metric_cols[0]:
+            st.metric("Datasets", str(overview["datasets"]))
+        with metric_cols[1]:
+            st.metric("Average Score", str(overview["average_score_display"]))
+        with metric_cols[2]:
+            st.metric("Needs Attention", str(overview["needs_attention"]))
+        with metric_cols[3]:
+            st.metric("Worst Status", str(overview["worst_status"]))
+
+        st.caption(
+            f"Lowest dimension: {overview['lowest_dimension']} "
+            f"({overview['lowest_dimension_display']})."
+        )
+
+        dimension_summary = prepare_quality_dimension_summary(quality)
+        if not dimension_summary.empty:
+            chart_data = dimension_summary.set_index("dimension")[["average_score"]]
+            st.bar_chart(chart_data)
+
+        issue_queue = prepare_quality_issue_queue(quality)
+        if not issue_queue.empty:
+            st.subheader("Quality Queue")
+            display_queue = prepare_display_dataframe(
+                issue_queue,
+                percentage_columns=["overall_score", "lowest_dimension_score"],
+                status_columns=["status"],
+            )
+            st.dataframe(display_queue, width="stretch", hide_index=True)
+            render_csv_download(
+                "Download quality queue CSV",
+                issue_queue,
+                "data-quality-queue",
+                "download_data_quality_queue",
+            )
+
+        display_quality = prepare_display_dataframe(
+            quality,
+            percentage_columns=[
+                "completeness_score",
+                "uniqueness_score",
+                "validity_score",
+                "referential_integrity_score",
+                "overall_score",
+            ],
+            status_columns=["status"],
+        )
+        st.dataframe(display_quality, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download data quality CSV",
+            quality,
+            "data-quality",
+            "download_data_quality",
+        )
+    else:
+        st.info(safe_dataframe_empty_message(quality, "data quality"))
 
 elif selection == "Product / Business Health":
     st.write("Calculated health scores for major product and business areas.")

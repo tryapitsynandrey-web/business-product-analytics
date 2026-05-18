@@ -9,6 +9,20 @@ EXECUTIVE_METRICS = {
     "revenue_at_risk": "Revenue at Risk",
 }
 
+QUALITY_SCORE_COLUMNS = {
+    "completeness_score": "Completeness",
+    "uniqueness_score": "Uniqueness",
+    "validity_score": "Validity",
+    "referential_integrity_score": "Referential Integrity",
+}
+
+QUALITY_STATUS_ORDER = {
+    "critical": 0,
+    "risk": 1,
+    "watch": 2,
+    "good": 3,
+}
+
 DECISION_BRIEF_IMPACT_COLUMNS = [
     "estimated_revenue_impact",
     "revenue_at_risk",
@@ -940,6 +954,169 @@ def prepare_owner_workload_summary(
             ascending=[False, False, False, True],
         )
         .head(max_groups)
+        .reset_index(drop=True)
+    )
+
+
+def quality_status_for_score(score: object) -> str:
+    """Map a normalized quality score to a dashboard status band."""
+    try:
+        value = float(score)  # type: ignore
+    except (TypeError, ValueError):
+        return "Unknown"
+
+    if value >= 0.90:
+        return "Good"
+    if value >= 0.75:
+        return "Watch"
+    if value >= 0.50:
+        return "Risk"
+    return "Critical"
+
+
+def _lowest_quality_dimension(row: pd.Series) -> tuple[str, float]:
+    values = []
+    for col, label in QUALITY_SCORE_COLUMNS.items():
+        if col not in row.index:
+            continue
+        score = pd.to_numeric(pd.Series([row[col]]), errors="coerce").iloc[0]
+        if pd.isna(score):
+            continue
+        values.append((label, float(score)))
+
+    if not values:
+        return "Unknown", 0.0
+    return min(values, key=lambda item: item[1])
+
+
+def build_data_quality_overview(df: pd.DataFrame | None) -> dict[str, object]:
+    """Return headline metrics for a data quality score table."""
+    if df is None or df.empty:
+        return {
+            "datasets": 0,
+            "average_score": 0.0,
+            "average_score_display": format_percentage(0.0),
+            "needs_attention": 0,
+            "worst_status": "Unknown",
+            "lowest_dimension": "Unknown",
+            "lowest_dimension_score": 0.0,
+            "lowest_dimension_display": format_percentage(0.0),
+        }
+
+    data = df.copy()
+    if "overall_score" in data.columns:
+        scores = pd.to_numeric(data["overall_score"], errors="coerce").fillna(0)
+    else:
+        available_scores = [col for col in QUALITY_SCORE_COLUMNS if col in data.columns]
+        if available_scores:
+            scores = data[available_scores].apply(pd.to_numeric, errors="coerce").mean(axis=1)
+        else:
+            scores = pd.Series(0.0, index=data.index)
+
+    statuses = (
+        data["status"].astype(str).str.lower()
+        if "status" in data.columns
+        else scores.apply(quality_status_for_score).astype(str).str.lower()
+    )
+    attention_mask = statuses.isin({"watch", "risk", "critical"})
+    worst_status = "Unknown"
+    if not statuses.empty:
+        worst_key = min(statuses, key=lambda status: QUALITY_STATUS_ORDER.get(status, 999))
+        worst_status = worst_key.title()
+
+    dimension_summary = prepare_quality_dimension_summary(data)
+    if dimension_summary.empty:
+        lowest_dimension = "Unknown"
+        lowest_dimension_score = 0.0
+    else:
+        first_row = dimension_summary.iloc[0]
+        lowest_dimension = str(first_row["dimension"])
+        lowest_dimension_score = float(first_row["average_score"])
+
+    average_score = float(scores.mean()) if not scores.empty else 0.0
+    return {
+        "datasets": int(len(data)),
+        "average_score": average_score,
+        "average_score_display": format_percentage(average_score),
+        "needs_attention": int(attention_mask.sum()),
+        "worst_status": worst_status,
+        "lowest_dimension": lowest_dimension,
+        "lowest_dimension_score": lowest_dimension_score,
+        "lowest_dimension_display": format_percentage(lowest_dimension_score),
+    }
+
+
+def prepare_quality_dimension_summary(df: pd.DataFrame | None) -> pd.DataFrame:
+    """Return average data quality scores by dimension, lowest first."""
+    columns = ["dimension", "average_score", "status"]
+    if df is None or df.empty:
+        return pd.DataFrame(columns=columns)
+
+    rows = []
+    for col, label in QUALITY_SCORE_COLUMNS.items():
+        if col not in df.columns:
+            continue
+        values = pd.to_numeric(df[col], errors="coerce").dropna()
+        if values.empty:
+            continue
+        average_score = float(values.mean())
+        rows.append(
+            {
+                "dimension": label,
+                "average_score": average_score,
+                "status": quality_status_for_score(average_score),
+            }
+        )
+
+    if not rows:
+        return pd.DataFrame(columns=columns)
+
+    return pd.DataFrame(rows).sort_values("average_score", ascending=True).reset_index(drop=True)
+
+
+def prepare_quality_issue_queue(df: pd.DataFrame | None) -> pd.DataFrame:
+    """Return datasets ordered by quality risk with their weakest dimension."""
+    columns = [
+        "dataset",
+        "status",
+        "overall_score",
+        "lowest_dimension",
+        "lowest_dimension_score",
+        "business_risk",
+    ]
+    if df is None or df.empty:
+        return pd.DataFrame(columns=columns)
+
+    data = df.copy()
+    if "dataset" not in data.columns:
+        return pd.DataFrame(columns=columns)
+
+    if "overall_score" in data.columns:
+        data["overall_score"] = pd.to_numeric(data["overall_score"], errors="coerce").fillna(0.0)
+    else:
+        score_cols = [col for col in QUALITY_SCORE_COLUMNS if col in data.columns]
+        data["overall_score"] = (
+            data[score_cols].apply(pd.to_numeric, errors="coerce").mean(axis=1)
+            if score_cols
+            else pd.Series(0.0, index=data.index)
+        )
+
+    if "status" not in data.columns:
+        data["status"] = data["overall_score"].apply(quality_status_for_score)
+    if "business_risk" not in data.columns:
+        data["business_risk"] = ""
+
+    weakest = data.apply(_lowest_quality_dimension, axis=1)
+    data["lowest_dimension"] = [item[0] for item in weakest]
+    data["lowest_dimension_score"] = [item[1] for item in weakest]
+    data["_status_order"] = (
+        data["status"].astype(str).str.lower().map(QUALITY_STATUS_ORDER).fillna(999)
+    )
+
+    return (
+        data[columns + ["_status_order"]]
+        .sort_values(["_status_order", "overall_score", "dataset"], ascending=[True, True, True])
+        .drop(columns=["_status_order"])
         .reset_index(drop=True)
     )
 

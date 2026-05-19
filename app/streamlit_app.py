@@ -7,6 +7,7 @@ from utils.paths import SQLITE_DB_PATH
 from app.ui_helpers import (
     apply_quick_view,
     build_customer_profile_summary,
+    build_customer_360_overview,
     build_custom_scenario_analysis,
     build_data_freshness_summary,
     build_data_quality_overview,
@@ -28,6 +29,7 @@ from app.ui_helpers import (
     get_filter_options,
     get_quick_view_options,
     prepare_category_counts,
+    prepare_customer_360_queue,
     prepare_display_dataframe,
     prepare_metric_chart_data,
     prepare_owner_workload_summary,
@@ -511,6 +513,18 @@ elif selection == "Customer 360":
         )
         st.caption(f"{len(filtered_customers)} customer(s) in current view")
 
+        overview = build_customer_360_overview(filtered_customers)
+        overview_cols = st.columns(4)
+        with overview_cols[0]:
+            st.metric("Customers", overview["customers"])
+        with overview_cols[1]:
+            st.metric("Active Customers", overview["active_customers"])
+        with overview_cols[2]:
+            st.metric("High / Critical", overview["high_risk_customers"])
+        with overview_cols[3]:
+            st.metric("Revenue at Risk", format_currency(overview["revenue_at_risk"]))
+        st.caption(f"Most common risk driver: {overview['top_driver']}")
+
         render_decision_brief(
             "Customer 360",
             filtered_customers,
@@ -519,28 +533,42 @@ elif selection == "Customer 360":
         )
 
         if not filtered_customers.empty:
+            customer_queue = prepare_customer_360_queue(filtered_customers)
             options = filtered_customers["customer_id"].astype(str).tolist()
-            selected_customer = st.selectbox("Customer", options)
+            customer_labels = {
+                str(row["customer_id"]): (
+                    f"{row['customer_id']} | {row.get('churn_risk_band', 'Unknown')} | "
+                    f"{format_currency(row.get('revenue_at_risk', 0.0))} at risk"
+                )
+                for _, row in filtered_customers.iterrows()
+            }
+            selected_customer = st.selectbox(
+                "Customer",
+                options,
+                format_func=lambda customer_id: customer_labels.get(customer_id, customer_id),
+            )
             selected_row = filtered_customers[
                 filtered_customers["customer_id"].astype(str) == selected_customer
             ].iloc[0]
             summary = build_customer_profile_summary(selected_row)
 
-            metric_row_1 = st.columns(2)
-            with metric_row_1[0]:
-                st.metric("Current MRR", format_currency(summary["Current MRR"]))
-            with metric_row_1[1]:
-                st.metric("Revenue at Risk", format_currency(summary["Revenue at Risk"]))
+            profile_tab, recommendations_tab, trace_tab, queue_tab = st.tabs(
+                ["Profile", "Recommendations", "Decision Trace", "Queue"]
+            )
 
-            metric_row_2 = st.columns(2)
-            with metric_row_2[0]:
-                st.metric("Risk Band", summary["Risk Band"])
-            with metric_row_2[1]:
-                st.metric("Usage Trend", summary["Usage Trend"])
+            with profile_tab:
+                metric_row_1 = st.columns(2)
+                with metric_row_1[0]:
+                    st.metric("Current MRR", format_currency(summary["Current MRR"]))
+                with metric_row_1[1]:
+                    st.metric("Revenue at Risk", format_currency(summary["Revenue at Risk"]))
 
-            detail_left, detail_right = st.columns([1, 1])
-            with detail_left:
-                st.subheader("Profile")
+                metric_row_2 = st.columns(2)
+                with metric_row_2[0]:
+                    st.metric("Risk Band", summary["Risk Band"])
+                with metric_row_2[1]:
+                    st.metric("Usage Trend", summary["Usage Trend"])
+
                 profile_rows = pd.DataFrame(
                     [
                         {
@@ -555,64 +583,62 @@ elif selection == "Customer 360":
                     ]
                 )
                 st.dataframe(profile_rows, width="stretch", hide_index=True)
-            with detail_right:
-                st.subheader("Recommended Action")
                 st.info(str(summary["Recommended Action"]))
 
-            st.subheader("Customer Recommendations")
-            customer_recs = (
-                recs[recs["customer_id"].astype(str) == selected_customer]
-                if not recs.empty and "customer_id" in recs.columns
-                else pd.DataFrame()
-            )
-            if not customer_recs.empty:
-                display_recs = prepare_display_dataframe(
-                    customer_recs,
-                    currency_columns=["estimated_revenue_impact"],
-                    status_columns=["priority_band", "confidence_level"],
-                    number_columns=["priority_score", "impact_score"],
+            with recommendations_tab:
+                customer_recs = (
+                    recs[recs["customer_id"].astype(str) == selected_customer]
+                    if not recs.empty and "customer_id" in recs.columns
+                    else pd.DataFrame()
                 )
-                st.dataframe(display_recs, width="stretch", hide_index=True)
-                render_csv_download(
-                    "Download customer recommendations CSV",
-                    customer_recs,
-                    "customer-recommendations",
-                    "download_customer_recommendations",
-                )
-            else:
-                st.info("No recommendations for this customer.")
+                if not customer_recs.empty:
+                    display_recs = prepare_display_dataframe(
+                        customer_recs,
+                        currency_columns=["estimated_revenue_impact"],
+                        status_columns=["priority_band", "confidence_level"],
+                        number_columns=["priority_score", "impact_score"],
+                    )
+                    st.dataframe(display_recs, width="stretch", hide_index=True)
+                    render_csv_download(
+                        "Download customer recommendations CSV",
+                        customer_recs,
+                        "customer-recommendations",
+                        "download_customer_recommendations",
+                    )
+                else:
+                    st.info("No recommendations for this customer.")
 
-            st.subheader("Decision Trace")
-            customer_traces = (
-                traces[traces["entity_id"].astype(str) == selected_customer]
-                if not traces.empty and "entity_id" in traces.columns
-                else pd.DataFrame()
-            )
-            if not customer_traces.empty:
-                st.dataframe(customer_traces, width="stretch", hide_index=True)
-                render_csv_download(
-                    "Download customer trace CSV",
-                    customer_traces,
-                    "customer-decision-trace",
-                    "download_customer_trace",
+            with trace_tab:
+                customer_traces = (
+                    traces[traces["entity_id"].astype(str) == selected_customer]
+                    if not traces.empty and "entity_id" in traces.columns
+                    else pd.DataFrame()
                 )
-            else:
-                st.info("No customer-specific trace records.")
+                if not customer_traces.empty:
+                    st.dataframe(customer_traces, width="stretch", hide_index=True)
+                    render_csv_download(
+                        "Download customer trace CSV",
+                        customer_traces,
+                        "customer-decision-trace",
+                        "download_customer_trace",
+                    )
+                else:
+                    st.info("No customer-specific trace records.")
 
-            st.subheader("Filtered Customer List")
-            display_customers = prepare_display_dataframe(
-                filtered_customers,
-                currency_columns=["current_mrr", "total_revenue", "revenue_at_risk"],
-                status_columns=["churn_risk_band", "health_status"],
-                number_columns=["churn_risk_score", "latest_usage_frequency"],
-            )
-            st.dataframe(display_customers, width="stretch", hide_index=True)
-            render_csv_download(
-                "Download filtered customers CSV",
-                filtered_customers,
-                "filtered-customers",
-                "download_filtered_customers",
-            )
+            with queue_tab:
+                display_queue = prepare_display_dataframe(
+                    customer_queue,
+                    currency_columns=["current_mrr", "revenue_at_risk"],
+                    status_columns=["churn_risk_band", "health_status"],
+                    number_columns=["churn_risk_score"],
+                )
+                st.dataframe(display_queue, width="stretch", hide_index=True)
+                render_csv_download(
+                    "Download filtered customers CSV",
+                    filtered_customers,
+                    "filtered-customers",
+                    "download_filtered_customers",
+                )
         else:
             st.info("No customers match the selected filters.")
     else:

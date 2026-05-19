@@ -62,6 +62,7 @@ prioritized actions, Customer 360 drill-down, KPI review, data quality review,
 risk queues, decision traces, and metric lineage. Features include:
 
 - Searchable action, customer, recommendation, and trace views
+- Customer 360 overview metrics, prioritized queue, and tabbed drill-downs
 - Quick-view presets for common analysis workflows
 - Decision Brief summaries with Markdown exports
 - Owner workload summaries for handoff queues
@@ -87,7 +88,7 @@ data flow, and architecture decisions.
 
 - **Language:** Python 3.10+
 - **Libraries:** Pandas, NumPy, PyYAML, Streamlit
-- **Testing:** Pytest (696 tests, 100% coverage gate)
+- **Testing:** Pytest (700 tests, 100% coverage gate)
 - **Linting:** Ruff
 - **Type Checking:** Pyrefly
 

@@ -36,6 +36,8 @@ from app.ui_helpers import (
     prepare_quality_dimension_summary,
     prepare_quality_issue_queue,
     filter_customer_360,
+    build_customer_360_overview,
+    prepare_customer_360_queue,
     build_customer_profile_summary,
     summarize_filter_state,
     dataframe_to_csv_bytes,
@@ -946,6 +948,120 @@ def test_filter_customer_360_applies_common_filters():
 
     assert len(filtered) == 1
     assert filtered.iloc[0]["customer_id"] == "C1"
+
+
+def test_build_customer_360_overview_summarizes_active_view():
+    df = pd.DataFrame(
+        [
+            {
+                "customer_id": "C1",
+                "is_active": True,
+                "churn_risk_band": "High",
+                "current_mrr": 100,
+                "revenue_at_risk": 100,
+                "churn_risk_score": 0.8,
+                "main_driver": "Low NPS",
+            },
+            {
+                "customer_id": "C2",
+                "is_active": False,
+                "churn_risk_band": "Low",
+                "current_mrr": 0,
+                "revenue_at_risk": 0,
+                "churn_risk_score": 0.1,
+                "main_driver": "Low NPS",
+            },
+            {
+                "customer_id": "C3",
+                "is_active": "active",
+                "churn_risk_band": "Critical",
+                "current_mrr": 200,
+                "revenue_at_risk": 150,
+                "churn_risk_score": 0.9,
+                "main_driver": "Failed Payments",
+            },
+        ]
+    )
+
+    overview = build_customer_360_overview(df)
+
+    assert overview["customers"] == 3
+    assert overview["active_customers"] == 2
+    assert overview["high_risk_customers"] == 2
+    assert overview["revenue_at_risk"] == 250.0
+    assert overview["current_mrr"] == 300.0
+    assert overview["average_risk_score"] == pytest.approx(0.6)
+    assert overview["top_driver"] == "Low NPS"
+
+
+def test_build_customer_360_overview_handles_empty_and_missing_columns():
+    assert build_customer_360_overview(None)["customers"] == 0
+
+    overview = build_customer_360_overview(
+        pd.DataFrame(
+            [
+                {"customer_id": "C1", "current_mrr": 100, "main_driver": "Unknown"},
+                {"customer_id": "C2", "current_mrr": 0, "main_driver": None},
+            ]
+        )
+    )
+
+    assert overview["active_customers"] == 1
+    assert overview["high_risk_customers"] == 0
+    assert overview["top_driver"] == "Unknown"
+
+    missing_driver = build_customer_360_overview(pd.DataFrame([{"customer_id": "C1"}]))
+    assert missing_driver["top_driver"] == "Unknown"
+
+
+def test_prepare_customer_360_queue_sorts_and_limits_by_risk():
+    df = pd.DataFrame(
+        [
+            {
+                "customer_id": "C2",
+                "churn_risk_band": "Low",
+                "churn_risk_score": 0.1,
+                "revenue_at_risk": 10,
+                "current_mrr": 50,
+            },
+            {
+                "customer_id": "C3",
+                "churn_risk_band": "Critical",
+                "churn_risk_score": 0.7,
+                "revenue_at_risk": 50,
+                "current_mrr": 100,
+            },
+            {
+                "customer_id": "C1",
+                "churn_risk_band": "High",
+                "churn_risk_score": 0.9,
+                "revenue_at_risk": 200,
+                "current_mrr": 150,
+            },
+        ]
+    )
+
+    queue = prepare_customer_360_queue(df, limit=2)
+
+    assert queue["customer_id"].tolist() == ["C3", "C1"]
+    assert queue.columns.tolist() == [
+        "customer_id",
+        "churn_risk_band",
+        "current_mrr",
+        "revenue_at_risk",
+        "churn_risk_score",
+    ]
+
+
+def test_prepare_customer_360_queue_handles_empty_and_missing_customer_id():
+    assert prepare_customer_360_queue(None).empty
+
+    queue = prepare_customer_360_queue(
+        pd.DataFrame([{"churn_risk_band": "High", "revenue_at_risk": 25}])
+    )
+
+    assert queue["customer_id"].tolist() == [""]
+    assert queue["revenue_at_risk"].tolist() == [25]
 
 
 def test_build_customer_profile_summary_returns_display_fields():

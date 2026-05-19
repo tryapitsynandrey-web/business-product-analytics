@@ -93,6 +93,27 @@ DECISION_BRIEF_SORT_COLUMNS = [
     "current_mrr",
 ]
 
+CUSTOMER_QUEUE_COLUMNS = [
+    "customer_id",
+    "segment",
+    "plan",
+    "churn_risk_band",
+    "health_status",
+    "current_mrr",
+    "revenue_at_risk",
+    "churn_risk_score",
+    "usage_trend",
+    "main_driver",
+    "recommended_action",
+]
+
+CUSTOMER_RISK_ORDER = {
+    "critical": 0,
+    "high": 1,
+    "medium": 2,
+    "low": 3,
+}
+
 QUICK_VIEW_OPTIONS = {
     "top_actions": ["All Actions", "High Priority", "Revenue Risk", "Quick Wins", "Owner Queue"],
     "customer_360": ["Retention Focus", "All Customers", "Revenue Risk", "Expansion Watch"],
@@ -1231,6 +1252,99 @@ def filter_customer_360(
     if plans:
         df = filter_dataframe_by_values(df, "plan", plans)
     return df
+
+
+def build_customer_360_overview(customers: pd.DataFrame | None) -> dict[str, Any]:
+    """Return high-signal Customer 360 metrics for the active view."""
+    if customers is None or customers.empty:
+        return {
+            "customers": 0,
+            "active_customers": 0,
+            "high_risk_customers": 0,
+            "revenue_at_risk": 0.0,
+            "current_mrr": 0.0,
+            "average_risk_score": 0.0,
+            "top_driver": "Unknown",
+        }
+
+    data = customers.copy()
+    current_mrr = pd.to_numeric(
+        data.get("current_mrr", pd.Series(0.0, index=data.index)),
+        errors="coerce",
+    ).fillna(0.0)
+    revenue_at_risk = pd.to_numeric(
+        data.get("revenue_at_risk", pd.Series(0.0, index=data.index)),
+        errors="coerce",
+    ).fillna(0.0)
+    risk_score = pd.to_numeric(
+        data.get("churn_risk_score", pd.Series(0.0, index=data.index)),
+        errors="coerce",
+    ).fillna(0.0)
+    risk_band = data.get("churn_risk_band", pd.Series("", index=data.index))
+    high_risk_mask = risk_band.astype(str).str.strip().str.lower().isin({"critical", "high"})
+
+    if "is_active" in data.columns:
+        active_mask = (
+            data["is_active"]
+            .astype(str)
+            .str.strip()
+            .str.lower()
+            .isin({"true", "1", "yes", "active"})
+        )
+    else:
+        active_mask = current_mrr > 0
+
+    top_driver = "Unknown"
+    if "main_driver" in data.columns:
+        drivers = data["main_driver"].dropna().astype(str).str.strip()
+        drivers = drivers[~drivers.str.lower().isin({"", "nan", "none", "unknown"})]
+        if not drivers.empty:
+            top_driver = str(drivers.value_counts().idxmax())
+
+    return {
+        "customers": int(len(data)),
+        "active_customers": int(active_mask.sum()),
+        "high_risk_customers": int(high_risk_mask.sum()),
+        "revenue_at_risk": float(revenue_at_risk.sum()),
+        "current_mrr": float(current_mrr.sum()),
+        "average_risk_score": float(risk_score.mean()),
+        "top_driver": top_driver,
+    }
+
+
+def prepare_customer_360_queue(
+    customers: pd.DataFrame | None,
+    limit: int = 25,
+) -> pd.DataFrame:
+    """Return a compact Customer 360 queue sorted by risk and revenue exposure."""
+    if customers is None or customers.empty:
+        return pd.DataFrame(columns=CUSTOMER_QUEUE_COLUMNS)
+
+    data = customers.copy()
+    risk_band = data.get("churn_risk_band", pd.Series("", index=data.index))
+    risk_order = risk_band.astype(str).str.strip().str.lower().map(CUSTOMER_RISK_ORDER).fillna(4)
+    risk_score = pd.to_numeric(
+        data.get("churn_risk_score", pd.Series(0.0, index=data.index)),
+        errors="coerce",
+    ).fillna(0.0)
+    revenue_at_risk = pd.to_numeric(
+        data.get("revenue_at_risk", pd.Series(0.0, index=data.index)),
+        errors="coerce",
+    ).fillna(0.0)
+
+    data["_risk_order"] = risk_order
+    data["_risk_score"] = risk_score
+    data["_revenue_at_risk"] = revenue_at_risk
+    data["customer_id"] = data.get("customer_id", pd.Series("", index=data.index)).astype(str)
+    display_cols = [col for col in CUSTOMER_QUEUE_COLUMNS if col in data.columns]
+    return (
+        data.sort_values(
+            ["_risk_order", "_risk_score", "_revenue_at_risk", "customer_id"],
+            ascending=[True, False, False, True],
+        )[display_cols]
+        .head(limit)
+        .reset_index(drop=True)
+    )
 
 
 def build_customer_profile_summary(customer_row: pd.Series | dict[str, Any]) -> dict[str, Any]:

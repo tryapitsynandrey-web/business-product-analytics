@@ -22,10 +22,11 @@
 12. **Advanced Dashboard Pages**: Adds Scenario Simulator, Cohort Retention, and Funnel Analysis views.
 13. **Interactive Scenario Controls**: Lets dashboard users tune churn, activation, ARPU, and failed-payment recovery assumptions.
 14. **Customer 360 UX**: Adds view-level metrics, prioritized customer queues, and tabbed drill-downs.
+15. **Top Actions UX**: Adds action queue metrics, owner workload navigation, and priority-focused action drill-downs.
 
 ## System Health
 
-- **Tests**: 700 passing tests, 100% coverage gate.
+- **Tests**: 704 passing tests, 100% coverage gate.
 - **Local-First Status**: 100% (no cloud, API, or external DBs).
 
 ## Known Limitations

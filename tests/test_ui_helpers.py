@@ -28,6 +28,8 @@ from app.ui_helpers import (
     get_executive_metric_values,
     determine_business_status,
     prepare_top_actions,
+    build_top_actions_overview,
+    prepare_action_priority_queue,
     build_decision_brief,
     decision_brief_to_markdown,
     prepare_owner_workload_summary,
@@ -594,6 +596,112 @@ def test_prepare_top_actions_handles_empty_and_missing_score():
     actions = prepare_top_actions(df)
 
     assert actions["intervention_id"].tolist() == ["IV-1", "IV-2"]
+
+
+def test_build_top_actions_overview_summarizes_current_queue():
+    df = pd.DataFrame(
+        [
+            {
+                "intervention_id": "IV-1",
+                "priority_band": "Critical",
+                "estimated_revenue_impact": 1000,
+                "priority_score": 90,
+                "effort_level": "Low",
+                "suggested_owner": "Customer Success",
+            },
+            {
+                "intervention_id": "IV-2",
+                "priority_band": "High",
+                "estimated_revenue_impact": 500,
+                "priority_score": 60,
+                "effort_level": "Medium",
+                "suggested_owner": "Customer Success",
+            },
+            {
+                "intervention_id": "IV-3",
+                "priority_band": "Low",
+                "estimated_revenue_impact": 100,
+                "priority_score": 15,
+                "effort_level": "Low",
+                "suggested_owner": "Product",
+            },
+        ]
+    )
+
+    overview = build_top_actions_overview(df)
+
+    assert overview["actions"] == 3
+    assert overview["critical_high"] == 2
+    assert overview["quick_wins"] == 2
+    assert overview["owners"] == 2
+    assert overview["impact_total"] == 1600.0
+    assert overview["average_priority_score"] == pytest.approx(55.0)
+    assert overview["top_owner"] == "Customer Success"
+
+
+def test_build_top_actions_overview_handles_empty_and_unassigned_owner():
+    assert build_top_actions_overview(None)["actions"] == 0
+
+    overview = build_top_actions_overview(
+        pd.DataFrame(
+            [
+                {"intervention_id": "IV-1", "priority_band": "Low", "suggested_owner": None},
+                {"intervention_id": "IV-2", "priority_band": "Medium"},
+            ]
+        )
+    )
+
+    assert overview["critical_high"] == 0
+    assert overview["owners"] == 0
+    assert overview["top_owner"] == "Unassigned"
+
+
+def test_prepare_action_priority_queue_sorts_by_score_impact_and_effort():
+    df = pd.DataFrame(
+        [
+            {
+                "intervention_id": "IV-2",
+                "recommendation_title": "B",
+                "priority_score": 80,
+                "estimated_revenue_impact": 500,
+                "effort_level": "Medium",
+            },
+            {
+                "intervention_id": "IV-1",
+                "recommendation_title": "A",
+                "priority_score": 80,
+                "estimated_revenue_impact": 500,
+                "effort_level": "Low",
+            },
+            {
+                "intervention_id": "IV-3",
+                "recommendation_title": "C",
+                "priority_score": 70,
+                "estimated_revenue_impact": 1000,
+                "effort_level": "Low",
+            },
+        ]
+    )
+
+    queue = prepare_action_priority_queue(df, limit=2)
+
+    assert queue["intervention_id"].tolist() == ["IV-1", "IV-2"]
+    assert queue.columns.tolist() == [
+        "intervention_id",
+        "recommendation_title",
+        "estimated_revenue_impact",
+        "priority_score",
+        "effort_level",
+    ]
+
+
+def test_prepare_action_priority_queue_handles_empty_and_missing_id():
+    assert prepare_action_priority_queue(None).empty
+
+    queue = prepare_action_priority_queue(pd.DataFrame([{"priority_score": 10}]))
+
+    assert queue["intervention_id"].tolist() == [""]
+    assert queue["priority_score"].tolist() == [10]
 
 
 def test_build_decision_brief_summarizes_intervention_view():

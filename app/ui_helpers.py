@@ -114,6 +114,24 @@ CUSTOMER_RISK_ORDER = {
     "low": 3,
 }
 
+ACTION_QUEUE_COLUMNS = [
+    "intervention_id",
+    "recommendation_title",
+    "priority_band",
+    "estimated_revenue_impact",
+    "priority_score",
+    "effort_level",
+    "suggested_owner",
+    "target_segment",
+    "expected_action",
+]
+
+ACTION_EFFORT_ORDER = {
+    "low": 0,
+    "medium": 1,
+    "high": 2,
+}
+
 QUICK_VIEW_OPTIONS = {
     "top_actions": ["All Actions", "High Priority", "Revenue Risk", "Quick Wins", "Owner Queue"],
     "customer_360": ["Retention Focus", "All Customers", "Revenue Risk", "Expansion Watch"],
@@ -800,6 +818,89 @@ def prepare_top_actions(
     ]
     cols = [col for col in display_cols if col in df.columns]
     return df[cols].head(limit).reset_index(drop=True)
+
+
+def build_top_actions_overview(actions: pd.DataFrame | None) -> dict[str, Any]:
+    """Return high-signal summary metrics for the current action queue."""
+    if actions is None or actions.empty:
+        return {
+            "actions": 0,
+            "critical_high": 0,
+            "quick_wins": 0,
+            "owners": 0,
+            "impact_total": 0.0,
+            "average_priority_score": 0.0,
+            "top_owner": "Unassigned",
+        }
+
+    data = actions.copy()
+    priority = data.get("priority_band", pd.Series("", index=data.index))
+    effort = data.get("effort_level", pd.Series("", index=data.index))
+    owner = data.get("suggested_owner", pd.Series("", index=data.index))
+    impact = pd.to_numeric(
+        data.get("estimated_revenue_impact", pd.Series(0.0, index=data.index)),
+        errors="coerce",
+    ).fillna(0.0)
+    priority_score = pd.to_numeric(
+        data.get("priority_score", pd.Series(0.0, index=data.index)),
+        errors="coerce",
+    ).fillna(0.0)
+
+    priority_normalized = priority.astype(str).str.strip().str.lower()
+    effort_normalized = effort.astype(str).str.strip().str.lower()
+    owner_clean = owner.apply(lambda value: _clean_display_value(value, "Unassigned"))
+    assigned_owners = owner_clean[owner_clean != "Unassigned"]
+
+    top_owner = "Unassigned"
+    if not assigned_owners.empty:
+        top_owner = str(assigned_owners.value_counts().idxmax())
+
+    return {
+        "actions": int(len(data)),
+        "critical_high": int(priority_normalized.isin({"critical", "high"}).sum()),
+        "quick_wins": int(effort_normalized.eq("low").sum()),
+        "owners": int(assigned_owners.nunique()),
+        "impact_total": float(impact.sum()),
+        "average_priority_score": float(priority_score.mean()),
+        "top_owner": top_owner,
+    }
+
+
+def prepare_action_priority_queue(
+    actions: pd.DataFrame | None,
+    limit: int = 25,
+) -> pd.DataFrame:
+    """Return a compact action queue sorted by priority, impact, and effort."""
+    if actions is None or actions.empty:
+        return pd.DataFrame(columns=ACTION_QUEUE_COLUMNS)
+
+    data = actions.copy()
+    priority_score = pd.to_numeric(
+        data.get("priority_score", pd.Series(0.0, index=data.index)),
+        errors="coerce",
+    ).fillna(0.0)
+    impact = pd.to_numeric(
+        data.get("estimated_revenue_impact", pd.Series(0.0, index=data.index)),
+        errors="coerce",
+    ).fillna(0.0)
+    effort = data.get("effort_level", pd.Series("", index=data.index))
+    effort_order = effort.astype(str).str.strip().str.lower().map(ACTION_EFFORT_ORDER).fillna(9)
+
+    data["_priority_score"] = priority_score
+    data["_estimated_revenue_impact"] = impact
+    data["_effort_order"] = effort_order
+    data["intervention_id"] = data.get("intervention_id", pd.Series("", index=data.index)).astype(
+        str
+    )
+    display_cols = [col for col in ACTION_QUEUE_COLUMNS if col in data.columns]
+    return (
+        data.sort_values(
+            ["_priority_score", "_estimated_revenue_impact", "_effort_order", "intervention_id"],
+            ascending=[False, False, True, True],
+        )[display_cols]
+        .head(limit)
+        .reset_index(drop=True)
+    )
 
 
 def _first_existing_column(df: pd.DataFrame, columns: list[str]) -> str | None:

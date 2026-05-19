@@ -12,6 +12,7 @@ from app.ui_helpers import (
     build_data_freshness_summary,
     build_data_quality_overview,
     build_decision_brief,
+    build_top_actions_overview,
     build_export_filename,
     dataframe_to_csv_bytes,
     db_status_label,
@@ -28,6 +29,7 @@ from app.ui_helpers import (
     get_executive_metric_values,
     get_filter_options,
     get_quick_view_options,
+    prepare_action_priority_queue,
     prepare_category_counts,
     prepare_customer_360_queue,
     prepare_display_dataframe,
@@ -422,51 +424,78 @@ elif selection == "Top Actions":
             )
         )
 
-        summary_cols = st.columns(3)
+        overview = build_top_actions_overview(plan)
+        summary_cols = st.columns(4)
         with summary_cols[0]:
-            st.metric("Actions in View", len(plan))
+            st.metric("Actions in View", overview["actions"])
         with summary_cols[1]:
-            high_count = (
-                plan["priority_band"].astype(str).isin(["Critical", "High"]).sum()
-                if "priority_band" in plan.columns
-                else 0
-            )
-            st.metric("Critical / High", int(high_count))
+            st.metric("Critical / High", overview["critical_high"])
         with summary_cols[2]:
-            impact_total = (
-                pd.to_numeric(plan["estimated_revenue_impact"], errors="coerce").sum()
-                if "estimated_revenue_impact" in plan.columns
-                else 0.0
-            )
-            st.metric("Revenue Impact", format_currency(impact_total))
+            st.metric("Quick Wins", overview["quick_wins"])
+        with summary_cols[3]:
+            st.metric("Revenue Impact", format_currency(overview["impact_total"]))
+        st.caption(f"Primary owner in current view: {overview['top_owner']}")
 
         render_decision_brief("Top Actions", plan, quick_view, "top_actions")
-        render_owner_workload(plan, "top_actions")
 
-        top_actions = prepare_top_actions(plan, limit=25)
-        if not top_actions.empty:
-            chart_data = prepare_metric_chart_data(
-                plan,
-                metric_column="recommendation_title",
-                value_column="priority_score",
-            )
-            if not chart_data.empty:
-                st.bar_chart(chart_data.head(25))
-            display_actions = prepare_display_dataframe(
-                top_actions,
-                currency_columns=["estimated_revenue_impact"],
-                status_columns=["priority_band"],
-                number_columns=["priority_score"],
-            )
-            st.dataframe(display_actions, width="stretch", hide_index=True)
-            render_csv_download(
-                "Download current actions CSV",
-                top_actions,
-                "top-actions",
-                "download_top_actions",
-            )
+        action_queue = prepare_action_priority_queue(plan, limit=25)
+        if not action_queue.empty:
+            queue_tab, owner_tab, chart_tab = st.tabs(["Action Queue", "Owner Workload", "Chart"])
+
+            with queue_tab:
+                action_options = action_queue["intervention_id"].astype(str).tolist()
+                action_labels = {
+                    str(row["intervention_id"]): (
+                        f"{row['intervention_id']} | {row.get('priority_band', 'Unscored')} | "
+                        f"{format_currency(row.get('estimated_revenue_impact', 0.0))}"
+                    )
+                    for _, row in action_queue.iterrows()
+                }
+                selected_action = st.selectbox(
+                    "Action",
+                    action_options,
+                    format_func=lambda action_id: action_labels.get(action_id, action_id),
+                )
+                selected_action_row = action_queue[
+                    action_queue["intervention_id"].astype(str) == selected_action
+                ].iloc[0]
+                st.info(str(selected_action_row.get("expected_action", "Review action details.")))
+
+                display_actions = prepare_display_dataframe(
+                    action_queue,
+                    currency_columns=["estimated_revenue_impact"],
+                    status_columns=["priority_band"],
+                    number_columns=["priority_score"],
+                )
+                st.dataframe(display_actions, width="stretch", hide_index=True)
+                render_csv_download(
+                    "Download current actions CSV",
+                    plan,
+                    "top-actions",
+                    "download_top_actions",
+                )
+
+            with owner_tab:
+                render_owner_workload(plan, "top_actions")
+
+            with chart_tab:
+                chart_data = prepare_metric_chart_data(
+                    plan,
+                    metric_column="recommendation_title",
+                    value_column="priority_score",
+                )
+                if not chart_data.empty:
+                    st.bar_chart(chart_data.head(25))
+                else:
+                    st.info("No priority chart data in current view.")
         else:
-            st.info(safe_dataframe_empty_message(top_actions, "top actions"))
+            top_actions = prepare_top_actions(plan, limit=25)
+            st.info(
+                safe_dataframe_empty_message(
+                    top_actions,
+                    "top actions",
+                )
+            )
     else:
         st.info(safe_dataframe_empty_message(plan, "intervention plan"))
 

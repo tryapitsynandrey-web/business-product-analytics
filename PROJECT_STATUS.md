@@ -20,10 +20,11 @@
 10. **Architecture Docs**: Captures layer boundaries, ADRs, and metric catalog governance.
 11. **Advanced Analytics Outputs**: Publishes scenario simulation, cohort retention, and funnel analysis artifacts.
 12. **Advanced Dashboard Pages**: Adds Scenario Simulator, Cohort Retention, and Funnel Analysis views.
+13. **Interactive Scenario Controls**: Lets dashboard users tune churn, activation, ARPU, and failed-payment recovery assumptions.
 
 ## System Health
 
-- **Tests**: 694 passing tests, 100% coverage gate.
+- **Tests**: 696 passing tests, 100% coverage gate.
 - **Local-First Status**: 100% (no cloud, API, or external DBs).
 
 ## Known Limitations

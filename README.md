@@ -65,7 +65,7 @@ risk queues, decision traces, and metric lineage. Features include:
 - Quick-view presets for common analysis workflows
 - Decision Brief summaries with Markdown exports
 - Owner workload summaries for handoff queues
-- Scenario simulator, cohort retention, and funnel analysis views
+- Scenario simulator with custom assumptions, cohort retention, and funnel analysis views
 - Local data freshness indicators and CSV exports
 
 No data leaves your machine. No cloud deployment or authentication required.
@@ -87,7 +87,7 @@ data flow, and architecture decisions.
 
 - **Language:** Python 3.10+
 - **Libraries:** Pandas, NumPy, PyYAML, Streamlit
-- **Testing:** Pytest (694 tests, 100% coverage gate)
+- **Testing:** Pytest (696 tests, 100% coverage gate)
 - **Linting:** Ruff
 - **Type Checking:** Pyrefly
 
@@ -245,7 +245,8 @@ GitHub Actions runs the same `make ci` on every push and PR to `main`.
 The pipeline also publishes dashboard-ready advanced analytics:
 
 - `scenario_analysis` — modeled monthly and annualized upside from churn,
-  activation, ARPU, and failed-payment recovery scenarios
+  activation, ARPU, and failed-payment recovery scenarios, plus dashboard
+  what-if controls for custom assumptions
 - `cohort_summary` — signup cohort retention and revenue by period
 - `funnel_summary` and `segment_funnel` — activation, key action, paid
   conversion, and month-1 retention funnel views

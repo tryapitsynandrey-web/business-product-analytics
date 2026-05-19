@@ -7,6 +7,7 @@ from utils.paths import SQLITE_DB_PATH
 from app.ui_helpers import (
     apply_quick_view,
     build_customer_profile_summary,
+    build_custom_scenario_analysis,
     build_data_freshness_summary,
     build_data_quality_overview,
     build_decision_brief,
@@ -744,6 +745,9 @@ elif selection == "Product / Business Health":
 elif selection == "Scenario Simulator":
     st.write("Modeled business impact from standard improvement scenarios.")
     scenarios = fetch_data(reader, "get_scenario_analysis", db_mtime)
+    kpis = fetch_data(reader, "get_kpi_summary", db_mtime)
+    customers = fetch_data(reader, "get_customer_360", db_mtime)
+    leakages = fetch_data(reader, "read_table", db_mtime, table_name="revenue_leakage")
     if not scenarios.empty:
         monthly_total = (
             pd.to_numeric(scenarios["monthly_impact"], errors="coerce").sum()
@@ -794,6 +798,65 @@ elif selection == "Scenario Simulator":
         )
     else:
         st.info(safe_dataframe_empty_message(scenarios, "scenario analysis"))
+
+    st.divider()
+    st.subheader("Custom Assumptions")
+    assumption_cols = st.columns(4)
+    with assumption_cols[0]:
+        churn_improvement_rate = (
+            st.slider("Churn reduction", min_value=0, max_value=50, value=10, step=1) / 100
+        )
+    with assumption_cols[1]:
+        activation_improvement_rate = (
+            st.slider("Activation lift", min_value=0, max_value=100, value=10, step=1) / 100
+        )
+    with assumption_cols[2]:
+        arpu_increase_rate = (
+            st.slider("ARPU increase", min_value=0, max_value=50, value=5, step=1) / 100
+        )
+    with assumption_cols[3]:
+        failed_payment_recovery_rate = (
+            st.slider("Failed-payment recovery", min_value=0, max_value=100, value=30, step=1) / 100
+        )
+
+    custom_scenarios = build_custom_scenario_analysis(
+        kpis,
+        customers,
+        leakages,
+        churn_improvement_rate,
+        activation_improvement_rate,
+        arpu_increase_rate,
+        failed_payment_recovery_rate,
+    )
+    if not custom_scenarios.empty:
+        custom_monthly_total = pd.to_numeric(
+            custom_scenarios["monthly_impact"], errors="coerce"
+        ).sum()
+        custom_annual_total = pd.to_numeric(
+            custom_scenarios["annualized_impact"], errors="coerce"
+        ).sum()
+        custom_metric_cols = st.columns(2)
+        with custom_metric_cols[0]:
+            st.metric("Custom Monthly Upside", format_currency(custom_monthly_total))
+        with custom_metric_cols[1]:
+            st.metric("Custom Annualized Upside", format_currency(custom_annual_total))
+
+        custom_chart = custom_scenarios.set_index("scenario_name")[["annualized_impact"]]
+        st.bar_chart(custom_chart)
+        display_custom_scenarios = prepare_display_dataframe(
+            custom_scenarios,
+            currency_columns=["monthly_impact", "annualized_impact"],
+            number_columns=["baseline_value", "simulated_value"],
+        )
+        st.dataframe(display_custom_scenarios, width="stretch", hide_index=True)
+        render_csv_download(
+            "Download custom scenario CSV",
+            custom_scenarios,
+            "custom-scenario-analysis",
+            "download_custom_scenario_analysis",
+        )
+    else:
+        st.info("Custom scenarios need KPI, customer, or revenue leakage inputs.")
 
 elif selection == "Cohort Retention":
     st.write("Signup cohort retention and revenue by period.")

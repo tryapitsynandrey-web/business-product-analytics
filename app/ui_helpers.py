@@ -3,6 +3,8 @@ import pandas as pd
 import streamlit as st
 from typing import Any, Optional
 
+from core.scenario_simulator import ScenarioSimulator
+
 EXECUTIVE_METRICS = {
     "monthly_recurring_revenue": "Total MRR",
     "customer_churn_rate": "Churn Rate",
@@ -124,6 +126,15 @@ QUICK_VIEW_DESCRIPTIONS = {
     "Governance Issues": "Metrics with lineage or ownership issues.",
     "Owner Review": "Metric records sorted by owner and status.",
 }
+
+SCENARIO_ANALYSIS_COLUMNS = [
+    "scenario_name",
+    "baseline_value",
+    "simulated_value",
+    "monthly_impact",
+    "annualized_impact",
+    "confidence_note",
+]
 
 
 def format_currency(value: object) -> str:
@@ -653,6 +664,78 @@ def get_executive_metric_values(kpis: pd.DataFrame | None) -> dict[str, Optional
     return {
         metric_name: select_metric_value(source, metric_name) for metric_name in EXECUTIVE_METRICS
     }
+
+
+def _metric_float(kpis: pd.DataFrame, metric_name: str) -> float | None:
+    value = select_metric_value(kpis, metric_name)
+    numeric = pd.to_numeric(pd.Series([value]), errors="coerce").iloc[0]
+    if pd.isna(numeric):
+        return None
+    return float(numeric)
+
+
+def build_custom_scenario_analysis(
+    kpis: pd.DataFrame | None,
+    customers: pd.DataFrame | None,
+    leakages: pd.DataFrame | None,
+    churn_improvement_rate: float,
+    activation_improvement_rate: float,
+    arpu_increase_rate: float,
+    failed_payment_recovery_rate: float,
+) -> pd.DataFrame:
+    """Build custom scenario rows from persisted dashboard data and UI assumptions."""
+    source_kpis = kpis if isinstance(kpis, pd.DataFrame) else pd.DataFrame()
+    source_customers = customers if isinstance(customers, pd.DataFrame) else pd.DataFrame()
+    source_leakages = leakages if isinstance(leakages, pd.DataFrame) else pd.DataFrame()
+
+    customer_ids = source_customers.get(
+        "customer_id", pd.Series(index=source_customers.index, dtype=object)
+    )
+    current_mrr = pd.to_numeric(
+        source_customers.get("current_mrr", pd.Series(0.0, index=source_customers.index)),
+        errors="coerce",
+    ).fillna(0.0)
+    leakage_types = source_leakages.get(
+        "leakage_type", pd.Series(index=source_leakages.index, dtype=object)
+    )
+    leakage_losses = pd.to_numeric(
+        source_leakages.get(
+            "estimated_revenue_loss",
+            pd.Series(0.0, index=source_leakages.index),
+        ),
+        errors="coerce",
+    ).fillna(0.0)
+
+    baseline_revenue = _metric_float(source_kpis, "monthly_recurring_revenue")
+    churn_rate = _metric_float(source_kpis, "customer_churn_rate")
+    activation_rate = _metric_float(source_kpis, "activation_rate")
+    arpu = _metric_float(source_kpis, "average_revenue_per_user")
+    signups = int(customer_ids.nunique())
+    active_customers = int(customer_ids[current_mrr > 0].nunique())
+    failed_payment_amount = float(leakage_losses[leakage_types == "Failed Payment"].sum())
+
+    simulator = ScenarioSimulator()
+    rows: list[dict[str, Any]] = []
+    if baseline_revenue is not None and churn_rate is not None:
+        rows.append(
+            simulator.simulate_churn_reduction(baseline_revenue, churn_rate, churn_improvement_rate)
+        )
+    if signups > 0 and activation_rate is not None and arpu is not None:
+        rows.append(
+            simulator.simulate_activation_increase(
+                signups, activation_rate, activation_improvement_rate, arpu
+            )
+        )
+    if active_customers > 0 and arpu is not None:
+        rows.append(simulator.simulate_arpu_increase(active_customers, arpu, arpu_increase_rate))
+    if failed_payment_amount > 0:
+        rows.append(
+            simulator.simulate_failed_payment_recovery(
+                failed_payment_amount, failed_payment_recovery_rate
+            )
+        )
+
+    return pd.DataFrame(rows, columns=SCENARIO_ANALYSIS_COLUMNS)
 
 
 def determine_business_status(health_scores: pd.DataFrame | None) -> str:

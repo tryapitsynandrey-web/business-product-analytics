@@ -1,4 +1,5 @@
 import pandas as pd
+import pytest
 from app.ui_helpers import (
     format_currency,
     format_number,
@@ -10,6 +11,7 @@ from app.ui_helpers import (
     format_timestamp,
     format_duration,
     build_data_freshness_summary,
+    build_custom_scenario_analysis,
     db_status_label,
     safe_dataframe_empty_message,
     get_filter_options,
@@ -475,6 +477,73 @@ def test_get_executive_metric_values_uses_canonical_names():
     assert values["customer_churn_rate"] == 0.05
     assert values["average_revenue_per_user"] == 100.0
     assert values["revenue_at_risk"] == 250.0
+
+
+def test_build_custom_scenario_analysis_uses_dashboard_inputs():
+    kpis = pd.DataFrame(
+        [
+            {"metric_name": "monthly_recurring_revenue", "value": 100_000.0},
+            {"metric_name": "customer_churn_rate", "value": 0.05},
+            {"metric_name": "activation_rate", "value": 0.20},
+            {"metric_name": "average_revenue_per_user", "value": 50.0},
+        ]
+    )
+    customers = pd.DataFrame(
+        [
+            {"customer_id": "C1", "current_mrr": 50.0},
+            {"customer_id": "C2", "current_mrr": 0.0},
+            {"customer_id": "C3", "current_mrr": 100.0},
+        ]
+    )
+    leakages = pd.DataFrame(
+        [
+            {"leakage_type": "Failed Payment", "estimated_revenue_loss": 1_000.0},
+            {"leakage_type": "Refund", "estimated_revenue_loss": 500.0},
+        ]
+    )
+
+    scenarios = build_custom_scenario_analysis(
+        kpis,
+        customers,
+        leakages,
+        churn_improvement_rate=0.20,
+        activation_improvement_rate=0.50,
+        arpu_increase_rate=0.10,
+        failed_payment_recovery_rate=0.25,
+    )
+
+    assert scenarios["scenario_name"].tolist() == [
+        "Churn Reduction",
+        "Activation Increase",
+        "ARPU Increase",
+        "Failed Payment Recovery",
+    ]
+    assert scenarios.loc[0, "monthly_impact"] == 1_000.0
+    assert scenarios.loc[1, "monthly_impact"] == pytest.approx(15.0)
+    assert scenarios.loc[2, "monthly_impact"] == pytest.approx(10.0)
+    assert scenarios.loc[3, "monthly_impact"] == 250.0
+
+
+def test_build_custom_scenario_analysis_returns_schema_without_inputs():
+    scenarios = build_custom_scenario_analysis(
+        None,
+        None,
+        None,
+        churn_improvement_rate=0.10,
+        activation_improvement_rate=0.10,
+        arpu_increase_rate=0.05,
+        failed_payment_recovery_rate=0.30,
+    )
+
+    assert scenarios.empty
+    assert scenarios.columns.tolist() == [
+        "scenario_name",
+        "baseline_value",
+        "simulated_value",
+        "monthly_impact",
+        "annualized_impact",
+        "confidence_note",
+    ]
 
 
 def test_determine_business_status_prioritizes_worst_status():

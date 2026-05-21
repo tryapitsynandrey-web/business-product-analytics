@@ -19,6 +19,15 @@ Expected result:
 - Pyrefly reports zero errors.
 - Pytest passes with the 100% coverage gate.
 
+## Fast Path
+
+```bash
+make demo
+```
+
+Use this when the environment is already set up. It regenerates the synthetic
+analytics snapshot and then opens the dashboard.
+
 ## 2. Generate the Analytics Snapshot
 
 ```bash

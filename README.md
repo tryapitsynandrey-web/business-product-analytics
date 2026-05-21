@@ -137,6 +137,15 @@ business-product-analytics/
 2. Set up a virtual environment: `python3 -m venv .venv`
 3. Install the project in editable mode: `make setup`
 
+### One-Command Demo
+
+```bash
+make demo
+```
+
+This regenerates the local synthetic analytics snapshot and then launches the
+Streamlit dashboard.
+
 ### Run the Pipeline
 
 ```bash
@@ -237,6 +246,7 @@ Synthetic CSVs → DataLoader → Validation Gate → Analytics Engines
 make setup      # Install in editable mode with dev dependencies
 make run        # Run the full pipeline
 make dashboard  # Launch Streamlit dashboard
+make demo       # Run pipeline, then launch Streamlit dashboard
 make status     # Show pipeline status
 make test       # Run pytest suite
 make lint       # Run Ruff linter

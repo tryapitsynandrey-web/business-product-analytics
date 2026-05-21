@@ -1,7 +1,7 @@
 PYTHON ?= $(shell if [ -x .venv/bin/python ]; then printf ".venv/bin/python"; else printf "python"; fi)
 PRODUCTPULSE ?= $(PYTHON) -m main
 
-.PHONY: setup run dashboard status test lint format typecheck coverage ci clean-cache
+.PHONY: setup run dashboard demo status test lint format typecheck coverage ci clean-cache
 
 setup:
 	$(PYTHON) -m pip install -e ".[dev]"
@@ -10,6 +10,9 @@ run:
 	PYTHONDONTWRITEBYTECODE=1 $(PRODUCTPULSE) run
 
 dashboard:
+	PYTHONDONTWRITEBYTECODE=1 $(PRODUCTPULSE) dashboard
+
+demo: run
 	PYTHONDONTWRITEBYTECODE=1 $(PRODUCTPULSE) dashboard
 
 status:

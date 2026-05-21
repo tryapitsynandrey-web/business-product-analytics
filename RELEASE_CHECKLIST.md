@@ -68,6 +68,8 @@ npx markdownlint-cli "reports/*.md" "README.md" "*.md"
 
 ```bash
 make dashboard
+# or, for a full local demo refresh:
+make demo
 ```
 
 *Click through all sidebar tabs and interact with filters.*

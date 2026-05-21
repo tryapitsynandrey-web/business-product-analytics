@@ -1,0 +1,109 @@
+# ProductPulse Demo Flow
+
+[Back to README](../README.md)
+
+Use this guide to review the project like a hiring manager, technical reviewer,
+or stakeholder evaluating a local analytics decision engine.
+
+## 1. Install and Verify
+
+```bash
+make setup
+make ci
+```
+
+Expected result:
+
+- Python modules compile.
+- Ruff passes.
+- Pyrefly reports zero errors.
+- Pytest passes with the 100% coverage gate.
+
+## 2. Generate the Analytics Snapshot
+
+```bash
+make run
+```
+
+Expected result:
+
+- Synthetic data is generated deterministically.
+- Analytics engines produce KPI, churn risk, revenue leakage, recommendations,
+  scenario analysis, cohort, funnel, and lineage outputs.
+- CSV, SQLite, and Markdown artifacts are written locally.
+
+## 3. Check Runtime Status
+
+```bash
+make status
+```
+
+Review:
+
+- SQLite path points to `data/local/productpulse.db`.
+- Dashboard tables are present.
+- Row counts are available for KPI, Customer 360, intervention plan, decision
+  traces, and advanced analytics tables.
+
+## 4. Open the Dashboard
+
+```bash
+make dashboard
+```
+
+Review these pages in order:
+
+1. **Executive Cockpit** - validate data freshness, business status, top
+   actions, revenue leakage, and risk queues.
+2. **Top Actions** - use quick views, filters, action queue, owner workload,
+   chart tab, and decision brief export.
+3. **Customer 360** - filter by risk, segment, and plan; inspect overview
+   metrics, customer profile, recommendations, decision trace, and queue tab.
+4. **Scenario Simulator** - adjust custom assumptions for churn, activation,
+   ARPU, and failed-payment recovery; export custom scenario CSV.
+5. **Cohort Retention** and **Funnel Analysis** - inspect retention and
+   conversion views.
+6. **Decision Traces** and **Metric Lineage** - verify explainability and
+   governance evidence.
+
+## 5. Inspect Generated Reports
+
+Open:
+
+- [Executive summary](../reports/executive_summary.md)
+- [Intervention plan](../reports/intervention_plan.md)
+- [Risk register](../reports/risk_register.md)
+- [Metric definitions](../reports/metric_definitions.md)
+- [Data quality report](../reports/data_quality_report.md)
+
+Review:
+
+- Recommendations have business context and priority.
+- Metrics have definitions and formulas.
+- Data quality output explains completeness, validity, uniqueness, and
+  referential integrity.
+
+## 6. Architecture Review
+
+Open:
+
+- [Architecture](ARCHITECTURE.md)
+- [Generated artifacts policy](GENERATED_ARTIFACTS.md)
+- [Metric catalog guide](METRIC_CATALOG.md)
+
+Review:
+
+- `src/core/` contains business logic only.
+- `src/adapters/` owns IO and persistence boundaries.
+- `app/` reads through SQLite adapter methods, not raw SQL or source CSVs.
+- Generated data and reports are tracked as portfolio snapshots by policy.
+
+## 7. Reviewer Checklist
+
+- Local-first: no cloud service required.
+- Privacy-safe: only synthetic data is used.
+- Explainable: deterministic rules and decision traces, no opaque ML.
+- Tested: 100% coverage gate with branch coverage.
+- Governed: metrics are tied to a declarative catalog.
+- Usable: dashboard supports filtering, drill-downs, exports, and scenario
+  controls.

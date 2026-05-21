@@ -72,7 +72,16 @@ make dashboard
 
 *Click through all sidebar tabs and interact with filters.*
 
-## 9. Git Status
+## 9. Portfolio Demo Flow
+
+```bash
+sed -n '1,220p' docs/DEMO_FLOW.md
+```
+
+*Walk through the reviewer path and confirm the README, reports, dashboard,
+and architecture links still match the current project state.*
+
+## 10. Git Status
 
 ```bash
 git status --short

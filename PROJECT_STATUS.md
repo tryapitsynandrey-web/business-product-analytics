@@ -4,7 +4,7 @@
 
 ## Current Phase Completed
 
-**Phase 6B: Architecture Review Remediation & Documentation Hardening.**
+**Phase 6C: Portfolio Review Polish.**
 
 ## Implemented Capabilities
 
@@ -23,6 +23,7 @@
 13. **Interactive Scenario Controls**: Lets dashboard users tune churn, activation, ARPU, and failed-payment recovery assumptions.
 14. **Customer 360 UX**: Adds view-level metrics, prioritized customer queues, and tabbed drill-downs.
 15. **Top Actions UX**: Adds action queue metrics, owner workload navigation, and priority-focused action drill-downs.
+16. **Portfolio Demo Flow**: Documents reviewer path across CI, pipeline, dashboard, reports, and architecture evidence.
 
 ## System Health
 
@@ -35,8 +36,10 @@
 - All recommendations are static, rule-based heuristics.
 - No historical cohort analysis or retention ML models.
 - Dashboard processes all filtering in-memory via Pandas (not scaled for millions of records).
+- Demo guide is text-based; no committed dashboard screenshots yet.
 
 ## Next Phases
 
-- **Phase 7**: Potential LLM summarization layer for executive reports, maintaining local execution boundaries.
-- **Phase 8**: Refinement of CI/CD and deployment containerization if usage grows.
+- **Phase 7**: Add optional screenshots or short demo media for portfolio presentation.
+- **Phase 8**: Potential LLM summarization layer for executive reports, maintaining local execution boundaries.
+- **Phase 9**: Refinement of CI/CD and deployment containerization if usage grows.

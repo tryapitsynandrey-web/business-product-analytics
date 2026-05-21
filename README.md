@@ -20,8 +20,10 @@ use ML predictions and is not a production SaaS deployment.
 ## Table of Contents
 
 - [Key Features](#key-features)
+- [Why It Matters](#why-it-matters)
 - [Architecture](#architecture)
 - [Quick Start](#quick-start)
+- [Demo Flow](#demo-flow)
 - [Configuration](#configuration)
 - [How It Works](#how-it-works)
 - [Development](#development)
@@ -76,6 +78,23 @@ No data leaves your machine. No cloud deployment or authentication required.
 
 Unified pipeline managing synthetic data generation, loading, validation,
 analytics calculation, and reporting in a single deterministic run.
+
+## Why It Matters
+
+ProductPulse demonstrates how product, finance, and customer-success signals can
+be converted into a governed decision system without adding fragile SaaS
+infrastructure or opaque model behavior.
+
+The project is designed to show senior-level engineering judgment across:
+
+- **Business value:** turns churn, usage, billing, and support signals into
+  prioritized intervention queues.
+- **Explainability:** every recommendation can be traced back to deterministic
+  rules, metric definitions, and decision evidence.
+- **Local-first privacy:** all data is synthetic and all processing runs on the
+  developer machine.
+- **Portfolio readiness:** generated snapshots, reports, docs, CI, and
+  dashboard flows are committed for reproducible review.
 
 ## Architecture
 
@@ -144,6 +163,21 @@ productpulse run        # Run the full analytics pipeline
 productpulse status     # Show pipeline and database status
 productpulse dashboard  # Launch the Streamlit dashboard
 ```
+
+## Demo Flow
+
+For a guided review path, see [docs/DEMO_FLOW.md](docs/DEMO_FLOW.md).
+
+Recommended reviewer path:
+
+1. Run `make ci` to verify quality gates.
+2. Run `make run` to regenerate the synthetic analytics snapshot.
+3. Run `make status` to confirm SQLite table health.
+4. Run `make dashboard` and review Executive Cockpit, Top Actions,
+   Customer 360, Scenario Simulator, Decision Traces, and Metric Lineage.
+5. Open generated Markdown reports in `reports/` for the executive summary,
+   intervention plan, risk register, metric definitions, and data quality
+   evidence.
 
 ## Configuration
 
@@ -234,6 +268,7 @@ GitHub Actions runs the same `make ci` on every push and PR to `main`.
 | [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) | Pre-release verification steps |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Layer diagram, data flow, ADRs, and scale boundaries |
 | [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) | Docs-silo bridge to the canonical contribution guide |
+| [docs/DEMO_FLOW.md](docs/DEMO_FLOW.md) | Guided portfolio and stakeholder review path |
 | [docs/GENERATED_ARTIFACTS.md](docs/GENERATED_ARTIFACTS.md) | Git policy for generated data and reports |
 | [docs/METRIC_CATALOG.md](docs/METRIC_CATALOG.md) | Human-readable metric catalog guide |
 | [reports/executive_summary.md](reports/executive_summary.md) | Auto-generated executive analytics summary |

@@ -146,6 +146,21 @@ make demo
 This regenerates the local synthetic analytics snapshot and then launches the
 Streamlit dashboard.
 
+### Docker Demo
+
+```bash
+make docker-demo
+```
+
+This builds a local Docker image, regenerates the synthetic analytics snapshot
+inside the container, and serves the dashboard at `http://localhost:8501`.
+
+Stop the container with:
+
+```bash
+make docker-down
+```
+
 ### Run the Pipeline
 
 ```bash
@@ -247,6 +262,9 @@ make setup      # Install in editable mode with dev dependencies
 make run        # Run the full pipeline
 make dashboard  # Launch Streamlit dashboard
 make demo       # Run pipeline, then launch Streamlit dashboard
+make docker-build # Build the local Docker demo image
+make docker-demo  # Build and run the containerized local demo
+make docker-down  # Stop the Docker demo stack
 make status     # Show pipeline status
 make test       # Run pytest suite
 make lint       # Run Ruff linter

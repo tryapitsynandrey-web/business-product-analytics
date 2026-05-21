@@ -28,6 +28,22 @@ make demo
 Use this when the environment is already set up. It regenerates the synthetic
 analytics snapshot and then opens the dashboard.
 
+## Containerized Path
+
+```bash
+make docker-demo
+```
+
+Use this when you want an isolated local demo. It builds the container,
+regenerates synthetic analytics inside the container, and serves the dashboard
+at `http://localhost:8501`.
+
+Stop the stack with:
+
+```bash
+make docker-down
+```
+
 ## 2. Generate the Analytics Snapshot
 
 ```bash

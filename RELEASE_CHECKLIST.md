@@ -70,6 +70,8 @@ npx markdownlint-cli "reports/*.md" "README.md" "*.md"
 make dashboard
 # or, for a full local demo refresh:
 make demo
+# or, for an isolated containerized demo:
+make docker-demo
 ```
 
 *Click through all sidebar tabs and interact with filters.*

@@ -25,6 +25,7 @@
 15. **Top Actions UX**: Adds action queue metrics, owner workload navigation, and priority-focused action drill-downs.
 16. **Portfolio Demo Flow**: Documents reviewer path across CI, pipeline, dashboard, reports, and architecture evidence.
 17. **One-Command Demo**: Adds `make demo` to regenerate local analytics and launch the dashboard.
+18. **Containerized Demo**: Adds Docker Compose setup for an isolated local dashboard demo.
 
 ## System Health
 
@@ -43,4 +44,4 @@
 
 - **Phase 7**: Add optional screenshots or short demo media for portfolio presentation.
 - **Phase 8**: Potential LLM summarization layer for executive reports, maintaining local execution boundaries.
-- **Phase 9**: Refinement of CI/CD and deployment containerization if usage grows.
+- **Phase 9**: Optional lightweight deployment packaging if usage grows beyond local demos.

@@ -21,6 +21,7 @@ use ML predictions and is not a production SaaS deployment.
 
 - [Key Features](#key-features)
 - [Why It Matters](#why-it-matters)
+- [Dashboard Preview](#dashboard-preview)
 - [Architecture](#architecture)
 - [Quick Start](#quick-start)
 - [Demo Flow](#demo-flow)
@@ -96,6 +97,20 @@ The project is designed to show senior-level engineering judgment across:
 - **Portfolio readiness:** generated snapshots, reports, docs, CI, and
   dashboard flows are committed for reproducible review.
 
+## Dashboard Preview
+
+The committed screenshots below show the local Streamlit demo after a fresh
+pipeline run. They are useful for quick portfolio review before launching the
+app locally.
+
+![Executive Cockpit](docs/assets/dashboard-executive-cockpit.png)
+
+| Top Actions | Customer 360 |
+| --- | --- |
+| ![Top Actions dashboard](docs/assets/dashboard-top-actions.png) | ![Customer 360 dashboard](docs/assets/dashboard-customer-360.png) |
+
+![Scenario Simulator](docs/assets/dashboard-scenario-simulator.png)
+
 ## Architecture
 
 The system utilizes a clean, adapter-driven architecture separating IO from
@@ -108,7 +123,7 @@ data flow, and architecture decisions.
 
 - **Language:** Python 3.10+
 - **Libraries:** Pandas, NumPy, PyYAML, Streamlit
-- **Testing:** Pytest (704 tests, 100% coverage gate)
+- **Testing:** Pytest (705 tests, 100% coverage gate)
 - **Linting:** Ruff
 - **Type Checking:** Pyrefly
 

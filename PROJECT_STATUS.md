@@ -4,7 +4,7 @@
 
 ## Current Phase Completed
 
-**Phase 6C: Portfolio Review Polish.**
+**Phase 7: Portfolio Demo Media.**
 
 ## Implemented Capabilities
 
@@ -26,10 +26,11 @@
 16. **Portfolio Demo Flow**: Documents reviewer path across CI, pipeline, dashboard, reports, and architecture evidence.
 17. **One-Command Demo**: Adds `make demo` to regenerate local analytics and launch the dashboard.
 18. **Containerized Demo**: Adds Docker Compose setup for an isolated local dashboard demo.
+19. **Dashboard Demo Gallery**: Adds committed dashboard screenshots for portfolio review.
 
 ## System Health
 
-- **Tests**: 704 passing tests, 100% coverage gate.
+- **Tests**: 705 passing tests, 100% coverage gate.
 - **Local-First Status**: 100% (no cloud, API, or external DBs).
 
 ## Known Limitations
@@ -38,10 +39,8 @@
 - All recommendations are static, rule-based heuristics.
 - No historical cohort analysis or retention ML models.
 - Dashboard processes all filtering in-memory via Pandas (not scaled for millions of records).
-- Demo guide is text-based; no committed dashboard screenshots yet.
 
 ## Next Phases
 
-- **Phase 7**: Add optional screenshots or short demo media for portfolio presentation.
 - **Phase 8**: Potential LLM summarization layer for executive reports, maintaining local execution boundaries.
 - **Phase 9**: Optional lightweight deployment packaging if usage grows beyond local demos.

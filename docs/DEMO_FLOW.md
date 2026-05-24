@@ -28,6 +28,15 @@ make demo
 Use this when the environment is already set up. It regenerates the synthetic
 analytics snapshot and then opens the dashboard.
 
+## Visual Preview
+
+Use the committed screenshots for a quick review before running the dashboard:
+
+- [Executive Cockpit](assets/dashboard-executive-cockpit.png)
+- [Top Actions](assets/dashboard-top-actions.png)
+- [Customer 360](assets/dashboard-customer-360.png)
+- [Scenario Simulator](assets/dashboard-scenario-simulator.png)
+
 ## Containerized Path
 
 ```bash

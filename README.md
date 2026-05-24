@@ -120,6 +120,22 @@ or data sources, making the logic testable and governance-friendly.
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the detailed layer map,
 data flow, and architecture decisions.
 
+### Architecture Snapshot
+
+```mermaid
+flowchart LR
+    CLI["CLI / Make targets"] --> Pipeline["ProductAnalyticsPipeline"]
+    Pipeline --> Loader["DataLoader"]
+    Pipeline --> Validation["Validation Gate"]
+    Pipeline --> Engines["Core Analytics Engines"]
+    Engines --> Decisions["Decision Layer"]
+    Decisions --> Serializer["OutputSerializer"]
+    Serializer --> CSV["CSV snapshots"]
+    Serializer --> SQLite["SQLite dashboard DB"]
+    Decisions --> Reports["Markdown reports"]
+    SQLite --> Dashboard["Streamlit dashboard"]
+```
+
 ### Tech Stack
 
 - **Language:** Python 3.10+

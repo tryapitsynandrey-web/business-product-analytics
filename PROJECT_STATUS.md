@@ -4,7 +4,7 @@
 
 ## Current Phase Completed
 
-**Phase 7B: Portfolio Case Study.**
+**Phase 7C: README Architecture Snapshot.**
 
 ## Implemented Capabilities
 
@@ -29,6 +29,7 @@
 19. **Dashboard Demo Gallery**: Adds committed dashboard screenshots for portfolio review.
 20. **Docker CI Smoke Check**: Validates Compose configuration and builds the demo image in CI.
 21. **Portfolio Case Study**: Adds a reviewer-ready narrative with problem, architecture, UX, tradeoffs, and proof links.
+22. **README Architecture Snapshot**: Adds a first-pass system diagram for quick reviewer orientation.
 
 ## System Health
 

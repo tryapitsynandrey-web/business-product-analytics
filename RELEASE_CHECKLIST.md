@@ -82,6 +82,7 @@ make docker-demo
 ```bash
 sed -n '1,220p' docs/DEMO_FLOW.md
 sed -n '1,260p' docs/PORTFOLIO_CASE_STUDY.md
+grep -n "Architecture Snapshot" README.md
 ls -lh docs/assets/dashboard-*.png
 ```
 

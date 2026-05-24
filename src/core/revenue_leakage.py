@@ -192,8 +192,9 @@ class RevenueLeakageEngine:
         billable_customers = set(subs.loc[subs["status"].isin(_BILLABLE_STATUSES), "customer_id"])
         usage_customers = set(usage["customer_id"].unique())
 
-        # Customers with usage but no billable subscription
-        unbilled = usage_customers - billable_customers
+        # Customers with usage but no billable subscription. Sort explicitly so
+        # generated CSV and report artifacts remain reproducible across runs.
+        unbilled = sorted(usage_customers - billable_customers)
 
         if not unbilled:
             return []

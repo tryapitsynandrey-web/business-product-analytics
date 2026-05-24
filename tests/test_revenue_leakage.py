@@ -174,6 +174,30 @@ class TestActiveUsageWithoutBilling:
         ]
         assert unbilled == []
 
+    def test_usage_without_billing_records_are_sorted_by_customer_id(self, engine):
+        subs = _base_subscriptions(["Active"], [100.0], ["C0"])
+        txns = pd.DataFrame(
+            columns=["transaction_id", "customer_id", "subscription_id", "amount", "status"]
+        )
+        usage = pd.DataFrame(
+            {
+                "usage_id": ["U1", "U2", "U3", "U4"],
+                "customer_id": ["C3", "C1", "C2", "C3"],
+                "logins": [10, 5, 7, 8],
+            }
+        )
+
+        leakages = engine.detect_leakage(
+            {"subscriptions": subs, "transactions": txns, "product_usage": usage}
+        )
+        unbilled_customer_ids = [
+            leakage["customer_id"]
+            for leakage in leakages
+            if leakage["leakage_type"] == "Active Usage Without Billing"
+        ]
+
+        assert unbilled_customer_ids == ["C1", "C2", "C3"]
+
 
 class TestOutputStructure:
     def test_all_leakage_records_have_required_fields(self, engine):

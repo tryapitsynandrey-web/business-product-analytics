@@ -4,7 +4,7 @@
 
 ## Current Phase Completed
 
-**Phase 7C: README Architecture Snapshot.**
+**Phase 7D: Dashboard UX Empty States.**
 
 ## Implemented Capabilities
 
@@ -30,6 +30,7 @@
 20. **Docker CI Smoke Check**: Validates Compose configuration and builds the demo image in CI.
 21. **Portfolio Case Study**: Adds a reviewer-ready narrative with problem, architecture, UX, tradeoffs, and proof links.
 22. **README Architecture Snapshot**: Adds a first-pass system diagram for quick reviewer orientation.
+23. **Dashboard Empty-State UX**: Adds actionable freshness, missing data, load-error, and filtered-result guidance.
 
 ## System Health
 

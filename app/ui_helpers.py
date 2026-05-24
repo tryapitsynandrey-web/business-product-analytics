@@ -304,6 +304,8 @@ def build_data_freshness_summary(
             "updated_at": "Unknown",
             "age": "Unknown",
             "caption": "No local database timestamp is available.",
+            "action": "Run `make run`, then reload this page.",
+            "severity": "error",
         }
 
     try:
@@ -321,16 +323,24 @@ def build_data_freshness_summary(
             "updated_at": "Unknown",
             "age": "Unknown",
             "caption": "Database timestamp could not be parsed.",
+            "action": "Run `make run`, then reload this page.",
+            "severity": "error",
         }
 
     age_seconds = max(0.0, now - updated)
     age_hours = age_seconds / 3600
     if age_hours <= warning_hours:
         status = "🟢 Fresh"
+        severity = "success"
+        action = "Ready for review."
     elif age_hours <= stale_hours:
         status = "🟡 Aging"
+        severity = "warning"
+        action = "Run `make run` before sharing or making decisions from this snapshot."
     else:
         status = "🔴 Stale"
+        severity = "error"
+        action = "Run `make run` before using this dashboard for review."
 
     age = format_duration(age_seconds)
     return {
@@ -338,6 +348,8 @@ def build_data_freshness_summary(
         "updated_at": format_timestamp(updated),
         "age": age,
         "caption": f"Local analytics database was updated {age} ago.",
+        "action": action,
+        "severity": severity,
     }
 
 
@@ -346,10 +358,19 @@ def db_status_label(exists: bool) -> str:
     return "🟢 Online" if exists else "🔴 Missing"
 
 
-def safe_dataframe_empty_message(df: pd.DataFrame | None, label: str) -> str:
+def safe_dataframe_empty_message(
+    df: pd.DataFrame | None,
+    label: str,
+    *,
+    filtered: bool = False,
+) -> str:
     """Return a message indicating a dataframe is empty or missing."""
-    if df is None or df.empty:
-        return f"No {label} data available."
+    if filtered:
+        return f"No {label} records match the current filters. Clear filters or search, then retry."
+    if df is None:
+        return f"No {label} data source is available. Run `make run`, then reload this page."
+    if df.empty:
+        return f"No {label} data available. Run `make run`, then reload this page if this is unexpected."
     return ""
 
 

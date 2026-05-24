@@ -72,7 +72,7 @@ risk queues, decision traces, and metric lineage. Features include:
 - Decision Brief summaries with Markdown exports
 - Owner workload summaries for handoff queues
 - Scenario simulator with custom assumptions, cohort retention, and funnel analysis views
-- Local data freshness indicators and CSV exports
+- Actionable data freshness, empty-state guidance, and CSV exports
 
 No data leaves your machine. No cloud deployment or authentication required.
 

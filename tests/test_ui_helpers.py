@@ -141,9 +141,14 @@ def test_build_data_freshness_summary_statuses():
 
     assert fresh["status"] == "🟢 Fresh"
     assert fresh["age"] == "1 hour"
+    assert fresh["severity"] == "success"
+    assert fresh["action"] == "Ready for review."
     assert aging["status"] == "🟡 Aging"
+    assert aging["severity"] == "warning"
     assert stale["status"] == "🔴 Stale"
+    assert stale["severity"] == "error"
     assert missing["status"] == "🔴 Missing"
+    assert missing["action"] == "Run `make run`, then reload this page."
     assert unknown["status"] == "🔴 Unknown"
 
 
@@ -153,8 +158,18 @@ def test_db_status_label():
 
 
 def test_safe_dataframe_empty_message():
-    assert safe_dataframe_empty_message(None, "KPI") == "No KPI data available."
-    assert safe_dataframe_empty_message(pd.DataFrame(), "Health") == "No Health data available."
+    assert (
+        safe_dataframe_empty_message(None, "KPI")
+        == "No KPI data source is available. Run `make run`, then reload this page."
+    )
+    assert (
+        safe_dataframe_empty_message(pd.DataFrame(), "Health")
+        == "No Health data available. Run `make run`, then reload this page if this is unexpected."
+    )
+    assert (
+        safe_dataframe_empty_message(pd.DataFrame(), "Customer 360", filtered=True)
+        == "No Customer 360 records match the current filters. Clear filters or search, then retry."
+    )
     assert safe_dataframe_empty_message(pd.DataFrame({"a": [1]}), "Test") == ""
 
 

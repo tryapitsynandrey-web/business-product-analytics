@@ -92,7 +92,10 @@ def fetch_data(
         method = getattr(_reader, method_name)
         return method(**kwargs)
     except Exception as e:
-        st.error(f"Failed to load data ({method_name}): {str(e)}")
+        st.error(
+            f"Failed to load data for `{method_name}`. "
+            f"Run `make run`, then reload this page. Details: {str(e)}"
+        )
         return pd.DataFrame()
 
 
@@ -105,7 +108,10 @@ def fetch_table_inventory(_reader: SQLiteReader | None, _mtime: float | None) ->
     try:
         table_names = sorted(_reader.list_tables())
     except Exception as e:
-        st.error(f"Failed to load table inventory: {str(e)}")
+        st.error(
+            "Failed to load table inventory. Run `make run`, then reload this page. "
+            f"Details: {str(e)}"
+        )
         return pd.DataFrame(columns=["table", "rows"])
 
     for table_name in table_names:
@@ -206,6 +212,22 @@ def render_owner_workload(df: pd.DataFrame, key: str) -> None:
         )
 
 
+def render_freshness_action(freshness: dict[str, str]) -> None:
+    action = freshness.get("action", "")
+    if not action:
+        return
+
+    severity = freshness.get("severity")
+    if severity == "success":
+        st.success(action)
+    elif severity == "warning":
+        st.warning(action)
+    elif severity == "error":
+        st.error(action)
+    else:
+        st.info(action)
+
+
 # ── Sidebar Navigation & Status ─────────────────────────────────────────
 st.sidebar.title("ProductPulse")
 st.sidebar.caption("Business Product Analytics")
@@ -246,7 +268,7 @@ st.sidebar.caption("Local-only mode. No data leaves this machine.")
 if not db_exists or not reader:
     st.title("ProductPulse")
     st.warning(f"Local SQLite database was not found at `{SQLITE_DB_PATH}`.")
-    st.info("Run the local pipeline, then reload this page.")
+    st.info(safe_dataframe_empty_message(None, "dashboard database"))
     st.code(
         """
 make run
@@ -300,6 +322,7 @@ if selection == "Executive Cockpit":
             )
     else:
         st.caption(freshness["caption"])
+    render_freshness_action(freshness)
 
     st.divider()
 
@@ -494,6 +517,7 @@ elif selection == "Top Actions":
                 safe_dataframe_empty_message(
                     top_actions,
                     "top actions",
+                    filtered=True,
                 )
             )
     else:
@@ -635,7 +659,11 @@ elif selection == "Customer 360":
                         "download_customer_recommendations",
                     )
                 else:
-                    st.info("No recommendations for this customer.")
+                    st.info(
+                        safe_dataframe_empty_message(
+                            customer_recs, "customer recommendations", filtered=True
+                        )
+                    )
 
             with trace_tab:
                 customer_traces = (
@@ -652,7 +680,11 @@ elif selection == "Customer 360":
                         "download_customer_trace",
                     )
                 else:
-                    st.info("No customer-specific trace records.")
+                    st.info(
+                        safe_dataframe_empty_message(
+                            customer_traces, "customer decision traces", filtered=True
+                        )
+                    )
 
             with queue_tab:
                 display_queue = prepare_display_dataframe(
@@ -669,7 +701,7 @@ elif selection == "Customer 360":
                     "download_filtered_customers",
                 )
         else:
-            st.info("No customers match the selected filters.")
+            st.info(safe_dataframe_empty_message(filtered_customers, "customers", filtered=True))
     else:
         st.info(safe_dataframe_empty_message(customers, "Customer 360"))
 

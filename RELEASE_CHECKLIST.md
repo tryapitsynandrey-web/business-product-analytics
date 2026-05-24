@@ -76,6 +76,7 @@ make docker-demo
 ```
 
 *Click through all sidebar tabs and interact with filters.*
+*Confirm freshness guidance and filtered empty states show clear next actions.*
 
 ## 9. Portfolio Demo Flow
 

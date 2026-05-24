@@ -81,11 +81,13 @@ make docker-demo
 
 ```bash
 sed -n '1,220p' docs/DEMO_FLOW.md
+sed -n '1,260p' docs/PORTFOLIO_CASE_STUDY.md
 ls -lh docs/assets/dashboard-*.png
 ```
 
 *Walk through the reviewer path and confirm the README, reports, dashboard,
-screenshots, and architecture links still match the current project state.*
+screenshots, case study, and architecture links still match the current project
+state.*
 
 ## 10. Git Status
 

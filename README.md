@@ -25,6 +25,7 @@ use ML predictions and is not a production SaaS deployment.
 - [Architecture](#architecture)
 - [Quick Start](#quick-start)
 - [Demo Flow](#demo-flow)
+- [Portfolio Case Study](#portfolio-case-study)
 - [Configuration](#configuration)
 - [How It Works](#how-it-works)
 - [Development](#development)
@@ -218,6 +219,13 @@ Recommended reviewer path:
    intervention plan, risk register, metric definitions, and data quality
    evidence.
 
+## Portfolio Case Study
+
+For a concise reviewer narrative, see
+[docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md). It summarizes the
+problem, architecture, UX, quality gates, tradeoffs, screenshots, and review
+path in one document.
+
 ## Configuration
 
 ### Business Rules (YAML)
@@ -317,6 +325,7 @@ to `main`.
 | [docs/DEMO_FLOW.md](docs/DEMO_FLOW.md) | Guided portfolio and stakeholder review path |
 | [docs/GENERATED_ARTIFACTS.md](docs/GENERATED_ARTIFACTS.md) | Git policy for generated data and reports |
 | [docs/METRIC_CATALOG.md](docs/METRIC_CATALOG.md) | Human-readable metric catalog guide |
+| [docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md) | Portfolio case study with problem, architecture, UX, tradeoffs, and evidence |
 | [reports/executive_summary.md](reports/executive_summary.md) | Auto-generated executive analytics summary |
 | [reports/metric_definitions.md](reports/metric_definitions.md) | Full metric catalog with formulas |
 | [reports/data_quality_report.md](reports/data_quality_report.md) | Per-dataset quality scores |

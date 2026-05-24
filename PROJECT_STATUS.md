@@ -4,7 +4,7 @@
 
 ## Current Phase Completed
 
-**Phase 7: Portfolio Demo Media.**
+**Phase 7B: Portfolio Case Study.**
 
 ## Implemented Capabilities
 
@@ -28,6 +28,7 @@
 18. **Containerized Demo**: Adds Docker Compose setup for an isolated local dashboard demo.
 19. **Dashboard Demo Gallery**: Adds committed dashboard screenshots for portfolio review.
 20. **Docker CI Smoke Check**: Validates Compose configuration and builds the demo image in CI.
+21. **Portfolio Case Study**: Adds a reviewer-ready narrative with problem, architecture, UX, tradeoffs, and proof links.
 
 ## System Health
 
@@ -39,7 +40,7 @@
 
 - Synthetic data only; does not support live data pipelines out of the box.
 - All recommendations are static, rule-based heuristics.
-- No historical cohort analysis or retention ML models.
+- No live multi-snapshot cohort history or retention ML models.
 - Dashboard processes all filtering in-memory via Pandas (not scaled for millions of records).
 
 ## Next Phases

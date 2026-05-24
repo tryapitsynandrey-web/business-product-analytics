@@ -37,6 +37,12 @@ Use the committed screenshots for a quick review before running the dashboard:
 - [Customer 360](assets/dashboard-customer-360.png)
 - [Scenario Simulator](assets/dashboard-scenario-simulator.png)
 
+## Portfolio Case Study
+
+Read [Portfolio Case Study](PORTFOLIO_CASE_STUDY.md) when you need the
+reviewer narrative: problem, architecture, UX, quality gates, tradeoffs, and
+evidence.
+
 ## Containerized Path
 
 ```bash

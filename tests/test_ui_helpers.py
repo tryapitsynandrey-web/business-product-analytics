@@ -11,6 +11,7 @@ from app.ui_helpers import (
     format_timestamp,
     format_duration,
     build_data_freshness_summary,
+    build_demo_readiness_summary,
     build_custom_scenario_analysis,
     db_status_label,
     safe_dataframe_empty_message,
@@ -150,6 +151,21 @@ def test_build_data_freshness_summary_statuses():
     assert missing["status"] == "🔴 Missing"
     assert missing["action"] == "Run `make run`, then reload this page."
     assert unknown["status"] == "🔴 Unknown"
+
+
+def test_build_demo_readiness_summary():
+    missing = build_demo_readiness_summary(False)
+    empty = build_demo_readiness_summary(True, table_count=0)
+    ready = build_demo_readiness_summary(True, table_count=12, total_rows=3456)
+
+    assert missing["status"] == "Setup needed"
+    assert missing["severity"] == "error"
+    assert missing["action"] == "Run `make reset-demo` to rebuild the deterministic demo snapshot."
+    assert empty["status"] == "Needs refresh"
+    assert empty["severity"] == "warning"
+    assert ready["status"] == "Reviewer ready"
+    assert ready["severity"] == "success"
+    assert ready["summary"] == "12 table(s) and 3,456 row(s) are available."
 
 
 def test_db_status_label():

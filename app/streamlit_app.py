@@ -11,6 +11,7 @@ from app.ui_helpers import (
     build_custom_scenario_analysis,
     build_data_freshness_summary,
     build_data_quality_overview,
+    build_demo_readiness_summary,
     build_decision_brief,
     build_top_actions_overview,
     build_export_filename,
@@ -213,11 +214,15 @@ def render_owner_workload(df: pd.DataFrame, key: str) -> None:
 
 
 def render_freshness_action(freshness: dict[str, str]) -> None:
-    action = freshness.get("action", "")
+    render_status_action(freshness)
+
+
+def render_status_action(status_info: dict[str, str]) -> None:
+    action = status_info.get("action", "")
     if not action:
         return
 
-    severity = freshness.get("severity")
+    severity = status_info.get("severity")
     if severity == "success":
         st.success(action)
     elif severity == "warning":
@@ -226,6 +231,17 @@ def render_freshness_action(freshness: dict[str, str]) -> None:
         st.error(action)
     else:
         st.info(action)
+
+
+sidebar_inventory = fetch_table_inventory(reader, db_mtime)
+sidebar_total_rows = 0
+if not sidebar_inventory.empty:
+    sidebar_total_rows = int(pd.to_numeric(sidebar_inventory["rows"], errors="coerce").sum())
+demo_readiness = build_demo_readiness_summary(
+    db_exists,
+    len(sidebar_inventory),
+    sidebar_total_rows,
+)
 
 
 # ── Sidebar Navigation & Status ─────────────────────────────────────────
@@ -239,6 +255,18 @@ if db_exists:
     st.sidebar.caption(f"File size: {format_file_size(db_size)}")
 else:
     st.sidebar.caption("Missing local database.")
+
+st.sidebar.markdown(f"**Demo:** {demo_readiness['status']}")
+st.sidebar.caption(demo_readiness["summary"])
+with st.sidebar.expander("Demo commands", expanded=False):
+    st.code(
+        """
+make reset-demo
+make dashboard
+""",
+        language="bash",
+    )
+    st.caption(demo_readiness["action"])
 
 st.sidebar.divider()
 
@@ -271,7 +299,8 @@ if not db_exists or not reader:
     st.info(safe_dataframe_empty_message(None, "dashboard database"))
     st.code(
         """
-make run
+make reset-demo
+make dashboard
 """,
         language="bash",
     )
@@ -287,7 +316,7 @@ if selection == "Executive Cockpit":
     plan = fetch_data(reader, "get_intervention_plan", db_mtime)
     leakages = fetch_data(reader, "read_table", db_mtime, table_name="revenue_leakage")
     metric_values = get_executive_metric_values(kpis)
-    table_inventory = fetch_table_inventory(reader, db_mtime)
+    table_inventory = sidebar_inventory
     freshness = build_data_freshness_summary(db_mtime)
 
     st.subheader("Data Freshness")
@@ -1273,5 +1302,12 @@ elif selection == "Metric Lineage":
         st.info(safe_dataframe_empty_message(lineage, "metric lineage"))
 
 st.divider()
-if st.button("Show refresh instructions"):
-    st.info("To refresh data, run `make run` in your terminal, then reload this page.")
+if st.button("Show demo reset command"):
+    st.info("To rebuild from the configured seed, run `make reset-demo`, then reload this page.")
+    st.code(
+        """
+make reset-demo
+make dashboard
+""",
+        language="bash",
+    )

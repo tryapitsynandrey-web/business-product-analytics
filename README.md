@@ -202,13 +202,23 @@ make run
 This generates synthetic data, runs all analytics engines, and writes CSV,
 SQLite, and Markdown report artifacts.
 
+### Reset Demo Snapshot
+
+```bash
+make reset-demo
+```
+
+This removes the local SQLite demo database and regenerates the deterministic
+synthetic analytics snapshot from the configured seed.
+
 ### Launch the Dashboard
 
 ```bash
 make dashboard
 ```
 
-If the dashboard reports a missing database or stale data, rerun `make run`.
+If the dashboard reports a missing database or stale data, rerun
+`make reset-demo`.
 
 ### CLI Reference
 
@@ -216,6 +226,7 @@ The `productpulse` CLI is installed by `make setup` and supports:
 
 ```bash
 productpulse run        # Run the full analytics pipeline
+productpulse reset-demo # Rebuild the deterministic local demo snapshot
 productpulse status     # Show pipeline and database status
 productpulse dashboard  # Launch the Streamlit dashboard
 ```
@@ -227,7 +238,7 @@ For a guided review path, see [docs/DEMO_FLOW.md](docs/DEMO_FLOW.md).
 Recommended reviewer path:
 
 1. Run `make ci` to verify quality gates.
-2. Run `make run` to regenerate the synthetic analytics snapshot.
+2. Run `make reset-demo` to regenerate a clean synthetic analytics snapshot.
 3. Run `make status` to confirm SQLite table health.
 4. Run `make dashboard` and review Executive Cockpit, Top Actions,
    Customer 360, Scenario Simulator, Decision Traces, and Metric Lineage.
@@ -299,6 +310,7 @@ Synthetic CSVs → DataLoader → Validation Gate → Analytics Engines
 ```bash
 make setup      # Install in editable mode with dev dependencies
 make run        # Run the full pipeline
+make reset-demo # Rebuild the deterministic local demo snapshot
 make dashboard  # Launch Streamlit dashboard
 make demo       # Run pipeline, then launch Streamlit dashboard
 make docker-check # Validate Compose config and build the Docker demo image

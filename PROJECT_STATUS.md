@@ -4,7 +4,7 @@
 
 ## Current Phase Completed
 
-**Phase 7D: Dashboard UX Empty States.**
+**Phase 7E: Reviewer Demo Onboarding.**
 
 ## Implemented Capabilities
 
@@ -31,10 +31,11 @@
 21. **Portfolio Case Study**: Adds a reviewer-ready narrative with problem, architecture, UX, tradeoffs, and proof links.
 22. **README Architecture Snapshot**: Adds a first-pass system diagram for quick reviewer orientation.
 23. **Dashboard Empty-State UX**: Adds actionable freshness, missing data, load-error, and filtered-result guidance.
+24. **Reviewer Demo Onboarding**: Adds deterministic demo reset commands and dashboard readiness guidance.
 
 ## System Health
 
-- **Tests**: 705 passing tests, 100% coverage gate.
+- **Tests**: 708 passing tests, 100% coverage gate.
 - **CI**: Python quality gate plus Docker demo smoke check.
 - **Local-First Status**: 100% (no cloud, API, or external DBs).
 

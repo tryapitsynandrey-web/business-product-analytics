@@ -70,12 +70,15 @@ npx markdownlint-cli "reports/*.md" "README.md" "*.md"
 make docker-check
 make dashboard
 # or, for a full local demo refresh:
+make reset-demo
+# or, to refresh and launch in one command:
 make demo
 # or, for an isolated containerized demo:
 make docker-demo
 ```
 
 *Click through all sidebar tabs and interact with filters.*
+*Confirm sidebar demo readiness shows table and row availability.*
 *Confirm freshness guidance and filtered empty states show clear next actions.*
 
 ## 9. Portfolio Demo Flow

@@ -353,6 +353,36 @@ def build_data_freshness_summary(
     }
 
 
+def build_demo_readiness_summary(
+    db_exists: bool,
+    table_count: int = 0,
+    total_rows: int = 0,
+) -> dict[str, str]:
+    """Return display-ready demo readiness guidance for reviewers."""
+    if not db_exists:
+        return {
+            "status": "Setup needed",
+            "severity": "error",
+            "summary": "No local demo database found.",
+            "action": "Run `make reset-demo` to rebuild the deterministic demo snapshot.",
+        }
+
+    if table_count <= 0:
+        return {
+            "status": "Needs refresh",
+            "severity": "warning",
+            "summary": "Local demo database is present, but no readable tables were found.",
+            "action": "Run `make reset-demo`, then reload this page.",
+        }
+
+    return {
+        "status": "Reviewer ready",
+        "severity": "success",
+        "summary": f"{table_count} table(s) and {total_rows:,} row(s) are available.",
+        "action": "Use the dashboard flow, or run `make reset-demo` for a clean snapshot.",
+    }
+
+
 def db_status_label(exists: bool) -> str:
     """Return stylized DB status."""
     return "🟢 Online" if exists else "🔴 Missing"

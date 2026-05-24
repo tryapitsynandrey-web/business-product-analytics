@@ -28,6 +28,18 @@ make demo
 Use this when the environment is already set up. It regenerates the synthetic
 analytics snapshot and then opens the dashboard.
 
+## Clean Reviewer Reset
+
+```bash
+make reset-demo
+make dashboard
+```
+
+Use this when you want a known-clean local demo. The reset removes the local
+SQLite dashboard database, regenerates deterministic synthetic analytics from
+the configured seed, and leaves the tracked portfolio snapshots under normal
+pipeline control.
+
 ## Visual Preview
 
 Use the committed screenshots for a quick review before running the dashboard:
@@ -63,11 +75,12 @@ make docker-down
 ## 2. Generate the Analytics Snapshot
 
 ```bash
-make run
+make reset-demo
 ```
 
 Expected result:
 
+- The local SQLite demo database is rebuilt from a clean state.
 - Synthetic data is generated deterministically.
 - Analytics engines produce KPI, churn risk, revenue leakage, recommendations,
   scenario analysis, cohort, funnel, and lineage outputs.

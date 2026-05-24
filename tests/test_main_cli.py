@@ -55,6 +55,66 @@ def test_main_run_success_without_outputs_skips_generated_message(monkeypatch, c
     assert "Generated" not in captured.out
 
 
+def test_reset_demo_removes_database_and_runs_pipeline(monkeypatch, capsys, tmp_path):
+    db_path = tmp_path / "productpulse.db"
+    db_path.write_text("old", encoding="utf-8")
+    config_path = tmp_path / "config.yaml"
+    seen = {}
+
+    class FakePipeline:
+        def __init__(self, config_path=None):
+            seen["config_path"] = config_path
+            self._sqlite_path = str(db_path)
+
+        def run(self):
+            seen["ran"] = True
+            return SimpleNamespace(
+                success=True,
+                message="pipeline ok",
+                generated_outputs=["data/local/productpulse.db"],
+                issues=[],
+            )
+
+    monkeypatch.setattr(sys, "argv", ["productpulse", "reset-demo", "--config", str(config_path)])
+    monkeypatch.setattr(productpulse_main, "ProductAnalyticsPipeline", FakePipeline)
+
+    assert productpulse_main.main() == 0
+    assert seen == {"config_path": config_path, "ran": True}
+    assert not db_path.exists()
+    captured = capsys.readouterr()
+    assert "Removed local SQLite demo database" in captured.out
+    assert "Regenerating deterministic demo snapshot" in captured.out
+    assert "Generated 1 output artifact(s)." in captured.out
+
+
+def test_reset_demo_runs_pipeline_when_database_is_missing(monkeypatch, capsys, tmp_path):
+    db_path = tmp_path / "productpulse.db"
+    seen = {}
+
+    class FakePipeline:
+        def __init__(self, config_path=None):
+            seen["config_path"] = config_path
+            self._sqlite_path = str(db_path)
+
+        def run(self):
+            seen["ran"] = True
+            return SimpleNamespace(
+                success=True,
+                message="pipeline ok",
+                generated_outputs=[],
+                issues=[],
+            )
+
+    monkeypatch.setattr(sys, "argv", ["productpulse", "reset-demo"])
+    monkeypatch.setattr(productpulse_main, "ProductAnalyticsPipeline", FakePipeline)
+
+    assert productpulse_main.main() == 0
+    assert seen == {"config_path": None, "ran": True}
+    captured = capsys.readouterr()
+    assert "No local SQLite demo database found" in captured.out
+    assert "OK: pipeline ok" in captured.out
+
+
 def test_main_run_returns_one_and_prints_issues_on_failure(monkeypatch, capsys):
     class FakePipeline:
         def __init__(self, config_path=None):

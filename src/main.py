@@ -28,7 +28,7 @@ def _parse_args() -> argparse.Namespace:
         "command",
         nargs="?",
         default="run",
-        choices=("run", "status", "dashboard"),
+        choices=("run", "status", "dashboard", "reset-demo"),
         help="Command to execute. Defaults to 'run'.",
     )
     parser.add_argument(
@@ -44,8 +44,7 @@ def _parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def _run_pipeline(config_path: Path | None) -> int:
-    pipeline = ProductAnalyticsPipeline(config_path=config_path)
+def _execute_pipeline(pipeline: ProductAnalyticsPipeline) -> int:
     result = pipeline.run()
 
     if result.success:
@@ -59,6 +58,25 @@ def _run_pipeline(config_path: Path | None) -> int:
         for issue in result.issues:
             print(f"  - {issue}", file=sys.stderr)
     return 1
+
+
+def _run_pipeline(config_path: Path | None) -> int:
+    pipeline = ProductAnalyticsPipeline(config_path=config_path)
+    return _execute_pipeline(pipeline)
+
+
+def _reset_demo(config_path: Path | None) -> int:
+    pipeline = ProductAnalyticsPipeline(config_path=config_path)
+    db_path = Path(pipeline._sqlite_path)
+
+    if db_path.exists():
+        db_path.unlink()
+        print(f"Removed local SQLite demo database: {db_path}")
+    else:
+        print(f"No local SQLite demo database found: {db_path}")
+
+    print("Regenerating deterministic demo snapshot...")
+    return _execute_pipeline(pipeline)
 
 
 def _show_status(config_path: Path | None) -> int:
@@ -108,6 +126,8 @@ def main() -> int:
         return _show_status(args.config)
     if args.command == "dashboard":
         return _launch_dashboard()
+    if args.command == "reset-demo":
+        return _reset_demo(args.config)
     return _run_pipeline(args.config)
 
 

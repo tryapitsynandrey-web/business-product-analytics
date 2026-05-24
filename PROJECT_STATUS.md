@@ -27,10 +27,12 @@
 17. **One-Command Demo**: Adds `make demo` to regenerate local analytics and launch the dashboard.
 18. **Containerized Demo**: Adds Docker Compose setup for an isolated local dashboard demo.
 19. **Dashboard Demo Gallery**: Adds committed dashboard screenshots for portfolio review.
+20. **Docker CI Smoke Check**: Validates Compose configuration and builds the demo image in CI.
 
 ## System Health
 
 - **Tests**: 705 passing tests, 100% coverage gate.
+- **CI**: Python quality gate plus Docker demo smoke check.
 - **Local-First Status**: 100% (no cloud, API, or external DBs).
 
 ## Known Limitations

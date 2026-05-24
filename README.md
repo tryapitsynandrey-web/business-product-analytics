@@ -277,6 +277,7 @@ make setup      # Install in editable mode with dev dependencies
 make run        # Run the full pipeline
 make dashboard  # Launch Streamlit dashboard
 make demo       # Run pipeline, then launch Streamlit dashboard
+make docker-check # Validate Compose config and build the Docker demo image
 make docker-build # Build the local Docker demo image
 make docker-demo  # Build and run the containerized local demo
 make docker-down  # Stop the Docker demo stack
@@ -293,7 +294,9 @@ make ci         # Full CI: compile + lint + typecheck + coverage
 
 `make ci` compiles Python modules, runs Ruff lint checks, runs Pyrefly type
 checks, and executes the full pytest suite with the branch-aware coverage gate.
-GitHub Actions runs the same `make ci` on every push and PR to `main`.
+`make docker-check` validates the Docker Compose configuration and builds the
+containerized demo image. GitHub Actions runs both checks on every push and PR
+to `main`.
 
 ### Guidelines
 

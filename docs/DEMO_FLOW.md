@@ -40,12 +40,13 @@ Use the committed screenshots for a quick review before running the dashboard:
 ## Containerized Path
 
 ```bash
+make docker-check
 make docker-demo
 ```
 
-Use this when you want an isolated local demo. It builds the container,
-regenerates synthetic analytics inside the container, and serves the dashboard
-at `http://localhost:8501`.
+Use this when you want an isolated local demo. The check validates the Compose
+configuration and builds the image. The demo command then regenerates synthetic
+analytics inside the container and serves the dashboard at `http://localhost:8501`.
 
 Stop the stack with:
 

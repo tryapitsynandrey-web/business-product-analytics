@@ -1,7 +1,7 @@
 PYTHON ?= $(shell if [ -x .venv/bin/python ]; then printf ".venv/bin/python"; else printf "python"; fi)
 PRODUCTPULSE ?= $(PYTHON) -m main
 
-.PHONY: setup run dashboard demo docker-build docker-demo docker-down status test lint format typecheck coverage ci clean-cache
+.PHONY: setup run dashboard demo docker-check docker-build docker-demo docker-down status test lint format typecheck coverage ci clean-cache
 
 setup:
 	$(PYTHON) -m pip install -e ".[dev]"
@@ -14,6 +14,10 @@ dashboard:
 
 demo: run
 	PYTHONDONTWRITEBYTECODE=1 $(PRODUCTPULSE) dashboard
+
+docker-check:
+	docker compose config
+	docker compose build
 
 docker-build:
 	docker compose build

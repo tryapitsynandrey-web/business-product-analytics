@@ -67,6 +67,7 @@ npx markdownlint-cli "reports/*.md" "README.md" "*.md"
 ## 8. Dashboard Manual Check
 
 ```bash
+make docker-check
 make dashboard
 # or, for a full local demo refresh:
 make demo

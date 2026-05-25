@@ -1,3 +1,8 @@
+# Churn risk scoring model.
+# Each rule's weight represents its relative signal strength.  Weights
+# are not expected to sum to 1.0 — the engine aggregates triggered-rule
+# weights and normalises the result against defined risk band thresholds.
+
 rules:
 
   - rule_id: CR_001

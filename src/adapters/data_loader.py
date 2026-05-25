@@ -19,7 +19,10 @@ logger = logging.getLogger(__name__)
 
 # Date columns that must be parsed upon load, keyed by dataset name.
 # This mapping lives here — not in the analytical core — because type
-# enforcement on load is an IO concern.
+# enforcement on load is an IO concern.  It intentionally includes
+# physical CSV columns (end_date, date_closed) that the validation
+# config does not require, since they are produced by the synthetic
+# data generator and must be parsed before downstream engines use them.
 _DATE_COLUMNS: Dict[str, List[str]] = {
     "customers": ["signup_date"],
     "subscriptions": ["start_date", "end_date"],

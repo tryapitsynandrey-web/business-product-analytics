@@ -18,7 +18,7 @@ class FunnelAnalysisEngine:
         signups = set(customers["customer_id"].unique())
 
         # Activation
-        activated = set()
+        activated: set[Any] = set()
         if "is_activated" in customers.columns:
             activated.update(customers[customers["is_activated"].eq(True)]["customer_id"].unique())
         if "activation_date" in customers.columns:
@@ -85,7 +85,7 @@ class FunnelAnalysisEngine:
                 drop = 0.0
                 prev = users
             else:
-                conv = float(users / prev_users) if prev_users > 0 else 0.0
+                conv = users / prev_users if prev_users > 0 else 0.0
                 drop = 1.0 - conv
                 prev = prev_users
 

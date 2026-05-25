@@ -1,3 +1,5 @@
+import logging
+
 import pandas as pd
 import numpy as np
 from datetime import date, datetime, timedelta
@@ -7,6 +9,8 @@ from pathlib import Path
 from typing import Dict
 
 from utils.paths import SYNTHETIC_DATA_DIR
+
+logger = logging.getLogger(__name__)
 
 
 class SyntheticDataGenerator:
@@ -47,7 +51,7 @@ class SyntheticDataGenerator:
         return f"{prefix}-{digest[:8].upper()}"
 
     def generate_all(self) -> Dict[str, pd.DataFrame]:
-        print("Generating synthetic data...")
+        logger.info("Generating synthetic data...")
         self.output_dir.mkdir(parents=True, exist_ok=True)
         customers = self.generate_customers()
         subscriptions = self.generate_subscriptions(customers)

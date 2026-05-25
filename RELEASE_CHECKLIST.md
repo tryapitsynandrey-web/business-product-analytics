@@ -40,13 +40,14 @@ grep -R "plotly\|altair\|dash" app pyproject.toml README.md
 
 *Ensure no external network calls or heavy UI dependencies have crept in.*
 
-## 5. Automated Tests
+## 5. Automated Tests & Static Analysis
 
 ```bash
 make ci
+.venv/bin/mypy src app tests
 ```
 
-*Ensure 100% test pass rate and current 100% coverage.*
+*Ensure 100% test pass rate, 100% coverage, and strict mypy type safety.*
 
 ## 6. End-to-End Pipeline
 

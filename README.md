@@ -140,7 +140,7 @@ flowchart LR
 
 - **Language:** Python 3.10+
 - **Libraries:** Pandas, NumPy, PyYAML, Streamlit
-- **Testing:** Pytest (705 tests, 100% coverage gate)
+- **Testing:** Pytest (708 tests, 100% coverage gate)
 - **Linting:** Ruff
 - **Type Checking:** Pyrefly
 

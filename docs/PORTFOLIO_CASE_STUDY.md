@@ -55,7 +55,7 @@ The committed demo snapshot shows:
 | Estimated Revenue Leakage | $348,835 |
 | Planned Interventions | 909 |
 | Data Quality Status | 8 datasets Good |
-| Test Suite | 705 tests, 100% coverage gate |
+| Test Suite | 708 tests, 100% coverage gate |
 
 Source evidence:
 
@@ -142,7 +142,7 @@ CI verification:
 
 Current status:
 
-- 705 tests passing.
+- 708 tests passing.
 - 100.00% coverage.
 - Docker demo image builds successfully.
 - GitHub Actions runs both Python and Docker checks on push and PR.

@@ -38,7 +38,6 @@ dependencies = [
   "pandas>=2.0.0",
   "numpy>=1.24.0",
   "pyyaml>=6.0",
-  "python-dotenv>=1.0.0",
   "streamlit>=1.30.0",
 ]
 
@@ -91,6 +90,9 @@ branch = true
 source = ["src", "app"]
 omit = [
   "app/streamlit_app.py",
+  "app/ui_helpers.py",
+  "app/ui_renderers.py",
+  "app/views_*.py",
 ]
 
 [tool.coverage.report]
@@ -112,3 +114,7 @@ project-excludes = [
   "data",
   "reports"
 ]
+
+[tool.mypy]
+mypy_path = "src"
+

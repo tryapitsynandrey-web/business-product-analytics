@@ -33,6 +33,13 @@ All notable changes to ProductPulse are documented in this file.
 - Added cross-links between generated Markdown reports
 - Wired previously standalone cohort, funnel, and scenario engines into the main pipeline
 
+### Fixed
+
+- Resolved strict mypy import path validation errors in dashboard helper libraries by configuring standard source pathways in pyproject.toml
+- Fixed unannotated empty set type verification errors in activation funnel calculator
+- Removed redundant type-casting wrapper warnings in funnel conversion calculations
+- Corrected stale test count metrics across portfolio case study documents
+
 ## [0.1.0] — 2026-05-17
 
 ### Features

@@ -7,7 +7,10 @@ __pycache__/
 .ruff_cache/
 .pyre/
 .pytype/
+.pyright/
+.pyrightcache/
 .pyrefly/
+.pyrefly_cache/
 .hypothesis/
 .dmypy.json
 .dmypy/
@@ -29,6 +32,7 @@ site/
 *.egg-info/
 .eggs/
 pip-wheel-metadata/
+src/*.egg-info/
 
 # Test and coverage outputs
 .coverage
@@ -41,6 +45,9 @@ htmlcov/
 .nox/
 junit.xml
 pytest-report.xml
+test-results/
+test-results.xml
+pytestdebug.log
 
 # Local environment files and secrets
 .env
@@ -54,6 +61,9 @@ pytest-report.xml
 .streamlit/secrets.toml
 .streamlit/credentials.toml
 
+# Streamlit local runtime state
+.streamlit/config.toml
+
 # Local databases and runtime storage
 *.db
 *.db-journal
@@ -64,6 +74,9 @@ pytest-report.xml
 *.sqlite-journal
 *.sqlite-shm
 *.sqlite-wal
+*.db.backup
+*.sqlite.backup
+*.sqlite3.backup
 data/local/
 data/tmp/
 data/temp/
@@ -79,12 +92,31 @@ tmp/
 temp/
 logs/
 
-# Jupyter local state
+# Local generated outputs
+reports/local/
+reports/tmp/
+reports/temp/
+reports/generated/
+exports/
+artifacts/
+
+# Local notebook state and outputs
 .ipynb_checkpoints/
 .jupyter/
+notebooks/.ipynb_checkpoints/
+notebooks/outputs/
+notebooks/tmp/
+
+# Local profiling and benchmark outputs
+.prof/
+profile/
+profiles/
+*.prof
+*.pstats
 
 # IDE, editor, and OS files
 .DS_Store
+**/.DS_Store
 .AppleDouble
 .LSOverride
 ._*
@@ -124,5 +156,8 @@ pnpm-debug.log*
 .nuxt/
 coverage/
 
-# Generated local helper output
+# Local project helper outputs
 project_tree.txt
+project_tree.local.txt
+PROJECT_STATUS.local.md
+project_status.local.md

@@ -55,7 +55,7 @@ duplicate serialization blocks to the pipeline.
 ## Code Style
 
 - Ruff handles formatting and linting (`make format`, `make lint`).
-- Pyrefly handles type checking (`make typecheck`).
+- Pyrefly and Mypy handle type checking (`make typecheck`, `.venv/bin/mypy src app tests`).
 - All new code should include type annotations.
 
 ## Reporting Issues
